@@ -1,0 +1,25 @@
+#facebox {position:absolute; top:0; left: 0; z-index: 100; text-align: left;}
+#facebox table {border-collapse: collapse;}
+#facebox td {border-bottom:0; padding:0;}
+#facebox img {border:0;margin: 0;}
+
+#facebox .b  {background:url(/js/ajax/facebox/b.png);}
+#facebox .tl {background:url(/js/ajax/facebox/tl.png);}
+#facebox .tr {background:url(/js/ajax/facebox/tr.png);}
+#facebox .bl {background:url(/js/ajax/facebox/bl.png);}
+#facebox .br {background:url(/js/ajax/facebox/br.png);}
+#facebox .popup {position: relative;}
+#facebox .body {width:430px;padding:10px;background:#ffffff;}
+#facebox .loading {text-align:center;}
+#facebox .image {text-align:center;}
+#facebox .image img{width:100%;height:auto;}
+#facebox .footer {margin-top:10px;padding-top:5px;border-top: 1px solid #dddddd;text-align: right;}
+#facebox .tl,
+#facebox .tr,
+#facebox .bl,
+#facebox .br {overflow:hidden;width:10px;height:10px;padding:0;}
+#facebox_overlay {position:fixed; top:0;left:0;width:100%;height:100%;}
+*html #facebox_overlay {position:absolute;height:expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');}
+
+.facebox_hide {z-index:-100;}
+.facebox_overlayBG {z-index: 99;background:#000000;}
