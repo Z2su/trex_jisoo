@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<link rel="stylesheet"
+   href="<%=request.getContextPath()%>/resources/css/Perform.css"
+   type="text/css" media="all">
 <div id="contentswrap">
 
 	<!-- subvisual -->
@@ -26,13 +30,7 @@
 			<div class="nv_service">
 				<a class="nvs_print" href="#total"
 					onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span
-					class="hide">Print</span></a> <a href="#"
-					onclick="twitterOpen('http://www.djac.or.kr/html/kr/performance/performance_010101.html?mode=V&amp;code=2946', '대전예술의전당 | 공연정보'); return false;"
-					class="nvs_twt twitter" target="_blank" title="대전예술의전당 트위터(새창)"><span
-					class="hide">트위터</span></a> <a href="#"
-					onclick="facebookOpen('http://www.djac.or.kr/html/kr/performance/performance_010101.html?mode=V&amp;code=2946'); return false;"
-					class="nvs_face facebook" target="_blank" title="대전예술의전당 페이스북(새창)"><span
-					class="hide">페이스북</span></a>
+					class="hide">Print</span></a>
 
 			</div>
 		</div>
@@ -47,15 +45,18 @@
 		<!-- content-->
 		<div id="content">
 			<!-- 컨텐츠 타이틀 -->
-			<h3 class="cnt_ti">공연정보</h3>
+			
+			<h3 class="cnt_ti">공연정보</h3> 
+			<input  onclick="window.open('regist','글등록','width=600,height=300,scrollbars=no');" type="button" id="regist" value="글등록"/>
+			
 			<div id="txt">
 				<div id="scheDule">
 					<strong></strong>
 					<ul class="sche">
 						<li><a href="?mode=L"><img
-								src="/images/kr/performance/schedtab_01_ov.gif" alt="월간일정"></a></li>
+								src="/trex/resources/images/perform/schedtab_01_ov.gif" alt="월간일정"></a></li>
 						<li><a href="?mode=Y&amp;year=2019"><img
-								src="/images/kr/performance/schedtab_02_out.gif" alt="년간일정"></a></li>
+								src="/trex/resources/images/perform/schedtab_02_out.gif" alt="년간일정"></a></li>
 					</ul>
 					<div id="month">
 						<strong></strong>
@@ -65,10 +66,10 @@
 								<p class="month">
 									2019. 07 <span class="prev"><a
 										href="/html/kr/performance/performance_010101.html?year=2019&amp;mon=06&amp;linkid=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101"><img
-											src="/images/kr/performance/month_arrow1.gif" alt="이전달"></a></span>
+											src="/trex/resources/images/perform/month_arrow1.gif" alt="이전달"></a></span>
 									<span class="next"><a
 										href="/html/kr/performance/performance_010101.html?year=2019&amp;mon=08&amp;linkid=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101"><img
-											src="/images/kr/performance/month_arrow2.gif" alt="다음달"></a></span>
+											src="/trex/resources/images/perform/month_arrow2.gif" alt="다음달"></a></span>
 								</p>
 								<table cellpadding="0" cellspacing="0" border="0"
 									summary="공연현황입니다.">
@@ -76,19 +77,19 @@
 									<thead>
 										<tr>
 											<th scope="col"><img
-												src="/images/kr/performance/w_sun.gif" alt="일"></th>
+												src="/trex/resources/images/perform/w_sun.gif" alt="일"></th>
 											<th scope="col"><img
-												src="/images/kr/performance/w_mon.gif" alt="월"></th>
+												src="/trex/resources/images/perform/w_mon.gif" alt="월"></th>
 											<th scope="col"><img
-												src="/images/kr/performance/w_tue.gif" alt="화"></th>
+												src="/trex/resources/images/perform/w_tue.gif" alt="화"></th>
 											<th scope="col"><img
-												src="/images/kr/performance/w_wed.gif" alt="수"></th>
+												src="/trex/resources/images/perform/w_wed.gif" alt="수"></th>
 											<th scope="col"><img
-												src="/images/kr/performance/w_thr.gif" alt="목"></th>
+												src="/trex/resources/images/perform/w_thr.gif" alt="목"></th>
 											<th scope="col"><img
-												src="/images/kr/performance/w_fri.gif" alt="금"></th>
+												src="/trex/resources/images/perform/w_fri.gif" alt="금"></th>
 											<th scope="col"><img
-												src="/images/kr/performance/w_sat.gif" alt="토"></th>
+												src="/trex/resources/images/perform/w_sat.gif" alt="토"></th>
 										</tr>
 									</thead>
 
@@ -193,69 +194,70 @@
 						</div>
 					</div>
 				</div>
-
+<!-- 
 				<div id="performanceTab">
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07"
 						rel="ov"><img
-						src="/images/kr/performance/perfortab_01_out.gif" alt="전체공연"></a>
+						src="/trex/resources/images/perform/perfortab_01_out.gif" alt="전체공연"></a>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=1"
 						rel="ov"><img
-						src="http://www.djac.or.kr/images/kr/performance/perfortab_02_out.gif"
+						src="http://www.djac.or.kr/trex/resources/images/perform/perfortab_02_out.gif"
 						alt="음악"></a> <a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=2"
 						rel="ov"><img
-						src="/images/kr/performance/perfortab_03_out.gif" alt="연극"></a>
+						src="/trex/resources/images/perform/perfortab_03_out.gif" alt="연극"></a>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=3"
 						rel="ov"><img
-						src="/images/kr/performance/perfortab_04_out.gif" alt="뮤지컬"></a>
+						src="/trex/resources/images/perform/perfortab_04_out.gif" alt="뮤지컬"></a>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=4"
 						rel="ov"><img
-						src="/images/kr/performance/perfortab_05_out.gif" alt="오페라"></a>
+						src="/trex/resources/images/perform/perfortab_05_out.gif" alt="오페라"></a>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=5"
 						rel="ov"><img
-						src="/images/kr/performance/perfortab_06_out.gif" alt="무용"></a><br>
+						src="/trex/resources/images/perform/perfortab_06_out.gif" alt="무용"></a><br>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=6"
 						rel="ov"><img
-						src="http://www.djac.or.kr/images/kr/performance/perfortab_07_out.gif"
+						src="http://www.djac.or.kr/trex/resources/images/perform/perfortab_07_out.gif"
 						alt="기획공연"></a> <a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=7"
 						rel="ov"><img
-						src="/images/kr/performance/perfortab_08_out.gif" alt="공동기획"></a>
+						src="/trex/resources/images/perform/perfortab_08_out.gif" alt="공동기획"></a>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=8"
 						rel="ov"><img
-						src="/images/kr/performance/perfortab_09_out.gif" alt="대관공연"></a>
+						src="/trex/resources/images/perform/perfortab_09_out.gif" alt="대관공연"></a>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=9"
 						rel="ov"><img
-						src="/images/kr/performance/perfortab_10_out.gif" alt="시립예술단공연"></a>
+						src="/trex/resources/images/perform/perfortab_10_out.gif" alt="시립예술단공연"></a>
 				</div>
+				 -->
 				<h4>07월공연</h4>
 
 				<ul id="schedulePerformance">
-
+				<c:forEach items="${PFGBoardList }" var="PFGBoard">
 					<li><span><img
-							src="/upload/performance/thm_list_performance_1_156090902772618_761897816.jpg"
-							style="width: 123px" alt="2019 앙상블 소토보체 정기연주회 <Gloria - Vivaldi>"></span>
+							src="/trex/resources/images/perform/performimg.jpg"
+							style="width: 123px" alt="${PFGBoard.name }"></span>
 						<dl>
 							<dt>
-								2019 앙상블 소토보체 정기연주회
+								${PFGBoard.name }
 								<gloria -="" vivaldi=""></gloria>
 							</dt>
 							<dd>
-								<strong>공연구분 및 장소 : </strong>대관공연 / 대전예술의전당 아트홀
+								<strong>공연구분 및 장소 : </strong>${PFGBoard.divi } / 대전예술의전당 아트홀
 							</dd>
 							<dd>
-								<strong>공연일시 : </strong>2019년 7월 4일 (목요일) /1일 1회
+								<strong>공연일시 : </strong>${PFGBoard.rundate }/1일 1회
 							</dd>
 							<dd>
-								<strong>공연시간 : </strong>19:30
+								<strong>공연시간 : </strong>${PFGBoard.starttime }
 							</dd>
 							<dd>
 								<strong>티켓정보 : </strong>R석 3만원, S석 2만원, A석 만원
@@ -271,355 +273,17 @@
 						<p class="more">
 							<a href="#total"
 								onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzEyNw==');"><img
-								src="/images/kr/performance/more.gif"
-								alt="2019 앙상블 소토보체 정기연주회 <Gloria - Vivaldi> 공연예매"></a>
+								src="/trex/resources/images/perform/more.gif"
+								alt="${PFGBoard.name } 공연예매"></a>
 						</p>
 						<p class="reser">
 							<a
-								href="/html/kr/performance/performance_010101.html?mode=V&amp;code=3127&amp;year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-								src="/images/kr/performance/reser.gif"
-								alt="2019 앙상블 소토보체 정기연주회 <Gloria - Vivaldi> 상세보기"></a>
+								href="detail/${PFGBoard.pfg_code }"><img
+								src="/trex/resources/images/perform/reser.gif"
+								alt="${PFGBoard.name } 상세보기"></a>
 
 						</p></li>
-					<li><span><img
-							src="/upload/performance/thm_list_performance_1_156073444557731_1479453398.jpg"
-							style="width: 123px" alt="대전시립합창단 제144회 정기연주회 “현대합창의 아름다..."></span>
-						<dl>
-							<dt>대전시립합창단 제144회 정기연주회 “현대합창의 아름다...</dt>
-							<dd>
-								<strong>공연구분 및 장소 : </strong>시립예술단공연 / 대전예술의전당 아트홀
-							</dd>
-							<dd>
-								<strong>공연일시 : </strong>2019. 7. 5.(금)
-							</dd>
-							<dd>
-								<strong>공연시간 : </strong>(금) 19:30
-							</dd>
-							<dd>
-								<strong>티켓정보 : </strong>R석 20,000원 S석 10,000원 A석 5,000원
-							</dd>
-							<dd>
-								<strong>할인정보 : </strong>1.단체할인 – 20인 이상 30%할인(콜센터 1544-1556)
-								2.장애인, 국...
-							</dd>
-							<dd>
-								<strong>관람등급 : </strong>초등학생 이상 관람가능
-							</dd>
-						</dl>
-						<div class="clear"></div>
-						<p class="more">
-							<a href="#total"
-								onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzA3Ng==');"><img
-								src="/images/kr/performance/more.gif"
-								alt="대전시립합창단 제144회 정기연주회 “현대합창의 아름다... 공연예매"></a>
-						</p>
-						<p class="reser">
-							<a
-								href="/html/kr/performance/performance_010101.html?mode=V&amp;code=3076&amp;year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-								src="/images/kr/performance/reser.gif"
-								alt="대전시립합창단 제144회 정기연주회 “현대합창의 아름다... 상세보기"></a>
-
-						</p></li>
-					<li><span><img
-							src="/upload/performance/thm_list_performance_1_155988327792533_2139716721.jpg"
-							style="width: 123px" alt="신이은 피아노 독주회 <베토벤 피아노 소나타 전곡 시리즈..."></span>
-						<dl>
-							<dt>신이은 피아노 독주회 &lt;베토벤 피아노 소나타 전곡 시리즈...</dt>
-							<dd>
-								<strong>공연구분 및 장소 : </strong>대관공연 / 대전예술의전당 앙상블홀
-							</dd>
-							<dd>
-								<strong>공연일시 : </strong>2019년 7월 5일 (금)
-							</dd>
-							<dd>
-								<strong>공연시간 : </strong>19:30
-							</dd>
-							<dd>
-								<strong>티켓정보 : </strong>전석 1만원
-							</dd>
-							<dd>
-								<strong>할인정보 : </strong>예매시 10%(※당일할인없음) 장애인 및 국가유공자 본인 50%할인
-								(신...
-							</dd>
-							<dd>
-								<strong>관람등급 : </strong>초등학생 이상
-							</dd>
-						</dl>
-						<div class="clear"></div>
-						<p class="more">
-							<a href="#total"
-								onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzE0MA==');"><img
-								src="/images/kr/performance/more.gif"
-								alt="신이은 피아노 독주회 <베토벤 피아노 소나타 전곡 시리즈... 공연예매"></a>
-						</p>
-						<p class="reser">
-							<a
-								href="/html/kr/performance/performance_010101.html?mode=V&amp;code=3140&amp;year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-								src="/images/kr/performance/reser.gif"
-								alt="신이은 피아노 독주회 <베토벤 피아노 소나타 전곡 시리즈... 상세보기"></a>
-
-						</p></li>
-					<li><span><img
-							src="/upload/performance/thm_list_performance_1_156091836937539_1855893872.jpg"
-							style="width: 123px" alt="소프라노 고지완 리사이틀"></span>
-						<dl>
-							<dt>소프라노 고지완 리사이틀</dt>
-							<dd>
-								<strong>공연구분 및 장소 : </strong>대관공연 / 대전예술의전당 앙상블홀
-							</dd>
-							<dd>
-								<strong>공연일시 : </strong>2019년 7월 6일 (토요일) /1일 1회
-							</dd>
-							<dd>
-								<strong>공연시간 : </strong>20:00
-							</dd>
-							<dd>
-								<strong>티켓정보 : </strong>R석 2만원, S석 1만원
-							</dd>
-							<dd>
-								<strong>할인정보 : </strong>
-							</dd>
-							<dd>
-								<strong>관람등급 : </strong>8세 이상 입장 가능합니다.
-							</dd>
-						</dl>
-						<div class="clear"></div>
-						<p class="more">
-							<a href="#total"
-								onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzE0Mg==');"><img
-								src="/images/kr/performance/more.gif" alt="소프라노 고지완 리사이틀 공연예매"></a>
-						</p>
-						<p class="reser">
-							<a
-								href="/html/kr/performance/performance_010101.html?mode=V&amp;code=3142&amp;year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-								src="/images/kr/performance/reser.gif" alt="소프라노 고지완 리사이틀 상세보기"></a>
-
-						</p></li>
-					<li><span><img
-							src="/upload/performance/thm_list_performance_1_156167951160936_224745689.jpg"
-							style="width: 123px" alt="솔리스트디바(야외공연)"></span>
-						<dl>
-							<dt>솔리스트디바(야외공연)</dt>
-							<dd>
-								<strong>공연구분 및 장소 : </strong>대관공연 / 대전예술의전당 원형극장
-							</dd>
-							<dd>
-								<strong>공연일시 : </strong>2019년 7월 6일
-							</dd>
-							<dd>
-								<strong>공연시간 : </strong>20:00
-							</dd>
-							<dd>
-								<strong>티켓정보 : </strong>전석 무료
-							</dd>
-							<dd>
-								<strong>할인정보 : </strong>
-							</dd>
-							<dd>
-								<strong>관람등급 : </strong>
-							</dd>
-						</dl>
-						<div class="clear"></div>
-						<p class="reser">
-							<a
-								href="/html/kr/performance/performance_010101.html?mode=V&amp;code=3234&amp;year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-								src="/images/kr/performance/reser.gif" alt="솔리스트디바(야외공연) 상세보기"></a>
-
-						</p></li>
-					<li><span><img
-							src="/upload/performance/thm_list_performance_1_155963265527637_784011221.jpg"
-							style="width: 123px" alt="2019 콰르텟 이즈 정기연주회 “낭만, 그리고 열정”"></span>
-						<dl>
-							<dt>2019 콰르텟 이즈 정기연주회 “낭만, 그리고 열정”</dt>
-							<dd>
-								<strong>공연구분 및 장소 : </strong>대관공연 / 대전예술의전당 앙상블홀
-							</dd>
-							<dd>
-								<strong>공연일시 : </strong>2019년 7월 6일(토) 1회
-							</dd>
-							<dd>
-								<strong>공연시간 : </strong>14:00
-							</dd>
-							<dd>
-								<strong>티켓정보 : </strong>전석 1만원
-							</dd>
-							<dd>
-								<strong>할인정보 : </strong>단체할인 : 20%(20명 이상, 기획사 전화 문의 1666-1773)
-								조기예매 : ...
-							</dd>
-							<dd>
-								<strong>관람등급 : </strong>8세(초등학생) 이상
-							</dd>
-						</dl>
-						<div class="clear"></div>
-						<p class="more">
-							<a href="#total"
-								onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzE0MQ==');"><img
-								src="/images/kr/performance/more.gif"
-								alt="2019 콰르텟 이즈 정기연주회 “낭만, 그리고 열정” 공연예매"></a>
-						</p>
-						<p class="reser">
-							<a
-								href="/html/kr/performance/performance_010101.html?mode=V&amp;code=3141&amp;year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-								src="/images/kr/performance/reser.gif"
-								alt="2019 콰르텟 이즈 정기연주회 “낭만, 그리고 열정” 상세보기"></a>
-
-						</p></li>
-					<li><span><img
-							src="/upload/performance/thm_list_performance_1_156038666584411_316867554.jpg"
-							style="width: 123px" alt="유벨톤 심포니 오케스트라 기획 연주 시리즈1-헌정음악회 ..."></span>
-						<dl>
-							<dt>유벨톤 심포니 오케스트라 기획 연주 시리즈1-헌정음악회 ...</dt>
-							<dd>
-								<strong>공연구분 및 장소 : </strong>대관공연 / 대전예술의전당 아트홀
-							</dd>
-							<dd>
-								<strong>공연일시 : </strong>2019년 7월 6일(토)
-							</dd>
-							<dd>
-								<strong>공연시간 : </strong>19:00
-							</dd>
-							<dd>
-								<strong>티켓정보 : </strong>R석 20,000원, S석 10,000원
-							</dd>
-							<dd>
-								<strong>할인정보 : </strong>단체 할인 : 20 인 이상 30 % 할인 장애인할인 : 등급구분없이
-								50 % ...
-							</dd>
-							<dd>
-								<strong>관람등급 : </strong>8세 초등학생 이상
-							</dd>
-						</dl>
-						<div class="clear"></div>
-						<p class="more">
-							<a href="#total"
-								onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzEyOA==');"><img
-								src="/images/kr/performance/more.gif"
-								alt="유벨톤 심포니 오케스트라 기획 연주 시리즈1-헌정음악회 ... 공연예매"></a>
-						</p>
-						<p class="reser">
-							<a
-								href="/html/kr/performance/performance_010101.html?mode=V&amp;code=3128&amp;year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-								src="/images/kr/performance/reser.gif"
-								alt="유벨톤 심포니 오케스트라 기획 연주 시리즈1-헌정음악회 ... 상세보기"></a>
-
-						</p></li>
-					<li><span><img
-							src="/upload/performance/thm_list_performance_1_156159849856779_161681192.jpg"
-							style="width: 123px" alt="트리오라피네 4회 정기연주회 “relaxing”"></span>
-						<dl>
-							<dt>트리오라피네 4회 정기연주회 “relaxing”</dt>
-							<dd>
-								<strong>공연구분 및 장소 : </strong>대관공연 / 대전예술의전당 앙상블홀
-							</dd>
-							<dd>
-								<strong>공연일시 : </strong>2019년 7월 7일 일요일
-							</dd>
-							<dd>
-								<strong>공연시간 : </strong>19:30
-							</dd>
-							<dd>
-								<strong>티켓정보 : </strong>전석&nbsp;20,000원
-							</dd>
-							<dd>
-								<strong>할인정보 : </strong>
-							</dd>
-							<dd>
-								<strong>관람등급 : </strong>8세 이상
-							</dd>
-						</dl>
-						<div class="clear"></div>
-						<p class="more">
-							<a href="#total"
-								onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzE0Mw==');"><img
-								src="/images/kr/performance/more.gif"
-								alt="트리오라피네 4회 정기연주회 “relaxing” 공연예매"></a>
-						</p>
-						<p class="reser">
-							<a
-								href="/html/kr/performance/performance_010101.html?mode=V&amp;code=3143&amp;year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-								src="/images/kr/performance/reser.gif"
-								alt="트리오라피네 4회 정기연주회 “relaxing” 상세보기"></a>
-
-						</p></li>
-					<li><span><img
-							src="/upload/performance/thm_list_performance_1_156023763391419_2076741395.jpg"
-							style="width: 123px" alt="오케스트라 사이엔티아 제9회 정기연주회"></span>
-						<dl>
-							<dt>오케스트라 사이엔티아 제9회 정기연주회</dt>
-							<dd>
-								<strong>공연구분 및 장소 : </strong>대관공연 / 대전예술의전당 아트홀
-							</dd>
-							<dd>
-								<strong>공연일시 : </strong>2019년 7월 7일, 일요일 1회
-							</dd>
-							<dd>
-								<strong>공연시간 : </strong>오후 5시
-							</dd>
-							<dd>
-								<strong>티켓정보 : </strong>R석 3만원, S석 2만원, A석 1만원
-							</dd>
-							<dd>
-								<strong>할인정보 : </strong>예매시 20%(※당일할인없음) 장애인 및 국가유공자 본인 50%할인
-								(신...
-							</dd>
-							<dd>
-								<strong>관람등급 : </strong>초등학생 이상
-							</dd>
-						</dl>
-						<div class="clear"></div>
-						<p class="more">
-							<a href="#total"
-								onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzE3OA==');"><img
-								src="/images/kr/performance/more.gif"
-								alt="오케스트라 사이엔티아 제9회 정기연주회 공연예매"></a>
-						</p>
-						<p class="reser">
-							<a
-								href="/html/kr/performance/performance_010101.html?mode=V&amp;code=3178&amp;year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-								src="/images/kr/performance/reser.gif"
-								alt="오케스트라 사이엔티아 제9회 정기연주회 상세보기"></a>
-
-						</p></li>
-					<li><span><img
-							src="/upload/performance/thm_list_performance_1_155262739629133_1981207274.jpg"
-							style="width: 123px" alt="2019아침을 여는 클래식 7월<트럼펫 성재창, 앙상블아리..."></span>
-						<dl>
-							<dt>2019아침을 여는 클래식 7월&lt;트럼펫 성재창, 앙상블 아리...</dt>
-							<dd>
-								<strong>공연구분 및 장소 : </strong>기획공연 / 대전예술의전당 앙상블홀
-							</dd>
-							<dd>
-								<strong>공연일시 : </strong>2019년 7월 9일 화요일 / 1일 1회
-							</dd>
-							<dd>
-								<strong>공연시간 : </strong>11:00
-							</dd>
-							<dd>
-								<strong>티켓정보 : </strong>전석 1만원
-							</dd>
-							<dd>
-								<strong>할인정보 : </strong>* 아래 할인혜택을 받으시는 분들은 공연관람당일 확인할 수 있는
-								신분증...
-							</dd>
-							<dd>
-								<strong>관람등급 : </strong>초등학생(8세) 이상
-							</dd>
-						</dl>
-						<div class="clear"></div>
-						<p class="more">
-							<a href="#total"
-								onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzAwMQ==');"><img
-								src="/images/kr/performance/more.gif"
-								alt="2019아침을 여는 클래식 7월<트럼펫 성재창, 앙상블 아리...공연예매"></a>
-						</p>
-						<p class="reser">
-							<a
-								href="/html/kr/performance/performance_010101.html?mode=V&amp;code=3001&amp;year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-								src="/images/kr/performance/reser.gif"
-								alt="2019아침을 여는 클래식 7월<트럼펫 성재창, 앙상블 아리...상세보기"></a>
-
-						</p></li>
+					</c:forEach>
 				</ul>
 
 
@@ -664,7 +328,7 @@
 						<p class="reser">
 							<a
 								href="/html/kr/performance/performance_010101.html?mode=V&amp;code=3138&amp;year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-								src="/images/kr/performance/reser.gif" alt="한현진 바이올린 독주회 상세보기"></a>
+								src="/trex/resources/images/perform/reser.gif" alt="한현진 바이올린 독주회 상세보기"></a>
 
 						</p></li>
 				</ul>
@@ -674,7 +338,16 @@
 		</div>
 		<!--quick  -->
 		<%@ include file="/WEB-INF/views/board//commons/quick.jsp"%>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 	</div>
 	<!-- //container -->
 </div>
+
+<script>
+	$("input#regist").on('click',function(e){
+		
+		
+	});
+
+</script>
