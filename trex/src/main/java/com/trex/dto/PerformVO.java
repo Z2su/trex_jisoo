@@ -81,7 +81,7 @@ public class PerformVO {
 	}
 
 	public void toPFGBoard(PerformGuidBoardVO PFGBoard) {
-		PFGBoard.setName(this.name);
+		PFGBoard.setTitle(this.name);
 		PFGBoard.setCont(this.cont);
 		PFGBoard.setRuntime(this.runtime);
 		PFGBoard.setCls(this.cls);

@@ -244,10 +244,10 @@
 				<c:forEach items="${PFGBoardList }" var="PFGBoard">
 					<li><span><img
 							src="/trex/resources/images/perform/performimg.jpg"
-							style="width: 123px" alt="${PFGBoard.name }"></span>
+							style="width: 123px" alt="${PFGBoard.title }"></span>
 						<dl>
 							<dt>
-								${PFGBoard.name }
+								${PFGBoard.title }
 								<gloria -="" vivaldi=""></gloria>
 							</dt>
 							<dd>
@@ -274,13 +274,13 @@
 							<a href="#total"
 								onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzEyNw==');"><img
 								src="/trex/resources/images/perform/more.gif"
-								alt="${PFGBoard.name } 공연예매"></a>
+								alt="${PFGBoard.title } 공연예매"></a>
 						</p>
 						<p class="reser">
 							<a
 								href="detail/${PFGBoard.pfg_code }"><img
 								src="/trex/resources/images/perform/reser.gif"
-								alt="${PFGBoard.name } 상세보기"></a>
+								alt="${PFGBoard.title } 상세보기"></a>
 
 						</p></li>
 					</c:forEach>
