@@ -13,11 +13,11 @@
 	<ul class="lm_2th">
 	<c:forEach items="${submenuList }" var="submenu" varStatus="status">
 
-		<li><a href="${submenu[1]}"
+		<li><a href="<%=request.getContextPath()%>${submenu[1]}"
 			class="link_2th" onclick="menuclick('submenu${status.count}');return false;"
 			onkeypress="">${submenu[0] }</a>
 			
-			</li>
+		</li>
 	</c:forEach>
 		
 
