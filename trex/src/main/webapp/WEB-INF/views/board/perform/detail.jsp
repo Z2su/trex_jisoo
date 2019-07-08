@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="contentswrap">
 
 			<!-- subvisual -->
@@ -36,7 +37,8 @@
 				<!-- content-->
 				<div id="content">
 					<!-- 컨텐츠 타이틀 -->
-					<h3 class="cnt_ti">rese</h3>
+					<h3 class="cnt_ti">detail</h3>
+					${PFGBoard.cont }
 				
 			<!-- 	
 				///////////////////////////////////

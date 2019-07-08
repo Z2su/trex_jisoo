@@ -20,13 +20,13 @@
 #popupTop .grap .obj li a{display:inline-block;width:470px;height:100px;overflow:hidden;}
 #popupTop .grap .obj li a img{width:100%;height:auto;}
 #popupTop .wrap .control{position:absolute;top:50px;left:0;z-index:10;width:100%;height:32px;}
-#popupTop .wrap .control a{position:absolute;display:inline-block;width:32px;height:32px;background:url(/trex/resources/images/popuptop_control.gif) no-repeat;line-height:999px;}
+#popupTop .wrap .control a{position:absolute;display:inline-block;width:32px;height:32px;background:url(/resources/images/popuptop_control.gif) no-repeat;line-height:999px;}
 #popupTop .wrap .control a[rel="prev"]{left:-52px;background-position:0 0;}
 #popupTop .wrap .control a[rel="next"]{right:-48px;background-position:-32px 0;}
 #popupTop .wrap #close_form{text-align:right;color:#646464;font-size:12px;}
 #popupTop .wrap #close_form input{margin-right:5px;vertical-align:middle;}
 #popupTop .wrap #close_form label{vertical-align:middle;}
-#popupTop .wrap #close_form .close{display:inline-block;width:30px;height:30px;background:url(/trex/resources/images/popuptop_control.gif) no-repeat -66px -2px;vertical-align:middle;}
+#popupTop .wrap #close_form .close{display:inline-block;width:30px;height:30px;background:url(/resources/images/popuptop_control.gif) no-repeat -66px -2px;vertical-align:middle;}
 
 /* body */
 #bodyWrap{position:relative;margin:0 auto;width:100%;min-width:1000px;}
@@ -41,7 +41,7 @@
 	#global{position:absolute;top:24px;right:207px;}
 	#global ul:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 	#global li{float:left;margin-right:15px;}
-	#global li a{display:block;padding-left:5px;background:url(/trex/resources/images/i_dot.gif) 0 6px no-repeat;}
+	#global li a{display:block;padding-left:5px;background:url(/resources/images/i_dot.gif) 0 6px no-repeat;}
 	#global li a:hover,#global li a:focus{text-decoration:underline;color:#666;}
 	
 	/* find */
@@ -66,9 +66,9 @@
 		#tm .tmect:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 		#tm .tmect .arrow{visibility:hidden;}
 		#tm .tmect>a{float:left;}
-		#tm .tmect a.mmore{width:64px;background:url(/trex/resources/images/tm_more.png) 50% 50% no-repeat #ac3636;border-left:none;}
-		#tm .tmect #tms{padding-top:105px;width:100%;min-height:216px;background:url(/trex/resources/images/tm_ac.png) 50% 20px no-repeat #324356;text-align:center;color:#e0e2e4;font-size:15px;}
-		#tm .tmect #tms a{display:block;padding-left:15px;margin:15px auto 0;width:105px;height:30px;line-height:30px;background:url(/trex/resources/images/i_arr_white.gif) 85% 50% no-repeat;border:1px solid #e0e2e4;text-align:left;color:#e0e2e4;font-size:14px;font-weight:600;}
+		#tm .tmect a.mmore{width:64px;background:url(/resources/images/tm_more.png) 50% 50% no-repeat #ac3636;border-left:none;}
+		#tm .tmect #tms{padding-top:105px;width:100%;min-height:216px;background:url(/resources/images/tm_ac.png) 50% 20px no-repeat #324356;text-align:center;color:#e0e2e4;font-size:15px;}
+		#tm .tmect #tms a{display:block;padding-left:15px;margin:15px auto 0;width:105px;height:30px;line-height:30px;background:url(/resources/images/i_arr_white.gif) 85% 50% no-repeat;border:1px solid #e0e2e4;text-align:left;color:#e0e2e4;font-size:14px;font-weight:600;}
 		#tm .tmect #tms a{border-radius:1px;-moz-border-radius:1px;-webkit-border-radius:1px;}
 		#tm .tmect #tms a:hover,#tm .tmect #tms a:focus{text-decoration:underline;}
 
@@ -92,7 +92,7 @@
 	#ft_menu li a{color:#e4e5e6;}
 	#ft_menu li a:hover,#ft_menu li a:focus{text-decoration:underline;}
 	#ft_sns{position:absolute;top:12px;right:0;}
-	#ft_sns a{display:inline-block;width:43px;height:43px;background:url(/trex/resources/images/sns.png) no-repeat;}
+	#ft_sns a{display:inline-block;width:43px;height:43px;background:url(/resources/images/sns.png) no-repeat;}
 	#ft_sns a.facebook{margin-right:5px;background-position:0 0;}
 	#ft_sns a.twitter{background-position:-43px 0;}
 
@@ -102,11 +102,11 @@
 #mainwrap{width:100%;}
 #mainwrap *{font-family:'Nanum Barun Gothic','나눔고딕';}
 
-#mvisual{background:url(/trex/resources/images/mvisual.jpg) 50% 0 no-repeat #04070d;}
-#mvisual .mv_pat{height:500px;background:url(/trex/resources/images/visual_pat.png) repeat;}
+#mvisual{background:url(/resources/images/mvisual.jpg) 50% 0 no-repeat #04070d;}
+#mvisual .mv_pat{height:500px;background:url(/resources/images/visual_pat.png) repeat;}
 #mvisual .mask{position:absolute;top:0;left:0;z-index:10;width:10000px;}
 #mvisual .control{position:relative;top:40%;z-index:11;width:1000px;margin:0 auto;}
-#mvisual .control a{position:absolute;display:block;width:85px;height:85px;background:url(/trex/resources/images/mv_control.png) repeat;}
+#mvisual .control a{position:absolute;display:block;width:85px;height:85px;background:url(/resources/images/mv_control.png) repeat;}
 #mvisual .control a.prev{left:-95px;background-position:0 0;}
 #mvisual .control a.next{right:-95px;background-position:-85px 0;}
 #mvisual .control a.prev:hover,.mv_cnt .control a.prev:focus{background-position:0 -85px;}
@@ -119,7 +119,7 @@
 	.mv_cnt ul li img{width:233px;height:230px;border:3px solid #fff;}
 	.mv_cnt ul li p{margin:0;padding:20px 0;height:44px;text-align:center;font-size:15px;text-shadow:#000 0 2px 0;}
 	.mv_cnt ul li p .date{display:block;margin-top:10px;font-size:13px;}
-	.mv_cnt ul li a{display:inline-block;width:61px;height:61px;line-height:61px;background:url(/trex/resources/images/mv_bn_bg.png) no-repeat;color:#fff;font-size:14px;font-weight:600;}
+	.mv_cnt ul li a{display:inline-block;width:61px;height:61px;line-height:61px;background:url(/resources/images/mv_bn_bg.png) no-repeat;color:#fff;font-size:14px;font-weight:600;}
 	.mv_cnt ul li a.view{margin-right:10px;background-position:0 -61px;}
 	.mv_cnt ul li a.reser{background-position:0 0px;}
 	.mv_cnt ul li a.view:hover,.mv_cnt ul li a.view:focus{background-position:-61px -61px;color:#05060c;}
@@ -134,7 +134,7 @@
 	.msc_cnt .date .cmonth{color:#fff000;}
 	.msc_cnt .date .cmonth_en{display:block;margin-bottom:5px;font-size:15px;}
 	.msc_cnt .date .control{position:absolute;top:6px;right:40px;width:15px;}
-	.msc_cnt .date .control a{display:block;width:15px;height:8px;background:url(/trex/resources/images/msch_control.png) no-repeat;}
+	.msc_cnt .date .control a{display:block;width:15px;height:8px;background:url(/resources/images/msch_control.png) no-repeat;}
 	.msc_cnt .date .control a.prev{padding-bottom:9px;border-bottom:1px solid #c57373;background-position:0 0;}
 	.msc_cnt .date .control a.next{padding-top:9px;background-position:0 -17px;}
 	
@@ -144,12 +144,12 @@
 	.msc_cnt .msc_num ul li{float:left;width:26px;height:60px;font-size:11px;color:#fff;font-weight:bold;text-align:center;color:#f0e1e1;}
 	.msc_cnt .msc_num ul li span{display:block;padding-top:5px;margin-top:8px;height:23px;line-height:23px;border-top:1px solid #c57373;font-size:13px;color:#fff;}
 	.msc_cnt .msc_num ul li a{display:block;height:23px;line-height:23px;font-size:13px;color:#fff;}
-	.msc_cnt .msc_num ul li a.ov{background:url(/trex/resources/images/msc_ov.png) 50% 0 no-repeat;color:#ac3636;}
+	.msc_cnt .msc_num ul li a.ov{background:url(/resources/images/msc_ov.png) 50% 0 no-repeat;color:#ac3636;}
 	.msc_cnt .msc_num ul li.S,.msc_cnt ul li.S a{color:#df7878;}
 
-	.msc_cnt .msc_list{position:absolute;bottom:0;left:0;z-index:99;display:none;padding-bottom:8px;width:340px;background:url(/trex/resources/images/msc_arr.gif) 50% bottom no-repeat;}
+	.msc_cnt .msc_list{position:absolute;bottom:0;left:0;z-index:99;display:none;padding-bottom:8px;width:340px;background:url(/resources/images/msc_arr.gif) 50% bottom no-repeat;}
 	.msc_cnt .msc_list h3{position:relative;padding:0 0 0 15px;margin:0;height:40px;line-height:40px;background:#324356;color:#fff;font-size:16px;font-weight:600;}
-	.msc_cnt .msc_list h3 a{position:absolute;top:0;right:0;display:block;width:50px;height:40px;background:url(/trex/resources/images/msc_close.png) 0 0 no-repeat #1e2a39;}
+	.msc_cnt .msc_list h3 a{position:absolute;top:0;right:0;display:block;width:50px;height:40px;background:url(/resources/images/msc_close.png) 0 0 no-repeat #1e2a39;}
 	.msc_cnt .msc_list ul{height:330px;background:#f5f5f5;}
 	.msc_cnt .msc_list ul li{position:relative;padding:20px 20px 20px 100px;height:70px;background:#f5f5f5;}
 	.msc_cnt .msc_list ul li.non{padding:20px;text-align:center;}
@@ -241,11 +241,11 @@
 #mcontainer .matit .control{position:absolute;bottom:10px;right:0;padding-right:39px;font-size:12px;font-weight:normal;}
 #mcontainer .matit .control:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 #mcontainer .matit .control .count{float:left;display:inline-block;height:40px;line-height:40px;margin-right:10px;font-size:16px;font-weight:600;color:#000;}
-#mcontainer .matit .control a{float:left;display:inline-block;margin-left:-1px;width:38px;height:38px;border:1px solid #ddd;background:url(/trex/resources/images/ma_control.png) 0 0 no-repeat;}
+#mcontainer .matit .control a{float:left;display:inline-block;margin-left:-1px;width:38px;height:38px;border:1px solid #ddd;background:url(/resources/images/ma_control.png) 0 0 no-repeat;}
 #mcontainer .matit .control a.ov{color:#ac3636;}
 #mcontainer .matit .control a.prev{background-position:0 0;}
 #mcontainer .matit .control a.next{background-position:0 -40px;}
-#mcontainer a.more{position:absolute;right:0;top:-10px;display:inline-block;width:38px;height:38px;border:1px solid #ddd;background:url(/trex/resources/images/ma_control.png) 0 -80px no-repeat;}
+#mcontainer a.more{position:absolute;right:0;top:-10px;display:inline-block;width:38px;height:38px;border:1px solid #ddd;background:url(/resources/images/ma_control.png) 0 -80px no-repeat;}
 
 /* msection1 */
 #msection1{margin:55px auto;width:1000px;}
@@ -263,7 +263,7 @@
 	#msection1 .showcnt .count{float:left;display:inline-block;height:40px;line-height:40px;margin-right:10px;font-size:16px;font-weight:600;color:#000;}
 	#msection1 .showcnt .count em {color:#bf4046;}
 	#msection1 .showcnt .control{position:absolute;top:-53px;right:0;padding-right:39px;font-size:12px;font-weight:normal;}
-	#msection1 .showcnt .control a{float:left;display:inline-block;margin-left:-1px;width:38px;height:38px;border:1px solid #ddd;background:url(/trex/resources/images/ma_control.png) 0 0 no-repeat;}
+	#msection1 .showcnt .control a{float:left;display:inline-block;margin-left:-1px;width:38px;height:38px;border:1px solid #ddd;background:url(/resources/images/ma_control.png) 0 0 no-repeat;}
 	#msection1 .showcnt .control a.ov{color:#ac3636;}
 	#msection1 .showcnt .control a.prev{background-position:0 0;}
 	#msection1 .showcnt .control a.next{background-position:0 -40px;}
@@ -289,7 +289,7 @@
 	#msection1 .marea2 .quickm ul li{float:left;text-align:center;}
 	#msection1 .marea2 .quickm ul li.first a{margin-left:-10px;}
 	#msection1 .marea2 .quickm ul li.last a{margin-right:-10px;}
-	#msection1 .marea2 .quickm ul li a{display:block;padding-top:64px;width:84px;background:url(/trex/resources/images/ma_quick_ico.png) no-repeat;font-size:14px;}
+	#msection1 .marea2 .quickm ul li a{display:block;padding-top:64px;width:84px;background:url(/resources/images/ma_quick_ico.png) no-repeat;font-size:14px;}
 	#msection1 .marea2 .quickm ul li a:hover,#msection1 .marea2 .quickm ul li a:focus{color:#666;text-decoration:underline;}
 	#msection1 .marea2 .quickm ul li.maq1 a{background-position:50% 0;}
 	#msection1 .marea2 .quickm ul li.maq2 a{background-position:50% -87px;}
@@ -297,22 +297,22 @@
 	#msection1 .marea2 .quickm ul li.maq4 a{background-position:50% -261px;}
 
 /* msection2 */
-#msection2{width:100%;height:295px;background:url(/trex/resources/images/ma_festival_bg.gif) 0 0 repeat-x #ececec;}
+#msection2{width:100%;height:295px;background:url(/resources/images/ma_festival_bg.gif) 0 0 repeat-x #ececec;}
 #msection2 .mask{position:absolute;top:0;left:0;z-index:10;}
 	/* 페스티벌 */
 	#msection2 .ma_fest{position:relative;margin:0 auto;width:1000px;height:295px;overflow:hidden;}
 	#msection2 .ma_fest .fest_tab{position:absolute;top:75px;left:0;z-index:11;}
-	#msection2 .ma_fest .fest_tab li a{display:block;padding:0 18px;width:164px;height:35px;line-height:35px;background:url(/trex/resources/images/i_dot_red.gif) 10px 50% no-repeat;border-bottom:1px solid #afafaf;font-size:16px;color:#1a1a1a;font-weight:600;}
+	#msection2 .ma_fest .fest_tab li a{display:block;padding:0 18px;width:164px;height:35px;line-height:35px;background:url(/resources/images/i_dot_red.gif) 10px 50% no-repeat;border-bottom:1px solid #afafaf;font-size:16px;color:#1a1a1a;font-weight:600;}
 	#msection2 .ma_fest .fest_tab li a:hover,#msection2 .ma_fest ul li a:focus{text-decoration:underline;}
-	#msection2 .ma_fest .fest_tab li.ov{background:url(/trex/resources/images/i_arr2_white.gif) 95% 50% no-repeat #6b6d6f;}
-	#msection2 .ma_fest .fest_tab li.ov a{margin-top:-1px;background-image:url(/trex/resources/images/i_dot_white.gif);border-top:1px solid #565759;border-bottom-color:#565759;color:#fff;}
+	#msection2 .ma_fest .fest_tab li.ov{background:url(/resources/images/i_arr2_white.gif) 95% 50% no-repeat #6b6d6f;}
+	#msection2 .ma_fest .fest_tab li.ov a{margin-top:-1px;background-image:url(/resources/images/i_dot_white.gif);border-top:1px solid #565759;border-bottom-color:#565759;color:#fff;}
 
 	#msection2 .ma_fest .fest_info:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 	#msection2 .ma_fest .fest_info li{position:relative;width:1000px;height:295px;}
 	#msection2 .ma_fest .fest_info img{position:absolute;top:0;left:0;z-index:1;width:1000px;height:295px;}
 	#msection2 .ma_fest .fest_info p{position:relative;z-index:2;float:right;padding:0;margin:30px 0 0;width:220px;text-align:left;font-size:13px;}
 	#msection2 .ma_fest .fest_info p strong{display:block;margin-bottom:5px;font-size:19px;font-weight:normal;line-height:1.2em;}
-	#msection2 .ma_fest .fest_info p a{display:block;padding:0 20px;margin-top:15px;height:36px;line-height:36px;background:url(/trex/resources/images/ma_festival_more.gif) 95% 50% no-repeat;color:#fff;font-size:15px;font-weight:600;}
+	#msection2 .ma_fest .fest_info p a{display:block;padding:0 20px;margin-top:15px;height:36px;line-height:36px;background:url(/resources/images/ma_festival_more.gif) 95% 50% no-repeat;color:#fff;font-size:15px;font-weight:600;}
 	#msection2 .ma_fest .fest_info p a:hover,#msection2 .ma_fest .fest_info p a:focus{text-decoration:underline;}
 	#msection2 .ma_fest .fest_info p.tp_blue{color:#5b626a;}
 	#msection2 .ma_fest .fest_info p.tp_blue strong{color:#014e9e;}
@@ -322,14 +322,14 @@
 #msection3{margin:120px auto 40px;width:1000px;}
 #msection3:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 	/* 예술의전당,아카데미 새소식 */
-	#msection3 a.more{top:0;right:0;padding-right:10px;width:auto;height:auto;border:none;background:url(/trex/resources/images/i_arr_black.gif) right 5px no-repeat;font-size:12px;}
+	#msection3 a.more{top:0;right:0;padding-right:10px;width:auto;height:auto;border:none;background:url(/resources/images/i_arr_black.gif) right 5px no-repeat;font-size:12px;}
 	#msection3 a.more:hover,#msection3 a.more:focus{text-decoration:underline;color:#666;}
 	#msection3 .marea1{position:relative;float:left;margin-right:50px;width:280px;}
 	#msection3 .marea1 ul{border-top:2px solid #41474f;}
 	#msection3 .marea1 ul li{position:relative;padding:10px 0;border-bottom:1px solid #ddd;color:#666;font-size:12px;}
 	#msection3 .marea1 ul li a{display:block;color:#262626;font-size:14px;}
 	#msection3 .marea1 ul li a:hover,#msection3 .marea1 ul li a:focus{text-decoration:underline;}
-	#msection3 .marea1 .new{position:relative;top:-1px;display:inline-block;margin-left:5px;width:33px;height:13px;background:url(/trex/resources/images/ma_board_new.png) no-repeat;vertical-align:middle;}
+	#msection3 .marea1 .new{position:relative;top:-1px;display:inline-block;margin-left:5px;width:33px;height:13px;background:url(/resources/images/ma_board_new.png) no-repeat;vertical-align:middle;}
 	#msection3 .marea1 .y_news .new{background-position:0 0;}
 	#msection3 .marea1 .a_news .new{background-position:-33px 0;}
 	#msection3 .marea1 .f_news .new{background-position:-33px 0;}
@@ -344,16 +344,16 @@
 	#msection3 .marea2 .show_info2 dt{padding-left:25px;height:57px;line-height:57px;background:#8e8075;font-size:25px;font-weight:600;}
 	#msection3 .marea2 .show_info2 dt strong{display:inline-block;width:90px;vertical-align:middle;font-size:16px;font-weight:600;}
 	#msection3 .marea2 .show_info2 dd{float:left;width:157px;height:57px;line-height:57px;background:#7c6e65;}
-	#msection3 .marea2 .show_info2 dd a{display:block;height:57px;line-height:57px;padding-left:65px;background:url(/trex/resources/images/ma_show_ico.png) no-repeat;font-size:14px;color:#fff;}
+	#msection3 .marea2 .show_info2 dd a{display:block;height:57px;line-height:57px;padding-left:65px;background:url(/resources/images/ma_show_ico.png) no-repeat;font-size:14px;color:#fff;}
 	#msection3 .marea2 .show_info2 dd a:hover,#msection3 .marea2 .show_info2 dd a:focus{text-decoration:underline;}
 	#msection3 .marea2 .show_info2 dd a.sl1{background-position:10px 0;}
 	#msection3 .marea2 .show_info2 dd a.sl2{background-position:10px -57px;}
 	#msection3 .marea2 .show_info2:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 
 /* msection4 */
-#msection4{width:100%;height:432px;background:url(/trex/resources/images/ma_service_bg.jpg) 50% 0 no-repeat #281b10;}
+#msection4{width:100%;height:432px;background:url(/resources/images/ma_service_bg.jpg) 50% 0 no-repeat #281b10;}
 	/* 자주찾는서비스 */
-	.ms_service{background:url(/trex/resources/images/ma_service_pat.png) 0 0 repeat-x;}
+	.ms_service{background:url(/resources/images/ma_service_pat.png) 0 0 repeat-x;}
 	.ms_service .ms_svinfo{margin:0 auto;width:1000px;}
 	.ms_service .ms_svinfo p{margin:0;padding:70px 0 0;text-align:center;font-size:20px;color:rgb(255,255,255);color:rgba(255,255,255,.8);font-weight:600;line-height:2em;}
 	*+html .ms_svinfo p{color:#fff;}
@@ -362,7 +362,7 @@
 	.ms_service .ms_svinfo ul:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 	.ms_service .ms_svinfo ul li.first{padding-left:0;}
 	.ms_service .ms_svinfo ul li{float:left;padding-left:76px;}
-	.ms_service .ms_svinfo ul li a{display:block;width:95px;padding-top:100px;background:url(/trex/resources/images/ma_service_ico.png) no-repeat;text-align:center;color:#fff;font-size:16px;}
+	.ms_service .ms_svinfo ul li a{display:block;width:95px;padding-top:100px;background:url(/resources/images/ma_service_ico.png) no-repeat;text-align:center;color:#fff;font-size:16px;}
 	.ms_service .ms_svinfo ul li a:hover,.ms_service .ms_svinfo ul li a:focus{text-decoration:underline;}
 	.ms_service .ms_svinfo ul li.ms_svi1 a{background-position:0 0;}
 	.ms_service .ms_svinfo ul li.ms_svi2 a{background-position:0 -118px;}
@@ -380,7 +380,7 @@
 	/* 배너모음 */
 	#msection5 .ms_banner{position:relative;margin:0 auto;width:1000px;height:50px;}
 	#msection5 .ms_banner .control{position:absolute;top:13px;left:0;z-index:11;}
-	#msection5 .ms_banner .control a{float:left;width:24px;height:24px;background:url(/trex/resources/images/ma_banner_control.png) no-repeat;}
+	#msection5 .ms_banner .control a{float:left;width:24px;height:24px;background:url(/resources/images/ma_banner_control.png) no-repeat;}
 	#msection5 .ms_banner .control:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 	#msection5 .ms_banner .control a.stop{background-position:0 0;}
 	#msection5 .ms_banner .control a.play{width:25px;background-position:-24px 0;}
@@ -397,19 +397,19 @@
 #contentswrap{width:100%;}
 #contentswrap *{font-family:'Nanum Gothic','나눔고딕';}
 #subvisual{height:125px;text-align:center;}
-#subvisual .subv_pat{height:125px;background:url(/trex/resources/images/visual_pat.png) repeat;}
+#subvisual .subv_pat{height:125px;background:url(/resources/images/visual_pat.png) repeat;}
 #subvisual p{margin:0;padding:30px 0 0;text-align:center;font-size:16px;color:rgb(255,255,255);color:rgba(255,255,255,.8);font-weight:600;line-height:2em;}
 *+html #subvisual p{color:#fff;}
 #subvisual p strong{display:block;}
 #subvisual p strong img{width:340px;}
-#subvisual .subv_intro{background:url(/trex/resources/images/subv_intro.jpg) 50% 0 no-repeat #515e7e;}
-#subvisual .subv_customer{background:url(/trex/resources/images/subv_customer.jpg) 50% 0 no-repeat #3e231a;}
-#subvisual .subv_performance{background:url(/trex/resources/images/subv_performance.jpg) 50% 0 no-repeat #040f1c;}
-#subvisual .subv_together{background:url(/trex/resources/images/subv_together.jpg) 50% 0 no-repeat #5a6060;}
-#subvisual .subv_rent{background:url(/trex/resources/images/subv_rent.jpg) 50% 0 no-repeat #6c2215;}
-#subvisual .subv_guide{background:url(/trex/resources/images/subv_guide.jpg) 50% 0 no-repeat #7a766a;}
-#subvisual .subv_SNAC{background:url(/trex/resources/images/subv_SNAC.jpg) 50% 0 no-repeat #8a744a;}
-#subvisual .subv_festival{background:url(/trex/resources/images/subv_festival.jpg) 50% 0 no-repeat #050707;}
+#subvisual .subv_intro{background:url(/resources/images/subv_intro.jpg) 50% 0 no-repeat #515e7e;}
+#subvisual .subv_customer{background:url(/resources/images/subv_customer.jpg) 50% 0 no-repeat #3e231a;}
+#subvisual .subv_performance{background:url(/resources/images/subv_performance.jpg) 50% 0 no-repeat #040f1c;}
+#subvisual .subv_together{background:url(/resources/images/subv_together.jpg) 50% 0 no-repeat #5a6060;}
+#subvisual .subv_rent{background:url(/resources/images/subv_rent.jpg) 50% 0 no-repeat #6c2215;}
+#subvisual .subv_guide{background:url(/resources/images/subv_guide.jpg) 50% 0 no-repeat #7a766a;}
+#subvisual .subv_SNAC{background:url(/resources/images/subv_SNAC.jpg) 50% 0 no-repeat #8a744a;}
+#subvisual .subv_festival{background:url(/resources/images/subv_festival.jpg) 50% 0 no-repeat #050707;}
 
 /* navigation */
 #navigation{height:40px;line-height:40px;border-bottom:1px solid #dedede;background:#fbfbfb;}
@@ -417,10 +417,10 @@
 .naviwrap a{display:inline-block;padding:0 10px;height:40px;line-height:40px;vertical-align:middle;color:#666;font-size:13px;}
 .naviwrap a.navi_ov{color:#000;}
 .naviwrap a:hover,#naviwrap a:focus{text-decoration:underline;}
-.naviwrap a.nv_home{display:inline-block;padding-left:25px;background:url(/trex/resources/images/navi_ico.gif) 0 0 no-repeat;}
+.naviwrap a.nv_home{display:inline-block;padding-left:25px;background:url(/resources/images/navi_ico.gif) 0 0 no-repeat;}
 .naviwrap .nv_service{position:absolute;top:0;right:0;}
 .naviwrap .nv_service:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
-.naviwrap .nv_service a{float:left;padding:0;width:40px;height:40px;background:url(/trex/resources/images/navi_sv_ico.png) no-repeat;}
+.naviwrap .nv_service a{float:left;padding:0;width:40px;height:40px;background:url(/resources/images/navi_sv_ico.png) no-repeat;}
 .naviwrap .nv_service a.nvs_print{background-position:0 0;background-color:#545964;}
 .naviwrap .nv_service a.nvs_twt{background-position:-80px 0;background-color:#0099d2;}
 .naviwrap .nv_service a.nvs_face{background-position:-40px 0;background-color:#3060a7;}
@@ -435,7 +435,7 @@
 	.lm_2th{border:1px solid #c4ccd5;border-top:none;border-bottom:none;}
 	.lm_2th>li {border-bottom:1px solid #c4ccd5;}
 	.lm_2th>li:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
-	.lm_2th>li>a{display:block;padding:0 20px;height:50px;line-height:50px;background:url(/trex/resources/images/lm_ico.png) 85% -50px no-repeat #e3e8ec;color:#000;font-size:14px;font-weight:normal;}
+	.lm_2th>li>a{display:block;padding:0 20px;height:50px;line-height:50px;background:url(/resources/images/lm_ico.png) 85% -50px no-repeat #e3e8ec;color:#000;font-size:14px;font-weight:normal;}
 	.lm_2th>li>a.link_2th_ov{background-position:85% 0;}
 	.lm_2th>li>a:hover,.lm_2th>li>a:focus{text-decoration:underline;}
 	
@@ -454,7 +454,7 @@
 	#leftwrap .show_info2:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 	#leftwrap .show_info2 dt strong{display:inline-block;width:35px;vertical-align:middle;font-size:14px;}
 	#leftwrap .show_info2 dd{float:left;background:#7c6e65;}
-	#leftwrap .show_info2 dd a{display:inline-block;width:100px;padding:55px 0 15px;background:url(/trex/resources/images/lm_show_ico.png) no-repeat;text-align:center;font-size:14px;color:#d6d2cf;}
+	#leftwrap .show_info2 dd a{display:inline-block;width:100px;padding:55px 0 15px;background:url(/resources/images/lm_show_ico.png) no-repeat;text-align:center;font-size:14px;color:#d6d2cf;}
 	#leftwrap .show_info2 dd a:hover,#msection3 .marea2 .show_info2 .show_link a:focus{text-decoration:underline;}
 	#leftwrap .show_info2 dd a.sl1{background-position:0 -10px;background-color:#5c4e46;}
 	#leftwrap .show_info2 dd a.sl2{background-position:0 -97px;background-color:#7c6e65;}
@@ -463,7 +463,7 @@
 	#divMenu h2{height:40px;line-height:40px;border-bottom:1px solid #821717;color:#fff;font-size:12px;font-family:'Nanum Myeongjo','나눔명조';}
 	#divMenu a:hover,#divMenu a:focus{text-decoration:underline;}
 	#divMenu ul li{border-top:1px solid #b43f3f;border-bottom:1px solid #9b2727;}
-	#divMenu ul li a{display:block;padding-top:40px;height:26px;background:url(/trex/resources/images/quick_ico.png) no-repeat #ac3636;color:#fff;font-size:12px;}
+	#divMenu ul li a{display:block;padding-top:40px;height:26px;background:url(/resources/images/quick_ico.png) no-repeat #ac3636;color:#fff;font-size:12px;}
 	#divMenu ul li.qm1 a{background-position:0 0;}
 	#divMenu ul li.qm2 a{background-position:-57px 0;}
 	#divMenu ul li.qm3 a{background-position:-114px 0;}
@@ -478,18 +478,18 @@
 	/*#txt *{font-family:'dotum','돋움';}*/
 
     /** 예당소개 - 인사말 **/
-    .box_0501{height:200px;padding:40px 30px;margin-bottom:15px;background:#f7f7f7 url("/trex/resources/images/intro_0501.png")no-repeat right 30px bottom;color:#262626;}
-    .box_0501 span{font-size:23px;display:block;margin:10px 0 70px 0;line-height:1.3;font-family:'Nanum Barun Gothic','나눔고딕';background:url(/trex/resources/images/intro_0501_02.png)right 250px bottom no-repeat;}
+    .box_0501{height:200px;padding:40px 30px;margin-bottom:15px;background:#f7f7f7 url("/resources/images/intro_0501.png")no-repeat right 30px bottom;color:#262626;}
+    .box_0501 span{font-size:23px;display:block;margin:10px 0 70px 0;line-height:1.3;font-family:'Nanum Barun Gothic','나눔고딕';background:url(/resources/images/intro_0501_02.png)right 250px bottom no-repeat;}
     .box_0501 span strong{font-weight:500;}
     .box_0501 p{font-size:16px;font-weight:500;}
     .box_0501 p em{color:#00549d;display:inline-block;font-size:16px;}
-    .contents_0501 span.sign{float:right;margin-top:20px;background:url(/trex/resources/images/intro_0501_sign.jpg)right center no-repeat;height: 20px;padding: 10px 110px 10px 0;font-weight: 700;}
+    .contents_0501 span.sign{float:right;margin-top:20px;background:url(/resources/images/intro_0501_sign.jpg)right center no-repeat;height: 20px;padding: 10px 110px 10px 0;font-weight: 700;}
 
 
 			
 	/** 홈페이지가이드 - 뷰어다운로드 **/
 	.viewerList {width:640px;margin-bottom:20px;}
-	.viewerList li {width:640px;padding:12px 0;background:url(/trex/resources/images/dot_line.gif) repeat-x left bottom;}
+	.viewerList li {width:640px;padding:12px 0;background:url(/resources/images/dot_line.gif) repeat-x left bottom;}
 	.viewerList li.end {background:none;}
 	.viewerList li:after {content:" ";display:block;visibility:hidden;clear:both;}
 	.viewerList p {float:right;width:490px;margin:0;padding:5px 0 0 0;}
@@ -522,7 +522,7 @@
 	
 	/*** 전당소개 - 공연장안내 - 아트홀 ***/
 	.installationBtn{display:inline-block;position:absolute;top:19px;right:0;}
-	.installationImg{position:relative;margin:0;width:640px;height:334px;background:url(/trex/resources/images/installationbg.gif) no-repeat left top;*zoom:1;}
+	.installationImg{position:relative;margin:0;width:640px;height:334px;background:url(/resources/images/installationbg.gif) no-repeat left top;*zoom:1;}
 	.installationImg li{display:inline;float:left;margin:0;padding:0;line-height:0;}
 	.installationImg li:after {content:" ";display:block;visibility:hidden;clear:both;}
 	.installationImg li dl{margin:0;line-height:0;}
@@ -540,26 +540,26 @@
 	.installationText01{display:inline-block;float:right;margin-top:25px;width:385px;letter-spacing:-1px;color:#666;}
 	.installationText02{display:inline-block;float:left;margin-top:25px;width:352px;letter-spacing:-1px;color:#666;}
 	
-	.installation_bul{padding:0 20px 0 0;*padding:0 20px 14px 0;width:620px;background:url(/trex/resources/images/installation_bg.gif) no-repeat left bottom;}
-	.installation_bul strong{display:block;text-indent:-9999px;width:640px;height:11px;background:url(/trex/resources/images/installation_bul.gif) no-repeat left top;}
+	.installation_bul{padding:0 20px 0 0;*padding:0 20px 14px 0;width:620px;background:url(/resources/images/installation_bg.gif) no-repeat left bottom;}
+	.installation_bul strong{display:block;text-indent:-9999px;width:640px;height:11px;background:url(/resources/images/installation_bul.gif) no-repeat left top;}
 	.installation_bul ul{margin-left:20px;width:620px;}
 	.installation_bul ul:after {content:" ";display:block;visibility:hidden;clear:both;}
 	.installation_bul ul li{display:block;float:left;margin:3px 14px 11px 0;}
 	.hish4{margin:20px 0 0 0;position:relative;}
-	.installation_bn{position:absolute;margin-left:245px;padding-left:12px;text-align:right;background:url(/trex/resources/images/history_bul.gif) no-repeat left 2px;color:#888;font-size:11px;font-weight:normal;}
+	.installation_bn{position:absolute;margin-left:245px;padding-left:12px;text-align:right;background:url(/resources/images/history_bul.gif) no-repeat left 2px;color:#888;font-size:11px;font-weight:normal;}
 	.installation_bn2{position:absolute;margin-left:422px;text-align:right;}
 	
 	
-	.installation_bul2{margin:15px 0 0 0;padding:0 20px 8px 0;width:620px;background:url(/trex/resources/images/installation_bg2.gif) no-repeat left bottom;}
-	.installation_bul2 strong.bul{display:block;text-indent:-9999px;width:640px;height:11px;background:url(/trex/resources/images/installation_bul2.gif) no-repeat left top;}
+	.installation_bul2{margin:15px 0 0 0;padding:0 20px 8px 0;width:620px;background:url(/resources/images/installation_bg2.gif) no-repeat left bottom;}
+	.installation_bul2 strong.bul{display:block;text-indent:-9999px;width:640px;height:11px;background:url(/resources/images/installation_bul2.gif) no-repeat left top;}
 	.installation_bul2 ul{width:620px;margin:0;}
 	.installation_bul2 ul li{width:150px;float:left;display:inline;margin:0 10px 3px 25px; }
 
 	
 	/*** 참여마당 - 견학신청 - 견학신청안내 ***/
-	.together_030201{padding:14px 0 0  0;width:640px;height:45px;background:url(/trex/resources/images/together_030201_bg.gif) no-repeat left top;}
+	.together_030201{padding:14px 0 0  0;width:640px;height:45px;background:url(/resources/images/together_030201_bg.gif) no-repeat left top;}
 	.together_bul{margin:10px 0 5px 42px;padding:0;}
-	.together_bul li {margin-bottom:0px;padding-left:15px;background:url(/trex/resources/images/together_bul.gif) no-repeat left 3px;color:#2f6fb8;font-size:11px;}
+	.together_bul li {margin-bottom:0px;padding-left:15px;background:url(/resources/images/together_bul.gif) no-repeat left 3px;color:#2f6fb8;font-size:11px;}
 
 	
 	.h7_Img{margin:5px auto;width:477px}
@@ -567,7 +567,7 @@
 	.h7_Img li{display:block;float:left;margin:0 5px 0 0;width:154px;}
 
 	/** 전당소개 - 연혁 **/
-	.historyText{padding:22px 0 0 0;width:640px;height:800px;background:url(/trex/resources/images/history_bg.gif) no-repeat left top;}
+	.historyText{padding:22px 0 0 0;width:640px;height:800px;background:url(/resources/images/history_bg.gif) no-repeat left top;}
 	.historyText .history{display:block;margin-left:28px;margin-bottom:9px;width:542px;}
 	.historyText .end{display:block;margin-left:28px;margin-top:20px;*margin-top:10px;width:542px;}
 	.historyText .history:after {content:" ";display:block;visibility:hidden;clear:both;}
@@ -575,20 +575,20 @@
 	.historyText .history ul{display:block;float:left;margin-left:16px;width:440px;}
 	.historyText .history ul li{width:440px;}
 	.historyText .history ul li:after {content:" ";display:block;visibility:hidden;clear:both;}
-	.historyText .history ul li strong{display:block;float:left;margin:0 12px 0 0;width:72px;background:url(/trex/resources/images/historyline.gif) no-repeat right 3px;color:#1357a5;}
+	.historyText .history ul li strong{display:block;float:left;margin:0 12px 0 0;width:72px;background:url(/resources/images/historyline.gif) no-repeat right 3px;color:#1357a5;}
 	.historyText .history ul li span{display:block;float:left;margin:0;width:350px;color:#5d5d5d;font-weight:normal;}
 
 	
 	/** 전당소개 - 인사말 **/
 	
-	/** .greetingImg{display:block;float:left;width:207px;height:519px;background:url(/trex/resources/images/greeting_bg.jpg) no-repeat left top;} **/
+	/** .greetingImg{display:block;float:left;width:207px;height:519px;background:url(/resources/images/greeting_bg.jpg) no-repeat left top;} **/
 	.greetingImg{display:block;float:left;width:180px;height:170px;}
 	.greetingText{display:block;float:left;width:460px;}
 	.greeting p{float:right;line-height:18px;color:#5d5d5d;}
 	
 
 	/** 윈터페스티벌 - 2013 **/
-	.winterText1{display:block;float:left;width:207px;height:632px;background:url(/trex/resources/images/greeting_bg.jpg) no-repeat left top;}
+	.winterText1{display:block;float:left;width:207px;height:632px;background:url(/resources/images/greeting_bg.jpg) no-repeat left top;}
 	.winterText2{display:block;float:left;width:433px;}
 	.winter p{float:right;line-height:19px;color:#5d5d5d;}
 
@@ -597,7 +597,7 @@
 
 
 	/** 
-	.greeting{width:641px;background:url(/trex/resources/images/greeting_bg.jpg) no-repeat left top;}
+	.greeting{width:641px;background:url(/resources/images/greeting_bg.jpg) no-repeat left top;}
 	.greeting:after {content:" ";display:block;visibility:hidden;clear:both;}
 	.greeting p{float:right;line-height:18px;width:342px;color:#5d5d5d;}
 	**/
@@ -615,7 +615,7 @@
 	.faq ul li.answer strong{display:block;float:left;margin:8px 0 0 0;width:550px;font-weight:normal;line-height:18px;}
 	
 	
-	.introbigImg{padding:6px 0 0 6px; width:634px;height:279px;background:url(/trex/resources/images/intro_05040204_bg.gif) no-repeat left top;}
+	.introbigImg{padding:6px 0 0 6px; width:634px;height:279px;background:url(/resources/images/intro_05040204_bg.gif) no-repeat left top;}
 	.intro_05040204{margin:5px 0 0 10px;width:616px;}
 	.intro_05040204ver2{margin:20px 0 0 10px;width:616px;}
 	
@@ -623,7 +623,7 @@
 	.conductorText{display:block;float:left;margin:0 0 0 20px;width:414px;}
 	.groupImg{display:block;float:left;width:189px;}
 	.groupText{display:block;float:left;margin:0 0 0 20px;width:425px;}
-	.introbigImg2{padding:6px 0 0 6px; width:634px;height:351px;background:url(/trex/resources/images/intro_05040203_bg.gif) no-repeat left top;}
+	.introbigImg2{padding:6px 0 0 6px; width:634px;height:351px;background:url(/resources/images/intro_05040203_bg.gif) no-repeat left top;}
 	
 	.disabledImg{display:block;float:left;width:259px;}
 	.disabledText{display:block;float:left;margin:0 0 0 20px;width:355px;}
@@ -644,7 +644,7 @@
 	.amThum ul li ul {padding:5px 0 0 0;width:180px;border-top:1px solid #d7d7d7;background:#f9f9f9;}
 
 	.site_t_03 {margin:0 0 0 10px;width:151px;font-weight:normal;line-height:16px;}
-	.site_t_03 a {display:block;padding-left:9px;color:#666;background:url(/trex/resources/images/sitemap_bul.gif) no-repeat left 6px;}
+	.site_t_03 a {display:block;padding-left:9px;color:#666;background:url(/resources/images/sitemap_bul.gif) no-repeat left 6px;}
 	.site_t_03 a:link,
 	.site_t_03 a:visited {color:#666;}
 	.site_t_03 a:hover {letter-spacing:-1px;color:#174981;}
@@ -669,12 +669,12 @@
 #miniCaln p.todayDate {margin:0;padding:5px 0 4px 0;border-top:1px solid #d1d1d1;font-size:11px;}
 #miniCaln a.close {display:block;position:absolute;bottom:6px;right:14px;width:31px;height:14px;line-height;1em;}
 
-.freebiemember{margin:0;padding:14px 0 0 20px;width:620px;height:177px;background:url(/trex/resources/images/freebie_bg.gif) no-repeat left top;}
+.freebiemember{margin:0;padding:14px 0 0 20px;width:620px;height:177px;background:url(/resources/images/freebie_bg.gif) no-repeat left top;}
 .freebiemember ul{margin:0;letter-spacing:-1px;}
 .freebiemember strong{display:block;float:left;margin-top:28px;}
 .left_mar_96{margin-left:96px;}
 
-.paidmember{position:relative;margin:0;padding:14px 0 0 20px;width:620px;height:195px;background:url(/trex/resources/images/paid_bg.gif) no-repeat left top;}
+.paidmember{position:relative;margin:0;padding:14px 0 0 20px;width:620px;height:195px;background:url(/resources/images/paid_bg.gif) no-repeat left top;}
 .paidmember ul{margin:0;letter-spacing:-1px;}
 .paidmember_btn{display:block;position:absolute;top:12px;right:18px;width:132px;}
 .paidmember_btn p{margin:5px 0 0 0;}
@@ -698,14 +698,14 @@
 
 
 
-.artner_top{width:635px;height:115px;background:url(/trex/resources/images/artner_tit_bg.gif) no-repeat left bottom;}
-.artner{width:640px;margin:0;padding-bottom:15px;background:url(/trex/resources/images/artner.gif) no-repeat left bottom;*zoom:1;}
+.artner_top{width:635px;height:115px;background:url(/resources/images/artner_tit_bg.gif) no-repeat left bottom;}
+.artner{width:640px;margin:0;padding-bottom:15px;background:url(/resources/images/artner.gif) no-repeat left bottom;*zoom:1;}
 .artner:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
-.artner strong.top{display:block;width:640px;height:15px;text-indent:-9999px;background:url(/trex/resources/images/artner_top_bg.gif) no-repeat;}
+.artner strong.top{display:block;width:640px;height:15px;text-indent:-9999px;background:url(/resources/images/artner_top_bg.gif) no-repeat;}
 .artner img.artnerImg{display:block;float:left;margin:0 23px 0 17px;width:187px;height:75px;}
 .artner .artner_ul{display:block;float:left;*zoom:1;}
 .artner .artner_ul li:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
-.artner .artner_ul li{padding-left:7px;background:url(/trex/resources/images/artner_bul.gif) no-repeat left 5px;}
-.artner .artner_ul li strong{display:block;float:left;margin:0 5px 0 0;width:55px;background:url(/trex/resources/images/spanline.gif) no-repeat right 2px;color:#155192;font-weight:normal;}
+.artner .artner_ul li{padding-left:7px;background:url(/resources/images/artner_bul.gif) no-repeat left 5px;}
+.artner .artner_ul li strong{display:block;float:left;margin:0 5px 0 0;width:55px;background:url(/resources/images/spanline.gif) no-repeat right 2px;color:#155192;font-weight:normal;}
 .artner .artner_ul li span{display:block;float:left;letter-spacing:-1px;color:#666;}
 .artner .artner_ul li span .org{margin:0;color:#dd5c07;font-weight:bold;}

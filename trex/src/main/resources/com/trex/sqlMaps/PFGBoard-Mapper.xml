@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PFGBoard-Mapper">
+	<select id="selectPFGBoardList" resultType="PFGBoard">
+		select * 
+		from PFG
+	</select>
+	<select id="selectPFGBoard" resultType="PFGBoard">
+		select * 
+		from PFG
+		where pfg_code = #{pfg_code}
+	</select>
+	<update id="insertPFGBoard">
+		insert 
+		into 
+		PFG(pfg_code,pfg_num,writer,rundate,starttime,hall_code,ticket,runtime,tro,cls,cont,title,pf_code)
+		values
+		(#{pfg_code},#{pfg_num},#{writer},#{rundate},#{starttime},#{hall_code},#{ticket},#{runtime},#{tro},#{cls},#{cont},#{title},#{pf_code})
+	</update>
+	<update id="updatePFGBoard">
+		update 
+		PFG
+		set
+		title=#{title}, cont=#{cont}, modidate=sysdate, pf_code=#{pf_code}
+		where pfg_code=#{pfg_code}
+	</update>
+	<update id="deletePFGBoard">
+		delete 
+		from PFG
+		where pfg_code=#{pfg_code} 
+	</update>
+	<update id="increaseViewCnt">
+		update 
+		PFG
+		set
+		viewcnt=viewcnt+1
+		where pfg_code=#{pfg_code}
+	</update>
+	<select id="selectPFGBoardNextSeq" resultType="int">
+		select PFG_SEQ.nextval as pfg_num from dual
+	</select>
+	<select id="selectPF" resultType="PF">
+		select *
+		from 
+		PF
+		where pf_code=#{pf_code}
+	</select>
+	<select id="selectPFSH" resultType="PFSH" >
+		select *
+		from
+		PFSH
+		where pf_code=#{pf_code}
+	</select>
+	
+</mapper>
