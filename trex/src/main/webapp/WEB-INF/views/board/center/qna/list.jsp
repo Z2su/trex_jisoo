@@ -1,0 +1,187 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<div id="contentswrap">
+ 
+			<!-- subvisual -->
+			<div id="subvisual">
+								<div class="subv_performance">
+					<div class="subv_pat">
+						<p>
+							<strong><img src="/trex/resources/images/ma_service_type.png" alt="Daejeon Arts Center"></strong>
+							문화로 시민을 행복하게! 대전예술의전당
+						</p>
+					</div>
+				</div>
+							</div>
+			<!-- //subvisual -->
+
+			<!-- navigation -->
+			<div id="navigation">
+				<div class="naviwrap">
+				 	<a href="/html/kr/" class="nv_home">HOME</a>&gt;<navi><a href="/html/kr/performance/performance_010101.html">고객센터</a>&gt;<a href="/html/kr/performance/performance_010101.html">QNA</a></navi>				 	<div class="nv_service">
+												<a class="nvs_print" href="#total" onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span class="hide">Print</span></a>
+												
+					</div>
+				</div>
+			</div>
+			<!-- //navigation -->
+
+			<!-- container -->
+			<div id="container">
+				<%@ include file="/WEB-INF/views/board/center/submenu.jsp" %>
+
+
+				<!-- content-->
+				<div id="content">
+					<!-- 컨텐츠 타이틀 -->
+					<h3 class="cnt_ti">QNA</h3>
+				
+			<div id="txt">
+			
+			<!-- 게시판 상단 전체글수와 검색 -->
+			<form action="search" id="boardFind" name="boardFind" method="post">
+
+				<div class="board_list_info">
+					<p class="page_num">총 4224 건 / 금일 : 0건</p>
+					<fieldset class="board_find">
+						<legend>게시물검색</legend>
+						<label for="findItem" class="hidden">검색조건</label> <select name="skey" id="ID_skey" class="selectType03" title=""><option value="title">제목</option>
+							<option value="ntt_cntn">내용</option>
+							<option value="wrt">작성자</option>
+							<option value="reg_date">년도</option></select> <label for="findWrite" class="hidden">검색어입력</label> <input type="text" name="sval" title="검색어를 입력하세요" value=""> <input type="image" src="/trex/resources/images/board_find.gif" alt="검색">
+					</fieldset>
+				</div>
+			</form>
+			<!-- 게시판 리스트 -->
+			<div class="board_listWrap">
+				<div class="board_listBox">
+					<div class="board_list">
+						<form method="post" name="chkForm" action="/_prog/_board/index.php?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;mode=RC">
+							<input type="hidden" name="submod" value="">
+							<table cellspacing="0" cellpadding="0" border="0" summary="공지사항 게시판입니다. 총 4224개의 글이 있으며 제목링크를 통해서 상세내용으로 이동합니다.">
+								<caption>공지사항</caption>
+								<thead>
+									<tr>
+										<th scope="col" class="head_first" width="8%">번호</th>
+										<th scope="col" width="45%">제목</th>
+										<th scope="col" width="15%">작성자</th>
+										<th scope="col" width="16%">작성일</th>
+										<th scope="col" width="10%">조회수</th>
+										<th scope="col" width="10%">파일</th>
+									</tr>
+								</thead>
+								<tbody>
+									
+							
+									<tr>
+										<td class="center">4213&nbsp;</td>
+
+										<td class="title"><img src="/trex/resources/images/list_icon_hold.gif" alt="잠긴글"><a href="./?code=customer&amp;mode=V&amp;no=ziASixn1hjTZHMWDAuWheg&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=">공연예매가
+												안되네요</a>&nbsp;</td>
+
+										<td class="center">권 * * &nbsp;</td>
+
+										<td class="center">2019-04-23&nbsp;</td>
+
+										<td class="center">4&nbsp;</td>
+
+										<td class="center">&nbsp;</td>
+
+
+									</tr>
+									<tr>
+										<td class="center">4212&nbsp;</td>
+
+										<td class="title">&nbsp;&nbsp; <img src="/trex/resources/images/list_icon_reply.gif" alt="답변글"><img src="/trex/resources/images/list_icon_hold.gif" alt="잠긴글"><a href="./?code=customer&amp;mode=V&amp;no=tHElmrC1q42y1M0HSO4i7A&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=">[답변]
+												공연예매가 안되네요</a>&nbsp;
+										</td>
+
+										<td class="center">김 * * &nbsp;</td>
+
+										<td class="center">2019-04-24&nbsp;</td>
+
+										<td class="center">2&nbsp;</td>
+
+										<td class="center">&nbsp;</td>
+
+
+									</tr>
+									<tr>
+										<td class="center">4211&nbsp;</td>
+
+										<td class="title"><a href="./?code=customer&amp;mode=V&amp;no=coQf--UbTNXLULUM4ZPfeg&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=">공연장
+												관리 좀 해주세요~</a>&nbsp;</td>
+
+										<td class="center">김 * * &nbsp;</td>
+
+										<td class="center">2019-04-22&nbsp;</td>
+
+										<td class="center">153&nbsp;</td>
+
+										<td class="center">&nbsp;</td>
+
+
+									</tr>
+								</tbody>
+							</table>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!-- 게시판 버튼모음 -->
+			<div class="board_butt">
+
+				<a href="#"><img src="/trex/resources/images/list.gif" alt="목록"></a> <a href="#"><img src="/trex/resources/images/write.gif" alt="쓰기"></a>
+				<a href="#" target="_blank"> <img src="/trex/resources/images/rss.gif" alt="rss"></a>
+
+			</div>
+
+			<!-- 게시판 페이징 
+			<div class="board_listPage">
+				<div class="tblPage">
+					<span>[1]</span><a
+						href="?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;GotoPage=2">2</a>
+					<a
+						href="?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;GotoPage=3">3</a>
+					<a
+						href="?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;GotoPage=4">4</a>
+					<a
+						href="?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;GotoPage=5">5</a>
+					<a
+						href="?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;GotoPage=6">6</a>
+					<a
+						href="?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;GotoPage=7">7</a>
+					<a
+						href="?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;GotoPage=8">8</a>
+					<a
+						href="?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;GotoPage=9">9</a>
+					<a
+						href="?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;GotoPage=10">10</a>
+					<span class="pageBt"><a
+						href="?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;GotoPage=11"><img
+							src="/images/kr/common/page_next01.gif" alt="10"></a></span><span
+						class="pageBt"><a
+						href="?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;GotoPage=302"><img
+							src="/images/kr/common/page_next02.gif" alt="300"></a></span>
+				</div>
+			</div>
+			
+			게시판 페이징  -->
+
+
+
+
+
+		</div>
+			</div>
+	<!--quick  -->
+<%-- <!-- 	<%@ include file="/WEB-INF/views/board/center/quick.jsp" %> --> --%>
+	
+		</div>
+		<!-- //container -->
+	</div>
+	
+	<link rel="stylesheet"
+   href="<%=request.getContextPath()%>/resources/css/board.css"
+   type="text/css" media="all">
