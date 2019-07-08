@@ -7,7 +7,7 @@
 								<div class="subv_performance">
 					<div class="subv_pat">
 						<p>
-							<strong><img src="/trex/resources/images/ma_service_type.png" alt="Daejeon Arts Center"></strong>
+							<strong><img src="<%=request.getContextPath()%>/resources/images/ma_service_type.png" alt="Daejeon Arts Center"></strong>
 							문화로 시민을 행복하게! 대전예술의전당
 						</p>
 					</div>
@@ -48,7 +48,7 @@
 						<label for="findItem" class="hidden">검색조건</label> <select name="skey" id="ID_skey" class="selectType03" title=""><option value="title">제목</option>
 							<option value="ntt_cntn">내용</option>
 							<option value="wrt">작성자</option>
-							<option value="reg_date">년도</option></select> <label for="findWrite" class="hidden">검색어입력</label> <input type="text" name="sval" title="검색어를 입력하세요" value=""> <input type="image" src="/trex/resources/images/board_find.gif" alt="검색">
+							<option value="reg_date">년도</option></select> <label for="findWrite" class="hidden">검색어입력</label> <input type="text" name="sval" title="검색어를 입력하세요" value=""> <input type="image" src="<%=request.getContextPath()%>/resources/images/board_find.gif" alt="검색">
 					</fieldset>
 				</div>
 			</form>
@@ -76,7 +76,7 @@
 									<tr>
 										<td class="center">4213&nbsp;</td>
 
-										<td class="title"><img src="/trex/resources/images/list_icon_hold.gif" alt="잠긴글"><a href="./?code=customer&amp;mode=V&amp;no=ziASixn1hjTZHMWDAuWheg&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=">공연예매가
+										<td class="title"><img src="<%=request.getContextPath()%>/resources/images/list_icon_hold.gif" alt="잠긴글"><a href="./?code=customer&amp;mode=V&amp;no=ziASixn1hjTZHMWDAuWheg&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=">공연예매가
 												안되네요</a>&nbsp;</td>
 
 										<td class="center">권 * * &nbsp;</td>
@@ -92,7 +92,7 @@
 									<tr>
 										<td class="center">4212&nbsp;</td>
 
-										<td class="title">&nbsp;&nbsp; <img src="/trex/resources/images/list_icon_reply.gif" alt="답변글"><img src="/trex/resources/images/list_icon_hold.gif" alt="잠긴글"><a href="./?code=customer&amp;mode=V&amp;no=tHElmrC1q42y1M0HSO4i7A&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=">[답변]
+										<td class="title">&nbsp;&nbsp; <img src="<%=request.getContextPath()%>/resources/images/list_icon_reply.gif" alt="답변글"><img src="<%=request.getContextPath()%>/resources/images/list_icon_hold.gif" alt="잠긴글"><a href="./?code=customer&amp;mode=V&amp;no=tHElmrC1q42y1M0HSO4i7A&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=">[답변]
 												공연예매가 안되네요</a>&nbsp;
 										</td>
 
@@ -132,8 +132,8 @@
 			<!-- 게시판 버튼모음 -->
 			<div class="board_butt">
 
-				<a href="#"><img src="/trex/resources/images/list.gif" alt="목록"></a> <a href="#"><img src="/trex/resources/images/write.gif" alt="쓰기"></a>
-				<a href="#" target="_blank"> <img src="/trex/resources/images/rss.gif" alt="rss"></a>
+				<a href="#"><img src="<%=request.getContextPath()%>/resources/images/list.gif" alt="목록"></a> <a href="#"><img src="<%=request.getContextPath()%>/resources/images/write.gif" alt="쓰기"></a>
+				<a href="#" target="_blank"> <img src="<%=request.getContextPath()%>/resources/images/rss.gif" alt="rss"></a>
 
 			</div>
 

@@ -38,12 +38,12 @@ a:focus {color:#ff6600;}
 .table1 .inputType input{display:inline-block;text-align:left;margin:2px 0 0 0;}
 
 /*삭제해도됨*/
-h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-spacing:-1px;background:url(/trex/resources/images/h4.gif) no-repeat left top;}
+h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-spacing:-1px;background:url(/resources/images/h4.gif) no-repeat left top;}
 
 .write_tip {display:inline-block;width:19px;height:19px;line-height:19px;text-align:center;}
 .write_tip img {padding:2px;}
 
-.butt {display:inline-block;height:21px;background:url(/trex/resources/images/small_butt_l.gif) no-repeat left top;}
+.butt {display:inline-block;height:21px;background:url(/resources/images/small_butt_l.gif) no-repeat left top;}
 .butt span {display:inline-block;height:21px;padding:3px 7px 0 7px;font-size:11px;font-weight:bold;letter-spacing:-1px;color:#666666;background:url(../img/small_butt_r.gif) no-repeat right top;cursor:pointer;}
 
 /***** board list ****/
@@ -56,24 +56,24 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 .board_list_info .board_find label {position:absolute;visibility:hidden;height:0;line-height:0;font-size:1px;}
 .board_list_info .board_find select {width:75px;height:19px;border:1px solid #c2c2c2;}
 .board_list_info .board_find #findWrite {*position:relative;*top:-1px;width:190px;height:15px;border:1px solid #c2c2c2;}
-.board_listWrap {width:100%;margin:10px 0;background:url(/trex/resources/images/list_top.gif) repeat-x left top;}
-.board_list {padding:0 15px 0 10px;background:url(/trex/resources/images/list_top_nd.gif) no-repeat right top;}
+.board_listWrap {width:100%;margin:10px 0;background:url(/resources/images/list_top.gif) repeat-x left top;}
+.board_list {padding:0 15px 0 10px;background:url(/resources/images/list_top_nd.gif) no-repeat right top;}
 .board_list table {width:100%;table-layout:fixed;border-spacing:0;text-align:center;}
 .board_list caption {position:relative;visibility:hidden;height:0;line-height:0;font-size:1px;}
-.board_list th {padding:6px 5px 12px 4px;color:#424242;vertical-align:top;background:url(/trex/resources/images/list_top_ln.gif) no-repeat left 6px;}
+.board_list th {padding:6px 5px 12px 4px;color:#424242;vertical-align:top;background:url(/resources/images/list_top_ln.gif) no-repeat left 6px;}
 .board_list th.head_first {background:none;}
 .board_list td {padding:6px 5px;border-bottom:1px solid #e5e5e5;}
 .board_list td.title {text-align:left;}
 .board_list td.title img {margin-right:5px;}
 .board_list col {background:none;}
 .board_list .condition {color:#f67e14;}
-.board_listBox {background:url(/trex/resources/images/list_top_fr.gif) no-repeat left top;}
+.board_listBox {background:url(/resources/images/list_top_fr.gif) no-repeat left top;}
 .board_listPage {margin:10px 0;text-align:center;line-height:18px;}
 .board_listPage * {vertical-align:center;}
 .board_listPage span.arrow img {display:inline-block;width:19px;height:18px;}
 .board_listPage span.page_num {display:inline-block;padding-right:5px;}
-.board_listPage span.page_num a {display:inline-block;padding:0 7px 0 9px;background:url(/trex/resources/images/list_page_ln.gif) no-repeat left 1px;}
-.board_listPage span.page_num strong {display:inline-block;padding:0 7px 0 9px;background:url(/trex/resources/images/list_page_ln.gif) no-repeat left 1px;}
+.board_listPage span.page_num a {display:inline-block;padding:0 7px 0 9px;background:url(/resources/images/list_page_ln.gif) no-repeat left 1px;}
+.board_listPage span.page_num strong {display:inline-block;padding:0 7px 0 9px;background:url(/resources/images/list_page_ln.gif) no-repeat left 1px;}
 .board_listPage span.page_num .first {background:none;}
 .board_butt {margin:10px 0;padding:0 10px;text-align:right;*zoom:1;}
 .board_butt:after {content:" ";display:block;visibility:hidden;clear:both;}
@@ -82,19 +82,19 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 
 
 /***** board view ****/
-.board_viewTit {padding:6px 10px 4px 95px;border-top:2px solid #ddd;border-bottom:1px solid #ddd;background:url(/trex/resources/images/view_tit_ln.gif) no-repeat 78px 6px;line-height:18px;}
+.board_viewTit {padding:6px 10px 4px 95px;border-top:2px solid #ddd;border-bottom:1px solid #ddd;background:url(/resources/images/view_tit_ln.gif) no-repeat 78px 6px;line-height:18px;}
 .board_viewTit h4 {margin:0;padding:0;font-weight:normal;background:none;letter-spacing:0px;}
 .board_viewTit h4 span {display:inline-block;width:83px;margin-left:-95px;padding-left:12px;color:#424242;font-weight:bold;letter-spacing:-1px;}
 .board_viewInfo {width:100%;*zoom:1;}
 .board_viewInfo:after {content:"";display:block;visibility:hidden;clear:both;}
-.board_viewInfo li {margin-top:7px;padding:0 10px 4px 95px;border-bottom:1px solid #dddddd;background:url(/trex/resources/images/view_tit_ln.gif) no-repeat 78px top;line-height:18px;}
+.board_viewInfo li {margin-top:7px;padding:0 10px 4px 95px;border-bottom:1px solid #dddddd;background:url(/resources/images/view_tit_ln.gif) no-repeat 78px top;line-height:18px;}
 .board_viewInfo li span {display:inline-block;width:83px;margin-left:-95px;padding-left:12px;color:#424242;font-weight:bold;letter-spacing:-1px;}
 .board_viewInfo li.file{overflow:hidden;}
 .board_viewInfo li.file:after {content:" ";display:block;visibility:hidden;clear:both;}
 .board_viewInfo li.file span{display:block;float:left;}
 .board_viewInfo li.file div{display:block;float:left;}
 /*.board_viewInfo li.file div {margin-top:-17px;}*/
-.board_viewInfo li.file a {display:block;padding-left:17px;background:url(/trex/resources/images/list_icon_file.gif) no-repeat left 1px;}
+.board_viewInfo li.file a {display:block;padding-left:17px;background:url(/resources/images/list_icon_file.gif) no-repeat left 1px;}
 .board_viewInfo li.file a:link,
 .board_viewInfo li.file a:visited {font-size:11px;color:#757575;}
 .board_viewInfo li.file a:hover,
@@ -105,19 +105,19 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 .board_viewDetail table{width:600px;}
 .board_viewImg {margin-top:20px;text-align:center;}
 .board_viewPage {margin-bottom:10px;border-top:1px solid #dddddd;border-left:1px solid #dddddd;}
-.board_viewPage li {padding:6px 15px 6px 77px;border-bottom:1px solid #dddddd;border-right:1px solid #dddddd;background:url(/trex/resources/images/view_page_tit.gif) repeat-y;}
+.board_viewPage li {padding:6px 15px 6px 77px;border-bottom:1px solid #dddddd;border-right:1px solid #dddddd;background:url(/resources/images/view_page_tit.gif) repeat-y;}
 .board_viewPage li span {display:inline-block;width:73px;margin:0 19px 0 -77px;text-align:center;color:#424242;font-weight:bold;letter-spacing:-1px;}
-.board_comp {padding:8px;border:1px solid #dddddd;background:url(/trex/resources/images/comp_tit.gif) repeat-y;*zoom:1;}
+.board_comp {padding:8px;border:1px solid #dddddd;background:url(/resources/images/comp_tit.gif) repeat-y;*zoom:1;}
 .board_comp:after {content:" ";display:block;visibility:hidden;clear:both;}
-.board_comp p.comp_tip {float:left;width:75px;margin:0;padding:1px 0 0 15px;color:#f67e14;font-weight:bold;font-size:0.9em;letter-spacing:-1px;background:url(/trex/resources/images/comp_icon.gif) no-repeat left 1px;}
+.board_comp p.comp_tip {float:left;width:75px;margin:0;padding:1px 0 0 15px;color:#f67e14;font-weight:bold;font-size:0.9em;letter-spacing:-1px;background:url(/resources/images/comp_icon.gif) no-repeat left 1px;}
 .board_comp fieldset.comp_wrt {float:left;border:none;}
 .board_comp fieldset.comp_wrt legend {display:none;}
 .board_comp fieldset.comp_wrt * {margin:0;padding:0;}
-.board_comp p.comp_count {float:right;margin:0;padding:1px 0 0 7px;font-size:11px;background:url(/trex/resources/images/comp_bul.gif) no-repeat left 5px;}
+.board_comp p.comp_count {float:right;margin:0;padding:1px 0 0 7px;font-size:11px;background:url(/resources/images/comp_bul.gif) no-repeat left 5px;}
 .board_comp p.comp_count span {font-weight:bold;color:#f67e14;}
 .board_talk {position:relative;margin:10px 0;padding:10px 70px 10px 15px;_padding-right:65px;border:1px solid #dddddd;background:#f2f2f2;}
 .board_talk label {position:absolute;visibility:hidden;height:0;font-size:1px;line-height:0;}
-.board_talk p.talk_tip {margin:0;padding:0 0 10px 17px;font-size:0.9em;background:url(/trex/resources/images/talk_icon.gif) no-repeat left 2px;}
+.board_talk p.talk_tip {margin:0;padding:0 0 10px 17px;font-size:0.9em;background:url(/resources/images/talk_icon.gif) no-repeat left 2px;}
 .board_talk ul.talk_auth {position:absolute;top:10px;right:15px;*zoom:1;}
 .board_talk ul.talk_auth:after {content:"";display:block;visibility:hidden;clear:both;}
 .board_talk ul.talk_auth li {float:left;padding-left:5px;font-weight:bold;color:#6f6f6f;font-size:0.9em;}
@@ -138,10 +138,10 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 
 
 /***** board write ****/
-.board_writeTit {background:url(/trex/resources/images/view_tit_ln.gif) no-repeat 78px 6px;}
+.board_writeTit {background:url(/resources/images/view_tit_ln.gif) no-repeat 78px 6px;}
 .board_writeInfo {width:100%;border-top:2px solid #dddddd;*zoom:1;}
 .board_writeInfo:after {content:"";display:block;visibility:hidden;clear:both;}
-.board_writeInfo li {margin-top:7px;padding:0 10px 4px 95px;border-bottom:1px solid #dddddd;background:url(/trex/resources/images/view_tit_ln.gif) no-repeat 78px top;}
+.board_writeInfo li {margin-top:7px;padding:0 10px 4px 95px;border-bottom:1px solid #dddddd;background:url(/resources/images/view_tit_ln.gif) no-repeat 78px top;}
 .board_writeInfo li label {display:inline-block;width:83px;margin-left:-95px;padding-left:12px;color:#424242;font-weight:bold;letter-spacing:-1px;}
 .board_writeInfo li input {height:15px;border:1px solid #bfbfbf;}
 .board_writeInfo li input[type="radio"] {border:none;}
@@ -165,13 +165,13 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 
 /***** bodo list ****/
 .bodo_list {margin-top:10px;border-top:1px solid #dddddd;border-bottom:1px solid #dddddd;}
-.bodo_listThum {position:relative;padding:21px 8px 20px 8px;background:url(/trex/resources/images/bodo_ln.gif) repeat-x left top;*zoom:1;}
+.bodo_listThum {position:relative;padding:21px 8px 20px 8px;background:url(/resources/images/bodo_ln.gif) repeat-x left top;*zoom:1;}
 .bodo_listThum:after {content:" ";display:block;visibility:hidden;clear:both;}
-.bodo_listThum img.bodoImg {position:absolute;top:21px;left:8px;display:block;width:126px;height:84px;padding:10px 11px 11px 11px;background:url(/trex/resources/images/bodo_thum.gif) no-repeat;}
-.bodo_listThum img.bodoImg2 {position:absolute;top:21px;left:8px;display:block;width:126px;height:204px;padding:10px 11px 10px 11px;background:url(/trex/resources/images/bodo_thum2.gif) no-repeat;}
+.bodo_listThum img.bodoImg {position:absolute;top:21px;left:8px;display:block;width:126px;height:84px;padding:10px 11px 11px 11px;background:url(/resources/images/bodo_thum.gif) no-repeat;}
+.bodo_listThum img.bodoImg2 {position:absolute;top:21px;left:8px;display:block;width:126px;height:204px;padding:10px 11px 10px 11px;background:url(/resources/images/bodo_thum2.gif) no-repeat;}
 .bodo_listThum div.view {padding-top:5px;}
 .bodo_listThum div.view h4 {padding:3px;color:#34383c;background:none;background:#ececec;_zoom:1;}
-.bodo_listThum div.view h4 span.number {display:inline-block;width:24px;height:19px;margin-right:7px;text-align:center;font-weight:normal;line-height:19px;background:url(/trex/resources/images/bodo_num.gif) no-repeat left top;}
+.bodo_listThum div.view h4 span.number {display:inline-block;width:24px;height:19px;margin-right:7px;text-align:center;font-weight:normal;line-height:19px;background:url(/resources/images/bodo_num.gif) no-repeat left top;}
 .bodo_listThum div.view p {margin:8px 10px;padding:0;}
 .bodo_listThum div.view ul.infomation {*zoom:1;}
 .bodo_listThum div.view ul.infomation:after {content:" ";display:block;visibility:hidden;clear:both;}
@@ -189,7 +189,7 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 .file_downTbl tr,
 .file_downTbl td {padding:3px 0;border-bottom:1px solid #dddddd;border-right:1px solid #dddddd;font-size:11px;}
 .file_downTbl .number {text-align:center;background:#f5f5f5;}
-.file_downTbl .file {display:block;padding-left:35px;background:url(/trex/resources/images/list_icon_file.gif) no-repeat 17px 1px;}
+.file_downTbl .file {display:block;padding-left:35px;background:url(/resources/images/list_icon_file.gif) no-repeat 17px 1px;}
 .file_downTbl .file:link,
 .file_downTbl .file:visited {color:#5b636b;}
 .file_downTbl .file:hover,
@@ -200,13 +200,13 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 
 
 /***** password auth ****/
-.board_auth {width:383px;height:81px;margin:50px auto;background:url(/trex/resources/images/auth_bck.gif) no-repeat;}
+.board_auth {width:383px;height:81px;margin:50px auto;background:url(/resources/images/auth_bck.gif) no-repeat;}
 .board_auth p.auth_tit {height:25px;margin:0;padding:10px 0 0 0;font-size:11px;text-align:center;color:#828282;}
 .board_auth p.auth_tit strong {color:#3c3c3c;}
 .board_auth fieldset {padding:12px 53px;border:none;}
 .board_auth fieldset legend {display:none;}
 .board_auth fieldset * {margin:0;padding:0;vertical-align:top;}
-.board_auth fieldset label {display:inline-block;width:50px;padding:2px 0 0 15px;font-size:11px;background:url(/trex/resources/images/list_icon_hold.gif) no-repeat left 4px;}
+.board_auth fieldset label {display:inline-block;width:50px;padding:2px 0 0 15px;font-size:11px;background:url(/resources/images/list_icon_hold.gif) no-repeat left 4px;}
 .board_auth fieldset #authPword {width:150px;height:17px;margin-right:5px;border:1px solid #c2c2c2;}
 .board_auth fieldset .authButt {position:relative;top:-1px;*top:0;}
 
@@ -216,7 +216,7 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 .board_photo {margin:10px 0;padding-top:15px;*padding-bottom:15px;border-top:1px solid #dddddd;border-bottom:1px solid #dddddd;}
 .board_photo ul {*zoom:1;}
 .board_photo ul:after {content:"";display:block;visibility:hidden;clear:both;}
-.board_photo li {float:left;_display:inline;width:138px;margin:0 8px 15px 8px;background:url(/trex/resources/images/photo_thum.gif) no-repeat left top;}
+.board_photo li {float:left;_display:inline;width:138px;margin:0 8px 15px 8px;background:url(/resources/images/photo_thum.gif) no-repeat left top;}
 .board_photo li a.photo_thum {display:block;width:138px;height:123px;padding-top:15px;}
 .board_photo li a.photo_thum img {display:block;width:100px;height:90px;margin:auto;border:1px solid #e5e5e5;}
 .board_photo li p {margin:0;padding:5px 0 0 0;text-align:center;font-size:0.9em;}
@@ -237,11 +237,11 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 .board_photoWrt textarea {width:97%;border:1px solid #c2c2c2;}
 .board_photoUp {position:relative;border:1px solid #dddddd;}
 .board_photoUp strong.title {display:block;padding:7px 25px;border-bottom:1px solid #dddddd;color:#424242;letter-spacing:-1px;background:#f3f3f3;}
-.board_photoUp .head {position:absolute;top:-1px;_top:0;right:-1px;_right:0;width:15px;height:15px;line-height:15px;background:url(/trex/resources/images/photo_up_top.gif) no-repeat;}
+.board_photoUp .head {position:absolute;top:-1px;_top:0;right:-1px;_right:0;width:15px;height:15px;line-height:15px;background:url(/resources/images/photo_up_top.gif) no-repeat;}
 .board_photoUp .photoUp_rep {position:absolute;top:5px;right:25px;margin:0;padding:0;}
-.board_photoUp .photoUp_rep label {display:inline-block;padding:2px 5px 0 13px;vertical-align:top;background:url(/trex/resources/images/bul_01.gif) no-repeat left 6px;}
+.board_photoUp .photoUp_rep label {display:inline-block;padding:2px 5px 0 13px;vertical-align:top;background:url(/resources/images/bul_01.gif) no-repeat left 6px;}
 .board_photoUp .photoUp_rep select {width:90px;height:20px;vertical-align:top;border:1px solid #c2c2c2;}
-.board_photoUp .photoUp_wrap {margin:15px 0;*zoom:1;background:url(/trex/resources/images/photo_up_ln.gif) repeat-y center top;}
+.board_photoUp .photoUp_wrap {margin:15px 0;*zoom:1;background:url(/resources/images/photo_up_ln.gif) repeat-y center top;}
 .board_photoUp .photoUp_wrap:after {content:"";display:block;visibility:hidden;clear:both;}
 .board_photoUp .thumBox {float:left;width:50%;margin:10px 0;}
 .board_photoUp .thumBox img.thumImg {display:block;_display:inline;float:left;width:82px;height:59px;margin-left:25px;border:1px solid #dddddd;}
@@ -260,19 +260,19 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 
 
 
-.board_photoUp .photoUp_tip {padding:10px 0 10px 52px;border-top:1px solid #dddddd;background:#f3f3f3 url(/trex/resources/images/photo_up_tip.gif) no-repeat 25px 11px;}
-.board_photoUp .photoUp_tip li {padding-left:6px;background:url(/trex/resources/images/bul_02.gif) no-repeat left 6px;}
+.board_photoUp .photoUp_tip {padding:10px 0 10px 52px;border-top:1px solid #dddddd;background:#f3f3f3 url(/resources/images/photo_up_tip.gif) no-repeat 25px 11px;}
+.board_photoUp .photoUp_tip li {padding-left:6px;background:url(/resources/images/bul_02.gif) no-repeat left 6px;}
 
 
 /***** video board ****/
 .board_video {margin:10px 0;border-top:1px solid #dddddd;border-bottom:1px solid #dddddd;}
-.board_video .video_list {position:relative;*zoom:1;padding:21px 0 20px 0;background:url(/trex/resources/images/video_ln.gif) repeat-x left top;}
+.board_video .video_list {position:relative;*zoom:1;padding:21px 0 20px 0;background:url(/resources/images/video_ln.gif) repeat-x left top;}
 .board_video .video_list:after {content:"";display:block;visibility:hidden;clear:both;}
-.board_video p {position:absolute;width:168px;height:140px;margin:0;padding:10px 0 0 0;text-align:center;background:url(/trex/resources/images/video_list_thum.gif) no-repeat;}
+.board_video p {position:absolute;width:168px;height:140px;margin:0;padding:10px 0 0 0;text-align:center;background:url(/resources/images/video_list_thum.gif) no-repeat;}
 .board_video p img.thumImg {display:block;width;146px;height:104px;margin:0 auto 6px auto;}
 .board_video dl {min-height:139px;_height:139px;padding:11px 0 0 190px;}
 .board_video dl dt {margin-bottom:5px;padding:5px 10px;color:#34383c;font-weight:bold;letter-spacing:-1px;background:#ececec;}
-.board_video dl dd {padding:1px 18px;background:url(/trex/resources/images/bul_02.gif) no-repeat 12px 6px;}
+.board_video dl dd {padding:1px 18px;background:url(/resources/images/bul_02.gif) no-repeat 12px 6px;}
 .board_video .first {padding:20px 0;background:none;}
 .board_videoView {margin:20px 0;text-align:center;}
 .board_videoCapt {border:1px solid #dddddd;}
@@ -282,8 +282,8 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 
 
 /***** board calendar ****/
-.board_calendarTit {margin:20px 0 10px 0;padding:0 0 0 13px;color:#000000;background:url(/trex/resources/images/calendar_tit.gif) no-repeat left 2px;}
-.board_calendarTit2 {margin:20px 0 10px 0;padding:0 0 3px 13px;border-bottom:1px solid #dddddd;color:#000000;background:url(/trex/resources/images/calendar_tit.gif) no-repeat left 2px;}
+.board_calendarTit {margin:20px 0 10px 0;padding:0 0 0 13px;color:#000000;background:url(/resources/images/calendar_tit.gif) no-repeat left 2px;}
+.board_calendarTit2 {margin:20px 0 10px 0;padding:0 0 3px 13px;border-bottom:1px solid #dddddd;color:#000000;background:url(/resources/images/calendar_tit.gif) no-repeat left 2px;}
 .board_calendar {position:relative;}
 .board_calendar .calendar_top {position:absolute;top:0;left:50%;width:200px;margin-left:-100px;}
 .board_calendar .calendar_top .prev {display:block;position:absolute;top:0;left:0;width:17px;height:17px;}
@@ -299,7 +299,7 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 .board_calendar .month_tbl caption {position:absolute;visibility:hidden;height:0;line-height:0;font-size:1px;}
 .board_calendar .month_tbl th,
 .board_calendar .month_tbl td {padding:7px;font-size:0.9em;border-bottom:1px solid #d7d7d7;border-right:1px solid #d7d7d7;}
-.board_calendar .month_tbl th {background:#f2f2f2 url(/trex/resources/images/calendar_week.gif) no-repeat;}
+.board_calendar .month_tbl th {background:#f2f2f2 url(/resources/images/calendar_week.gif) no-repeat;}
 .board_calendar .month_tbl th.sun {color:#f67e14;}
 .board_calendar .month_tbl td {height:70px;vertical-align:top;color:#8c8c8c;line-height:1.2em;letter-spacing:-1px;}
 .board_calendar .month_tbl td a {display:inline-block;padding-bottom:5px;}
@@ -330,7 +330,7 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 
 	.boardUcc {margin:20px 0; border-top:2px solid #B6C2D2; border-bottom:2px solid #B6C2D2;}
 	.uccList {margin:0;padding:0;}
-	.uccList li {height:94px;padding:23px 0 26px 0;background:url(/trex/resources/images/ucc_01_dot.gif) repeat-x left bottom;*zoom:1;}
+	.uccList li {height:94px;padding:23px 0 26px 0;background:url(/resources/images/ucc_01_dot.gif) repeat-x left bottom;*zoom:1;}
 	.uccList li:after {contne:"";display:block;visibility:hidden;clear:both;}
 	.uccList li.no_bul {background:none;}
 	.uccList li p {float:left;width:178px;height:94px;margin:0 14px 0 0;text-align:center;}
@@ -349,8 +349,8 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 	.uccView {padding:17px 13px;border:2px solid #B6C2D2;}
 	.uccView h4{margin:0 0 5px 0;padding:5px;font-size:15px;font-weight:bold;letter-spacing:0;text-indent:0;color:#1f4475;background:none;background-color:#f1f0ef;}
 	.uccView h5 {margin:8px 0 5px 0px;padding:0;text-indent:0;color:#454545;background:none;}
-	.uccView p.uccView_data {margin:0;padding:0;font-size:11px;color:#969696;letter-spacing:0;line-height:18px;background:url(/trex/resources/images/ucc_01_dot.gif) repeat-x left bottom;}
-	.uccView .ucc_play_box {width:606px;height:293px;margin:16px 0 10px 0;padding-bottom:10px;background:url(/trex/resources/images/ucc_01_dot.gif) repeat-x left bottom;}
+	.uccView p.uccView_data {margin:0;padding:0;font-size:11px;color:#969696;letter-spacing:0;line-height:18px;background:url(/resources/images/ucc_01_dot.gif) repeat-x left bottom;}
+	.uccView .ucc_play_box {width:606px;height:293px;margin:16px 0 10px 0;padding-bottom:10px;background:url(/resources/images/ucc_01_dot.gif) repeat-x left bottom;}
 	.uccView .ucc_play {margin:0 auto;width:470px;height:293px;}
 	.ucc_text {overflow-y:scroll;height:100px;padding:10px;font-weight:normal;background:#f1f1f1;}
 	
@@ -359,11 +359,11 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 .ucc_view{width:610px; padding:17px 13px; border:2px solid #b6c2d2;}
 .ucc_view h4{margin:0px 0px 5px 0px; padding:5px; font-size:15px; font-weight:bold; letter-spacing:0px; text-indent:0px; color:#11345c; background:none; background-color:#f0f3f6;}
 .ucc_view p{margin:0px; padding:0px; font-size:11px; color:#969696; letter-spacing:0px; line-height:18px;}
-.ucc_view_dot{width:602px; height:1px; line-height:1px; font-size:0px; background:url(/trex/resources/images/ucc_01_dot.gif) repeat-x left top;}
+.ucc_view_dot{width:602px; height:1px; line-height:1px; font-size:0px; background:url(/resources/images/ucc_01_dot.gif) repeat-x left top;}
 .ucc_view .ucc_play_box{width:606px; height:293px; margin-top:16px;}
 .ucc_view .ucc_play{float:left; width:470px; height:293px;}
 .ucc_view .ucc_play span{height:20px;width:400px;text-align:center;margin-top:100px;display:block;}
-.ucc_view .ucc_list{float:right; width:128px; height:293px; margin:0px; padding:0px; background:url(/trex/resources/images/ucc_list.gif) no-repeat left top;}
+.ucc_view .ucc_list{float:right; width:128px; height:293px; margin:0px; padding:0px; background:url(/resources/images/ucc_list.gif) no-repeat left top;}
 .ucc_view .ucc_list dt{margin:0px; padding:0px;}
 .ucc_view .ucc_list dd{margin:0px; padding:0px;}
 .ucc_view .ucc_list dd ul{width:100px; margin-left:18px;}
@@ -373,6 +373,6 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 .ucc_view .ucc_list dd ul li p a:active{color:#666666; font-weight:bold;}
 .ucc_view .ucc_list dd ul li p a:hover{color:#ff6600; font-weight:bold;}
 
-.ucc_tag{width:606px;margin-top:5px; padding-bottom:5px; background:url(/trex/resources/images/ucc_01_dot.gif) repeat-x left bottom;}
+.ucc_tag{width:606px;margin-top:5px; padding-bottom:5px; background:url(/resources/images/ucc_01_dot.gif) repeat-x left bottom;}
 .ucc_view h5{margin:8px 0px 5px 0px; padding:0px; text-indent:0px; background:none; color:#454545; font-weight:bold;}
 .ucc_text{background:#f1f1f1; height:100px; padding:10px; overflow-y:scroll;}
