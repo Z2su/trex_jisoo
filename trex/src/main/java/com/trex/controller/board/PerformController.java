@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.trex.dto.PerformGuidBoardVO;
-import com.trex.dto.PerformGuidBoardVO1;
 import com.trex.service.PerformGuidBoardService;
 
 @Controller

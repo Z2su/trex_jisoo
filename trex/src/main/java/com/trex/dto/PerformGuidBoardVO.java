@@ -15,7 +15,7 @@ public class PerformGuidBoardVO {
 	private String tro;
 	private String cls;
 	private String cont;
-	private String name;
+	private String title;
 	private Date regdate;
 	private Date modidate;
 	private int viewcnt;
@@ -92,11 +92,11 @@ public class PerformGuidBoardVO {
 	public void setCont(String cont) {
 		this.cont = cont;
 	}
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public Date getRegdate() {
 		return regdate;
@@ -126,8 +126,8 @@ public class PerformGuidBoardVO {
 	public String toString() {
 		return "PerformGuidBoardVO [pfg_code=" + pfg_code + ", pfg_num=" + pfg_num + ", writer=" + writer + ", divi="
 				+ divi + ", rundate=" + rundate + ", starttime=" + starttime + ", hall_code=" + hall_code + ", ticket="
-				+ ticket + ", runtime=" + runtime + ", tro=" + tro + ", cls=" + cls + ", cont=" + cont + ", name="
-				+ name + ", regdate=" + regdate + ", modidate=" + modidate + ", viewcnt=" + viewcnt + ", pf_code="
+				+ ticket + ", runtime=" + runtime + ", tro=" + tro + ", cls=" + cls + ", cont=" + cont + ", title="
+				+ title + ", regdate=" + regdate + ", modidate=" + modidate + ", viewcnt=" + viewcnt + ", pf_code="
 				+ pf_code + "]";
 	}
 	

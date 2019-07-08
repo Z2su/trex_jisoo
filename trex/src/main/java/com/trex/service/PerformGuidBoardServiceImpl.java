@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.trex.dao.PerformGuidBoardDAO;
 import com.trex.dto.PerformGuidBoardVO;
-import com.trex.dto.PerformGuidBoardVO1;
 import com.trex.dto.PerformScheduleVO;
 import com.trex.dto.PerformVO;
 
