@@ -12,8 +12,8 @@ public interface EventDAO {
 	EventVO selectEventByevent_num(int event_num) throws SQLException;
 	
 	void insertEvent(EventVO event) throws SQLException;
-	void updateEvent(EventVO evnet) throws SQLException;
-	void deleteEvent(EventVO event) throws SQLException;
+	void updateEvent(EventVO event) throws SQLException;
+	void deleteEvent(int event_num) throws SQLException;
 	
 	void increaseViewCnt(int event_num) throws SQLException;
 	

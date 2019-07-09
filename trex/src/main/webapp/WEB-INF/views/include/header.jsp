@@ -53,8 +53,8 @@
       <div id="header">
          <!-- 로고-->
          <h1 id="logo">
-            <a href="<%=request.getContextPath()%>/"><img
-               src="<%=request.getContextPath()%>/resources/images/t-rex-logo2.jpg"
+            <a href="<%=request.getContextPath()%>/">
+            <img src="<%=request.getContextPath()%>/resources/images/t-rex-logo2.jpg"
                border="0" alt="티렉스티렉스 공룡짱 티렉스"></a>
          </h1>
          <!-- 로고-->
