@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="QnABoardMapper">
+
+	<update id="insertQnABoard">
+		insert into qna (qna_code, qna_num , title, cont, writer)
+		values(#{qna_code} ,qna_seq.nextval,#{title},#{cont},#{writer})
+	</update>
+
+	<select id="selectBoardByNum" resultType="qnaboard">
+		select *
+		from
+		qna
+		where qna_num=#{qna_num}
+	</select>
+
+	<update id="updateQnABoard">
+		update qna
+		set title=#{title}, cont=#{cont}, updatedate=#{updatedate}
+		where
+		qna_num=#{qna_num}
+	</update>
+
+	<update id="deleteQnABoard">
+		delete
+		from qna
+		where qna_num=#{qna_num}
+	</update>
+
+	<update id="increaseViewCnt">
+		update qna set viewcnt=viewcnt+1
+		where
+		qna_num=#{qna_num}
+	</update>
+
+	<sql id="search">
+		<if test="searchType == 't'.toString()">
+			and title like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and content like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'w'.toString()">
+			and writer like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'tc'.toString()">
+			and (
+			title like '%'||#{keyword}||'%'
+			or
+			content like '%'||#{keyword}||'%'
+			)
+		</if>
+		<if test="searchType == 'cw'.toString()">
+			and (
+			content like '%'||#{keyword}||'%'
+			or
+			writer like '%'||#{keyword}||'%'
+			)
+		</if>
+		<if test="searchType == 'tcw'.toString()">
+			and (
+			title like '%'||#{keyword}||'%'
+			or
+			content like '%'||#{keyword}||'%'
+			or
+			writer like '%'||#{keyword}||'%'
+			)
+		</if>
+	</sql>
+
+	<select id="selectSearchBoardList" resultType="qnaboard">
+		<![CDATA[
+			select * 
+			from qna
+			where qna_num>0
+		]]>
+		<include refid="search"></include>
+		order by qna_num desc
+	</select>
+	<select id="selectSearchBoardCount" resultType="int">
+		<![CDATA[
+			select count(*)
+			from qna
+			where qna_num>0
+		]]>
+		<include refid="search"></include>
+	</select>
+
+
+	<select id="selectBoardAll" resultType="qnaboard">
+		select *
+		from qna
+		order by qna_num desc,regDate desc
+	</select>
+</mapper>
+
+
+
+
+
+
+
+

@@ -7,6 +7,8 @@
 		<typeAlias type="com.trex.dto.PerformGuidBoardVO" alias="PFGBoard"/>
 		<typeAlias type="com.trex.dto.PerformVO" alias="PF"/>
 		<typeAlias type="com.trex.dto.PerformScheduleVO" alias="PFSH"/>
+		<typeAlias type="com.trex.dto.QnABoardVO" alias="qnaboard"/>
+		
 	</typeAliases>
  
 </configuration>
