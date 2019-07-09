@@ -53,7 +53,7 @@
       <div id="header">
          <!-- 로고-->
          <h1 id="logo">
-            <a href="<%=request.getContextPath()%>/"><img
+            <a href="/"><img
                src="<%=request.getContextPath()%>/resources/images/t-rex-logo2.jpg"
                border="0" alt="티렉스티렉스 공룡짱 티렉스"></a>
          </h1>
@@ -147,7 +147,7 @@
                         </ul>
                      </div></li>
                      
-                     <li><a href="<%=request.getContextPath() %>/board/center/list"
+                     <li><a href="<%=request.getContextPath() %>/board/center/main"
                      class="">고객센터<span class="arrow" style="display: none;"></span></a>
                   <div id="tms">
                         <ul class="">
