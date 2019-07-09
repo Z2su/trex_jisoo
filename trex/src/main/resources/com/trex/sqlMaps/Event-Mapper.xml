@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Event-Mapper">
+
+	<select id="selectEventList" resultType="event">
+		select *
+		from event
+		order by event_num desc
+	</select>
+	
+	<select id="selectEventByevent_num" resultType="event">
+		select *
+		from event
+		where event_num = #{event_num}
+	</select>
+	
+	<update id="insertEvent" parameterType="event">
+		insert
+		into
+		event(event_code,event_num,title,writer,cont,enable)
+		values
+		(#{event_code},#{event_num},#{title},#{writer},#{cont},#{enable})
+	</update>
+	
+	<update id="updateEvent" parameterType="event">
+		update
+		event
+		set
+		title=#{title}, cont=#{cont}, updatedate = sysdate
+		where event_num = #{event_num}
+	</update>
+	
+	<update id="deleteEvent" parameterType="int">
+		delete
+		from event
+		where event_num = #{event_num}
+	</update>
+	
+	<update id="increaseViewCnt" parameterType="int">
+		update
+		event
+		set
+		viewcnt = viewcnt+1
+		where event_num = #{event_num}
+	</update>
+	
+	<select id="selectEventSeqNext" resultType="int">
+		select eve.seq.nextval as event_num from dual
+	</select>
+</mapper>
