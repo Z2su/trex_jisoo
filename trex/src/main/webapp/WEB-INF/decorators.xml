@@ -3,6 +3,11 @@
 <decorators defaultdir="/WEB-INF/views/decorators">	
 	<decorator name="main" page="decorator.jsp">
 		<pattern>/*</pattern>				
-	</decorator>		
+	</decorator>
+	
+	<!-- <decorator name="openWindow" page="openWindow_decorator.jsp">
+		<pattern>/**/perform/regist*</pattern>				
+		
+	</decorator>		 -->
 	
 </decorators>

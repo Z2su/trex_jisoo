@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet"
-   href="<%=request.getContextPath()%>/resources/css/Perform.css"
-   type="text/css" media="all">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/Perform.css" type="text/css" media="all">
 <div id="contentswrap">
 
 	<!-- subvisual -->
@@ -54,9 +52,9 @@
 					<strong></strong>
 					<ul class="sche">
 						<li><a href="?mode=L"><img
-								src="/trex/resources/images/perform/schedtab_01_ov.gif" alt="월간일정"></a></li>
+								src="/resources/images/perform/schedtab_01_ov.gif" alt="월간일정"></a></li>
 						<li><a href="?mode=Y&amp;year=2019"><img
-								src="/trex/resources/images/perform/schedtab_02_out.gif" alt="년간일정"></a></li>
+								src="/resources/images/perform/schedtab_02_out.gif" alt="년간일정"></a></li>
 					</ul>
 					<div id="month">
 						<strong></strong>
@@ -66,10 +64,10 @@
 								<p class="month">
 									2019. 07 <span class="prev"><a
 										href="/html/kr/performance/performance_010101.html?year=2019&amp;mon=06&amp;linkid=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101"><img
-											src="/trex/resources/images/perform/month_arrow1.gif" alt="이전달"></a></span>
+											src="/resources/images/perform/month_arrow1.gif" alt="이전달"></a></span>
 									<span class="next"><a
 										href="/html/kr/performance/performance_010101.html?year=2019&amp;mon=08&amp;linkid=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101"><img
-											src="/trex/resources/images/perform/month_arrow2.gif" alt="다음달"></a></span>
+											src="/resources/images/perform/month_arrow2.gif" alt="다음달"></a></span>
 								</p>
 								<table cellpadding="0" cellspacing="0" border="0"
 									summary="공연현황입니다.">
@@ -77,19 +75,19 @@
 									<thead>
 										<tr>
 											<th scope="col"><img
-												src="/trex/resources/images/perform/w_sun.gif" alt="일"></th>
+												src="/resources/images/perform/w_sun.gif" alt="일"></th>
 											<th scope="col"><img
-												src="/trex/resources/images/perform/w_mon.gif" alt="월"></th>
+												src="/resources/images/perform/w_mon.gif" alt="월"></th>
 											<th scope="col"><img
-												src="/trex/resources/images/perform/w_tue.gif" alt="화"></th>
+												src="/resources/images/perform/w_tue.gif" alt="화"></th>
 											<th scope="col"><img
-												src="/trex/resources/images/perform/w_wed.gif" alt="수"></th>
+												src="/resources/images/perform/w_wed.gif" alt="수"></th>
 											<th scope="col"><img
-												src="/trex/resources/images/perform/w_thr.gif" alt="목"></th>
+												src="/resources/images/perform/w_thr.gif" alt="목"></th>
 											<th scope="col"><img
-												src="/trex/resources/images/perform/w_fri.gif" alt="금"></th>
+												src="/resources/images/perform/w_fri.gif" alt="금"></th>
 											<th scope="col"><img
-												src="/trex/resources/images/perform/w_sat.gif" alt="토"></th>
+												src="/resources/images/perform/w_sat.gif" alt="토"></th>
 										</tr>
 									</thead>
 
@@ -199,43 +197,43 @@
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07"
 						rel="ov"><img
-						src="/trex/resources/images/perform/perfortab_01_out.gif" alt="전체공연"></a>
+						src="/resources/images/perform/perfortab_01_out.gif" alt="전체공연"></a>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=1"
 						rel="ov"><img
-						src="http://www.djac.or.kr/trex/resources/images/perform/perfortab_02_out.gif"
+						src="http://www.djac.or.kr/resources/images/perform/perfortab_02_out.gif"
 						alt="음악"></a> <a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=2"
 						rel="ov"><img
-						src="/trex/resources/images/perform/perfortab_03_out.gif" alt="연극"></a>
+						src="/resources/images/perform/perfortab_03_out.gif" alt="연극"></a>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=3"
 						rel="ov"><img
-						src="/trex/resources/images/perform/perfortab_04_out.gif" alt="뮤지컬"></a>
+						src="/resources/images/perform/perfortab_04_out.gif" alt="뮤지컬"></a>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=4"
 						rel="ov"><img
-						src="/trex/resources/images/perform/perfortab_05_out.gif" alt="오페라"></a>
+						src="/resources/images/perform/perfortab_05_out.gif" alt="오페라"></a>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=5"
 						rel="ov"><img
-						src="/trex/resources/images/perform/perfortab_06_out.gif" alt="무용"></a><br>
+						src="/resources/images/perform/perfortab_06_out.gif" alt="무용"></a><br>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=6"
 						rel="ov"><img
-						src="http://www.djac.or.kr/trex/resources/images/perform/perfortab_07_out.gif"
+						src="http://www.djac.or.kr/resources/images/perform/perfortab_07_out.gif"
 						alt="기획공연"></a> <a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=7"
 						rel="ov"><img
-						src="/trex/resources/images/perform/perfortab_08_out.gif" alt="공동기획"></a>
+						src="/resources/images/perform/perfortab_08_out.gif" alt="공동기획"></a>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=8"
 						rel="ov"><img
-						src="/trex/resources/images/perform/perfortab_09_out.gif" alt="대관공연"></a>
+						src="/resources/images/perform/perfortab_09_out.gif" alt="대관공연"></a>
 					<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=9"
 						rel="ov"><img
-						src="/trex/resources/images/perform/perfortab_10_out.gif" alt="시립예술단공연"></a>
+						src="/resources/images/perform/perfortab_10_out.gif" alt="시립예술단공연"></a>
 				</div>
 				 -->
 				<h4>07월공연</h4>
@@ -243,7 +241,7 @@
 				<ul id="schedulePerformance">
 				<c:forEach items="${PFGBoardList }" var="PFGBoard">
 					<li><span><img
-							src="/trex/resources/images/perform/performimg.jpg"
+							src="/resources/images/perform/performimg.jpg"
 							style="width: 123px" alt="${PFGBoard.title }"></span>
 						<dl>
 							<dt>
@@ -273,13 +271,13 @@
 						<p class="more">
 							<a href="#total"
 								onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzEyNw==');"><img
-								src="/trex/resources/images/perform/more.gif"
+								src="/resources/images/perform/more.gif"
 								alt="${PFGBoard.title } 공연예매"></a>
 						</p>
 						<p class="reser">
 							<a
 								href="detail/${PFGBoard.pfg_code }"><img
-								src="/trex/resources/images/perform/reser.gif"
+								src="/resources/images/perform/reser.gif"
 								alt="${PFGBoard.title } 상세보기"></a>
 
 						</p></li>
@@ -328,7 +326,7 @@
 						<p class="reser">
 							<a
 								href="/html/kr/performance/performance_010101.html?mode=V&amp;code=3138&amp;year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-								src="/trex/resources/images/perform/reser.gif" alt="한현진 바이올린 독주회 상세보기"></a>
+								src="/resources/images/perform/reser.gif" alt="한현진 바이올린 독주회 상세보기"></a>
 
 						</p></li>
 				</ul>
@@ -337,7 +335,7 @@
 
 		</div>
 		<!--quick  -->
-		<%@ include file="/WEB-INF/views/board//commons/quick.jsp"%>
+		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
 		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 	</div>
