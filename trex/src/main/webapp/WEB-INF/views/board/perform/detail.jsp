@@ -53,7 +53,7 @@
 				/////////////////////////////////// -->
 			</div>
 	<!--quick  -->
-	<%@ include file="/WEB-INF/views/board//commons/quick.jsp" %>
+	<%@ include file="/WEB-INF/views/board/commons/quick.jsp" %>
 	
 		</div>
 		<!-- //container -->
