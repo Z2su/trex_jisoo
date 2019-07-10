@@ -1,13 +1,15 @@
 package com.trex.dto;
 
+import java.util.Date;
+
 public class QnABoardVO {
 	private String qna_code;
 	private int qna_num;
 	private String title;
 	private String writer;
 	private String cont;
-	private String regdate;
-	private String modidate;
+	private Date regdate;
+	private Date modidate;
 	private String viewcnt;
 	public String getQna_code() {
 		return qna_code;
@@ -39,16 +41,16 @@ public class QnABoardVO {
 	public void setCont(String cont) {
 		this.cont = cont;
 	}
-	public String getRegdate() {
+	public Date getRegdate() {
 		return regdate;
 	}
-	public void setRegdate(String regdate) {
+	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	public String getModidate() {
+	public Date getModidate() {
 		return modidate;
 	}
-	public void setModidate(String modidate) {
+	public void setModidate(Date modidate) {
 		this.modidate = modidate;
 	}
 	public String getViewcnt() {

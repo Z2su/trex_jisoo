@@ -18,8 +18,7 @@ import com.trex.service.QnABoardService;
 @RequestMapping("/board/center")
 public class CenterController {
 
-	@Autowired
-	private QnABoardService service;
+	
 
 	@ModelAttribute("submenuTitle")
 	public String submenuTitle() {
@@ -51,16 +50,6 @@ public class CenterController {
 	public void faqGET() {
 	}
 
-	@RequestMapping(value = "/qna/list", method = RequestMethod.GET)
-	public void listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-		List<QnABoardVO> qnalist = service.listSearch(cri);
-		model.addAttribute("list", qnalist);
-
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri);
-		pageMaker.setTotalCount(service.readSearchBoardCount(cri));
-		model.addAttribute(pageMaker);
-
-	}
+	
 
 }

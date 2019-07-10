@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div id="contentswrap">
  
 			<!-- subvisual -->
@@ -71,6 +73,28 @@
 									</tr>
 								</thead>
 								<tbody>
+									
+									<c:if test="${!empty list }">
+						<c:forEach items="${list}" var="qnaboardVO">
+
+							<tr>
+								<td>${qnaboardVO.qna_num}</td>
+								<td><a
+									href='readPage${pageMaker.makeSearch(pageMaker.cri.page) }&qna_num=${qnaboardVO.qna_num}'>
+										${qnaboardVO.title}</a></td>
+								<td>${qnaboardVO.writer}</td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
+										value="${qnaboardVO.regdate}" /></td>
+								<td><span class="badge bg-red">${qnaboardVO.viewcnt }</span></td>
+							</tr>
+
+						</c:forEach>
+						</c:if>
+						<c:if test="${empty list }">
+							<tr>
+								<td style="text-align:center;" colspan="5">내용이 없습니다.</td>
+							</tr>
+						</c:if>
 									
 							
 									<tr>
