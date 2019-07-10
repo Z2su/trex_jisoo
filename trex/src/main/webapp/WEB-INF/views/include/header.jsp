@@ -13,7 +13,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
-
 <link rel="stylesheet"
    href="<%=request.getContextPath()%>/resources/css/common.css"
    type="text/css" media="all">
@@ -61,7 +60,7 @@
          <!-- 로고-->
          <!-- 글로벌메뉴-->
          <ul id="global">
-            <li><a href="<%=request.getContextPath()%>">HOME</a></li>
+            <li><a href="<%=request.getContextPath()%>/">HOME</a></li>
             <li><a href="login">로그인</a></li>
             <li><a href="join">회원가입</a></li>
             <li><a href="#" target="_blank" title="대전예술의전당 영문 홈페이지(새창)">?</a></li>
@@ -120,25 +119,16 @@
                         </ul>
                      </div>
                      </li>
-                  <li><a href="<%=request.getContextPath()%>/board" class="">게시판 <span class="arrow" style="display: none;"></span></a>
+                  <li><a href="<%=request.getContextPath()%>/board/pr/prlist" class="">홍보게시판 <span class="arrow" style="display: none;"></span></a>
                   <div id="tms">
                         <ul class="">
-                           <li><a href="#"
-                              class="">회원혜택안내</a></li>
-                           <li><a href="#"
-                              class="">견학신청</a></li>
+                           <li><a href="<%=request.getContextPath()%>/board/pr/prlist"
+                              class="">홍보게시판</a></li>
+                           <li><a href="<%=request.getContextPath()%>/board/pr/adlist"
+                              class="">광고게시판</a></li>
                            <li><a
-                              href="#"
-                              class="">오디션/공모사업신청</a></li>
-                           <li><a
-                              href="#"
+                              href="<%=request.getContextPath()%>/board/pr/slist"
                               class="">이벤트</a></li>
-                           <li><a
-                              href="#"
-                              class="">설문조사</a></li>
-                           <li><a
-                              href="#"
-                              class="">공연관람평</a></li>
                         </ul>
                      </div>
                      </li>
@@ -157,7 +147,7 @@
                         </ul>
                      </div></li>
                      
-                     <li><a href="/board/center/main"
+                     <li><a href="<%=request.getContextPath() %>/board/center/main"
                      class="">고객센터<span class="arrow" style="display: none;"></span></a>
                   <div id="tms">
                         <ul class="">
