@@ -5,6 +5,7 @@
 		select * 
 		from PFG
 	</select>
+	
 	<select id="selectPFGBoard" resultType="PFGBoard">
 		select * 
 		from PFG
@@ -39,17 +40,15 @@
 	<select id="selectPFGBoardNextSeq" resultType="int">
 		select PFG_SEQ.nextval as pfg_num from dual
 	</select>
-	<select id="selectPF" resultType="PF">
-		select *
-		from 
-		PF
-		where pf_code=#{pf_code}
+	<select id="selectPFGBoardListByPFcode" resultType="PFGBoard">
+		select * from 
+		from PFG_view
+		where pf_code = #{pf_code}
 	</select>
-	<select id="selectPFSH" resultType="PFSH" >
-		select *
-		from
-		PFSH
-		where pf_code=#{pf_code}
+	<select id="selectPFGBoardByPFcode" resultType="PFGBoard">
+		select * from 
+		from PFG_view
+		where pf_code = #{pf_code} and pf_startime=#{pf_starttime}
 	</select>
 	
 </mapper>

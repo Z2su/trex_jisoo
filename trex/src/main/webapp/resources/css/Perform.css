@@ -30,7 +30,7 @@
 .step01:after {content:"";display:block;visibility:hidden;clear:both;}
 .calendar {float:left;width:640px;*zoom:1;}
 .calendar:after {content:"";display:block;clear:both;visibility:hidden;}
-.calendar .month {position:relative;width:640px;height:28px;margin:0;padding:0 0 5px 0;text-align:center;font-weight:bold;color:#252525;line-height:28px;background:url(/resources/images/crd_month.gif) no-repeat;}
+.calendar .month {position:relative;width:640px;height:28px;margin:0;padding:0 0 5px 0;text-align:center;font-weight:bold;color:#252525;line-height:28px;background:url(//resources/images/perform/crd_month.gif) no-repeat;}
 .calendar .month span {display:block;position:absolute;top:8px;width:18px;height:14px;}
 .calendar .month span.prev {left:9px;}
 .calendar .month span.next {right:9px;}
@@ -81,10 +81,10 @@
 
 
 /* 웹진 */
-#Webzine{overflow:hidden;margin:15px 0 0 0;padding:10px 0;background:url(resources/images/top_line.gif) repeat-x left top;border-bottom:dashed 1px #c1c1c1;*zoom:1;}
+#Webzine{overflow:hidden;margin:15px 0 0 0;padding:10px 0;background:url(/resources/images/perform/top_line.gif) repeat-x left top;border-bottom:dashed 1px #c1c1c1;*zoom:1;}
 #Webzine li{display:inline-block;float:left;text-align:center;padding:11px;width:136px;}
 #Webzine li:after {content:"";display:block;clear:both;visibility:hidden;}
-#Webzine li strong{padding:0 0 0 18px;background:url(resources/images/icon.gif) no-repeat left top;}
+#Webzine li strong{padding:0 0 0 18px;background:url(/resources/images/perform/icon.gif) no-repeat left top;}
 #Webzine li dl{margin:0;overflow:hidden;}
 #Webzine li dl dt{margin:5px 0 0 0;padding:4px;width:122px;height:160px;border:1px solid #dddddd;background:#ffffff;}
 #Webzine li dl dt img{width:122px;height:160px;}
@@ -117,7 +117,7 @@
 
 .fieldTrip {margin:0;*zoom:1;}
 .fieldTrip:after {content:"";display:block;visibility:hidden;clear:both;}
-	.Tripcalendar {float:left;width:284px;*zoom:1;background:#f5f5f5 url(resources/images/cal.gif) no-repeat left top;}
+	.Tripcalendar {float:left;width:284px;*zoom:1;background:#f5f5f5 url(/resources/images/perform/cal.gif) no-repeat left top;}
 	.Tripcalendar:after {content:"";display:block;clear:both;visibility:hidden;}
 	.Tripcalendar .month {position:relative;width:284px;height:15px;margin:0 0 10px 0;text-align:center;font-weight:bold;color:#252525;line-height:15px;background:#fff;}
 	.Tripcalendar .month span {display:block;position:absolute;top:0;width:14px;height:13px;}
@@ -131,42 +131,42 @@
 
 .contTop {float:left;width:287px;padding:0;*zoom:1;} 
 .contTop:after {content:"";display:block;visibility:hidden;clear:both;}
-.contTop h4{margin:0 0 6px 19px;padding:0 0 0 17px;font-size:12px;color:#3c3c3c;letter-spacing:-1px;background:url(resources/images/cal_bul.gif) no-repeat left 2px;}
+.contTop h4{margin:0 0 6px 19px;padding:0 0 0 17px;font-size:12px;color:#3c3c3c;letter-spacing:-1px;background:url(/resources/images/perform/cal_bul.gif) no-repeat left 2px;}
 .contTop ul{margin:0 0 7px 22px;padding:0;}
 .contTop ul:after {content:"";display:block;visibility:hidden;clear:both;}
-.contTop ul li{margin-bottom:0px;padding-left:7px;background:url(resources/images/cal_ul.gif) no-repeat left 6px;color:#5d5d5d;letter-spacing:-1px;}
+.contTop ul li{margin-bottom:0px;padding-left:7px;background:url(/resources/images/perform/cal_ul.gif) no-repeat left 6px;color:#5d5d5d;letter-spacing:-1px;}
 
 .check_txt{position:absolute; overflow:hidden; height:0; width:0; font-size:0; visibility:hidden;}
 
 
-#scheDule{overflow:hidden;padding:0 0 5px 0;width:640px;background:url(resources/images/schedule_bg.gif) no-repeat left bottom;*zoom:1;}
+#scheDule{overflow:hidden;padding:0 0 5px 0;width:640px;background:url(/resources/images/perform/schedule_bg.gif) no-repeat left bottom;*zoom:1;}
 #scheDule:after {content:"";display:block;visibility:hidden;clear:both;}
-#scheDule strong{display:block;width:640px;height:16px;text-indent:-9999px;background:url(resources/images/schedule_bul.gif) no-repeat left top;}
+#scheDule strong{display:block;width:640px;height:16px;text-indent:-9999px;background:url(/resources/images/perform/schedule_bul.gif) no-repeat left top;}
 #scheDule ul.sche{margin:-8px 0 0 10px;width:620px;height:31px;}
 #scheDule ul.sche:after {content:"";display:block;visibility:hidden;clear:both;}
 #scheDule ul.sche li{display:inline;float:left;margin:0 0 0 6px;}
 #scheDule ul.tabmenu{margin:-8px 0 0 10px;width:620px;height:31px;}
 #scheDule ul.tabmenu:after {content:"";display:block;visibility:hidden;clear:both;}
 #scheDule ul.tabmenu li{display:inline;float:left;margin:0 0 0 5px;}
-#month{overflow:hidden;margin:5px 0 5px 5px;width:626px;background:url(resources/images/scheduletab_bg.gif) no-repeat left bottom;}
-#month strong{display:block;width:626px;height:28px;text-indent:-9999px;background:url(resources/images/scheduletab_bul.gif) no-repeat left top;}
+#month{overflow:hidden;margin:5px 0 5px 5px;width:626px;background:url(/resources/images/perform/scheduletab_bg.gif) no-repeat left bottom;}
+#month strong{display:block;width:626px;height:28px;text-indent:-9999px;background:url(/resources/images/perform/scheduletab_bul.gif) no-repeat left top;}
 #month .cal{overflow:hidden;position:relative;margin:0 21px 0 17px;padding:0 0 21px 0;width:595px;}
 #month .cal .contTop {float:left;width:290px;margin:0 0 0 21px;padding:0;*zoom:1;} 
 #month .cal .contTop:after {content:"";display:block;visibility:hidden;clear:both;}
-#month .cal .contTop h4{margin:0 0 0 19px;padding:0 0 0 17px;font-size:12px;color:#3c3c3c;letter-spacing:-1px;background:url(resources/images/cal_bul.gif) no-repeat left 2px;}
+#month .cal .contTop h4{margin:0 0 0 19px;padding:0 0 0 17px;font-size:12px;color:#3c3c3c;letter-spacing:-1px;background:url(/resources/images/perform/cal_bul.gif) no-repeat left 2px;}
 #month .cal .contTop .dayText{display:block;line-height:30px;width:255px;height:28px;margin:5px 0 7px 7px;padding:0 14px;background:#f5f5f5;color:#666;font-weight:bold;letter-spacing:-1px;}
 #month .cal .contTop ul{margin:0 0 0 21px;padding:0;}
-#month .cal .contTop ul li{display:block;float:none;margin-bottom:0px;padding-left:7px;background:url(resources/images/cal_ul.gif) no-repeat left 6px;color:#5d5d5d;letter-spacing:-1px;}
+#month .cal .contTop ul li{display:block;float:none;margin-bottom:0px;padding-left:7px;background:url(/resources/images/perform/cal_ul.gif) no-repeat left 6px;color:#5d5d5d;letter-spacing:-1px;}
 #performanceTab{margin:22px 0 15px 0;text-align:center;}
 #performanceTab a{margin:0;}
 #schedulePerformance{margin:15px 0 0 0;}
-#schedulePerformance li{display:block;position:relative;margin:0 0 23px 0;padding:0 0 18px 0;width:640px;background:url(resources/images/performancebottom.gif) no-repeat left bottom;}
+#schedulePerformance li{display:block;position:relative;margin:0 0 23px 0;padding:0 0 18px 0;width:640px;background:url(/resources/images/perform/performancebottom.gif) no-repeat left bottom;}
 #schedulePerformance li:after {content:"";display:block;visibility:hidden;clear:both;}
-#schedulePerformance li span{display:block;float:left;margin:0 8px 0 0;width:141px;height:186px;background:url(resources/images/performanceimg.gif) no-repeat left top;}
+#schedulePerformance li span{display:block;float:left;margin:0 8px 0 0;width:141px;height:186px;background:url(/resources/images/perform/performanceimg.gif) no-repeat left top;}
 #schedulePerformance li span img{margin:5px 0 0 6px;width:123px;height:172px;}
 #schedulePerformance li dl{display:block;float:left;margin:0;width:490px;}
-#schedulePerformance li dl dt{margin:0 0 14px 0;padding:0 0 0 14px;width:476px;line-height:26px;background:url(resources/images/performancetitle.gif) no-repeat left top;font-weight:bold;letter-spacing:-1px;color:#3c3c3c;}
-#schedulePerformance li dl dd{margin:0 0 0 14px;padding:0 0 0 7px;width:469px;line-height:20px;background:url(resources/images/cal_ul.gif) no-repeat left 8px;color:#666;}
+#schedulePerformance li dl dt{margin:0 0 14px 0;padding:0 0 0 14px;width:476px;line-height:26px;background:url(/resources/images/perform/performancetitle.gif) no-repeat left top;font-weight:bold;letter-spacing:-1px;color:#3c3c3c;}
+#schedulePerformance li dl dd{margin:0 0 0 14px;padding:0 0 0 7px;width:469px;line-height:20px;background:url(/resources/images/perform/cal_ul.gif) no-repeat left 8px;color:#666;}
 /*#schedulePerformance li .more{position:absolute;top:4px;right:78px;margin:0;}
 #schedulePerformance li .reser{position:absolute;top:4px;right:7px;margin:0;}*/
 #schedulePerformance li .more{position:absolute;top:4px;right:78px;margin:0;}
@@ -188,18 +188,18 @@
 
 #perforPlace{position:absolute;top:5px;left:387px;color:#75787c;font-size:11px;}
 #perforPlace li{float:left;margin:0 10px 0 0;padding-left:21px;}
-#perforPlace .a_bul{background:url(resources/images/a_bul.gif) no-repeat left top;}
-#perforPlace .e_bul{background:url(resources/images/e_bul.gif) no-repeat left top;}
-#perforPlace .o_bul{margin:0;background:url(resources/images/o_bul.gif) no-repeat left top;}
+#perforPlace .a_bul{background:url(/resources/images/perform/a_bul.gif) no-repeat left top;}
+#perforPlace .e_bul{background:url(/resources/images/perform/e_bul.gif) no-repeat left top;}
+#perforPlace .o_bul{margin:0;background:url(/resources/images/perform/o_bul.gif) no-repeat left top;}
 #perforPlace_en{position:absolute;top:5px;left:315px;color:#75787c;font-size:11px;}
 #perforPlace_en li{float:left;margin:0 10px 0 0;padding-left:21px;}
-#perforPlace_en .a_bul{background:url(resources/images/a_bul.gif) no-repeat left top;}
-#perforPlace_en .e_bul{background:url(resources/images/e_bul.gif) no-repeat left top;}
-#perforPlace_en .o_bul{margin:0;background:url(resources/images/o_bul.gif) no-repeat left top;}
+#perforPlace_en .a_bul{background:url(/resources/images/perform/a_bul.gif) no-repeat left top;}
+#perforPlace_en .e_bul{background:url(/resources/images/perform/e_bul.gif) no-repeat left top;}
+#perforPlace_en .o_bul{margin:0;background:url(/resources/images/perform/o_bul.gif) no-repeat left top;}
 #scheduleYear{width:640px;}
-#showView{position:relative;margin:0;padding:0 0 40px 0;width:640px;background:url(resources/images/showview_bg_02.gif) no-repeat left bottom;}
+#showView{position:relative;margin:0;padding:0 0 40px 0;width:640px;background:url(/resources/images/perform/showview_bg_02.gif) no-repeat left bottom;}
 #showView:after {content:"";display:block;visibility:hidden;clear:both;}
-#showView strong.top{display:block;width:640px;height:25px;text-indent:-9999px;background:url(resources/images/showview_bg_01.gif) no-repeat left top;}
+#showView strong.top{display:block;width:640px;height:25px;text-indent:-9999px;background:url(/resources/images/perform/showview_bg_01.gif) no-repeat left top;}
 #showView .pefrImg{display:block;float:left;margin: 0 0 0 26px;width:214px;}
 /*
 #showView .pefrImg .ImgBox{margin:0;text-align:center;}
@@ -208,10 +208,10 @@
 #showView .pefrImg ul li{display:block;float:left;margin:17px 16px 0 0;width:41px;height:39px;background:#e4e4e4;}
 #showView .pefrImg ul li img{width:41px;height:39px;}
 #showView .pefrImg ul li.end{margin:17px 0 0 0;}*/
-#showView .pefrText{display:block;float:left;margin:0 0 10px 41px;padding-top:5px;width:318px;border-top:1px solid #666;background:url(resources/images/showview_bg.gif) repeat-y left top;}
+#showView .pefrText{display:block;float:left;margin:0 0 10px 41px;padding-top:5px;width:318px;border-top:1px solid #666;background:url(/resources/images/perform/showview_bg.gif) repeat-y left top;}
 #showView .pefrText li{padding:5px 0;border-bottom:1px solid #ddd;}
 #showView .pefrText li:after {content:"";display:block;visibility:hidden;clear:both;}
-#showView .pefrText li strong{display:block;float:left;width:95px;padding:0 0 0 16px;background:url(resources/images/cal_ul.gif) no-repeat 10px 5px; color:#000;}
+#showView .pefrText li strong{display:block;float:left;width:95px;padding:0 0 0 16px;background:url(/resources/images/perform/cal_ul.gif) no-repeat 10px 5px; color:#000;}
 #showView .pefrText li span{display:block;float:right;width:186px;}
 
 #showView .reserer{margin:0 20px 0 0;text-align:right;}
@@ -221,7 +221,7 @@
 #showView .showviewList{float:right;margin:10px 3px 0 0;}
 */
 #showviewTab{margin:22px auto 15px auto;}
-#showviewTab span{display:inline-block;width:103px;line-height:30px;background:url(resources/images/perfortab_bg.gif) no-repeat left top;text-align:center;}
+#showviewTab span{display:inline-block;width:103px;line-height:30px;background:url(/resources/images/perform/perfortab_bg.gif) no-repeat left top;text-align:center;}
 #showviewTab a{display:inline-block;}
 #showviewTab a:link,
 #showviewTab a:visited {color:#fff;}
@@ -251,9 +251,9 @@
 
 
 
-.showcontent{display:block;padding:0 0 20px 0;width:640px;background:url(resources/images/showcontent.gif) no-repeat left bottom;*zoom:1;}
+.showcontent{display:block;padding:0 0 20px 0;width:640px;background:url(/resources/images/perform/showcontent.gif) no-repeat left bottom;*zoom:1;}
 .showcontent:after {content:"";display:block;visibility:hidden;clear:both;}
-.showcontent > strong{display:block;width:640px;height:18px;text-indent:-9999px;background:url(resources/images/showcontent_top.gif) no-repeat left top;}
+.showcontent > strong{display:block;width:640px;height:18px;text-indent:-9999px;background:url(/resources/images/perform/showcontent_top.gif) no-repeat left top;}
 /*.showcontent div{overflow-x:hidden;overflow-y:auto;margin:0 auto 20px auto;padding:0 0 20px 0;line-height:20px;width:600px;height:480px;}*/
 .showcontent div{margin:0 auto 20px auto;padding:0 0 20px 0;line-height:20px;width:600px;}
 .showcontent div img{width:600px;line-height:20px;}
@@ -329,29 +329,29 @@
 #etcList{margin:0;width:640px;*zoom:1;}
 #etcList li{position:relative;margin:0 0 40px 0;width:640px;}
 #etcList li:after {content:"";display:block;visibility:hidden;clear:both;}
-#etcList li span{display:block;float:left;width:142px;height:181px;background:url(resources/images/etcshow_bg.gif) no-repeat left top;}
+#etcList li span{display:block;float:left;width:142px;height:181px;background:url(/resources/images/perform/etcshow_bg.gif) no-repeat left top;}
 #etcList li span img{margin:5px 0 0 6px;width:123px;height:164px;}
 #etcList li dl{display:block;float:left;margin:5px 0 0 8px;width:490px;line-height:20px;color:#666;}
-#etcList li dl dt{margin:0 0 5px 0;padding:0 0 0 15px;width:475px;line-height:26px;color:#3c3c3c;font-weight:bold;letter-spacing:-1px;background:url(resources/images/etcshow_title.gif) no-repeat left top;}
-#etcList li dl dd{display:inline-block;float:none;margin:0 0 0 14px;padding:0 0 0 7px;background:url(resources/images/cal_ul.gif) no-repeat left 8px;color:#5d5d5d;width:440px;}
+#etcList li dl dt{margin:0 0 5px 0;padding:0 0 0 15px;width:475px;line-height:26px;color:#3c3c3c;font-weight:bold;letter-spacing:-1px;background:url(/resources/images/perform/etcshow_title.gif) no-repeat left top;}
+#etcList li dl dd{display:inline-block;float:none;margin:0 0 0 14px;padding:0 0 0 7px;background:url(/resources/images/perform/cal_ul.gif) no-repeat left 8px;color:#5d5d5d;width:440px;}
 #etcList li dl dd strong{color:#3c3c3c;font-weight:normal;}
-#etcList li dl dd.content{display:block;margin:3px 0 0 0;padding:8px 52px 12px 19px;width:418px;background:url(resources/images/etc_content.gif) no-repeat left top;line-height:18px;}
+#etcList li dl dd.content{display:block;margin:3px 0 0 0;padding:8px 52px 12px 19px;width:418px;background:url(/resources/images/perform/etc_content.gif) no-repeat left top;line-height:18px;}
 #etcList li .more{position:absolute;top:9px;right:20px;margin:0;}
 
-#etcView{margin:0;padding:0;width:640px;background:url(resources/images/etcview_bottom.gif) no-repeat left bottom;*zoom:1;}
+#etcView{margin:0;padding:0;width:640px;background:url(/resources/images/perform/etcview_bottom.gif) no-repeat left bottom;*zoom:1;}
 #etcView:after {content:"";display:block;visibility:hidden;clear:both;}
-#etcView strong{display:block;width:640px;height:25px;text-indent:-9999px;background:url(resources/images/etcview_top.gif) no-repeat left top;}
+#etcView strong{display:block;width:640px;height:25px;text-indent:-9999px;background:url(/resources/images/perform/etcview_top.gif) no-repeat left top;}
 #etcView .etcviewContent{margin:0 0 0 28px;width:599px;}
 #etcView .etcviewContent:after {content:"";display:block;visibility:hidden;clear:both;}
 #etcView .etcviewContent .etcviewImg{display:block;float:left;width:214px;text-align:center;}
 #etcView .etcviewContent .etcviewText{display:block;float:left;margin:0 0 0 51px;width:334px;}
-#etcView .etcviewContent .etcviewText dl{display:block;margin:0;padding:10px 0 0 0;width:334px;line-height:25px;background:url(resources/images/etcviewtext_bg.gif) no-repeat left top;*zoom:1;}
+#etcView .etcviewContent .etcviewText dl{display:block;margin:0;padding:10px 0 0 0;width:334px;line-height:25px;background:url(/resources/images/perform/etcviewtext_bg.gif) no-repeat left top;*zoom:1;}
 #etcView .etcviewContent .etcviewText dl:after {content:"";display:block;visibility:hidden;clear:both;}
-#etcView .etcviewContent .etcviewText dl dt{display:block;float:left;margin:0 0 0 10px;_margin:0 0 0 5px;width:64px;padding:0 0 0 7px;background:url(resources/images/cal_ul.gif) no-repeat left 8px;color:#666; height:32px;}
+#etcView .etcviewContent .etcviewText dl dt{display:block;float:left;margin:0 0 0 10px;_margin:0 0 0 5px;width:64px;padding:0 0 0 7px;background:url(/resources/images/perform/cal_ul.gif) no-repeat left 8px;color:#666; height:32px;}
 #etcView .etcviewContent .etcviewText dl dd{display:block;float:right;margin:0;padding:0 0 0 0;width:237px; height:32px; line-height:120%}
 #etcView .etcviewContent .etcviewText dl dt.longTitle{clear:both;display:block;float:none;margin:0 0 0 15px;padding:35px 0 0 0;width:319px;background:none;}
 #etcView .etcviewContent .etcviewText dl dd.longText{display:block;float:none;margin:9px 0 0 17px;padding:0;width:300px;line-height:18px;color:#3c3c3c;}
-#etcView .etcviewContent .etcviewText .etcviewbtn{text-align:center;margin:17px 0 34px 0;padding:19px 0 0 0;background:url(resources/images/etcviewtext_line.gif) no-repeat left top;}
+#etcView .etcviewContent .etcviewText .etcviewbtn{text-align:center;margin:17px 0 34px 0;padding:19px 0 0 0;background:url(/resources/images/perform/etcviewtext_line.gif) no-repeat left top;}
 
 /**************본인확인***************/
 /**************로그인*****************/
@@ -459,7 +459,7 @@
 .step01_prog:after {content:"";display:block;visibility:hidden;clear:both;}
 .calendar_prog {float:left;width:590px;*zoom:1;}
 .calendar_prog:after {content:"";display:block;clear:both;visibility:hidden;}
-.calendar_prog .month {position:relative;width:590px;height:28px;margin:0;padding:0 0 5px 0;text-align:center;font-weight:bold;color:#252525;line-height:28px;background:url(/resources/images/crd_month.gif) no-repeat;}
+.calendar_prog .month {position:relative;width:590px;height:28px;margin:0;padding:0 0 5px 0;text-align:center;font-weight:bold;color:#252525;line-height:28px;background:url(//resources/images/perform/crd_month.gif) no-repeat;}
 .calendar_prog .month span {display:block;position:absolute;top:8px;width:18px;height:14px;}
 .calendar_prog .month span.prev {left:9px;}
 .calendar_prog .month span.next {right:9px;}
@@ -480,4 +480,4 @@
 .prog_icon_index ul li{float:left;margin-right:6px;}
 
 .popover-content{font-size:13px!important;}
-.popover-content ul li{margin: 0px;padding-left:5px;line-height:18px;background: url('resources/images/cal_ul.gif') no-repeat left 8px;color: #666;letter-spacing:-1px;}
+.popover-content ul li{margin: 0px;padding-left:5px;line-height:18px;background: url('/resources/images/perform/cal_ul.gif') no-repeat left 8px;color: #666;letter-spacing:-1px;}

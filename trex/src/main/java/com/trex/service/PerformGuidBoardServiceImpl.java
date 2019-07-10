@@ -65,7 +65,7 @@ public class PerformGuidBoardServiceImpl implements PerformGuidBoardService {
 		PFGBoardDAO.deletePFGBoard(pfg_code);
 
 	}
-	@Override
+	/*@Override
 	public PerformVO getPF(String pf_code) throws SQLException {
 		PerformVO PF = PFGBoardDAO.selectPF(pf_code);
 		return PF;
@@ -76,6 +76,16 @@ public class PerformGuidBoardServiceImpl implements PerformGuidBoardService {
 		PerformScheduleVO PFSH = PFGBoardDAO.selectPFSH(pf_code);
 		
 		return PFSH;
+	}*/
+	@Override
+	public List<PerformGuidBoardVO> getBoardListByPF(String pf_code) throws SQLException {
+		List<PerformGuidBoardVO> PFGBoardList = PFGBoardDAO.selectPFGBoardListByPFcode(pf_code);
+		return PFGBoardList;
+	}
+	@Override
+	public PerformGuidBoardVO getBoardByPF(String pf_code) throws SQLException {
+		PerformGuidBoardVO PFGBoard = PFGBoardDAO.selectPFGBoardByPFcode(pf_code);
+		return PFGBoard;
 	}
 
 }

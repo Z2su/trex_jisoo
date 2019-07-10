@@ -21,6 +21,10 @@ public interface PerformGuidBoardDAO {
 	
 	int selectPFGBoardNextSeq() throws SQLException;
 	
-	PerformVO selectPF(String pf_code) throws SQLException;
-	PerformScheduleVO selectPFSH(String pf_code) throws SQLException;
+	List<PerformGuidBoardVO> selectPFGBoardListByPFcode(String pf_code) throws SQLException;
+	PerformGuidBoardVO selectPFGBoardByPFcode(String pf_code) throws SQLException;
+	
+	
+	/*PerformVO selectPF(String pf_code) throws SQLException;
+	PerformScheduleVO selectPFSH(String pf_code) throws SQLException;*/
 }

@@ -9,9 +9,11 @@
 		<div class="subv_performance">
 			<div class="subv_pat">
 				<p>
-					<strong><img
-						src="/images/kr/common_2015/ma_service_type.png"
-						alt="Daejeon Arts Center"></strong> 문화로 시민을 행복하게! 대전예술의전당
+					<strong>
+					<img
+						src="/resources/images/ma_service_type.png"
+						alt="Daejeon Arts Center">
+						</strong> 문화로 시민을 행복하게! 대전예술의전당
 				</p>
 			</div>
 		</div>
@@ -45,7 +47,7 @@
 			<!-- 컨텐츠 타이틀 -->
 			
 			<h3 class="cnt_ti">공연정보</h3> 
-			<input  onclick="window.open('regist','글등록','width=600,height=300,scrollbars=no');" type="button" id="regist" value="글등록"/>
+			<input  onclick="location.href='regist'" type="button" id="regist" value="글등록"/>
 			
 			<div id="txt">
 				<div id="scheDule">
@@ -336,7 +338,7 @@
 		</div>
 		<!--quick  -->
 		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
-		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 
 	</div>
 	<!-- //container -->

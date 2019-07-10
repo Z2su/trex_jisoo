@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/Perform.css" type="text/css" media="all">
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<link rel="stylesheet" href="/resources/css/Perform.css" type="text/css" media="all">
 <div id="contentswrap">
 
 	<!-- subvisual -->
@@ -9,9 +10,11 @@
 		<div class="subv_performance">
 			<div class="subv_pat">
 				<p>
-					<strong><img
-						src="/images/kr/common_2015/ma_service_type.png"
-						alt="Daejeon Arts Center"></strong> 문화로 시민을 행복하게! 대전예술의전당
+					<strong>
+					<img
+						src="/resources/images/ma_service_type.png"
+						alt="Daejeon Arts Center">
+						</strong> 문화로 시민을 행복하게! 대전예술의전당
 				</p>
 			</div>
 
@@ -45,6 +48,7 @@
 		<div id="content">
 			<!-- 컨텐츠 타이틀 -->
 			<h3 class="cnt_ti">detail</h3>
+			<input  type="button" id="remove" value="삭제"/>
 
 			<div id="showView">
 				<strong class="top"></strong>
@@ -56,50 +60,50 @@
 						<div class="galleryView">
 							<ul class="bicImage">
 								<li><a
-									href="/upload/performance/performance_1_155383691853133_518870747.jpg"
+									href="/resources/images/perform/performance_1_155383691853133_518870747.jpg"
 									rel="facebox"><img
-										src="/upload/performance/performance_1_155383691853133_518870747.jpg"
+										src="/resources/images/perform/performance_1_155383691853133_518870747.jpg"
 										alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”" style="display: inline;"></a></li>
 								<li><a
-									href="/upload/performance/performance_2_155383691903589_1853500726.jpg"
+									href="/resources/images/perform/performance_2_155383691903589_1853500726.jpg"
 									rel="facebox"><img
-										src="/upload/performance/performance_2_155383691903589_1853500726.jpg"
+										src="/resources/images/perform/performance_2_155383691903589_1853500726.jpg"
 										alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”" style="display: none;"></a></li>
-								<li><a href="/upload/performance/" rel="facebox"><img
-										src="/upload/performance/" alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”"
+								<li><a href="/resources/images/perform/" rel="facebox"><img
+										src="/resources/images/perform/" alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”"
 										style="display: none;"></a></li>
-								<li><a href="/upload/performance/" rel="facebox"><img
-										src="/upload/performance/" alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”"
+								<li><a href="/resources/images/perform/" rel="facebox"><img
+										src="/resources/images/perform/" alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”"
 										style="display: none;"></a></li>
 							</ul>
 							<ul class="bicImage1">
 								<li><a
-									href="/upload/performance/performance_1_155383691853133_518870747.jpg"
+									href="/resources/images/perform/performance_1_155383691853133_518870747.jpg"
 									rel="facebox"><img
 										src="/resources/images/perform/expansion.gif" alt="확대보기"></a></li>
 								<li><a
-									href="/upload/performance/performance_2_155383691903589_1853500726.jpg"
+									href="/resources/images/perform/performance_2_155383691903589_1853500726.jpg"
 									rel="facebox"><img
 										src="/resources/images/perform/expansion.gif" alt="확대보기"></a></li>
-								<li><a href="/upload/performance/" rel="facebox"><img
+								<li><a href="/resources/images/perform/" rel="facebox"><img
 										src="/resources/images/perform/expansion.gif" alt="확대보기"></a></li>
-								<li><a href="/upload/performance/" rel="facebox"><img
+								<li><a href="/resources/images/perform/" rel="facebox"><img
 										src="/resources/images/perform/expansion.gif" alt="확대보기"></a></li>
 							</ul>
 						</div>
 						<div id="discount" style="display: none;">예당 유료회원 법인
 							20%할인(100매), 골드 20%(4매), 블루 15%(4매)</div>
 
-						<!-- <p class="no_mar center top_mar_5"><a href="/upload/performance/performance_1_155383691853133_518870747.jpg" rel="facebox"><img src="/resources/images/perform/expansion.gif" alt="확대보기" /></a></p>-->
+						<!-- <p class="no_mar center top_mar_5"><a href="/resources/images/perform/performance_1_155383691853133_518870747.jpg" rel="facebox"><img src="/resources/images/perform/expansion.gif" alt="확대보기" /></a></p>-->
 						<div class="galleryThum">
 							<div class="wrap">
 								<ul class="thumnail">
 									<li><a href="#total" onclick="thumImg(1); return false;"><img
-											src="/upload/performance/thm_performance_1_155383691853133_518870747.jpg"
+											src="/resources/images/perform/thm_performance_1_155383691853133_518870747.jpg"
 											alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”"
 											style="width: 41px; height: 39px;"></a></li>
 									<li><a href="#total" onclick="thumImg(2); return false;"><img
-											src="/upload/performance/thm_performance_2_155383691903589_1853500726.jpg"
+											src="/resources/images/perform/thm_performance_2_155383691903589_1853500726.jpg"
 											alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”"
 											style="width: 41px; height: 39px;"></a></li>
 								</ul>
@@ -111,16 +115,25 @@
 					photoAlbum();
 				</script>
 				<ul class="pefrText">
-					<li><strong>공연구분</strong><span>대관공연 </span></li>
-					<li><strong>공연기간</strong><span>2019년 7월 10일(수) /1일 1회</span></li>
-					<li><strong>공연시간</strong><span>19:30</span></li>
+					<li><strong>공연구분</strong><span>${PFGBoard.divi } </span></li>
+					<li><strong>공연날짜</strong><span>
+					<fmt:formatDate value="${PFGBoard.rundate }" pattern="yyyy-MM-dd"/>
+					
+					  
+					
+					/1일 1회</span></li>
+					<li><strong>공연시간</strong><span>
+					<fmt:formatDate value="${PFGBoard.starttime }" pattern="HH:mm"/>
+					
+					
+					</span></li>
 					<li><strong>공연장소</strong><span>대전예술의전당 아트홀</span></li>
 					<li><strong>티켓정보</strong><span>R석 7만원, S석 6만원, A석 5만원,
 							B석 4만원</span></li>
-					<li><strong>소요시간</strong><span>약 90분(휴식 없음)</span></li>
+					<li><strong>소요시간</strong><span>${PFGBoard.runtime }(휴식 없음)</span></li>
 					<li><strong>관람등급</strong><span>8세 이상</span></li>
 					<li><strong>공연주최</strong><span>브라보컴</span></li>
-					<li><strong>공연장르</strong><span>음악</span></li>
+					<li><strong>공연장르</strong><span>${PFGBoard.cls }</span></li>
 					<li><strong>문의처</strong><span>브라보컴 1661-1605</span></li>
 				</ul>
 				<p class="reserer">
@@ -149,14 +162,19 @@
 				</div>
 			</div>
 			<div id="showviewTab">
-				<span><a href="#show_view_01"
-					onclick="showview01(0);return false;">공연소개</a></span> <span><a
-					href="#show_view_02" onclick="showview02(0);return false;">프로그램소개</a></span>
-				<span><a href="#show_view_03"
-					onclick="showview03(0);return false;">출연진소개</a></span> <span><a
-					href="#show_view_04" onclick="showview04(0);return false;">기타사항</a></span>
-				<span><a href="#show_view_05"
-					onclick="showview05(0);return false;">이벤트</a></span>
+				<span>
+				<a href="#show_view_01" onclick="showview01(0);return false;">공연소개</a>
+				</span> 
+				<span>
+				<a href="#show_view_02" onclick="showview02(0);return false;">프로그램소개</a>
+				</span>
+				<span>
+				<a href="#show_view_03" onclick="showview03(0);return false;">출연진소개</a>
+				</span> 
+				<span><a href="#show_view_04" onclick="showview04(0);return false;">기타사항</a>
+				</span>
+				<span>
+				<a href="#show_view_05" onclick="showview05(0);return false;">이벤트</a></span>
 			</div>
 			<div class="showcontent">
 		<strong></strong>
@@ -166,8 +184,20 @@
 				</div>
 
 		</div>
+		
+		<script>
+		$('#remove').on('click',function(e){
+			alert("gg");
+			e.preventDefault();
+			
+			location.href="/board/perform/delete/${PFGBoard.pfg_code}";	
+
+		});
+		
+		</script>
 		<!--quick  -->
 		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
+		
 
 	</div>
 	<!-- //container -->
