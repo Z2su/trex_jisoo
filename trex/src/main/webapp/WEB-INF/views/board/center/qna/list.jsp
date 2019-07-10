@@ -80,7 +80,7 @@
 							<tr>
 								<td>${qnaboardVO.qna_num}</td>
 								<td><a
-									href='readPage${pageMaker.makeSearch(pageMaker.cri.page) }&qna_num=${qnaboardVO.qna_num}'>
+									href='detail${pageMaker.makeSearch(pageMaker.cri.page) }&qna_num=${qnaboardVO.qna_num}'>
 										${qnaboardVO.title}</a></td>
 								<td>${qnaboardVO.writer}</td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"

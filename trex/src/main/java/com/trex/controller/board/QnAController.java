@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.spring.dto.BoardVO;
+
 import com.trex.controller.PageMaker;
 import com.trex.controller.SearchCriteria;
 import com.trex.dto.QnABoardVO;
@@ -34,11 +34,12 @@ public class QnAController {
 
 	}
 	
-	@RequestMapping(value="/detail",method = RequestMethod.GET)
-	public void readPage(@ModelAttribute("cri")SearchCriteria cri,
+	@RequestMapping(value="/detail",method = RequestMethod.GET) 
+	public void detail(@ModelAttribute("cri")SearchCriteria cri,
 			int qna_num, Model model )throws Exception{
 		QnABoardVO qnaboard = service.read(qna_num);
-		model.addAttribute(qnaboard);
+		model.addAttribute("qnaboard",qnaboard);
+		System.out.println(qnaboard);
 	}
 
 }
