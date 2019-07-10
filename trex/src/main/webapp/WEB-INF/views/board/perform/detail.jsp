@@ -14,6 +14,7 @@
 						alt="Daejeon Arts Center"></strong> 문화로 시민을 행복하게! 대전예술의전당
 				</p>
 			</div>
+
 		</div>
 	</div>
 	<!-- //subvisual -->
@@ -44,7 +45,6 @@
 		<div id="content">
 			<!-- 컨텐츠 타이틀 -->
 			<h3 class="cnt_ti">detail</h3>
-			${PFGBoard.cont }
 
 			<div id="showView">
 				<strong class="top"></strong>
@@ -161,6 +161,7 @@
 			<div class="showcontent">
 		<strong></strong>
 				<div id="show_view_01">
+								${PFGBoard.cont }
 					
 				</div>
 
