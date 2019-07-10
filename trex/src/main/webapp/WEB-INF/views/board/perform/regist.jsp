@@ -87,7 +87,9 @@
 						success:function(data){
 							$.each(data, function(idx, val) {
 								alert(idx + " " + val.pfsh_code);
-					
+								var option = $('<option>'+val.pfsh_code+'</option>');
+								alert("option -"+option);
+								$('select[name="time"]').append(option);
 							});
 							
 						//alert("성공>>"+data.val.pfsh_code);
