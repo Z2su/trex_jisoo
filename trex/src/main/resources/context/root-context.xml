@@ -7,4 +7,5 @@
 	<import resource="classpath:context/PFG-context.xml"/>
 	<import resource="classpath:context/QnA-context.xml"/>
 	<import resource="classpath:context/dataSource-context.xml"/>
+	<import resource="classpath:context/Event-context.xml"/>
 </beans>

@@ -66,10 +66,6 @@
 }
 </style>
 
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
-
 <div id="contentswrap">
 
 	<!-- subvisual -->
@@ -90,10 +86,9 @@
 	<div id="navigation">
 		<div class="naviwrap">
 			<a href="<%=request.getContextPath()%>" class="nv_home">HOME</a>&gt;
-			<navi> 
-				<a href="<%=request.getContextPath()%>/board/pr/prlist">홍보게시판</a>&gt;
-				<a href="<%=request.getContextPath()%>/board/pr/slist"	class="navi_ov">이벤트</a>&gt; 
-			</navi>
+			<navi> <a href="<%=request.getContextPath()%>/board/pr/prlist">홍보게시판</a>&gt;
+			<a href="<%=request.getContextPath()%>/board/event/list"
+				class="navi_ov">이벤트</a>&gt; </navi>
 			<div class="nv_service">
 				<a class="nvs_print" href="#total"
 					onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span
@@ -106,33 +101,26 @@
 	<!-- container -->
 	<div id="container">
 		<%@ include file="/WEB-INF/views/board/commons/submenu.jsp"%>
+		<div id="main-context">
 
-		<!-- content-->
-		<div id="content">
-			<!-- 컨텐츠 타이틀 -->
-			<h3 class="cnt_ti">이벤트</h3>
-			<div class="new_tab_wrap">
-				<ul class="style03">
-					<li class="active"><a
-						href="<%=request.getContextPath()%>/board/pr/slist">진행중인
-							이벤트</a> <span class="tab_line"></span></li>
-					<li><a
-						href="<%=request.getContextPath()%>/board/pr/elist">종료된
-							이벤트</a> <span class="tab_line"></span></li>
-				</ul>
+			<!-- content-->
+			<div id="content">
+				<!-- 컨텐츠 타이틀 -->
+				<h3 class="cnt_ti">이벤트2</h3>
+				<div class="new_tab_wrap">
+					<ul class="style03">
+						<li><a href="<%=request.getContextPath()%>/board/event/list">진행중인
+								이벤트</a> <span class="tab_line"></span></li>
+						<li class="active"><a
+							href="<%=request.getContextPath()%>/board/event/endlist">종료된
+								이벤트</a> <span class="tab_line"></span></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<!--quick  -->
 		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
 
 	</div>
-
-	<script>
-		$('.style03 li').on('click', function() {
-			$('.style03 li').removeClass('active');
-			$(this).addCalss('active');
-
-		})
-	</script>
 	<!-- //container -->
 </div>
