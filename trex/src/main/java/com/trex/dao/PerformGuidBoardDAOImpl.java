@@ -1,6 +1,7 @@
 package com.trex.dao;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -80,8 +81,8 @@ public class PerformGuidBoardDAOImpl implements PerformGuidBoardDAO {
 		
 	}
 	@Override
-	public PerformGuidBoardVO selectPFGBoardByPFcode(String pf_code) throws SQLException {
-		PerformGuidBoardVO PFGBoard = session.selectOne("PFGBoard-Mapper.selectPFGBoardByPFcode",pf_code);
+	public PerformGuidBoardVO selectPFGBoardByPFSH(String pfsh_code) throws SQLException {
+		PerformGuidBoardVO PFGBoard = session.selectOne("PFGBoard-Mapper.selectPFGBoardByPFSH",pfsh_code);
 		
 		return PFGBoard;
 	}

@@ -3,6 +3,7 @@ package com.trex.controller.board;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import com.trex.dto.PerformGuidBoardVO;
 import com.trex.dto.PerformScheduleVO;
 import com.trex.dto.PerformVO;
@@ -79,6 +81,7 @@ public class PerformController {
 		
 		try {
 			PFGBoard = PFGBoardService.getBoard(pfg_code);
+			System.out.println("detail>>>>"+PFGBoard);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -105,25 +108,27 @@ public class PerformController {
 		return modelnView;
 	}
 	@RequestMapping(value="/regist", method=RequestMethod.POST)
-	public void registPOST(String pf_code, String writer, HttpServletResponse response) throws Exception {
-		PerformGuidBoardVO PFGBoard = new PerformGuidBoardVO();
-		PFGBoard.setWriter(writer);
+	public String registPOST(PerformGuidBoardVO PFGBoard, HttpServletResponse response) {
+		/*PerformGuidBoardVO PFGBoard = new PerformGuidBoardVO();*/
+		String url = "redirect:list";
 		//데이터넣기
-		PFGBoard.setHall_code("HALL0001");
-		PFGBoard.setTicket("ticket");
-		PFGBoard.setTro("TRO0001");
+/*
+		PFGBoard.setRundate(rundate);
+		PFGBoard.setStarttime(starttime);
+		
+		*/
 		/*
 		PFGBoardService.getPF(pf_code).toPFGBoard(PFGBoard);
 		PFGBoardService.getPFSH(pf_code).toPFGBoard(PFGBoard);*/
+		/*PFGBoard.setWriter(writer);*/
+		try {
+			PFGBoardService.write(PFGBoard);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		System.out.println("PFGBoard>>>>"+PFGBoard);
-		PFGBoardService.write(PFGBoard);
-		
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		out.println("<script>");
-		out.println("window.opener.location.reload();window.close();");
-		out.println("</script>");	
+		return url;
 		
 	}
 
@@ -143,11 +148,9 @@ public class PerformController {
 	public List<PerformScheduleVO> pfcodesearch(@RequestBody String pf_code){
 		
 	
-		System.out.println("ajax>>>>"+pf_code);
 		List<PerformScheduleVO> dataList=null;
 		try {
 			dataList = PFSHService.getPFSH(pf_code);
-			System.out.println("dataList .>> " + dataList);
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -156,6 +159,27 @@ public class PerformController {
 		return dataList;
 		
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="pfsh", method=RequestMethod.POST)
+	public PerformGuidBoardVO pfshsearch(@RequestBody String pfsh_code){
+		
+		
+		
+		PerformGuidBoardVO PFGBoard=null;
+		System.out.println("starttime???"+pfsh_code);
+		
+		try {
+			PFGBoard = PFGBoardService.getBoardByPFSH(pfsh_code);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return PFGBoard;
+	}
+	
+		
 	
 
 }

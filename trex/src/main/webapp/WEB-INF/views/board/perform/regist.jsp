@@ -47,6 +47,7 @@
 		<div id="content">
 			<!-- 컨텐츠 타이틀 -->
 			<h3 class="cnt_ti">regist</h3>
+			
 
 			<div class="show_sale">
 				<h4>
@@ -55,7 +56,7 @@
 						src="/resources/images/perform/bt_subscribe.gif" alt="유료회원혜택"></a>
 				</h4>
 				<div class="showcontent">
-					<form action="regist" method="POST">
+					
 					<select name="code" onchange="fnChangeCategory();">
 				<option value="" >공연코드</option>	
 				<c:forEach items="${PFList}" var="PF">
@@ -70,11 +71,42 @@
 				
 						
 			</select>
+			
+
+						<input type="text" name="pf_code" /> 
+						<input type="text" name="writer" value="EP0001" />
+						<form id="registform" action='regist' method="POST">
+						
+						
+					</form>
+					<input id="regist" type="button" value="등록"/>
 			<script>
-				$('select[name="code"]').on('change',function(e){
 					
+			var form = $('form#registform');
+			
+			$('input#regist').on('click',function(e){
+				if($('select[name="code"]').val()=="")
+					{
+					alert("코드를 선택하시오");
+					return;
+					}
+				if($('select[name="time"]').val()=="")
+					{
+					alert("시간을 선택하시오");
+					return;
+					}
+				
+				$('form#registform').attr({action:"regist",method:"post"});
+			
+					$('form#registform').submit();
+			});
+				$('select[name="code"]').on('change',function(e){
+					$('select[name="time"]').empty();
+					
+
+
 					var pf_code = $(this).val();
-					alert("gg>>"+pf_code);
+
 					$.ajax({
 						url:"<%=request.getContextPath()%>/board/perform/pfcode",
 						type:"post",
@@ -85,10 +117,11 @@
 						},
 						
 						success:function(data){
+							
+							$('select[name="time"]').append($('<option value="">공연시간</option>'));								
 							$.each(data, function(idx, val) {
-								alert(idx + " " + val.pfsh_code);
-								var option = $('<option>'+val.pfsh_code+'</option>');
-								alert("option -"+option);
+								//alert(idx + " " + val.pfsh_code);
+								var option = $('<option value="'+val.pfsh_code+'">'+val.starttime+'</option>');								
 								$('select[name="time"]').append(option);
 							});
 							
@@ -103,15 +136,92 @@
 						
 					});
 					
+					 $('select[name="time"]').on('change',function(e){ 
+					/* if($('select[name="time"]').val() !=null){ */
+						var index=0;
+
+						var pfsh_code=$(this).val();
+					
+						$.ajax({
+							url:"<%=request.getContextPath()%>/board/perform/pfsh",
+							type:"post",
+							data:pfsh_code,	
+							headers:{
+								"Content-Type":"application/json",
+								"X-HTTP-Method-Override":"post"
+							},
+							
+							success:function(data){
+								
+									
+							index++;
+							if(index==1)
+								show(data);
+							//alert("성공>>"+data.val.pfsh_code);
+							
+						},
+							error:function(error){
+							
+							alert("오류");
+						}
+							
+							
+						});
+						
+						
+						
+					});
+					
+					
 					
 				});
+				function show(data){
+					var title = data.title;
+					var rundate= new Date(data.rundate);
+					var starttime=new Date(data.starttime);
+					var hall_code = data.hall_code;
+					var hall_name = data.hall_name;
+					var runtime = data.runtime;
+					var cls = data.cls;
+					var cont = data.cont;
+					var pf_code = $('select[name="code"]').val();
+					var pfsh_code =$('select[name="time"]').val();
+					var writer =$('input[name="writer"]').val();
+					
+					
+					$('span#title').empty();
+					$('span#rundate').empty();
+					$('span#starttime').empty();
+					$('span#hall_name').empty();
+					$('span#runtime').empty();
+					$('span#cls').empty();
+					$('div#show_view_01').empty();
+					
+					$('span#title').append(title);
+					$('span#rundate').append(rundate);
+					$('span#starttime').append(starttime);
+					$('span#hall_name').append(hall_name);
+					$('span#runtime').append(runtime);
+					$('span#cls').append(cls);
+					$('div#show_view_01').append(cont);
+					
+					$('form#registform>input[type="hidden"]').remove();
+					
+					$('form#registform').prepend($('<input type="hidden" name="pf_code" value="'+pf_code+'"/>'));
+					$('form#registform').prepend($('<input type="hidden" name="pfsh_code" value="'+pfsh_code+'"/>'));
+					$('form#registform').prepend($('<input type="hidden" name="writer" value="'+writer+'"/>'));
+					$('form#registform').prepend($('<input type="hidden" name="title" value="'+title+'"/>'));
+					$('form#registform').prepend($('<input type="hidden" name="hall_code" value="'+hall_code+'"/>'));
+					$('form#registform').prepend($('<input type="hidden" name="hall_name" value="'+hall_name+'"/>'));
+					$('form#registform').prepend($('<input type="hidden" name="runtime" value="'+runtime+'"/>'));
+					$('form#registform').prepend($('<input type="hidden" name="cls" value="'+cls+'"/>'));
+					$('form#registform').prepend($('<input type="hidden" name="cont" value="'+cont+'"/>'));
+					$('form#registform').prepend($('<input type="hidden" name="rundate" value="'+rundate+'"/>'));
+					$('form#registform').prepend($('<input type="hidden" name="starttime" value="'+starttime+'"/>'));
+					
+				}
 			
 			</script>
-
-						<input type="text" name="pf_code" /> 
-						<input type="text" name="writer" value="EP0001" />
-						<button type="submit">등록</button>
-					</form>
 				</div>
 			</div>
 			<div id="showView">
@@ -178,26 +288,28 @@
 				<script type="text/javascript">
 					photoAlbum();
 				</script>
+				
 				<ul class="pefrText">
-					<li><strong>공연구분</strong><span>${PFGBoard.divi } </span></li>
-					<li><strong>공연날짜</strong><span> <fmt:formatDate
-								value="${PFGBoard.rundate }" pattern="yyyy-MM-dd" /> /1일 1회
+					<li><strong>공연이름</strong><span id="title"></span></li>
+				
+					<li><strong>공연구분</strong><span></span></li>
+					<li><strong>공연날짜</strong><span id="rundate"> <fmt:formatDate
+								value="${PFGBoard.rundate }" pattern="yyyy-MM-dd" /> 
 					</span></li>
-					<li><strong>공연시간</strong><span> <fmt:formatDate
+					<li><strong>공연시간</strong><span id="starttime"> <fmt:formatDate
 								value="${PFGBoard.starttime }" pattern="HH:mm" />
 
 
 					</span></li>
-					<li><strong>공연장소</strong><span>대전예술의전당 아트홀</span></li>
-					<li><strong>티켓정보</strong><span>R석 7만원, S석 6만원, A석 5만원,
-							B석 4만원</span></li>
-					<li><strong>소요시간</strong><span>${PFGBoard.runtime }(휴식
-							없음)</span></li>
-					<li><strong>관람등급</strong><span>8세 이상</span></li>
-					<li><strong>공연주최</strong><span>브라보컴</span></li>
-					<li><strong>공연장르</strong><span>${PFGBoard.cls }</span></li>
-					<li><strong>문의처</strong><span>브라보컴 1661-1605</span></li>
+					<li><strong>공연장소</strong><span id="hall_name"></span></li>
+				<!-- 	<li><strong>티켓정보</strong><span>R석 7만원, S석 6만원, A석 5만원,
+							B석 4만원</span></li> -->
+					<li><strong>소요시간</strong><span id="runtime"></span></li>
+					<!-- <li><strong>관람등급</strong><span>8세 이상</span></li> -->
+					<li><strong>공연장르</strong><span id="cls"></span></li>
+				<!-- 	<li><strong>문의처</strong><span>브라보컴 1661-1605</span></li> -->
 				</ul>
+				
 				<p class="reserer">
 					<a href="#total"
 						onclick="javascript:INTER_OpenSeat('19005622','08920','rlawltn656','199511252');"><img
@@ -236,22 +348,11 @@
 			</div>
 			<div class="showcontent">
 				<strong></strong>
-				<div id="show_view_01">${PFGBoard.cont }</div>
+				<div id="show_view_01" ></div>
 
 			</div>
 
-			<script>
-				$('#remove')
-						.on(
-								'click',
-								function(e) {
-									alert("gg");
-									e.preventDefault();
-
-									location.href = "/board/perform/delete/${PFGBoard.pfg_code}";
-
-								});
-			</script>
+		
 			<!--quick  -->
 			<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
 

@@ -2,6 +2,8 @@ package com.trex.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class PerformGuidBoardVO {
 	private String pfg_code;
 	private int pfg_num;
@@ -20,6 +22,8 @@ public class PerformGuidBoardVO {
 	private Date modidate;
 	private int viewcnt;
 	private String pf_code;
+	private String pfsh_code;
+	private String hall_name;
 	public String getPfg_code() {
 		return pfg_code;
 	}
@@ -122,15 +126,28 @@ public class PerformGuidBoardVO {
 	public void setPf_code(String pf_code) {
 		this.pf_code = pf_code;
 	}
+	public String getPfsh_code() {
+		return pfsh_code;
+	}
+	public void setPfsh_code(String pfsh_code) {
+		this.pfsh_code = pfsh_code;
+	}
+	public String getHall_name() {
+		return hall_name;
+	}
+	public void setHall_name(String hall_name) {
+		this.hall_name = hall_name;
+	}
 	@Override
 	public String toString() {
 		return "PerformGuidBoardVO [pfg_code=" + pfg_code + ", pfg_num=" + pfg_num + ", writer=" + writer + ", divi="
 				+ divi + ", rundate=" + rundate + ", starttime=" + starttime + ", hall_code=" + hall_code + ", ticket="
 				+ ticket + ", runtime=" + runtime + ", tro=" + tro + ", cls=" + cls + ", cont=" + cont + ", title="
 				+ title + ", regdate=" + regdate + ", modidate=" + modidate + ", viewcnt=" + viewcnt + ", pf_code="
-				+ pf_code + "]";
+				+ pf_code + ", pfsh_code=" + pfsh_code + ", hall_name=" + hall_name + "]";
 	}
 	
-
+	
+	
 	
 }

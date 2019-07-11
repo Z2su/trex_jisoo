@@ -114,28 +114,26 @@
 				<script type="text/javascript">
 					photoAlbum();
 				</script>
+				
 				<ul class="pefrText">
+					<li><strong>공연이름</strong><span id="title">${PFGBoard.title }</span></li>
+				
 					<li><strong>공연구분</strong><span>${PFGBoard.divi } </span></li>
-					<li><strong>공연날짜</strong><span>
-					<fmt:formatDate value="${PFGBoard.rundate }" pattern="yyyy-MM-dd"/>
-					
-					  
-					
-					/1일 1회</span></li>
-					<li><strong>공연시간</strong><span>
-					<fmt:formatDate value="${PFGBoard.starttime }" pattern="HH:mm"/>
-					
-					
+					<li><strong>공연날짜</strong><span id="rundate"> <fmt:formatDate
+								value="${PFGBoard.rundate }" pattern="yyyy-MM-dd" /> 
 					</span></li>
-					<li><strong>공연장소</strong><span>대전예술의전당 아트홀</span></li>
-					<li><strong>티켓정보</strong><span>R석 7만원, S석 6만원, A석 5만원,
-							B석 4만원</span></li>
-					<li><strong>소요시간</strong><span>${PFGBoard.runtime }(휴식 없음)</span></li>
-					<li><strong>관람등급</strong><span>8세 이상</span></li>
-					<li><strong>공연주최</strong><span>브라보컴</span></li>
-					<li><strong>공연장르</strong><span>${PFGBoard.cls }</span></li>
-					<li><strong>문의처</strong><span>브라보컴 1661-1605</span></li>
+					<li><strong>공연시간</strong><span id="starttime"> <fmt:formatDate
+								value="${PFGBoard.starttime }" pattern="HH:mm" />
+					</span></li>
+					<li><strong>공연장소</strong><span id="hall_name">${PFGBoard.hall_name }</span></li>
+				<!-- 	<li><strong>티켓정보</strong><span>R석 7만원, S석 6만원, A석 5만원,
+							B석 4만원</span></li> -->
+					<li><strong>소요시간</strong><span id="runtime">${PFGBoard.runtime }</span></li>
+					<!-- <li><strong>관람등급</strong><span>8세 이상</span></li> -->
+					<li><strong>공연장르</strong><span id="cls">${PFGBoard.cls }</span></li>
+				<!-- 	<li><strong>문의처</strong><span>브라보컴 1661-1605</span></li> -->
 				</ul>
+				
 				<p class="reserer">
 					<a href="#total"
 						onclick="javascript:INTER_OpenSeat('19005622','08920','rlawltn656','199511252');"><img
@@ -187,7 +185,7 @@
 		
 		<script>
 		$('#remove').on('click',function(e){
-			alert("gg");
+			
 			e.preventDefault();
 			
 			location.href="/board/perform/delete/${PFGBoard.pfg_code}";	

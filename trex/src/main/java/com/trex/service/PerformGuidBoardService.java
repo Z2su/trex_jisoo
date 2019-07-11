@@ -1,6 +1,7 @@
 package com.trex.service;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import com.trex.dto.PerformGuidBoardVO;
@@ -20,6 +21,6 @@ public interface PerformGuidBoardService {
 	PerformScheduleVO getPFSH(String pf_code) throws SQLException;
 	*/
 	List<PerformGuidBoardVO> getBoardListByPF(String pf_code) throws SQLException;
-	PerformGuidBoardVO getBoardByPF(String pf_code) throws SQLException;
+	PerformGuidBoardVO getBoardByPFSH(String pfsh_code) throws SQLException;
 
 }

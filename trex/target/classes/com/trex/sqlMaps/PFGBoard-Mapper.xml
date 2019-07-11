@@ -3,20 +3,20 @@
 <mapper namespace="PFGBoard-Mapper">
 	<select id="selectPFGBoardList" resultType="PFGBoard">
 		select * 
-		from PFG
+		from PFG_view
 	</select>
 	
 	<select id="selectPFGBoard" resultType="PFGBoard">
 		select * 
-		from PFG
+		from PFG_view
 		where pfg_code = #{pfg_code}
 	</select>
 	<update id="insertPFGBoard">
 		insert 
 		into 
-		PFG(pfg_code,pfg_num,writer,rundate,starttime,hall_code,ticket,runtime,tro,cls,cont,title,pf_code)
+		PFG(pfg_code,pfg_num,writer,rundate,starttime,hall_code,runtime,cls,cont,title,pf_code,pfsh_code)
 		values
-		(#{pfg_code},#{pfg_num},#{writer},#{rundate},#{starttime},#{hall_code},#{ticket},#{runtime},#{tro},#{cls},#{cont},#{title},#{pf_code})
+		(#{pfg_code},#{pfg_num},#{writer},#{rundate},#{starttime},#{hall_code},#{runtime},#{cls},#{cont},#{title},#{pf_code},#{pfsh_code})
 	</update>
 	<update id="updatePFGBoard">
 		update 
@@ -42,13 +42,13 @@
 	</select>
 	<select id="selectPFGBoardListByPFcode" resultType="PFGBoard">
 		select * from 
-		from PFG_view
+		from PFSH_view
 		where pf_code = #{pf_code}
 	</select>
-	<select id="selectPFGBoardByPFcode" resultType="PFGBoard">
-		select * from 
-		from PFG_view
-		where pf_code = #{pf_code} and pf_startime=#{pf_starttime}
+	<select id="selectPFGBoardByPFSH" resultType="PFGBoard">
+		select * 
+		from PFSH_view
+		where pfsh_code=#{pfsh_code}
 	</select>
 	
 </mapper>
