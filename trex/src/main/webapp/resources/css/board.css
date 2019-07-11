@@ -376,3 +376,26 @@ h4  {margin:0 0 6px 3px;padding:0 0 0 18px;font-size:12px;color:#000000;letter-s
 .ucc_tag{width:606px;margin-top:5px; padding-bottom:5px; background:url(/resources/images/ucc_01_dot.gif) repeat-x left bottom;}
 .ucc_view h5{margin:8px 0px 5px 0px; padding:0px; text-indent:0px; background:none; color:#454545; font-weight:bold;}
 .ucc_text{background:#f1f1f1; height:100px; padding:10px; overflow-y:scroll;}
+
+
+/***** board list ****/
+.board_list_info .page_num {background:url(/resources/images/list_top_num.gif) no-repeat left 4px;}
+.board_listWrap {background:url(/resources/images/list_top.gif) repeat-x left top;}
+.board_listBox {background:url(/resources/images/list_top_fr.gif) no-repeat left top;}
+.board_list {background:url(/resources/images/list_top_nd.gif) no-repeat right top;}
+.board_list .condition {color:#f67e14;}
+
+
+/***** board view ****/
+.board_viewTit {background:url(/resources/images/view_tit_ln.gif) no-repeat 78px 6px;}
+.board_viewInfo li {background:url(/resources/images/view_tit_ln.gif) no-repeat 78px top;}
+.board_viewPage li {background:url(/resources/images/view_page_tit.gif) repeat-y;}
+
+
+/***** board write ****/
+.board_writeTit {background:url(/resources/images/view_tit_ln.gif) no-repeat 78px 6px;}
+.board_writeInfo li {background:url(/resources/images/view_tit_ln.gif) no-repeat 78px top;}
+.board_writePage li {background:url(/resources/images/view_page_tit.gif) repeat-y;}
+
+.board_viewImg img {width:97%;}
+

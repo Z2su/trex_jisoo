@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div id="contentswrap">
  
 			<!-- subvisual -->
@@ -72,56 +74,28 @@
 								</thead>
 								<tbody>
 									
-							
-									<tr>
-										<td class="center">4213&nbsp;</td>
+									<c:if test="${!empty list }">
+						<c:forEach items="${list}" var="qnaboardVO">
 
-										<td class="title"><img src="<%=request.getContextPath()%>/resources/images/list_icon_hold.gif" alt="잠긴글"><a href="./?code=customer&amp;mode=V&amp;no=ziASixn1hjTZHMWDAuWheg&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=">공연예매가
-												안되네요</a>&nbsp;</td>
+							<tr>
+								<td>${qnaboardVO.qna_num}</td>
+								<td><a
+									href='detail${pageMaker.makeSearch(pageMaker.cri.page) }&qna_num=${qnaboardVO.qna_num}'>
+										${qnaboardVO.title}</a></td>
+								<td>${qnaboardVO.writer}</td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd"
+										value="${qnaboardVO.regdate}" /></td>
+								<td><span class="badge bg-red">${qnaboardVO.viewcnt }</span></td>
+							</tr>
 
-										<td class="center">권 * * &nbsp;</td>
-
-										<td class="center">2019-04-23&nbsp;</td>
-
-										<td class="center">4&nbsp;</td>
-
-										<td class="center">&nbsp;</td>
-
-
-									</tr>
-									<tr>
-										<td class="center">4212&nbsp;</td>
-
-										<td class="title">&nbsp;&nbsp; <img src="<%=request.getContextPath()%>/resources/images/list_icon_reply.gif" alt="답변글"><img src="<%=request.getContextPath()%>/resources/images/list_icon_hold.gif" alt="잠긴글"><a href="./?code=customer&amp;mode=V&amp;no=tHElmrC1q42y1M0HSO4i7A&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=">[답변]
-												공연예매가 안되네요</a>&nbsp;
-										</td>
-
-										<td class="center">김 * * &nbsp;</td>
-
-										<td class="center">2019-04-24&nbsp;</td>
-
-										<td class="center">2&nbsp;</td>
-
-										<td class="center">&nbsp;</td>
-
-
-									</tr>
-									<tr>
-										<td class="center">4211&nbsp;</td>
-
-										<td class="title"><a href="./?code=customer&amp;mode=V&amp;no=coQf--UbTNXLULUM4ZPfeg&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=">공연장
-												관리 좀 해주세요~</a>&nbsp;</td>
-
-										<td class="center">김 * * &nbsp;</td>
-
-										<td class="center">2019-04-22&nbsp;</td>
-
-										<td class="center">153&nbsp;</td>
-
-										<td class="center">&nbsp;</td>
-
-
-									</tr>
+						</c:forEach>
+						</c:if>
+						<c:if test="${empty list }">
+							<tr>
+								<td style="text-align:center;" colspan="5">내용이 없습니다.</td>
+							</tr>
+						</c:if>
+									
 								</tbody>
 							</table>
 						</form>
@@ -132,7 +106,7 @@
 			<!-- 게시판 버튼모음 -->
 			<div class="board_butt">
 
-				<a href="#"><img src="<%=request.getContextPath()%>/resources/images/list.gif" alt="목록"></a> <a href="#"><img src="<%=request.getContextPath()%>/resources/images/write.gif" alt="쓰기"></a>
+				<a href="#"><img src="<%=request.getContextPath()%>/resources/images/list.gif" alt="목록"></a> <a href="<%=request.getContextPath()%>/board/center/qna/regist"><img src="<%=request.getContextPath()%>/resources/images/write.gif" alt="쓰기"></a>
 				<a href="#" target="_blank"> <img src="<%=request.getContextPath()%>/resources/images/rss.gif" alt="rss"></a>
 
 			</div>
