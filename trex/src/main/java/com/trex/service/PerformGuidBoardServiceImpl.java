@@ -1,6 +1,7 @@
 package com.trex.service;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import com.trex.dao.PerformGuidBoardDAO;
@@ -65,7 +66,7 @@ public class PerformGuidBoardServiceImpl implements PerformGuidBoardService {
 		PFGBoardDAO.deletePFGBoard(pfg_code);
 
 	}
-	@Override
+	/*@Override
 	public PerformVO getPF(String pf_code) throws SQLException {
 		PerformVO PF = PFGBoardDAO.selectPF(pf_code);
 		return PF;
@@ -76,6 +77,16 @@ public class PerformGuidBoardServiceImpl implements PerformGuidBoardService {
 		PerformScheduleVO PFSH = PFGBoardDAO.selectPFSH(pf_code);
 		
 		return PFSH;
+	}*/
+	@Override
+	public List<PerformGuidBoardVO> getBoardListByPF(String pf_code) throws SQLException {
+		List<PerformGuidBoardVO> PFGBoardList = PFGBoardDAO.selectPFGBoardListByPFcode(pf_code);
+		return PFGBoardList;
+	}
+	@Override
+	public PerformGuidBoardVO getBoardByPFSH(String pfsh_code) throws SQLException {
+		PerformGuidBoardVO PFGBoard = PFGBoardDAO.selectPFGBoardByPFSH(pfsh_code);
+		return PFGBoard;
 	}
 
 }

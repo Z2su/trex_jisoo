@@ -1,24 +1,32 @@
 package com.trex.controller.board;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import com.trex.dto.PerformGuidBoardVO;
+import com.trex.dto.PerformScheduleVO;
+import com.trex.dto.PerformVO;
 import com.trex.service.PerformGuidBoardService;
+import com.trex.service.PerformScheduleService;
+import com.trex.service.PerformService;
 
 @Controller
 @RequestMapping("/board/perform")
@@ -26,6 +34,12 @@ public class PerformController {
 	@Autowired
 	private PerformGuidBoardService PFGBoardService;
 	
+	@Autowired
+	private PerformService PFService;
+	
+	@Autowired
+	private PerformScheduleService PFSHService;
+
 	
 	@ModelAttribute("submenuTitle")
 	public String submenuTitle() {
@@ -61,12 +75,13 @@ public class PerformController {
 	}
 	@RequestMapping(value="/detail/{pfg_code}",method=RequestMethod.GET)
 	public ModelAndView detailGET(@PathVariable String pfg_code, ModelAndView modelnView) {
-		String url = "board/perform/detail";
+		String url = "/board/perform/detail";
 		
 		PerformGuidBoardVO PFGBoard = null;
 		
 		try {
 			PFGBoard = PFGBoardService.getBoard(pfg_code);
+			System.out.println("detail>>>>"+PFGBoard);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -78,32 +93,93 @@ public class PerformController {
 	}
 	
 	@RequestMapping(value="/regist", method=RequestMethod.GET)
-	public String registGET() {
-		String url ="board/perform/regist";
-		return url;
+	public ModelAndView registGET(ModelAndView modelnView) {
+		String url ="/board/perform/regist";
+		List<PerformVO> PFList=null;
+		try {
+			PFList = PFService.getPFList();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		modelnView.addObject("PFList",PFList);
+		modelnView.setViewName(url);
+		return modelnView;
 	}
 	@RequestMapping(value="/regist", method=RequestMethod.POST)
-	public void registPOST(String pf_code, String writer, HttpServletResponse response) throws Exception {
-		PerformGuidBoardVO PFGBoard = new PerformGuidBoardVO();
-		PFGBoard.setWriter(writer);
+	public String registPOST(PerformGuidBoardVO PFGBoard, HttpServletResponse response) {
+		/*PerformGuidBoardVO PFGBoard = new PerformGuidBoardVO();*/
+		String url = "redirect:list";
 		//데이터넣기
-		PFGBoard.setHall_code("HALL0001");
-		PFGBoard.setTicket("ticket");
-		PFGBoard.setTro("TRO0001");
+/*
+		PFGBoard.setRundate(rundate);
+		PFGBoard.setStarttime(starttime);
 		
+		*/
+		/*
 		PFGBoardService.getPF(pf_code).toPFGBoard(PFGBoard);
-		PFGBoardService.getPFSH(pf_code).toPFGBoard(PFGBoard);
+		PFGBoardService.getPFSH(pf_code).toPFGBoard(PFGBoard);*/
+		/*PFGBoard.setWriter(writer);*/
+		try {
+			PFGBoardService.write(PFGBoard);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		System.out.println("PFGBoard>>>>"+PFGBoard);
-		PFGBoardService.write(PFGBoard);
-		
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		out.println("<script>");
-		out.println("window.opener.location.reload();window.close();");
-		out.println("</script>");	
+		return url;
 		
 	}
 
+	@RequestMapping("/delete/{pfg_code}")
+	public void delete(@PathVariable String pfg_code, HttpServletResponse response) throws Exception{
+		
+		PFGBoardService.remove(pfg_code);
+
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out=response.getWriter();
+		out.println("<script>");
+		out.println("location.href='/board/perform/list';");
+		out.println("</script>");		
+	}
+	@ResponseBody
+	@RequestMapping(value="pfcode", method=RequestMethod.POST)
+	public List<PerformScheduleVO> pfcodesearch(@RequestBody String pf_code){
+		
+	
+		List<PerformScheduleVO> dataList=null;
+		try {
+			dataList = PFSHService.getPFSH(pf_code);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return dataList;
+		
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="pfsh", method=RequestMethod.POST)
+	public PerformGuidBoardVO pfshsearch(@RequestBody String pfsh_code){
+		
+		
+		
+		PerformGuidBoardVO PFGBoard=null;
+		System.out.println("starttime???"+pfsh_code);
+		
+		try {
+			PFGBoard = PFGBoardService.getBoardByPFSH(pfsh_code);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return PFGBoard;
+	}
+	
+		
+	
 
 }

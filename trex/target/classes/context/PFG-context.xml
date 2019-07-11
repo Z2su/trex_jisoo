@@ -12,5 +12,21 @@
 		  class="com.trex.service.PerformGuidBoardServiceImpl"
 		  p:PFGBoardDAO-ref="PFGBoardDAO"
 		  />
+		  
+	<bean id="PFDAO"
+		  class="com.trex.dao.PerformDAOImpl"
+		  p:session-ref="sqlSession"/>
+	<bean id="PFService"
+		  class="com.trex.service.PerformServiceImpl"
+		  p:performDAO-ref="PFDAO"/>
+	
+	<bean id="PFSHDAO"
+		  class="com.trex.dao.PerformScheduleDAOImpl"
+		  p:session-ref="sqlSession"
+		  />
+	<bean id="PFSHService"
+		  class="com.trex.service.PerformScheduleServiceImpl"
+		  p:PFSHDAO-ref="PFSHDAO"
+		  />
 
 </beans>

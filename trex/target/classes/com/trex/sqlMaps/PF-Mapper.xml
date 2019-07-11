@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PF-Mapper">
+	<select id="selectPFList" resultType="PF">
+		select *
+		from PF
+	</select>
+	<select id="selectPF" resultType="PF">
+		seletct *
+		from PF
+		where pf_code = #{pf_code}
+	</select>
+	
+
+
+</mapper>
