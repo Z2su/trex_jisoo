@@ -127,7 +127,7 @@
                            <li><a href="<%=request.getContextPath()%>/board/pr/adlist"
                               class="">광고게시판</a></li>
                            <li><a
-                              href="<%=request.getContextPath()%>/board/pr/slist"
+                              href="<%=request.getContextPath()%>/board/event/list"
                               class="">이벤트</a></li>
                         </ul>
                      </div>
