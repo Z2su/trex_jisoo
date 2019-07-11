@@ -6,7 +6,7 @@ import java.util.List;
 public class EventVO {
 
 	private String event_code;	// 게시판 코드
-	private String event_num;	// 이밴트 번호
+	private int event_num;	// 이밴트 번호
 	private String title;		// 게시물 제목
 	private String writer;		// 글쓴이
 	private String cont;		// 내용
@@ -27,11 +27,11 @@ public class EventVO {
 		this.event_code = event_code;
 	}
 
-	public String getEvent_num() {
+	public int getEvent_num() {
 		return event_num;
 	}
 
-	public void setEvent_num(String event_num) {
+	public void setEvent_num(int event_num) {
 		this.event_num = event_num;
 	}
 

@@ -28,4 +28,30 @@ public class EventDAOImpl implements EventDAO{
 		return event;
 	}
 
+	@Override
+	public void insertEvent(EventVO event) throws SQLException {
+		session.update("Event-Mapper.inserEvent",event);
+	}
+
+	@Override
+	public void updateEvent(EventVO event) throws SQLException {
+		session.update("Event-Mapper.updateEvent",event);
+	}
+
+	@Override
+	public void deleteEvent(int event_num) throws SQLException {
+		session.update("Event-Mapper.deleteEvent",event_num);
+	}
+
+	@Override
+	public void increaseViewCnt(int event_num) throws SQLException {
+		session.update("Event-Mapper.increaseViewCnt",event_num);
+	}
+
+	@Override
+	public int selectEventSeqNext() throws SQLException {
+		int event_num = session.selectOne("Event-Mapper.selectEventSeqNext");
+		return event_num;
+	}
+
 }

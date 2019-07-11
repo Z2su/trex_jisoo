@@ -45,6 +45,6 @@
 	</update>
 	
 	<select id="selectEventSeqNext" resultType="int">
-		select eve.seq.nextval as event_num from dual
+		select eve_seq.nextval as event_num from dual
 	</select>
 </mapper>

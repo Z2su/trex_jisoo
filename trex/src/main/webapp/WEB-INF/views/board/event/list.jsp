@@ -72,7 +72,7 @@
 }
 
 .event_board ul {
-	width: 955px;
+	width: 637px;
 	float: left;
 	margin-top: 30px;
 }
@@ -241,228 +241,40 @@
 								이벤트</a> <span class="tab_line"></span></li>
 					</ul>
 				</div>
-			</div>
 
-			<!--  본문 내용    -->
-			<div class="wizard-actions-L">
-				<button style="margin-left: 350px;" type="button"
-					class="btn btn-sm btn-white btn-bold">
-					<b>글등록</b>
-				</button>
-			</div>
-			<div class="event_board">
-				<ul style="margin-top: 10px; margin-left: 270px;">
-					<li>
-						<div class="event_list_wrap">
-							<dl>
-								<c:forEach var="event" items="${eventList }">
-									<dt>
-										<a
-											href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}"><img
-											src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=5629539181056233673"
-											alt="종료된 이벤트 섬네일"></a>
-									</dt>
-									<dd class="data">
-										<p>
+
+				<!--  본문 내용    -->
+				<div class="wizard-actions-L">
+					<input type="button" value="등록"
+						onClick="location.href='<%=request.getContextPath()%>/board/event/regist'">
+				</div>
+
+				<div class="event_board">
+					<ul style="margin-top: 10px; margin-left: 10px;">
+						<c:forEach var="event" items="${eventList }">
+							<li>
+								<div class="event_list_wrap">
+									<dl>
+										<dt>
 											<a
-												href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}">${event.title }</a>
-										</p>
-									</dd>
-									<dd class="date">
-										<p>${event.startdate }~${event.enddate }</p>
-									</dd>
-								</c:forEach>
-							</dl>
-						</div>
-					</li>
-					<li>
-						<div class="event_list_wrap">
-							<dl>
-								<dt>
-									<a href="/News/Event/Ongoing/154"><img
-										src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=5701596809453900096"
-										alt="종료된 이벤트 섬네일"></a>
-								</dt>
-								<dd class="data">
-									<p>
-										<a href="/News/Event/Ongoing/154">연합 보급소</a>
-									</p>
-								</dd>
-								<dd class="date">
-									<p>2019.07.04 ~ 2019.09.01</p>
-								</dd>
-							</dl>
-						</div>
-					</li>
-					<li>
-						<div class="event_list_wrap">
-							<dl>
-								<dt>
-									<a href="/News/Event/Ongoing/153"><img
-										src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=4692790497217875998"
-										alt="종료된 이벤트 섬네일"></a>
-								</dt>
-								<dd class="data">
-									<p>
-										<a href="/News/Event/Ongoing/153">도전 임무 : 마법골렘 수련장</a>
-									</p>
-								</dd>
-								<dd class="date">
-									<p>2019.07.04 ~ 2019.08.07</p>
-								</dd>
-							</dl>
-						</div>
-					</li>
-					<li>
-						<div class="event_list_wrap">
-							<dl>
-								<dt>
-									<a href="/News/Event/Ongoing/152"><img
-										src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=4908963236381985707"
-										alt="종료된 이벤트 섬네일"></a>
-								</dt>
-								<dd class="data">
-									<p>
-										<a href="/News/Event/Ongoing/152">일반 임무 : 차원의 틈</a>
-									</p>
-								</dd>
-								<dd class="date">
-									<p>2019.07.04 ~ 2019.07.17</p>
-								</dd>
-							</dl>
-						</div>
-					</li>
-					<li>
-						<div class="event_list_wrap">
-							<dl>
-								<dt>
-									<a href="/News/Event/Ongoing/151"><img
-										src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=5197193664073306818"
-										alt="종료된 이벤트 섬네일"></a>
-								</dt>
-								<dd class="data">
-									<p>
-										<a href="/News/Event/Ongoing/151">일반 임무 : 불안정한 경계</a>
-									</p>
-								</dd>
-								<dd class="date">
-									<p>2019.07.04 ~ 2019.07.17</p>
-								</dd>
-							</dl>
-						</div>
-					</li>
-					<li>
-						<div class="event_list_wrap">
-							<dl>
-								<dt>
-									<a href="/News/Event/Ongoing/149"><img
-										src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=5053078458817581708"
-										alt="종료된 이벤트 섬네일"></a>
-								</dt>
-								<dd class="data">
-									<p>
-										<a href="/News/Event/Ongoing/149">버닝 월드 : 콰트로</a>
-									</p>
-								</dd>
-								<dd class="date">
-									<p>2019.06.27 ~ 2019.09.25</p>
-								</dd>
-							</dl>
-						</div>
-					</li>
-					<li>
-						<div class="event_list_wrap">
-							<dl>
-								<dt>
-									<a href="/News/Event/Ongoing/147"><img
-										src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=4908963244971921085"
-										alt="종료된 이벤트 섬네일"></a>
-								</dt>
-								<dd class="data">
-									<p>
-										<a href="/News/Event/Ongoing/147">(수정)GLORY 사전예약 : 글로리온</a>
-									</p>
-								</dd>
-								<dd class="date">
-									<p>2019.06.20 ~ 2019.07.17</p>
-								</dd>
-							</dl>
-						</div>
-					</li>
-					<li>
-						<div class="event_list_wrap">
-							<dl>
-								<dt>
-									<a href="/News/Event/Ongoing/146"><img
-										src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=5269251232341430359"
-										alt="종료된 이벤트 섬네일"></a>
-								</dt>
-								<dd class="data">
-									<p>
-										<a href="/News/Event/Ongoing/146">프리미엄 PC방 접속보상 이벤트</a>
-									</p>
-								</dd>
-								<dd class="date">
-									<p>2019.06.21 ~ 2019.07.25</p>
-								</dd>
-							</dl>
-						</div>
-					</li>
-					<li>
-						<div class="event_list_wrap">
-							<dl>
-								<dt>
-									<a href="/News/Event/Ongoing/145"><img
-										src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=5557481608493141919"
-										alt="종료된 이벤트 섬네일"></a>
-								</dt>
-								<dd class="data">
-									<p>
-										<a href="/News/Event/Ongoing/145">(내용추가)글로리온</a>
-									</p>
-								</dd>
-								<dd class="date">
-									<p>2019.06.20 ~ 2019.08.28</p>
-								</dd>
-							</dl>
-						</div>
-					</li>
-					<li>
-						<div class="event_list_wrap">
-							<dl>
-								<dt>
-									<a href="/News/Event/Ongoing/143"><img
-										src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=4620732890295046192"
-										alt="종료된 이벤트 섬네일"></a>
-								</dt>
-								<dd class="data">
-									<p>
-										<a href="/News/Event/Ongoing/143">테라버닝 + 극한돌파</a>
-									</p>
-								</dd>
-								<dd class="date">
-									<p>2019.06.20 ~ 2019.08.28</p>
-								</dd>
-							</dl>
-						</div>
-					</li>
-				</ul>
-
-
-				<div class="page_numb">
-					<span class="cm_all_prev"> <a><img
-							src="https://ssl.nx.com/s2/game/maplestory/renewal/common/cm_all_prev.png"
-							alt="이전 10개"></a>
-					</span> <span class="cm_prev"> <a><img
-							src="https://ssl.nx.com/s2/game/maplestory/renewal/common/cm_prev.png"
-							alt="이전"></a>
-					</span> <a class="active">1</a> <span class="cm_next"> <a><img
-							src="https://ssl.nx.com/s2/game/maplestory/renewal/common/cm_next.png"
-							alt="다음"></a>
-					</span> <span class="cm_all_next"> <a><img
-							src="https://ssl.nx.com/s2/game/maplestory/renewal/common/cm_all_next.png"
-							alt="다음 10개"></a>
-					</span>
+												href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}"><img
+												src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=5629539181056233673"
+												alt="종료된 이벤트 섬네일"></a>
+										</dt>
+										<dd class="data">
+											<p>
+												<a
+													href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}">${event.title }</a>
+											</p>
+										</dd>
+										<dd class="date">
+											<p>${event.startdate }~${event.enddate }</p>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</c:forEach>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -470,7 +282,7 @@
 		<!--quick  -->
 		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
 	</div>
-	
+
 	<script>
 		$('.style03 li').on('click', function() {
 			$('.style03 li').removeClass('active');

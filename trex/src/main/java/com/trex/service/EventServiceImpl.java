@@ -28,5 +28,22 @@ public class EventServiceImpl implements EventService {
 		
 		return event;
 	}
+	@Override
+	public void write(EventVO event) throws SQLException {
+		int event_num = eventDAO.selectEventSeqNext();
+		String code = "EVE"+ String.format("%04d", event_num);
+		event.setEvent_code(code);
+		event.setEvent_num(event_num);
+		
+		eventDAO.insertEvent(event);
+	}
+	@Override
+	public void modify(EventVO event) throws SQLException {
+		eventDAO.updateEvent(event);
+	}
+	@Override
+	public void remove(int event_num) throws SQLException {
+		eventDAO.deleteEvent(event_num);
+	}
 
 }
