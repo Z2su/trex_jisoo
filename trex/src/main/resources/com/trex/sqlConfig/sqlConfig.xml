@@ -9,6 +9,8 @@
 		<typeAlias type="com.trex.dto.PerformScheduleVO" alias="PFSH"/>
 		<typeAlias type="com.trex.dto.QnABoardVO" alias="qnaboard"/>
 		<typeAlias type="com.trex.dto.EventVO" alias="event"/>
+		<typeAlias type="com.trex.dto.MemberVO" alias="member"/>
+		
 
 	</typeAliases>
  
