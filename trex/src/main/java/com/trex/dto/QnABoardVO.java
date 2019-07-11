@@ -10,7 +10,7 @@ public class QnABoardVO {
 	private String cont;
 	private Date regdate;
 	private Date modidate;
-	private String viewcnt;
+	private int viewcnt;
 	public String getQna_code() {
 		return qna_code;
 	}
@@ -53,10 +53,10 @@ public class QnABoardVO {
 	public void setModidate(Date modidate) {
 		this.modidate = modidate;
 	}
-	public String getViewcnt() {
+	public int getViewcnt() {
 		return viewcnt;
 	}
-	public void setViewcnt(String viewcnt) {
+	public void setViewcnt(int viewcnt) {
 		this.viewcnt = viewcnt;
 	}
 	@Override

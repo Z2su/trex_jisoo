@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.trex.controller.SearchCriteria;
 import com.trex.dao.QnABoardDAO;
+import com.trex.dao.QnABoardDAOImpl;
 import com.trex.dto.QnABoardVO;
 
 public class QnABoardServiceImpl implements QnABoardService {
@@ -16,8 +17,13 @@ public class QnABoardServiceImpl implements QnABoardService {
 
 	@Override
 	public void create(QnABoardVO qna) throws Exception {
-		qnaboardDAO.insertQnABoard(qna);
+		int num = qnaboardDAO.NextSeq();
+		
+		String code = "QNA"+ String.format("%04d", num);
+		qna.setQna_code(code);
+		qna.setQna_num(num);
 
+		qnaboardDAO.insertQnABoard(qna);
 	}
 
 	@Override

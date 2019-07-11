@@ -25,5 +25,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="resources"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

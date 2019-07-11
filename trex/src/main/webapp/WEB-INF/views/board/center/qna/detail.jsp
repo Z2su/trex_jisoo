@@ -66,7 +66,7 @@
 					<li class="date"><span>작성일</span><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 										value="${qnaboard.regdate}" /></li>
 
-					<li class="visit"><span>조회수</span>${qnaboard.viewcnt }</li>
+					<li class="visit"><span>조회수</span>${qnaboard.viewcnt } </li>
 
 
 					<!--첨부 파일 수정  -->
@@ -77,7 +77,7 @@
 				</ul>
 
 				<!-- 내용이 입력되는 부분 -->
-				<h5 class="board_viewHtit">내용보기</h5>
+				<h5 class="board_viewHtit">내용보기 </h5>
 				<div class="board_viewDetail">
 					${qnaboard.cont }<br>
 				</div>
@@ -85,19 +85,19 @@
 				<!-- 게시판 버튼모음 -->
 				<div class="board_list_butt">
 					<a
-						href="/_prog/_board/index.php?mode=DR&amp;no=oNY3r-RWk0xjjvwfHMNcLg&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage="><img
+						href="delete?qna_num=${qnaboard.qna_num }"><img
 						src="<%=request.getContextPath()%>/resources/images/delete.gif"
 						alt="삭제"></a> <a
-						href="/_prog/_board/index.php?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage="><img
+						href="list"><img
 						src="<%=request.getContextPath()%>/resources/images/list.gif" alt="목록"></a>
 					<a
-						href="/_prog/_board/index.php?mode=M&amp;no=oNY3r-RWk0xjjvwfHMNcLg&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage="><img
+						href="modify?qna_num=${qnaboard.qna_num }"><img
 						src="<%=request.getContextPath()%>/resources/images/modify.gif"
 						alt="수정"></a> <a
-						href="/_prog/_board/index.php?mode=R&amp;no=oNY3r-RWk0xjjvwfHMNcLg&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage="><img
+						href="reply"><img
 						src="<%=request.getContextPath()%>/resources/images/reply.gif"
 						alt="답변"></a> <a
-						href="/_prog/_board/index.php?mode=W&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage="><img
+						href="regist"><img
 						src="<%=request.getContextPath()%>/resources/images/write.gif"
 						alt="쓰기"></a>
 				</div>
