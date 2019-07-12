@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Member-Mapper">
+
+	
+	
+	<update id="insertMember">
+		insert 
+		into 
+		MEM(mem_code,mem_id,mem_pwd,mem_email)
+		values
+		(#{mem_code},#{mem_id},#{mem_pwd},#{mem_email})
+	</update>
+	
+	<update id="insertGmember">
+		insert 
+		into 
+		GMEM(gmem_code,name,birth,address,gender,tell)
+		values
+		(#{gmem_code},#{name},#{birth},#{address},#{gender},#{tell})
+	</update>
+	
+	<update id="insertTroupe">
+		insert 
+		into 
+		TROUPE(tro_code,bupanum,name)
+		values
+		(#{tro_code},#{bupanum},#{name})
+	</update>
+	
+	<select id="selectmember" >
+		select
+		from
+		member()
+	</select>
+	
+	<select id="selectMemberNextSeq" resultType="int">
+		select MEM_SEQ.nextval as mem_num from dual
+	</select>
+	
+	<select id="selectMemberById" parameterType="str" resultType="member">
+		select 
+		* 
+		from mem
+		where mem_id=#{mem_id}
+	</select>
+		
+	
+	
+	
+	
+	
+	
+	
+</mapper>

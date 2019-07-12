@@ -11,7 +11,7 @@
 		<typeAlias type="com.trex.dto.EventVO" alias="event"/>
 		<typeAlias type="com.trex.dto.AttachVO" alias="attach"/>
 		<typeAlias type="com.trex.dto.CoronationVO" alias="CRG"/>
-		
+		<typeAlias type="com.trex.dto.MemberVO" alias="member"/>
 
 	</typeAliases>
  

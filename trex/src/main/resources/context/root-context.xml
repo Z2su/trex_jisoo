@@ -10,5 +10,6 @@
 	<import resource="classpath:context/dataSource-context.xml"/>
 	<import resource="classpath:context/Event-context.xml"/>
 	<import resource="classpath:context/Att-context.xml"/>
+	<import resource="classpath:context/MEMBER-context.xml"/>
 	
 </beans>
