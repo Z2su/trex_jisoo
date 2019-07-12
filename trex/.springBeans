@@ -13,6 +13,7 @@
 		<config>src/main/resources/context/PFG-context.xml</config>
 		<config>src/main/resources/context/QnA-context.xml</config>
 		<config>src/main/resources/context/common-context.xml</config>
+		<config>src/main/resources/context/Att-context.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

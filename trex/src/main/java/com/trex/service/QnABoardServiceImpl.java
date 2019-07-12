@@ -2,28 +2,45 @@ package com.trex.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.trex.controller.SearchCriteria;
+import com.trex.dao.AttachDAO;
 import com.trex.dao.QnABoardDAO;
-import com.trex.dao.QnABoardDAOImpl;
+import com.trex.dto.AttachVO;
 import com.trex.dto.QnABoardVO;
 
 public class QnABoardServiceImpl implements QnABoardService {
 
+	@Autowired
 	private QnABoardDAO qnaboardDAO;
 
 	public void setQnaboardDAO(QnABoardDAO qnaboardDAO) {
 		this.qnaboardDAO = qnaboardDAO;
 	}
 
+	@Autowired
+	private AttachDAO attachDAO;
+
+	public void setAttachDAO(AttachDAO attachDAO) {
+		this.attachDAO = attachDAO;
+	}
+
 	@Override
 	public void create(QnABoardVO qna) throws Exception {
 		int num = qnaboardDAO.NextSeq();
-		
-		String code = "QNA"+ String.format("%04d", num);
+
+		String code = "QNA" + String.format("%04d", num);
 		qna.setQna_code(code);
 		qna.setQna_num(num);
-
 		qnaboardDAO.insertQnABoard(qna);
+		if (qna.getAttachList() != null) {
+			for (AttachVO attach : qna.getAttachList()) {
+				attach.setPost_code(code);
+				attach.setWirter(qna.getWriter());
+				attachDAO.insertAttach(attach);
+			}
+		}
 	}
 
 	@Override
@@ -53,6 +70,7 @@ public class QnABoardServiceImpl implements QnABoardService {
 	@Override
 	public List<QnABoardVO> listSearch(SearchCriteria cri) throws Exception {
 		List<QnABoardVO> qnalist = qnaboardDAO.selectSearchBoardList(cri);
+
 		return qnalist;
 	}
 
@@ -61,5 +79,13 @@ public class QnABoardServiceImpl implements QnABoardService {
 		int count = qnaboardDAO.selectSearchBoardCount(cri);
 		return count;
 	}
+
+	// @Override
+	// public Map<String, Object> alistSearch(SearchCriteria cri) throws Exception {
+	// Map<String, Object> qnaMap = new HashMap<String, Object>();
+	// List<QnABoardVO> qnalist = qnaboardDAO.selectSearchBoardList(cri);
+	// qnaMap.put("qnalist", qnalist);
+	// return null;
+	// }
 
 }

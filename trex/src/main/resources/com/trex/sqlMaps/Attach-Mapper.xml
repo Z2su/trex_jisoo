@@ -39,6 +39,10 @@
 		from attach
 		where attach_code = #{attach_code}
 	</update>
+	
+	<select id="NextSeq" resultType="int">
+		select attach_seq.nextval as attach_num from dual
+	</select>
 
 </mapper>
 

@@ -1,6 +1,7 @@
 package com.trex.dto;
 
 import java.util.Date;
+import java.util.List;
 
 public class QnABoardVO {
 	private String qna_code;
@@ -11,6 +12,15 @@ public class QnABoardVO {
 	private Date regdate;
 	private Date modidate;
 	private int viewcnt;
+	
+	private List<AttachVO> attachList;
+	
+	public List<AttachVO> getAttachList() {
+		return attachList;
+	}
+	public void setAttachList(List<AttachVO> attachList) {
+		this.attachList = attachList;
+	}
 	public String getQna_code() {
 		return qna_code;
 	}

@@ -1,6 +1,7 @@
 package com.trex.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.trex.controller.SearchCriteria;
 import com.trex.dto.QnABoardVO;
@@ -21,6 +22,7 @@ public interface QnABoardService {
 
 
 	public List<QnABoardVO> listSearch(SearchCriteria cri) throws Exception;
+//	public Map<String, Object> alistSearch(SearchCriteria cri) throws Exception;
 
 	int readSearchBoardCount(SearchCriteria cri) throws Exception;
 }
