@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CRG-Mapper">
+
+	<select id="selectCRGBoardList" resultType="CRG">
+		select * 
+		from crg 
+		order by crg_code desc		
+	</select>
+	
+	<select id="selectCRGBoard"  resultType="CRG">
+		select * 
+		from crg 
+		where crg_code=#{crg_code}
+	</select>
+	
+	<update id="insertCRGBoard">
+		insert 
+		into 
+		crg(crg_code,title,writer,cont)
+		values
+		(#{crg_code},#{title},#{writer},#{cont})
+	</update>
+	
+	<update id="updateCRGBoard" >
+		update 
+		crg 
+		set 
+		title=#{title}, cont=#{cont}, updatedate=sysdate 
+		where crg_code=#{crg_code}
+	</update>
+	
+	<update id="deleteCRGBoard" >
+		delete 
+		from crg 
+		where crg_code=#{crg_code}
+	</update>
+	
+	<update id="increaseViewCnt" >
+		update 
+		crg 
+		set 
+		viewcnt=viewcnt+1 
+		where crg_code=#{crg_code}
+	</update>
+	
+	<select id="selectCRGBoardNextSeq" resultType="int">
+		select CRG_SEQ.nextval as crg_num from dual
+	</select>
+
+
+</mapper>
