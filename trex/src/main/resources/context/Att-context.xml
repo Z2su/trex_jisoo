@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- MultipartResolver 설정 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="100000000" />
+		<property name="maxInMemorySize" value="100000000" />
+	</bean>
+	
+	<bean id ="AttachDAO"
+	class = "com.trex.dao.AttachDAOImpl"
+	p:session-ref="sqlSession" ></bean>
+
+	<bean id = "QnABoardService"
+	 class = "com.trex.service.QnABoardServiceImpl"
+	 p:attachDAO-ref="AttachDAO"></bean>
+
+</beans>
