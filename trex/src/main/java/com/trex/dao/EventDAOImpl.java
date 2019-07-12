@@ -30,7 +30,7 @@ public class EventDAOImpl implements EventDAO{
 
 	@Override
 	public void insertEvent(EventVO event) throws SQLException {
-		session.update("Event-Mapper.inserEvent",event);
+		session.update("Event-Mapper.insertEvent",event);
 	}
 
 	@Override

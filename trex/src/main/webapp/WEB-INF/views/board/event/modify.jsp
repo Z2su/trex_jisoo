@@ -46,21 +46,21 @@
 
 			<div id="txt">
 
-				<form name="inputFrm" method="post" action="regist">
+				<form name="inputFrm" method="post" action="modify">
 					<ul class="board_writeInfo">
 
 						<!--제목-->
 						<li><label for="wrtTitle">제 목</label><input type="text"
-							id="wrtTitle" name="title" value=""></li>
+							id="wrtTitle" name="title" value="${event.title }"></li>
 
 						<!--작성자 -->
 						<li><label for="wrtPers">작성자</label><input type="text"
-							id="wrtPers" name="writer" value="관리자" readonly=""><span
+							id="wrtPers" name="writer" value="${event.writer }" readonly=""><span
 							class="tip">* 작성자는 필수입력 사항입니다.</span></li>
 
 						<!--내용입력-->
 						<li><label for="wrtCont">내용입력</label> <textarea id="wrtCont"
-								name="cont" rows="20" cols="1"></textarea></li>
+								name="cont" rows="20" cols="1">${event.cont }</textarea></li>
 
 
 
