@@ -61,8 +61,8 @@
          <!-- 글로벌메뉴-->
          <ul id="global">
             <li><a href="<%=request.getContextPath()%>/">HOME</a></li>
-            <li><a href="login">로그인</a></li>
-            <li><a href="join">회원가입</a></li>
+            <li><a href="/login">로그인</a></li>
+            <li><a href="/join">회원가입</a></li>
             <li><a href="#" target="_blank" title="대전예술의전당 영문 홈페이지(새창)">?</a></li>
          </ul>
          <!-- 글로벌메뉴-->
