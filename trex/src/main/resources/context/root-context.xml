@@ -5,7 +5,7 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<import resource="classpath:context/PFG-context.xml"/>
-	<!-- <import resource="classpath:context/Crg-context.xml"/> -->
+	<import resource="classpath:context/Crg-context.xml"/>
 	<import resource="classpath:context/QnA-context.xml"/>
 	<import resource="classpath:context/dataSource-context.xml"/>
 	<import resource="classpath:context/Event-context.xml"/>

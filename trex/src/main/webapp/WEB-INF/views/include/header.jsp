@@ -107,7 +107,7 @@
                         </ul>
                      </div></li>
                   <li><a
-                     href="<%=request.getContextPath() %>/board/coro/list"
+                     href="<%=request.getContextPath() %>/board/Coronation/list"
                      class="">대관안내<span class="arrow" style="display: none;"></span></a>
                   <div id="tms">
                         <ul class="">
