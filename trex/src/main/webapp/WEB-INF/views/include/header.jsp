@@ -95,15 +95,15 @@
                      class="">공연안내<span class="arrow" style="display: none;"></span></a>
                   <div id="tms">
                         <ul class="">
-                           <li><a href="#"
+                           <li><a href="/board/perform/list"
                               class="">공연안내</a></li>
                            <li><a href="#"
                               class="">공연예매안내</a></li>
-                           <li><a href="#"
+                          <!--  <li><a href="#"
                               class="">기타공연소식</a></li>
                            <li><a
                               href="#"
-                              class="">공연정보신청</a></li>
+                              class="">공연정보신청</a></li> -->
                         </ul>
                      </div></li>
                   <li><a

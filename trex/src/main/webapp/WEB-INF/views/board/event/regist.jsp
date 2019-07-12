@@ -11,7 +11,7 @@
          <div class="subv_pat">
             <p>
                <strong><img
-                  src="<%=request.getContextPath()%>/resources/images/ma_service_type.png"
+                  src="/resources/images/ma_service_type.png"
                   alt="Daejeon Arts Center"></strong> 문화로 시민을 행복하게! 대전예술의전당
             </p>
          </div>
