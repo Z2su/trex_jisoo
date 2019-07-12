@@ -45,7 +45,7 @@
       <!-- content-->
       <div id="content">
          <!-- 컨텐츠 타이틀 -->
-         <h3 class="cnt_ti">대관 추가</h3>
+         <h3 class="cnt_ti">대관 수정</h3>
 
          <div id="txt">
             

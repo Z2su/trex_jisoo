@@ -40,60 +40,7 @@
 
 			<!-- container -->
 			<div id="container">
-				<!-- leftmenu-->
-				<div id="leftwrap">
-					<h2 id="leftTi" style="background:url(<%=request.getContextPath()%>/resources/images/sidemenu.jpg) 0 0 no-repeat">대관안내</h2>
-
-					<!--LEFTMENU START-->
-
-		<script type="text/javascript"> 
-		<!--         
-		var old_menu = '';
-		var old_cell = '';
-		var old_Lmenu = '';
-
-		function menuclick(submenu)
-		{		
-			if( old_menu != submenu ) {
-				if( old_menu !='' ) {
-				  old_menu = 'none';				  
-				}
-				jQuery(".lm_2th > li > div").hide();
-				if( old_menu !='' ) {
-					jQuery("#"+old_Lmenu).parent().find(">a").removeClass("link_2th_ov").addClass("link_2th");					
-				}
-				jQuery("#"+submenu).parent().find(">a").removeClass("link_2th").addClass("link_2th_ov");
-			
-				document.getElementById(submenu).style.display = 'block';
-				old_menu = document.getElementById(submenu).style.display;
-				old_Lmenu = submenu;				
-			} 
-			else 
-			{
-				document.getElementById(submenu).style.display = 'none';
-				old_menu = '';			
-			}				
-		}
-		//-->
-		</script>
-		
-
-	
-	<ul class="lm_2th">
-		<li><a href="/board/Coronation/list" class="link_2th" onclick="menuclick('submenu1');return false;" onkeypress="">정기/수시대관 공고</a></li>
-		
-		<li><a href="*" class="link_2th" onclick="menuclick('submenu2');return false;" onkeypress="">대관 신청</a></li>
-		
-		<li><a href="*" class="link_2th" onclick="menuclick('submenu1');return false;" onkeypress="">대관 일정</a></li>
-		
-		<li><a href="*" class="link_2th" onclick="menuclick('submenu3');return false;" onkeypress="">대관 시설</a></li>
-		
-	</ul>
-					
-					<div class="clearfix"></div>
-				</div>
-				<!-- //leftmenu-->
-
+				 <%@ include file="/WEB-INF/views/board/Coronation/submenu.jsp"%>
 
 <!-- 탭메뉴 및 좌측메뉴 펼침기능 시작 부분 -->
 <script type="text/javascript">menuclick('submenu3');</script>
@@ -119,7 +66,7 @@
 						<th scope="col" class="t_head">번호</th>
 						<th scope="col" class="t_head">제목</th>
 						<th scope="col" class="t_head">작성일</th>
-						<th scope="col" class="t_head">작성자 코드</th>
+						<th scope="col" class="t_head">작성자</th>
 						<th scope="col" class="t_head t_end">조회수</th>
 					</tr>
 				</thead>

@@ -14,6 +14,7 @@
 		<config>src/main/resources/context/QnA-context.xml</config>
 		<config>src/main/resources/context/Event-context.xml</config>
 		<config>src/main/resources/context/MEMBER-context.xml</config>
+		<config>src/main/resources/context/Pr-context.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

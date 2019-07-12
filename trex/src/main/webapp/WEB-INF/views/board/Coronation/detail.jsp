@@ -35,8 +35,8 @@
 			<!-- //navigation -->
 
 			<!-- container -->
-			<div id="container">
-				<%@ include file="/WEB-INF/views/board/commons/submenu.jsp" %>
+			 <div id="container">
+      <%@ include file="/WEB-INF/views/board/Coronation/submenu.jsp"%>
 
 
 				<!-- content-->
@@ -75,8 +75,18 @@
 		</tbody>
 	</table>
 	
-	<a href="/board/Coronation/list" class="btn" id="list">목록으로</a>
-	<a href="/board/Coronation/modify" class="btn" id="update">수정하기</a>
+	
+	 <!-- 게시판 버튼모음 -->
+           <div class="board_butt">
+             <input type="image" href="./modify"
+                src="<%=request.getContextPath() %>/resources/images/modify.gif" alt="수정">
+             <a
+                href="./delete"><img
+                src="<%=request.getContextPath() %>/resources/images/delete.gif" alt="삭제"></a>
+             <a
+                href="/board/Coronation/list"><img
+                src="<%=request.getContextPath() %>/resources/images/list.gif" alt="목록"></a>            
+           </div>
 	
 	
 	<script type="text/javascript">
@@ -94,14 +104,14 @@
 		
 		function fn_openBoardList(){
 			var comSubmit = new ComSubmit();
-			comSubmit.setUrl("<c:url value='/board/detail' />");
+			comSubmit.setUrl("<c:url value='/board/Coronation/list'/>");
 			comSubmit.submit();
 		}
 		
 		function fn_openBoardUpdate(){
 			var idx = "${map.IDX}";
 			var comSubmit = new ComSubmit();
-			comSubmit.setUrl("<c:url value='/board/detail' />");
+			comSubmit.setUrl("<c:url value='/board/Coronation/modify' />");
 			comSubmit.addParam("IDX", idx);
 			comSubmit.submit();
 		}
