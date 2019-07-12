@@ -26,7 +26,7 @@
 		update
 		event
 		set
-		title=#{title}, cont=#{cont}, updatedate = sysdate
+		title=#{title}, cont=#{cont}, modidate = sysdate
 		where event_num = #{event_num}
 	</update>
 	

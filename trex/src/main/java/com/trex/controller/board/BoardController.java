@@ -1,8 +1,8 @@
 package com.trex.controller.board;
 
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -92,8 +91,10 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/event/modify", method = RequestMethod.POST)
-	public String postmodify() {
-	return null;
+	public String postmodify(EventVO event) throws Exception {
+		eService.modify(event);
+		
+		return "redirect:/board/event/list";
 	}
 	
 	@RequestMapping(value="/event/delete")
