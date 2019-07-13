@@ -74,7 +74,7 @@
 			
 
 						<input type="text" name="pf_code" /> 
-						<input type="text" name="writer" value="EP0001" />
+						<input type="text" name="writer" value="${loginUser.mem_code }" />
 						<form id="registform" action='regist' method="POST">
 						
 						

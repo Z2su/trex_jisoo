@@ -1,5 +1,6 @@
 package com.trex.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.trex.controller.SearchCriteria;
@@ -18,4 +19,6 @@ public interface QnABoardDAO {
 			
 	List<QnABoardVO> selectSearchBoardList(SearchCriteria cri) throws Exception;
 	int selectSearchBoardCount(SearchCriteria cri) throws Exception;
+	
+	int NextSeq() throws SQLException;
 }

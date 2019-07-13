@@ -17,9 +17,9 @@
 	<update id="insertEvent" parameterType="event">
 		insert
 		into
-		event(event_code,event_num,title,writer,cont,enable)
+		event(event_code,event_num,title,writer,cont)
 		values
-		(#{event_code},#{event_num},#{title},#{writer},#{cont},#{enable})
+		(#{event_code},#{event_num},#{title},#{writer},#{cont})
 	</update>
 	
 	<update id="updateEvent" parameterType="event">
@@ -45,6 +45,6 @@
 	</update>
 	
 	<select id="selectEventSeqNext" resultType="int">
-		select eve.seq.nextval as event_num from dual
+		select eve_seq.nextval as event_num from dual
 	</select>
 </mapper>

@@ -61,8 +61,8 @@
          <!-- 글로벌메뉴-->
          <ul id="global">
             <li><a href="<%=request.getContextPath()%>/">HOME</a></li>
-            <li><a href="login">로그인</a></li>
-            <li><a href="join">회원가입</a></li>
+            <li><a href="/login">로그인</a></li>
+            <li><a href="/join">회원가입</a></li>
             <li><a href="#" target="_blank" title="대전예술의전당 영문 홈페이지(새창)">?</a></li>
          </ul>
          <!-- 글로벌메뉴-->
@@ -95,19 +95,19 @@
                      class="">공연안내<span class="arrow" style="display: none;"></span></a>
                   <div id="tms">
                         <ul class="">
-                           <li><a href="#"
+                           <li><a href="/board/perform/list"
                               class="">공연안내</a></li>
                            <li><a href="#"
                               class="">공연예매안내</a></li>
-                           <li><a href="#"
+                          <!--  <li><a href="#"
                               class="">기타공연소식</a></li>
                            <li><a
                               href="#"
-                              class="">공연정보신청</a></li>
+                              class="">공연정보신청</a></li> -->
                         </ul>
                      </div></li>
                   <li><a
-                     href="<%=request.getContextPath() %>/board/coro/list"
+                     href="<%=request.getContextPath() %>/board/Coronation/list"
                      class="">대관안내<span class="arrow" style="display: none;"></span></a>
                   <div id="tms">
                         <ul class="">
@@ -127,7 +127,7 @@
                            <li><a href="<%=request.getContextPath()%>/board/pr/adlist"
                               class="">광고게시판</a></li>
                            <li><a
-                              href="<%=request.getContextPath()%>/board/pr/slist"
+                              href="<%=request.getContextPath()%>/board/event/list"
                               class="">이벤트</a></li>
                         </ul>
                      </div>

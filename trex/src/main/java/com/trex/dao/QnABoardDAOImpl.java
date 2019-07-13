@@ -1,5 +1,6 @@
 package com.trex.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
@@ -63,6 +64,12 @@ public class QnABoardDAOImpl implements QnABoardDAO {
 		int rowCount = 
 				session.selectOne(NAMESPACE+".selectSearchBoardCount",cri);
 		return rowCount;
+	}
+
+	@Override
+	public int NextSeq() throws SQLException {
+		int seq_num = session.selectOne(NAMESPACE+".NextSeq");
+		return seq_num;
 	}
 	
 	
