@@ -33,26 +33,14 @@ public class BoardController {
 	public List<String[]> submenuModel(){
 		List<String[]> submenuList = new ArrayList<String[]> ();
 		
-		submenuList.add(new String[] {"홍보게시판","prlist"});
-		submenuList.add(new String[] {"광고게시판","adlist"});
+		submenuList.add(new String[] {"홍보게시판","/board/pr/prlist"});
+		submenuList.add(new String[] {"광고게시판","board/ad/adlist"});
 		submenuList.add(new String[] {"이벤트","/board/event/list"});
 		
 		return submenuList;
 	}
 	
-	@RequestMapping(value="/pr/prlist",method=RequestMethod.GET)
-	public void prlistGET() {
-		
-	}
-	@RequestMapping(value="/pr/adlist",method=RequestMethod.GET)
-	public void adlistGET() {
-		
-	}
-	@RequestMapping(value="/pr/prregist", method=RequestMethod.GET)
-	public void prregistGET() {}
 	
-	@RequestMapping(value="/pr/adregist", method=RequestMethod.GET)
-	public void adregistGET() {}
 	
 	// 이벤트 게시판
 	@RequestMapping("/event/list")

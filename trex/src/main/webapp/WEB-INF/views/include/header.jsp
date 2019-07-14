@@ -124,7 +124,7 @@
                         <ul class="">
                            <li><a href="<%=request.getContextPath()%>/board/pr/prlist"
                               class="">홍보게시판</a></li>
-                           <li><a href="<%=request.getContextPath()%>/board/pr/adlist"
+                           <li><a href="<%=request.getContextPath()%>/board/ad/adlist"
                               class="">광고게시판</a></li>
                            <li><a
                               href="<%=request.getContextPath()%>/board/event/list"
