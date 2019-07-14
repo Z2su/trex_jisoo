@@ -147,15 +147,7 @@ public class CommonController {
 	
 		return url;
 	}
-	
-	@RequestMapping(value="/performrese/{pf_code}", method=RequestMethod.GET )
-	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
-		String url = "perform/sample";
-		
-		modelnView.setViewName(url);
-		
-		return modelnView;
-	}
+
 		
 		
 		

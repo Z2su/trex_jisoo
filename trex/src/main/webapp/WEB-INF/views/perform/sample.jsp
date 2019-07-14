@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <link rel="stylesheet" type="text/css" href="//ticketimage.interpark.com/TicketImage/onestop/css/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
 <div id="contentswrap">
 
 	
@@ -57,7 +59,7 @@
 
 			<!-- //Process 영역 -->	
 			<div class="contL">
-				<iframe id="ifrmBookStep" name="ifrmBookStep" src="/Book/loading.html" width="637" height="493" frameborder="0" scrolling="no" title="예매정보 선택 페이지"></iframe>
+				<iframe id="ifrmBookStep" name="ifrmBookStep" src="sample2" width="637" height="493" frameborder="0" scrolling="no" title="예매정보 선택 페이지"></iframe>
 			</div><!-- contL //-->
 			<!-- Process 영역 //-->	
 			<div class="contR">
@@ -130,10 +132,21 @@
 							</tr>
 						</tbody>
 					</table>
-					<p class="btn" id="LargeNextBtn" style="display:;"><a href="javascript:fnNextStep('P');" id="LargeNextBtnLink" title="다음단계 페이지 이동"><img src="//ticketimage.interpark.com/TicketImage/onestop/btn_next.gif" alt="다음단계" id="LargeNextBtnImage"> </a></p>
+					<p class="btn" id="LargeNextBtn" style="display:;"><a href="javascript:fnNextStep('P');" id="LargeNextBtnLink" title="다음단계 페이지 이동" data-url="sample2"><img src="//ticketimage.interpark.com/TicketImage/onestop/btn_next.gif" alt="다음단계" id="LargeNextBtnImage"> </a></p>
+				
 					<p class="btn" id="LargeProcBtn" style="display:none;"><img src="//ticketimage.interpark.com/TicketImage/onestop/loading_2.gif" alt="잠시만 기다려주세요"></p>
  					<p class="btn" id="SmallNextBtn" style="display:none;"><a href="javascript:fnPrevStep();" id="SmallPrevBtnLink" title="이전단계 페이지 이동"><img src="//ticketimage.interpark.com/TicketImage/onestop/btn_pre.gif" alt="이전단계" id="SmallPrevBtnImage"></a><a href="javascript:fnNextStep('P');" id="SmallNextBtnLink" title="다음단계 페이지 이동"><img src="//ticketimage.interpark.com/TicketImage/onestop/btn_next_02.gif" alt="다음단계" id="SmallNextBtnImage"></a></p>
 				</div>
+				<script>
+					$('#LargeNextBtnLink').on('click',function(e){
+						e.preventDefault();
+						/* alert($(this).attr('data-url')); */
+						$('#ifrmBookStep').attr('src',$(this).attr('data-url'));
+
+
+					});
+				
+				</script>
 				<!-- 예매 정보 //-->	
 			</div><!-- contR //-->
 		</div><!-- contWrap //-->
