@@ -96,6 +96,8 @@
 		from faq
 		order by faq_num desc,regDate desc
 	</select>
+	
+	
 </mapper>
 
 

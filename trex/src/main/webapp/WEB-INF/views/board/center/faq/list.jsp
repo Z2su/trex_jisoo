@@ -141,12 +141,15 @@
 
 			</div>
 		</div>
-		<div id="divMenu">
+		
+		<!-- 게시판 버튼모음 -->
+			<div class="board_butt">
 
-			<!--quick  -->
-			<%-- <!-- 	<%@ include file="/WEB-INF/views/board/center/quick.jsp" %> --> --%>
+				<a href="#"><img src="<%=request.getContextPath()%>/resources/images/list.gif" alt="목록"></a> <a href="#"><img src="<%=request.getContextPath()%>/resources/images/write.gif" alt="쓰기"></a>
+				<a href="#" target="_blank"> </a>
 
-		</div>
+			</div>
+		
 		<!-- //container -->
 	</div>
 

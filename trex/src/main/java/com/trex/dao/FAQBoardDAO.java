@@ -21,6 +21,6 @@ public interface FAQBoardDAO {
 	
 	int NextSeq() throws SQLException;
 
-
+	
 	}
 

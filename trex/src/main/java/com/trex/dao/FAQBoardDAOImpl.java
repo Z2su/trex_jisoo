@@ -78,6 +78,8 @@ public class FAQBoardDAOImpl implements FAQBoardDAO {
 		return seq_num;
 	}
 
+	  
+	
 
 
 }
