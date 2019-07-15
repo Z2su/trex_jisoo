@@ -58,10 +58,20 @@ public class BoardController {
 	public ModelAndView eventList(ModelAndView modelnView) throws SQLException{
 		
 		List<EventVO> eventList = eService.eventList();
-		
 		modelnView.addObject("eventList", eventList);
 		
 		System.out.println(eventList);
+		
+		return modelnView;
+	}
+	@RequestMapping("/event/endlist")
+	public ModelAndView eventendList(ModelAndView modelnView) throws SQLException{
+		
+		List<EventVO> eventEndList = eService.eventEndList();
+		
+		modelnView.addObject("eventEndList", eventEndList);
+		
+		System.out.println(eventEndList);
 		
 		return modelnView;
 	}

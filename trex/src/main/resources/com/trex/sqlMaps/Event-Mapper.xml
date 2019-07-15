@@ -2,18 +2,42 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Event-Mapper">
 
+	<update id="enableList" parameterType="int">
+		<![CDATA[
+			update
+			event 
+			set
+			enable = 0
+			where enddate + 1 < sysdate
+		]]>
+	</update>
+
 	<select id="selectEventList" resultType="event">
-		select *
-		from event
+		select
+		*
+		from
+		event
+		where
+		enable = 1
 		order by event_num desc
 	</select>
-	
+
+	<select id="selectEventEndList" resultType="event">
+		select
+		*
+		from
+		event
+		where enable = 0
+		order by event_num desc
+	</select>
+
 	<select id="selectEventByevent_num" resultType="event">
 		select *
-		from event
+		from
+		event
 		where event_num = #{event_num}
 	</select>
-	
+
 	<update id="insertEvent" parameterType="event">
 		insert
 		into
@@ -21,21 +45,23 @@
 		values
 		(#{event_code},#{event_num},#{title},#{writer},#{cont})
 	</update>
-	
+
 	<update id="updateEvent" parameterType="event">
 		update
 		event
 		set
 		title=#{title}, cont=#{cont}, modidate = sysdate
-		where event_num = #{event_num}
+		where event_num =
+		#{event_num}
 	</update>
-	
+
 	<update id="deleteEvent" parameterType="int">
 		delete
 		from event
-		where event_num = #{event_num}
+		where
+		event_num = #{event_num}
 	</update>
-	
+
 	<update id="increaseViewCnt" parameterType="int">
 		update
 		event
@@ -43,8 +69,9 @@
 		viewcnt = viewcnt+1
 		where event_num = #{event_num}
 	</update>
-	
+
 	<select id="selectEventSeqNext" resultType="int">
-		select eve_seq.nextval as event_num from dual
+		select
+		eve_seq.nextval as event_num from dual
 	</select>
 </mapper>
