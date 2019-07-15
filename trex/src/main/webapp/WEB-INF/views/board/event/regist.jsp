@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import ="java.util.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
@@ -50,14 +51,21 @@
 					<ul class="board_writeInfo">
 
 						<!--제목-->
-						<li><label for="wrtTitle">제 목</label><input type="text"
+						<li><label for="wrtTitle">제 목</label> <input type="text"
 							id="wrtTitle" name="title" value=""></li>
 
-						
+						<li><label for="dms.subject"
+							class="col-xs-4 col-sm-2 control-label no-padding-right bolder g_label">
+								게시기간 </label><input id="openDate" name="startDate"
+							style="color: #919191;" class="dateInput" readonly="readonly"
+							type="text"
+							value='<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd" />' />
+							~ <input id="closeDate" name="endDate" class="dateInput"
+							type="text" value='<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd" />' /></li>
 
 						<!--작성자 -->
-						<li><label for="wrtPers">작성자</label><input type="text"
-							id="wrtPers" name="writer" value="관리자" readonly=""><span
+						<li><label for="wrtPers">작성자</label> <input type="text"
+							id="wrtPers" name="writer" value="${loginUser.id}" readonly><span
 							class="tip">* 작성자는 필수입력 사항입니다.</span></li>
 
 						<!--내용입력-->
