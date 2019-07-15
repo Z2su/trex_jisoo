@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-</head>
-<body>
+
 
 
 <div id="contentswrap">
@@ -26,9 +24,11 @@
 	<div id="navigation">
 		<div class="naviwrap">
 			<a href="/html/kr/" class="nv_home">HOME</a>&gt;
-			<navi> <a href="/html/kr/performance/performance_010101.html">공연안내</a>&gt;<a
-				href="/html/kr/performance/performance_010101.html">공연안내</a>&gt;<a
-				href="/html/kr/performance/performance_010101.html" class="navi_ov">공연정보</a></navi>
+			<navi>
+				<a href="/html/kr/performance/performance_010101.html">공연안내</a>&gt;
+				<a href="/html/kr/performance/performance_010101.html">공연안내</a>&gt;
+				<a href="/html/kr/performance/performance_010101.html" class="navi_ov">공연정보</a>
+			</navi>
 			<div class="nv_service">
 				<a class="nvs_print" href="#total"
 					onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span
@@ -43,8 +43,7 @@
 			</div>
 		</div>
 	</div>
-	
-</div>
+
 	
 	<!-- //navigation -->
 
@@ -57,10 +56,7 @@
 		<!-- <div id="content"> -->
 		<!-- 컨텐츠 타이틀 -->
 		<!-- 	<h3 class="cnt_ti">detail</h3> -->
-	
-		
-		
-		
+
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-3" style="width: 50%">
@@ -74,49 +70,37 @@
 								<!-- <form role="form"> -->
 								<fieldset>
 									<div class="form-group" id="divInputId">
-										<label>아이디</label> <input class="form-control"
+										<label>아이디</label>  <input class="form-control"
 											style="margin-bottom: 5px;" placeholder="아이디" name="mem_id"
-											id="signUpUserId" type="text" /> <input type="button"
+											id="mem_id" type="text" /> <input type="button"
 											class="btn btn-default" style="width: 30%;" value="중복확인"
 											onclick="duplicationId();" />
 									</div>
 									<div class="form-group">
 										<label>비밀번호</label> <input class="form-control"
-											placeholder="비밀번호" name="mem_pwd" id="signUpUserPwd"
+											placeholder="비밀번호" name="mem_pwd" id="mem_pwd"
 											type="password" />
 									</div>
 									<div class="form-group">
 										<label>비밀번호 확인</label> <input class="form-control"
-											placeholder="비밀번호 확인" name="mem_PwdCfm" id="signUpUserPwdCfm"
+											placeholder="비밀번호 확인" name="mem_pwd2" id="mem_pwd2"
 											type="password" />
 									</div>
 									<div class="form-group">
 										<label>이름</label> <input class="form-control" placeholder="이름"
-											name="name" id="signUpUsername" type="text" />
+											name="name" id="name" type="text" />
 									</div>
 									<div class="form-group">
 										<label>성별</label> <input type="radio" name="gender" value="남"
-											checked>남 <input type="radio" name="gender" value="여"
-											checked>여
+											>남 <input type="radio" name="gender" value="여"
+											>여
 									</div>
 									<div class="form-group">
 										<label>생년월일</label> <input type="text" name="birth"
-											maxlength="4" placeholder="년(4자)" size="6"> <select
-											name="birth">
-											<option value="">월</option>
-											<option value="01">1</option>
-											<option value="02">2</option>
-											<option value="03">3</option>
-											<option value="04">4</option>
-											<option value="05">5</option>
-											<option value="06">6</option>
-											<option value="07">7</option>
-											<option value="08">8</option>
-											<option value="09">9</option>
-											<option value="10">10</option>
-											<option value="11">11</option>
-											<option value="12">12</option>
-										</select> <input type="text" name="birth_dd" maxlength="2"
+											maxlength="4" placeholder="년(4자)" size="6">
+											<input type="text" name="birth_mm"
+											maxlength="2" placeholder="월" size="4">
+											 <input type="text" name="birth_dd" maxlength="2"
 											placeholder="일" size="4">
 									</div>
 									<div class="form-group">
@@ -136,6 +120,7 @@
                             		<label>사업자번호</label>
                             		<input class="form-control" placeholder="사업자번호" name="signUpUserCompanyNo" id="signUpUserCompanyNo" type="text" />
                             	</div> -->
+                            		</div>
 										<div class="form-group">
 											<label style="display: block;">주소</label> <input
 												class="form-control" style="width: 40%; display: inline;"
@@ -192,9 +177,9 @@
 												name="signUpUserCompanyAddressDetail"
 												id="signUpUserCompanyAddressDetail" type="text" />
 										</div>
-										 <button type="submit" class="btn btn-lg btn-success btn-block">회원가입</button> 
-<!-- 										<input type="submit" class="btn btn-lg btn-success btn-block" value="회원가입" onclick="DosignUp();" />
- -->  								</fieldset>
+										 <button id ="join" type="submit" class="btn btn-lg btn-success btn-block">회원가입</button> 
+										<input id="join2" type="button" class="btn btn-lg btn-success btn-block" value="회원가입" onclick="DosignUp();" />
+  								</fieldset>
 							</form>
 						</div>
 					</div>
@@ -248,9 +233,80 @@
 						}).open();
 			}
 		</script>
-		<!-- </div> -->
+		
 	
+<script type="text/javascript">
+		
+			$("input#join2").on('click',function(e){
+				
+				alert("bbbbbb");
+			});
+			
+		
+			$(function(){
+				
+				 $("form").submit(
+						function(){
+							var tel1_pattert = /(^01[016789]$)/; //정규식
+							var tel2_3_pattern = /\d{4}&/;
+							var regExp = /^[0-9]+$/;
+							var format = /^(19[0-9][0-9]|20\d{2})-(0[0-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+							var regExpbir = /^\d{4}$/; 	
+							var regId = /^[a-z0-9]{3,10}$/;	// 아이디 유효성 검사식
 
+							var id = $('#mem_id');
+							
+							 if(!check(regId,id,"아이디는 4~12자의 영문 대소문자와 숫자로만 입력")) {
+								  alert("ㅎㅎ");
+						           return false;
+						       }
+							if ($("#mem_id").val() == ""){
+								alert("아이디를 꼭 입력하세요!");
+								$("#mem_id").focus();
+								return false;
+							
+
+							}else if($("#mem_pwd").val() == ""){
+								alert("비밀번호를 꼭 입력하세요!");
+								$("#mem_pwd").focus();
+								return false; 
+							
+							} 
+						 	 else if($("#mem_pwd2").val() == ""){
+								alert("비밀번호확인을 꼭 입력하세요!");
+								$("#mem_pwd2").focus();
+								return false;
+								
+							} else if($("#name").val() == ""){
+								alert("이름을 꼭 입력하세요!");
+								$("#name").focus();
+								return false;
+								
+							} else if ($("input:radio[name='gender']").is(":checked")==false){
+								alert('성별을 체크하세요');
+								$('#gender').focus();
+								return false;
+								
+							} else if($("#birth").val() == ""){
+								alert("이름을 꼭 입력하세요!");
+								$("#birth").focus();
+								return false;
+							  
+
+							
+						
+				});		
+			});
+			function check(re, what, message) {
+			       if(re.test(what.value)) {
+			           return true;
+			       }
+			       alert(message);
+			       what.value = "";
+			       what.focus();
+			       //return false;
+			   }
+		</script> 
 	</div>
 	<!-- //container -->
-</div> --%>
+</div>
