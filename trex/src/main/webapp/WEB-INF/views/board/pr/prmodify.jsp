@@ -17,7 +17,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- //subvisual -->
+	<!-- //subvisual --> 
 
 	<!-- navigation -->
 	<div id="navigation">
@@ -52,20 +52,20 @@
 				
 				
 				<form name="inputFrm" method="post"
-					action="prregist"
+					action="prmodify"
 					enctype="multipart/form-data" >
-					
+					<input type="hidden" name="pr_num" value="${pr.pr_num }">
 					
 
 					<ul class="board_writeInfo">
 
 						<!--제목-->
 						<li><label for="wrtTitle">제 목</label><input type="text"
-							id="wrtTitle" name="title" value=""></li>
+							id="title" name="title" value="${pr.title } "></li>
 
 						<!--작성자 -->
 						<li><label for="wrtPers">작성자</label><input type="text"
-							id="wrtPers" name="writer" value="준석 " readonly=""><span
+							id="writer" name="writer" value="${pr.writer }" readonly=""><span
 							class="tip"></span></li>
 						<!--공지 사항 체크-->
 
@@ -84,7 +84,7 @@
 						<!--내용입력-->
 						
 						<li><label for="wrtCont">내용입력</label> <textarea id="wrtCont"
-								name="cont" rows="20" cols="1"></textarea></li>
+								name="cont" rows="20" cols="1">${pr.cont}</textarea></li>
 
 
 
@@ -93,12 +93,12 @@
 					<!-- 게시판 버튼모음 -->
 					<div class="board_butt">
 						<input type="image"
-							src="/_prog/_board/skin/blue/img/button/entry.gif" alt="등록">
+							src="/_prog/_board/skin/blue/img/button/entry.gif" alt="확인">
 						<a
 							href="/_prog/_board/index.php?code=stage&amp;site_dvs_cd=kr&amp;menu_dvs_cd=0308&amp;skey=&amp;sval=&amp;GotoPage="><img
 							src="/_prog/_board/skin/blue/img/button/cancel.gif" alt="취소"></a>
 						<a
-							href="/_prog/_board/index.php?code=stage&amp;site_dvs_cd=kr&amp;menu_dvs_cd=0308&amp;skey=&amp;sval=&amp;GotoPage="><img
+							href="prlist"><img
 							src="/_prog/_board/skin/blue/img/button/list.gif" alt="목록"></a>
 					</div>
 				</form>
