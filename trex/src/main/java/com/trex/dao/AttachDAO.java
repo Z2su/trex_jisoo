@@ -18,4 +18,6 @@ public interface AttachDAO {
 
 	public void deleteAllAttach(String attach_code)throws SQLException;
 	
+	int NextSeq() throws SQLException;
+	
 }

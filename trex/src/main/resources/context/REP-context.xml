@@ -4,14 +4,13 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!-- MultipartResolver 설정 -->
-	<bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="maxUploadSize" value="100000000" />
-		<property name="maxInMemorySize" value="100000000" />
-	</bean>
+<bean id = "QnAReplyDAO"
+class = "com.trex.dao.QnAReplyDAOImpl"
+p:session-ref="sqlSession"> </bean>
 
+<bean id = "QnAReplyService"
+class = "com.trex.service.QnAReplyServiceImpl"
+p:qnareplyDAO-ref="QnAReplyDAO"></bean>
 
-	
 
 </beans>

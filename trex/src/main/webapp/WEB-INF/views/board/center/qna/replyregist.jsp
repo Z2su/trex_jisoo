@@ -45,10 +45,11 @@
 
 			<div id="txt">
 
-				<form name="inputFrm" method="post" action="regist"
+				<form name="inputFrm" method="post" action="replyregist"
 					enctype="multipart/form-data">
 					<ul class="board_writeInfo">
-
+						<input type="hidden" name="qna_code" value="${qnaboard.qna_code }">
+						
 						<!--제목-->
 						<li><label for="wrtTitle">제 목</label><input type="text"
 							id="wrtTitle" name="title" value=""></li>
@@ -60,17 +61,17 @@
 							
 						<!-- 첨부파일 -->	
 						
-						<li><label for="wrtFile">첨부파일</label><input
+						<!-- <li><label for="wrtFile">첨부파일</label><input
 							name="file" id="file1" type="file" class="upFile"
-							title="첫번째첨부파일"> (최대 파일사이즈 : 2 MB)</li>
+							title="첫번째첨부파일"> (최대 파일사이즈 : 2 MB)</li> -->
 							
 							
 						<!--내용입력-->
 						<li><label for="wrtCont">내용입력</label> <textarea id="wrtCont"
 								name="cont" rows="20" cols="1"></textarea></li>
 
-
-
+					
+	
 					</ul>
 
 					<!-- 게시판 버튼모음 -->

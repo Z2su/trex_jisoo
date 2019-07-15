@@ -79,7 +79,7 @@
 
 							<tr>
 								<td>${qnaboardVO.qna_num}</td>
-								<td><a
+								<td class="left"><a
 									href='detail${pageMaker.makeSearch(pageMaker.cri.page) }&qna_num=${qnaboardVO.qna_num}'>
 										${qnaboardVO.title}</a></td>
 								<td>${qnaboardVO.writer}</td>
@@ -87,7 +87,23 @@
 										value="${qnaboardVO.regdate}" /></td>
 								<td><span class="badge bg-red">${qnaboardVO.viewcnt }</span></td>
 							</tr>
-
+							
+								<c:forEach items="${replist}" var="qnareplyVO">
+								<c:if test="${qnaboardVO.qna_code eq qnareplyVO.qna_code }">
+									
+									<tr>
+								<td></td>
+								<td class="left">ㄴ 답글: <a
+									href='replydetail?rep_num=${qnareplyVO.rep_num }'>
+										${qnareplyVO.title}</a></td>
+								<td>${qnareplyVO.writer}</td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd"
+										value="${qnareplyVO.regdate}" /></td>
+								<td><span class="badge bg-red">${qnareplyVO.viewcnt }</span></td>
+							</tr>
+									
+								</c:if>
+								</c:forEach>
 						</c:forEach>
 						</c:if>
 						<c:if test="${empty list }">
