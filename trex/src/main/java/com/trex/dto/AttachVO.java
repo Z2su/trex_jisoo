@@ -3,17 +3,20 @@ package com.trex.dto;
 import java.util.Date;
 
 public class AttachVO {
-
+	
 	private String attach_code;
 	private int attach_num;
-	private String filename;
-	private String filetype;
-	private int filesize;
-	private String filepath;
-	private String writer;
-	private Date regdate;
-	private String attach_uuid;
+
+	private String fileName;
+	private String fileType;
+	private String fileSize;
+	private String filePath;
+	
+	private Date regDate;
+	private String wirter;
+	private String uuid;
 	private String post_code;
+	
 	public String getAttach_code() {
 		return attach_code;
 	}
@@ -26,47 +29,47 @@ public class AttachVO {
 	public void setAttach_num(int attach_num) {
 		this.attach_num = attach_num;
 	}
-	public String getFilename() {
-		return filename;
+	public String getFileName() {
+		return fileName;
 	}
-	public void setFilename(String filename) {
-		this.filename = filename;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
-	public String getFiletype() {
-		return filetype;
+	public String getFileType() {
+		return fileType;
 	}
-	public void setFiletype(String filetype) {
-		this.filetype = filetype;
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
 	}
-	public int getFilesize() {
-		return filesize;
+	public String getFileSize() {
+		return fileSize;
 	}
-	public void setFilesize(int filesize) {
-		this.filesize = filesize;
+	public void setFileSize(String fileSize) {
+		this.fileSize = fileSize;
 	}
-	public String getFilepath() {
-		return filepath;
+	public String getFilePath() {
+		return filePath;
 	}
-	public void setFilepath(String filepath) {
-		this.filepath = filepath;
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
 	}
-	public String getWriter() {
-		return writer;
+	public Date getRegDate() {
+		return regDate;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
 	}
-	public Date getRegdate() {
-		return regdate;
+	public String getWirter() {
+		return wirter;
 	}
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
+	public void setWirter(String wirter) {
+		this.wirter = wirter;
 	}
-	public String getAttach_uuid() {
-		return attach_uuid;
+	public String getUuid() {
+		return uuid;
 	}
-	public void setAttach_uuid(String attach_uuid) {
-		this.attach_uuid = attach_uuid;
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 	public String getPost_code() {
 		return post_code;
@@ -76,10 +79,12 @@ public class AttachVO {
 	}
 	@Override
 	public String toString() {
-		return "AttachVO [attach_code=" + attach_code + ", attach_num=" + attach_num + ", filename=" + filename
-				+ ", filetype=" + filetype + ", filesize=" + filesize + ", filepath=" + filepath + ", writer=" + writer
-				+ ", regdate=" + regdate + ", attach_uuid=" + attach_uuid + ", post_code=" + post_code + "]";
+		return "AttachVO [attach_code=" + attach_code + ", attach_num=" + attach_num + ", fileName=" + fileName
+				+ ", fileType=" + fileType + ", fileSize=" + fileSize + ", filePath=" + filePath + ", regDate="
+				+ regDate + ", wirter=" + wirter + ", uuid=" + uuid + ", post_code=" + post_code + "]";
 	}
+	
+	
 	
 	
 	

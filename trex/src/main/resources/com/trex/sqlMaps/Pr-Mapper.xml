@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Pr-Mapper">
+
+	<select id ="selectPrList" resultType="pr">
+		select *
+		from pr
+		order by pr_num desc	
+	</select>
+	
+	<select id ="selectPrBypr_num" resultType="pr">
+		select *
+		from pr
+		where pr_num = #{pr_num}
+	</select>
+	
+	<update id ="insertPr" parameterType="pr">
+		insert
+		into
+		pr(pr_code,pr_num,title,writer,cont)
+		values
+		(#{pr_code},#{pr_num},#{title},#{writer},#{cont})
+	</update>
+	
+	<update id ="updatePr" parameterType="pr">
+		update
+		pr
+		set
+		title=#{title}, cont=#{cont}, updatedate = sysdate
+		where pr_num = #{pr_num}
+	
+
+	</update>
+	<update id="deletePr" parameterType="int">
+		delete
+		from pr
+		where pr_num = #{pr_num}
+	</update>
+	
+	<update id="increaseViewCnt" parameterType="int">
+		update
+		pr
+		set
+		viewcnt = viewcnt+1
+		where pr_num = #{pr_num}
+	</update>
+	
+	<select id="selectPrSeqNext" resultType="int">
+		select pre_seq.nextval as pr_num from dual
+	</select>
+	
+	
+	
+	</mapper>
+	

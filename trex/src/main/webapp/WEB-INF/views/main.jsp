@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-    <a href="board">boardmain로 이동하기!!</a>
-    <a href="board/perform/list">공연안내!</a>
-    
-    
     <div id="mainwrap">
 	<!-- mvisual -->
 	<div id="mvisual" style="height:400px;">
