@@ -272,7 +272,7 @@
 						<div class="clear"></div>
 						<p class="more">
 							<a href="#total"
-								onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzEyNw==');"><img
+								onclick="window.open('/performrese/${PFGBoard.pf_code }', '네이버새창', 'width=910, height=690, toolbar=no, menubar=no, scrollbars=no, resizable=yes' );" ><img
 								src="/resources/images/perform/more.gif"
 								alt="${PFGBoard.title } 공연예매"></a>
 						</p>

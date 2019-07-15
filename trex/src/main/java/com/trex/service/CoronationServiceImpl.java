@@ -37,9 +37,11 @@ public class CoronationServiceImpl implements CoronationService {
 
 	@Override
 	public void write(CoronationVO CRGBoard) throws SQLException {
-		int crg_num=CoronationDAO.selectCRGBoardNextSeq();
+		int num=CoronationDAO.selectCRGBoardNextSeq();
 		
-		CRGBoard.setCrg_num(crg_num);
+		String code = "CRG"+ String.format("%04d", num);
+		CRGBoard.setCrg_num(num);
+		CRGBoard.setCrg_code(code);
 		
 		CoronationDAO.insertCRGBoard(CRGBoard);
 

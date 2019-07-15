@@ -21,6 +21,17 @@ public class EventDAOImpl implements EventDAO{
 		List<EventVO> eventList = session.selectList("Event-Mapper.selectEventList",null);
 		return eventList;
 	}
+	
+	@Override
+	public List<EventVO> selectEventEndList() throws SQLException {
+		List<EventVO> eventEndList = session.selectList("Event-Mapper.selectEventEndList");
+		return eventEndList;
+	}
+	
+	@Override
+	public void enableList() throws SQLException {
+		session.update("Event-Mapper.enableList");
+	}
 
 	@Override
 	public EventVO selectEventByevent_num(int event_num) throws SQLException {
@@ -53,5 +64,7 @@ public class EventDAOImpl implements EventDAO{
 		int event_num = session.selectOne("Event-Mapper.selectEventSeqNext");
 		return event_num;
 	}
+
+
 
 }
