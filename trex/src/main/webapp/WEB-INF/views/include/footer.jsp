@@ -15,7 +15,7 @@
 
 
 <div id="footerwarp">
-    <h3>이 부분은 Footer 입니다.</h3>
+  
 		<div id="footer">
 			<ul id="ft_menu">
 				 <li><a href="/html/kr/guide/guide_0606.html">개인정보처리방침</a></li>

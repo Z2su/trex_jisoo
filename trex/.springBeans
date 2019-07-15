@@ -13,7 +13,12 @@
 		<config>src/main/resources/context/PFG-context.xml</config>
 		<config>src/main/resources/context/QnA-context.xml</config>
 		<config>src/main/resources/context/Event-context.xml</config>
+<<<<<<< HEAD
 		<config>src/main/resources/context/REP-context.xml</config>
+=======
+		<config>src/main/resources/context/MEMBER-context.xml</config>
+		<config>src/main/resources/context/Pr-context.xml</config>
+>>>>>>> refs/heads/jisoo
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
