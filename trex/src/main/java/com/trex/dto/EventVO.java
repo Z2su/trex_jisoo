@@ -3,6 +3,8 @@ package com.trex.dto;
 import java.sql.Date;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class EventVO {
 
 	private String event_code;	// 게시판 코드
@@ -102,7 +104,8 @@ public class EventVO {
 	public Date getEnddate() {
 		return enddate;
 	}
-
+	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	public void setEnddate(Date enddate) {
 		this.enddate = enddate;
 	}

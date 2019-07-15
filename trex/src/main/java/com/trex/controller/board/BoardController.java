@@ -76,9 +76,10 @@ public class BoardController {
 	
 	@RequestMapping(value="/event/regist", method = RequestMethod.POST)
 	public String postregist(EventVO event)throws Exception{
+		System.out.println(event);
 		eService.write(event);
 		return "redirect:/board/event/list"; 
-	   	}
+	}
 	
 	@RequestMapping(value="/event/modify", method = RequestMethod.GET)
 	public ModelAndView getmodify(int event_num, ModelAndView modelnView) throws SQLException{

@@ -1,8 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import ="java.util.*" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.*"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<script>
+function blarDate(id){
+    if (id == "startdate"){
+       $('#enddate').datepicker( "option", "minDate", $("#startdate").val() );
+    }else if (id == "enddate"){
+        $('#startdate').datepicker( "option", "maxDate", $("#enddate").val() );
+    }
+}
+
+</script>
 
 <div id="contentswrap">
 
@@ -61,11 +71,12 @@
 							type="text"
 							value='<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd" />' />
 							~ <input id="closeDate" name="endDate" class="dateInput"
-							type="text" value='<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd" />' /></li>
+							type="text"
+							value='<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd" />' /></li>
 
 						<!--작성자 -->
 						<li><label for="wrtPers">작성자</label> <input type="text"
-							id="wrtPers" name="writer" value="${loginUser.id}" readonly><span
+							id="wrtPers" name="writer" value="${mem.mem_id}" readonly><span
 							class="tip">* 작성자는 필수입력 사항입니다.</span></li>
 
 						<!--내용입력-->
@@ -102,3 +113,7 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/board.css"
 	type="text/css" media="all">
+
+
+
+

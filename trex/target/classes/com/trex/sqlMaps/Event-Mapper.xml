@@ -43,7 +43,7 @@
 		into
 		event(event_code,event_num,title,writer,cont,enddate)
 		values
-		(#{event_code},#{event_num},#{title},#{writer},#{cont},#{})
+		(#{event_code},#{event_num},#{title},#{writer},#{cont},#{enddate})
 	</update>
 
 	<update id="updateEvent" parameterType="event">
