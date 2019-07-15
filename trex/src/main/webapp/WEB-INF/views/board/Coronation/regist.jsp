@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
@@ -73,7 +74,7 @@
                <!-- 게시판 버튼모음 -->
                <div class="board_butt">
                   <input type="image"
-                     src="<%=request.getContextPath() %>/resources/images/regist.png" alt="등록">
+                     src="<%=request.getContextPath() %>/resources/images/regist.png" onclick="goSubmit('post','');" alt="등록">
                   <a
                      href="./list"><img
                      src="<%=request.getContextPath() %>/resources/images/cancel.png" alt="취소"></a>
@@ -98,3 +99,8 @@
 <link rel="stylesheet"
    href="<%=request.getContextPath()%>/resources/css/board.css"
    type="text/css" media="all">
+   
+   
+<%@ include file="./regist_file.jsp" %>	
+
+<%@ include file="./regist_js.jsp" %>
