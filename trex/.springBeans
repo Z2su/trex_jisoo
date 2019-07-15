@@ -10,6 +10,7 @@
 		<config>src/main/resources/context/root-context.xml</config>
 		<config>src/main/resources/context/servlet-context.xml</config>
 		<config>src/main/resources/context/dataSource-context.xml</config>
+		<config>src/main/resources/context/PFG-context.xml</config>
 		<config>src/main/resources/context/QnA-context.xml</config>
 		<config>src/main/resources/context/Event-context.xml</config>
 		<config>src/main/resources/context/MEMBER-context.xml</config>

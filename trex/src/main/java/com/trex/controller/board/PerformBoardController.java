@@ -30,7 +30,7 @@ import com.trex.service.PerformService;
 
 @Controller
 @RequestMapping("/board/perform")
-public class PerformController {
+public class PerformBoardController {
 	@Autowired
 	private PerformGuidBoardService PFGBoardService;
 	

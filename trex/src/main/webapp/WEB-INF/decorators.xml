@@ -5,9 +5,12 @@
 		<pattern>/*</pattern>				
 	</decorator>
 	
-	<!-- <decorator name="openWindow" page="openWindow_decorator.jsp">
-		<pattern>/**/perform/regist*</pattern>				
+	<!--  <decorator name="openWindow" page="openWindow_decorator.jsp">
+		<pattern>/performrese*</pattern>				
 		
-	</decorator>		 -->
+	</decorator> -->	
+	<excludes>
+		<pattern>/performrese*</pattern>
+	</excludes>	
 	
 </decorators>
