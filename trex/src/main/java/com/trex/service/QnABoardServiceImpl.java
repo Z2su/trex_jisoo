@@ -1,8 +1,17 @@
 package com.trex.service;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.trex.controller.SearchCriteria;
 import com.trex.dao.AttachDAO;
@@ -11,6 +20,8 @@ import com.trex.dto.AttachVO;
 import com.trex.dto.QnABoardVO;
 
 public class QnABoardServiceImpl implements QnABoardService {
+
+	Logger log = Logger.getLogger(this.getClass());
 
 	@Autowired
 	private QnABoardDAO qnaboardDAO;
@@ -24,23 +35,6 @@ public class QnABoardServiceImpl implements QnABoardService {
 
 	public void setAttachDAO(AttachDAO attachDAO) {
 		this.attachDAO = attachDAO;
-	}
-
-	@Override
-	public void create(QnABoardVO qna) throws Exception {
-		int num = qnaboardDAO.NextSeq();
-
-		String code = "QNA" + String.format("%04d", num);
-		qna.setQna_code(code);
-		qna.setQna_num(num);
-		qnaboardDAO.insertQnABoard(qna);
-		if (qna.getAttachList() != null) {
-			for (AttachVO attach : qna.getAttachList()) {
-				attach.setPost_code(code);
-				attach.setWirter(qna.getWriter());
-				attachDAO.insertAttach(attach);
-			}
-		}
 	}
 
 	@Override
@@ -80,12 +74,61 @@ public class QnABoardServiceImpl implements QnABoardService {
 		return count;
 	}
 
-	// @Override
-	// public Map<String, Object> alistSearch(SearchCriteria cri) throws Exception {
-	// Map<String, Object> qnaMap = new HashMap<String, Object>();
-	// List<QnABoardVO> qnalist = qnaboardDAO.selectSearchBoardList(cri);
-	// qnaMap.put("qnalist", qnalist);
-	// return null;
-	// }
+	@Override
+	public List<QnABoardVO> listSearch() throws Exception {
+
+		List<QnABoardVO> qnalist = qnaboardDAO.selectSearchBoardList();
+
+		return qnalist;
+	}
+
+	@Override
+	public void create(QnABoardVO qna) throws Exception {
+		int qna_num = qnaboardDAO.NextSeq();
+		String qna_code = "QNA" + String.format("%04d", qna_num);
+		qna.setQna_code(qna_code);
+		qna.setQna_num(qna_num);
+		qnaboardDAO.insertQnABoard(qna);
+
+		/*if(qna.getAttachList()!=null) {
+			for(AttachVO attach:qna.getAttachList()) {
+				attach.setAttach_code(qna_code);
+				attach.setAttach_num(qna_num);
+				attach.setWirter(qna.getWriter());
+				attach.setPost_code(qna_code);
+				attachDAO.insertAttach(attach);
+			}
+		}
+		*/
+
+	}
+
+	@Override
+	public Map<String, Object> getList(SearchCriteria cri) throws Exception {
+		List<QnABoardVO> qnaList = qnaboardDAO.selectSearchBoardList(cri);
+		Map<String, Object> dataMap = new HashMap<String, Object>();
+		dataMap.put("qnaList", qnaList);
+
+		return dataMap;
+	}
+
+	@Override
+	public void create() throws Exception {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void create(QnABoardVO qna, HttpServletRequest request) throws Exception {
+
+		int qna_num = qnaboardDAO.NextSeq();
+		String qna_code = "QNA" + String.format("%04d", qna_num);
+		qna.setQna_code(qna_code);
+		qna.setQna_num(qna_num);
+		qnaboardDAO.insertQnABoard(qna);
+
+		}
+		
+	
 
 }
