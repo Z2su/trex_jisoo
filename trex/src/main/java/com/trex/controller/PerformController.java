@@ -14,7 +14,7 @@ public class PerformController {
 	
 	@RequestMapping(value="/{pf_code}", method=RequestMethod.GET )
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
-		String url = "perform/sample";
+		String url = "perform/main";
 		
 		modelnView.setViewName(url);
 		

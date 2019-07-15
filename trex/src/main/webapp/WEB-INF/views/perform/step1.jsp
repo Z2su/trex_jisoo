@@ -21,6 +21,7 @@
 //<![CDATA[
 	var nBookStep = 1;	//현재 예매 단계
 
+	
 	document.observe("dom:loaded", fnInit);
 
 	//초기화
