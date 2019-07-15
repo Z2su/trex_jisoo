@@ -192,6 +192,14 @@ public class CommonController {
 		return url;
 	}
 
+	@RequestMapping(value="/logout",method=RequestMethod.GET)
+	public String logout(HttpSession session) {
+		String url="redirect:/";
+		session.invalidate();
+		return url;
+	}
+		
+
 	}
 		
 		
