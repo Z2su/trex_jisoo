@@ -13,7 +13,7 @@
 		<typeAlias type="com.trex.dto.CoronationVO" alias="CRG"/>
 		<typeAlias type="com.trex.dto.MemberVO" alias="member"/>
 		<typeAlias type="com.trex.dto.FAQBoardVO" alias="faqboard"/>
-		
+		<typeAlias type="com.trex.dto.PrVO" alias="pr"/>
 	</typeAliases>
  
 </configuration>
