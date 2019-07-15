@@ -72,7 +72,7 @@
 }
 
 .event_board ul {
-	width: 955px;
+	width: 637px;
 	float: left;
 	margin-top: 30px;
 }
@@ -189,6 +189,7 @@
 }
 </style>
 
+
 <div id="contentswrap">
 
 	<!-- subvisual -->
@@ -232,86 +233,54 @@
 				<h3 class="cnt_ti">이벤트</h3>
 				<div class="new_tab_wrap">
 					<ul class="style03">
-						<li class="active"><a
+						<li><a
 							href="<%=request.getContextPath()%>/board/event/list">진행중인
 								이벤트</a> <span class="tab_line"></span></li>
-						<li><a
+						<li class="active"><a
 							href="<%=request.getContextPath()%>/board/event/endlist">종료된
 								이벤트</a> <span class="tab_line"></span></li>
 					</ul>
 				</div>
 
-				<div class="row">
-					<div class="wizard-actions">
-						<div style="float: left;">
-							<!-- 문서 편집 이력 && 익명사용 -->
-						</div>
 
-						<div>
-							<%-- <c:if test="${loginUser.id eq event.writer}"> --%>
-								<button type="button" class="btn btn-sm btn-white btn-bold"
-									onclick="location.href='<%=request.getContextPath()%>/board/event/modify?event_num=${event.event_num }'">
-									<i class="red ace-icon fa fa-pencil bigger-120"></i><b>편집</b>
-								</button>
-								<button type="button" class="btn btn-sm btn-white btn-bold"
-									onclick="remove_go();">
-									<i class="red ace-icon fa fa-trash bigger-120"></i><b>삭제</b>
-								</button>
-							<%-- </c:if> --%>
-							<button type="button" class="btn btn-sm btn-white btn-bold"
-								onclick="javascript:docPrint('document');">
-								<i class="grey ace-icon fa fa-print bigger-120"></i><b>인쇄</b>
-							</button>
-							<button type="button" class="btn btn-sm btn-white btn-bold"
-								onclick="history.go(-1);">
-								<i class="grey ace-icon fa fa-times bigger-120"></i><b>목록</b>
-							</button>
-						</div>
-					</div>
+				<!--  본문 내용    -->
+				<div class="wizard-actions-L">
+					<input type="button" value="등록"
+						onClick="location.href='<%=request.getContextPath()%>/board/event/regist'">
 				</div>
 
-				<form id="search" class="form-horizontal"
-					action="/bbs/read.htm?docId=2018042316273647&amp;bbsId=bbs00000000000004&amp;workType=1&amp;moduleId=00000000000000&amp;categoryId=&amp;searchRange=0&amp;listType=L&amp;searchKey=subject&amp;searchValue="
-					method="post">
-
-					<div class="hr_line">&nbsp;</div>
-					<div class="form-group">
-						<!-- label의 for명은 input 개체명과 연관을 가지도록 기술 -->
-						<label for=""
-							class="col-xs-4  col-sm-2 control-label no-padding-right bolder g_label">제목</label>
-						<div class="col-xs-8  col-sm-10 g_value" style="padding-top: 8px;">${event.title }</div>
-					</div>
-
-					<!--  본문 영역 -->
-					<div class="form-group">
-						<div class="col-xs-12  g_value"
-							style="min-height: 250px; padding: 8px 3px 3px; margin: 0px; overflow: auto;">
-							내용
-							<p>${event.cont}<br>
-							</p>
-						</div>
-					</div>
-
-					<table id="btntbl">
-						<tr>
-							<td class="tblspace09"></td>
-						</tr>
-					</table>
-
-					<input type="hidden" name="attachobj" value="">
-					<!-- 조회시 파일 첨부 컨트롤 삽입 -->
-				</form>
+				<div class="event_board">
+					<ul style="margin-top: 10px; margin-left: 10px;">
+						<c:forEach var="event" items="${eventEndList }">
+							<li>
+								<div class="event_list_wrap">
+									<dl>
+										<dt>
+											<a
+												href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}"><img
+												src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=5629539181056233673"
+												alt="종료된 이벤트 섬네일"></a>
+										</dt>
+										<dd class="data">
+											<p>
+												<a
+													href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}">${event.title }</a>
+											</p>
+										</dd>
+										<dd class="date">
+											<p>${event.startdate }~${event.enddate }</p>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</c:forEach>
+					</ul>
+				</div>
 			</div>
-
-
-			<!-- 상단 우측버튼 -->
-
-
-
 		</div>
+
 		<!--quick  -->
 		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
-
 	</div>
 
 	<script>
@@ -320,12 +289,6 @@
 			$(this).addCalss('active');
 
 		})
-		
-		function remove_go(){
-			var event_num;
-			event_num = ${event.event_num};
-			location.href="delete?event_num=${event.event_num}";
-		}
 	</script>
 	<!-- //container -->
 </div>
