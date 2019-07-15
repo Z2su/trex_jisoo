@@ -1,14 +1,21 @@
 package com.trex.controller.board;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.trex.dto.EventVO;
+import com.trex.dto.PrVO;
 import com.trex.service.PrService;
 
 
@@ -36,12 +43,63 @@ import com.trex.service.PrService;
 		}
 		
 		@RequestMapping(value="/pr/prlist",method=RequestMethod.GET)
-		public void prlistGET() {
+		public void prlistGET(Model model)throws Exception {
+			
+			List<PrVO> prlist = prService.prList();
+			
+			model.addAttribute("prlist", prlist);
+			
 			
 		}
+		@RequestMapping(value="/pr/prdetail", method = RequestMethod.GET)
+		public ModelAndView prdetailGET(int pr_num, ModelAndView modelnView) throws SQLException{
+			PrVO pr = prService.prDetail(pr_num);
+			modelnView.addObject("pr",pr);
+			return modelnView;
+		}
+		
 			
 		@RequestMapping(value="/pr/prregist", method=RequestMethod.GET)
-		public void prregistGET() {}
+		public void prregistGET() {
+			
+			
+		}
 		
+		
+		@RequestMapping(value="/pr/prregist", method=RequestMethod.POST)
+		public String prregistPOST(PrVO pr)throws SQLException {
+			String url="redirect:prlist";
+			prService.write(pr);
+			
+			
+			return url;
+			
+		}
+		
+		
+		@RequestMapping(value="/pr/prmodify", method=RequestMethod.GET)
+		public void prmodifyGET(int pr_num ,Model model)throws SQLException {
+			PrVO pr = prService.prDetail(pr_num);
+			model.addAttribute("pr", pr);
+			System.out.println(pr);
+		}
+		
+		@RequestMapping(value="/pr/prmodify", method=RequestMethod.POST)
+		public String prmodifyPOST(PrVO pr)throws SQLException {
+			
+			String url="redirect:prlist";
+			prService.modify(pr);
+			
+			System.out.println(pr);
+			return url;
+			
+		}
+		
+		@RequestMapping(value="/pr/prdelete", method=RequestMethod.GET)
+		public String prdelte(int pr_num)throws SQLException{
+			String url="redirect:prlist";
+			prService.remove(pr_num);
+			return url;
+		}
 
 }

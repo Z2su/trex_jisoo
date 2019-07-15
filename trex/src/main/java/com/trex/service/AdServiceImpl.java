@@ -31,7 +31,7 @@ public class AdServiceImpl implements AdService {
 	@Override
 	public void write(AdVO ad) throws SQLException {
 		int ad_num = adDAO.selectAdSeqNext();
-		String code = ""+ String.format("%04d", ad_num);
+		String code = "ADV"+ String.format("%04d", ad_num);
 		ad.setAd_code(code);
 		ad.setAd_num(ad_num);
 		adDAO.insertAd(ad);

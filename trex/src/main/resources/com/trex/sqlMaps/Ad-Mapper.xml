@@ -1,4 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Ad-Mapper">
-</mapper>
+<select id ="selectAdList" resultType="ad">
+		select *
+		from ad
+		order by ad_num desc	
+	</select>
+	
+	<select id ="selectAdByad_num" resultType="ad">
+		select *
+		from ad
+		where ad_num = #{ad_num}
+	</select>
+	
+	<update id ="insertAd" parameterType="ad">
+		insert
+		into
+		ad(ad_code,ad_num,title,writer,cont)
+		values
+		(#{ad_code},#{ad_num},#{title},#{writer},#{cont})
+	</update>
+	
+	<update id ="updateAd" parameterType="ad">
+		update
+		ad
+		set
+		title=#{title}, cont=#{cont}, updatedate = sysdate
+		where ad_num = #{ad_num}
+	
+
+	</update>
+	<update id="deleteAd" parameterType="int">
+		delete
+		from ad
+		where ad_num = #{ad_num}
+	</update>
+	
+	<update id="increaseViewCnt" parameterType="int">
+		update
+		ad
+		set
+		viewcnt = viewcnt+1
+		where ad_num = #{ad_num}
+	</update>
+	
+	<select id="selectAdSeqNext" resultType="int">
+		select ade_seq.nextval as ad_num from dual
+	</select>
+	
+	
+	
+	</mapper>
+	

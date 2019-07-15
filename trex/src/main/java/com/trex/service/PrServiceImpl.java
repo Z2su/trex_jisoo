@@ -41,6 +41,7 @@ public class PrServiceImpl implements PrService {
 
 	@Override
 	public void modify(PrVO pr) throws SQLException {
+		
 		prDAO.updatePr(pr);
 	}
 
@@ -48,5 +49,6 @@ public class PrServiceImpl implements PrService {
 	public void remove(int pr_num) throws SQLException {
 		prDAO.deletePr(pr_num);
 	}
+	
 
 }

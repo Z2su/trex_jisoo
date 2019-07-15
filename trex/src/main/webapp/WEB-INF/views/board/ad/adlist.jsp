@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div id="contentswrap">
 
 	<!-- subvisual -->
@@ -47,8 +49,9 @@
 				<colgroup>
 					<col style="width: 64px;">
 					<col style="width: 320px;">
-					<col style="width: 160px;">
-					<col style="width: 96px;">
+					<col style="width: 100px;">
+					<col style="width: 140px;">
+					<col style="width: 90px;">
 
 				</colgroup>
 				<thead>
@@ -56,19 +59,41 @@
 						<th scope="col" class="t_head">번호</th>
 						<th scope="col" class="t_head">제목</th>
 						<th scope="col" class="t_head">작성자</th>
-						<th scope="col" class="t_head t_end">신청결과</th>
+						<th scope="col" class="t_head">작성일</th>
+						<th scope="col" class="t_head t_end">승인여부</th>
 					</tr>
 				</thead>
 				<tbody>
+				
+				<tbody>
+					<c:if test="${!empty adlist }">
+					<c:forEach items="${adlist }" var ="adVO">
+					 	<tr>
+						<th scope="col" >${adVO.ad_num }</th>
+						<th scope="col" ><a href="addetail?ad_num=${adVO.ad_num }">${adVO.title }</a></th>
+						<th scope="col" >${adVO.writer }</th>
+						<th scope="col" >${adVO.regist_date }</th>
+						<th scope="col" >${adVO.app_result }</th>
+					</tr>
+					 </c:forEach>
+					 </c:if>
+					 
+					<tr>
+				
+					
+					
+				</tbody>
+				
+				
 					
 				</tbody>
 				
 			</table>
 			<div class="board_butt" style="margin: 10px 0;padding: 0 10px; text-align: right">
 
-					<a href="/board/board/adlist">
+					<a href="/board/ad/adlist">
 					<img src="<%=request.getContextPath()%>/resources/images/list.gif" alt="목록"></a> 
-					<a href="#">
+					<a href="/board/ad/adregist">
 					<img src="<%=request.getContextPath()%>/resources/images/write.gif" alt="쓰기"></a>
 			</div>
 			
