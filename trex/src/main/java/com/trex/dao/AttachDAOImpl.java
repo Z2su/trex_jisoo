@@ -48,5 +48,9 @@ public class AttachDAOImpl implements AttachDAO {
 		session.update(NAMESPACE+".deleteAllAttach",attach_code);
 
 	}
-
+	@Override
+	public int NextSeq() throws SQLException {
+		int seq_num = session.selectOne(NAMESPACE + ".NextSeq");
+		return seq_num;
+	}
 }

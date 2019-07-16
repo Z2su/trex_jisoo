@@ -10,10 +10,13 @@
 		<typeAlias type="com.trex.dto.QnABoardVO" alias="qnaboard"/>
 		<typeAlias type="com.trex.dto.EventVO" alias="event"/>
 		<typeAlias type="com.trex.dto.AttachVO" alias="attach"/>
+		<typeAlias type="com.trex.dto.QnAReplyVO" alias="qnarep"/>
 		<typeAlias type="com.trex.dto.CoronationVO" alias="CRG"/>
 		<typeAlias type="com.trex.dto.MemberVO" alias="member"/>
 		<typeAlias type="com.trex.dto.FAQBoardVO" alias="faqboard"/>
 		<typeAlias type="com.trex.dto.PrVO" alias="pr"/>
+		<typeAlias type="com.trex.dto.AdVO" alias="ad"/>
+
 	</typeAliases>
  
 </configuration>

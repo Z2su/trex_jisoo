@@ -40,9 +40,7 @@ public class CenterController {
 	@RequestMapping(value="/faq/list",method=RequestMethod.GET)
 	public void faqGET() {
 	}
-	@RequestMapping(value="/qna/list",method=RequestMethod.GET)
-	public void qnaGET() {
-	}
+	
 	
 
 }
