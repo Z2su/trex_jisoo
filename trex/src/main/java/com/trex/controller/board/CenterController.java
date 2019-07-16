@@ -32,12 +32,9 @@ public class CenterController {
 	
 	/*@RequestMapping(value="/notice/list",method=RequestMethod.GET)
 	public void noticeGET() {
-		
+
 	}*/
-	@RequestMapping(value="/faq/list",method=RequestMethod.GET)
-	public void faqGET() {
-	}
-	
+
 	
 
 }
