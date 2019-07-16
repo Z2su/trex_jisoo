@@ -290,7 +290,7 @@
 		    });
 		});
 		
-		$('input[name="name"]').on('blur',function(){
+		/* $('input[name="name"]').on('blur',function(){
 			var RegexName = /^[가-힣]{2,4}$/g;
 			if ( !RegexName.test($.trim($("#name").val())) )
 
@@ -308,7 +308,7 @@
 
 				alert("bbbbbb");
 			});
-
+ */
 			$(function() {
 
 				$("form")
