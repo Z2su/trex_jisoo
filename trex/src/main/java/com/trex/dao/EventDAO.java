@@ -9,6 +9,8 @@ import com.trex.request.Criteria;
 public interface EventDAO {
 
 	public List<EventVO> selectEventList() throws SQLException;
+	public List<EventVO> selectEventEndList() throws SQLException;
+	void enableList() throws SQLException;
 	EventVO selectEventByevent_num(int event_num) throws SQLException;
 	
 	void insertEvent(EventVO event) throws SQLException;

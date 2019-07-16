@@ -323,10 +323,7 @@
 		
 		function remove_go(){
 			var event_num;
-			
 			event_num = ${event.event_num};
-			
-			alert(event_num);
 			location.href="delete?event_num=${event.event_num}";
 		}
 	</script>

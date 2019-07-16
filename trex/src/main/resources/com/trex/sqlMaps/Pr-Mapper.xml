@@ -26,7 +26,7 @@
 		update
 		pr
 		set
-		title=#{title}, cont=#{cont}, updatedate = sysdate
+		title=#{title}, cont=#{cont}
 		where pr_num = #{pr_num}
 	
 
