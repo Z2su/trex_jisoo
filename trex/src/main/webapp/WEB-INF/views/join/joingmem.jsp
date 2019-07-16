@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-</head>
-<body>
+
 
 
 <div id="contentswrap">
@@ -13,8 +11,7 @@
 		<div class="subv_performance">
 			<div class="subv_pat">
 				<p>
-					<strong><img
-						src="/resources/images/ma_service_type.png"
+					<strong><img src="/resources/images/ma_service_type.png"
 						alt="Daejeon Arts Center"></strong> 문화로 시민을 행복하게! 대전예술의전당
 				</p>
 			</div>
@@ -26,9 +23,10 @@
 	<div id="navigation">
 		<div class="naviwrap">
 			<a href="/html/kr/" class="nv_home">HOME</a>&gt;
-			<navi> <a href="/html/kr/performance/performance_010101.html">공연안내</a>&gt;<a
-				href="/html/kr/performance/performance_010101.html">공연안내</a>&gt;<a
-				href="/html/kr/performance/performance_010101.html" class="navi_ov">공연정보</a></navi>
+			<navi> <a href="/html/kr/performance/performance_010101.html">공연안내</a>&gt;
+			<a href="/html/kr/performance/performance_010101.html">공연안내</a>&gt; <a
+				href="/html/kr/performance/performance_010101.html" class="navi_ov">공연정보</a>
+			</navi>
 			<div class="nv_service">
 				<a class="nvs_print" href="#total"
 					onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span
@@ -43,9 +41,8 @@
 			</div>
 		</div>
 	</div>
-	
-</div>
-	
+
+
 	<!-- //navigation -->
 
 	<!-- container -->
@@ -57,10 +54,7 @@
 		<!-- <div id="content"> -->
 		<!-- 컨텐츠 타이틀 -->
 		<!-- 	<h3 class="cnt_ti">detail</h3> -->
-	
-		
-		
-		
+
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-3" style="width: 50%">
@@ -76,76 +70,70 @@
 									<div class="form-group" id="divInputId">
 										<label>아이디</label> <input class="form-control"
 											style="margin-bottom: 5px;" placeholder="아이디" name="mem_id"
-											id="signUpUserId" type="text" /> <input type="button"
-											class="btn btn-default" style="width: 30%;" value="중복확인"
-											onclick="duplicationId();" />
+											id="mem_id" type="text" /> <input type="button"
+											class="btn btn-default" style="width: 30%;" id="checkid"
+											value="중복확인" onclick="duplicationId();" />
+											<br/>
+											<span id="idMsg"></span>
+											
 									</div>
+								
+								
+		
 									<div class="form-group">
 										<label>비밀번호</label> <input class="form-control"
-											placeholder="비밀번호" name="mem_pwd" id="signUpUserPwd"
-											type="password" />
+											placeholder="비밀번호" name="mem_pwd" id="mem_pwd"
+											type="password"  />
 									</div>
 									<div class="form-group">
 										<label>비밀번호 확인</label> <input class="form-control"
-											placeholder="비밀번호 확인" name="mem_PwdCfm" id="signUpUserPwdCfm"
-											type="password" />
+											placeholder="비밀번호 확인" name="mem_pwd2" id="mem_pwd2"
+											type="password"	/>
+										<font id="chkNotice" size="2"></font>
 									</div>
 									<div class="form-group">
 										<label>이름</label> <input class="form-control" placeholder="이름"
-											name="name" id="signUpUsername" type="text" />
+											name="name" id="name" type="text" />
 									</div>
 									<div class="form-group">
-										<label>성별</label> <input type="radio" name="gender" value="남"
-											checked>남 <input type="radio" name="gender" value="여"
-											checked>여
+										<label>성별</label> <input type="radio" name="gender" value="남">남
+										<input type="radio" name="gender" value="여">여
 									</div>
 									<div class="form-group">
-										<label>생년월일</label> <input type="text" name="birth"
-											maxlength="4" placeholder="년(4자)" size="6"> <select
-											name="birth">
-											<option value="">월</option>
-											<option value="01">1</option>
-											<option value="02">2</option>
-											<option value="03">3</option>
-											<option value="04">4</option>
-											<option value="05">5</option>
-											<option value="06">6</option>
-											<option value="07">7</option>
-											<option value="08">8</option>
-											<option value="09">9</option>
-											<option value="10">10</option>
-											<option value="11">11</option>
-											<option value="12">12</option>
-										</select> <input type="text" name="birth_dd" maxlength="2"
-											placeholder="일" size="4">
+										<label>생년월일</label> <input type="text" name="birth" id="birth"
+											maxlength="4" placeholder="년(4자)" size="6"> <input
+											type="text" name="birth_mm" maxlength="2" placeholder="월"
+											size="4"> <input type="text" name="birth_dd"
+											maxlength="2" placeholder="일" size="4">
 									</div>
 									<div class="form-group">
 										<label>전화번호</label> <input class="form-control"
-											placeholder="전화번호" name="tell" id="signUpUserTelNo"
-											type="text" />
+											placeholder="전화번호" name="tell" id="tell" type="text" />
 									</div>
 									<div class="form-group">
 										<label>이메일</label> <input type="text" name="mem_email"
-											maxlength="30">@ <select name="mem_email">
+											id="mem_email" maxlength="30">@ <select
+											name="mem_email">
 											<option>naver.com</option>
 											<option>daum.net</option>
 											<option>gmail.com</option>
 											<option>nate.com</option>
-												</select> 
+										</select>
 										<!-- <div class="form-group">
                             		<label>사업자번호</label>
                             		<input class="form-control" placeholder="사업자번호" name="signUpUserCompanyNo" id="signUpUserCompanyNo" type="text" />
                             	</div> -->
-										<div class="form-group">
-											<label style="display: block;">주소</label> <input
-												class="form-control" style="width: 40%; display: inline;"
-												placeholder="우편번호" name="signUpUserPostNo"
-												id="signUpUserPostNo" type="text" readonly="readonly">
-											<button type="button" class="btn btn-default"
-												onclick="execPostCode();">
-												<i class="fa fa-search"></i> 우편번호 찾기
-											</button>
-											<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									</div>
+									<div class="form-group">
+										<label style="display: block;">주소</label> <input
+											class="form-control" style="width: 40%; display: inline;"
+											placeholder="우편번호" name="address" id="address" type="text"
+											readonly="readonly">
+										<button type="button" class="btn btn-default"
+											onclick="execPostCode();">
+											<i class="fa fa-search"></i> 우편번호 찾기
+										</button>
+										<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	                                <div class="modal-dialog">
 	                                    <div class="modal-content">
 	                                        <div class="modal-header">
@@ -180,21 +168,23 @@
 	                                </div>
 	                                /.modal-dialog
 	                            </div> -->
-										</div>
-										<div class="form-group">
-											<input class="form-control" style="top: 5px;"
-												placeholder="도로명 주소" name="address"
-												id="signUpUserCompanyAddress" type="text"
-												readonly="readonly" />
-										</div>
-										<div class="form-group">
-											<input class="form-control" placeholder="상세주소"
-												name="signUpUserCompanyAddressDetail"
-												id="signUpUserCompanyAddressDetail" type="text" />
-										</div>
-										 <button type="submit" class="btn btn-lg btn-success btn-block">회원가입</button> 
-<!-- 										<input type="submit" class="btn btn-lg btn-success btn-block" value="회원가입" onclick="DosignUp();" />
- -->  								</fieldset>
+									</div>
+									<div class="form-group">
+										<input class="form-control" style="top: 5px;"
+											placeholder="도로명 주소" name="address" id="addressone"
+											type="text" readonly="readonly" />
+									</div>
+									<div class="form-group">
+										<input class="form-control" placeholder="상세주소"
+											name="signUpUserCompanyAddressDetail" id="addresstwo"
+											type="text" />
+									</div>
+									<button id="join" type="submit"
+										class="btn btn-lg btn-success btn-block">회원가입</button>
+									<input id="join2" type="button"
+										class="btn btn-lg btn-success btn-block" value="회원가입"
+										onclick="DosignUp();" />
+								</fieldset>
 							</form>
 						</div>
 					</div>
@@ -248,9 +238,187 @@
 						}).open();
 			}
 		</script>
-		<!-- </div> -->
-	
 
+
+		<script type="text/javascript">
+		$('input[name="mem_id"]').on('blur',function(){
+			 var idReg = /^[a-z]+[a-z0-9]{5,19}$/g;
+		        if( !idReg.test( $(this).val() ) ) {
+		            $(this).focus();
+		            $('span#idMsg').text("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.").css({"font-weight":"bold","color":"red"});           
+		            return;
+		        }else{
+		        	$('span#idMsg').text("");
+		        }
+		});
+		
+		$("#mem_pwd").change(function(){
+		    checkPassword($('#mem_pwd').val(),$('mem_id').val());
+		});
+		function checkPassword(password,id){
+		    
+		    if(!/^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/.test(password)){            
+		        alert('숫자+영문자+특수문자 조합으로 8자리 이상 사용해야 합니다.');
+		        $('#mem_pwd').val('').focus();
+		        return false;
+		    }    
+		    var checkNumber = password.search(/[0-9]/g);
+		    var checkEnglish = password.search(/[a-z]/ig);
+		    if(checkNumber <0 || checkEnglish <0){
+		        alert("숫자와 영문자를 혼용하여야 합니다.");
+		        $('#mem_pwd').val('').focus();
+		        return false;
+		    }	
+		    return true;
+		}
+		
+		
+		$(function(){
+		    $('#mem_pwd').keyup(function(){
+		      $('#chkNotice').html('');
+		    });
+
+		    $('#mem_pwd2').keyup(function(){
+
+		        if($('#mem_pwd').val() != $('#mem_pwd2').val()){
+		          $('#chkNotice').html('비밀번호 일치하지 않음<br><br>');
+		          $('#chkNotice').attr('color', '#f82a2aa3');
+		        } else{
+		          $('#chkNotice').html('비밀번호 일치함<br><br>');
+		          $('#chkNotice').attr('color', '#199894b3');
+		        }
+		    });
+		});
+		
+		/* $('input[name="name"]').on('blur',function(){
+			var RegexName = /^[가-힣]{2,4}$/g;
+			if ( !RegexName.test($.trim($("#name").val())) )
+
+			{
+						alert("이름 오류");
+
+						$("#name").focus();
+
+						return false;
+
+					}
+
+
+			$("input#join2").on('click', function(e) {
+
+				alert("bbbbbb");
+			});
+ */
+			$(function() {
+
+				$("form")
+						.submit(
+								function() {
+									var tel1_pattert = /(^01[016789]$)/; //정규식
+									var tel2_3_pattern = /\d{4}&/;
+									var regExp = /^[0-9]+$/;
+									var format = /^(19[0-9][0-9]|20\d{2})-(0[0-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+									var regExpbir = /^\d{4}$/;
+									var regId = /^[a-z0-9]{3,10}$/; // 아이디 유효성 검사식
+									var re = /^[a-zA-Z0-9]{4,12}$/ // 아이디와 패스워드가 적합한지 검사할 정규식
+									var re2 = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+									// 이메일이 적합한지 검사할 정규식
+
+								
+									var id = $('#mem_id');
+
+									if ($("#mem_id").val() == "") {
+										alert("아이디를 꼭 입력하세요!");
+										$("#mem_id").focus();
+										return false;
+
+
+									} else if ($("#mem_pwd").val() == "") {
+										alert("비밀번호를 꼭 입력하세요!");
+										$("#mem_pwd").focus();
+										return false;
+
+									} else if ($("#mem_pwd2").val() == "") {
+										alert("비밀번호확인을 꼭 입력하세요!");
+										$("#mem_pwd2").focus();
+										return false;
+
+									} else if ($("#name").val() == "") {
+										alert("이름을 꼭 입력하세요!");
+										$("#name").focus();
+										return false;
+
+									} else if ($("input:radio[name='gender']")
+											.is(":checked") == false) {
+										alert('성별을 체크하세요');
+										$('#gender').focus();
+										return false;
+
+									} else if ($("#birth").val() == "") {
+										alert("생일을 꼭 입력하세요!");
+										$("#birth").focus();
+										return false;
+
+									} else if ($("#tell").val() == "") {
+										alert("전화번호를 꼭 입력하세요!");
+										$("#tell").focus();
+										return false;
+
+									} else if ($("#mem_email").val() == "") {
+										alert("이메일을 꼭 입력하세요!");
+										$("#mem_email").focus();
+										return false;
+
+									} else if ($("#address").val() == "") {
+										alert("주소를 꼭입력해주세요!");
+										$("#address").focus();
+										return false;
+
+									} else if ($("#addressone").val() == "") {
+										alert("주소를 꼭입력해주세요!");
+										$("#addressone").focus();
+										return false;
+
+									} else if ($("#addresstwo").val() == "") {
+										alert("주소를 꼭입력해주세요!");
+										$("#addresstwo").focus();
+										return false;
+
+									}
+
+								});
+			});
+
+			$('#checkid').on("click", function(e) {
+
+				$.ajax({
+					type : 'POST',
+					url : '/checkSignup',
+					data : {
+						"mem_id" : $('#mem_id').val()
+					},
+					success : function(data) {
+						if (data == 0) {
+							alert("사용가능한 아이디입니다.")
+						} else {
+							alert("중복된아이디입니다");
+						}
+					}
+				}); //end ajax    
+				//end on    
+
+			});
+
+			function check(re, what, message) {
+				if (re.test(what.value)) {
+					return true;
+				}
+				alert(message);
+				what.value = "";
+				what.focus();
+				//return false;
+			}
+		</script>
 	</div>
 	<!-- //container -->
-</div> --%>
+</div>

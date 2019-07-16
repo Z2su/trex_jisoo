@@ -4,13 +4,20 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<import resource="classpath:context/dataSource-context.xml"/>
+
 	<import resource="classpath:context/Crg-context.xml"/>
 	<import resource="classpath:context/PFG-context.xml"/>
 	<import resource="classpath:context/QnA-context.xml"/>
-	<import resource="classpath:context/dataSource-context.xml"/>
+	<import resource="classpath:context/REP-context.xml"/>
 	<import resource="classpath:context/Event-context.xml"/>
 	<import resource="classpath:context/Att-context.xml"/>
 	<import resource="classpath:context/MEMBER-context.xml"/>
 	<import resource="classpath:context/Pr-context.xml"/>
-	
+	<import resource="classpath:context/Ad-context.xml"/>
+	<import resource="classpath:context/FAQ-context.xml"/>
+	<import resource="classpath:context/Notice-context.xml"/>
+
+
 </beans>

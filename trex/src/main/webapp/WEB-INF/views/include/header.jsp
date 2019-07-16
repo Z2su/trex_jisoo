@@ -3,8 +3,8 @@
    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="decorator"
-   uri="http://www.opensymphony.com/sitemesh/decorator"%>
+<%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <!DOCTYPE html>
 <html>
@@ -19,6 +19,9 @@
 <link rel="stylesheet"
    href="<%=request.getContextPath()%>/resources/css/layout.css"
    type="text/css" media="all">
+   
+
+
 <script
    src="<%=request.getContextPath()%>/resources/js/jquery-1.11.3.min.js"
    type="text/javascript"></script>
@@ -45,6 +48,17 @@
 <link type="text/css"
    href="<%=request.getContextPath()%>/resources/js/ajax/prevImg/humanmsg.css"
    rel="stylesheet" media="all">
+   
+  
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/js/jquery-ui-1.12.1/jquery-ui.min.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+<script src="<%=request.getContextPath()%>/resources/js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+<script src="<%=request.getContextPath()%>/resources/js/jquery-ui-1.12.1/datepicker-ko.js"></script>
+
+  
 
 <title>T-REX</title>
 </head>
@@ -61,8 +75,18 @@
          <!-- 글로벌메뉴-->
          <ul id="global">
             <li><a href="<%=request.getContextPath()%>/">HOME</a></li>
+            
+            <c:if test="${loginUser eq null }">
             <li><a href="/login">로그인</a></li>
             <li><a href="/join">회원가입</a></li>
+            </c:if>
+            <c:if test="${loginUser ne null }">
+            <li><a href="/logout">로그아웃</a></li>
+            <li><a href="#">마이페이지</a></li>
+            <li><a href="#">${loginUser.mem_id } 님 </a>
+            
+            </c:if>
+            
             <li><a href="#" target="_blank" title="대전예술의전당 영문 홈페이지(새창)">?</a></li>
          </ul>
          <!-- 글로벌메뉴-->
@@ -124,7 +148,7 @@
                         <ul class="">
                            <li><a href="<%=request.getContextPath()%>/board/pr/prlist"
                               class="">홍보게시판</a></li>
-                           <li><a href="<%=request.getContextPath()%>/board/pr/adlist"
+                           <li><a href="<%=request.getContextPath()%>/board/ad/adlist"
                               class="">광고게시판</a></li>
                            <li><a
                               href="<%=request.getContextPath()%>/board/event/list"
@@ -133,20 +157,9 @@
                      </div>
                      </li>
                      
-
-                  <li><a href="<%=request.getContextPath() %>/mypage/list" class="">마이페이지<span
-                        class="arrow" style="display: none;"></span></a>
-                  <div id="tms">
-                        <ul class="">
-                           <li><a href="#" class="">인사말</a></li>
-                           <li><a href="#" class="">연혁</a></li>
-                           <li><a href="#" class="">조직과
-                                 기구</a></li>
-                           <li><a href="#" class="">시설안내</a></li>
-                           <li><a href="#" class="">후원회</a></li>
-                        </ul>
-                     </div></li>
-                     
+	
+			
+			
                      <li><a href="<%=request.getContextPath() %>/board/center/main"
                      class="">고객센터<span class="arrow" style="display: none;"></span></a>
                   <div id="tms">
@@ -164,6 +177,37 @@
                         </ul>
                      </div>
                      </li>
+                     
+                     	
+				<c:if test="${fn:substring(loginUser.mem_code,0,2) ne 'EP' }" >
+				
+                  <li><a href="<%=request.getContextPath() %>/mypage/list" class="">마이페이지<span
+                        class="arrow" style="display: none;"></span></a>
+                  <div id="tms">
+                        <ul class="">
+                           <li><a href="#" class="">인사말</a></li>
+                           <li><a href="#" class="">연혁</a></li>
+                           <li><a href="#" class="">조직과  기구</a></li>
+                           <li><a href="#" class="">시설안내</a></li>
+                           <li><a href="#" class="">후원회</a></li>
+                        </ul>
+                     </div></li>
+                </c:if>
+                <c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }" >
+                
+                  <li><a href="<%=request.getContextPath() %>/manager/list" class="">관리자페이지<span
+                        class="arrow" style="display: none;"></span></a>
+                  <div id="tms">
+                        <ul class="">
+                           <li><a href="#" class="">인사말</a></li>
+                           <li><a href="#" class="">연혁</a></li>
+                           <li><a href="#" class="">조직과  기구</a></li>
+                           <li><a href="#" class="">시설안내</a></li>
+                           <li><a href="#" class="">후원회</a></li>
+                        </ul>
+                     </div></li>
+                     
+                     </c:if>
                   <li class="tmect"><a href="#" target="_blank"
                      title="대전예술의전당 아카데미 새창열림" class="">빠른예매<span class="arrow"
                         style="display: none;"></span></a> <a

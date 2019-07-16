@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="FAQBoardMapper">
+
+	<update id="insertFAQBoard">
+		insert into faq (faq_code, faq_num , title, cont,writer)
+		values(#{faq_code} ,#{faq_num},#{title},#{cont},#{writer})
+	</update>
+
+	<select id="selectBoardByNum" resultType="faqboard"
+		parameterType="int">
+		select *
+		from
+		faq
+		where faq_num=#{faq_num}
+	</select>
+
+	<update id="updateFAQBoard" parameterType="faqboard">
+		update faq
+		set
+		title=#{title}, cont=#{cont}, modidate=#{modidate}
+		where
+		faq_num=#{faq_num}
+	</update>
+
+	<update id="deleteFAQBoard">
+		delete
+		from faq
+		where faq_num=#{faq_num}
+	</update>
+
+	<update id="increaseViewCnt">
+		update faq set viewcnt=viewcnt+1
+		where
+		faq_num=#{faq_num}
+	</update>
+
+	<sql id="search">
+		<if test="searchType == 't'.toString()">
+			and title like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and content like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'w'.toString()">
+			and writer like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'tc'.toString()">
+			and (
+			title like '%'||#{keyword}||'%'
+			or
+			content like
+			'%'||#{keyword}||'%'
+			)
+		</if>
+		<if test="searchType == 'cw'.toString()">
+			and (
+			content like '%'||#{keyword}||'%'
+			or
+			writer like
+			'%'||#{keyword}||'%'
+			)
+		</if>
+		<if test="searchType == 'tcw'.toString()">
+			and (
+			title like '%'||#{keyword}||'%'
+			or
+			content like
+			'%'||#{keyword}||'%'
+			or
+			writer like '%'||#{keyword}||'%'
+			)
+		</if>
+	</sql>
+
+	<select id="selectSearchBoardList" resultType="faqboard">
+		<![CDATA[
+			select * 
+			from faq
+			where faq_num>0
+		]]>
+		<include refid="search"></include>
+		order by faq_num desc
+	</select>
+	<select id="selectSearchBoardCount" resultType="int">
+		<![CDATA[
+			select count(*)
+			from faq
+			where faq_num>0
+		]]>
+		<include refid="search"></include>
+	</select>
+
+
+	<select id="selectBoardAll" resultType="faqboard">
+		select *
+		from faq
+		order by
+		qna_num desc,regDate desc
+	</select>
+
+
+	<select id="NextSeq" resultType="int">
+		select faq_seq.nextval as
+		faq_num from dual
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+

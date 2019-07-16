@@ -8,19 +8,19 @@
 
 	<update id="insertQnABoard">
 		insert into qna (qna_code, qna_num , title, cont, writer)
-		values(#{qna_code} ,qna_seq.nextval,#{title},#{cont},#{writer})
+		values(#{qna_code} ,#{qna_num},#{title},#{cont},#{writer})
 	</update>
 
-	<select id="selectBoardByNum" resultType="qnaboard">
+	<select id="selectBoardByNum" resultType="qnaboard" parameterType="int">
 		select *
 		from
 		qna
 		where qna_num=#{qna_num}
 	</select>
 
-	<update id="updateQnABoard">
+	<update id="updateQnABoard" parameterType="qnaboard">
 		update qna
-		set title=#{title}, cont=#{cont}, updatedate=#{updatedate}
+		set title=#{title}, cont=#{cont}, modidate=#{modidate}
 		where
 		qna_num=#{qna_num}
 	</update>
@@ -96,6 +96,12 @@
 		from qna
 		order by qna_num desc,regDate desc
 	</select>
+	
+	
+	<select id="NextSeq" resultType="int">
+		select qna_seq.nextval as qna_num from dual
+	</select>
+	
 </mapper>
 
 

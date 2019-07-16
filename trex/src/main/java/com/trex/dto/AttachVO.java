@@ -9,7 +9,7 @@ public class AttachVO {
 
 	private String fileName;
 	private String fileType;
-	private String fileSize;
+	private long fileSize;
 	private String filePath;
 	
 	private Date regDate;
@@ -41,10 +41,10 @@ public class AttachVO {
 	public void setFileType(String fileType) {
 		this.fileType = fileType;
 	}
-	public String getFileSize() {
+	public long getFileSize() {
 		return fileSize;
 	}
-	public void setFileSize(String fileSize) {
+	public void setFileSize(long fileSize) {
 		this.fileSize = fileSize;
 	}
 	public String getFilePath() {

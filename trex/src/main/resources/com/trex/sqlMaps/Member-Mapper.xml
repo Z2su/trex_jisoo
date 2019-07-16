@@ -44,6 +44,8 @@
 		from mem
 		where mem_id=#{mem_id}
 	</select>
+	
+	
 		
 	
 	

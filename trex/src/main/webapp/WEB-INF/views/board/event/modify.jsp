@@ -23,9 +23,11 @@
 	<div id="navigation">
 		<div class="naviwrap">
 			<a href="<%=request.getContextPath()%>" class="nv_home">HOME</a>&gt;
-			<navi> <a href="<%=request.getContextPath()%>/board/pr/prlist">홍보게시판</a>&gt;
-			<a href="<%=request.getContextPath()%>/board/event/list"
-				class="navi_ov">이벤트</a>&gt; </navi>
+			<navi> 
+				<a href="<%=request.getContextPath()%>/board/pr/prlist">홍보게시판</a>&gt;
+				<a href="<%=request.getContextPath()%>/board/event/list"
+					class="navi_ov">이벤트</a>&gt;
+			</navi> 
 			<div class="nv_service">
 				<a class="nvs_print" href="#total"
 					onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span
@@ -47,6 +49,10 @@
 			<div id="txt">
 
 				<form name="inputFrm" method="post" action="modify">
+					<input type="hidden" name="event_num" value="${event.event_num }">
+					<input type="hidden" name="event_num" value="${event.event_code }">
+					<input type="hidden" name="event_num" value="${event.modidate }">
+
 					<ul class="board_writeInfo">
 
 						<!--제목-->
@@ -55,7 +61,7 @@
 
 						<!--작성자 -->
 						<li><label for="wrtPers">작성자</label><input type="text"
-							id="wrtPers" name="writer" value="${event.writer }" readonly=""><span
+							id="wrtPers" name="writer" value="${event.writer }" readonly><span
 							class="tip">* 작성자는 필수입력 사항입니다.</span></li>
 
 						<!--내용입력-->

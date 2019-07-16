@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
 	<version>1</version>
@@ -13,10 +14,17 @@
 		<config>src/main/resources/context/PFG-context.xml</config>
 		<config>src/main/resources/context/QnA-context.xml</config>
 		<config>src/main/resources/context/Event-context.xml</config>
-		<config>src/main/resources/context/MEMBER-context.xml</config>
+		<config>src/main/resources/context/REP-context.xml</config>
+		<config>src/main/resources/context/Notice-context.xml</config>
+		<config>src/main/resources/context/Ad-context.xml</config>
+		<config>src/main/resources/context/REP-context.xml</config>
+		<config>src/main/resources/context/Pr-context.xml</config>
+
+
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
 	<configSets>
 	</configSets>
 </beansProjectDescription>
+
