@@ -45,50 +45,44 @@
 
 			<div id="txt">
 
-				<form name="inputFrm" method="post" action="replyregist"
-					enctype="multipart/form-data">
+				<form name="inputFrm" method="post"
+					action="replymodify"	>
+					
+					<input type="hidden" name="rep_num" value="${reply.rep_num }">
+					<input type="hidden" name="rep_code" value="${reply.qna_code }">
+					<input type="hidden" name="rep_regdate" value="${reply.regdate }">
+				
+
 					<ul class="board_writeInfo">
-					
-					
-						<input type="hidden" name="qna_code" value="${qnaboard.qna_code }">
-						
+
 						<!--제목-->
 						<li><label for="wrtTitle">제 목</label><input type="text"
-							id="wrtTitle" name="title" value="${qnaboard.title }"></li>
-							
+							id="wrtTitle" name="title" value="${reply.title }"></li>
 
 						<!--작성자 -->
 						<li><label for="wrtPers">작성자</label><input type="text"
-							id="wrtPers" name="writer" value="${loginUser.mem_code }" readonly=""><span
+							id="wrtPers" name="writer" value="${reply.writer }" readonly=""><span
 							class="tip">* 작성자는 필수입력 사항입니다.</span></li>
-							
-						<!-- 첨부파일 -->	
-						
-						<!-- <li><label for="wrtFile">첨부파일</label><input
-							name="file" id="file1" type="file" class="upFile"
-							title="첫번째첨부파일"> (최대 파일사이즈 : 2 MB)</li> -->
-							
-							
-						<!--내용입력-->
-						<li><label for="wrtCont">내용입력</label> <textarea id="wrtCont"
-								name="cont" rows="20" cols="1">
------------- 원 본 글 시 작 ------------- 
-${qnaboard.cont }
------------- 원 본 글 종 료 ------------- </textarea></li>
+						<!--공지 사항 체크-->
 
-					
-	
+
+						
+						<li><label for="wrtCont">내용입력</label> <textarea id="wrtCont"
+								name="cont" rows="20" cols="1">${reply.cont }</textarea></li>
+
+
 					</ul>
 
 					<!-- 게시판 버튼모음 -->
 					<div class="board_butt">
 						<input type="image"
-							src="<%=request.getContextPath()%>/resources/imagesentry.gif"
-							alt="등록"> <a href="./list"><img
-							src="<%=request.getContextPath()%>/resources/imagescancel.gif"
-							alt="취소"></a> <a href="./list"><img
-							src="<%=request.getContextPath()%>/resources/imageslist.gif"
-							alt="목록"></a>
+							src="<%=request.getContextPath()%>/resources/images/modify.gif" alt="등록">
+						<a
+							href="<%=request.getContextPath()%>/board/center/detail/"><img
+							src="<%=request.getContextPath()%>/resources/images/cancel.gif" alt="취소"></a>
+						<a
+							href="/_prog/_board/index.php?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage="><img
+							src="<%=request.getContextPath()%>/resources/images/list.gif" alt="목록"></a>
 					</div>
 				</form>
 				<!--  웹필터 수정 -->

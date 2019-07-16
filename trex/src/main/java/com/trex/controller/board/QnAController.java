@@ -120,6 +120,27 @@ public class QnAController {
 	
 	}
 	
+	@RequestMapping(value="/replymodify",method = RequestMethod.GET)
+	public void repmodifyGET(
+			int rep_num, Model model ) throws Exception{
+	QnAReplyVO reply = reservice.readByNum(rep_num);
+	model.addAttribute("reply", reply);
+	
+	
+	}
+	
+	@RequestMapping(value="/replymodify",method = RequestMethod.POST)
+	public String repmodifyPOST(QnAReplyVO reply, RedirectAttributes rtts )throws Exception{
+		
+		reply.setModidate(new Date());
+		reservice.modify(reply);
+		rtts.addFlashAttribute("msg","SUCCESS");
+		System.out.println(reply);
+		
+		return "redirect:/board/center/qna/list"; 
+	
+	}
+	
 	@RequestMapping(value="/delete",method = RequestMethod.GET)
 	public String delete(
 			int qna_num,HttpServletResponse response)throws Exception{
@@ -127,6 +148,14 @@ public class QnAController {
 		
 		
 	
+		return "redirect:/board/center/qna/list"; 
+	}
+	
+	@RequestMapping(value="/replydelete",method = RequestMethod.GET)
+	public String repdelete(
+			int rep_num,HttpServletResponse response)throws Exception{
+		reservice.remove(rep_num);
+		
 		return "redirect:/board/center/qna/list"; 
 	}
 
