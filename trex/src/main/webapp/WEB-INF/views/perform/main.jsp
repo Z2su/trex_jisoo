@@ -7,7 +7,7 @@
 
 <div id="contentswrap">
 <!-- 내용채우기 -->
-				
+				<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code"/>
 				<div id="divBookMain" name="divBookMain" class="wrap">
 		<!-- //Header -->
 		<div class="headWrap">

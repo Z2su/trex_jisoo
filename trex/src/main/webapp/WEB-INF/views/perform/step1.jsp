@@ -17,7 +17,12 @@
 <script type="text/javascript" src="/Book/Inc/Js/Ajax.js"></script>
 <script type="text/javascript" src="/Book/Inc/Js/BookSeatConfig.js"></script>
 <script type="text/javascript" src="//ticketimage.interpark.com/TicketImage/onestop/css/common.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
 <script type="text/javascript">
+
+
+
 //<![CDATA[
 	var nBookStep = 1;	//현재 예매 단계
 
@@ -25,6 +30,7 @@
 	document.observe("dom:loaded", fnInit);
 
 
+	var pfcode;
 	//초기화
 	function fnInit(){
 		parent.fnSetNextImage("");
@@ -384,7 +390,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td>1<span class="blind">일 예매 불가능${pf_code }</span></td>
+<td>1<span class="blind">일 예매 불가능</span></td>
 <td>2<span class="blind">일 예매 불가능</span></td>
 <td>3<span class="blind">일 예매 불가능</span></td>
 </tr>
@@ -511,4 +517,12 @@
 		<input type="hidden" id="CancelableDate" name="CancelableDate" value="">
 	</form>
  
+ <script>
+ 
+ var pfcode = $('#pf_code',parent.document).val();
+
+ var input = $('<input type="hidden" value="'+pfcode+'" name="pf_code"/>');
+ $('#formCalendar').prepend(input);
+ 
+ </script>
 </body></html>
