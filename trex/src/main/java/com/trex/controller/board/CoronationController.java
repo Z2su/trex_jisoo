@@ -121,7 +121,6 @@ public class CoronationController {
 		out.println("window.opener.location.reload();");
 		out.println("location.href='detail?crg_code="+CRGboard.getCrg_code()+"';");
 		out.println("</script>");	
-
 	}
 	
 	@RequestMapping("/delete/{crg_code}")
@@ -135,16 +134,4 @@ public class CoronationController {
 		out.println("location.href='/board/Coronation/list';");
 		out.println("</script>");		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
