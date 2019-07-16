@@ -96,7 +96,7 @@ import com.trex.service.PrService;
 		}
 		
 		@RequestMapping(value="/pr/prdelete", method=RequestMethod.GET)
-		public String prdelte(int pr_num)throws SQLException{
+		public String prdelete(int pr_num)throws SQLException{
 			String url="redirect:prlist";
 			prService.remove(pr_num);
 			return url;

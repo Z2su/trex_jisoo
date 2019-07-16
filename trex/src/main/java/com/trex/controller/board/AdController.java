@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.trex.dto.AdVO;
-import com.trex.dto.PrVO;
 import com.trex.service.AdService;
 
 @Controller
@@ -58,5 +57,63 @@ public class AdController {
 	@RequestMapping(value = "/ad/adregist", method = RequestMethod.GET)
 	public void adregistGET() {
 	}
+	
+	@RequestMapping(value="/ad/adregist", method=RequestMethod.POST)
+	public String adregistPOST(AdVO ad)throws SQLException{
+		String url="redirect:adlist";
+		adService.write(ad);
+		
+		return url;
+		
+	}
+	
+	@RequestMapping(value="/ad/admodify", method=RequestMethod.GET)
+	public void admodifyGET(int ad_num,Model model)throws SQLException{
+		AdVO ad = adService.adDetail(ad_num);
+		model.addAttribute("ad", ad);
+		System.out.println(ad);
+	}
+	
+	@RequestMapping(value="/ad/admodify",method=RequestMethod.POST	)
+	public String admodifyPOST(AdVO ad)throws SQLException {
+		
+		String url="redirect:adlist";
+		adService.modify(ad);
+		
+		System.out.println(ad);
+		return url;
+		
+	}
+	
+	@RequestMapping(value="/ad/addelete",method=RequestMethod.GET)
+	public String addelete(int ad_num)throws SQLException{
+		String url="redirect:adlist";
+		adService.remove(ad_num);
+		return url;
+	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

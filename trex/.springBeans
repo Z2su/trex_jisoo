@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
 	<version>1</version>
-	<pluginVersion><![CDATA[3.9.8.201903260659-RELEASE]]></pluginVersion>
+	<pluginVersion><![CDATA[3.9.3.201803200843-RELEASE]]></pluginVersion>
 	<configSuffixes>
 		<configSuffix><![CDATA[xml]]></configSuffix>
 	</configSuffixes>
@@ -13,12 +13,7 @@
 		<config>src/main/resources/context/PFG-context.xml</config>
 		<config>src/main/resources/context/QnA-context.xml</config>
 		<config>src/main/resources/context/Event-context.xml</config>
-<<<<<<< HEAD
-		<config>src/main/resources/context/MEMBER-context.xml</config>
 		<config>src/main/resources/context/Ad-context.xml</config>
-=======
-		<config>src/main/resources/context/REP-context.xml</config>
->>>>>>> refs/heads/jisoo
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
