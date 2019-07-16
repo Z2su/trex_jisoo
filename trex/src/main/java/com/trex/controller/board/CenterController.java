@@ -37,10 +37,7 @@ public class CenterController {
 	public void noticeGET() {
 		
 	}
-	@RequestMapping(value="/faq/list",method=RequestMethod.GET)
-	public void faqGET() {
-	}
-	
+
 	
 
 }

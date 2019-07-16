@@ -268,10 +268,10 @@
 										<strong class="point2">(필수항목)</strong> 위와 같이 개인정보를 수집·이용하는데
 										동의하십니까?(동의해야만 회원가입 가능)
 									</p>
-									<input type="checkbox" name="agree" id="chk1"> 약관동의1&nbsp;
-									<input name="agree2-1" type="radio" value="N" id="agree2-1-n"
-										class="checkbox"><label for="agree2-1-n">동의하지
-										않음</label>
+									<input type="checkbox" name="agree" id="chk1">
+									약관동의1&nbsp; <input name="agree2-1" type="radio" value="N"
+										id="agree2-1-n" class="checkbox"><label
+										for="agree2-1-n">동의하지 않음</label>
 									<p class="left">
 										<strong class="point">(선택항목)</strong> 위와 같이 개인정보를 수집·이용하는데
 										동의하십니까?(동의거부 가능)
@@ -296,7 +296,7 @@
 											summary="개인정보를  제공받는자,제공항목,개인정보를 제공받는자의 개인정보 이용목적에 대한 안내입니다.">
 											<caption>개인정보 취급위탁안내</caption>
 											<colgroup>
-												<col style="width: 40%">
+												<col style="width: 70%">
 												<col style="width: 60%">
 											</colgroup>
 											<tbody>
@@ -466,7 +466,7 @@
 								</script>
 
 								<form action="">
-									 <input type="checkbox" name="agree" id="chk1"> 약관동의1 <input
+									<input type="checkbox" name="agree" id="chk1"> 약관동의1 <input
 										type="checkbox" name="agree" id="chk2"> 약관동의2 <input
 										type="checkbox" name="agree" id="chk3"> 약관동의3
 								</form>
@@ -476,7 +476,7 @@
 
 
 
-								<div class="clearfix"></div>
+								<!-- 	<div class="clearfix"></div>
 								</div>
 								<script type="text/javascript">
 									var img_rot = jQuery("#divMenu >ul > li")
@@ -601,7 +601,7 @@
 										document.getElementById('divMenu').style.visibility = "visible";
 										moveRightEdge();
 									}
-								</script>
+								</script> -->
 								</div>
 </body>
 </html>

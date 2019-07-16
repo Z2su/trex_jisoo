@@ -7,20 +7,22 @@
 <mapper namespace="FAQBoardMapper">
 
 	<update id="insertFAQBoard">
-		insert into faq (faq_code, faq_num , title, cont, writer)
-		values(#{faq_code} ,faq_seq.nextval,#{title},#{cont},#{writer})
+		insert into faq (faq_code, faq_num , title, cont,writer)
+		values(#{faq_code} ,#{faq_num},#{title},#{cont},#{writer})
 	</update>
 
-	<select id="selectBoardByNum" resultType="faqboard">
+	<select id="selectBoardByNum" resultType="faqboard"
+		parameterType="int">
 		select *
 		from
 		faq
 		where faq_num=#{faq_num}
 	</select>
 
-	<update id="updatefaqBoard">
+	<update id="updateFAQBoard" parameterType="faqboard">
 		update faq
-		set title=#{title}, cont=#{cont}, updatedate=#{updatedate}
+		set
+		title=#{title}, cont=#{cont}, modidate=#{modidate}
 		where
 		faq_num=#{faq_num}
 	</update>
@@ -51,21 +53,24 @@
 			and (
 			title like '%'||#{keyword}||'%'
 			or
-			content like '%'||#{keyword}||'%'
+			content like
+			'%'||#{keyword}||'%'
 			)
 		</if>
 		<if test="searchType == 'cw'.toString()">
 			and (
 			content like '%'||#{keyword}||'%'
 			or
-			writer like '%'||#{keyword}||'%'
+			writer like
+			'%'||#{keyword}||'%'
 			)
 		</if>
 		<if test="searchType == 'tcw'.toString()">
 			and (
 			title like '%'||#{keyword}||'%'
 			or
-			content like '%'||#{keyword}||'%'
+			content like
+			'%'||#{keyword}||'%'
 			or
 			writer like '%'||#{keyword}||'%'
 			)
@@ -94,10 +99,16 @@
 	<select id="selectBoardAll" resultType="faqboard">
 		select *
 		from faq
-		order by faq_num desc,regDate desc
+		order by
+		qna_num desc,regDate desc
 	</select>
-	
-	
+
+
+	<select id="NextSeq" resultType="int">
+		select faq_seq.nextval as
+		faq_num from dual
+	</select>
+
 </mapper>
 
 
