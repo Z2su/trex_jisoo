@@ -25,7 +25,7 @@
 		update
 		ad
 		set
-		title=#{title}, cont=#{cont}, updatedate = sysdate
+		title=#{title}, cont=#{cont}, modidate = sysdate
 		where ad_num = #{ad_num}
 	
 
@@ -45,7 +45,7 @@
 	</update>
 	
 	<select id="selectAdSeqNext" resultType="int">
-		select ade_seq.nextval as ad_num from dual
+		select adv_seq.nextval as ad_num from dual
 	</select>
 	
 	

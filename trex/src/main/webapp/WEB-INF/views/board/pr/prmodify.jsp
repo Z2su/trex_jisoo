@@ -93,13 +93,13 @@
 					<!-- 게시판 버튼모음 -->
 					<div class="board_butt">
 						<input type="image"
-							src="/_prog/_board/skin/blue/img/button/entry.gif" alt="확인">
+							src="/resources/images/regist.png" alt="등록">
 						<a
 							href="/_prog/_board/index.php?code=stage&amp;site_dvs_cd=kr&amp;menu_dvs_cd=0308&amp;skey=&amp;sval=&amp;GotoPage="><img
-							src="/_prog/_board/skin/blue/img/button/cancel.gif" alt="취소"></a>
+							src="/resources/images/cancel.png" alt="취소"></a>
 						<a
 							href="prlist"><img
-							src="/_prog/_board/skin/blue/img/button/list.gif" alt="목록"></a>
+							src="/resources/images/list.gif" alt="목록"></a>
 					</div>
 				</form>
 				<!--  웹필터 수정 -->

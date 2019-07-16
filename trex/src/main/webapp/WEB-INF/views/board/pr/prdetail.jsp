@@ -44,7 +44,6 @@
 
 			<table width="100%" class="table1" border="0" cellspacing="0"
 				cellpadding="0" summary="테이블의 설명이 들어가는 부분입니다.">
-				<caption>테이블요약이 들어가는 부분입니다.</caption>
 				<colgroup>
 					<col style="width: 96px;">
 					<col style="width: 544px;">
@@ -64,7 +63,7 @@
 						<td class="t_end">${pr.regdate }</td>
 					</tr>
 					<tr>
-						<th scope="row" class="t_head t_left center">내용</th>
+						<th scope="row" class="t_head t_left center">파일첨부</th>
 						<td class="t_end"></td>
 					</tr>
 					<td class="t_end EditText" colspan="2">${pr.cont}</td>
@@ -73,13 +72,13 @@
 
 			<div class="right top_mar_15">
 				<a href="prlist"><img
-					src="/images/kr/common/bt_list.gif" border="0" alt="목록"></a>
+					src="/resources/images/list.gif" border="0" alt="목록"></a>
 				<a
 					href="prmodify?pr_num=${pr.pr_num }"><img
-					src="/_prog/_board/skin/blue/img/button/cancel.gif" alt="수정"></a>
+					src="/resources/images/modify.gif" alt="수정"></a>
 				<a
 					href="prdelete?pr_num=${pr.pr_num }"><img
-					src="/_prog/_board/skin/blue/img/button/list.gif" alt="삭제"></a>
+					src="/resources/images/delete.gif" alt="삭제"></a>
 			</div>
 
 
