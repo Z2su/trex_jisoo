@@ -32,7 +32,7 @@ public interface MemberDAO {
 		List<TroupeVO> selectTroupeList()throws SQLException;
 		List<TroupeVO> selectTroupeList(Criteria cri)throws SQLException;
 	
-		
+	
 	 
 		
 	void insertMember(MemberVO member)throws SQLException;

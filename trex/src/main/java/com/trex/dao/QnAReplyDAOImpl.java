@@ -53,14 +53,14 @@ public class QnAReplyDAOImpl implements QnAReplyDAO {
 	}
 
 	@Override
-	public void updateQnABoard(QnAReplyVO qnarep) throws Exception {
-		// TODO Auto-generated method stub
+	public void updateQnAReply(QnAReplyVO qnarep) throws Exception {
+		session.update(NAMESPACE+".updateQnAReply", qnarep);
 		
 	}
 
 	@Override
-	public void deleteQnABoard(int rep_num) throws Exception {
-		// TODO Auto-generated method stub
+	public void deleteQnAReply(int rep_num) throws Exception {
+		session.update(NAMESPACE+".deleteQnAReply", rep_num);
 		
 	}
 

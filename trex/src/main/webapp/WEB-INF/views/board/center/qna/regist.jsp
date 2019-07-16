@@ -55,16 +55,26 @@
 
 						<!--작성자 -->
 						<li><label for="wrtPers">작성자</label><input type="text"
-							id="wrtPers" name="writer" value="오민영" readonly=""><span
-							class="tip">* 작성자는 필수입력 사항입니다.</span></li>
-							
-						<!-- 첨부파일 -->	
+							id="wrtPers" name="writer" value="${loginUser.mem_code }"
+							readonly=""><span class="tip">* 작성자는 필수입력 사항입니다.</span></li>
+
+						<!-- 첨부파일
 						
-						<li><label for="wrtFile">첨부파일</label><input
-							name="file" id="file1" type="file" class="upFile"
-							title="첫번째첨부파일"> (최대 파일사이즈 : 2 MB)</li>
-							
-							
+						<li><label for="wrtFile">첨부파일</label><input type="text" id = datepicker ></li>
+						
+						
+						<script type="text/javascript">
+						$(function() {
+   						 $( "#datepicker" ).datepicker({ });
+						});
+						</script>
+						
+						
+						 -->
+
+
+
+
 						<!--내용입력-->
 						<li><label for="wrtCont">내용입력</label> <textarea id="wrtCont"
 								name="cont" rows="20" cols="1"></textarea></li>
@@ -95,6 +105,8 @@
 	</div>
 	<!-- //container -->
 </div>
+
+
 
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/board.css"
