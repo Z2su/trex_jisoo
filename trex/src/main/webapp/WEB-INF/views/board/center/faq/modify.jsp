@@ -48,8 +48,8 @@
 				<form name="inputFrm" method="post" action="modify">
 
 					<input type="hidden" name="faq_num" value="${faqboard.faq_num }">
-					<input type="hidden" name="faq_num" value="${faqboard.faq_code }">
-					<input type="hidden" name="faq_num" value="${faqboard.regdate }">
+					<input type="hidden" name="faq_code" value="${faqboard.faq_code }">
+					<input type="hidden" name="faq_regdate" value="${faqboard.regdate }">
 
 
 					<ul class="board_writeInfo">
@@ -74,15 +74,13 @@
 
 					<!-- 게시판 버튼모음 -->
 					<div class="board_butt">
-						<input type="image"
-							src="<%=request.getContextPath()%>/resources/images/modify.gif"
-							alt="등록"> <a
-							href="<%=request.getContextPath()%>/board/center/detail/"><img
-							src="<%=request.getContextPath()%>/resources/images/cancel.gif"
-							alt="취소"></a> <a
-							href="/_prog/_board/index.php?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage="><img
-							src="<%=request.getContextPath()%>/resources/images/list.gif"
-							alt="목록"></a>
+						<input type="image" src="<%=request.getContextPath()%>/resources/images/modify.gif" title="수정" alt="수정"> 
+						<a href="<%=request.getContextPath()%>/board/center/detail/">
+							<img src="<%=request.getContextPath()%>/resources/images/cancel.png" alt="취소">
+						</a>
+						<a href="/_prog/_board/index.php?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=">
+							<img src="<%=request.getContextPath()%>/resources/images/list.gif" alt="목록">
+						</a>
 					</div>
 				</form>
 				<!--  웹필터 수정 -->
@@ -97,6 +95,4 @@
 	<!-- //container -->
 </div>
 
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/board.css"
-	type="text/css" media="all">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/board.css"	type="text/css" media="all">

@@ -46,16 +46,16 @@ public class FAQBoardServiceImpl implements FAQBoardService {
 	public void create(FAQBoardVO faq) throws Exception {
 		int faq_num = faqboardDAO.NextSeq();
 		String faq_code = "FAQ" + String.format("%04d", faq_num);
-		faq.setFAQ_code(faq_code);
-		faq.setFAQ_num(faq_num);
+		faq.setFaq_code(faq_code);
+		faq.setFaq_num(faq_num);
 		faqboardDAO.insertFAQBoard(faq);
 	}
 	@Override
 	public void create(FAQBoardVO faq, HttpServletRequest request) throws Exception {
 		int faq_num = faqboardDAO.NextSeq();
 		String faq_code = "FAQ" + String.format("%04d", faq_num);
-		faq.setFAQ_code(faq_code);
-		faq.setFAQ_num(faq_num);
+		faq.setFaq_code(faq_code);
+		faq.setFaq_num(faq_num);
 		faqboardDAO.insertFAQBoard(faq);
 
 	}

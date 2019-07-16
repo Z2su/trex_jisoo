@@ -97,12 +97,10 @@
 						src="<%=request.getContextPath()%>/resources/images/list.gif"
 						alt="목록"></a> <a href="modify?faq_num=${faqboard.faq_num }"><img
 						src="<%=request.getContextPath()%>/resources/images/modify.gif"
-						alt="수정"></a> <a href="replyregist?faq_num=${faqboard.faq_num }"><img
-						src="<%=request.getContextPath()%>/resources/images/reply.gif"
-						alt="답변"></a> <a href="regist"><img
+						alt="수정"></a> <a href="regist"><img
 						src="<%=request.getContextPath()%>/resources/images/write.gif"
 						alt="쓰기"></a>
-				</div>
+				</div>	
 
 				<!-- 게시글 이동  -->
 

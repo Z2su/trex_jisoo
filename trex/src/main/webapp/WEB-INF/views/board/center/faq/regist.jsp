@@ -55,7 +55,7 @@
 
 						<!--작성자 -->
 						<li><label for="wrtPers">작성자</label><input type="text"
-							id="wrtPers" name="writer" value="권유빈" readonly=""><span
+							id="wrtPers" name="writer" value="${loginUser.mem_code }" readonly=""><span
 							class="tip">* 작성자는 필수입력 사항입니다.</span></li>
 
 						<!--내용입력-->

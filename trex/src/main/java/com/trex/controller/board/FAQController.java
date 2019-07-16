@@ -34,7 +34,6 @@ public class FAQController {
 	public void listPage(@ModelAttribute("cri") SearchCriteria cri, HttpServletRequest request, Model model)
 			throws Exception {
 		List<FAQBoardVO> faqlist = FAQBoardService.listSearch(cri);
-		System.out.println("dddddddddd!!!"+faqlist);
 		model.addAttribute("list", faqlist);
 
 		PageMaker pageMaker = new PageMaker();
@@ -84,10 +83,10 @@ public class FAQController {
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
 	public String modifyPOST(FAQBoardVO faqboard, RedirectAttributes rtts) throws Exception {
 
+		System.out.println(faqboard);
 		faqboard.setModidate(new Date());
 		FAQBoardService.modify(faqboard);
 		rtts.addFlashAttribute("msg", "SUCCESS");
-		System.out.println(faqboard);
 
 		return "redirect:/board/center/faq/list";
 

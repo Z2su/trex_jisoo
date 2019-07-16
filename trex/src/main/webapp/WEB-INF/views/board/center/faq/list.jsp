@@ -72,10 +72,12 @@
 								alt="A" /> <strong>${FAQBoard.cont }</strong>
 								<div class="clear"></div></li>
 						</ul>
-							<a href="delete?faq_num="+${FAQBoard.faq_num }> 
-							<img src="<%=request.getContextPath()%>/resources/images/delete.gif" alt="삭제"/></a>
-							<a href="modify?faq_num="+${FAQBoard.faq_num }>
-							<img src="<%=request.getContextPath()%>/resources/images/modify.gif" alt="수정"></a>
+							<a href="modify?faq_num=${FAQBoard.faq_num }"><img
+						src="<%=request.getContextPath()%>/resources/images/modify.gif"
+						alt="수정"></a>
+							<a href="delete?faq_num=${FAQBoard.faq_num }"><img
+						src="<%=request.getContextPath()%>/resources/images/delete.gif"
+						alt="삭제"></a>
 					</c:forEach>
 
 				</div>
@@ -86,9 +88,7 @@
 		<!-- 게시판 버튼모음 -->	
 		<div class="board_butt">
 
-			<a href="#"><img
-				src="<%=request.getContextPath()%>/resources/images/list.gif"
-				alt="목록"></a> <a href="regist"><img
+			 <a href="regist"><img
 				src="<%=request.getContextPath()%>/resources/images/write.gif"
 				alt="쓰기"></a> <a href="#" target="_blank"> </a>
 		</div>

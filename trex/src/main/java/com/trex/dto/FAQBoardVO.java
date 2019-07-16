@@ -12,22 +12,16 @@ public class FAQBoardVO {
 	private Date regdate;
 	private Date modidate;
 	private int viewcnt;
-	
-	
-	public String getFAQ_code() {
+	public String getFaq_code() {
 		return faq_code;
 	}
-	
-	
-	public int getFAQ_num() {
+	public void setFaq_code(String faq_code) {
+		this.faq_code = faq_code;
+	}
+	public int getFaq_num() {
 		return faq_num;
 	}
-
-	public void setFAQ_code(String FAQ_code) {
-		this.faq_code = FAQ_code;
-	}
-
-	public void setFAQ_num(int faq_num) {
+	public void setFaq_num(int faq_num) {
 		this.faq_num = faq_num;
 	}
 	public String getTitle() {
@@ -66,13 +60,13 @@ public class FAQBoardVO {
 	public void setViewcnt(int viewcnt) {
 		this.viewcnt = viewcnt;
 	}
-
-
 	@Override
 	public String toString() {
 		return "FAQBoardVO [faq_code=" + faq_code + ", faq_num=" + faq_num + ", title=" + title + ", writer=" + writer
 				+ ", cont=" + cont + ", regdate=" + regdate + ", modidate=" + modidate + ", viewcnt=" + viewcnt + "]";
 	}
+	
+	
 	
 	
 	
