@@ -17,15 +17,15 @@
 			</div>
 		</div>
 	</div>
-	<!-- //subvisual -->
+	<!-- //subvisual --> 
 
 	<!-- navigation -->
 	<div id="navigation">
 		<div class="naviwrap">
 			<a href="/html/kr/" class="nv_home">HOME</a>&gt;
 			<navi> <a
-				href="<%=request.getContextPath()%>/board/pr/prlist">게시판</a>&gt;<a
-				href="<%=request.getContextPath()%>/board/ad/adlist">광고게시판</a>
+				href="<%=request.getContextPath()%>/board/board/prlist">게시판</a>&gt;<a
+				href="/html/kr/performance/performance_010101.html">홍보게시판</a>
 			<div class="nv_service">
 				<a class="nvs_print" href="#total"
 					onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span
@@ -52,20 +52,20 @@
 				
 				
 				<form name="inputFrm" method="post"
-					action="adregist"
+					action="admodify"
 					enctype="multipart/form-data" >
-					
+					<input type="hidden" name="ad_num" value="${ad.ad_num }">
 					
 
 					<ul class="board_writeInfo">
 
 						<!--제목-->
 						<li><label for="wrtTitle">제 목</label><input type="text"
-							id="wrtTitle" name="title" value=""></li>
+							id="title" name="title" value="${ad.title } "></li>
 
 						<!--작성자 -->
 						<li><label for="wrtPers">작성자</label><input type="text"
-							id="wrtPers" name="writer" value="${loginUser.mem_code }" readonly=""><span
+							id="writer" name="writer" value="${ad.writer }" readonly=""><span
 							class="tip"></span></li>
 						<!--공지 사항 체크-->
 
@@ -84,7 +84,7 @@
 						<!--내용입력-->
 						
 						<li><label for="wrtCont">내용입력</label> <textarea id="wrtCont"
-								name="cont" rows="20" cols="1"></textarea></li>
+								name="cont" rows="20" cols="1">${ad.cont}</textarea></li>
 
 
 
@@ -98,7 +98,7 @@
 							href="/_prog/_board/index.php?code=stage&amp;site_dvs_cd=kr&amp;menu_dvs_cd=0308&amp;skey=&amp;sval=&amp;GotoPage="><img
 							src="/resources/images/cancel.png" alt="취소"></a>
 						<a
-							href="/_prog/_board/index.php?code=stage&amp;site_dvs_cd=kr&amp;menu_dvs_cd=0308&amp;skey=&amp;sval=&amp;GotoPage="><img
+							href="adlist"><img
 							src="/resources/images/list.gif" alt="목록"></a>
 					</div>
 				</form>
