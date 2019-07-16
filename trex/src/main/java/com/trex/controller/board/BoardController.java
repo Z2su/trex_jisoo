@@ -33,7 +33,7 @@ public class BoardController {
 		List<String[]> submenuList = new ArrayList<String[]> ();
 		
 		submenuList.add(new String[] {"홍보게시판","/board/pr/prlist"});
-		submenuList.add(new String[] {"광고게시판","board/ad/adlist"});
+		submenuList.add(new String[] {"광고게시판","/board/ad/adlist"});
 		submenuList.add(new String[] {"이벤트","/board/event/list"});
 		
 		return submenuList;
@@ -75,8 +75,9 @@ public class BoardController {
 	public void getregist() {}
 	
 	@RequestMapping(value="/event/regist", method = RequestMethod.POST)
-	public String postregist(EventVO event)throws Exception{
-		System.out.println(event);
+	public String postregist(EventVO event )throws Exception{
+		System.out.println("event......+"+event);
+
 		eService.write(event);
 		return "redirect:/board/event/list"; 
 	}

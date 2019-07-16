@@ -3,17 +3,6 @@
 <%@ page import="java.util.*"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<script>
-function blarDate(id){
-    if (id == "startdate"){
-       $('#enddate').datepicker( "option", "minDate", $("#startdate").val() );
-    }else if (id == "enddate"){
-        $('#startdate').datepicker( "option", "maxDate", $("#enddate").val() );
-    }
-}
-
-</script>
-
 <div id="contentswrap">
 
 	<!-- subvisual -->
@@ -66,18 +55,17 @@ function blarDate(id){
 
 						<li><label for="dms.subject"
 							class="col-xs-4 col-sm-2 control-label no-padding-right bolder g_label">
-								게시기간 </label><input id="openDate" name="startDate"
+								게시기간 </label><input id="openDate" name="startdate"
 							style="color: #919191;" class="dateInput" readonly="readonly"
 							type="text"
 							value='<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd" />' />
-							~ <input id="closeDate" name="endDate" class="dateInput"
-							type="text"
+							~ <input id="closeDate" name="enddate" class="dateInput"
+							type="text" 
 							value='<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd" />' /></li>
 
 						<!--작성자 -->
 						<li><label for="wrtPers">작성자</label> <input type="text"
-							id="wrtPers" name="writer" value="${mem.mem_id}" readonly><span
-							class="tip">* 작성자는 필수입력 사항입니다.</span></li>
+							id="wrtPers" name="writer" value="관리자" readonly></li>
 
 						<!--내용입력-->
 						<li><label for="wrtCont">내용입력</label> <textarea id="wrtCont"
@@ -91,9 +79,9 @@ function blarDate(id){
 					<div class="board_butt">
 						<input type="image"
 							src="<%=request.getContextPath()%>/resources/imagesentry.gif"
-							alt="등록"> <a href="./list"><img
+							alt="등록"><a href="./list"><img
 							src="<%=request.getContextPath()%>/resources/imagescancel.gif"
-							alt="취소"></a> <a href="./list"><img
+							alt="취소"></a><a href="./list"><img
 							src="<%=request.getContextPath()%>/resources/imageslist.gif"
 							alt="목록"></a>
 					</div>
@@ -105,7 +93,6 @@ function blarDate(id){
 		</div>
 		<!--quick  -->
 		<%@ include file="/WEB-INF/views/board/center/quick.jsp"%>
-
 	</div>
 	<!-- //container -->
 </div>

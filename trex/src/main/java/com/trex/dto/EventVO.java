@@ -21,6 +21,24 @@ public class EventVO {
 	
 	private List<AttachVO> attachList; // 첨부파일 리스트
 
+	public EventVO() {}
+	public EventVO(String event_code, int event_num, String title, String writer, String cont, Date regdate,
+			Date modidate, int viewcnt, int enable, Date startdate, Date enddate, List<AttachVO> attachList) {
+		super();
+		this.event_code = event_code;
+		this.event_num = event_num;
+		this.title = title;
+		this.writer = writer;
+		this.cont = cont;
+		this.regdate = regdate;
+		this.modidate = modidate;
+		this.viewcnt = viewcnt;
+		this.enable = enable;
+		this.startdate = startdate;
+		this.enddate = enddate;
+		this.attachList = attachList;
+	}
+
 	public String getEvent_code() {
 		return event_code;
 	}
@@ -96,7 +114,7 @@ public class EventVO {
 	public Date getStartdate() {
 		return startdate;
 	}
-
+	/*@DateTimeFormat(pattern="yyyy-MM-dd")*/
 	public void setStartdate(Date startdate) {
 		this.startdate = startdate;
 	}
@@ -105,7 +123,7 @@ public class EventVO {
 		return enddate;
 	}
 	
-	@DateTimeFormat(pattern="yyyy-MM-dd")
+	/*@DateTimeFormat(pattern="yyyy-MM-dd")*/
 	public void setEnddate(Date enddate) {
 		this.enddate = enddate;
 	}
