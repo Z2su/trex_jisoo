@@ -20,7 +20,6 @@ import com.trex.controller.PageMaker;
 import com.trex.controller.SearchCriteria;
 import com.trex.dto.QnABoardVO;
 import com.trex.dto.QnAReplyVO;
-import com.trex.service.AttachService;
 import com.trex.service.QnABoardService;
 import com.trex.service.QnAReplyService;
 
