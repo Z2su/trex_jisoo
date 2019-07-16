@@ -24,9 +24,9 @@ public interface QnAReplyService {
 
 	 QnAReplyVO read(int rep_num) throws Exception;
 
-	 QnABoardVO readByNum(int rep_num) throws Exception;
+	 QnAReplyVO readByNum(int rep_num) throws Exception;
 
-	 void modify(QnAReplyVO qnarep) throws Exception;
+	 void modify(QnAReplyVO reply) throws Exception;
 
 	 void remove(int rep_num) throws Exception;
 
