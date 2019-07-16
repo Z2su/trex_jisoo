@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.controller.Criteria;
+import com.trex.dto.EmployeeVO;
 import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
 import com.trex.dto.TroupeVO;
@@ -133,6 +134,30 @@ public class MemberDAOImpl  implements MemberDAO{
 	}
 	@Autowired
 	SqlSession sqlsession = null;
+
+	@Override
+	public List<EmployeeVO> selectEmployeeList() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<EmployeeVO> selectEmployeeList(Criteria cri) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insertEmployee(EmployeeVO employee) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateEmployee(EmployeeVO employee) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 
