@@ -2,6 +2,9 @@ package com.trex.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import com.trex.controller.SearchCriteria;
 import com.trex.dto.QnABoardVO;
@@ -17,8 +20,10 @@ public interface QnABoardDAO {
 	
 	void increaseViewcnt(int qna_num) throws Exception;
 			
+	List<QnABoardVO> selectSearchBoardList() throws Exception;
 	List<QnABoardVO> selectSearchBoardList(SearchCriteria cri) throws Exception;
 	int selectSearchBoardCount(SearchCriteria cri) throws Exception;
+	void insertFile(Map<String, Object> map) throws Exception;
 	
 	int NextSeq() throws SQLException;
 }
