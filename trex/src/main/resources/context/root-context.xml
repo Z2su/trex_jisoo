@@ -16,5 +16,6 @@
 	<import resource="classpath:context/MEMBER-context.xml"/>
 	<import resource="classpath:context/Pr-context.xml"/>
 	<import resource="classpath:context/Ad-context.xml"/>
+	<import resource="classpath:context/Notice-context.xml"/>
 
 </beans>
