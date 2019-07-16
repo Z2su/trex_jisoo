@@ -3,11 +3,14 @@ package com.trex.service;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.trex.dao.PerformScheduleDAO;
 import com.trex.dto.PerformScheduleVO;
 
 public class PerformScheduleServiceImpl implements PerformScheduleService {
 
+	@Autowired
 	private PerformScheduleDAO PFSHDAO;
 	public void setPFSHDAO(PerformScheduleDAO PFSHDAO) {
 		this.PFSHDAO = PFSHDAO;
