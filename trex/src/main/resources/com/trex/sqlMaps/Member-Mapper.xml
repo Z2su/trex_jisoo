@@ -20,6 +20,14 @@
 		(#{gmem_code},#{name},#{birth},#{address},#{gender},#{tell})
 	</update>
 	
+	<update id="insertEmployee">
+		insert
+		into
+		ep(ep_code,comp,name,rank,emp)
+		values
+		(#{ep_code},#{comp},#{name},#{rank},#{emp})
+	</update>
+	
 	<update id="insertTroupe">
 		insert 
 		into 
