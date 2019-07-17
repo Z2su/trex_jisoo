@@ -1,8 +1,5 @@
 package com.trex.controller.board;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,14 +30,11 @@ public class CenterController {
 		return "/board/center/notice/list";
 	}
 	
-	@RequestMapping(value="/notice/list",method=RequestMethod.GET)
+	/*@RequestMapping(value="/notice/list",method=RequestMethod.GET)
 	public void noticeGET() {
-		
-	}
-	@RequestMapping(value="/faq/list",method=RequestMethod.GET)
-	public void faqGET() {
-	}
-	
+
+	}*/
+
 	
 
 }

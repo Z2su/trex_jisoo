@@ -42,20 +42,20 @@ public class QnAReplyServiceImpl implements QnAReplyService {
 	}
 
 	@Override
-	public QnABoardVO readByNum(int rep_num) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public QnAReplyVO readByNum(int rep_num) throws Exception {
+		QnAReplyVO reply = qnareplyDAO.selectByNum(rep_num);
+		return reply;
 	}
 
 	@Override
-	public void modify(QnAReplyVO qnarep) throws Exception {
-		// TODO Auto-generated method stub
+	public void modify(QnAReplyVO reply) throws Exception {
+		qnareplyDAO.updateQnAReply(reply);
 
 	}
 
 	@Override
 	public void remove(int rep_num) throws Exception {
-		// TODO Auto-generated method stub
+		qnareplyDAO.deleteQnAReply(rep_num);
 
 	}
 

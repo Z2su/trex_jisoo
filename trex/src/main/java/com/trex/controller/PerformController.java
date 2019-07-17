@@ -16,7 +16,9 @@ public class PerformController {
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 		String url = "perform/main";
 		
+		modelnView.addObject("pf_code", pf_code);
 		modelnView.setViewName(url);
+		
 		
 		return modelnView;
 	}

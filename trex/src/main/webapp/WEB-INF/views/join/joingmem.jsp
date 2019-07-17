@@ -73,16 +73,23 @@
 											id="mem_id" type="text" /> <input type="button"
 											class="btn btn-default" style="width: 30%;" id="checkid"
 											value="중복확인" onclick="duplicationId();" />
+											<br/>
+											<span id="idMsg"></span>
+											
 									</div>
+								
+								
+		
 									<div class="form-group">
 										<label>비밀번호</label> <input class="form-control"
 											placeholder="비밀번호" name="mem_pwd" id="mem_pwd"
-											type="password" />
+											type="password"  />
 									</div>
 									<div class="form-group">
 										<label>비밀번호 확인</label> <input class="form-control"
 											placeholder="비밀번호 확인" name="mem_pwd2" id="mem_pwd2"
-											type="password" />
+											type="password"	/>
+										<font id="chkNotice" size="2"></font>
 									</div>
 									<div class="form-group">
 										<label>이름</label> <input class="form-control" placeholder="이름"
@@ -234,11 +241,74 @@
 
 
 		<script type="text/javascript">
+		$('input[name="mem_id"]').on('blur',function(){
+			 var idReg = /^[a-z]+[a-z0-9]{5,19}$/g;
+		        if( !idReg.test( $(this).val() ) ) {
+		            $(this).focus();
+		            $('span#idMsg').text("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.").css({"font-weight":"bold","color":"red"});           
+		            return;
+		        }else{
+		        	$('span#idMsg').text("");
+		        }
+		});
+		
+		$("#mem_pwd").change(function(){
+		    checkPassword($('#mem_pwd').val(),$('mem_id').val());
+		});
+		function checkPassword(password,id){
+		    
+		    if(!/^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/.test(password)){            
+		        alert('숫자+영문자+특수문자 조합으로 8자리 이상 사용해야 합니다.');
+		        $('#mem_pwd').val('').focus();
+		        return false;
+		    }    
+		    var checkNumber = password.search(/[0-9]/g);
+		    var checkEnglish = password.search(/[a-z]/ig);
+		    if(checkNumber <0 || checkEnglish <0){
+		        alert("숫자와 영문자를 혼용하여야 합니다.");
+		        $('#mem_pwd').val('').focus();
+		        return false;
+		    }	
+		    return true;
+		}
+		
+		
+		$(function(){
+		    $('#mem_pwd').keyup(function(){
+		      $('#chkNotice').html('');
+		    });
+
+		    $('#mem_pwd2').keyup(function(){
+
+		        if($('#mem_pwd').val() != $('#mem_pwd2').val()){
+		          $('#chkNotice').html('비밀번호 일치하지 않음<br><br>');
+		          $('#chkNotice').attr('color', '#f82a2aa3');
+		        } else{
+		          $('#chkNotice').html('비밀번호 일치함<br><br>');
+		          $('#chkNotice').attr('color', '#199894b3');
+		        }
+		    });
+		});
+		
+		/* $('input[name="name"]').on('blur',function(){
+			var RegexName = /^[가-힣]{2,4}$/g;
+			if ( !RegexName.test($.trim($("#name").val())) )
+
+			{
+						alert("이름 오류");
+
+						$("#name").focus();
+
+						return false;
+
+					}
+
+
 			$("input#join2").on('click', function(e) {
 
 				alert("bbbbbb");
 			});
-
+ */
 			$(function() {
 
 				$("form")

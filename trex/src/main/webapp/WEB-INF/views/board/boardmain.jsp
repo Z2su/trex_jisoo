@@ -4,7 +4,7 @@
 <body>
 
 
-
+<input id = datepicker >
 
 	<div id="contentswrap">
 

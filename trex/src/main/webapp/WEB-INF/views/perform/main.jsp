@@ -42,7 +42,7 @@
 
 			<!-- //Process 영역 -->	
 			<div class="contL">
-				<iframe id="ifrmBookStep" name="ifrmBookStep" src="sample2" width="637" height="493" frameborder="0" scrolling="no" title="예매정보 선택 페이지"></iframe>
+				<iframe id="ifrmBookStep" name="ifrmBookStep" src="sample2" width="637" height="493" frameborder="0" scrolling="no" title="예매정보 선택 페이지" pfcode="${pf_code }"></iframe>
 			</div><!-- contL //-->
 			<!-- Process 영역 //-->	
 			<div class="contR">
@@ -55,7 +55,7 @@
 							<li>2019.08.19 ~ 2019.08.19</li>
 							<li><span title="대전예술의전당 앙상블홀">대전예술의전당 앙상...</span></li>
 							<li>초등학생이상 관람가</li>
-							<li>관람시간 : 90분</li>
+							<li>관람시간 : 90분${pf_code }</li>
 						</ul>
 					</div>
 				</div>
