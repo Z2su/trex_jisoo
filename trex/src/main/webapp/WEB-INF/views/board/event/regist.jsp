@@ -64,8 +64,10 @@
 							value='<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd" />' /></li>
 
 						<!--작성자 -->
+						<!-- 
 						<li><label for="wrtPers">작성자</label> <input type="text"
-							id="wrtPers" name="writer" value="관리자" readonly></li>
+							id="wrtPers" name="writer" value="관리자" readonly></li> 
+						-->
 
 						<!--내용입력-->
 						<li><label for="wrtCont">내용입력</label> <textarea id="wrtCont"
