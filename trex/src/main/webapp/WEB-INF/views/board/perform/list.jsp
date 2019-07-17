@@ -216,7 +216,7 @@
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=4"
 						rel="ov"><img
 						src="/resources/images/perform/perfortab_05_out.gif" alt="오페라"></a>
-					<a
+						<a
 						href="/html/kr/performance/performance_010101.html?yearMonth=2019-07&amp;genrecode=5"
 						rel="ov"><img
 						src="/resources/images/perform/perfortab_06_out.gif" alt="무용"></a><br>

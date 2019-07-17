@@ -19,6 +19,9 @@
 <link rel="stylesheet"
    href="<%=request.getContextPath()%>/resources/css/layout.css"
    type="text/css" media="all">
+   
+
+
 <script
    src="<%=request.getContextPath()%>/resources/js/jquery-1.11.3.min.js"
    type="text/javascript"></script>
@@ -45,6 +48,17 @@
 <link type="text/css"
    href="<%=request.getContextPath()%>/resources/js/ajax/prevImg/humanmsg.css"
    rel="stylesheet" media="all">
+   
+  
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/js/jquery-ui-1.12.1/jquery-ui.min.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+<script src="<%=request.getContextPath()%>/resources/js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+<script src="<%=request.getContextPath()%>/resources/js/jquery-ui-1.12.1/datepicker-ko.js"></script>
+
+  
 
 <title>T-REX</title>
 </head>
@@ -181,7 +195,7 @@
                 </c:if>
                 <c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }" >
                 
-                  <li><a href="<%=request.getContextPath() %>/mypage/list" class="">관리자페이지<span
+                  <li><a href="<%=request.getContextPath() %>/manager/list" class="">관리자페이지<span
                         class="arrow" style="display: none;"></span></a>
                   <div id="tms">
                         <ul class="">
