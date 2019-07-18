@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <!-- <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
@@ -399,7 +399,7 @@
 <body>
 <c:forEach items="${PFSHViewList }" var="PFSHView" >
 	
-	<input type="hidden" id="rundate" value="${PFSHView.rundate }"/>
+	<input type="hidden" id="rundate" pfsh_code="${PFSHView.pfsh_code }" value='<fmt:formatDate value="${PFSHView.rundate }" pattern="yyyy-MM-dd"/>'/>
 
 
 </c:forEach>
@@ -579,6 +579,22 @@
 
 	<script>
 	
+	var rundateval = $('#rundate').val();
+	var today = new Date(rundateval);
+	//alert("rundateval>>>>>"+rundateval.getDate());
+	var list = new Array();
+	var rundateFunc=function(){
+		var day;
+		var a;
+		$('input#rundate').each(function(index, item){
+			day = new Date($(item).val());
+			alert("ㅎㅎ"+day.getDate());
+			a=$('<a href=""'); 
+			$('#'+day.getDate()).css("background-color","#FF9933");
+		
+		});
+	};
+	
 	
 		var idx = 0;
 
@@ -587,7 +603,7 @@
 		var min = $('li#min');
 		var sec = $('li#sec');
 		var em = $('.month em:first-child')
-		var today = new Date();
+		//var today = new Date();
 		var calendarFunc = function() {
 			let year = today.getFullYear();
 			let month = today.getMonth() + 1;
@@ -621,8 +637,7 @@
 					} else {
 						if (j == 0) {
 
-							tr += '<td class="sun">'
-									+ dNum
+							tr += '<td class="sun" id="'+dNum+'">'+dNum
 									+ '<span class="blind">일 예매 불가능</span></td>';
 
 						} else {
@@ -653,6 +668,8 @@
 			hours.text(hour);
 			min.text(minute);
 			sec.text(second); */
+			rundateFunc();
+
 		}
 		calendarFunc();
 
@@ -669,9 +686,7 @@
 			calendarFunc();
 		}
 		
-		var rundateval = $('#rundate').val();
-		var rundate = new Date(rundateval);
-		alert("rundateval>>>>>"+${PFSHView.pf_code});
+		
 		
 		
 	</script>
