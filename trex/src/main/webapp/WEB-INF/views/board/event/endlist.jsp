@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
 .new_tab_wrap ul.style03 {
@@ -9,7 +10,7 @@
 
 .new_tab_wrap ul.style03 li {
 	position: relative;
-	width: 308px;
+	width: 316px;
 	float: left;
 	height: 48px;
 	line-height: 47px;
@@ -24,7 +25,7 @@
 
 .new_tab_wrap ul.style03 li:first-child {
 	border-left: 1px solid #eaeaee;
-	width: 310px;
+	width: 317px;
 }
 
 .new_tab_wrap ul.style03 li.active, .new_tab_wrap ul.style03 li.active:hover
@@ -52,7 +53,7 @@
 }
 
 .new_tab_wrap ul.style03 li .tab_line {
-	width: 310px;
+	width: 319px;
 	height: 4px;
 	background-color: #7192d0;
 	position: absolute;
@@ -186,6 +187,15 @@
 	margin-top: 15px;
 	font-family: "Tahoma";
 }
+
+.button{
+	board :1px solid #ff0008;
+	background-color : #ffe6f2;
+	font : 12px 굴림;
+	fount-weight : bold;
+	color : #ff0008;
+	width:100%;
+}
 </style>
 
 
@@ -241,12 +251,13 @@
 					</ul>
 				</div>
 
-
 				<!--  본문 내용    -->
+				<c:if test="${loginUser.id eq board.writer}">
 				<div class="wizard-actions-L">
-					<input type="button" value="등록"
+					<input type="button" value="이벤트 등록" class="button"
 						onClick="location.href='<%=request.getContextPath()%>/board/event/regist'">
 				</div>
+				</c:if>
 
 				<div class="event_board">
 					<ul style="margin-top: 10px; margin-left: 10px;">

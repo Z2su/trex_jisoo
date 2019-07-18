@@ -195,8 +195,7 @@
 		<div class="subv_performance">
 			<div class="subv_pat">
 				<p>
-					<strong><img
-						src="/resources/images/ma_service_type.png"
+					<strong><img src="/resources/images/ma_service_type.png"
 						alt="Daejeon Arts Center"></strong> 문화로 시민을 행복하게! 대전예술의전당
 				</p>
 			</div>
@@ -248,23 +247,19 @@
 
 						<div>
 							<%-- <c:if test="${loginUser.id eq event.writer}"> --%>
-								<button type="button" class="btn btn-sm btn-white btn-bold"
-									onclick="location.href='<%=request.getContextPath()%>/board/event/modify?event_num=${event.event_num }'">
-									<i class="red ace-icon fa fa-pencil bigger-120"></i><b>편집</b>
-								</button>
-								<button type="button" class="btn btn-sm btn-white btn-bold"
-									onclick="remove_go();">
-									<i class="red ace-icon fa fa-trash bigger-120"></i><b>삭제</b>
-								</button>
+							
 							<%-- </c:if> --%>
-							<button type="button" class="btn btn-sm btn-white btn-bold"
-								onclick="javascript:docPrint('document');">
-								<i class="grey ace-icon fa fa-print bigger-120"></i><b>인쇄</b>
-							</button>
-							<button type="button" class="btn btn-sm btn-white btn-bold"
-								onclick="history.go(-1);">
-								<i class="grey ace-icon fa fa-times bigger-120"></i><b>목록</b>
-							</button>
+
+							<a href="/board/event/modify?event_num=${event.event_num }"> <img
+								src="<%=request.getContextPath()%>/resources/images/modify.gif"
+								alt="편집"></a> 
+							<a href="/board/event/delete?event_num=${event.event_num}"> <img
+								src="<%=request.getContextPath()%>/resources/images/delete.gif"
+								alt="삭제"></a> 
+							<a href="/board/event/list"> <img
+								src="<%=request.getContextPath()%>/resources/images/list.gif"
+								alt="목록"></a>
+
 						</div>
 					</div>
 				</div>
@@ -319,11 +314,15 @@
 			$(this).addCalss('active');
 
 		})
-		
-		function remove_go(){
+
+		function remove_go() {
 			var event_num;
-			event_num = ${event.event_num};
-			location.href="delete?event_num=${event.event_num}";
+			event_num = $
+			{
+				event.event_num
+			}
+			;
+			location.href = "delete?event_num=${event.event_num}";
 		}
 	</script>
 	<!-- //container -->

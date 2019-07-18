@@ -114,7 +114,6 @@ public class EventVO {
 	public Date getStartdate() {
 		return startdate;
 	}
-	/*@DateTimeFormat(pattern="yyyy-MM-dd")*/
 	public void setStartdate(Date startdate) {
 		this.startdate = startdate;
 	}
@@ -123,7 +122,6 @@ public class EventVO {
 		return enddate;
 	}
 	
-	/*@DateTimeFormat(pattern="yyyy-MM-dd")*/
 	public void setEnddate(Date enddate) {
 		this.enddate = enddate;
 	}
