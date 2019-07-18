@@ -41,7 +41,7 @@
 		select PFG_SEQ.nextval as pfg_num from dual
 	</select>
 	<select id="selectPFGBoardListByPFcode" resultType="PFGBoard">
-		select * from 
+		select * 
 		from PFSH_view
 		where pf_code = #{pf_code}
 	</select>

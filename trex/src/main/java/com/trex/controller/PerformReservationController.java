@@ -1,16 +1,25 @@
 package com.trex.controller;
 
 import java.sql.SQLException;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.trex.dto.PFSHViewVO;
+import com.trex.service.PerformReservationService;
+
 @Controller
 @RequestMapping("/performrese")
-public class PerformController {
+public class PerformReservationController {
+	
+	@Autowired
+	private PerformReservationService PFRESEService;
+	
 	
 	@RequestMapping(value="/{pf_code}", method=RequestMethod.GET )
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
@@ -22,10 +31,18 @@ public class PerformController {
 		
 		return modelnView;
 	}
-	@RequestMapping("/sample2")
-	public String performsesesampleGet() throws SQLException{
+	@RequestMapping(value="/sample2/{pf_code}")
+	public ModelAndView performsesesampleGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 		
 		String url = "perform/step1";
-		return url;
+		
+		System.out.println("gㅎㅎㅎㅎㅎ>>"+pf_code);
+		
+		List<PFSHViewVO> PFSHViewList = PFRESEService.getPFSHViewList(pf_code);
+		System.out.println("zzzzzz>>"+PFSHViewList);
+		
+		modelnView.addObject("PFSHViewList", PFSHViewList);
+		modelnView.setViewName(url);
+		return modelnView;
 	}
 }
