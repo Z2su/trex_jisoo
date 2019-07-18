@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.aop.interceptor.PerformanceMonitorInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -143,7 +144,7 @@ public class PerformBoardController {
 		out.println("location.href='/board/perform/list';");
 		out.println("</script>");		
 	}
-	@ResponseBody
+/*	@ResponseBody
 	@RequestMapping(value="pfcode", method=RequestMethod.POST)
 	public List<PerformScheduleVO> pfcodesearch(@RequestBody String pf_code){
 		
@@ -158,7 +159,25 @@ public class PerformBoardController {
 		}
 		return dataList;
 		
+	}*/
+	
+	@ResponseBody
+	@RequestMapping(value="pfcode", method=RequestMethod.POST)
+	public List<PerformGuidBoardVO> pfcodesearch(@RequestBody String pf_code){
+		
+	
+		List<PerformGuidBoardVO> dataList=null;
+		try {
+			dataList = PFGBoardService.getBoardListByPF(pf_code);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return dataList;
+		
 	}
+	
 	
 	@ResponseBody
 	@RequestMapping(value="pfsh", method=RequestMethod.POST)

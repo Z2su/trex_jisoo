@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
 	<version>1</version>
@@ -6,25 +5,13 @@
 	<configSuffixes>
 		<configSuffix><![CDATA[xml]]></configSuffix>
 	</configSuffixes>
-	<enableImports><![CDATA[true]]></enableImports>
+	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>src/main/resources/context/root-context.xml</config>
-		<config>src/main/resources/context/servlet-context.xml</config>
-		<config>src/main/resources/context/dataSource-context.xml</config>
-		<config>src/main/resources/context/PFG-context.xml</config>
-		<config>src/main/resources/context/QnA-context.xml</config>
-		<config>src/main/resources/context/Event-context.xml</config>
-		<config>src/main/resources/context/REP-context.xml</config>
-		<config>src/main/resources/context/Notice-context.xml</config>
-		<config>src/main/resources/context/Ad-context.xml</config>
-		<config>src/main/resources/context/REP-context.xml</config>
-		<config>src/main/resources/context/Pr-context.xml</config>
-
-
 	</configs>
 	<autoconfigs>
+		<config>src/main/resources/context/servlet-context.xml</config>
+		<config>src/main/resources/context/root-context.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>
 </beansProjectDescription>
-

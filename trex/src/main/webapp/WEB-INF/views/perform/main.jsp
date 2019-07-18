@@ -42,7 +42,7 @@
 
 			<!-- //Process 영역 -->	
 			<div class="contL">
-				<iframe id="ifrmBookStep" name="ifrmBookStep" src="sample2" width="637" height="493" frameborder="0" scrolling="no" title="예매정보 선택 페이지" pfcode="${pf_code }"></iframe>
+				<iframe id="ifrmBookStep" name="ifrmBookStep" src="sample2/${pf_code }" width="637" height="493" frameborder="0" scrolling="no" title="예매정보 선택 페이지" <%-- pfcode="${pf_code }" --%>></iframe>
 			</div><!-- contL //-->
 			<!-- Process 영역 //-->	
 			<div class="contR">
