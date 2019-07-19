@@ -9,9 +9,17 @@
      /* summernote에서 이미지 업로드시 실행할 함수 */
 jQuery.noConflict();    
 function sendFile(file, editor) {
+	
+	/* if(file.name.확장자.toLowerCase()!="jpg"){
+		alert("JPG 이미지만 가능합니다.");\
+		return;
+	} */
          // 파일 전송을 위한 폼생성
+         
+    var event_code = $('input[name="event_code"]').val();    
 	var formData = new FormData();
     formData.append("uploadFile", file);
+    formData.append("event_code",event_code);
     
     $.ajax({ // ajax를 통해 파일 업로드 처리
         data : formData,

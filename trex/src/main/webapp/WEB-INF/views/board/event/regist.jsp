@@ -55,6 +55,9 @@
 			<div id="txt">
 
 				<form name="inputFrm" method="post" action="regist">
+				
+					<input type="hidden" name="event_num" value="${event_num }"/>
+					<input type="hidden" name="event_code" value="${event_code}" />
 					<ul class="board_writeInfo">
 
 						<!--제목-->
@@ -62,7 +65,7 @@
 							id="wrtTitle" name="title" value=""></li>
 
 						<li><label for="writer">작성자</label> <input type="text"
-							id="writer" name="writer" value="${loginUser.mem_code }"></li>
+							readonly id="writer" name="writer" value="${loginUser.mem_code }"></li>
 
 						<li><label for="dms.subject"
 							class="col-xs-4 col-sm-2 control-label no-padding-right bolder g_label">
