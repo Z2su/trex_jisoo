@@ -580,34 +580,49 @@
 	<script>
 	
 	var rundateval = $('#rundate').val();
+	var pfshcode;
 	var today = new Date(rundateval);
 	//alert("rundateval>>>>>"+rundateval.getDate());
-	var list = new Array();
+	var rundate;
+	var runday;
+	var runmonth;
+	var a;
+	var idx = 0;
+
+	let year;
+	let month;
+	let date;
+	
 	var rundateFunc=function(){
-		var day;
-		var a;
-		$('input#rundate').each(function(index, item){
-			day = new Date($(item).val());
-			alert("ㅎㅎ"+day.getDate());
-			a=$('<a href=""'); 
-			$('#'+day.getDate()).css("background-color","#FF9933");
 		
+		$('input#rundate').each(function(index, item){
+			rundate = new Date($(item).val());
+			runmonth = rundate.getMonth()+1;
+			runday = rundate.getDate();
+			
+			pfshcode = $(item).attr('pfsh_code');
+			//alert("ㅋㅋ"+pfshcode);
+			
+			
+			//alert("ㅎㅎ"+runmonth);
+			if(runmonth == month){
+			$('#'+runday).css("background-color","#FF9933");
+			$('#'+runday).empty();
+			$('#'+runday).prepend(
+			$('<a id="CellPlayDate" name="CellPlayDate" class="sel1" href="#">'+runday+'<span class="blind">일 예매 가능</span></a>'));
+			}
+			//$('#'+day.getDate()).empty();
+			
 		});
 	};
 	
 	
-		var idx = 0;
-
-		var fullDate = $('div#Date');
-		var hours = $('li#hours');
-		var min = $('li#min');
-		var sec = $('li#sec');
-		var em = $('.month em:first-child')
+		
 		//var today = new Date();
 		var calendarFunc = function() {
-			let year = today.getFullYear();
-			let month = today.getMonth() + 1;
-			let date = today.getDate();
+			year = today.getFullYear();
+			month = today.getMonth() + 1;
+			date = today.getDate();
 			$('#calendar tbody').empty();
 
 			if (idx != 0) {
