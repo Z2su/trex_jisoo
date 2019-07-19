@@ -49,9 +49,9 @@ public class PerformReservationController {
 		return modelnView;
 	}
 	
-	/*@ResponseBody
-	@RequestMapping(value="pfsh", method=RequestMethod.POST)
-	public PFSHViewVO pfshsearch(@RequestBody String pfsh_code){
+	@ResponseBody
+	@RequestMapping(value="pfsh", method=RequestMethod.GET)
+	public PFSHViewVO pfshsearch(String pfsh_code){
 		
 
 		PFSHViewVO PFSHView=null;
@@ -65,5 +65,5 @@ public class PerformReservationController {
 		}
 		
 		return PFSHView;
-	}*/
+	}
 }

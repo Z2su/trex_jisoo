@@ -397,7 +397,7 @@
 
 
 <body>
-<c:forEach items="${PFSHViewList }" var="PFSHView" >
+<c:forEach items="${PFSHViewList }" var="PFSHView"  >
 	
 	<input type="hidden" id="rundate" pfsh_code="${PFSHView.pfsh_code }" value='<fmt:formatDate value="${PFSHView.rundate }" pattern="yyyy-MM-dd"/>'/>
 
@@ -569,9 +569,9 @@
 	</form>
 
 	<script>
-		var pfcode = $('#pf_code', parent.document).val();
+		var pf_code = $('#pf_code', parent.document).val();
 
-		var input = $('<input type="hidden" value="'+pfcode+'" name="pf_code"/>');
+		var input = $('<input type="hidden" value="'+pf_code+'" name="pf_code"/>');
 		$('#formCalendar').prepend(input);
 	</script>
 
@@ -580,14 +580,16 @@
 	<script>
 	
 	var rundateval = $('#rundate').val();
-	var pfshcode;
+	var pfsh_code;
 	var today = new Date(rundateval);
 	//alert("rundateval>>>>>"+rundateval.getDate());
-	var rundate;
+	/* var rundate; */
 	var runday;
 	var runmonth;
 	var a;
 	var idx = 0;
+	var s_rundate;
+	var e_rundate;
 
 	let year;
 	let month;
@@ -596,25 +598,47 @@
 	var rundateFunc=function(){
 		
 		$('input#rundate').each(function(index, item){
-			rundate = new Date($(item).val());
+			var rundate = new Date($(item).val());
 			runmonth = rundate.getMonth()+1;
 			runday = rundate.getDate();
 			
-			pfshcode = $(item).attr('pfsh_code');
+			pfsh_code = $(item).attr('pfsh_code');
 			//alert("ㅋㅋ"+pfshcode);
 			
 			
 			//alert("ㅎㅎ"+runmonth);
-			if(runmonth == month){
+			if(runmonth == month && rundate.getFullYear()==year){
 			$('#'+runday).css("background-color","#FF9933");
 			$('#'+runday).empty();
 			$('#'+runday).prepend(
-			$('<a id="CellPlayDate" name="CellPlayDate" class="sel1" href="#">'+runday+'<span class="blind">일 예매 가능</span></a>'));
+			$('<a id="CellPlayDate" run="'+rundate+'"name="CellPlayDate" class="sel1" href="#" onclick="pfshajax();">'+runday+'<span class="blind">일 예매 가능</span></a>'));
 			}
 			//$('#'+day.getDate()).empty();
 			
 		});
 	};
+	
+	function pfshajax(){
+		/* s_rundate=new Date($(this).attr('run'));
+		e_rundate=new Date($(this).attr('run'));
+		e_rundate.setDate(e_rundate.getDate()+1);
+		alert(s_rundate+"~~"+e_rundate); */
+		
+		alert("this~~~~..>"+$(this).attr('run'));
+		var data = {
+				"s_rundate":s_rundate,
+				"e_rundate":e_rundate,
+				"pf_code":pf_code
+				
+		}
+		
+		$('input#rundate').each(function(index, item){
+			
+			
+		});
+		
+		
+	}
 	
 	
 		
@@ -700,6 +724,8 @@
 			idx--;
 			calendarFunc();
 		}
+		
+		
 		
 		
 		

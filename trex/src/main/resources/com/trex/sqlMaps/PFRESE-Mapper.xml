@@ -14,6 +14,14 @@
 		from PFSH_view
 		where pfsh_code = #{pfsh_code}
 	</select>
+	<select id="selectPFSHViewListBydate" parameterType="map" resultType="PFSHView">
+		select * 
+		from pfsh_view 
+		where pf_code = #{pf_code} 
+		and rundate between #{s_rundate} and #{e_rundatee};
+		
+	
+	</select>
 
 
 

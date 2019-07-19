@@ -2,6 +2,7 @@ package com.trex.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,9 @@ public class PerformReservationDAOImpl implements PerformReservationDAO {
 	@Override
 	public List<PFSHViewVO> selectPFSHViewList(String pf_code) throws SQLException {
 
-		List<PFSHViewVO> PFSHView = session.selectList("PFRESE-Mapper.selectPFSHViewList",pf_code);
+		List<PFSHViewVO> PFSHViewList = session.selectList("PFRESE-Mapper.selectPFSHViewList",pf_code);
 		
-		return PFSHView;
+		return PFSHViewList;
 	}
 
 	@Override
@@ -29,6 +30,16 @@ public class PerformReservationDAOImpl implements PerformReservationDAO {
 		PFSHViewVO PFSHView = session.selectOne("PFRESE-Mapper.selectPFSHView", pfsh_code);
 		
 		return PFSHView;
+	}
+
+	@Override
+	public List<PFSHViewVO> selectPFSHViewListBydate(Map<String, Object> map) throws SQLException {
+		
+		
+		List<PFSHViewVO> PFSHViewList = session.selectList("PFRESE-Mapper.selectPFSHViewListBydate",map);
+
+		
+		return PFSHViewList;
 	}
 
 }
