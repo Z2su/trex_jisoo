@@ -38,6 +38,7 @@
 			 <div id="container">
       <%@ include file="/WEB-INF/views/board/Coronation/submenu.jsp"%>
 
+
 				<!-- content-->
 				<div id="content">
 					<!-- 컨텐츠 타이틀 -->
@@ -81,12 +82,12 @@
 				onclick="location.href='<%=request.getContextPath()%>/board/Coronation/modify?crg_code=${CRGBoard.crg_code }'">
 				<i class="red ace-icon fa fa-pencil bigger-120"></i><b>편집</b>
 			</button>
+			
+			<a
+				href="/board/Coronation/delete/${CRGBoard.crg_code }"><img
+				src="/resources/images/delete.gif" alt="삭제"></a>
 								
-			<button type="button" class="btn btn-sm btn-white btn-bold"
-				onclick="remove_go();">
-				<i class="red ace-icon fa fa-trash bigger-120"></i><b>삭제</b>
-			</button>
-								
+					
 			<button type="button" class="btn btn-sm btn-white btn-bold"
 				onclick="history.go(-1);">
 				<i class="grey ace-icon fa fa-times bigger-120"></i><b>목록</b>
@@ -94,38 +95,12 @@
            </div>
 	
 	
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#list").on("click", function(e){ //목록으로 버튼
-				e.preventDefault();
-				fn_openBoardList();
-			});
-			
-			$("#update").on("click", function(e){
-				e.preventDefault();
-				fn_openBoardUpdate();
-			});
-		});
-		
-		function fn_openBoardList(){
-			var comSubmit = new ComSubmit();
-			comSubmit.setUrl("<c:url value='/board/Coronation/list'/>");
-			comSubmit.submit();
-		}
-		
-		function fn_openBoardUpdate(){
-			var idx = "${map.IDX}";
-			var comSubmit = new ComSubmit();
-			comSubmit.setUrl("<c:url value='/board/Coronation/modify' />");
-			comSubmit.addParam("IDX", idx);
-			comSubmit.submit();
-		}
-		
-		function remove_go(){
-			var event_num;
-			event_num = ${CRG.crg_num};
-			location.href="delete?crg_num=${CRG.crg_num}";
-		}
+	<script>
+	function remove_go(){
+		var event_num;
+		event_num = ${event.event_num};
+		location.href="delete?event_num=${event.event_num}";
+	}
 	</script>
 					
 					
