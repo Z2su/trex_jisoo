@@ -8,6 +8,7 @@ import com.trex.dto.EventVO;
 public interface EventService {
 
 	public List<EventVO> eventList() throws SQLException;
+	public List<EventVO> eventEndList() throws SQLException;
 	public EventVO eventDetail(int event_num) throws SQLException;
 	
 	void write(EventVO event) throws SQLException;

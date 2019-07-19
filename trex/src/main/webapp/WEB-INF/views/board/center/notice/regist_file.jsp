@@ -38,10 +38,13 @@
 	    .bind('fileuploaddestroyed', function (e, data) {
 	    	uploadFileAllSize();
     	})
+    	
 		/* 업로드 시작전에 데이터 유효값 체크 */
 	    .bind('fileuploadstart', function (e, data) {
+	    	
 	    	//var conf_msg = "저장하시겠습니까?";
 	    	if ($('#fileuploadstartconfirm').val() == 1) {
+	    		
 	    		//if (!confirm(conf_msg)) {
 	    			var filesList = this.options.filesContainer;
 	    			filesList.find('.cancel button').click();
@@ -49,6 +52,7 @@
 	    		//}
 	    	}
 	    })
+	    
 	    /* 업로드 완료후에 폼 제출 */
 		.bind('fileuploadstop', function (e, data) {
 			
@@ -77,7 +81,6 @@
 				form.action = "./notice/upload";
 				form.submit();
 			}, 1000);
-			
 		})
 		.bind('fileuploadfail', function (e, data) {
 			if (data.errorThrown == "Internal Server Error") {
@@ -117,7 +120,6 @@
 				$(".fileupload-buttonbar").find(".delete").hide();
 			}
 		});
-	    
 	});
 	
 	// 첨부파일 영역 디자인 변경 : 2017.04.11 jkkim
@@ -127,13 +129,14 @@
 		} else {
 			var tag = "a";
 		}
+		
 		var names = $("#upload").find(".name > " + tag);
+		
 		for(var i = 0; i < names.length; i++) {
 			if( !$(names[i]).prev().is("i") ) {
-				
 				var tmpStr = $(names[i]).text().split(".");
 				var str = tmpStr[tmpStr.length-1].toLowerCase();
-				//String str = ext[ext.length-1].toLowerCase(); 
+				
 				if("txt" == str){
 					extension = "green ace-icon fa fa-file-text-o bigger-120";
 				}else if("xlsx" == str || "xls" == str || "csv" == str){
@@ -155,11 +158,11 @@
 				}else{
 					extension = "ace-icon fa fa-file-o bigger-120";
 				}
-				
 				$(names[i]).before('<i class="' + extension + '"></i>');
 			}
         }
 	}
+	
 	function fileData(arrayDate) {
 	    $("#upload").each(function () {
 			var that = this;
@@ -172,7 +175,6 @@
 				$('#upload table tbody tr.template-download').remove();
 			}
 		});
-	
 	}
 	
 	function uploadFileAllSize() {
@@ -202,7 +204,6 @@
         return (bytes / 1000).toFixed(2) + ' KB';
     }
 	</script>
-	
 
 	<!-- The template to display files available for upload -->
 	<script id="template-upload" type="text/x-tmpl">
@@ -324,6 +325,3 @@
 <script>
 	setTimeout( function() { uploadFileAllSize(); uploadRedraw( 1 ); } , 500 );	//편집 시 첨부 디자인 변경
 </script>
-
-
-	

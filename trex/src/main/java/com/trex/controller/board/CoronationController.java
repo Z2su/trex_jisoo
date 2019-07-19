@@ -86,26 +86,20 @@ public class CoronationController {
 	}
 	
 	@RequestMapping(value="/regist", method=RequestMethod.POST)
-	public void registPOST(String crg_code, String writer, HttpServletResponse response) throws Exception {
-		CoronationVO CRGBoard = new CoronationVO();
-		CRGBoard.setWriter(writer);
-		
-		CRGBoard.setHall_code("HALL0001");
-			
+	public String registPOST(CoronationVO CRGBoard, String writer, HttpServletResponse response) throws Exception {
+		String url ="redirect:list";
+		System.out.println("등록><><><><><><><><>");
 		CoronationService.write(CRGBoard);
-		
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		out.println("<script>");
-		out.println("window.opener.location.reload();window.close();");
-		out.println("</script>");	
-		
+		return url;
+	
 	}
 	
 	@RequestMapping(value="/modify",method=RequestMethod.GET)
 	public void modifyForm(String crg_code,Model model) throws Exception{
 		
 		CoronationVO board = CoronationService.getBoardForModify(crg_code);
+		model.addAttribute("CRG",board);
+		
 	}	
 	
 	@RequestMapping(value="/modify",method=RequestMethod.POST)

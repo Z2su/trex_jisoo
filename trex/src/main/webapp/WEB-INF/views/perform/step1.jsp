@@ -24,6 +24,7 @@
 	
 	document.observe("dom:loaded", fnInit);
 
+
 	//초기화
 	function fnInit(){
 		parent.fnSetNextImage("");
@@ -346,6 +347,7 @@
 		$("CastingListDiv").style.display = "none";
 	}
 //]]>
+
 </script>
 </head>
 			
@@ -382,7 +384,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td>1<span class="blind">일 예매 불가능</span></td>
+<td>1<span class="blind">일 예매 불가능${pf_code }</span></td>
 <td>2<span class="blind">일 예매 불가능</span></td>
 <td>3<span class="blind">일 예매 불가능</span></td>
 </tr>

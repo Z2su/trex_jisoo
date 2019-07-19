@@ -18,8 +18,14 @@ public class EventServiceImpl implements EventService {
 	@Override
 	public List<EventVO> eventList() throws SQLException {
 		List<EventVO> eventList = eventDAO.selectEventList();
+		eventDAO.enableList();
 		
 		return eventList;
+	}
+	@Override
+	public List<EventVO> eventEndList() throws SQLException {
+		List<EventVO> eventEndList = eventDAO.selectEventEndList();
+		return eventEndList;
 	}
 
 	@Override
