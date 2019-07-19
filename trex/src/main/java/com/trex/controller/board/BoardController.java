@@ -1,10 +1,14 @@
 package com.trex.controller.board;
 
+import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +16,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.trex.dto.EventVO;
@@ -33,7 +39,7 @@ public class BoardController {
 		List<String[]> submenuList = new ArrayList<String[]> ();
 		
 		submenuList.add(new String[] {"홍보게시판","/board/pr/prlist"});
-		submenuList.add(new String[] {"광고게시판","board/ad/adlist"});
+		submenuList.add(new String[] {"광고게시판","/board/ad/adlist"});
 		submenuList.add(new String[] {"이벤트","/board/event/list"});
 		
 		return submenuList;
@@ -75,10 +81,12 @@ public class BoardController {
 	public void getregist() {}
 	
 	@RequestMapping(value="/event/regist", method = RequestMethod.POST)
-	public String postregist(EventVO event)throws Exception{
+	public String postregist(EventVO event )throws Exception{
+		System.out.println("event......+"+event);
+
 		eService.write(event);
 		return "redirect:/board/event/list"; 
-	   	}
+	}
 	
 	@RequestMapping(value="/event/modify", method = RequestMethod.GET)
 	public ModelAndView getmodify(int event_num, ModelAndView modelnView) throws SQLException{
@@ -103,5 +111,37 @@ public class BoardController {
 		
 	}
 	
+
+	@RequestMapping(value="/my/imageUpload",method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String,String> imageUpload(HttpServletRequest request,HttpServletResponse response, MultipartFile uploadFile)throws Exception{
+		
+		
+		 // 이미지 업로드할 경로
+		String savePath = request.getServletContext().getRealPath("/resources/imageUpload");
+		
+		File uploadPathFile = new File(savePath);
+		
+		if(!uploadPathFile.exists()) {
+			uploadPathFile.mkdirs();
+		}
+		
+	    
+		String fileFormat=uploadFile.getOriginalFilename().substring(uploadFile.getOriginalFilename().lastIndexOf(".")+1);
+		String fileName=UUID.randomUUID().toString().replace("-", "")+fileFormat;
+		
+		uploadFile.transferTo(new File(savePath+File.separator+fileName));
+		
+	    // 업로드된 경로와 파일명을 통해 이미지의 경로를 생성
+		String url = request.getContextPath()+"/resources/imageUpload/" + fileName ;
+		
+		Map<String,String> dataMap = new HashMap<String,String>();
+		dataMap.put("url", url);
+		
+		System.out.println(dataMap);
+		return dataMap;
+		
+	}
+
 	
 }
