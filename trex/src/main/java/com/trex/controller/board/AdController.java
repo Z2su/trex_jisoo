@@ -3,6 +3,7 @@ package com.trex.controller.board;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.trex.dto.AdVO;
+import com.trex.request.Criteria;
 import com.trex.service.AdService;
 
 @Controller
@@ -36,16 +38,27 @@ public class AdController {
 		submenuList.add(new String[] { "이벤트", "/board/event/list" });
 
 		return submenuList;
+		
+		
+		
 	}
-
-	@RequestMapping(value = "/ad/adlist", method = RequestMethod.GET)
+	
+	@RequestMapping("/ad/adlist")
+	public void adListGET(Criteria cri,Model model)
+			throws Exception{
+		
+		Map<String,Object> dataMap = adService.getAdList(cri);
+		model.addAttribute("dataMap",dataMap);
+		
+	}
+	/*@RequestMapping(value = "/ad/adlist", method = RequestMethod.GET)
 	public void prlistGET(Model model) throws Exception {
 
 		List<AdVO> adlist = adService.adList();
 
 		model.addAttribute("adlist", adlist);
 
-	}
+	}*/
 	
 	@RequestMapping(value="/ad/addetail", method = RequestMethod.GET)
 	public ModelAndView addetailGET(int ad_num, ModelAndView modelnView) throws SQLException{

@@ -3,8 +3,7 @@ package com.trex.controller.board;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.trex.dto.EventVO;
 import com.trex.dto.PrVO;
+import com.trex.request.Criteria;
 import com.trex.service.PrService;
 
 
@@ -42,7 +41,29 @@ import com.trex.service.PrService;
 			return submenuList;
 		}
 		
-		@RequestMapping(value="/pr/prlist",method=RequestMethod.GET)
+		
+		@RequestMapping("/pr/prlist")
+		public void prListGET(Criteria cri,Model model) 
+				throws Exception{
+			
+			Map<String,Object> dataMap = prService.getPrList(cri);
+			model.addAttribute("dataMap",dataMap);
+			
+		}
+		/*@RequestMapping("/pr/prlist")
+		public ModelAndView prListGET(Criteria cri,ModelAndView modelnView) 
+								 		throws SQLException{
+			
+			String url="board/pr/prlist";
+			
+			Map<String,Object> dataMap = prService.getPrList(cri);
+			
+			modelnView.addObject("dataMap",dataMap);
+			modelnView.setViewName(url);
+			
+			return modelnView;		
+		}*/
+		/*@RequestMapping(value="/pr/prlist",method=RequestMethod.GET)
 		public void prlistGET(Model model)throws Exception {
 			
 			List<PrVO> prlist = prService.prList();
@@ -50,7 +71,7 @@ import com.trex.service.PrService;
 			model.addAttribute("prlist", prlist);
 			
 			
-		}
+		}*/
 		@RequestMapping(value="/pr/prdetail", method = RequestMethod.GET)
 		public ModelAndView prdetailGET(int pr_num, ModelAndView modelnView) throws SQLException{
 			PrVO pr = prService.prDetail(pr_num);
@@ -101,5 +122,13 @@ import com.trex.service.PrService;
 			prService.remove(pr_num);
 			return url;
 		}
+		
+		
+		
+	    }
+	    
 
-}
+	
+
+
+
