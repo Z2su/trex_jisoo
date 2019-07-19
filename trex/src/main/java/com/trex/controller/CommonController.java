@@ -24,6 +24,8 @@ import com.trex.service.MemberService;
 
 @Controller
 public class CommonController {
+	
+
 	@Autowired
 	private MemberService MemberService;
 	
@@ -70,13 +72,32 @@ public class CommonController {
 			}
         return rowcount;
     }
+	
+		@Autowired
+		private UserMailSendService mailsender;
+		@RequestMapping(value = "/joinregist", method = RequestMethod.POST)
+		public String userRegPass(MemberVO memberVO, GmemberVO Gmember, Model model, HttpServletRequest request) {
 
+	/*		// 암호 확인
+			System.out.println("첫번째:" + memberVO.getMem_pwd());
+			// 비밀번호 암호화
+			String encryPassword = UserSha256.encrypt(memberVO.getMem_pwd());
+			memberVO.setMem_pwd(encryPassword);
+			System.out.println("두번째:" + memberVO.getMem_pwd());
+			// 회원가입 메서드
+			MemberService.userReg_service(memberVO);*/
+			// 인증 메일 보내기 메서드
+			mailsender.mailSendWithMemberKey(memberVO.getMem_email(), memberVO.getMem_id(), request);
+
+			return "redirect:/";
+		}
+		
 
 	@RequestMapping(value = "/joinregist", method = RequestMethod.POST)
 	public String memberjoingmemPOST(MemberVO member, GmemberVO Gmember, HttpServletResponse response)
 			throws Exception {
 		String code = "";
-		/* member.setMem_code("GM0001"); */
+		 member.setMem_code("GM0001"); 
 		try {
 			code = MemberService.regist(member, "GM");
 			System.out.println("member >> " + member);
@@ -198,7 +219,8 @@ public class CommonController {
 		session.invalidate();
 		return url;
 	}
-		
+	
+	
 
 	}
 		

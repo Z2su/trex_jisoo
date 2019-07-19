@@ -102,6 +102,14 @@ public class MemberServiceImpl implements MemberService {
 
 
 
+	@Override
+	public void userReg_service(MemberVO memberVO) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
 	
 
 

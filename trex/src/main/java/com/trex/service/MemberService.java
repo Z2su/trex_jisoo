@@ -34,6 +34,7 @@ public interface MemberService {
 		
 		List<TroupeVO> getTroupeList()throws SQLException;
 		Map<String,Object> getTroupeList(Criteria cri)throws SQLException;
+		void userReg_service(MemberVO memberVO);
 	
 		
 	

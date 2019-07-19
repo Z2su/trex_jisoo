@@ -133,6 +133,12 @@ public class MemberDAOImpl  implements MemberDAO{
 	}
 	@Autowired
 	SqlSession sqlsession = null;
+
+	@Override
+	public void GetKey(String mem_id, String key) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

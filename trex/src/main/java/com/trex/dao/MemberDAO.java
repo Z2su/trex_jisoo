@@ -46,6 +46,7 @@ public interface MemberDAO {
 	int selectMemberNextSeq()throws SQLException;
 	
 	MemberVO selectMemberById(String mem_id)throws SQLException;
+	void GetKey(String mem_id, String key);
 
 	
 	
