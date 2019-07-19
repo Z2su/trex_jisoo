@@ -36,6 +36,13 @@
 		(#{tro_code},#{bupanum},#{name})
 	</update>
 	
+	<update id="updateEmployee">
+		update ep
+		set rank = #{rank}, emp=#{emp}
+		where ep_code = #{ep_code}
+	
+	</update>
+	
 	<select id="selectmember" >
 		select
 		from
@@ -44,6 +51,11 @@
 	
 	<select id="selectMemberNextSeq" resultType="int">
 		select MEM_SEQ.nextval as mem_num from dual
+	</select>
+	
+	<select id="selectEmployee" resultType="epview">
+		select *
+		from ep_view
 	</select>
 	
 	<select id="selectMemberById" parameterType="str" resultType="member">

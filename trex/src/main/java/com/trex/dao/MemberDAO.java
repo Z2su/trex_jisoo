@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.trex.controller.Criteria;
+import com.trex.dto.EPViewVO;
 import com.trex.dto.EmployeeVO;
 import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
@@ -34,8 +35,8 @@ public interface MemberDAO {
 		List<TroupeVO> selectTroupeList(Criteria cri)throws SQLException;
 	
 		//EmployeeVO 리스트
-		List<EmployeeVO> selectEmployeeList()throws SQLException;
-		List<EmployeeVO> selectEmployeeList(Criteria cri)throws SQLException;
+		List<EPViewVO> selectEmployeeList()throws SQLException;
+		List<EPViewVO> selectEmployeeList(Criteria cri)throws SQLException;
 		
 	
 	 

@@ -15,6 +15,7 @@
 		<typeAlias type="com.trex.dto.MemberVO" alias="member"/>
 		<typeAlias type="com.trex.dto.FAQBoardVO" alias="faqboard"/>
 		<typeAlias type="com.trex.dto.PrVO" alias="pr"/>
+		<typeAlias type="com.trex.dto.EPViewVO" alias="epview"/>
 	</typeAliases>
  
 </configuration>

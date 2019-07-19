@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.controller.Criteria;
+import com.trex.dto.EPViewVO;
 import com.trex.dto.EmployeeVO;
 import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
@@ -15,9 +16,10 @@ import com.trex.dto.TroupeVO;
 
 public class MemberDAOImpl  implements MemberDAO{
 	
+	
+	@Autowired
 	private SqlSession session;
 	
-	//@Autowired
 		public void setSession(SqlSession session) {
 			this.session=session;
 		} 
@@ -132,30 +134,27 @@ public class MemberDAOImpl  implements MemberDAO{
 		MemberVO member = session.selectOne("Member-Mapper.selectMemberById", mem_id);
 		return member;
 	}
-	@Autowired
-	SqlSession sqlsession = null;
-
+	
 	@Override
-	public List<EmployeeVO> selectEmployeeList() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<EPViewVO> selectEmployeeList() throws SQLException {
+		List<EPViewVO> viewlist = session.selectList("Member-Mapper.selectEmployee");
+		return viewlist;
 	}
 
 	@Override
-	public List<EmployeeVO> selectEmployeeList(Criteria cri) throws SQLException {
+	public List<EPViewVO> selectEmployeeList(Criteria cri) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void insertEmployee(EmployeeVO employee) throws SQLException {
-		// TODO Auto-generated method stub
-		
+		session.update("Member-Mapper.insertEmployee", employee);
 	}
 
 	@Override
 	public void updateEmployee(EmployeeVO employee) throws SQLException {
-		// TODO Auto-generated method stub
+		session.update("Member-Mapper.updateEmployee",employee);
 		
 	}
 	
