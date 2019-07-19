@@ -1,55 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Pr-Mapper">
+	<!-- <sql id="insertEndDateNull">
+	<if test="endDate == null">
+		pr(nno,title,writer,content,startDate,point)
+		values
+		(#{nno},#{title},#{writer},#{content},#{startDate},#{point})
+	</if>
+	<if test="endDate != null">
+		notice(nno,title,writer,content,startDate,endDate,point)
+		values
+		(#{nno},#{title},#{writer},#{content},#{startDate},#{endDate},#{point})
+	</if>
+</sql>
+	<sql id="updateEndDateNull">
+		<if test="endDate == null">
+			,endDate=null
+		</if>
+		<if test="endDate != null">
+			,endDate=#{endDate}
+		</if>
+	</sql> -->
+	<sql id="search">
+		<if test="searchType == 't'.toString()">
+			and title like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'w'.toString()">
+			and writer like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and content like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'tc'.toString()">
+			and (
+			title like '%'||#{keyword}||'%'
+			or
+			content like
+			'%'||#{keyword}||'%'
+			)
+		</if>
+		<if test="searchType == 'cw'.toString()">
+			and (
+			writer like '%'||#{keyword}||'%'
+			or
+			content like
+			'%'||#{keyword}||'%'
+			)
+		</if>
+		<if test="searchType == 'tcw'.toString()">
+			and (
+			title like '%'||#{keyword}||'%'
+			or
+			writer like
+			'%'||#{keyword}||'%'
+			or
+			content like '%'||#{keyword}||'%'
+			)
+		</if>
+	</sql>
 
-	<select id ="selectPrList" resultType="pr">
+	<select id="selectSearchPrList"
+		parameterType="com.trex.request.Criteria" resultType="pr">
+		<![CDATA[
+			select
+			*
+			from
+			pr
+			where pr_num is not null 
+		]]>
+		<include refid="search" />
+		order by pr_num desc
+
+	</select>
+
+	<select id="selectSearchPrListCount" resultType="int">
+		<![CDATA[
+			select
+			count(*)
+			from
+			pr
+			where pr_num is not null  
+		]]>
+		<include refid="search" />
+
+	</select>
+
+	<!-- <select id="selectPointPrList" resultType="pr">
+		<![CDATA[
+			select
+			*
+			from
+			pr
+				      	
+			order by pr_num desc
+		]]>
+	</select> -->
+
+	<select id="selectPrList" resultType="pr">
 		select *
 		from pr
-		order by pr_num desc	
+		order by
+		pr_num desc
 	</select>
-	
-	<select id ="selectPrBypr_num" resultType="pr">
+
+	<select id="selectPrBypr_num" resultType="pr">
 		select *
 		from pr
-		where pr_num = #{pr_num}
+		where
+		pr_num = #{pr_num}
 	</select>
-	
-	<update id ="insertPr" parameterType="pr">
+
+	<update id="insertPr" parameterType="pr">
 		insert
 		into
 		pr(pr_code,pr_num,title,writer,cont)
 		values
 		(#{pr_code},#{pr_num},#{title},#{writer},#{cont})
 	</update>
-	
-	<update id ="updatePr" parameterType="pr">
+
+	<update id="updatePr" parameterType="pr">
 		update
 		pr
 		set
-		title=#{title}, cont=#{cont}
+		title=#{title},
+		cont=#{cont}
 		where pr_num = #{pr_num}
-	
+
 
 	</update>
 	<update id="deletePr" parameterType="int">
 		delete
 		from pr
-		where pr_num = #{pr_num}
+		where pr_num =
+		#{pr_num}
 	</update>
-	
+
 	<update id="increaseViewCnt" parameterType="int">
 		update
 		pr
 		set
-		viewcnt = viewcnt+1
+		viewcnt =
+		viewcnt+1
 		where pr_num = #{pr_num}
 	</update>
-	
+
 	<select id="selectPrSeqNext" resultType="int">
-		select pre_seq.nextval as pr_num from dual
+		select pre_seq.nextval
+		as pr_num from dual
 	</select>
-	
-	
-	
-	</mapper>
+
+
+
+</mapper>
 	

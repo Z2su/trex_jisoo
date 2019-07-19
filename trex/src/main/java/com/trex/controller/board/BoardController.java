@@ -102,4 +102,6 @@ public class BoardController {
 		return "redirect:/board/event/list";
 		
 	}
+	
+	
 }
