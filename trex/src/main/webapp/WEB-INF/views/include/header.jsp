@@ -209,14 +209,14 @@
                      
                      </c:if>
                   <li class="tmect"><a href="#" target="_blank"
-                     title="대전예술의전당 아카데미 새창열림" class="">빠른예매<span class="arrow"
+                     title="빠른예매 새창열기" class="">빠른예매<span class="arrow"
                         style="display: none;"></span></a> <a
                      href="#" class="mmore" title="사이트맵"><span
                         class="hide">사이트맵</span><span class="arrow"
                         style="display: none;"></span></a>
                      <div id="tms">
                         대전예술의전당<br> 아카데미교육사업 <a href="#" target="_blank"
-                           title="대전예술의전당 아카데미 새창열림">빠른예매</a>
+                           title="빠른예매 새창열기">빠른예매</a>
                      </div></li>
                </ul>
             </div>
