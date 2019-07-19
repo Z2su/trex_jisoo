@@ -1,29 +1,39 @@
 package com.trex.service;
 
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Service;
 
 import com.trex.controller.SearchCriteria;
 import com.trex.dto.FAQBoardVO;
-import com.trex.dto.QnABoardVO;
 
+
+@Service
 public interface FAQBoardService {
 	
-		public void create(FAQBoardVO faq) throws Exception;
+	Map<String, Object> getList(SearchCriteria cri) throws Exception;
+	
+	void create() throws Exception;
+	 void create(FAQBoardVO faq) throws Exception;
+	 void create(FAQBoardVO faq,HttpServletRequest request)throws Exception;
+	
 
-		public FAQBoardVO read(int faq_num) throws Exception;
+	 FAQBoardVO read(int faq_num) throws Exception;
 
-		public FAQBoardVO readByNum(int faq_num) throws Exception;
+	 FAQBoardVO readByNum(int faq_num) throws Exception;
 
-		public void modify(FAQBoardVO faq) throws Exception;
+	 void modify(FAQBoardVO faq) throws Exception;
 
-		public void remove(int faq_num) throws Exception;
+	 void remove(int faq_num) throws Exception;
 
-
-
-		public List<FAQBoardVO> listSearch(SearchCriteria cri) throws Exception;
-
-		int readSearchBoardCount(SearchCriteria cri) throws Exception;
-	}
+	
 
 
+	 List<FAQBoardVO> listSearch(SearchCriteria cri) throws Exception;
+	 List<FAQBoardVO> listSearch() throws Exception;
 
+	int readSearchBoardCount(SearchCriteria cri) throws Exception;
+}

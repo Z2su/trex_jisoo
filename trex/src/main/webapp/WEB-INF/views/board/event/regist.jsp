@@ -53,6 +53,8 @@
 						<li><label for="wrtTitle">제 목</label><input type="text"
 							id="wrtTitle" name="title" value=""></li>
 
+						
+
 						<!--작성자 -->
 						<li><label for="wrtPers">작성자</label><input type="text"
 							id="wrtPers" name="writer" value="관리자" readonly=""><span
