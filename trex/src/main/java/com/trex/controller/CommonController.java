@@ -44,6 +44,7 @@ public class CommonController {
 		return "/board/boardmain";
 	}
 	
+	
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String memberjoinfirstGET() {
 		return "join/joinfirst";

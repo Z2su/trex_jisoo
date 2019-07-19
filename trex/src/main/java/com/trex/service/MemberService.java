@@ -30,6 +30,7 @@ public interface MemberService {
 
 		// 회원리스트
 		List<MemberVO> getMemberList()throws SQLException;
+		List<MemberVO> getMemberList(String code)throws SQLException;
 		Map<String,Object> getMemberList(Criteria cri)throws SQLException;
 	
 		

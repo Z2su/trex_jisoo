@@ -69,8 +69,13 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public List<MemberVO> getMemberList() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		List<MemberVO> memberList = memberDAO.selectMemberList();
+		return memberList;
+	}
+	@Override
+	public List<MemberVO> getMemberList(String code) throws SQLException {
+		List<MemberVO> memberList = memberDAO.selectMemberList(code);
+		return memberList;
 	}
 
 	@Override
@@ -81,8 +86,8 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public List<GmemberVO> getGmemberList() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		List<GmemberVO> gmemberList = memberDAO.selectGmemberList();
+		return gmemberList;
 	}
 
 	@Override
@@ -93,8 +98,8 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public List<TroupeVO> getTroupeList() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		List<TroupeVO> troupeList = memberDAO.selectTroupeList(); 
+		return troupeList;
 	}
 
 	@Override

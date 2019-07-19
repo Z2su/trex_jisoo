@@ -30,6 +30,13 @@ public class MemberDAOImpl  implements MemberDAO{
 				session.selectList("Member-Mapper.selectMemberList",null);
 		return memberList;
 	}
+	
+	@Override
+	public List<MemberVO> selectMemberList(String code) throws SQLException {
+		List<MemberVO> memberList=
+				session.selectList("Member-Mapper.selectMemberList",code);
+		return memberList;
+	}
 
 	@Override
 	public List<MemberVO> selectMemberList(Criteria cri) throws SQLException {
@@ -46,8 +53,8 @@ public class MemberDAOImpl  implements MemberDAO{
 	@Override
 	public List<GmemberVO> selectGmemberList() throws SQLException {
 		List<GmemberVO> gmemberList=
-				session.selectList("Member-Mapper.selectMemberList",null);
-		return selectGmemberList();
+				session.selectList("Member-Mapper.selectGmemberList",null);
+		return gmemberList;
 	}
 	
 
@@ -66,9 +73,9 @@ public class MemberDAOImpl  implements MemberDAO{
 
 	@Override
 	public List<TroupeVO> selectTroupeList() throws SQLException {
-		List<TroupeVO> TroupeList=
-				session.selectList("Member-Mapper.selectMemberList",null);
-		return selectTroupeList();
+		List<TroupeVO> troupeList=
+				session.selectList("Member-Mapper.selectTroupList",null);
+		return troupeList;
 	}
 
 	@Override

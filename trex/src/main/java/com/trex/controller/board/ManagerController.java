@@ -1,7 +1,5 @@
 package com.trex.controller.board;
 
-import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +11,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.trex.controller.CalendarData;
+import com.trex.dto.CalendarVO;
 import com.trex.dto.EPViewVO;
 import com.trex.dto.EmployeeVO;
+import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
 import com.trex.dto.TroupeVO;
+import com.trex.service.CalendarService;
 import com.trex.service.MemberService;
 
 
@@ -28,8 +31,8 @@ public class ManagerController {
 	@Autowired
 	private MemberService mservice;
 	
-	
-
+	@Autowired
+	private CalendarService calService;
 	
 	
 	@RequestMapping(value="/myinfo")
@@ -65,14 +68,35 @@ public class ManagerController {
 	
 	
 	@RequestMapping(value="/memlist")
-	public void list3GET() {
+	public void memlistGET(Model model) throws Exception {
+		List<GmemberVO> glist = mservice.getGmemberList();
+		List<TroupeVO> tlist = mservice.getTroupeList();
+		List<MemberVO> gmemlist = mservice.getMemberList("GM");
+		List<MemberVO> tmemlist = mservice.getMemberList("TR");
+		model.addAttribute("glist", glist);
+		model.addAttribute("tlist",  tlist);
+		model.addAttribute("gmemlist",  gmemlist);
+		model.addAttribute("tmemlist",  tmemlist);
+		
 	}
 	
 	@RequestMapping(value="/calendar")
 	public void calenderGET() {
 	}
 	
-	
+	@RequestMapping(value="/calendar/list",method=RequestMethod.GET)
+	@ResponseBody
+	public List<CalendarData> list()throws Exception{
+		List<CalendarVO> calendarList=calService.calenderlist();
+		
+		List<CalendarData> dataList = new ArrayList<CalendarData>();
+		for(CalendarVO calendar : calendarList) {
+			dataList.add(new CalendarData(calendar));			
+		}
+		
+		return dataList;
+		
+	}
 	
 	
 	

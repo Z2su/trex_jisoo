@@ -24,6 +24,7 @@ public interface MemberDAO {
 	
 	//MemberVO 리스트
 		List<MemberVO> selectMemberList()throws SQLException;
+		List<MemberVO> selectMemberList(String code)throws SQLException;
 		List<MemberVO> selectMemberList(Criteria cri)throws SQLException;
 	
 	//GmemberVO 리스트

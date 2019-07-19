@@ -44,9 +44,16 @@
 	</update>
 	
 	<select id="selectmember" >
-		select
+		select *
 		from
 		member()
+	</select>
+	
+	<select id="selectmemberList" resultType="member">
+		select *
+		from
+		member
+	
 	</select>
 	
 	<select id="selectMemberNextSeq" resultType="int">
@@ -54,6 +61,16 @@
 	</select>
 	
 	<select id="selectEmployee" resultType="epview">
+		select *
+		from ep_view
+	</select>
+	
+	<select id="selectGmemberList" resultType="gmember">
+		select *
+		from ep_view
+	</select>
+	
+	<select id="selectTroupList" resultType="troup">
 		select *
 		from ep_view
 	</select>

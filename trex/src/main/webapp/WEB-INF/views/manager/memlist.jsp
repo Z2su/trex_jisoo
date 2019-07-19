@@ -48,49 +48,49 @@
 			<h3 class="cnt_ti">관리자 페이지</h3>
 
 			<div id="txt">
-				<div class="dot_line bott_mar_15"></div>
 
-				<h4 class="top_mar_100">직원 정보</h4>
-				<table cellpadding="0" cellspacing="0" width="100%" border="0"
-					class="table1">
-					<tbody class="text-center">
-						
-							<tr>
-								<th class="t_body" scope="row" width="150">회원코드</th>
-								<td class="td_top t_end">${gmemList.gmem_code}</td>
-							</tr>
 
-							<tr>
-								<th class="t_body" scope="row" width="150">* 이름</th>
-								<td class="td_top t_end">${gmemList.name}</td>
-							</tr>
-							<tr>
-								<th class="t_body" scope="row" width="150">* 휴대전화</th>
-								<td class="td_top t_end">${gmemList.tell}</td>
-							</tr>
-							<tr>
-								<th class="t_body" scope="row">* 생년월일</th>
-								<td class="t_end">${gmemList.birth}</td>
-							</tr>
-							<tr>
-								<th class="t_body" scope="row">* 주소</th>
-								<td class="t_end">${gmemList.address}</td>
-							</tr>
-							<tr>
-								<th class="t_body" scope="row">* 성별</th>
-								<td class="t_end">${gmemList.gender}</td>
-							</tr>
-							<tr>
-								<th class="t_body" scope="row">마일리지</th>
-								<td class="t_end">${gmemList.mile}</td>
-							</tr>
-							<tr>
-								<th class="t_body" scope="row">회원등급</th>
-								<td class="t_end">${gmemList.gra_code}</td>
-							</tr>
+
+				<h4>직원리스트</h4>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td>
+								<table width="100%" cellpadding="0" cellspacing="0"
+									class="table1 center" summary="지난 설문 보기.">
+									<caption>지난설문보기</caption>
+									<tbody>
+										<tr>
+											<th width="70" class="t_head" scope="col">회원코드</th>
+											<th width="50" class="t_head" scope="col">아이디</th>
+											<th width="80" class="t_head" scope="col">이름</th>
+											<th class="t_head" scope="col">마일리지</th>
+											<th width="70" class="t_head" scope="col">등급</th>
+											<th width="70" class="t_head t_end" scope="col">편집</th>
+										</tr>
+
+										<c:if test="${!empty glist }">
+											<c:forEach items="${glist}"s var="mem">
+												<tr>
+													<td>${mem.mem_code }</td>
+													<td>${mem.id }</td>
+													<td>${mem.name }</td>
+													<td>${mem.mile }</td>
+													<td>${mem.gra_code }</td>
+													<td class="t_end"><a href="#">버튼</a></td>
+												</tr>
+											</c:forEach>
+										</c:if>
+
+									</tbody>
+								</table>
+							</td>
+						</tr>
 					</tbody>
-							
 				</table>
+
+
+
 			</div>
 
 				<div class="box-footer login-box" style="margin-top: 0; border-top: none;">
