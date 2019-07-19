@@ -20,6 +20,14 @@
 		(#{gmem_code},#{name},#{birth},#{address},#{gender},#{tell})
 	</update>
 	
+	<update id="insertEmployee">
+		insert
+		into
+		ep(ep_code,comp,name,rank,emp)
+		values
+		(#{ep_code},#{comp},#{name},#{rank},#{emp})
+	</update>
+	
 	<update id="insertTroupe">
 		insert 
 		into 
@@ -28,14 +36,43 @@
 		(#{tro_code},#{bupanum},#{name})
 	</update>
 	
+	<update id="updateEmployee">
+		update ep
+		set rank = #{rank}, emp=#{emp}
+		where ep_code = #{ep_code}
+	
+	</update>
+	
 	<select id="selectmember" >
-		select
+		select *
 		from
 		member()
 	</select>
 	
+	<select id="selectmemberList" resultType="member">
+		select *
+		from
+		member
+	
+	</select>
+	
 	<select id="selectMemberNextSeq" resultType="int">
 		select MEM_SEQ.nextval as mem_num from dual
+	</select>
+	
+	<select id="selectEmployee" resultType="epview">
+		select *
+		from ep_view
+	</select>
+	
+	<select id="selectGmemberList" resultType="gmember">
+		select *
+		from ep_view
+	</select>
+	
+	<select id="selectTroupList" resultType="troup">
+		select *
+		from ep_view
 	</select>
 	
 	<select id="selectMemberById" parameterType="str" resultType="member">
