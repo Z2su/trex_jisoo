@@ -2,10 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 
-
-
-<!-- inline scripts related to this page end -->
-
 <script type="text/javascript">
 function validCheck(){
 	
@@ -24,7 +20,6 @@ function docSubmit(){
 	if (!confirm("저장 하시겠습니까?")) return false;
 
 	$(window).unbind("beforeunload");
-	
 	
 	waitMsg();	/* Processing message */
 	
@@ -51,7 +46,7 @@ function docSubmit(){
 			var dataForm=new FormData();
 			dataForm.append('file',value);		
 			
-			var loginUser_mem_code="/${loginUser.mem_code}";
+			var loginUser_id="/${loginUser.id}";
 			$.ajax({
 				url:"<%=request.getContextPath()%>/upload",
 				type:"post",
@@ -120,7 +115,7 @@ function goSubmit(cmd,docId){
 			//frm.submit();
 			break;
 		case "close":
-			if(confirm("편집중인 문서는 저장되지 않습니다 !\n창을 닫으시겠습니까 ?")){
+			if(confirm("편집중인 문서는 저장되지 않습니다. !\n창을 닫으시겠습니까 ?")){
 				window.close();
 			}
 			return;
@@ -131,15 +126,6 @@ function goSubmit(cmd,docId){
 	}
 }
 
-//시작-종료일 비활성화
-function blarDate(id){
-	 if (id == "sDate"){
-	 	$('#eDate').datepicker( "option", "minDate", $("#sDate").val() );
-	 }else if (id == "eDate"){
-	  	$('#sDate').datepicker( "option", "maxDate", $("#eDate").val() );
-	 }
-}
-
 var result = null; // 다운로드 템플릿에 들어갈 JSON 데이터
 
 function fnSendCheck() {
@@ -147,7 +133,6 @@ function fnSendCheck() {
     if (sendCheck == "mailRead") {
         var message_name = opener.$("[name='message_name']").val();
         var contents = opener.$("#mailHtmlBody").html();
-        
         var upload = opener.$("#fileupload");
         var names = upload.find(".name");
         var sizes = upload.find(".size");
@@ -179,48 +164,28 @@ function fnFileData() {
 	});
 }
 </script>
+
 <script type="text/javascript">
 var validator = null;
 
-	
 inputHiddenTagMove();	//ace theme - checkbox 오류해결을 위한 함수
-
-$("#openDate, #closeDate, #sDate, #eDate").datepicker({})
-.on('changeDate', function(e) {
-	var minDate = new Date(e.date.valueOf());
-	//팝업기간
-	if ($(this).attr('id') == 'sDate') {
-		$('input[id=eDate]').datepicker('setStartDate', minDate);
-	} else if ($(this).attr('id') == 'eDate') {
-		$('input[id=sDate]').datepicker('setEndDate', minDate);
-	//게시기간
-	} else if ($(this).attr('id') == 'openDate') {
-		$('input[id=closeDate]').datepicker('setStartDate', minDate);
-	} else if ($(this).attr('id') == 'closeDate') {
-		$('input[id=openDate]').datepicker('setEndDate', minDate);
-	}
-});;
-
 
 validator = $("#registForm").validate({
 	rules:{
 		"witer":{ required:true },
 		"title":{ required:true },
-		"cont":{ required:true },
-// 		"bbs.closeDate":{ required:true }
+		"cotent":{ required:true },
+		"category":{ required:true },
 	},
+	
 	messages:{
-		"writer":{ required:"작성자를 입력해 주십시오 !" },
-		"title":{ required:"제목을 입력해 주십시오 !" },
-		"cont":{ required:"내용을 입력해 주십시오 !" },
-//		"bbs.closeDate":{ required:"게시기간 종료일을 선택하십시요" }
+		"writer":{ required:"작성자를 입력해 주십시오. !" },
+		"title":{ required:"제목을 입력해 주십시오. !" },
+		"content":{ required:"내용을 입력해 주십시오. !" };
 	},
+	
 	focusInvalid:true
 });
-
-
- 
- 
  
 if("false"){
    	Organizations.formatAddress("sharelist");
@@ -282,34 +247,49 @@ if($("input[name='search.workType']").val() == "3"){
 }
 
 pageScroll();	// page Scroll을 위해 사용. 2013-08-31
-
 setTimeout( "popupAutoResize2();", "500");		//팝업창 resize
-
 fnSendCheck();
 
-
-jQuery.validator.addMethod("datetimePeriod", function(value, element) {
-	var sDateTime = $("#sDate").datepicker("getDate");
-	var eDateTime = $("#eDate").datepicker("getDate");
-	var isSTimePM = $("#sTimeAMPM").val() == "PM";
-	var isETimePM = $("#eTimeAMPM").val() == "PM";
-	var sTimeHour = parseInt($("#sTimeHour").val());
-	var eTimeHour = parseInt($("#eTimeHour").val());
-	var sTimeMinute = parseInt($("#sTimeMinute").val());
-	var eTimeMinute = parseInt($("#eTimeMinute").val());
-	if(isSTimePM) sTimeHour += 12;
-	if(isETimePM) eTimeHour += 12;
-	sDateTime.setHours(sTimeHour, sTimeMinute);
-	eDateTime.setHours(eTimeHour, eTimeMinute);
-    return eDateTime > sDateTime;
-}, "기간선택이 올바르지 않습니다");
-
-
-
+//분류 변경
+function fnChangeCategory(){
+	var form = $("#registForm");
+	var category = $("select[name=category]").val();
+	
+	//alert(category);
+	form.attr("action",category+"/regist");
+	if(category=="free"){	
+		$('div#upload').css("display","none");	
+		form.attr("enctype","application/x-www-form-urlencoded");
+		$('div.bbsId').css("display","none");
+		$('div.preserveId').css("display","none");
+		$('div.openDate').css("display","none");
+		$('div.sharelist').css("display","none");
+		$('div.uploadFile').css("display","none");
+		
+	}else if(category=="notice"){		
+		$('div#upload').css("display","block");
+		form.attr("enctype","multipart/form-data");
+		$('div.bbsId').css("display","block");
+		$('div.preserveId').css("display","none");
+		$('div.openDate').css("display","block");
+		$('div.sharelist').css("display","none");
+		$('div.uploadFile').css("display","block");	
+		
+	}else{		
+		$('div#upload').css("display","block");
+		form.attr("enctype","multipart/form-data");
+		$('div.bbsId').css("display","block");
+		$('div.preserveId').css("display","block");
+		$('div.openDate').css("display","block");
+		$('div.sharelist').css("display","block");
+		$('div.uploadFile').css("display","block");
+	}
+}
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
 <script id="templateAttach" type="text/x-handlebars-template">
+
 <li style="width:10%;font-size:0.8em;position:relative;">
 	<a href="{{fileName}}" class="btn btn-default btn-xs pull-right delbtn"
 	   style="position:absolute;right:0;top:0;padding:0;" >
@@ -323,17 +303,73 @@ jQuery.validator.addMethod("datetimePeriod", function(value, element) {
 </li>
 </script>
 
+<script>
+var template=Handlebars.compile($('#templateAttach').html());
 
+function getUploadFileInfo(fileName,imgsrc){
+	
+	var fileNameFormat = fileName.substring(fileName.lastIndexOf('.')+1);	
+	if(!checkImageType(fileNameFormat)){
+		var icon="";
+		switch(fileNameFormat){
+		case "doc":case "docx": icon="doc"; break;
+		case "ppt":case "pptx": icon="ppt"; break;
+		case "xlsx": case "xls": case "csv": icon="xls"; break;
+		case "hwp": icon = "hwp"; break;
+		case "zip": icon = "zip"; break;
+		case "pdf": icon = "pdf"; break;
+		default:icon = "file";		
+		}
+		imgsrc="<%=request.getContextPath()%>/resources/common/images/"+icon+".png";
+	}
+	return {fileName:fileName,imgsrc:imgsrc};	
+}
 
+function checkImageType(fileName){
+	var pattern=/jpg|gif|png|jpeg/i;	
+	return fileName.toLowerCase().match(pattern);
+}
 
+$(document).on("dragenter dragover drop",function(event){
+	event.preventDefault();
+});
 
+$('.fileDrop').on('drop',function(event){
+	event.preventDefault();
+	
+	var files=event.originalEvent.dataTransfer.files;	
+	var attachedNum=$('.uploadedList li').length;
+	
+	if((files.length+attachedNum)>3){
+		alert("파일 업로드는 3개까지만 허용됩니다.");
+		return;
+	}
+	var fileName,imgsrc;
+	
+	if (files) {
+	    [].forEach.call(files, readAndPreview);
+	 }
+	
+	function readAndPreview(file) {
+	   
+		var reader = new FileReader();
+		reader.addEventListener("load", function () {	
+			
+			fileFormData.append(file.name,file);
+			
+			var fileInfo=getUploadFileInfo(file.name,this.result);
+			var html=template(fileInfo);
+			$('.uploadedList').append(html);
+		}, false);
+		
+		reader.readAsDataURL(file);
+	}
+});
 
-
-
-
-
-
-
-
-
-
+$('.uploadedList').on('click','.delbtn',function(e){
+	e.preventDefault();
+	
+	var that=$(this).parent('li').remove();
+	fileFormData.delete($(this).attr("href"));
+});
+</script>

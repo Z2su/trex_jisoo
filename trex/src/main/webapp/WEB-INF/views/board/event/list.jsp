@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <style>
 .new_tab_wrap ul.style03 {
 	width: 100%;
@@ -10,7 +10,7 @@
 
 .new_tab_wrap ul.style03 li {
 	position: relative;
-	width: 308px;
+	width: 316px;
 	float: left;
 	height: 48px;
 	line-height: 47px;
@@ -25,7 +25,7 @@
 
 .new_tab_wrap ul.style03 li:first-child {
 	border-left: 1px solid #eaeaee;
-	width: 310px;
+	width: 317px;
 }
 
 .new_tab_wrap ul.style03 li.active, .new_tab_wrap ul.style03 li.active:hover
@@ -53,7 +53,7 @@
 }
 
 .new_tab_wrap ul.style03 li .tab_line {
-	width: 310px;
+	width: 319px;
 	height: 4px;
 	background-color: #7192d0;
 	position: absolute;
@@ -187,6 +187,15 @@
 	margin-top: 15px;
 	font-family: "Tahoma";
 }
+
+.button{
+	board :1px solid #ff0008;
+	background-color : #ffe6f2;
+	font : 12px 굴림;
+	fount-weight : bold;
+	color : #ff0008;
+	width:100%;
+}
 </style>
 
 
@@ -197,8 +206,7 @@
 		<div class="subv_performance">
 			<div class="subv_pat">
 				<p>
-					<strong><img
-						src="/resources/images/ma_service_type.png"
+					<strong><img src="/resources/images/ma_service_type.png"
 						alt="Daejeon Arts Center"></strong> 문화로 시민을 행복하게! 대전예술의전당
 				</p>
 			</div>
@@ -244,10 +252,12 @@
 
 
 				<!--  본문 내용    -->
+				<c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }" >	
 				<div class="wizard-actions-L">
-					<input type="button" value="등록"
+					<input type="button" value="이벤트 등록" class="button"
 						onClick="location.href='<%=request.getContextPath()%>/board/event/regist'">
 				</div>
+				</c:if>
 
 				<div class="event_board">
 					<ul style="margin-top: 10px; margin-left: 10px;">
@@ -257,14 +267,13 @@
 									<dl>
 										<dt>
 											<a
-												href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}"><img
-												src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=5629539181056233673"
-												alt="종료된 이벤트 섬네일"></a>
+												href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}">
+												<img src="<%=request.getContextPath() %>/resources/imageUpload/"
+												alt="이벤트 섬네일"></a>
 										</dt>
 										<dd class="data">
 											<p>
-												<a
-													href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}">${event.title }</a>
+												<a href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}">${event.title }</a>
 											</p>
 										</dd>
 										<dd class="date">

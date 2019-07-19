@@ -14,6 +14,7 @@
 		<typeAlias type="com.trex.dto.QnAReplyVO" alias="qnarep"/>
 		<typeAlias type="com.trex.dto.AttachVO" alias="attach"/>
 		<typeAlias type="com.trex.dto.CoronationVO" alias="CRG"/>
+		<typeAlias type="com.trex.dto.CrAppVO" alias="CRApp"/>
 		<typeAlias type="com.trex.dto.MemberVO" alias="member"/>
 		<typeAlias type="com.trex.dto.FAQBoardVO" alias="faqboard"/>
 		<typeAlias type="com.trex.dto.PrVO" alias="pr"/>
@@ -21,6 +22,10 @@
 		<typeAlias type="com.trex.dto.GmemberVO" alias="gmember"/>
 		<typeAlias type="com.trex.dto.TroupeVO" alias="troup"/>
 		<typeAlias type="com.trex.dto.CalendarVO" alias="calendar"/>
+		<typeAlias type="com.trex.dto.AdVO" alias="ad"/>
+		<typeAlias type="com.trex.dto.NoticeVO" alias="notice"/>
+
+
 	</typeAliases>
  
 </configuration>

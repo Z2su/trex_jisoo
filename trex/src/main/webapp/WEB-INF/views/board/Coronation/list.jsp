@@ -8,9 +8,6 @@
    href="<%=request.getContextPath()%>/resources/css/Coronation.css"
    type="text/css" media="all">
 <body>
-   
-
-    
  
    <div id="contentswrap">
 
