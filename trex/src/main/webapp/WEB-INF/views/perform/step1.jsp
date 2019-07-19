@@ -583,7 +583,7 @@
 	var pfsh_code;
 	var today = new Date(rundateval);
 	//alert("rundateval>>>>>"+rundateval.getDate());
-	/* var rundate; */
+	/* var rundate;  */
 	var runday;
 	var runmonth;
 	var a;
@@ -606,37 +606,61 @@
 			//alert("ㅋㅋ"+pfshcode);
 			
 			
-			//alert("ㅎㅎ"+runmonth);
+			//alert("ㅎㅎ"+rundate);
 			if(runmonth == month && rundate.getFullYear()==year){
-			$('#'+runday).css("background-color","#FF9933");
-			$('#'+runday).empty();
-			$('#'+runday).prepend(
-			$('<a id="CellPlayDate" run="'+rundate+'"name="CellPlayDate" class="sel1" href="#" onclick="pfshajax();">'+runday+'<span class="blind">일 예매 가능</span></a>'));
+				$('#'+runday).css("background-color","#FF9933");
+				$('#'+runday).empty();
+				$('#'+runday).prepend(
+				$('<a id="CellPlayDate" run="'+rundate+'"name="CellPlayDate" class="sel1" href="#" onclick="pfshajax('+$(item).val()+');">'+runday+'<span class="blind">일 예매 가능</span></a>'));
 			}
 			//$('#'+day.getDate()).empty();
 			
 		});
 	};
 	
-	function pfshajax(){
-		/* s_rundate=new Date($(this).attr('run'));
+	function pfshajax(data){
+		s_rundate=new Date($(this).attr('run'));
 		e_rundate=new Date($(this).attr('run'));
 		e_rundate.setDate(e_rundate.getDate()+1);
-		alert(s_rundate+"~~"+e_rundate); */
+		//alert(s_rundate+"~~"+e_rundate); 
+		var selecteddate = new Date(data);
 		
-		alert("this~~~~..>"+$(this).attr('run'));
-		var data = {
-				"s_rundate":s_rundate,
-				"e_rundate":e_rundate,
-				"pf_code":pf_code
+		$.ajax({
+			url:"<%=request.getContextPath()%>/performrese/pfsh",
+			type:"post",
+			data:data,	
+			headers:{
+				"Content-Type":"application/json",
+				"X-HTTP-Method-Override":"post"
+			},
+			
+			success:function(data){
 				
+			
+			alert("성공>>"+data);
+			
+		},
+			error:function(error){
+			
+			alert("오류");
 		}
-		
-		$('input#rundate').each(function(index, item){
 			
 			
 		});
 		
+		//alert("this~~~~..>"+$(this).attr('run'));
+		/* var data = {
+				"s_rundate":s_rundate,
+				"e_rundate":e_rundate,
+				"pf_code":pf_code
+				
+		} */
+		
+		/* $('input#rundate').each(function(index, item){
+			alert("ㅎㅎ"+$(item).val());
+			
+		});
+		 */
 		
 	}
 	

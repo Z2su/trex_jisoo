@@ -1,9 +1,11 @@
 package com.trex.controller;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -50,20 +52,12 @@ public class PerformReservationController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="pfsh", method=RequestMethod.GET)
-	public PFSHViewVO pfshsearch(String pfsh_code){
+	@RequestMapping(value="pfsh", method=RequestMethod.POST)
+	public String pfshsearch(Date data){
+			
+		System.out.println("!!!!!!!!!!!!!!!!!!+"+data);
 		
-
-		PFSHViewVO PFSHView=null;
-		System.out.println("starttime???"+pfsh_code);
 		
-		try {
-			PFSHView = PFRESEService.getPFSHView(pfsh_code);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return PFSHView;
+		return "ㅎㅎ";
 	}
 }
