@@ -41,9 +41,9 @@
 	<update id="insertEvent" parameterType="event">
 		insert
 		into
-		event(event_code,event_num,title,cont,enddate)
+		event(event_code,event_num,title,writer,cont,enddate)
 		values
-		(#{event_code},#{event_num},#{title},#{cont},#{enddate})
+		(#{event_code},#{event_num},#{title},#{writer},#{cont},#{enddate})
 	</update>
 
 	<update id="updateEvent" parameterType="event">

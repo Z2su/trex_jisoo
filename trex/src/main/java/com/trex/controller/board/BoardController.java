@@ -132,7 +132,7 @@ public class BoardController {
 		uploadFile.transferTo(new File(savePath+File.separator+fileName));
 		
 	    // 업로드된 경로와 파일명을 통해 이미지의 경로를 생성
-		String url = request.getContextPath()+"/resources/imageUpload/" + fileName;
+		String url = request.getContextPath()+"/resources/imageUpload/" + fileName ;
 		
 		Map<String,String> dataMap = new HashMap<String,String>();
 		dataMap.put("url", url);

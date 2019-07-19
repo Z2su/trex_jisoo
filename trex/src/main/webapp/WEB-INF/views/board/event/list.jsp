@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <style>
 .new_tab_wrap ul.style03 {
 	width: 100%;
@@ -251,7 +252,7 @@
 
 
 				<!--  본문 내용    -->
-				<c:if test="${loginUser.id eq event.writer}">	
+				<c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }" >	
 				<div class="wizard-actions-L">
 					<input type="button" value="이벤트 등록" class="button"
 						onClick="location.href='<%=request.getContextPath()%>/board/event/regist'">
@@ -267,7 +268,7 @@
 										<dt>
 											<a
 												href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}">
-												<img src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=5629539181056233673"
+												<img src="<%=request.getContextPath() %>/resources/imageUpload/"
 												alt="이벤트 섬네일"></a>
 										</dt>
 										<dd class="data">

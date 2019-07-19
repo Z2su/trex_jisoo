@@ -62,7 +62,7 @@
 							id="wrtTitle" name="title" value=""></li>
 
 						<li><label for="writer">작성자</label> <input type="text"
-							id="writer" name="writer" value=""></li>
+							id="writer" name="writer" value="${loginUser.mem_code }"></li>
 
 						<li><label for="dms.subject"
 							class="col-xs-4 col-sm-2 control-label no-padding-right bolder g_label">
