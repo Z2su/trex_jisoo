@@ -54,7 +54,8 @@ public class BoardController {
 		List<EventVO> eventList = eService.eventList();
 		modelnView.addObject("eventList", eventList);
 		
-		System.out.println(eventList);
+		
+		System.out.println("~~"+eventList);
 		
 		return modelnView;
 	}
