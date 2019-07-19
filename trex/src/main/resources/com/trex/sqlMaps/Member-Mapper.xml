@@ -4,11 +4,12 @@
 
 	
 	
+	
 	<update id="insertMember">
 		insert 
-		into 
-		MEM(mem_code,mem_id,mem_pwd,mem_email)
-		values
+		into  
+		MEM(mem_code,mem_id,mem_pwd,mem_email)   
+		values	 
 		(#{mem_code},#{mem_id},#{mem_pwd},#{mem_email})
 	</update>
 	
@@ -21,7 +22,7 @@
 	</update>
 	
 	<update id="insertTroupe">
-		insert 
+		insert  
 		into 
 		TROUPE(tro_code,bupanum,name)
 		values

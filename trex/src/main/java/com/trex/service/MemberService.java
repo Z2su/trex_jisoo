@@ -1,5 +1,6 @@
 package com.trex.service;
 
+import java.lang.reflect.Member;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +34,7 @@ public interface MemberService {
 		
 		List<TroupeVO> getTroupeList()throws SQLException;
 		Map<String,Object> getTroupeList(Criteria cri)throws SQLException;
+	
 		
 	
 

@@ -52,6 +52,23 @@ public class MemberVO {
 		return "MemberVO [mem_code=" + mem_code + ", mem_id=" + mem_id + ", mem_pwd=" + mem_pwd + ", mem_email="
 				+ mem_email + ", mem_enable=" + mem_enable + ", mem_regdate=" + mem_regdate + "]";
 	}
+	public String getM_email_damain() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public String getM_email_id() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public void setM_email_id(String m_email_id) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setM_email_domain(String m_email_domain) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 	
 	
