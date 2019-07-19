@@ -41,16 +41,16 @@
 	<update id="insertEvent" parameterType="event">
 		insert
 		into
-		event(event_code,event_num,title,writer,cont)
+		event(event_code,event_num,title,writer,cont,enddate)
 		values
-		(#{event_code},#{event_num},#{title},#{writer},#{cont})
+		(#{event_code},#{event_num},#{title},#{writer},#{cont},#{enddate})
 	</update>
 
 	<update id="updateEvent" parameterType="event">
 		update
 		event
 		set
-		title=#{title}, cont=#{cont}, modidate = sysdate
+		title=#{title}, cont=#{cont}
 		where event_num =
 		#{event_num}
 	</update>
