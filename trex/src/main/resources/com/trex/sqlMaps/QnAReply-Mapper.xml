@@ -18,17 +18,17 @@
 		where rep_num=#{rep_num}
 	</select>
 
-	<update id="updateQnABoard" parameterType="qnarep">
-		update qna
+	<update id="updateQnAReply" parameterType="qnarep">
+		update rep
 		set title=#{title}, cont=#{cont}, modidate=#{modidate}
 		where
-		qna_num=#{qna_num}
+		rep_num=#{rep_num}
 	</update>
 
-	<update id="deleteQnABoard">
+	<update id="deleteQnAReply">
 		delete
-		from qna
-		where qna_num=#{qna_num}
+		from rep
+		where rep_num=#{rep_num}
 	</update>
 
 	<update id="increaseViewCnt" >

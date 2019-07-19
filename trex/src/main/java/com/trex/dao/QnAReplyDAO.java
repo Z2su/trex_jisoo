@@ -14,8 +14,8 @@ public interface QnAReplyDAO {
 
 	List<QnAReplyVO> selectReplyList() throws Exception;
 	void increaseViewcnt(int rep_num) throws Exception;
-	void updateQnABoard(QnAReplyVO qnarep) throws Exception;
-	void deleteQnABoard(int rep_num) throws Exception;
+	void updateQnAReply(QnAReplyVO qnarep) throws Exception;
+	void deleteQnAReply(int rep_num) throws Exception;
 	
 /*
 
