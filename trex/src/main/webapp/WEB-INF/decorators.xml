@@ -11,6 +11,7 @@
 	</decorator> -->	
 	<excludes>
 		<pattern>/performrese*</pattern>
+		<pattern>/calendar*</pattern>
 	</excludes>	
 	
 </decorators>

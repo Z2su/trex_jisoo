@@ -14,4 +14,12 @@ class= "com.trex.service.QnABoardServiceImpl"
 p:qnaboardDAO-ref="QnABoardDAO"
 ></bean>
 
+
+<bean id = "CalendarDAO"
+class = "com.trex.dao.CalendarDAOImpl"
+p:session-ref="sqlSession"></bean>
+
+<bean id = "CalendarService"
+class = "com.trex.service.CalendarServiceImpl"
+p:calenderDAO-ref="CalendarDAO" ></bean>
 </beans>
