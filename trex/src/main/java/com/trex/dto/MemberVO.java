@@ -10,7 +10,23 @@ public class MemberVO {
 	private String mem_email;
 	private String mem_enable;
 	private Date mem_regdate;
+	private String authkey;
+	private int authstatus;
 	
+	
+	
+	public int getAuthstatus() {
+		return authstatus;
+	}
+	public void setAuthstatus(int authstatus) {
+		this.authstatus = authstatus;
+	}
+	public String getAuthkey() {
+		return authkey;
+	}
+	public void setAuthkey(String authkey) {
+		this.authkey = authkey;
+	}
 	public String getMem_code() {
 		return mem_code;
 	}
@@ -47,11 +63,7 @@ public class MemberVO {
 	public void setMem_regdate(Date mem_regdate) {
 		this.mem_regdate = mem_regdate;
 	}
-	@Override
-	public String toString() {
-		return "MemberVO [mem_code=" + mem_code + ", mem_id=" + mem_id + ", mem_pwd=" + mem_pwd + ", mem_email="
-				+ mem_email + ", mem_enable=" + mem_enable + ", mem_regdate=" + mem_regdate + "]";
-	}
+
 	public String getM_email_damain() {
 		// TODO Auto-generated method stub
 		return null;
@@ -68,7 +80,14 @@ public class MemberVO {
 		// TODO Auto-generated method stub
 		
 	}
-
+	@Override
+	public String toString() {
+		return "MemberVO [mem_code=" + mem_code + ", mem_id=" + mem_id + ", mem_pwd=" + mem_pwd + ", mem_email="
+				+ mem_email + ", mem_enable=" + mem_enable + ", mem_regdate=" + mem_regdate + ", authkey=" + authkey
+				+ ", authstatus=" + authstatus + "]";
+	}
+	
+	
 	
 	
 	

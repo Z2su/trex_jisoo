@@ -139,6 +139,19 @@ public class MemberDAOImpl  implements MemberDAO{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void updateAuthkey(MemberVO member) throws SQLException {
+
+		session.update("Member-Mapper.updateAuthkey", member);
+		
+	}
+
+	@Override
+	public void updateAuthstatus(MemberVO member) throws SQLException {
+		
+		session.update("Member-Mapper.updateAuthstatus", member);
+	}
 	
 	
 

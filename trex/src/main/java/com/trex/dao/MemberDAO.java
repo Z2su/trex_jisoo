@@ -1,5 +1,6 @@
 package com.trex.dao;
 
+import java.lang.reflect.Member;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -47,8 +48,9 @@ public interface MemberDAO {
 	
 	MemberVO selectMemberById(String mem_id)throws SQLException;
 	void GetKey(String mem_id, String key);
-
 	
+	void updateAuthkey(MemberVO member) throws SQLException;
 	
+	void updateAuthstatus(MemberVO member) throws SQLException;
 
 }

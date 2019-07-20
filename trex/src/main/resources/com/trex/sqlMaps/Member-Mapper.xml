@@ -51,6 +51,18 @@
 		where mem_id=#{mem_id}
 	</select>
 	
+	<update id="updateAuthkey">
+		update mem
+		set authkey=#{authkey}
+		where mem_code=#{mem_code}
+	
+	</update>
+	<update id="updateAuthstatus">
+		update mem
+		set authstatus=#{authstatus}
+		where mem_code=#{mem_code}
+	
+	</update>
 	
 		
 	

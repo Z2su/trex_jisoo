@@ -121,9 +121,6 @@
 											<option>daum.net</option>
 											<option>gmail.com</option>
 											<option>nate.com</option>
-											<input type="button"
-											class="btn btn-default" style="width: 30%;" id="checkemail"
-											value="인증번호 전송" onclick="duplicationemail();" />
 										</select>
 										
 				
@@ -189,17 +186,16 @@
 									</div>
 									<button id="join" type="submit"
 										class="btn btn-lg btn-success btn-block">회원가입</button>
-									<input id="join2" type="button"
-										class="btn btn-lg btn-success btn-block" value="회원가입"
-										onclick="DosignUp();" />
-										<div class="reg_button">
+									<button id="join" type="submit"  href="${pageContext.request.contextPath}"
+										class="fa fa-rotate-right pr-2" >취소하기</button>
+										<%-- <div class="reg_button">
 										<a class="btn btn-danger px-3" href="${pageContext.request.contextPath}">
 											<i class="fa fa-rotate-right pr-2" aria-hidden="true"></i>취소하기
-											</a>&emsp;&emsp;
-										<button class="btn btn-primary px-3" id="reg_submit">
-											<i class="fa fa-heart pr-2" aria-hidden="true"></i>가입하기
-										</button>
-										</div>
+											</a>  --%>
+									<!-- <input id="join2" type="button"
+										class="btn btn-lg btn-success btn-block" value="회원가입"
+										onclick="DosignUp();" /> -->
+									
 
 										
 								</fieldset>
@@ -256,7 +252,7 @@
 						}).open();
 			}
 		</script>
-
+<!-- 
 
 		<script type="text/javascript">
 		$('input[name="mem_id"]').on('blur',function(){
@@ -509,6 +505,10 @@
 				//return false;
 			}
 		</script>
+
+
 	</div>
+	
+	 -->
 	<!-- //container -->
 </div>
