@@ -27,14 +27,14 @@ public class MemberDAOImpl  implements MemberDAO{
 	@Override
 	public List<MemberVO> selectMemberList() throws SQLException {
 		List<MemberVO> memberList=
-				session.selectList("Member-Mapper.selectMemberList",null);
+				session.selectList("Member-Mapper.selectMemberList");
 		return memberList;
 	}
 	
 	@Override
-	public List<MemberVO> selectMemberList(String code) throws SQLException {
+	public List<MemberVO> selectMemberListlike(String code) throws SQLException {
 		List<MemberVO> memberList=
-				session.selectList("Member-Mapper.selectMemberList",code);
+				session.selectList("Member-Mapper.selectMemberListlike",code);
 		return memberList;
 	}
 
@@ -86,7 +86,7 @@ public class MemberDAOImpl  implements MemberDAO{
 		
 		List<TroupeVO> TroupeList = null;
 		
-		TroupeList=session.selectList("Member-Mapper.selectSearchMemberList",cri,rowBounds);
+		TroupeList=session.selectList("Member-Mapper.selectTroupeList",cri,rowBounds);
 		return TroupeList;
 	}
 
