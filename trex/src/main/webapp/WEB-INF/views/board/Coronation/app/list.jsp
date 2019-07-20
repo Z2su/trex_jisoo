@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<c:set var="CRGList" value="${dataMap.CRAppList }" />
+<c:set var="CR_AppList" value="${dataMap.CR_AppList }" />
 <link rel="stylesheet"
    href="<%=request.getContextPath()%>/resources/css/Coronation.css"
    type="text/css" media="all">
@@ -66,22 +66,22 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="CRAppList" items="${CRAppBoardList }">
+					<c:forEach var="CR_AppList" items="${CRAppBoardList }">
 						<tr role="row" class="jqgrow ui-row-ltr ui-widget-content">
-						<td role="gridcell" style="text-align:center;" >${CRAppList.cr_app_num }</td>
+						<td role="gridcell" style="text-align:center;" >${CR_AppList.cr_app_num }</td>
 						<td role="gridcell" >
-							<a href="/board/Coronation/detail/${CRAppList.cr_app_code }" onclick="OpenWindow('detail?crg_code=${CRAppList.cr_app_code }','','850','620')"
-									 style='<c:if test="" >font-weight:bold;color:blue;</c:if>'>${CRAppList.title }
+							<a href="/board/Coronation/app/detail/${CR_AppList.cr_app_code }" onclick="OpenWindow('detail?cr_app_code=${CR_AppList.cr_app_code }','','850','620')"
+									 style='<c:if test="" >font-weight:bold;color:blue;</c:if>'>${CR_AppList.title }
 							</a>
 											   
 						</td>
 						<td role="gridcell" style="text-align:center;" >
-							<fmt:formatDate value="${CRAppList.regDate }" pattern="yyyy-MM-dd" />
+							<fmt:formatDate value="${CR_AppList.regdate }" pattern="yyyy-MM-dd" />
 						</td>
 							<td role="gridcell" style="text-align:center;" >
-							<a class="maninfo" rel="${CRAppList.writer }" href="#" data-hasqtip="21">
+							<a class="maninfo" rel="${CR_AppList.writer }" href="#" data-hasqtip="21">
 								<i class="pink2 ace-icon fa fa-user" title="작성자"></i>															
-								${CRAppList.writer }
+								${CR_AppList.writer }
 							</a>
 							</td>
 						</tr>
@@ -91,9 +91,9 @@
 			</table>
 			<div class="board_butt" style="margin: 10px 0;padding: 0 10px; text-align: right">
 
-					<a href="/board/Coronation/list">
+					<a href="/board/Coronation/app/list">
 					<img src="/resources/images/list.gif" alt="목록"></a> 
-					<a href="/board/Coronation/regist">
+					<a href="/board/Coronation/app/regist">
 					<img src="/resources/images/write.gif" alt="쓰기"></a>
 			</div>
 
