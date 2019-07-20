@@ -44,7 +44,7 @@
 		<!-- content-->
 		<div id="content">
 			<!-- 컨텐츠 타이틀 -->
-			<h3 class="cnt_ti">광고 리스트</h3>
+			<h3 class="cnt_ti">광고 게시글 수정</h3>
 
 			<!--  내용은 여기에 !!!!  -->
 			<div id="txt">
@@ -106,7 +106,7 @@
 				<!--  웹필터 수정 -->
 			</div>
 
-
+<%@ include file="/WEB-INF/views/board/ad/smartEditor_js.jsp"%>
 		</div>
 	</div>
 	<!-- //container -->

@@ -3,7 +3,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 
 <script>
-	$('#searchBtn').on('click',function(e){
+	$('#searchADBtn').on('click',function(e){
 		var form = $('form#search');
 				
 		var searchType=$('select#searchType');

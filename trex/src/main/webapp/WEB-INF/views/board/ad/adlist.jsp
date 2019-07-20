@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 
 
 <c:set var="adList" value="${dataMap.adList }" />
@@ -82,8 +84,7 @@
 								placeholder="Search for ..." class="form-control" type="text"
 								value="${pageMaker.cri.keyword }"> <span id="gridSearch"
 								class="input-group-btn" style="display: inline;">
-								<button type="button" id="searchBtn"
-									class="btn btn-sm btn-white">검색</button>
+								<button type="button" id="searchADBtn"	class="btn btn-sm btn-white">검색</button>
 							</span>
 						</div>
 						<span id="gridSearchReset" style="display: none;">
@@ -156,49 +157,48 @@
 
 				<a href="<%=request.getContextPath()%>/board/ad/adlist"> <img
 					src="<%=request.getContextPath()%>/resources/images/list.gif"
-					alt="목록"></a> <a
+					alt="목록"></a> 
+				
+				<c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'TR' }" >	
+				<a
 					href="<%=request.getContextPath()%>/board/ad/adregist"> <img
 					src="<%=request.getContextPath()%>/resources/images/write.gif"
 					alt="쓰기"></a>
+				</c:if>
 			</div>
 			<div id="grid-pager"
-				class="ui-jqgrid-pager ui-state-default ui-corner-bottom" dir="ltr" >
-				<div id="pg_grid-pager" class="ui-pager-control" role="group">
-					<table class="ui-pg-table ui-common-table ui-pager-table " style="width: 320px; margin-left: 100px;">
+				 dir="ltr" >
+				<div id="pg_grid-pager" role="group">
+					<table style="width: 320px; margin-left: 100px;">
 						<tr>
-							<td id="grid-pager_left" align="left">
-								<div class="ui-pg-div">
-									<span class="ui-icon ace-icon"></span>
-								</div>
-							</td>
+							
 							<td id="grid-pager_center" align="center" style="width: 320px; " >
-								<table class="ui-pg-table ui-common-table ui-paging-pager">
+								<table >
 									<tr>
-										<td id="first_grid-pager"
-											class="ui-pg-button ui-corner-all ui-state-disabled"
+										<td id="first_grid-pager"											
 											title="First Page" style="cursor: default;"><span
-											class="ui-icon ace-icon"><b> << </b></span></td>
+											><b> &lt;&lt; </b></span></td>
 										<td id="prev_grid-pager"
-											class="ui-pg-button ui-corner-all ui-state-disabled"
+											
 											title="Previous Page" style="cursor: default;"><span
-											class="ui-icon ace-icon"><b> < </b></span></td>
+											><b> &lt; </b></span></td>
 										<td class="ui-pg-button ui-state-disabled"><span
-											class="ui-separator"></span></td>
+											></span></td>
 										<td id="input_grid-pager" dir="ltr"><input id="pageNum"
-											class="ui-pg-input ui-corner-all" type="text" size="2"
+											 type="text" size="2"
 											maxlength="7" value="${pageMaker.cri.page }"
 											style="width: 40px;"> / <span id="sp_1_grid-pager">${pageMaker.realEndPage }</span>
 										</td>
-										<td class="ui-pg-button ui-state-disabled"><span
-											class="ui-separator"></span></td>
+										<td ><span
+											></span></td>
 										<td id="next_grid-pager"
-											class="ui-pg-button ui-corner-all ui-state-disabled"
+											
 											title="Next Page" style="cursor: default;"><span
-											class="ui-icon ace-icon"><b> > </b></span></td>
+											><b> &gt;</b></span></td>
 										<td id="last_grid-pager"
-											class="ui-pg-button ui-corner-all ui-state-disabled"
+											
 											title="Last Page" style="cursor: default;"><span
-											class="ui-icon ace-icon"><b> >> </b></span></td>
+											><b> &gt;&gt; </b></span></td>
 									</tr>
 								</table>
 							</td>
