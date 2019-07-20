@@ -106,7 +106,7 @@
 				<!--  웹필터 수정 -->
 			</div>
 
-
+<%@ include file="/WEB-INF/views/board/pr/smartEditor_js.jsp"%>
 		</div>
 	</div>
 	<!-- //container -->
@@ -114,3 +114,6 @@
 <link rel="stylesheet"
    href="<%=request.getContextPath()%>/resources/css/board.css"
    type="text/css" media="all">
+   
+   
+   
