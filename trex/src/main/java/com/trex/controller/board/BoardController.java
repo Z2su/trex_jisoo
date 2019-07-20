@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -101,11 +100,13 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/event/modify", method = RequestMethod.GET)
-	public ModelAndView getmodify(int event_num, 
+	public ModelAndView getmodify(int event_num, String event_code,
 							ModelAndView modelnView) throws SQLException{
 		EventVO event = eService.eventDetail(event_num);
 		
 		modelnView.addObject("event",event);
+		modelnView.addObject("event_code",event_code);
+		
 		System.out.println(event);
 		return modelnView;
 	}
@@ -126,7 +127,7 @@ public class BoardController {
 	}
 	
 
-	@RequestMapping(value="/my/imageUpload",method=RequestMethod.POST)
+	@RequestMapping(value="/event/imageUpload",method=RequestMethod.POST)
 	@ResponseBody
 	public Map<String,String> imageUpload(HttpServletRequest request,
 										  HttpServletResponse response, 
