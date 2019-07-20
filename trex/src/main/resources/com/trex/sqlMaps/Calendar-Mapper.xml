@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Calendar-Mapper">
+	
+	
+	
+	<select id="getMapList" resultType="map">
+		SELECT *
+		FROM calendar
+		ORDER BY STARTTIME ASC
+	</select>
+
+	<select id="getList" resultType="calendar">
+		SELECT *
+		FROM calendar
+		ORDER BY STARTTIME ASC
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO SCHEDULE
+			(
+			code
+			TITLE,
+			STARTTIME,
+			ENDTIME,
+			)
+		VALUES
+			(
+			#{code}
+			#{title},
+			#{starttime},
+			#{endtime},
+			)
+	</insert>
+	
+
+	
+	<delete id="delete">
+		DELETE FROM SCHEDULE
+		WHERE code = #{code}
+		
+	</delete>
+
+</mapper>

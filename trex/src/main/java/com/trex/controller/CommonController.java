@@ -3,6 +3,7 @@ package com.trex.controller;
 import java.io.PrintWriter;
 import java.lang.reflect.Member;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.trex.dao.MemberDAO;
 import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
 import com.trex.dto.TroupeVO;
@@ -41,10 +43,17 @@ public class CommonController {
 	public String mainGET() {
 		return "main";
 	}
+	
+	@RequestMapping(value="/calendar",method=RequestMethod.GET)
+	public  void calGET() {
+	
+	}
+	
 	@RequestMapping(value="/board",method=RequestMethod.GET)
 	public String boardGET() {
 		return "/board/boardmain";
 	}
+	
 	
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String memberjoinfirstGET() {
@@ -70,10 +79,11 @@ public class CommonController {
         	System.out.println("member------:"+mem_id);
 			try {
 				member = MemberService.getMember(mem_id);
+				
 				if(member==null) {
 					rowcount=0;
 				}
-				
+			
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

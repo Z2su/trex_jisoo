@@ -1,18 +1,16 @@
 package com.trex.service;
 
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
 
 import com.trex.controller.Criteria;
 import com.trex.controller.MailRequest;
 import com.trex.dao.MemberDAO;
+import com.trex.dto.EPViewVO;
+import com.trex.dto.EmployeeVO;
 import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
 import com.trex.dto.TroupeVO;
@@ -20,6 +18,7 @@ import com.trex.mail.MimeAttachNotifier;
 import com.trex.request.TempKey;
 
 public class MemberServiceImpl implements MemberService {
+
 
 	// MemberDAO 
 		private MemberDAO memberDAO;
@@ -32,34 +31,30 @@ public class MemberServiceImpl implements MemberService {
 			this.notifier = notifier;
 		}
 
-		/*private JavaMailSender mailSender;
-		public void setMailSender(JavaMailSender mailSender) {
-			this.mailSender = mailSender;
-		}*/
-		
-	
+
+
 	@Override
 	public String regist(MemberVO member, String type) throws SQLException {
-		
+
 		int num = memberDAO.selectMemberNextSeq();
-		
-		String code = type.toUpperCase()+String.format("%04d", num);
+
+		String code = type.toUpperCase() + String.format("%04d", num);
 		member.setMem_code(code);
 		memberDAO.insertMember(member);
 		return code;
-		
+
 	}
 
 	@Override
 	public void regist(GmemberVO gmember) throws SQLException {
 		memberDAO.insertGmember(gmember);
-		
+
 	}
 
 	@Override
 	public void regist(TroupeVO troupe) throws SQLException {
 		memberDAO.insertTroupe(troupe);
-		
+
 	}
 
 	@Override
@@ -81,8 +76,13 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public List<MemberVO> getMemberList() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		List<MemberVO> memberList = memberDAO.selectMemberList();
+		return memberList;
+	}
+	@Override
+	public List<MemberVO> getMemberListlike(String code) throws SQLException {
+		List<MemberVO> memberList = memberDAO.selectMemberListlike(code);
+		return memberList;
 	}
 
 	@Override
@@ -93,8 +93,8 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public List<GmemberVO> getGmemberList() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		List<GmemberVO> gmemberList = memberDAO.selectGmemberList();
+		return gmemberList;
 	}
 
 	@Override
@@ -105,8 +105,8 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public List<TroupeVO> getTroupeList() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		List<TroupeVO> troupeList = memberDAO.selectTroupeList(); 
+		return troupeList;
 	}
 
 	@Override
@@ -182,11 +182,50 @@ public class MemberServiceImpl implements MemberService {
 
 
 
-	
+
+
+	@Override
+	public EmployeeVO getEmployee(String ep_code) throws SQLException {
+
+		EmployeeVO employee = null;
+		return employee;
+	}
+
+	@Override
+	public List<EPViewVO> getEmployeeList() throws SQLException {
+		List<EPViewVO> eplist = memberDAO.selectEmployeeList();
+		return eplist;
+	}
+
+	@Override
+	public Map<String, Object> getEmployeeList(Criteria cri) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void regist(MemberVO member) throws SQLException {
+
+	}
 
 
 
-	
-	
+
+	@Override
+	public void regist(MemberVO member, EmployeeVO employee) throws SQLException {
+		int num = memberDAO.selectMemberNextSeq();
+		String code = "EP" + String.format("%04d", num);
+		
+		member.setMem_code(code);
+		member.setMem_id(code);
+		member.setMem_pwd(code);
+		member.setMem_email(code+"@trex.com");
+		employee.setEp_code(code);
+		employee.setComp(num);
+		memberDAO.insertMember(member);
+		memberDAO.insertEmployee(employee);
+		
+	}
+
 
 }
