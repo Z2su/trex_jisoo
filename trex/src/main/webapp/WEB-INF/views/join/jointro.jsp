@@ -122,9 +122,9 @@
 											placeholder="전화번호" name="bupanum" id="bupanum"
 											type="text" />
 									</div>
-									<div class="form-group">
-										<label>이메일</label> <input type="text" name="mem_email"id="mem_email"
-											maxlength="30">@ <select name="tro_email">
+									<div class="form-group" >
+										<label>이메일</label> <input type="text" name="mem_email" id="mem_email"
+											maxlength="30">@<select name="tro_email">
 											<option>naver.com</option>
 											<option>daum.net</option>
 											<option>gmail.com</option>

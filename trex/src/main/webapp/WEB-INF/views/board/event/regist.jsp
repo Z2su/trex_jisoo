@@ -1,7 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.*"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<script type="text/javascript">
+	$(function() {
+		$("#datepicker").datepicker({
+			dateFormat : 'yy-mm-dd'
+		});
+	});
+</script>
 
 <div id="contentswrap">
 
@@ -47,35 +55,41 @@
 			<div id="txt">
 
 				<form name="inputFrm" method="post" action="regist">
+				
+					<input type="hidden" name="event_num" value="${event_num }"/>
+					<input type="hidden" name="event_code" value="${event_code}" />
 					<ul class="board_writeInfo">
 
 						<!--제목-->
-						<li><label for="wrtTitle">제 목</label><input type="text"
+						<li><label for="wrtTitle">제 목</label> <input type="text"
 							id="wrtTitle" name="title" value=""></li>
 
-						
+						<li><label for="writer">작성자</label> <input type="text"
+							readonly id="writer" name="writer" value="${loginUser.mem_code }"></li>
 
-						<!--작성자 -->
-						<li><label for="wrtPers">작성자</label><input type="text"
-							id="wrtPers" name="writer" value="관리자" readonly=""><span
-							class="tip">* 작성자는 필수입력 사항입니다.</span></li>
+						<li><label for="dms.subject"
+							class="col-xs-4 col-sm-2 control-label no-padding-right bolder g_label">
+								게시기간 </label><input id="openDate" name="startdate"
+							style="color: #919191;" class="dateInput" readonly="readonly"
+							type="text"
+							value='<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd" />' />
+							~ <input id="datepicker" name="enddate" class="dateInput"
+							type="text"
+							value='<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd" />' /></li>
 
 						<!--내용입력-->
-						<li><label for="wrtCont">내용입력</label> <textarea id="wrtCont"
-								name="cont" rows="20" cols="1"></textarea></li>
-
-
-
+						<li><label for="wrtCont">내용입력</label> 
+						  <textarea id="wrtCont" name="cont" rows="20" cols="1"></textarea></li>
 					</ul>
 
 					<!-- 게시판 버튼모음 -->
 					<div class="board_butt">
 						<input type="image"
-							src="<%=request.getContextPath()%>/resources/imagesentry.gif"
-							alt="등록"> <a href="./list"><img
-							src="<%=request.getContextPath()%>/resources/imagescancel.gif"
-							alt="취소"></a> <a href="./list"><img
-							src="<%=request.getContextPath()%>/resources/imageslist.gif"
+							src="<%=request.getContextPath()%>/resources/images/write.gif"
+							alt="쓰기"> <a href="./list"> <img
+							src="<%=request.getContextPath()%>/resources/images/cancel.png"
+							alt="취소"></a><a href="./list"> <img
+							src="<%=request.getContextPath()%>/resources/images/list.gif"
 							alt="목록"></a>
 					</div>
 				</form>
@@ -86,7 +100,7 @@
 		</div>
 		<!--quick  -->
 		<%@ include file="/WEB-INF/views/board/center/quick.jsp"%>
-
+		<%@ include file="/WEB-INF/views/board/event/smartEditor_js.jsp"%>
 	</div>
 	<!-- //container -->
 </div>
@@ -94,3 +108,7 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/board.css"
 	type="text/css" media="all">
+
+
+
+

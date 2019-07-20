@@ -16,8 +16,8 @@
 		</property>
 		<property name="defaultEncoding" value="utf-8" />
 		<property name="protocol" value="smtps" />		
-		<property name="username" value="pwd01084" />
-		<property name="password" value="pjs941004~!@" />
+		<property name="username" value="wwwsoo012" />
+		<property name="password" value="602trex!!" />
 		
 		<!-- daum:stmp.daum.net -->		
 		<property name="host" value="smtp.naver.com" />		

@@ -15,7 +15,10 @@
 		<config>src/main/resources/context/QnA-context.xml</config>
 		<config>src/main/resources/context/Event-context.xml</config>
 		<config>src/main/resources/context/Ad-context.xml</config>
+<<<<<<< HEAD
+=======
 		<config>src/main/resources/context/mail-context.xml</config>
+>>>>>>> branch 'jisoo' of https://github.com/biiiible89/trex_jisoo.git
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
@@ -53,4 +56,8 @@
 	</configSets>
 </beansProjectDescription>
 
+<<<<<<< HEAD
+>>>>>>> branch 'jisoo' of https://github.com/biiiible89/trex_jisoo.git
+=======
 >>>>>>> refs/heads/jisoo
+>>>>>>> branch 'jisoo' of https://github.com/biiiible89/trex_jisoo.git
