@@ -1,14 +1,18 @@
 package com.trex.controller.board;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -71,12 +75,14 @@ public class ManagerController {
 	public void memlistGET(Model model) throws Exception {
 		List<GmemberVO> glist = mservice.getGmemberList();
 		List<TroupeVO> tlist = mservice.getTroupeList();
-		List<MemberVO> gmemlist = mservice.getMemberList("GM");
-		List<MemberVO> tmemlist = mservice.getMemberList("TR");
+		List<MemberVO> gmemlist = mservice.getMemberListlike("GM");
+		List<MemberVO> tmemlist = mservice.getMemberListlike("TR");
 		model.addAttribute("glist", glist);
 		model.addAttribute("tlist",  tlist);
 		model.addAttribute("gmemlist",  gmemlist);
 		model.addAttribute("tmemlist",  tmemlist);
+		
+		System.out.println(gmemlist);
 		
 	}
 	
@@ -96,6 +102,23 @@ public class ManagerController {
 		
 		return dataList;
 		
+	}
+	
+	@RequestMapping(value = "/calendar/regist", method = RequestMethod.POST)
+	public ResponseEntity<String> register(@RequestBody CalendarVO calendar) throws Exception {
+
+		ResponseEntity<String> entity = null;
+
+		try {
+			calService.create(calendar);
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+
+		return entity;
+
 	}
 	
 	

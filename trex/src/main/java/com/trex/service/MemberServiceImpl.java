@@ -73,8 +73,8 @@ public class MemberServiceImpl implements MemberService {
 		return memberList;
 	}
 	@Override
-	public List<MemberVO> getMemberList(String code) throws SQLException {
-		List<MemberVO> memberList = memberDAO.selectMemberList(code);
+	public List<MemberVO> getMemberListlike(String code) throws SQLException {
+		List<MemberVO> memberList = memberDAO.selectMemberListlike(code);
 		return memberList;
 	}
 
