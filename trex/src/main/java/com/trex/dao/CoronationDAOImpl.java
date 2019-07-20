@@ -26,7 +26,6 @@ public class CoronationDAOImpl implements CoronationDAO {
 	public CoronationVO selectCRGBoard(String crg_code) throws SQLException {
 		
 		CoronationVO CRGBoard = session.selectOne("CRG-Mapper.selectCRGBoard",crg_code);
-		
 		return CRGBoard;
 	}
 

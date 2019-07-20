@@ -17,9 +17,9 @@
 	<update id="insertCRGBoard">
 		insert 
 		into 
-		crg(crg_code,title,writer,cont)
+		crg(crg_code,crg_num,title,writer,cont)
 		values
-		(#{crg_code},#{title},#{writer},#{cont})
+		(#{crg_code},#{crg_num},#{title},#{writer},#{cont})
 	</update>
 	
 	<update id="updateCRGBoard" >

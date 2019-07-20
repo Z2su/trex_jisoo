@@ -49,22 +49,25 @@
 
          <div id="txt">
             
-            <form name="inputFrm" method="post"
-               action="regist" >
-               <ul class="board_writeInfo">
+            <form name="inputFrm" method="post" action="modify" >
+            	<input type="hidden" name="Coronation_num" value="${CRG.crg_num }">
+				<input type="hidden" name="Coronation_num" value="${CRG.crg_code }">
+				<input type="hidden" name="Coronation_num" value="${CRG.modiDate }">
+					
+                <ul class="board_writeInfo">
                
                   <!--제목-->
                   <li><label for="wrtTitle">제 목</label><input type="text"
-                     id="wrtTitle" name="title" value=""></li>
+                     id="wrtTitle" name="title" value="${CRG.title }"></li>
 
                   <!--작성자 -->
                   <li><label for="wrtPers">작성자</label><input type="text"
-                     id="wrtPers" name="writer" value="${loginUser.mem_code }" readonly=""><span
+                     id="wrtPers" name="writer" value="${CRG.writer }" readonly><span
                      class="tip">* 작성자는 필수입력 사항입니다.</span></li>
                   
                   <!--내용입력-->
                   <li><label for="wrtCont">내용입력</label> <textarea id="wrtCont"
-                        name="cont" rows="20" cols="1"></textarea></li>
+                        name="cont" rows="20" cols="1">${CRG.cont }</textarea></li>
 
 
 
