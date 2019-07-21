@@ -15,7 +15,7 @@ function sendFile(file, editor) {
 		return;
 	} */
          // 파일 전송을 위한 폼생성
-         
+    
     var event_code = $('input[name="event_code"]').val();    
 	var formData = new FormData();
     formData.append("uploadFile", file);

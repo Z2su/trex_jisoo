@@ -57,6 +57,7 @@ public class BoardController {
 	public ModelAndView eventList(ModelAndView modelnView) throws SQLException{
 		
 		List<EventVO> eventList = eService.eventList();
+		
 		modelnView.addObject("eventList", eventList);
 		
 		System.out.println(eventList);
@@ -85,10 +86,10 @@ public class BoardController {
 	@RequestMapping(value="/event/regist", method = RequestMethod.GET)
 	public void getregist(Model model) throws Exception{
 		int event_num = eventDAO.selectEventSeqNext();
-		String code = "EVE"+ String.format("%04d", event_num);
+		String event_code = "EVE"+ String.format("%04d", event_num);
 		
 		model.addAttribute("event_num",event_num);
-		model.addAttribute("event_code",code);
+		model.addAttribute("event_code",event_code);
 	}
 	
 	@RequestMapping(value="/event/regist", method = RequestMethod.POST)
@@ -100,11 +101,11 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/event/modify", method = RequestMethod.GET)
-	public ModelAndView getmodify(int event_num, String event_code, 
+	public ModelAndView getmodify(int event_num, 
 							ModelAndView modelnView) throws SQLException{
 		EventVO event = eService.eventDetail(event_num);
+		
 		modelnView.addObject("event",event);
-		modelnView.addObject("event_code",event_code);
 		System.out.println(event);
 		return modelnView;
 	}
