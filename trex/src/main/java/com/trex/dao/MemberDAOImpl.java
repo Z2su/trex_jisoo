@@ -8,15 +8,18 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.controller.Criteria;
+import com.trex.dto.EPViewVO;
+import com.trex.dto.EmployeeVO;
 import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
 import com.trex.dto.TroupeVO;
 
 public class MemberDAOImpl  implements MemberDAO{
 	
+	
+	@Autowired
 	private SqlSession session;
 	
-	//@Autowired
 		public void setSession(SqlSession session) {
 			this.session=session;
 		} 
@@ -25,6 +28,13 @@ public class MemberDAOImpl  implements MemberDAO{
 	public List<MemberVO> selectMemberList() throws SQLException {
 		List<MemberVO> memberList=
 				session.selectList("Member-Mapper.selectMemberList",null);
+		return memberList;
+	}
+	
+	@Override
+	public List<MemberVO> selectMemberList(String code) throws SQLException {
+		List<MemberVO> memberList=
+				session.selectList("Member-Mapper.selectMemberList",code);
 		return memberList;
 	}
 
@@ -43,8 +53,8 @@ public class MemberDAOImpl  implements MemberDAO{
 	@Override
 	public List<GmemberVO> selectGmemberList() throws SQLException {
 		List<GmemberVO> gmemberList=
-				session.selectList("Member-Mapper.selectMemberList",null);
-		return selectGmemberList();
+				session.selectList("Member-Mapper.selectGmemberList",null);
+		return gmemberList;
 	}
 	
 
@@ -63,9 +73,9 @@ public class MemberDAOImpl  implements MemberDAO{
 
 	@Override
 	public List<TroupeVO> selectTroupeList() throws SQLException {
-		List<TroupeVO> TroupeList=
-				session.selectList("Member-Mapper.selectMemberList",null);
-		return selectTroupeList();
+		List<TroupeVO> troupeList=
+				session.selectList("Member-Mapper.selectTroupList",null);
+		return troupeList;
 	}
 
 	@Override
@@ -131,8 +141,29 @@ public class MemberDAOImpl  implements MemberDAO{
 		MemberVO member = session.selectOne("Member-Mapper.selectMemberById", mem_id);
 		return member;
 	}
-	@Autowired
-	SqlSession sqlsession = null;
+	
+	@Override
+	public List<EPViewVO> selectEmployeeList() throws SQLException {
+		List<EPViewVO> viewlist = session.selectList("Member-Mapper.selectEmployee");
+		return viewlist;
+	}
+
+	@Override
+	public List<EPViewVO> selectEmployeeList(Criteria cri) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insertEmployee(EmployeeVO employee) throws SQLException {
+		session.update("Member-Mapper.insertEmployee", employee);
+	}
+
+	@Override
+	public void updateEmployee(EmployeeVO employee) throws SQLException {
+		session.update("Member-Mapper.updateEmployee",employee);
+		
+	}
 	
 	
 
