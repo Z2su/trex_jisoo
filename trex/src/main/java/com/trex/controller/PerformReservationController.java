@@ -27,7 +27,7 @@ public class PerformReservationController {
 	@RequestMapping(value="/{pf_code}", method=RequestMethod.GET )
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 
-		String url = "perform/main2";
+		String url = "perform/main4";
 
 		modelnView.addObject("pf_code", pf_code);
 		modelnView.setViewName(url);
