@@ -28,7 +28,7 @@
 	<!-- 내용채우기 -->
 	
 	
-	<form id="trexinfo" name = "trexinfo" method="post">
+	<form id="trexinfo" name = "trexinfo" action="step2" method="post">
 		<input type ="hidden" value="${loginUser.mem_id }"/>
 		<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
 	
@@ -429,5 +429,4 @@
 	</div>
 
 	<!-- //container -->
-	<%@ include file="./step1_js.jsp"%>
 </div>

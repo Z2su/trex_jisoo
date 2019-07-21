@@ -93,7 +93,7 @@ var nextindex=0;
 					</li>
 					<li><a id="CellPlaySeq" name="CellPlaySeq" href="#;" onclick="fnSelectPlaySeq(1, '002', '20190819', '19시 30분 ', 'N', '201908222359')">19시 30분 </a></li></ul> */
 					
-					ul+='<li><a id="CellPlaySeq" href="#" onclick="seat_go();" name ="" pfsh_code="'+val.pfsh_code+'"value="'+new Date(val.starttime)+'">'+new Date(val.starttime)+'</a></li>';
+					ul+='<li><a id="CellPlaySeq" href="#" onclick="seat_go(this);" name ="" pfsh_code="'+val.pfsh_code+'"value="'+new Date(val.starttime)+'">'+new Date(val.starttime)+'</a></li>';
 					//var option = $('<option value="'+val.pfsh_code+'">'+val.starttime+'</option>');								
 				});
 					ul+='</ul>';
@@ -111,9 +111,12 @@ var nextindex=0;
 
 	}
 	
-	function seat_go(){
+	function seat_go(obj){
 		nextindex=2;
-		var pfsh_code = $(this).attr('pfsh_code');
+		var pfsh_code = $(obj).attr('pfsh_code');
+		
+		//alert("ggg>>"+pfsh_code);
+		$('input[name="pfsh_code"]').remove();
 		var input = $('<input type="hidden" value="'+pfsh_code+'" name="pfsh_code"/>');
 		$('#trexinfo').prepend(input);
 		$.ajax({
@@ -241,7 +244,7 @@ var nextindex=0;
 			return;
 		}
 		if(nextindex==2){
-			alert("넘어가자");
+			$('#trexinfo').submit();
 			
 		}
 	})

@@ -27,10 +27,10 @@ public class PerformReservationController {
 	private PerformReservationService PFRESEService;
 	
 	
-	@RequestMapping(value="/{pf_code}", method=RequestMethod.GET )
+	@RequestMapping(value="/{pf_code}/step1", method=RequestMethod.GET )
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 
-		String url = "perform/main2";
+		String url = "perform/step1";
 		List<PFSHViewVO> PFSHViewList = PFRESEService.getPFSHViewList(pf_code);
 		modelnView.addObject("PFSHViewList", PFSHViewList);
 
@@ -41,6 +41,7 @@ public class PerformReservationController {
 		
 		return modelnView;
 	}
+	/*
 	@RequestMapping(value="/sample2/{pf_code}")
 	public ModelAndView performsesesampleGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 		
@@ -54,7 +55,7 @@ public class PerformReservationController {
 		modelnView.addObject("PFSHViewList", PFSHViewList);
 		modelnView.setViewName(url);
 		return modelnView;
-	}
+	}*/
 	
 	@ResponseBody
 	@RequestMapping(value="pfsh", method=RequestMethod.POST)
@@ -77,5 +78,15 @@ public class PerformReservationController {
 
 		
 		return SeatReq;
+	}
+	@RequestMapping(value="/{pf_code}/step2", method=RequestMethod.GET )
+	public ModelAndView performreseGet2(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
+
+		String url = "perform/step2";
+		
+		modelnView.setViewName(url);
+		
+		
+		return modelnView;
 	}
 }
