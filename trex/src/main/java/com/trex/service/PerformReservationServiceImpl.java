@@ -6,11 +6,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.GroupLayout.SequentialGroup;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dao.PerformReservationDAO;
 import com.trex.dao.PerformReservationDAOImpl;
 import com.trex.dto.PFSHViewVO;
+import com.trex.dto.SeatReqVO;
 
 public class PerformReservationServiceImpl implements PerformReservationService{
 
@@ -33,15 +36,23 @@ public class PerformReservationServiceImpl implements PerformReservationService{
 	}
 
 	@Override
-	public List<PFSHViewVO> getPFSHViewListByDate(Date s_rundate, Date e_rundate, String pf_code) throws SQLException {
+	public List<PFSHViewVO> getPFSHViewListByDate(String rundate, String pf_code) throws SQLException {
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("s_rundate", s_rundate);
-		map.put("e_rundate", e_rundate);
-		map.put("pf_code", pf_code);
+		map.put("rundate", rundate);
 		
+		map.put("pf_code", pf_code);
+		System.out.println("mappppp>>>>"+map);
 		
 		List<PFSHViewVO> PFSHViewList = PFRESEDAO.selectPFSHViewListBydate(map);
 		return PFSHViewList;
+	}
+
+	@Override
+	public List<SeatReqVO> getSeatCount(String pfsh_code) throws SQLException {
+
+		List<SeatReqVO> SeatReq = PFRESEDAO.selectSeatCount(pfsh_code);
+		
+		return SeatReq;
 	}
 	
 	

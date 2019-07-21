@@ -2,7 +2,9 @@ package com.trex.controller;
 
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.trex.dto.PFSHViewVO;
+import com.trex.dto.SeatReqVO;
 import com.trex.service.PerformReservationService;
 
 @Controller
@@ -27,8 +30,11 @@ public class PerformReservationController {
 	@RequestMapping(value="/{pf_code}", method=RequestMethod.GET )
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 
-		String url = "perform/main4";
+		String url = "perform/main2";
+		List<PFSHViewVO> PFSHViewList = PFRESEService.getPFSHViewList(pf_code);
+		modelnView.addObject("PFSHViewList", PFSHViewList);
 
+		System.out.println("!!!!"+PFSHViewList);
 		modelnView.addObject("pf_code", pf_code);
 		modelnView.setViewName(url);
 		
@@ -40,10 +46,10 @@ public class PerformReservationController {
 		
 		String url = "perform/step1";
 		
-		System.out.println("gㅎㅎㅎㅎㅎ>>"+pf_code);
+		
 		
 		List<PFSHViewVO> PFSHViewList = PFRESEService.getPFSHViewList(pf_code);
-		System.out.println("zzzzzz>>"+PFSHViewList);
+		
 		
 		modelnView.addObject("PFSHViewList", PFSHViewList);
 		modelnView.setViewName(url);
@@ -52,11 +58,24 @@ public class PerformReservationController {
 	
 	@ResponseBody
 	@RequestMapping(value="pfsh", method=RequestMethod.POST)
-	public String pfshsearch( Date dat){
-			
-		System.out.println("!!!!!!!!!!!!!!!!!!+"+dat);
+	public List<PFSHViewVO> pfshsearch(String rundate, String pf_code) throws SQLException{
 		
 		
-		return "ㅎㅎ";
+		List<PFSHViewVO> PFSHViewList = PFRESEService.getPFSHViewListByDate(rundate, pf_code);
+
+		return PFSHViewList;
+	}
+	@ResponseBody
+	@RequestMapping(value="pfsh1", method=RequestMethod.POST)
+	public List<SeatReqVO> seatcount(String pfsh_code) throws SQLException{
+		
+		
+		List<SeatReqVO> SeatReq = PFRESEService.getSeatCount(pfsh_code);
+		String[] background = {"#7C68EE", "#1CA814", "#17B3FF","#FB7E4F","#A0D53F"};
+		System.out.println("~~~~~~~~~~~~~~~~!!!"+SeatReq);
+		//Map<String, Object> data = new HashMap<String, Object>();
+
+		
+		return SeatReq;
 	}
 }

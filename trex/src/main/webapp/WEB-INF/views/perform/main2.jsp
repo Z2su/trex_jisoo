@@ -26,7 +26,14 @@
 	src="//ticketimage.interpark.com/TicketImage/onestop/css/common.js"></script>
 <div id="contentswrap">
 	<!-- 내용채우기 -->
-	<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
+	
+	
+	<form id="trexinfo" name = "trexinfo" method="post">
+		<input type ="hidden" value="${loginUser.mem_id }"/>
+		<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
+	
+					
+	</form>
 	<div id="divBookMain" name="divBookMain" class="wrap">
 		<!-- //Header -->
 		<div class="headWrap">
@@ -87,16 +94,13 @@
 
 			<!-- //Process 영역 -->
 			<div class="contL">
-				<div class="iframe"
-					style="width: 637; height: 493; background: white;">
+				<div class="iframe" style="width: 637; height: 493; background: white;">
 					<c:forEach items="${PFSHViewList }" var="PFSHView">
 
-						<input type="hidden" id="rundate"
-							pfsh_code="${PFSHView.pfsh_code }"
-							value='<fmt:formatDate value="${PFSHView.rundate }" pattern="yyyy-MM-dd"/>' />
-
+						<input type="hidden" id="rundate" pfsh_code="${PFSHView.pfsh_code }" value='<fmt:formatDate value="${PFSHView.rundate }" pattern="yyyyMMdd"/>' />
 
 					</c:forEach>
+					
 					<div class="contFrame frameBg6">
 						<!-- //관람일 선택 -->
 						<div class="watch_select">
@@ -170,10 +174,11 @@
 										alt="관람시간">
 								</h3>
 								<div class="scrollY">
-									<span id="TagPlaySeq" name="TagPlaySeq"><div
-											class="none">
+									<span id="TagPlaySeq" name="TagPlaySeq">
+										<div class="none">
 											먼저 관람일을<br>선택해 주세요.
-										</div></span>
+										</div>
+									</span>
 								</div>
 							</div>
 
@@ -185,8 +190,7 @@
 											alt="좌석등급과 잔여석">
 									</h3>
 									<div class="scrollY">
-										<span id="TagRemainSeat" name="TagRemainSeat"><div
-												class="none">
+										<span id="TagRemainSeat" name="TagRemainSeat"><div class="none">
 												회차 선택 후<br>확인 가능 합니다.
 											</div></span>
 									</div>
@@ -243,7 +247,9 @@
 						</div>
 						<!-- 캐스팅 레이어 //-->
 					</div>
-					<!-- 	<form id="formCalendar" name="formCalendar" method="get"
+					
+					
+					 	<form id="formCalendar" name="formCalendar" method="get"
 		action="BookDateTime.asp">
 		<input type="hidden" id="GoodsCode" name="GoodsCode" value="19000479">
 		<input type="hidden" id="PlaceCode" name="PlaceCode" value="09000028">
@@ -260,7 +266,7 @@
 		<input type="hidden" id="PlaySeq" name="PlaySeq" value=""> <input
 			type="hidden" id="PlayTime" name="PlayTime" value=""> <input
 			type="hidden" id="CancelableDate" name="CancelableDate" value="">
-	</form> -->
+	</form> 
 
 
 				</div>
