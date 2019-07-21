@@ -3,10 +3,12 @@ package com.trex.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dto.PrVO;
+import com.trex.request.Criteria;
 
 public class PrDAOImpl implements PrDAO {
 	
@@ -56,6 +58,30 @@ public class PrDAOImpl implements PrDAO {
 	public int selectPrSeqNext() throws SQLException {
 		int pr_num = session.selectOne("Pr-Mapper.selectPrSeqNext");
 		return pr_num;
+	}
+
+	@Override
+	public List<PrVO> selectSearchPrList(Criteria cri) throws SQLException {
+		int offset = cri.getPageStartRowNum();		
+		int limit=cri.getPerPageNum();
+		
+		RowBounds rowBounds = new RowBounds(offset,limit);
+		
+		List<PrVO> prList = session.selectList("Pr-Mapper.selectSearchPrList",cri,rowBounds);
+		
+		return prList;
+	}
+
+	@Override
+	public int selectSearchPrListCount(Criteria cri) throws SQLException {
+		int count = session.selectOne("Pr-Mapper.selectSearchPrListCount",cri);
+		return count;
+	}
+
+	@Override
+	public List<PrVO> selectPointPrList(Criteria cri) throws SQLException {
+		List<PrVO> prList = session.selectList("Pr-Mapper.selectPointPrList",cri);		
+		return prList;
 	}
 
 }

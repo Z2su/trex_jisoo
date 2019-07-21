@@ -3,10 +3,13 @@ package com.trex.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dto.AdVO;
+import com.trex.dto.PrVO;
+import com.trex.request.Criteria;
 
 public class AdDAOImpl implements AdDAO {
 	
@@ -54,6 +57,30 @@ public class AdDAOImpl implements AdDAO {
 	public int selectAdSeqNext() throws SQLException {
 		int ad_num = session.selectOne("Ad-Mapper.selectAdSeqNext");
 		return ad_num;
+	}
+
+	@Override
+	public List<AdVO> selectSearchAdList(Criteria cri) throws SQLException {
+		int offset = cri.getPageStartRowNum();
+		int limit= cri.getPerPageNum();
+		
+		RowBounds rowBounds = new RowBounds(offset,limit);
+		List<AdVO> adList = session.selectList("Ad-Mapper.selectSearchAdList",cri,rowBounds);
+		
+		return adList;
+		
+	}
+
+	@Override
+	public int selectSearchAdListCount(Criteria cri) throws SQLException {
+		int count = session.selectOne("Ad-Mapper.selectSearchAdListCount",cri);
+		return count;
+	}
+
+	@Override
+	public List<AdVO> selectPointAdList(Criteria cri) throws SQLException {
+		List<AdVO> adList = session.selectList("Ad-Mapper.selectPointAdList",cri);		
+		return adList;
 	}
 
 }

@@ -5,7 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
 <!DOCTYPE html>
 <html>
 <head profile="http://www.w3.org/2005/10/profile">
@@ -58,8 +58,7 @@
 
 <script src="<%=request.getContextPath()%>/resources/js/jquery-ui-1.12.1/datepicker-ko.js"></script>
 
-  
-
+ 
 <title>T-REX</title>
 </head>
 <body>
@@ -195,28 +194,27 @@
                 </c:if>
                 <c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }" >
                 
-                  <li><a href="<%=request.getContextPath() %>/manager/list" class="">관리자페이지<span
+                  <li><a href="<%=request.getContextPath() %>/manager/myinfo" class="">관리자페이지<span
                         class="arrow" style="display: none;"></span></a>
                   <div id="tms">
                         <ul class="">
-                           <li><a href="#" class="">인사말</a></li>
-                           <li><a href="#" class="">연혁</a></li>
-                           <li><a href="#" class="">조직과  기구</a></li>
-                           <li><a href="#" class="">시설안내</a></li>
-                           <li><a href="#" class="">후원회</a></li>
+                           <li><a href="<%=request.getContextPath() %>/manager/myinfo" class="">마이페이지</a></li>
+                           <li><a href="<%=request.getContextPath() %>/manager/eplist" class="">직원관리</a></li>
+                           <li><a href="<%=request.getContextPath() %>/manager/memlist" class="">회원조회</a></li>
+                           <li><a href="<%=request.getContextPath() %>/manager/calender" class="">일정관리</a></li>
                         </ul>
                      </div></li>
                      
                      </c:if>
                   <li class="tmect"><a href="#" target="_blank"
-                     title="대전예술의전당 아카데미 새창열림" class="">빠른예매<span class="arrow"
+                     title="빠른예매 새창열기" class="">빠른예매<span class="arrow"
                         style="display: none;"></span></a> <a
                      href="#" class="mmore" title="사이트맵"><span
                         class="hide">사이트맵</span><span class="arrow"
                         style="display: none;"></span></a>
                      <div id="tms">
                         대전예술의전당<br> 아카데미교육사업 <a href="#" target="_blank"
-                           title="대전예술의전당 아카데미 새창열림">빠른예매</a>
+                           title="빠른예매 새창열기">빠른예매</a>
                      </div></li>
                </ul>
             </div>
