@@ -1,9 +1,12 @@
 package com.trex.controller.board;
 
+import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,15 +14,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.trex.dto.AdVO;
 import com.trex.request.Criteria;
 import com.trex.service.AdService;
+import com.trex.utils.UploadFileUtil;
 
 @Controller
 @RequestMapping("/board")
 public class AdController {
+	
+	@Resource(name="uploadPath")
+	private String uploadPath;
 	
 	@Autowired
 	private AdService adService;
@@ -72,12 +80,26 @@ public class AdController {
 	}
 	
 	@RequestMapping(value="/ad/adregist", method=RequestMethod.POST)
-	public String adregistPOST(AdVO ad)throws SQLException{
+	public String adregistPOST(AdVO ad,MultipartFile file)throws Exception{
+		
+		String imgUploadPath = uploadPath + File.separator + "imgUpload";
+		String ymdPath = UploadFileUtil.calcPath(imgUploadPath);
+		String fileName = null;
 		String url="redirect:adlist";
+		System.out.println("advo!!!!!!!!!!!"+ad);
+
+		if(file != null) {
+		 fileName = UploadFileUtil.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
+		} else {
+		 fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
+		}
+		ad.setImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		ad.setThumbimg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
+
 		adService.write(ad);
+		System.out.println("advo!!!!!!!!!!!"+ad);
 		
 		return url;
-		
 	}
 	
 	@RequestMapping(value="/ad/admodify", method=RequestMethod.GET)

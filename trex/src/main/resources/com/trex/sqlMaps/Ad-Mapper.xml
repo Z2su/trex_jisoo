@@ -86,9 +86,9 @@
 	<update id="insertAd" parameterType="ad">
 		insert
 		into
-		ad(ad_code,ad_num,title,writer,cont)
+		ad(ad_code,ad_num,title,writer,cont,img,thumbimg)
 		values
-		(#{ad_code},#{ad_num},#{title},#{writer},#{cont})
+		(#{ad_code},#{ad_num},#{title},#{writer},#{cont},#{img},#{thumbimg})
 	</update>
 
 	<update id="updateAd" parameterType="ad">

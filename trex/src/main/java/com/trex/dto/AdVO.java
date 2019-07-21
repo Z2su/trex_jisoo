@@ -13,8 +13,28 @@ public class AdVO {
 	private int viewcnt;
 	private String ep_code;
 	private int app_result;
+	private String img;
+	private String thumbimg;
+	
 	public String getAd_code() {
 		return ad_code;
+		
+	
+	
+	
+	}
+
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
+	public String getThumbimg() {
+		return thumbimg;
+	}
+	public void setThumbimg(String thumbimg) {
+		this.thumbimg = thumbimg;
 	}
 	public void setAd_code(String ad_code) {
 		this.ad_code = ad_code;
@@ -71,9 +91,8 @@ public class AdVO {
 	public String toString() {
 		return "AdVO [ad_code=" + ad_code + ", ad_num=" + ad_num + ", title=" + title + ", writer=" + writer + ", cont="
 				+ cont + ", regist_date=" + regist_date + ", viewcnt=" + viewcnt + ", ep_code=" + ep_code
-				+ ", app_result=" + app_result + "]";
+				+ ", app_result=" + app_result + ", img=" + img + ", thumbimg=" + thumbimg + "]";
 	}
-	
 	
 	
 	
