@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.trex.dto.PFSHViewVO;
-import com.trex.dto.PerformGuidBoardVO;
 import com.trex.service.PerformReservationService;
 
 @Controller
@@ -28,7 +26,7 @@ public class PerformReservationController {
 	
 	@RequestMapping(value="/{pf_code}", method=RequestMethod.GET )
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
-		String url = "perform/main";
+		String url = "perform/step4";
 		
 		modelnView.addObject("pf_code", pf_code);
 		modelnView.setViewName(url);
@@ -53,9 +51,9 @@ public class PerformReservationController {
 	
 	@ResponseBody
 	@RequestMapping(value="pfsh", method=RequestMethod.POST)
-	public String pfshsearch(Date data){
+	public String pfshsearch( Date dat){
 			
-		System.out.println("!!!!!!!!!!!!!!!!!!+"+data);
+		System.out.println("!!!!!!!!!!!!!!!!!!+"+dat);
 		
 		
 		return "ㅎㅎ";
