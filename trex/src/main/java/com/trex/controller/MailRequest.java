@@ -55,6 +55,11 @@ public class MailRequest {
 		
 		return vo;
 	}
+	@Override
+	public String toString() {
+		return "MailRequest [sender=" + sender + ", receiver=" + receiver + ", title=" + title + ", content=" + content
+				+ ", file=" + file + "]";
+	}
 	
 
 }

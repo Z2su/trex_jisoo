@@ -23,6 +23,7 @@
 		  class="com.trex.mail.MimeAttachNotifier"
 		  p:mailSender-ref="mailSender"
 		  />
+		 
 
 	<import resource="classpath:context/FAQ-context.xml"/>
 	<import resource="classpath:context/Notice-context.xml"/>
