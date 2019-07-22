@@ -34,6 +34,19 @@ public class PerformReservationController {
 		
 		return modelnView;
 	}
+	
+	@RequestMapping(value="/pay/{pf_code}", method=RequestMethod.GET )
+	public ModelAndView performPay(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
+
+		String url = "perform/main4";
+
+		modelnView.addObject("pf_code", pf_code);
+		modelnView.setViewName(url);
+		
+		
+		return modelnView;
+	}
+	
 	@RequestMapping(value="/sample2/{pf_code}")
 	public ModelAndView performsesesampleGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 		
