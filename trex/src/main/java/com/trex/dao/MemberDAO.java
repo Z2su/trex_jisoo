@@ -7,7 +7,6 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.trex.controller.Criteria;
 import com.trex.dto.EPViewVO;
@@ -53,6 +52,9 @@ public interface MemberDAO {
 	void updateGmember(GmemberVO gmember)throws SQLException;
 	void updateTroupe(TroupeVO troupe)throws SQLException;
 	void updateEmployee(EmployeeVO employee)throws SQLException;
+	
+	void deleteMember(String mem_code)throws SQLException;
+	
 	
 	int selectMemberNextSeq()throws SQLException;
 	

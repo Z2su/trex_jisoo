@@ -65,8 +65,40 @@ $(document).ready(function() {
 					},
 					true // make the event "stick"
 				);
+			
 			}
+			
+			var data={	
+					"code":"code",
+					"title":title,
+					"starttime":start,
+					"endtime":endtime,
+			}
+			
+			$.ajax({
+				url:"<%=request.getContextPath()%>/registCal",
+				type:"post",
+				data:JSON.stringify(data),	
+				headers:{
+					"Content-Type":"application/json",
+					"X-HTTP-Method-Override":"post"
+				},
+				success:function(data){
+					if(data="SUCCESS"){
+						getPage("<%=request.getContextPath()%>/calendar");			
+					}else{
+						alert('댓글 등록이 취소되었습니다.');
+					}	
+				},
+				error:function(error){
+					alert('서버 오류로 인하여 댓글 등록을 실패했습니다.');
+				}
+			});
+			
+			
 			calendar.fullCalendar('unselect');
+			
+			
 		},
 		editable: true,     
 		events: events

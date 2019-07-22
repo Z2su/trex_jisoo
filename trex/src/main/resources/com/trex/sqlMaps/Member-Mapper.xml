@@ -110,7 +110,12 @@
 	
 	</update>
 	
-		
+	<update id="deleteMember" parameterType="str">
+		delete 
+		from mem 
+		where mem_code =#{code}
+	
+	</update>
 	
 	
 	

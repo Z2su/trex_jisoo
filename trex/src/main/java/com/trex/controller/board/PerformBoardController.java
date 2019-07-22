@@ -3,15 +3,11 @@ package com.trex.controller.board;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.aop.interceptor.PerformanceMonitorInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,9 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import com.trex.dto.PerformGuidBoardVO;
-import com.trex.dto.PerformScheduleVO;
 import com.trex.dto.PerformVO;
 import com.trex.service.PerformGuidBoardService;
 import com.trex.service.PerformScheduleService;
@@ -144,7 +138,9 @@ public class PerformBoardController {
 		out.println("</script>");		
 	}
 
-/*	@ResponseBody
+
+/*	
+  	@ResponseBody
 
 	@RequestMapping(value="pfcode", method=RequestMethod.POST)
 	public List<PerformScheduleVO> pfcodesearch(@RequestBody String pf_code){
@@ -160,7 +156,8 @@ public class PerformBoardController {
 		}
 		return dataList;
 		
-	}*/
+	}
+	*/
 	
 	@ResponseBody
 	@RequestMapping(value="pfcode", method=RequestMethod.POST)

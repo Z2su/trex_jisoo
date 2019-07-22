@@ -43,6 +43,7 @@
 	</div>
 
 
+	
 	<!-- //navigation -->
 
 	<!-- container -->
@@ -75,7 +76,6 @@
 											value="중복확인" onclick="duplicationId();" />
 											<br/>
 											<span id="idMsg"></span>
-											
 									</div>
 								
 								
@@ -186,8 +186,8 @@
 									</div>
 									<button id="join" type="submit"
 										class="btn btn-lg btn-success btn-block">회원가입</button>
-									<button id="join" type="submit"  href="${pageContext.request.contextPath}"
-										class="fa fa-rotate-right pr-2" >취소하기</button>
+									<%-- <button id="join" type="submit"  href="${pageContext.request.contextPath}"
+										class="fa fa-rotate-right pr-2" >취소하기</button> --%>
 										<%-- <div class="reg_button">
 										<a class="btn btn-danger px-3" href="${pageContext.request.contextPath}">
 											<i class="fa fa-rotate-right pr-2" aria-hidden="true"></i>취소하기
@@ -252,7 +252,6 @@
 						}).open();
 			}
 		</script>
-<!-- 
 
 		<script type="text/javascript">
 		$('input[name="mem_id"]').on('blur',function(){
@@ -509,6 +508,6 @@
 
 	</div>
 	
-	 -->
+
 	<!-- //container -->
 </div>

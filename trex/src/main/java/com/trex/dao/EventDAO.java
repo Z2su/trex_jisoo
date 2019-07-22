@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.trex.dto.EventVO;
-import com.trex.request.Criteria;
 
 public interface EventDAO {
 

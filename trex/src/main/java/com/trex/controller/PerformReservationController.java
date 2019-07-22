@@ -9,7 +9,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,18 +30,34 @@ public class PerformReservationController {
 	@RequestMapping(value="/{pf_code}/step1", method=RequestMethod.GET )
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 
+
 		String url = "perform/step1";
 		List<PFSHViewVO> PFSHViewList = PFRESEService.getPFSHViewList(pf_code);
 		modelnView.addObject("PFSHViewList", PFSHViewList);
-
-		System.out.println("!!!!"+PFSHViewList);
 		modelnView.addObject("pf_code", pf_code);
 		modelnView.setViewName(url);
 		
 		
 		return modelnView;
 	}
+	
+	@RequestMapping(value="/pay/{pf_code}", method=RequestMethod.GET )
+	public ModelAndView performPay(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
+
+		String url = "perform/main4";
+
+
+		modelnView.addObject("pf_code", pf_code);
+		modelnView.setViewName(url);
+		
+		
+		return modelnView;
+	}
+
 	/*
+
+	
+
 	@RequestMapping(value="/sample2/{pf_code}")
 	public ModelAndView performsesesampleGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 		
