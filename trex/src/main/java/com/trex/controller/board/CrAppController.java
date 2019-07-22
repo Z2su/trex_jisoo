@@ -90,7 +90,7 @@ public class CrAppController {
 	
 	@RequestMapping(value="/app/regist", method=RequestMethod.POST)
 	public String registPOST(CrAppVO CRAppBoard, String writer, HttpServletResponse response) throws Exception {
-		String url ="redirect:app/list";
+		String url ="redirect:list";
 		System.out.println("등록><><><><><><><><>");
 		CrAppService.write(CRAppBoard);
 		return url;
