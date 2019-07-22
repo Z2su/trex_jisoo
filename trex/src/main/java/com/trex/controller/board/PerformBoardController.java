@@ -40,7 +40,6 @@ public class PerformBoardController {
 	
 	@Autowired
 	private PerformScheduleService PFSHService;
-
 	
 	@ModelAttribute("submenuTitle")
 	public String submenuTitle() {
@@ -144,7 +143,9 @@ public class PerformBoardController {
 		out.println("location.href='/board/perform/list';");
 		out.println("</script>");		
 	}
+
 /*	@ResponseBody
+
 	@RequestMapping(value="pfcode", method=RequestMethod.POST)
 	public List<PerformScheduleVO> pfcodesearch(@RequestBody String pf_code){
 		

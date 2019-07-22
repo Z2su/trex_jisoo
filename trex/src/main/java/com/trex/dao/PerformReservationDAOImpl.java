@@ -4,10 +4,13 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.GroupLayout.SequentialGroup;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dto.PFSHViewVO;
+import com.trex.dto.SeatReqVO;
 
 public class PerformReservationDAOImpl implements PerformReservationDAO {
 
@@ -40,6 +43,12 @@ public class PerformReservationDAOImpl implements PerformReservationDAO {
 
 		
 		return PFSHViewList;
+	}
+
+	@Override
+	public List<SeatReqVO> selectSeatCount(String pfsh_code) throws SQLException {
+		List<SeatReqVO> SeatReq = session.selectList("PFRESE-Mapper.selectSeatCount",pfsh_code);
+		return SeatReq;
 	}
 
 }

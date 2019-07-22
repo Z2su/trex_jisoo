@@ -12,5 +12,6 @@
 	<bean id="MemberService"
 		  class="com.trex.service.MemberServiceImpl"
 		  p:memberDAO-ref="MemberDAO"
+		  p:notifier-ref="mailNotifier"
 		  />
 </beans>
