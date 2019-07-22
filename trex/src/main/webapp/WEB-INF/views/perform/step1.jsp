@@ -29,7 +29,7 @@
 	
 	
 	<form id="trexinfo" name = "trexinfo" action="step2" method="get">
-		<input type ="hidden" value="${loginUser.mem_id }"/>
+		<input type ="hidden" name ="mem_id" value="${loginUser.mem_id }"/>
 		<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
 	
 					

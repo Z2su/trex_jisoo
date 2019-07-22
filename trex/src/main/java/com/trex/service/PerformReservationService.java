@@ -14,5 +14,5 @@ public interface PerformReservationService {
 	List<PFSHViewVO> getPFSHViewListByDate(String rundate,String pf_code) throws SQLException;	
 
 	List<SeatReqVO> getSeatCount(String pfsh_code) throws SQLException;
-	
+	List<SeatReqVO> getSeatList(String pfsh_code) throws SQLException;
 }

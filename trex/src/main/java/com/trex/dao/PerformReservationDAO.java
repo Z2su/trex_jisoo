@@ -14,4 +14,6 @@ public interface PerformReservationDAO {
 
 	List<PFSHViewVO> selectPFSHViewListBydate(Map<String, Object> map) throws SQLException;
 	List<SeatReqVO> selectSeatCount(String pfsh_code) throws SQLException;
+	List<SeatReqVO> selectSeatList(String pfsh_code) throws SQLException;
+
 }

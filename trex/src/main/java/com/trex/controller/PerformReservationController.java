@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.trex.dto.PFSHViewVO;
+import com.trex.dto.PerformReservationVO;
 import com.trex.dto.SeatReqVO;
 import com.trex.service.PerformReservationService;
 
@@ -80,10 +81,14 @@ public class PerformReservationController {
 		return SeatReq;
 	}
 	@RequestMapping(value="/{pf_code}/step2", method=RequestMethod.GET )
-	public ModelAndView performreseGet2(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
+	public ModelAndView performreseGet2(@PathVariable String pf_code, PerformReservationVO PfRese, ModelAndView modelnView) throws SQLException{
 
 		String url = "perform/step2";
-		
+		System.out.println("~~~>>"+PfRese);
+		List<SeatReqVO> SeatReqList = PFRESEService.getSeatList(PfRese.getPfsh_code());
+		System.out.println("#####################"+SeatReqList);
+		modelnView.addObject("PfRese", PfRese);
+		modelnView.addObject("SeatReqList", SeatReqList);
 		modelnView.setViewName(url);
 		
 		

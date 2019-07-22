@@ -54,6 +54,12 @@ public class PerformReservationServiceImpl implements PerformReservationService{
 		
 		return SeatReq;
 	}
+
+	@Override
+	public List<SeatReqVO> getSeatList(String pfsh_code) throws SQLException {
+		List<SeatReqVO> SeatReqList = PFRESEDAO.selectSeatList(pfsh_code);
+		return SeatReqList;
+	}
 	
 	
 	
