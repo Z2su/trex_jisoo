@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dao.QnAReplyDAO;
-import com.trex.dto.QnABoardVO;
 import com.trex.dto.QnAReplyVO;
 
 public class QnAReplyServiceImpl implements QnAReplyService {

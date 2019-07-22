@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dao.AdDAO;
 import com.trex.dto.AdVO;
-import com.trex.dto.PrVO;
 import com.trex.request.Criteria;
 import com.trex.request.PageMaker;
 

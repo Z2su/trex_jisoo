@@ -9,7 +9,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dao.PerformReservationDAO;
-import com.trex.dao.PerformReservationDAOImpl;
 import com.trex.dto.PFSHViewVO;
 
 public class PerformReservationServiceImpl implements PerformReservationService{
