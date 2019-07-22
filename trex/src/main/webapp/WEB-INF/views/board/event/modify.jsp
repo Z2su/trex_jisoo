@@ -46,8 +46,7 @@
 
 				<form name="inputFrm" method="post" action="modify">
 					<input type="hidden" name="event_num" value="${event.event_num }">
-					<input type="hidden" name="event_num" value="${event.event_code }">
-					<input type="hidden" name="event_num" value="${event.modidate }">
+					<input type="hidden" name="event_code" value="${event.event_code }">
 
 					<ul class="board_writeInfo">
 
@@ -64,12 +63,10 @@
 					<!-- 게시판 버튼모음 -->
 					<div class="board_butt">
 						<input type="image"
-							src="<%=request.getContextPath()%>/resources/image/write.gif"
+							src="<%=request.getContextPath()%>/resources/images/write.gif"
 							alt="쓰기"> <a href="./list"><img
-							src="<%=request.getContextPath()%>/resources/image/cancel.gif"
-							alt="취소"></a> <a href="./list"><img
-							src="<%=request.getContextPath()%>/resources/image/list.gif"
-							alt="목록"></a>
+							src="<%=request.getContextPath()%>/resources/images/cancel.png"
+							alt="취소"></a>
 					</div>
 				</form>
 				<!--  웹필터 수정 -->

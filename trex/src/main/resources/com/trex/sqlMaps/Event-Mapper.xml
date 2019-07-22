@@ -17,8 +17,7 @@
 		*
 		from
 		event
-		where
-		enable = 1
+		where enable = 1
 		order by event_num desc
 	</select>
 
