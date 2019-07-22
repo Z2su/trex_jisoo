@@ -18,14 +18,14 @@
 	<import resource="classpath:context/Pr-context.xml"/>
 	<import resource="classpath:context/Ad-context.xml"/>
 	<import resource="classpath:context/mail-context.xml"/>
-
+	<import resource="classpath:context/FAQ-context.xml"/>
+	<import resource="classpath:context/Notice-context.xml"/>
+	<import resource="classpath:context/CrApp-context.xml"/>
+	<import resource="classpath:context/PFRESE-context.xml"/>
 	<bean id="mailNotifier"
 		  class="com.trex.mail.MimeAttachNotifier"
 		  p:mailSender-ref="mailSender"
 		  />
 
-	<import resource="classpath:context/FAQ-context.xml"/>
-	<import resource="classpath:context/Notice-context.xml"/>
-	<import resource="classpath:context/CrApp-context.xml"/>
 
 </beans>

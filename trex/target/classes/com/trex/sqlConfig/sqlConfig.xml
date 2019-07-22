@@ -4,7 +4,9 @@
 	<typeAliases>
 		<typeAlias type="java.lang.String" alias="str"/>
 		<typeAlias type="java.lang.Integer" alias="int"/>
+
 		<typeAlias type="java.util.List" alias="list"/>
+
 		<typeAlias type="java.util.Map" alias="map"/>
 		<typeAlias type="com.trex.dto.PerformGuidBoardVO" alias="PFGBoard"/>
 		<typeAlias type="com.trex.dto.PerformVO" alias="PF"/>
@@ -24,7 +26,7 @@
 		<typeAlias type="com.trex.dto.CalendarVO" alias="calendar"/>
 		<typeAlias type="com.trex.dto.AdVO" alias="ad"/>
 		<typeAlias type="com.trex.dto.NoticeVO" alias="notice"/>
-
+		<typeAlias type="com.trex.dto.PFSHViewVO" alias="PFSHView"/>
 
 	</typeAliases>
  
