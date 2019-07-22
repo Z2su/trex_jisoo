@@ -137,7 +137,7 @@ public class BoardController {
 										  String event_code)throws Exception{
 		
 		 // 이미지 업로드할 경로
-		String savePath = request.getServletContext().getRealPath("/resources/imageUpload");
+		String savePath = request.getServletContext().getRealPath("/resources/event/imageUpload");
 		
 		File uploadPathFile = new File(savePath);
 		
@@ -151,7 +151,7 @@ public class BoardController {
 		uploadFile.transferTo(new File(savePath+File.separator+fileName));
 		
 	    // 업로드된 경로와 파일명을 통해 이미지의 경로를 생성
-		String url = request.getContextPath()+"/resources/imageUpload/" + fileName ;
+		String url = request.getContextPath()+"/resources/event/imageUpload/" + fileName ;
 		
 		Map<String,String> dataMap = new HashMap<String,String>();
 		dataMap.put("url", url);

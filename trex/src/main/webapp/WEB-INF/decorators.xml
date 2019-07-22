@@ -12,6 +12,7 @@
 	<excludes>
 		<pattern>/performrese*</pattern>
 		<pattern>/calendar*</pattern>
+		<pattern>/credit*</pattern>
 	</excludes>	
 	
 </decorators>

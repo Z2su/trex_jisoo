@@ -24,6 +24,8 @@
 <script type="text/javascript" src="/Book/Inc/Js/BookSeatConfig.js"></script>
 <script type="text/javascript"
 	src="//ticketimage.interpark.com/TicketImage/onestop/css/common.js"></script>
+	
+	
 <div id="contentswrap">
 	<!-- 내용채우기 -->
 	<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
@@ -89,7 +91,7 @@
 			<div class="contL">
 				<div class="iframe" style="width: 637; height: 493; background: white;">
 					
-<form name="formDelivery">
+<form name="formDelivery" action="credit/form" method="post" id="payform">
 <input type="hidden" id="ExpressYN" name="ExpressYN" value="N">
 	<div class="contFrame frameBg1">
 		<div class="deliveryL">
@@ -178,9 +180,9 @@
 						<colgroup><col width="80px"><col width="*"></colgroup>
 						<tbody>
 							<tr class="fir">
-								<th><label for="MemberName">이름</label></th>
+								<th><label for="MemberName">아이디</label></th>
 								
-								<td>김지수<input type="hidden" id="MemberName" value="김지수"></td>
+								<td>${loginUser.mem_id }<input name='sndOrdername' type="hidden" id="MemberName" value="${loginUser.mem_id }"></td>
 							
 							</tr>
 							
@@ -197,7 +199,7 @@
 														
 							<tr>
 								<th><label for="PhoneNo1">전화번호</label></th>
-								<td class="form"><input type="text" id="PhoneNo1" value="02" style="width:36px;" class="txt1" maxlength="3" onkeyup="fnMoveFocus(3, 'PhoneNo1', 'PhoneNo2');">&nbsp;-&nbsp;<input type="text" id="PhoneNo2" value="0000" style="width:41px;" class="txt1" maxlength="4" onkeyup="fnMoveFocus(4, 'PhoneNo2', 'PhoneNo3');">&nbsp;-&nbsp;<input type="text" id="PhoneNo3" value="0000" style="width:41px;" class="txt1" maxlength="4" onkeyup="fnMoveFocus(4, 'PhoneNo3', 'HpNo1');"></td>
+								<td class="form"><input name='sndMoblie' type="text" id="PhoneNo1" value="02" style="width:36px;" class="txt1" maxlength="3" onkeyup="fnMoveFocus(3, 'PhoneNo1', 'PhoneNo2');">&nbsp;-&nbsp;<input type="text" id="PhoneNo2" value="0000" style="width:41px;" class="txt1" maxlength="4" onkeyup="fnMoveFocus(4, 'PhoneNo2', 'PhoneNo3');">&nbsp;-&nbsp;<input type="text" id="PhoneNo3" value="0000" style="width:41px;" class="txt1" maxlength="4" onkeyup="fnMoveFocus(4, 'PhoneNo3', 'HpNo1');"></td>
 							</tr>
 							<tr>
 								<th><label for="HpNo1">휴대폰</label></th>
@@ -208,7 +210,7 @@
 							</tr>-->
 							<tr>
 								<th><label for="Email">이메일</label></th>
-								<td class="form"><input type="text" id="Email" value="wltn656@naver.com" style="width:170px;" class="txt1"></td>
+								<td class="form"><input name='sndEmail' type="text" id="Email" value="wltn656@naver.com" style="width:170px;" class="txt1"></td>
 								<input type="hidden" id="Zipcode" value="34417">
 								<input type="hidden" id="Addr" value="대전광역시 대덕구 비래서로25번길 18">
 								<input type="hidden" id="SubAddr" value="1동 302호 (비래동, 영흥빌라)">
@@ -327,8 +329,6 @@
 		</div><!-- 포장 미리보기 레이어 //-->
 	</div>
 </form>
-
-					
 			
 				</div>
 			</div>
@@ -423,16 +423,18 @@
 							</tr>
 							<tr class="total">
 								<th>총 결제금액</th>
-								<td><span id="MyTotalAmt" name="MyTotalAmt"><strong>0</strong>
+								<td><span id="MyTotalAmt" name="MyTotalAmt" ><strong>
+								<input type='text' name='sndAmount' value='1004' size='15' maxlength='9'> </strong>
 										원</span></td>
 							</tr>
 						</tbody>
 					</table>
-					<p class="btn" id="LargeNextBtn" style="display:;">
+					<p class="btn" id="LargeNextBtn" style="display:;" >
 						<a href="javascript:fnNextStep('P');" id="LargeNextBtnLink"
 							title="다음단계 페이지 이동" data-url="sample2"><img
 							src="//ticketimage.interpark.com/TicketImage/onestop/btn_buy.gif"
-							alt="다음단계" id="LargeNextBtnImage"> </a>
+							alt="다음단계" id="LargeNextBtnImage" 
+							> </a>
 					</p>
 
 					<p class="btn" id="LargeProcBtn" style="display: none;">
@@ -440,7 +442,7 @@
 							src="//ticketimage.interpark.com/TicketImage/onestop/loading_2.gif"
 							alt="잠시만 기다려주세요">
 					</p>
-					<p class="btn" id="SmallNextBtn" style="display: none;">
+					<!-- <p class="btn" id="SmallNextBtn" style="display: none;">
 						<a href="javascript:fnPrevStep();" id="SmallPrevBtnLink"
 							title="이전단계 페이지 이동"><img
 							src="//ticketimage.interpark.com/TicketImage/onestop/btn_pre.gif"
@@ -449,17 +451,37 @@
 							title="다음단계 페이지 이동"><img
 							src="//ticketimage.interpark.com/TicketImage/onestop/btn_next_02.gif"
 							alt="다음단계" id="SmallNextBtnImage"></a>
-					</p>
+					</p> -->
 				</div>
+				
+				<input type="hidden" id="sndOrderNumber" value="주문번호" />
+				<input type="hidden" id="sndGoodname" value="상품명" />
+				<input type="hidden" id="sndOrdername" value="주문자명" />
+				<input type="hidden" id="sndAmount" value="가격" />
+				<input type="hidden" id="sndEmail" value="이메일" />
+				<input type="hidden" id="sndMobile" value="${sndMoblie }" />
+				
 				<script>
-					$('#LargeNextBtnLink').on(
+					/* $('#LargeNextBtnLink').on(
 							'click',
 							function(e) {
 								e.preventDefault();
-								/* alert($(this).attr('data-url')); */
+								alert($(this).attr('data-url'));
 								$('#ifrmBookStep').attr('src',
 										$(this).attr('data-url'));
 
+							}); */
+							function goPay(){
+								var form = document.userinput;
+								
+								form.submit();
+							}
+							
+							$('#LargeNextBtnLink').on('click',function(){
+								alert("아이디 : ${loginUser.mem_id}");
+								alert("아이디 : ${sndMoblie}");
+								
+								var ret = window.open("<%=request.getContextPath()%>/credit/form", "", "width=560px height=630px");					
 							});
 				</script>
 				<!-- 예매 정보 //-->
@@ -490,5 +512,4 @@
 	</div>
 
 	<!-- //container -->
-	<%@ include file="./step1_js.jsp"%>
 </div>
