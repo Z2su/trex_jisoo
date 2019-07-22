@@ -44,57 +44,51 @@
 		<!-- container -->
 		<div id="container">
 			<%@ include file="/WEB-INF/views/board/commons/submenu.jsp"%>
-
-			<!-- content-->
 			<div id="content">
 				<!-- 컨텐츠 타이틀 -->
 				<h3 class="cnt_ti">대관신청조회</h3>
+				<table width="100%" class="table1 center" border="0" cellspacing="0"
+					cellpadding="0">
 
-				<!-- 게시판 리스트 -->
-				<div class="board_listWrap">
-					<div class="board_listBox">
-						<div class="board_list">
-							<form method="post" name="chkForm"
-								action="/_prog/_board/index.php?code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=&amp;mode=RC">
-								<input type="hidden" name="submod" value="">
-								<table
-									summary="대관신청조회입니다. 총 4224개의 글이 있으며 제목링크를 통해서 상세내용으로 이동합니다.">
-									<caption>대관신청조회</caption>
-									<thead>
+					<colgroup>
+						<col style="width: 45px;">
+						<col style="width: 280px;">
+						<col style="width: 90px;">
+						<col style="width: 145px;">
+					</colgroup>
 
-										<tr>
-											<th scope="col" class="head_first" width="8%">번호</th>
-											<th scope="col" width="45%">제목</th>
-											<th scope="col" width="15%">작성자</th>
-											<th scope="col" width="15%">분류</th>
-											<th scope="col" width="16%">내용</th>
-											<th scope="col" width="10%">작성일</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-										
-											<td class="center">1&nbsp;</td>
+					<thead>
+						<tr>
+							<th scope="col" class="t_head">번호</th>
+							<th scope="col" class="t_head">제목</th>
+							<th scope="col" class="t_head">작성일</th>
+							<th scope="col" class="t_head">작성자</th>
+						</tr>
+					</thead>
 
-											<td class="title"><img
-												src="<%=request.getContextPath()%>/resources/images/list_icon_hold.gif"
-												alt="잠긴글"><a
-												href="./?code=customer&amp;mode=V&amp;no=ziASixn1hjTZHMWDAuWheg&amp;code=customer&amp;site_dvs_cd=kr&amp;menu_dvs_cd=040202&amp;skey=&amp;sval=&amp;GotoPage=">대관신청 합니다.</a>&nbsp;</td>
-
-											<td class="center">류 * * &nbsp;</td>
-											<td class="center">정기대관&nbsp;</td>
-											<td class="center">정기대관신청&nbsp;</td>
-											<td class="center">2019-07-10&nbsp;</td>
-
-										</tr>
-		
-								</table>
-							</form>
-						</div>
-					</div>
-				</div>
-				
+					<tbody>
+						<c:forEach var="CR_AppList" items="${CRAppBoardList }">
+							<tr role="row" class="jqgrow ui-row-ltr ui-widget-content">
+								<td role="gridcell" style="text-align: center;">${CR_AppList.cr_app_num }</td>
+								<td role="gridcell"><a
+									href="/board/Coronation/app/detail/${CR_AppList.cr_app_code }"
+									onclick="OpenWindow('detail?cr_app_code=${CR_AppList.cr_app_code }','','850','620')"
+									style='<c:if test="" >font-weight:bold;color:blue;</c:if>'>${CR_AppList.title }
+								</a></td>
+								<td role="gridcell" style="text-align: center;"><fmt:formatDate
+										value="${CR_AppList.regdate }" pattern="yyyy-MM-dd" /></td>
+								<td role="gridcell" style="text-align: center;"><a
+									class="maninfo" rel="${CR_AppList.writer }" href="#"
+									data-hasqtip="21"> <i class="pink2 ace-icon fa fa-user"
+										title="작성자"></i> ${CR_AppList.writer }
+								</a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 			</div>
 		</div>
-		<!-- //container -->
+	</div>
+
+	<!-- //container -->
 	</div>

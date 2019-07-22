@@ -1,11 +1,11 @@
 package com.trex.dao;
 
+import java.sql.SQLException;
+
 import java.util.List;
 
-import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
-import com.trex.controller.SearchCriteria;
 import com.trex.dto.MypageTroupeCrAppListVO;
 
 public class MypageTroupeCrAppDAOImpl implements MypageTroupeCrAppDAO {
@@ -16,38 +16,39 @@ public class MypageTroupeCrAppDAOImpl implements MypageTroupeCrAppDAO {
 		this.session = session;
 	}
 
-	private static final String NAMESPACE = "MypageTroureCrAppListMapper";
-
 	@Override
-	public void insertTroupeCrApp(MypageTroupeCrAppListVO cr_app) throws Exception {
-		session.update(NAMESPACE + ".insertTroureList", cr_app);
+	public List<MypageTroupeCrAppListVO> selectCRAppList() throws SQLException {
+		List<MypageTroupeCrAppListVO> CRAppList = session.selectList("MypageTroupeCrApp-Mapper.selectCRAppList", null);
+
+		return CRAppList;
 	}
 
 	@Override
-	public MypageTroupeCrAppListVO selectTroureBycr_app_num(int cr_app_num) throws Exception {
-		MypageTroupeCrAppListVO cr_app = (MypageTroupeCrAppListVO) session
-				.selectOne(NAMESPACE + ".selectTroureCrAppByNum", cr_app_num);
-		return cr_app;
+	public MypageTroupeCrAppListVO selectCRApp(String cr_app_code) throws SQLException {
+		MypageTroupeCrAppListVO CRApp = session.selectOne("MypageTroupeCrApp-Mapper.selectCRApp", cr_app_code);
+
+		return CRApp;
 	}
 
 	@Override
-	public void updateTroupeCrApp(MypageTroupeCrAppListVO cr_app) throws Exception {
-		session.update(NAMESPACE + ".updateTroureCrApp", cr_app);
+	public void insertCRApp(MypageTroupeCrAppListVO CRApp) throws SQLException {
+		session.update("MypageTroupeCrApp-Mapper.insertCRApp", CRApp);
 	}
 
 	@Override
-	public void deleteTroupeCrApp(int cr_app_num) throws Exception {
-		session.update(NAMESPACE + ".deleteTroureCrApp", cr_app_num);
+	public void updateCRApp(MypageTroupeCrAppListVO CRApp) throws SQLException {
+		session.update("MypageTroupeCrApp-Mapper.updateCRApp", CRApp);
 	}
 
 	@Override
-	public List<MypageTroupeCrAppListVO> selectSearchTroupeCrAppList(SearchCriteria cri) throws Exception {
-		int offset = cri.getPageStartRowNum();
-		int limit = cri.getPerPageNum();
-		RowBounds rowBounds = new RowBounds(offset, limit);
+	public void deleteCRApp(String cr_app_code) throws SQLException {
+		session.update("MypageTroupeCrApp-Mapper.deleteCRApp", cr_app_code);
+	}
 
-		List<MypageTroupeCrAppListVO> trourecrappList = session.selectList(NAMESPACE + ".selectSearchTroureCrAppList",
-				cri, rowBounds);
-		return trourecrappList;
+	@Override
+	public int selectCRAppNextSeq() throws SQLException {
+		int seq_num = session.selectOne("MypageTroupeCrApp-Mapper.selectCRAppNextSeq");
+		
+		return seq_num;
 	}
 }
