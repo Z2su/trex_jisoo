@@ -68,14 +68,13 @@ public class MemberVO {
 		this.mem_regdate = mem_regdate;
 	}
 
-	
-	
 	public Date getLogin_date() {
 		return login_date;
+		
 	}
 	public void setLogin_date(Date login_date) {
 		this.login_date = login_date;
-
+		
 	}
 	@Override
 	public String toString() {
