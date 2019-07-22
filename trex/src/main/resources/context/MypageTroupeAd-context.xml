@@ -5,10 +5,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="MypageTroupeAdDAO"
-		class="com.trex.dao.MypageTroupeAdDAOImpl"
-		p:session-ref="sqlSession" />
+	      class="com.trex.dao.MypageTroupeAdDAOImpl"
+	      p:session-ref="sqlSession"
+	      />
+	      
 	<bean id="MypageTroupeAdService"
-		class="com.trex.service.MypageTroupeAdServiceImpl"
-		p:mypagetroupeadDAO-ref="MypageTroupeAdDAO"
-		/>
+	      class="com.trex.service.MypageTroupeAdServiceImpl"
+	      p:mypagetroupeadDAO-ref="MypageTroupeAdDAO"
+	      />
+	      
 </beans>

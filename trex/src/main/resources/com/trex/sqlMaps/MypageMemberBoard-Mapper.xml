@@ -10,7 +10,7 @@
 	<select id="selectMemberBoardByNum" resultType="mypageBoard">
 		select *
 		from qna
-		where qna_num=#{qna_num}
+		where writer=#{gmem_code}
 	</select>
 
 	<update id="updateMemberBoard" parameterType="member">

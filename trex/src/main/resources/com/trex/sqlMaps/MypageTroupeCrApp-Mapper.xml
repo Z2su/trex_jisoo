@@ -1,81 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MypageTroupeCrApp-Mapper">
-	<sql id="search">
-		<if test="searchType == 't'.toString()">
-			and title like '%'||#{keyword}||'%'
-		</if>
-		<if test="searchType == 'c'.toString()">
-			and content like '%'||#{keyword}||'%'
-		</if>
-		<if test="searchType == 'w'.toString()">
-			and writer like '%'||#{keyword}||'%'
-		</if>
-		<if test="searchType == 'tc'.toString()">
-			and (
-			title like '%'||#{keyword}||'%'
-			or
-			content like
-			'%'||#{keyword}||'%'
-			)
-		</if>
-		<if test="searchType == 'cw'.toString()">
-			and (
-			content like '%'||#{keyword}||'%'
-			or
-			writer like
-			'%'||#{keyword}||'%'
-			)
-		</if>
-		<if test="searchType == 'tcw'.toString()">
-			and (
-			title like '%'||#{keyword}||'%'
-			or
-			content like
-			'%'||#{keyword}||'%'
-			or
-			writer like '%'||#{keyword}||'%'
-			)
-		</if>
-	</sql>
-	<update id="insertTroupeCrApp">
-		insert into cr_app (cr_app_code, cr_app_num , title,
-		cont, writer)
-		values(#{cr_app_code}
-		,cr_app__seq.nextval,#{title},#{cont},#{writer})
-	</update>
 
-	<select id="selectTroureBycr_app_num">
+	<select id="selectCRAppList" resultType="mypageCrapp">
 		select *
-		from
-		cr_app
-		where
-		cr_app_num=#{cr_app_num}
+		from cr_app
+		where writer=#{tro_code}
+		order by cr_app_code desc
 	</select>
 
-	<update id="deleteTroupeCrApp">
+	<select id="selectCRApp" resultType="mypageCrapp">
+		select *
+		from cr_app
+		where cr_app_code=#{cr_app_code}
+	</select>
+
+	<update id="insertCRApp">
+		insert
+		into
+		cr_app(cr_app_code,cr_app_num,title,writer,cont,hall_code)
+		values
+		(#{cr_app_code},#{cr_app_num},#{title},#{writer},#{cont},#{hall_code})
+	</update>
+
+	<update id="updateCRApp" parameterType="mypageCrapp">
+		update
+		cr_app
+		set
+		title=#{title}, cont=#{cont}, updatedate=sysdate
+		where cr_app_code=#{cr_app_code}
+	</update>
+
+	<update id="deleteCRApp" parameterType="mypageCrapp">
 		delete
 		from cr_app
-		where cr_app_num=#{cr_app_num}
+		where cr_app_code=#{cr_app_code}
 	</update>
 
-
-
-	<select id="selectSearchTroupeCrAppList">
-		<![CDATA[
-			select * 
-			from cr_app
-			where cr_app_num>0
-		]]>
-		<include refid="search"></include>
-		order by cr_app_num desc
-	</select>
-
-	<select id="selectTroupeCrAppListAll">
-		select *
-		from cr_app
-		order
-		by cr_app_num desc,regDate desc
+	<select id="selectCRAppNextSeq" resultType="int">
+		select
+		APP_SEQ.nextval as cr_app_num from dual
 	</select>
 
 </mapper>

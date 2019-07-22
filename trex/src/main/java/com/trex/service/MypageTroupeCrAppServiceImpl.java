@@ -1,53 +1,60 @@
 package com.trex.service;
 
+import java.sql.SQLException;
 import java.util.List;
 
-import com.trex.controller.SearchCriteria;
 import com.trex.dao.MypageTroupeCrAppDAO;
+
 import com.trex.dto.MypageTroupeCrAppListVO;
+
 
 public class MypageTroupeCrAppServiceImpl implements MypageTroupeCrAppService {
 
-	private MypageTroupeCrAppDAO mypagetroupecrappDAO;
+	private MypageTroupeCrAppDAO MypageTroupeCrAppDAO;
 
-	public void setMypageMemberboardDAO(MypageTroupeCrAppDAO mypagetroupecrappDAO) {
-		this.mypagetroupecrappDAO = mypagetroupecrappDAO;
-	}
-	
-	@Override
-	public void create(MypageTroupeCrAppListVO cr_app) throws Exception {
-		mypagetroupecrappDAO.insertTroupeCrApp(cr_app);
-	}
-
-
-	@Override
-	public MypageTroupeCrAppListVO read(int cr_app_num) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public void setCRAppBoardDAO(MypageTroupeCrAppDAO MypageTroupeCrAppDAO) {
+		this.MypageTroupeCrAppDAO = MypageTroupeCrAppDAO;
 	}
 
 	@Override
-	public MypageTroupeCrAppListVO readByNum(int cr_app_num) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public List<MypageTroupeCrAppListVO> getBoardList() throws Exception {
+		List<MypageTroupeCrAppListVO> CRAppList = MypageTroupeCrAppDAO.selectCRAppList();
+		
+		return CRAppList;
 	}
 
 	@Override
-	public void modify(MypageTroupeCrAppListVO cr_app) throws Exception {
-		// TODO Auto-generated method stub
-
+	public MypageTroupeCrAppListVO readBoard(String cr_app_code) throws SQLException {
+		MypageTroupeCrAppListVO CRApp = MypageTroupeCrAppDAO.selectCRApp(cr_app_code);
+		
+		return CRApp;
 	}
 
 	@Override
-	public void remove(int cr_app_num) throws Exception {
-		// TODO Auto-generated method stub
+	public MypageTroupeCrAppListVO getBoardForModify(String cr_app_code) throws SQLException {
+		MypageTroupeCrAppListVO CRApp = MypageTroupeCrAppDAO.selectCRApp(cr_app_code);
 
+		return CRApp;
 	}
 
 	@Override
-	public List<MypageTroupeCrAppListVO> listSearch(SearchCriteria cri) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public void write(MypageTroupeCrAppListVO CRAppboard) throws SQLException {
+		int num = MypageTroupeCrAppDAO.selectCRAppNextSeq();
+
+		String code = "APP" + String.format("%04d", num);
+		CRAppboard.setCr_app_num(num);
+		CRAppboard.setCr_app_code(code);
+
+		MypageTroupeCrAppDAO.insertCRApp(CRAppboard);
 	}
 
+	@Override
+	public void modify(MypageTroupeCrAppListVO CRAppboard) throws SQLException {
+		MypageTroupeCrAppDAO.updateCRApp(CRAppboard);
+	}
+
+	@Override
+	public void remove(String cr_app_code) throws SQLException {
+		MypageTroupeCrAppDAO.deleteCRApp(cr_app_code);
+	}
 }
