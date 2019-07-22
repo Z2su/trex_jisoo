@@ -128,11 +128,8 @@ public class BoardController {
 	}
 	
 
-<<<<<<< HEAD
+
 	@RequestMapping(value="/event/imageUpload",method=RequestMethod.POST)
-=======
-	@RequestMapping(value="ev/my/imageUpload",method=RequestMethod.POST)
->>>>>>> refs/remotes/origin/jisoo
 	@ResponseBody
 	public Map<String,String> imageUpload(HttpServletRequest request,
 										  HttpServletResponse response, 
