@@ -122,14 +122,16 @@
 											placeholder="전화번호" name="bupanum" id="bupanum"
 											type="text" />
 									</div>
+
 									<div class="form-group">
 										<label>이메일</label> <input type="text" name="mem_email"id="mem_email"
-											maxlength="30">@ <select name="tro_email">
+											maxlength="30">@ <select name="mem_email">
+
 											<option>naver.com</option>
 											<option>daum.net</option>
 											<option>gmail.com</option>
 											<option>nate.com</option>
-															</select> 
+										</select> 
 									</div>
 									
 										<button type="submit" class="btn btn-lg btn-success btn-block">회원가입</button>

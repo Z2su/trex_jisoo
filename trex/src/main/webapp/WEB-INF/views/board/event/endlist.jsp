@@ -268,9 +268,9 @@
 									<dl>
 										<dt>
 											<a
-												href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}"><img
-												src="https://file.nexon.com/NxFile/download/FileDownloader.aspx?oidFile=5629539181056233673"
-												alt="종료된 이벤트 섬네일"></a>
+												href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}">
+												<img src="<%=request.getContextPath() %>/resources/imageUpload/${event.event_code}.jpg"
+												alt="이벤트 섬네일"></a>
 										</dt>
 										<dd class="data">
 											<p>

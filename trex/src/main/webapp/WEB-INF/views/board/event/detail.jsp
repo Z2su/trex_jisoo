@@ -264,7 +264,6 @@
 				</div>
 
 				<form id="search" class="form-horizontal"
-					action="/bbs/read.htm?docId=2018042316273647&amp;bbsId=bbs00000000000004&amp;workType=1&amp;moduleId=00000000000000&amp;categoryId=&amp;searchRange=0&amp;listType=L&amp;searchKey=subject&amp;searchValue="
 					method="post">
 
 					<div class="hr_line">&nbsp;</div>

@@ -1,12 +1,12 @@
 package com.trex.dao;
 
+import java.lang.reflect.Member;
 import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.trex.controller.Criteria;
 import com.trex.dto.EPViewVO;
@@ -24,7 +24,7 @@ public interface MemberDAO {
 	
 	//MemberVO 리스트
 		List<MemberVO> selectMemberList()throws SQLException;
-		List<MemberVO> selectMemberList(String code)throws SQLException;
+		List<MemberVO> selectMemberListlike(String code)throws SQLException;
 		List<MemberVO> selectMemberList(Criteria cri)throws SQLException;
 	
 	//GmemberVO 리스트
@@ -53,11 +53,16 @@ public interface MemberDAO {
 	void updateTroupe(TroupeVO troupe)throws SQLException;
 	void updateEmployee(EmployeeVO employee)throws SQLException;
 	
+	void deleteMember(String mem_code)throws SQLException;
+	
+	
 	int selectMemberNextSeq()throws SQLException;
 	
 	MemberVO selectMemberById(String mem_id)throws SQLException;
-
+	void GetKey(String mem_id, String key);
 	
+	void updateAuthkey(MemberVO member) throws SQLException;
 	
+	void updateAuthstatus(MemberVO member) throws SQLException;
 
 }

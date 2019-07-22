@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <c:set var="prList" value="${dataMap.prList }" />
 <c:set var="pageMaker" value="${dataMap.pageMaker }" />
@@ -26,7 +27,7 @@
 		<div class="naviwrap">
 			<a href="/html/kr/" class="nv_home">HOME</a>&gt; <a
 				href="<%=request.getContextPath()%>/board/pr/prlist">게시판</a>&gt;<a
-				href="<%=request.getContextPath() %>/board/pr/prlist">홍보게시판</a>
+				href="<%=request.getContextPath()%>/board/pr/prlist">홍보게시판</a>
 			<div class="nv_service">
 				<a class="nvs_print" href="#total"
 					onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span>
@@ -46,7 +47,7 @@
 		<div id="content">
 			<!-- 컨텐츠 타이틀 -->
 			<h3 class="cnt_ti">홍보 리스트</h3>
-			<form id="search" action="list" method="post">
+			<form id="search" action="prlist" method="post">
 				<input name="page" type="hidden" value="${pageMaker.cri.page }">
 				<input name="perPageNum" type="hidden"
 					value="${pageMaker.cri.perPageNum }">
@@ -79,8 +80,7 @@
 								placeholder="Search for ..." class="form-control" type="text"
 								value="${pageMaker.cri.keyword }"> <span id="gridSearch"
 								class="input-group-btn" style="display: inline;">
-								<button type="button" id="searchBtn"
-									class="btn btn-sm btn-white">검색</button>
+								<button type="button" id="searchPRBtn" class="btn btn-sm btn-white">검색</button>
 							</span>
 						</div>
 						<span id="gridSearchReset" style="display: none;">
@@ -123,22 +123,22 @@
 								<th scope="col"><a href="prdetail?pr_num=${prVO.pr_num }">${prVO.title }</a></th>
 								<th scope="col">${prVO.writer }</th>
 								<th scope="col">${prVO.regdate }</th>
-								
-								
+
+
 								<c:choose>
-							<c:when test= "${prVO.app_result eq 0}">
-							<th scope="col">대기중</th>
-							</c:when>
-							<c:when test="${prVO.app_result eq 1}">
-							<th scope="col">승인</th>
-							</c:when>
-							<c:when test="${prVO.app_result eq 2}">
-							<th scope="col">거절</th>
-							</c:when>
-							<c:otherwise>
-							<th scope="col"> 왜 안나와? </th>
-							</c:otherwise>
-							</c:choose>	
+									<c:when test="${prVO.app_result eq 0}">
+										<th scope="col">대기중</th>
+									</c:when>
+									<c:when test="${prVO.app_result eq 1}">
+										<th scope="col">승인</th>
+									</c:when>
+									<c:when test="${prVO.app_result eq 2}">
+										<th scope="col">거절</th>
+									</c:when>
+									<c:otherwise>
+										<th scope="col">왜 안나와?</th>
+									</c:otherwise>
+								</c:choose>
 							</tr>
 						</c:forEach>
 					</c:if>
@@ -153,49 +153,47 @@
 
 				<a href="<%=request.getContextPath()%>/board/pr/prlist"> <img
 					src="<%=request.getContextPath()%>/resources/images/list.gif"
-					alt="목록"></a> <a
+					alt="목록"></a> 
+				<c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'TR' }" >	
+				<a
 					href="<%=request.getContextPath()%>/board/pr/prregist"> <img
 					src="<%=request.getContextPath()%>/resources/images/write.gif"
 					alt="쓰기"></a>
+				</c:if>
 			</div>
 			<div id="grid-pager"
-				class="ui-jqgrid-pager ui-state-default ui-corner-bottom" dir="ltr" style="width: 320px;"  >
-				<div id="pg_grid-pager" class="ui-pager-control" role="group">
-					<table class="ui-pg-table ui-common-table ui-pager-table "style="width: 320px; margin-left: 100px;">
-						<tr>
-							<td id="grid-pager_left" align="left">
-								<div class="ui-pg-div">
-									<span class="ui-icon ace-icon"></span>
-								</div>
-							</td>
-							<td id="grid-pager_center" align="center" style="width: 320px;" >
-								<table class="ui-pg-table ui-common-table ui-paging-pager">
-									<tr >
-										<td id="first_grid-pager"
-											class="ui-pg-button ui-corner-all ui-state-disabled"
+				dir="ltr"
+				style="width: 320px;">
+				<div id="pg_grid-pager"role="group">
+					<table style="width: 320px; margin-left: 100px;">
+						<tr>							
+							<td id="grid-pager_center" align="center" style="width: 320px;">
+								<table >
+									<tr>
+										<td id="first_grid-pager"											
 											title="First Page" style="cursor: default;"><span
-											class="ui-icon ace-icon"><b> << </b></span></td>
+											><b> &lt;&lt; </b></span></td>
 										<td id="prev_grid-pager"
-											class="ui-pg-button ui-corner-all ui-state-disabled"
+											
 											title="Previous Page" style="cursor: default;"><span
-											class="ui-icon ace-icon"><b> < </b></span></td>
+											><b> &lt; </b></span></td>
 										<td class="ui-pg-button ui-state-disabled"><span
-											class="ui-separator"></span></td>
+											></span></td>
 										<td id="input_grid-pager" dir="ltr"><input id="pageNum"
-											class="ui-pg-input ui-corner-all" type="text" size="2"
+											 type="text" size="2"
 											maxlength="7" value="${pageMaker.cri.page }"
 											style="width: 40px;"> / <span id="sp_1_grid-pager">${pageMaker.realEndPage }</span>
 										</td>
-										<td class="ui-pg-button ui-state-disabled"><span
-											class="ui-separator"></span></td>
+										<td ><span
+											></span></td>
 										<td id="next_grid-pager"
-											class="ui-pg-button ui-corner-all ui-state-disabled"
+											
 											title="Next Page" style="cursor: default;"><span
-											class="ui-icon ace-icon"><b> > </b></span></td>
+											><b> &gt;</b></span></td>
 										<td id="last_grid-pager"
-											class="ui-pg-button ui-corner-all ui-state-disabled"
+											
 											title="Last Page" style="cursor: default;"><span
-											class="ui-icon ace-icon"><b> >> </b></span></td>
+											><b> &gt;&gt; </b></span></td>
 									</tr>
 								</table>
 							</td>
@@ -211,7 +209,6 @@
 	</div>
 </div>
 
-<!-- //container -->
-</div>
+
 
 <%@ include file="/WEB-INF/views/board/pr/list_js.jsp"%>
