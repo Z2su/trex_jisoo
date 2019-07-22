@@ -29,7 +29,7 @@
 		order by PRICE desc
 	</select>
 	<select id="selectSeatList" resultType="SeatReq">
-		select col, num, grade
+		select col, num, grade, pfshs_rese
 		from seat_view
 		where pfsh_code=#{pfsh_code}
 		order by col ,num

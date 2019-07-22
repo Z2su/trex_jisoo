@@ -6,6 +6,7 @@ public class SeatReqVO {
 	private int count;
 	private String col;
 	private int num;
+	private int pfshs_rese;
 	public String getGrade() {
 		return grade;
 	}
@@ -36,10 +37,17 @@ public class SeatReqVO {
 	public void setNum(int num) {
 		this.num = num;
 	}
+	
+	public int getPfshs_rese() {
+		return pfshs_rese;
+	}
+	public void setPfshs_rese(int pfshs_rese) {
+		this.pfshs_rese = pfshs_rese;
+	}
 	@Override
 	public String toString() {
 		return "SeatReqVO [grade=" + grade + ", price=" + price + ", count=" + count + ", col=" + col + ", num=" + num
-				+ "]";
+				+ ", pfshs_rese=" + pfshs_rese + "]";
 	}
 	
 	

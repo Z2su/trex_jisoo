@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <link rel="stylesheet" type="text/css"
 	href="//ticketimage.interpark.com/TicketImage/onestop/css/style.css">
@@ -24,6 +25,22 @@
 <script type="text/javascript" src="/Book/Inc/Js/BookSeatConfig.js"></script>
 <script type="text/javascript"
 	src="//ticketimage.interpark.com/TicketImage/onestop/css/common.js"></script>
+	
+<style>
+	.seatlabel{border: 1px solid black; width:20px; height:20px; display:inline-block; font-size: 10px; color: white; text-align: center;margin-right: 3px;margin-bottom: 3px;}
+	.seatlabel[grade="R"]{background:#7C68EE;}
+	.seatlabel[grade="S"]{background:#1CA814;}
+	.seatlabel[grade="A"]{background:#17B3FF;}
+	.seatlabel[grade="B"]{background:#FB7E4F;}
+	.seatlabel[grade="C"]{background:#A0D53F;}
+	
+	.seatlabel[pfshs_rese="1"]{background:white;}
+	.seatlabel[pfshs_rese="0"]{cursor: pointer}
+	.seatlabel[pfshs_rese="2"]{cursor: pointer; border: 2px solid red;}
+/* 	.seatcheck{display:none;} */
+	div#seat{border: 1px solid blue;width:450px; height:200px;} 
+
+</style><!-- "#7C68EE", "#1CA814", "#17B3FF","#FB7E4F","#A0D53F" -->
 <div id="contentswrap">
 	<!-- 내용채우기 -->
 	
@@ -101,14 +118,51 @@
 
 					</c:forEach> --%>
 					
+					<div id ="seat">
+					<c:forEach items="${SeatReqList }" var="SeatReq" varStatus="status">
+					<c:set var="str" value="${SeatReqList[status.index+1].col} "/>
 					
-					<c:forEach items="${SeatReqList }" var="SeatReq" varStatus="index">
-						<c:set var="colcheck" value="${SeatReq.col }"></c:set>
-						<c:if test="${colcheck ne SeatReq.col}">
-						<input type="checkbox" id="${SeatReq.col}${SeatReq.num}" />
+					<label class="seatlabel" for="${SeatReq.col}${SeatReq.num}"  grade="${SeatReq.grade }" pfshs_rese="${SeatReq.pfshs_rese }">${SeatReq.col}${SeatReq.num}
+					</label>
+						<input type="checkbox" id="${SeatReq.col}${SeatReq.num}" class="seatcheck" col="${SeatReq.col}" num="${SeatReq.num}" grade="${SeatReq.grade }" pfshs_rese="${SeatReq.pfshs_rese }" 
+						<c:if test="${SeatReq.pfshs_rese eq 1 }">
+						disabled="true"
+						
+						</c:if>
+						 />
+						
+						
+						<c:if test="${status.index > 0 }">
+						
+						
+							<c:if test="${SeatReq.col ne fn:toUpperCase(fn:trim(str)) }">
+							
+								<br/>
+							</c:if>
 						</c:if>
 					</c:forEach>
 					
+					</div>
+					
+					<script>
+						$('.seatlabel').on('click',function(){
+							
+							alert($(this).attr('id'));
+							
+							
+							if($('#'+$(this).attr('for')).is(":checked")==false){
+							$('#'+$(this).attr('id')).attr({"pfshs_rese":"2"});
+							$(this).attr('pfshs_rese','2');
+							}
+							else{
+								$('#'+$(this).attr('id')).attr({"checked": true,"pfshs_rese":"0"});
+								$(this).attr('pfshs_rese','0');
+								
+							}
+							//$(this).css("background-color","white");
+						});
+					
+					</script>
 			<!-- 
 				<form id="formCalendar" name="formCalendar" method="get"
 					action="BookDateTime.asp">
