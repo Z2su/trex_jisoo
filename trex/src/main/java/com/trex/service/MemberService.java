@@ -5,8 +5,6 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
-
 import com.trex.controller.Criteria;
 import com.trex.dto.EPViewVO;
 import com.trex.dto.EmployeeVO;
@@ -28,6 +26,9 @@ public interface MemberService {
 		GmemberVO getGmember(String id)throws SQLException;
 		TroupeVO getTroupe(String id)throws SQLException;
 		EmployeeVO getEmployee(String ep_code)throws SQLException;
+		
+		void delete() throws Exception;
+		void delete(String code) throws Exception;
 
 		// 회원리스트
 		List<MemberVO> getMemberList()throws SQLException;

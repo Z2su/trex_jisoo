@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Hall-Mapper">
+
+	<select id="selectHallList" resultType="Hall">
+		select * 
+		from hall 
+		order by hall_code desc		
+	</select>
+	
+	<select id="selectHall"  resultType="Hall">
+		select * 
+		from hall 
+		where hall_code=#{hall_code}
+	</select>
+	
+	<update id="insertHall">
+		insert 
+		into 
+		hall(hall_code,hall_num,hall_name,seat,setarrangement,cr_price)
+		values
+		(#{hall_code},#{hall_num},#{hall_name},#{seat},#{setarrangement},#{cr_price})
+	</update>
+	
+	<update id="updateHall" >
+		update 
+		hall 
+		set 
+		title=#{hall_name}, seat=#{seat}, setarrangement=#{setarrangement}, cr_price=#{cr_price}
+		where hall_code=#{hall_code}
+	</update>
+	
+	<update id="deleteHall" >
+		delete 
+		from hall 
+		where hall_code=#{hall_code}
+	</update>
+	
+	
+	
+	<select id="selectHallNextSeq" resultType="int">
+		select HALL_SEQ.nextval as hall_num from dual
+	</select>
+
+
+</mapper>

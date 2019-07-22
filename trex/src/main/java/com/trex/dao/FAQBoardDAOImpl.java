@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.controller.SearchCriteria;
 import com.trex.dto.FAQBoardVO;
-import com.trex.dto.QnABoardVO;
 
 public class FAQBoardDAOImpl implements FAQBoardDAO {
 @Autowired

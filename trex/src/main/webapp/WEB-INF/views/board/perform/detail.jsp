@@ -62,7 +62,7 @@
 								<li><a
 									href="/resources/images/perform/performance_1_155383691853133_518870747.jpg"
 									rel="facebox"><img
-										src="/resources/images/perform/performance_1_155383691853133_518870747.jpg"
+										src="/resources/images/perform/${PFGBoard.pf_code }.jpg"
 										alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”" style="display: inline;"></a></li>
 								<li><a
 									href="/resources/images/perform/performance_2_155383691903589_1853500726.jpg"

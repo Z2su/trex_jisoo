@@ -8,7 +8,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dto.AdVO;
-import com.trex.dto.PrVO;
 import com.trex.request.Criteria;
 
 public class AdDAOImpl implements AdDAO {
