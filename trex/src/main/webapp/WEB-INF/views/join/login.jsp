@@ -58,6 +58,7 @@ body .container {
   width: 700px;
   height: 500px;
   margin: 80px auto 0;
+   margin-bottom: auto;
   background-color: #ffffff;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
@@ -70,7 +71,7 @@ body .container .half {
   padding: 58px 40px 0;
 }
 body .container .half.bg {
-  background-image: url("http://www.blueb.co.kr/SRC2/_image/v01.jpg");
+/*   background-image: url("http://www.blueb.co.kr/SRC2/_image/v01.jpg"); */
   background-size: 400px;
   background-repeat: no-repeat;
 }

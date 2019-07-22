@@ -49,196 +49,171 @@
 				</div>
 			</div>
 		</div>
-		<!-- //navigation -->
-
-		<!-- container -->
-		<div id="container">
-			<%-- 				<%@ include file="/WEB-INF/views/board/commons/submenu.jsp" %>
- --%>
-
-			<!-- content-->
-			<div id="content">
-				<!-- 컨텐츠 타이틀 -->
-				<!-- <h3 class="cnt_ti">detail</h3> -->
-
-				<!-- 	
-				///////////////////////////////////
-				//                               //
-				//                               //
-				//            내용채우기                            //
-				//                               //
-				//                               //
-				//                               //
-				//                               //
-				//                               //
-				/////////////////////////////////// -->
-			</div>
-
-
-		</div>
-		<!-- //container -->
 	</div>
-	<div id="container">
-		<!-- leftmenu-->
-		<div id="wrap">
-			<h2 id="leftTi">홈페이지가이드</h2>
-
-			<!--LEFTMENU START-->
-
-			<script type="text/javascript">
-			<!--
-				var old_menu = '';
-				var old_cell = '';
-				var old_Lmenu = '';
-
-				function menuclick(submenu) {
-					if (old_menu != submenu) {
-						if (old_menu != '') {
-							old_menu = 'none';
-						}
-						jQuery(".lm_2th > li > div").hide();
-						if (old_menu != '') {
-							jQuery("#" + old_Lmenu).parent().find(">a")
-									.removeClass("link_2th_ov").addClass(
-											"link_2th");
-						}
-						jQuery("#" + submenu).parent().find(">a").removeClass(
-								"link_2th").addClass("link_2th_ov");
-
-						document.getElementById(submenu).style.display = 'block';
-						old_menu = document.getElementById(submenu).style.display;
-						old_Lmenu = submenu;
-					} else {
-						document.getElementById(submenu).style.display = 'none';
-						old_menu = '';
-					}
-				}
-			//-->
-			</script>
 
 
-			<!-- 컨텐츠 타이틀 -->
-			<h3 class="cnt_ti">회원가입</h3>
-			<!-- 컨텐츠 타이틀 -->
+	<style>
+@import url(http://fonts.googleapis.com/css?family=Cookie);
 
+[class*="icon-"] {
+  font-family: 'Cookie';
+  font-style: normal;
+  font-size: 2em;
+  speak: none;
+}
+.icon-home:after { content: "Gmem"; } 
+.icon-cog:after { content: "Tro"; } 
+.icon-cw:after { content: "work"; } 
+.icon-location:after { content: "contact"; } 
 
+* { 
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing:    border-box; 
+  box-sizing:         border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: #444;
+  font-size: 100%;    
+  background: #f7f7f7;
+}
+
+body {
+  font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; 
+  font-size:18px; 
+  font-size:1.125rem;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: #DD6C4F;
+}
+
+a:hover {
+  text-decoration:underline;
+}
+
+a:focus { 
+  outline: none;
+}
+
+.page-wrap {
+  width: 960px;
+  margin: 80px auto;
+}
+
+.nav {
+  list-style: none;
+  text-align: center;
+}
+
+.nav li {
+  position: relative;
+  display: inline-block;
+  margin-right: -4px;
+}
+
+.nav li:before {
+  content: "";
+  display: block;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+}
+.nav a {
+  display: block;
+  background-color: #f7f7f7;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  color: #a7a7a7;
+  margin: 36px;
+  width: 180px;
+  height: 180px;
+  position: relative;
+  text-align: center;
+  line-height: 144px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+}
+
+.nav a:before {
+  content: "";
+  display: block;
+  background: #fff;
+  border-top: 2px solid #ddd;
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  bottom: -18px;
+  right: -18px;
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: inset 0px 8px 48px #ddd;
+}
+
+.nav a:hover {
+  text-decoration: none;
+  color: #555;
+  background: #f5f5f5;
+}
+.first{text-align: center;}
+
+</style>
+
+<div class="page-wrap">
+	
+		<nav>
+			
+			<ul class="nav">
+				<li><a href="joingmem" class="icon-Gmem">Gmem</a></li>
+				<li><a href="jointro" class="icon-Tro">Tro</a></li>	
+			</ul>
+		</nav>
+
+		<div id="first" name="first">
 
 			<p>
-				회원가입은<br>
+				<br><br><br>
 				<span class="bold point">일반회원과 공연단회원으로 선택하여 가입할</span> 수 있습니다.
 			</p>
 		</div>
-		<div id="topBox_foot"></div>
-		<h4 class="top_mar_50">회원가입</h4>
-		<div class="freebiemember">
+</div>
+
+
+
+	 <div>
+		<!-- <div class="freebiemember">
 			<ul class="h5_ul">
 				<li>회원가입은 일반회원과 공연단회원으로 가입가능합니다</li>
 				<li>다양한 이벤트 참여기회가 부여됩니다.</li>
 				<li>공연, 아카데미, 이벤트 등 다양한 정보에 대한 메일서비스를 받을 수 있습니다.</li>
 				<li>예당 홈페이지, 전화예매(1544-1556)시 예매 수수료 면제.</li>
 
-			</ul>
-			<strong class="left_mar_40"><a href="joingmem">일반회원</a></strong> <strong
-				class="left_mar_40"><a href="jointro">공연단회원</a></strong>
 			<div class="clear"></div>
-		</div>
+			</ul>
+		 </div> -->
+		<!-- 	<strong class="left_mar_40"><a href="joingmem">일반회원</a></strong> <strong
+				class="left_mar_40"><a href="jointro">공연단회원</a></strong> -->
+
+	</div> 
 
 
-
-
-
-	</div>
 	
 
 
-	<script type="text/javascript">
-		// slide menu  2006-06-14
-		var isDOM = (document.getElementById ? true : false);
-		var isIE4 = ((document.all && !isDOM) ? true : false);
-		var isNS4 = (document.layers ? true : false);
-		var isNS = navigator.appName == "Netscape";
-
-		function getRef(id) {
-			if (isDOM)
-				return document.getElementById(id);
-			if (isIE4)
-				return document.all[id];
-			if (isNS4)
-				return document.layers[id];
-		}
-
-		function getSty(id) {
-			x = getRef(id);
-			return (isNS4 ? getRef(id) : getRef(id).style);
-		}
-
-		function moveRightEdge() {
-			var yMenuFrom, yMenuTo, yOffset, timeoutNextCheck;
-
-			if (isNS4) {
-				yMenuFrom = document.getElementById('divMenu').style.top;
-				yMenuTo = windows.pageYOffset + slidemenu_X; // 위쪽 위치
-			} else if (isDOM) {
-				yMenuFrom = parseInt(
-						document.getElementById('divMenu').style.top, 10);
-				yMenuTo = (isNS ? window.pageYOffset
-						: document.documentElement.scrollTop)
-						+ slidemenu_X; // 위쪽 위치
-			}
-			timeoutNextCheck = 30;
-
-			divMenu_H = document.getElementById('divMenu');
-			limit_H = (parseInt(document.documentElement.scrollHeight) - slidemenu_Y)
-					- parseInt(divMenu_H.offsetHeight);
-			divMenu_t = parseInt(document.getElementById('divMenu').style.top);
-			if (yMenuFrom != yMenuTo) {
-				yOffset = Math.ceil(Math.abs(yMenuTo - yMenuFrom) / 20);
-				if (yMenuTo < yMenuFrom) {
-					yOffset = -yOffset;
-				}
-				if (isNS4) {
-					if (yOffset > 0) {
-						if (divMenu_t < limit_H) {
-							document.getElementById('divMenu').style.top += yOffset
-									+ "px";
-						}
-					} else {
-						document.getElementById('divMenu').style.top += yOffset
-								+ "px";
-					}
-
-				} else if (isDOM) {
-					if (yOffset > 0) {
-						if (divMenu_t < limit_H) {
-							document.getElementById('divMenu').style.top = parseInt(document
-									.getElementById('divMenu').style.top)
-									+ yOffset + "px";
-						}
-					} else {
-						document.getElementById('divMenu').style.top = parseInt(document
-								.getElementById('divMenu').style.top)
-								+ yOffset + "px";
-					}
-				}
-				timeoutNextCheck = 10;
-			}
-
-			setTimeout("moveRightEdge()", timeoutNextCheck);
-		}
-
-		if (isNS4) {
-			var divMenu = document["divMenu"];
-			document.getElementById('divMenu').style.top = slidemenu_X + "px";
-			document.getElementById('divMenu').style.visibility = "visible";
-			moveRightEdge();
-		} else if (isDOM) {
-			var divMenu = getRef('divMenu');
-			document.getElementById('divMenu').style.top = slidemenu_X + "px";
-			document.getElementById('divMenu').style.visibility = "visible";
-			moveRightEdge();
-		}
-	</script>
-
-	</div>
+	
+	
 </body>
 </html>
