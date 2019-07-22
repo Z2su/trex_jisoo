@@ -177,8 +177,8 @@ a:focus {
 		<nav>
 			
 			<ul class="nav">
-				<li><a href="joingmem" class="icon-Gmem">Gmem</a></li>
-				<li><a href="jointro" class="icon-Tro">Tro</a></li>	
+				<li><a href="joingmem" class="icon-Gmem">Gmember</a></li>
+				<li><a href="jointro" class="icon-Tro">Troupe</a></li>	
 			</ul>
 		</nav>
 
@@ -186,7 +186,7 @@ a:focus {
 
 			<p>
 				<br><br><br>
-				<span class="bold point">일반회원과 공연단회원으로 선택하여 가입할</span> 수 있습니다.
+				<span class="bold point">일반회원(Gmember)과 공연단회원(Troupe)으로 선택하여 가입할</span> 수 있습니다.
 			</p>
 		</div>
 </div>
