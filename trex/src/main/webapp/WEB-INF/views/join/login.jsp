@@ -71,7 +71,7 @@ body .container .half {
   padding: 58px 40px 0;
 }
 body .container .half.bg {
-/*   background-image: url("http://www.blueb.co.kr/SRC2/_image/v01.jpg"); */
+  background-image: url("http://www.blueb.co.kr/SRC2/_image/v01.jpg"); 
   background-size: 400px;
   background-repeat: no-repeat;
 }
