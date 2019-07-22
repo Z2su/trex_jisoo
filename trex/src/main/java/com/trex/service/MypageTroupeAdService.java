@@ -1,20 +1,20 @@
 package com.trex.service;
 
-import java.util.List;
+import java.sql.SQLException;
 
-import com.trex.controller.SearchCriteria;
+import java.util.Map;
+
 import com.trex.dto.MypageTroupeAdListVO;
+
+import com.trex.request.Criteria;
 
 public interface MypageTroupeAdService {
 
-	public void create(MypageTroupeAdListVO ad) throws Exception;
-
-	public MypageTroupeAdListVO read(int ad_num) throws Exception;
-
-	public MypageTroupeAdListVO readByNum(int ad_num) throws Exception;
-
-
-	public List<MypageTroupeAdListVO> listSearch(SearchCriteria cri) throws Exception;
-
-	int readSearchTroupeAdCount(SearchCriteria cri) throws Exception;
+	public Map<String,Object> getAdList(Criteria cri)throws SQLException;
+	
+	public MypageTroupeAdListVO adDetail(int ad_num) throws SQLException;
+	
+	void write(MypageTroupeAdListVO ad)throws SQLException;
+	void modify(MypageTroupeAdListVO ad)throws SQLException;
+	void remove(int ad_num) throws SQLException;
 }

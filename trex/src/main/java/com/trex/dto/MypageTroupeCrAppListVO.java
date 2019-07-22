@@ -6,12 +6,16 @@ public class MypageTroupeCrAppListVO {
 
 	private String cr_app_code;
 	private int cr_app_num;
-	private String title;
+	private String hall_code;
+	private String ep_code;
 	private String writer;
+	private String title;
 	private String enable;
 	private String cont;
 	private Date regdate;
 	private Date modidate;
+	private String pf_code;
+	private String pfsh_code;
 
 	public String getCr_app_code() {
 		return cr_app_code;
@@ -29,12 +33,20 @@ public class MypageTroupeCrAppListVO {
 		this.cr_app_num = cr_app_num;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getHall_code() {
+		return hall_code;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setHall_code(String hall_code) {
+		this.hall_code = hall_code;
+	}
+
+	public String getEp_code() {
+		return ep_code;
+	}
+
+	public void setEp_code(String ep_code) {
+		this.ep_code = ep_code;
 	}
 
 	public String getWriter() {
@@ -43,6 +55,14 @@ public class MypageTroupeCrAppListVO {
 
 	public void setWriter(String writer) {
 		this.writer = writer;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getEnable() {
@@ -77,11 +97,27 @@ public class MypageTroupeCrAppListVO {
 		this.modidate = modidate;
 	}
 
-	@Override
-	public String toString() {
-		return "MypageCrAppListVO [cr_app_code=" + cr_app_code + ", cr_app_num=" + cr_app_num + ", title=" + title
-				+ ", writer=" + writer + ", enable=" + enable + ", cont=" + cont + ", regdate=" + regdate
-				+ ", modidate=" + modidate + "]";
+	public String getPf_code() {
+		return pf_code;
 	}
 
+	public void setPf_code(String pf_code) {
+		this.pf_code = pf_code;
+	}
+
+	public String getPfsh_code() {
+		return pfsh_code;
+	}
+
+	public void setPfsh_code(String pfsh_code) {
+		this.pfsh_code = pfsh_code;
+	}
+
+	@Override
+	public String toString() {
+		return "CrAppVO [cr_app_code=" + cr_app_code + ", cr_app_num=" + cr_app_num + ", hall_code=" + hall_code
+				+ ", ep_code=" + ep_code + ", writer=" + writer + ", title=" + title + ", enable=" + enable + ", cont="
+				+ cont + ", regdate=" + regdate + ", modidate=" + modidate + ", pf_code=" + pf_code + ", pfsh_code="
+				+ pfsh_code + "]";
+	}
 }

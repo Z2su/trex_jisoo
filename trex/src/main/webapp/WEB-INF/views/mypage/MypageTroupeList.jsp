@@ -70,16 +70,18 @@
 							<td><input type="pwd" value="${loginUser.mem_pwd}"
 								readonly=""></td>
 						</tr>
+					</tbody>
+				</table>
 
-						<div id="txt">
-					<table cellpadding="0" cellspacing="0" width="100%" border="0" class="table1">
+				<div id="txt">
+					<table cellpadding="0" cellspacing="0" width="100%" border="0"
+						class="table1">
 
 						<tbody class="text-center">
 							<tr>
 								<td>* 사업자 번호</td>
-							<td>
-								<input type="name" value="${troupe.bupanum}"readonly="readonly">
-							</td>
+								<td><input type="name" value="${troupe.bupanum}"
+									readonly="readonly"></td>
 							</tr>
 							<tr>
 								<td>* 사업자 이름</td>
@@ -87,25 +89,19 @@
 									readonly="readonly"></td>
 							</tr>
 							<tr>
-								<td>* 주소</td>
-								<td><input type="address" value="${gmem.address}"
-									readonly="readonly"></td>
-							</tr>
-							<tr>
-								<td>이메일</td>
+								<td>* 이메일</td>
 								<td><input type="mile" value="${loginUser.mem_email}"
 									readonly="readonly"></td>
 							</tr>
-						
-					</tbody>
-				</table>
+						</tbody>
+					</table>
+				</div>
 			</div>
-		</div>
 
 			<div class="board_butt">
 				<button type="button" id="ModifyBtn">수정</button>
 			</div>
-			
+
 			<script>
 				$('#ModifyBtn').on('click', function(e) {
 					location="<%=request.getContextPath()%>/mypage/MypageTroupeModify"
