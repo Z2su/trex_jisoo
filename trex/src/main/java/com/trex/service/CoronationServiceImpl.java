@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.trex.dao.CoronationDAO;
-import com.trex.dao.PerformGuidBoardDAO;
 import com.trex.dto.CoronationVO;
 
 public class CoronationServiceImpl implements CoronationService {

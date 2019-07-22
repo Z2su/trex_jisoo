@@ -209,6 +209,19 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 
+	@Override
+	public void delete() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(String code) throws Exception {
+		memberDAO.deleteMember(code);
+		
+	}
+
+
 
 
 	@Override
@@ -226,6 +239,7 @@ public class MemberServiceImpl implements MemberService {
 		memberDAO.insertEmployee(employee);
 		
 	}
+
 
 
 }

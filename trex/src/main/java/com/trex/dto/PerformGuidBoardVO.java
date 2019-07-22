@@ -2,8 +2,6 @@ package com.trex.dto;
 
 import java.util.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 public class PerformGuidBoardVO {
 	private String pfg_code;
 	private int pfg_num;

@@ -58,13 +58,22 @@ public class ManagerController {
 	}
 	
 	@RequestMapping(value = "/epregist", method = RequestMethod.POST)
-	public String memberjointroPOST(MemberVO member, EmployeeVO employee, HttpServletResponse response) throws Exception {
+	public String epregistPOST(MemberVO member, EmployeeVO employee, HttpServletResponse response) throws Exception {
 		
 		mservice.regist(member,employee);
 		
 		response.setContentType("text/html;charset=utf-8");
 		
-		return "redirect:/manager/list";
+		return "redirect:/manager/eplist";
+	}
+	
+	@RequestMapping(value = "/epdelete")
+	public String epdeletrPOST(String code, HttpServletResponse response) throws Exception {
+		
+		mservice.delete(code);
+		response.setContentType("text/html;charset=utf-8");
+		
+		return "redirect:/manager/eplist";
 	}
 	
 	
@@ -103,6 +112,24 @@ public class ManagerController {
 		return dataList;
 		
 	}
+	
+	@RequestMapping(value = "/calendar/list", method = RequestMethod.POST)
+	public ResponseEntity<String> registCal(@RequestBody CalendarVO calendar) throws Exception {
+
+		ResponseEntity<String> entity = null;
+
+		try {
+			calService.create(calendar);
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+
+		return entity;
+
+	}
+	
 	
 	@RequestMapping(value = "/calendar/regist", method = RequestMethod.POST)
 	public ResponseEntity<String> register(@RequestBody CalendarVO calendar) throws Exception {
