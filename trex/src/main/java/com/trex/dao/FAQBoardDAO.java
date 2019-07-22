@@ -6,7 +6,6 @@ import java.util.Map;
 
 import com.trex.controller.SearchCriteria;
 import com.trex.dto.FAQBoardVO;
-import com.trex.dto.QnABoardVO;
 
 public interface FAQBoardDAO {
 

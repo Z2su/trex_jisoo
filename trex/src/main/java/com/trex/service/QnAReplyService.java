@@ -1,16 +1,9 @@
 package com.trex.service;
 
 import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Service;
 
-import com.trex.controller.Criteria;
-import com.trex.controller.SearchCriteria;
-
-import com.trex.dto.QnABoardVO;
 import com.trex.dto.QnAReplyVO;
 
 
