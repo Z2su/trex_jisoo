@@ -164,6 +164,12 @@ public class MemberDAOImpl  implements MemberDAO{
 		session.update("Member-Mapper.updateEmployee",employee);
 		
 	}
+
+	@Override
+	public void deleteMember(String mem_code) throws SQLException {
+		session.update("Member-Mapper.deleteMember", mem_code);
+		
+	}
 	
 	
 

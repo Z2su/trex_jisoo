@@ -1,7 +1,6 @@
 package com.trex.service;
 
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Map;
 
 import com.trex.dto.PrVO;

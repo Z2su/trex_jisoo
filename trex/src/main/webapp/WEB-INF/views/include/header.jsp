@@ -5,7 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
 <!DOCTYPE html>
 <html>
 <head profile="http://www.w3.org/2005/10/profile">
@@ -176,22 +176,52 @@
                         </ul>
                      </div>
                      </li>
-                     
                      	
-				<c:if test="${fn:substring(loginUser.mem_code,0,2) ne 'EP' }" >
-				
-                  <li><a href="<%=request.getContextPath() %>/mypage/list" class="">마이페이지<span
+			<c:if test="${fn:substring(loginUser.mem_code,0,2) ne 'EP' }" >
+					
+					<c:if test="${loginUser eq null  }">
+					 <li><a href="#" class="">마이페이지<span
+                        class="arrow" style="display: none;"></span></a>
+                  <div id="tms">로그인 후 이용 가능합니다</div></li>
+                  		
+                  	</c:if>
+                  	
+                   <c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'GM' }" >
+                   
+                  <li><a href="<%=request.getContextPath() %>/mypage/MypageMemberList" class="">마이페이지<span
                         class="arrow" style="display: none;"></span></a>
                   <div id="tms">
-                        <ul class="">
-                           <li><a href="#" class="">인사말</a></li>
-                           <li><a href="#" class="">연혁</a></li>
-                           <li><a href="#" class="">조직과  기구</a></li>
-                           <li><a href="#" class="">시설안내</a></li>
-                           <li><a href="#" class="">후원회</a></li>
+                  	
+                 
+                  
+                        <ul class="" >
+                           <li><a href="<%=request.getContextPath() %>/mypage/MypageMemberList" class="">회원정보조회</a></li>
+                           <li><a href="<%=request.getContextPath() %>/mypage/MypageMemberRescHis" class="">예매확인 및 취소</a></li>
+                           <li><a href="<%=request.getContextPath() %>/mypage/MypageMemberMile" class="">마일리지조회</a></li>
+                           <li><a href="<%=request.getContextPath() %>/mypage/MypageMemberBoardList" class="">게시글조회</a></li>
+                           <li><a href="<%=request.getContextPath() %>/mypage/MypageMemberSec" class="">회원탈퇴</a></li>
+                        </ul>
+                        </div>
+                        </li>
+                  </c:if>
+                  <c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'TR' }" >
+                    
+                  <li><a href="<%=request.getContextPath() %>/mypage/MypageTroupeList" class="">마이페이지<span
+                        class="arrow" style="display: none;"></span></a>
+                  <div id="tms">
+                  
+                        <ul class="" >
+                           <li><a href="<%=request.getContextPath() %>/mypage/MypageTroupeList" class="">공연단정보조회</a></li>
+                           <li><a href="<%=request.getContextPath() %>/mypage/MypageTroupeCrAppList" class="">대관신청조회</a></li>
+                           <li><a href="<%=request.getContextPath() %>/mypage/MypageTroupeAdList" class="">광고신청조회</a></li>
+                           <li><a href="<%=request.getContextPath() %>/mypage/MypageTroupeSec" class="">회원탈퇴</a></li>
                         </ul>
                      </div></li>
+                     
+                        </c:if>
+                     
                 </c:if>
+				
                 <c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }" >
                 
                   <li><a href="<%=request.getContextPath() %>/manager/myinfo" class="">관리자페이지<span

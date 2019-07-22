@@ -1,13 +1,8 @@
 package com.trex.service;
 
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
-
-import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.trex.controller.Criteria;
 import com.trex.dao.MemberDAO;
@@ -146,6 +141,18 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void regist(MemberVO member) throws SQLException {
 
+	}
+
+	@Override
+	public void delete() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(String code) throws Exception {
+		memberDAO.deleteMember(code);
+		
 	}
 
 }

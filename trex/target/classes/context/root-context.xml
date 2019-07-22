@@ -22,6 +22,10 @@
 	<import resource="classpath:context/Notice-context.xml"/>
 	<import resource="classpath:context/CrApp-context.xml"/>
 	<import resource="classpath:context/PFRESE-context.xml"/>
+	<import resource="classpath:context/MypageGmember-context.xml"/>
+	<import resource="classpath:context/MypageMember-context.xml"/>
+	<import resource="classpath:context/MypageTroupe-context.xml"/>
+	<import resource="classpath:context/MypageMemberBoard-context.xml"/>
 	<bean id="mailNotifier"
 		  class="com.trex.mail.MimeAttachNotifier"
 		  p:mailSender-ref="mailSender"

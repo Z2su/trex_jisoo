@@ -2,7 +2,6 @@ package com.trex.controller;
 
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.trex.dao.MemberDAO;
 import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
 import com.trex.dto.TroupeVO;
