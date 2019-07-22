@@ -4,11 +4,17 @@
 
 	
 	
+	<update id="GetKey" parameterType="Map">
+		update memberinfo Set_Key = #{param2} where mem_id = #{param}
+	</update>
+	<update id="alter_memberKey" parameterType="Map">
+		update memberinfo Set member_key = 'y' where mem_id = #{param1} and member_key = #{param2}
+	</update>
 	<update id="insertMember">
 		insert 
-		into 
-		MEM(mem_code,mem_id,mem_pwd,mem_email)
-		values
+		into  
+		MEM(mem_code,mem_id,mem_pwd,mem_email)   
+		values	 
 		(#{mem_code},#{mem_id},#{mem_pwd},#{mem_email})
 	</update>
 	
@@ -29,7 +35,7 @@
 	</update>
 	
 	<update id="insertTroupe">
-		insert 
+		insert  
 		into 
 		TROUPE(tro_code,bupanum,name)
 		values
@@ -91,6 +97,18 @@
 		where mem_id=#{mem_id}
 	</select>
 	
+	<update id="updateAuthkey">
+		update mem
+		set authkey=#{authkey}
+		where mem_code=#{mem_code}
+	
+	</update>
+	<update id="updateAuthstatus">
+		update mem
+		set authstatus=#{authstatus}
+		where mem_code=#{mem_code}
+	
+	</update>
 	
 		
 	
