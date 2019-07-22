@@ -3,7 +3,6 @@ package com.trex.controller;
 import java.io.PrintWriter;
 import java.lang.reflect.Member;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.trex.dao.MemberDAO;
 import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
 import com.trex.dto.TroupeVO;
@@ -156,16 +154,16 @@ public class CommonController {
 	public String memberjointroPOST(MemberVO member, TroupeVO troupe, HttpServletResponse response) throws Exception {
 		System.out.println("!!!!!!!!!!!!!!!!!!!!>>>>>>지워"+member.getMem_email());
 		
-		/*String[] emails=member.getMem_email().split(",");
+		String[] emails=member.getMem_email().split(",");
 		String email = emails[0]+"@"+emails[1];
-		member.setMem_email(email);*/
+		member.setMem_email(email);
 		String code = "";
 		try {
 			code = MemberService.regist(member, "TR");
 			troupe.setTro_code(code);
 			MemberService.regist(troupe);
-/*			MemberService.create(member);
-*/
+			MemberService.create(member);
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
