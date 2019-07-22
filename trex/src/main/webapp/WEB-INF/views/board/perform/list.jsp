@@ -243,7 +243,7 @@
 				<ul id="schedulePerformance">
 				<c:forEach items="${PFGBoardList }" var="PFGBoard">
 					<li><span><img
-							src="/resources/images/perform/performimg.jpg"
+							src="/resources/images/perform/${PFGBoard.pf_code }.jpg"
 							style="width: 123px" alt="${PFGBoard.title }"></span>
 						<dl>
 							<dt>
@@ -296,7 +296,7 @@
 					</div>
 				</div>
 
-				<h4>지난 공연</h4>
+<!-- 				<h4>지난 공연</h4>
 				<ul id="schedulePerformance">
 
 					<li><span><img
@@ -331,7 +331,7 @@
 								src="/resources/images/perform/reser.gif" alt="한현진 바이올린 독주회 상세보기"></a>
 
 						</p></li>
-				</ul>
+				</ul> -->
 
 			</div>
 
