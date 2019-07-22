@@ -3,7 +3,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 
 <script>
-	$('#searchBtn').on('click',function(e){
+	$('#searchPRBtn').on('click',function(e){
 		var form = $('form#search');
 				
 		var searchType=$('select#searchType');
@@ -12,9 +12,9 @@
 			searchType.focus();
 			return;
 		}
-		form.submit();
+		form.submit();  
+	 
 	});
-	
 	$('#first_grid-pager>span').on('click',function(e){
 		location.href="prlist${pageMaker.makeQuery(1)}";
 	});
