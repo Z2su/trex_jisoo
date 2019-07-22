@@ -18,6 +18,7 @@
 	<import resource="classpath:context/Pr-context.xml"/>
 	<import resource="classpath:context/Ad-context.xml"/>
 	<import resource="classpath:context/mail-context.xml"/>
+	<import resource="classpath:context/Hall-context.xml"/>
 
 	<import resource="classpath:context/FAQ-context.xml"/>
 	<import resource="classpath:context/Notice-context.xml"/>

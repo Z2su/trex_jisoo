@@ -53,7 +53,7 @@
 			class="link_2th" onclick="menuclick('submenu2');return false;" onkeypress="">대관 신청</a></li>
 		<li><a href="<%=request.getContextPath()%>/board/Coronation/list"
 			class="link_2th" onclick="menuclick('submenu1');return false;" onkeypress="">대관 일정</a></li>
-		<li><a href="<%=request.getContextPath()%>/board/Coronation/list"
+		<li><a href="<%=request.getContextPath()%>/board/Coronation/hall/list"
 			class="link_2th" onclick="menuclick('submenu3');return false;" onkeypress="">대관 시설</a></li>
 
 	</ul>

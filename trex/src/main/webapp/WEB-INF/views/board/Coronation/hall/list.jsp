@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<c:set var="CR_AppList" value="${dataMap.CR_AppList }" />
+<c:set var="HallList" value="${dataMap.HallList }" />
 <link rel="stylesheet"
    href="<%=request.getContextPath()%>/resources/css/Coronation.css"
    type="text/css" media="all">
@@ -47,13 +47,14 @@
 	
 	<div id="content">
 			<!-- 컨텐츠 타이틀 -->
-			<h3 class="cnt_ti">대관 신청 리스트</h3>
+			<h3 class="cnt_ti">대관 시설</h3>
 			<table width="100%" class="table1 center" border="0" cellspacing="0" cellpadding="0">
 				<colgroup>
 					<col style="width: 45px;">
 					<col style="width: 280px;">
 					<col style="width: 90px;">
 					<col style="width: 145px;">
+					<col style="width: 50px;">
 					
 
 				</colgroup>
@@ -61,27 +62,23 @@
 					<tr>
 						<th scope="col" class="t_head">번호</th>
 						<th scope="col" class="t_head">제목</th>
-						<th scope="col" class="t_head">작성일</th>
-						<th scope="col" class="t_head">작성자</th>
+						<th scope="col" class="t_head">좌석</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="CR_AppList" items="${CRAppBoardList }">
+					<c:forEach var="HallList" items="${HallList }">
 						<tr role="row" class="jqgrow ui-row-ltr ui-widget-content">
-						<td role="gridcell" style="text-align:center;" >${CR_AppList.cr_app_num }</td>
-						<td role="gridcell" >
-							<a href="/board/Coronation/app/detail/${CR_AppList.cr_app_code }" onclick="OpenWindow('detail?cr_app_code=${CR_AppList.cr_app_code }','','850','620')"
-									 style='<c:if test="" >font-weight:bold;color:blue;</c:if>'>${CR_AppList.title }
+						<td role="gridcell" style="text-align:center;" >${HallList.hall_num }</td>
+						<!-- <td role="gridcell" >
+							<a href="/board/Coronation/detail/${HallList.hall_code }" onclick="OpenWindow('detail?crg_code=${HallList.hall_code }','','850','620')"
+									 style='<c:if test="${HallList.viewcnt >= 5}" >font-weight:bold;color:blue;</c:if>'>${HallList.title }
 							</a>
 											   
-						</td>
-						<td role="gridcell" style="text-align:center;" >
-							<fmt:formatDate value="${CR_AppList.regdate }" pattern="yyyy-MM-dd" />
-						</td>
+						</td> -->
 							<td role="gridcell" style="text-align:center;" >
-							<a class="maninfo" rel="${CR_AppList.writer }" href="#" data-hasqtip="21">
+							<a class="maninfo" rel="${HallList.seat }" href="#" data-hasqtip="21">
 								<i class="pink2 ace-icon fa fa-user" title="작성자"></i>															
-								${CR_AppList.writer }
+								${HallList.seat }
 							</a>
 							</td>
 						</tr>
@@ -91,9 +88,9 @@
 			</table>
 			<div class="board_butt" style="margin: 10px 0;padding: 0 10px; text-align: right">
 
-					<a href="/board/Coronation/app/list">
+					<a href="/board/Coronation/hall/list">
 					<img src="/resources/images/list.gif" alt="목록"></a> 
-					<a href="/board/Coronation/app/regist">
+					<a href="/board/Coronation/hall/regist">
 					<img src="/resources/images/write.gif" alt="쓰기"></a>
 			</div>
 
