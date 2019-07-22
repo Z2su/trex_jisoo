@@ -59,7 +59,8 @@ public class BoardController {
 		
 		modelnView.addObject("eventList", eventList);
 		
-		System.out.println(eventList);
+		
+		System.out.println("~~"+eventList);
 		
 		return modelnView;
 	}
@@ -127,7 +128,11 @@ public class BoardController {
 	}
 	
 
+<<<<<<< HEAD
 	@RequestMapping(value="/event/imageUpload",method=RequestMethod.POST)
+=======
+	@RequestMapping(value="ev/my/imageUpload",method=RequestMethod.POST)
+>>>>>>> refs/remotes/origin/jisoo
 	@ResponseBody
 	public Map<String,String> imageUpload(HttpServletRequest request,
 										  HttpServletResponse response, 

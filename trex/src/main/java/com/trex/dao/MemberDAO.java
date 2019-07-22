@@ -1,5 +1,6 @@
 package com.trex.dao;
 
+import java.lang.reflect.Member;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public interface MemberDAO {
 	
 	//MemberVO 리스트
 		List<MemberVO> selectMemberList()throws SQLException;
-		List<MemberVO> selectMemberList(String code)throws SQLException;
+		List<MemberVO> selectMemberListlike(String code)throws SQLException;
 		List<MemberVO> selectMemberList(Criteria cri)throws SQLException;
 	
 	//GmemberVO 리스트
@@ -56,8 +57,10 @@ public interface MemberDAO {
 	int selectMemberNextSeq()throws SQLException;
 	
 	MemberVO selectMemberById(String mem_id)throws SQLException;
-
+	void GetKey(String mem_id, String key);
 	
+	void updateAuthkey(MemberVO member) throws SQLException;
 	
+	void updateAuthstatus(MemberVO member) throws SQLException;
 
 }

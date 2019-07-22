@@ -11,10 +11,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/performrese")
 public class PerformController {
-	
+	/*
 	@RequestMapping(value="/{pf_code}", method=RequestMethod.GET )
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 		String url = "perform/main";
+		
+		
 		
 		modelnView.addObject("pf_code", pf_code);
 		modelnView.setViewName(url);
@@ -27,5 +29,5 @@ public class PerformController {
 		
 		String url = "perform/step1";
 		return url;
-	}
+	}*/
 }

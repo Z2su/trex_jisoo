@@ -105,7 +105,7 @@
 				<!--  웹필터 수정 -->
 				<!--  웹필터 수정 -->
 			</div>
-
+<%@ include file="/WEB-INF/views/board/ad/smartEditor_js.jsp"%>
 
 		</div>
 	</div>

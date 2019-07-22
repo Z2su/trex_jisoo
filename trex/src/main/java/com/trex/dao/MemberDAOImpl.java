@@ -27,14 +27,14 @@ public class MemberDAOImpl  implements MemberDAO{
 	@Override
 	public List<MemberVO> selectMemberList() throws SQLException {
 		List<MemberVO> memberList=
-				session.selectList("Member-Mapper.selectMemberList",null);
+				session.selectList("Member-Mapper.selectMemberList");
 		return memberList;
 	}
 	
 	@Override
-	public List<MemberVO> selectMemberList(String code) throws SQLException {
+	public List<MemberVO> selectMemberListlike(String code) throws SQLException {
 		List<MemberVO> memberList=
-				session.selectList("Member-Mapper.selectMemberList",code);
+				session.selectList("Member-Mapper.selectMemberListlike",code);
 		return memberList;
 	}
 
@@ -86,7 +86,7 @@ public class MemberDAOImpl  implements MemberDAO{
 		
 		List<TroupeVO> TroupeList = null;
 		
-		TroupeList=session.selectList("Member-Mapper.selectSearchMemberList",cri,rowBounds);
+		TroupeList=session.selectList("Member-Mapper.selectTroupeList",cri,rowBounds);
 		return TroupeList;
 	}
 
@@ -141,7 +141,27 @@ public class MemberDAOImpl  implements MemberDAO{
 		MemberVO member = session.selectOne("Member-Mapper.selectMemberById", mem_id);
 		return member;
 	}
-	
+
+
+	@Override
+	public void GetKey(String mem_id, String key) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateAuthkey(MemberVO member) throws SQLException {
+
+		session.update("Member-Mapper.updateAuthkey", member);
+		
+	}
+
+	@Override
+	public void updateAuthstatus(MemberVO member) throws SQLException {
+		
+		session.update("Member-Mapper.updateAuthstatus", member);
+	}
+
 	@Override
 	public List<EPViewVO> selectEmployeeList() throws SQLException {
 		List<EPViewVO> viewlist = session.selectList("Member-Mapper.selectEmployee");
@@ -162,7 +182,7 @@ public class MemberDAOImpl  implements MemberDAO{
 	@Override
 	public void updateEmployee(EmployeeVO employee) throws SQLException {
 		session.update("Member-Mapper.updateEmployee",employee);
-		
+
 	}
 	
 	

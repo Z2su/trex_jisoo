@@ -51,7 +51,7 @@
 
 
 
-				<h4>직원리스트</h4>
+				<h4>회원리스트</h4>
 				<table width="100%" border="0" cellpadding="0" cellspacing="0">
 					<tbody>
 						<tr>
@@ -69,14 +69,14 @@
 											<th width="70" class="t_head t_end" scope="col">편집</th>
 										</tr>
 
-										<c:if test="${!empty glist }">
-											<c:forEach items="${glist}"s var="mem">
+										<c:if test="${!empty glist }" >
+											<c:forEach items="${glist}" var="gmem" varStatus="status">
 												<tr>
-													<td>${mem.mem_code }</td>
-													<td>${mem.id }</td>
-													<td>${mem.name }</td>
-													<td>${mem.mile }</td>
-													<td>${mem.gra_code }</td>
+													<td>${gmem.gmem_code }</td>
+													<td>${gmemlist[status.index].mem_id }</td>
+													<td>${gmem.name }</td>
+													<td>${gmem.mile }</td>
+													<td>${gmem.gra_code }</td>
 													<td class="t_end"><a href="#">버튼</a></td>
 												</tr>
 											</c:forEach>
@@ -93,20 +93,59 @@
 
 			</div>
 
+
+			<div id="txt">
+
+
+
+				<h4>회원리스트</h4>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td>
+								<table width="100%" cellpadding="0" cellspacing="0"
+									class="table1 center" summary="지난 설문 보기.">
+									<caption>지난설문보기</caption>
+									<tbody>
+										<tr>
+											<th width="70" class="t_head" scope="col">회원코드</th>
+											<th width="50" class="t_head" scope="col">아이디</th>
+											<th class="t_head" scope="col">이메일</th>
+											<th width="80" class="t_head" scope="col">이름</th>
+											<th width="70" class="t_head" scope="col">사업자번호</th>
+											<th width="70" class="t_head t_end" scope="col">편집</th>
+										</tr>
+
+										<c:if test="${!empty tlist }" >
+											<c:forEach items="${tlist}" var="tmem" varStatus="status">
+												<tr>
+													<td>${tmem.tro_code }</td>
+													<td>${tmemlist[status.index].mem_id }</td>
+													<td>${tmemlist[status.index].mem_email }</td>
+													<td>${tmem.name }</td>
+													<td>${tmem.bupanum }</td>
+													<td class="t_end"><a href="#">버튼</a></td>
+												</tr>
+											</c:forEach>
+										</c:if>
+
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+
+			</div>
 				<div class="box-footer login-box" style="margin-top: 0; border-top: none;">
 					<button type="button" id="modifyBtn" class="btn btn-warning col-sm-3">수정하기</button>
 					<button type="button" id="cancelBtn" class="btn btn-default pull-right col-sm-3">취 소</button>
 			    </div>
 		</div>
 
-		<script>
-			${'#modifyBtn'}.on('click',function(e){
-				"location.href='/mypage/MypageMemberModify"
-			});
-			${'#cancelBtn'}.on('click',function(e){
-				"location.href='/"
-			});
-		</script>
+		
 		<!--quick  -->
 		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
 		<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->

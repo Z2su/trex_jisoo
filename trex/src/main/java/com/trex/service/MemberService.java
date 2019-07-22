@@ -1,5 +1,6 @@
 package com.trex.service;
 
+import java.lang.reflect.Member;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +31,7 @@ public interface MemberService {
 
 		// 회원리스트
 		List<MemberVO> getMemberList()throws SQLException;
-		List<MemberVO> getMemberList(String code)throws SQLException;
+		List<MemberVO> getMemberListlike(String code)throws SQLException;
 		Map<String,Object> getMemberList(Criteria cri)throws SQLException;
 	
 		
@@ -39,10 +40,15 @@ public interface MemberService {
 		
 		List<TroupeVO> getTroupeList()throws SQLException;
 		Map<String,Object> getTroupeList(Criteria cri)throws SQLException;
+		void userReg_service(MemberVO memberVO);
+
+		void create(MemberVO member) throws Exception;
 		
+		void updateAuthstatus(MemberVO member) throws SQLException;
+
 		List<EPViewVO> getEmployeeList()throws SQLException;
 		Map<String,Object> getEmployeeList(Criteria cri)throws SQLException;
-		
+
 
 
 

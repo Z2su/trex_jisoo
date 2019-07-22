@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Pr-Mapper">
-	<!-- <sql id="insertEndDateNull">
-	<if test="endDate == null">
-		pr(nno,title,writer,content,startDate,point)
-		values
-		(#{nno},#{title},#{writer},#{content},#{startDate},#{point})
-	</if>
-	<if test="endDate != null">
-		notice(nno,title,writer,content,startDate,endDate,point)
-		values
-		(#{nno},#{title},#{writer},#{content},#{startDate},#{endDate},#{point})
-	</if>
-</sql>
-	<sql id="updateEndDateNull">
-		<if test="endDate == null">
-			,endDate=null
-		</if>
-		<if test="endDate != null">
-			,endDate=#{endDate}
-		</if>
-	</sql> -->
+	
 	<sql id="search">
 		<if test="searchType == 't'.toString()">
 			and title like '%'||#{keyword}||'%'
@@ -85,16 +66,6 @@
 
 	</select>
 
-	<!-- <select id="selectPointPrList" resultType="pr">
-		<![CDATA[
-			select
-			*
-			from
-			pr
-				      	
-			order by pr_num desc
-		]]>
-	</select> -->
 
 	<select id="selectPrList" resultType="pr">
 		select *
