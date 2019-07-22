@@ -18,6 +18,7 @@
 	<import resource="classpath:context/Pr-context.xml"/>
 	<import resource="classpath:context/Ad-context.xml"/>
 	<import resource="classpath:context/mail-context.xml"/>
+
 	<import resource="classpath:context/FAQ-context.xml"/>
 	<import resource="classpath:context/Notice-context.xml"/>
 	<import resource="classpath:context/CrApp-context.xml"/>
@@ -26,10 +27,10 @@
 	<import resource="classpath:context/MypageMember-context.xml"/>
 	<import resource="classpath:context/MypageTroupe-context.xml"/>
 	<import resource="classpath:context/MypageMemberBoard-context.xml"/>
+
 	<bean id="mailNotifier"
 		  class="com.trex.mail.MimeAttachNotifier"
-		  p:mailSender-ref="mailSender"
-		  />
-
+		  p:mailSender-ref="mailSender" />
+	
 
 </beans>

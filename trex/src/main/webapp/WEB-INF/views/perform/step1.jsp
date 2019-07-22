@@ -399,7 +399,7 @@
 <body>
 <c:forEach items="${PFSHViewList }" var="PFSHView"  >
 	
-	<input type="hidden" id="rundate" pfsh_code="${PFSHView.pfsh_code }" value='<fmt:formatDate value="${PFSHView.rundate }" pattern="yyyy-MM-dd"/>'/>
+	<input type="hidden" id="rundate" pfsh_code="${PFSHView.pfsh_code }" value='<fmt:formatDate value="${PFSHView.rundate }" pattern="yyyyMMdd"/>'/>
 
 
 </c:forEach>
@@ -578,12 +578,21 @@
 
 
 	<script>
+	function parse(str){
+		var year = str.substr(0,4);
+		var month = str.substr(4,2);
+		var date = str.substr(6,2);
+		return new Date(year,month-1,date); 
+	};
 	
 	var rundateval = $('#rundate').val();
 	var pfsh_code;
-	var today = new Date(rundateval);
+	let year ;
+	let month ;
+	let date ;
+	var today = parse(rundateval);
 	//alert("rundateval>>>>>"+rundateval.getDate());
-	/* var rundate; */
+	/* var rundate;  */
 	var runday;
 	var runmonth;
 	var a;
@@ -591,52 +600,69 @@
 	var s_rundate;
 	var e_rundate;
 
-	let year;
-	let month;
-	let date;
 	
 	var rundateFunc=function(){
 		
 		$('input#rundate').each(function(index, item){
-			var rundate = new Date($(item).val());
+			var rundate = parse($(item).val());
 			runmonth = rundate.getMonth()+1;
 			runday = rundate.getDate();
-			
+		
 			pfsh_code = $(item).attr('pfsh_code');
 			//alert("ㅋㅋ"+pfshcode);
 			
 			
-			//alert("ㅎㅎ"+runmonth);
+			//alert(typeof($(item).val())+"ㅎㅎ"+rundate);
 			if(runmonth == month && rundate.getFullYear()==year){
-			$('#'+runday).css("background-color","#FF9933");
-			$('#'+runday).empty();
-			$('#'+runday).prepend(
-			$('<a id="CellPlayDate" run="'+rundate+'"name="CellPlayDate" class="sel1" href="#" onclick="pfshajax();">'+runday+'<span class="blind">일 예매 가능</span></a>'));
+				$('#'+runday).css("background-color","#FF9933");
+				$('#'+runday).empty();
+				$('#'+runday).prepend(
+				$('<a id="CellPlayDate" run="'+rundate+'"name="CellPlayDate" class="sel1" href="#" onclick="pfshajax('+$(item).val()+');">'+runday+'<span class="blind">일 예매 가능</span></a>'));
 			}
 			//$('#'+day.getDate()).empty();
 			
 		});
 	};
 	
-	function pfshajax(){
+	function pfshajax(data){
 		/* s_rundate=new Date($(this).attr('run'));
 		e_rundate=new Date($(this).attr('run'));
-		e_rundate.setDate(e_rundate.getDate()+1);
-		alert(s_rundate+"~~"+e_rundate); */
+		e_rundate.setDate(e_rundate.getDate()+1); */
+		//alert(s_rundate+"~~"+e_rundate); 
+		var dat = parse(String(data));
+		alert(typeof(dat));
+		$.ajax({
+			url:"<%=request.getContextPath()%>/performrese/pfsh",
+			type:"post",
+			data:dat,
 		
-		alert("this~~~~..>"+$(this).attr('run'));
-		var data = {
-				"s_rundate":s_rundate,
-				"e_rundate":e_rundate,
-				"pf_code":pf_code
+			success:function(data){
 				
+			
+			alert("성공>>"+data);
+			
+		},
+			error:function(error){
+			
+			alert("오류");
 		}
-		
-		$('input#rundate').each(function(index, item){
 			
 			
 		});
 		
+		//alert("this~~~~..>"+$(this).attr('run'));
+		/* var data = {
+				"s_rundate":s_rundate,
+				"e_rundate":e_rundate,
+				"pf_code":pf_code
+				
+		} */
+		
+		/* $('input#rundate').each(function(index, item){
+			alert("ㅎㅎ"+$(item).val());
+			
+		});
+		 */
 		
 	}
 	
@@ -644,9 +670,9 @@
 		
 		//var today = new Date();
 		var calendarFunc = function() {
-			year = today.getFullYear();
+			 year = today.getFullYear();
 			month = today.getMonth() + 1;
-			date = today.getDate();
+			date = today.getDate(); 
 			$('#calendar tbody').empty();
 
 			if (idx != 0) {

@@ -138,7 +138,9 @@ public class PerformBoardController {
 		out.println("</script>");		
 	}
 
+
 /*	@ResponseBody
+
 	@RequestMapping(value="pfcode", method=RequestMethod.POST)
 	public List<PerformScheduleVO> pfcodesearch(@RequestBody String pf_code){
 		

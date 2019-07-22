@@ -1,4 +1,22 @@
 <<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.3.201803200843-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+	</configs>
+	<autoconfigs>
+		<config>src/main/resources/context/servlet-context.xml</config>
+		<config>src/main/resources/context/root-context.xml</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>
+=======
 <<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
@@ -62,6 +80,7 @@
 =======
 >>>>>>> refs/heads/jisoo
 >>>>>>> branch 'jisoo' of https://github.com/biiiible89/trex_jisoo.git
+<<<<<<< HEAD
 =======
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
@@ -81,3 +100,6 @@
 	</configSets>
 </beansProjectDescription>
 >>>>>>> refs/remotes/origin/kjs
+=======
+>>>>>>> refs/heads/jisoo
+>>>>>>> refs/heads/jisoo
