@@ -33,6 +33,9 @@
 		<typeAlias type="com.trex.dto.MypageMemberBoardVO" alias="mypageBoard"/>
 		<typeAlias type="com.trex.dto.MypageTroupeCrAppListVO" alias="mypageCrapp"/>
 		<typeAlias type="com.trex.dto.MypageTroupeAdListVO" alias="mypageAdlist"/>
+		<typeAlias type="com.trex.dto.CrConfVO" alias="CrConf"/>
+		<typeAlias type="com.trex.dto.CrshVO" alias="CRSH"/>
+
 		<typeAlias type="com.trex.dto.MypageRhVO" alias="mypageRh"/>
 	</typeAliases>
  

@@ -17,9 +17,9 @@
 	<update id="insertCRApp">
 		insert 
 		into 
-		cr_app(cr_app_code,cr_app_num,title,writer,cont,hall_code,pf_code,pfsh_code)
+		cr_app(cr_app_code,cr_app_num,title,writer,cont,hall_code,pf_code,startdate,enddate)
 		values
-		(#{cr_app_code},#{cr_app_num},#{title},#{writer},#{cont},#{hall_code},#{pf_code},#{pfsh_code})
+		(#{cr_app_code},#{cr_app_num},#{title},#{writer},#{cont},#{hall_code},#{pf_code},#{startdate},#{enddate})
 	</update>
 	
 	<update id="updateCRApp" >
@@ -36,7 +36,13 @@
 		where cr_app_code=#{cr_app_code}
 	</update>
 	
-	
+	<update id="enableList" >
+		update
+		cr_app 
+		set
+		enable = 2
+		where cr_app_code=#{cr_app_code}
+	</update>
 	
 	<select id="selectCRAppNextSeq" resultType="int">
 		select APP_SEQ.nextval as cr_app_num from dual

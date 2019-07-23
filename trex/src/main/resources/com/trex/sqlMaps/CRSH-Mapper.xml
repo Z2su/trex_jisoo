@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CRSH-Mapper">
+
+	<select id="selectList" resultType="CRSH">
+		select * 
+		from crsh
+			
+	</select>
+	
+	<select id="select"  resultType="CRSH">
+		select * 
+		from crsh
+		where crsh_code=#{crsh_code}
+	</select>
+	 
+	<update id="insert" parameterType="CRSH">
+		insert 
+		into 
+		crsh(crsh_code,crsh_num,hall_code,cr_app_code,startdate,enddate)
+		values
+		(#{crsh_code},#{crsh_num},#{hall_code},#{cr_app_code},#{startdate},#{enddate})
+	</update>
+	
+
+	
+	<update id="delete" >
+		delete 
+		from crsh 
+		where crsh_code=#{crsh_code}
+	</update>
+	
+	
+	
+	<select id="NextSeq" resultType="int">
+		select CRSH_SEQ.nextval as crsh_num from dual
+	</select>
+
+
+</mapper>

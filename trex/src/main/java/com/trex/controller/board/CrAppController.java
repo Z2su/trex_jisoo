@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +24,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.trex.dto.CrAppVO;
+import com.trex.dto.CrshVO;
 import com.trex.service.CrAppService;
+import com.trex.service.CrshService;
 
 @Controller
 @RequestMapping("/board/Coronation")
@@ -33,6 +34,9 @@ public class CrAppController {
 	
 	@Autowired
 	private CrAppService CrAppService;
+	
+	@Autowired
+	private CrshService CrshService;
 	
 	@ModelAttribute("submenulist")
 	public List<String[]> submenuModel() {
@@ -105,21 +109,8 @@ public class CrAppController {
 		
 	}	
 	
-	@RequestMapping(value="/app/modify",method=RequestMethod.POST)
-	public void updatePOST(CrAppVO CRAppboard,HttpServletResponse response) throws Exception {
-
-		CRAppboard.setModidate(new Date());
-
-		CrAppService.modify(CRAppboard);	
-		
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out=response.getWriter();
-		out.println("<script>");
-		//out.println("window.opener.location.reload();");
-		out.println("location.href='detail?cr_app_code="+CRAppboard.getCr_app_code()+"';");
-		out.println("</script>");	
-
-	}
+	
+	
 	
 	@RequestMapping("/app/delete/{cr_app_code}")
 	public void delete(@PathVariable String cr_app_code, HttpServletResponse response) throws Exception{
@@ -132,6 +123,24 @@ public class CrAppController {
 		out.println("location.href='/board/Coronation/app/list';");
 		out.println("</script>");		
 	}
+	
+	@RequestMapping("/app/conform/{cr_app_code}")
+	public void enableList(@PathVariable String cr_app_code) throws Exception{
+		
+		CrAppVO CRAppBoard = null;
+		
+		CrAppService.conform(cr_app_code);
+		CRAppBoard = CrAppService.readBoard(cr_app_code);
+		CrshVO Crsh=new CrshVO();
+		Crsh.setEnddate(CRAppBoard.getEnddate());
+		Crsh.setStartdate(CRAppBoard.getStartdate());
+		Crsh.setHall_code(CRAppBoard.getHall_code());
+		Crsh.setCr_app_code(CRAppBoard.getCr_app_code());
+		CrshService.write(Crsh);
+		
+	}
+	
+	
 	
 	@RequestMapping(value="/my/imageUpload",method=RequestMethod.POST)
 	@ResponseBody

@@ -52,5 +52,11 @@ public class CrAppDAOImpl implements CrAppDAO {
 		return seq_num;
 	}
 
+	@Override
+	public void enableList(String cr_app_code) throws SQLException {
+		session.update("CRApp-Mapper.enableList",cr_app_code);
+		
+	}
+
 
 }
