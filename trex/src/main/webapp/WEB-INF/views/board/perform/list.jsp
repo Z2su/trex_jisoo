@@ -272,7 +272,8 @@
 						<div class="clear"></div>
 						<p class="more">
 							<a href="#total"
-								onclick="window.open('/performrese/${PFGBoard.pf_code }', '네이버새창', 'width=910, height=690, toolbar=no, menubar=no, scrollbars=no, resizable=yes' );" ><img
+								onclick="window.open('/performrese/${PFGBoard.pf_code }/step1', '네이버새창', 'width=910, height=690, toolbar=no, menubar=no, scrollbars=no, resizable=yes' );" ><img
+
 								src="/resources/images/perform/more.gif"
 								alt="${PFGBoard.title } 공연예매"></a>
 						</p>

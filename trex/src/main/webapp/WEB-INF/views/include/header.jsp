@@ -81,7 +81,7 @@
             </c:if>
             <c:if test="${loginUser ne null }">
             <li><a href="/logout">로그아웃</a></li>
-            <li><a href="#">마이페이지</a></li>
+            <!-- <li><a href="#">마이페이지</a></li> -->
             <li><a href="#">${loginUser.mem_id } 님 </a>
             
             </c:if>
@@ -134,11 +134,10 @@
                      class="">대관안내<span class="arrow" style="display: none;"></span></a>
                   <div id="tms">
                         <ul class="">
-                           <li><a
-                              href="#"
-                              class="">정기/수시대관 공고</a></li>
-                           <li><a href="#" class="">공연장대관</a></li>
-                           <li><a href="#" class="">컨벤션홀대관</a></li>
+                           <li><a href="<%=request.getContextPath()%>/board/Coronation/list" class="">대관 공고</a></li>
+                           <li><a href="<%=request.getContextPath()%>/board/Coronation/app/list" class="">대관 신청</a></li>
+                           <li><a href="#" class="">대관 일정</a></li>
+                           <li><a href="#" class="">대관 시설</a></li>
                         </ul>
                      </div>
                      </li>

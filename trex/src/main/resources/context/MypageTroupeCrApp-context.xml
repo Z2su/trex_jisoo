@@ -5,9 +5,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="MypageTroupeCrAppDAO"
-		class="com.trex.dao.MypageTroupeCrAppDAOImpl"
-		p:session-ref="sqlSession" />
+	      class="com.trex.dao.MypageTroupeCrAppDAOImpl"
+	      p:session-ref="sqlSession"
+	      />
+	      
 	<bean id="MypageTroupeCrAppService"
-		class="com.trex.service.MypageTroupeCrAppServiceImpl"
-		p:mypageMemberboardDAO-ref="MypageTroupeCrAppDAO" />
+	      class="com.trex.service.MypageTroupeCrAppServiceImpl"
+	      p:CRAppBoardDAO-ref="MypageTroupeCrAppDAO"
+		 />
+
 </beans>

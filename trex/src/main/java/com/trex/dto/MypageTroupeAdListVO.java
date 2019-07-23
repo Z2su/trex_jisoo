@@ -10,11 +10,9 @@ public class MypageTroupeAdListVO {
 	private String writer;
 	private String cont;
 	private Date regist_date;
-	private Date modidate;
 	private int viewcnt;
-	private int app_result;
 	private String ep_code;
-	private String pay_code;
+	private int app_result;
 
 	public String getAd_code() {
 		return ad_code;
@@ -64,28 +62,12 @@ public class MypageTroupeAdListVO {
 		this.regist_date = regist_date;
 	}
 
-	public Date getModidate() {
-		return modidate;
-	}
-
-	public void setModidate(Date modidate) {
-		this.modidate = modidate;
-	}
-
 	public int getViewcnt() {
 		return viewcnt;
 	}
 
 	public void setViewcnt(int viewcnt) {
 		this.viewcnt = viewcnt;
-	}
-
-	public int getApp_result() {
-		return app_result;
-	}
-
-	public void setApp_result(int app_result) {
-		this.app_result = app_result;
 	}
 
 	public String getEp_code() {
@@ -96,19 +78,18 @@ public class MypageTroupeAdListVO {
 		this.ep_code = ep_code;
 	}
 
-	public String getPay_code() {
-		return pay_code;
+	public int getApp_result() {
+		return app_result;
 	}
 
-	public void setPay_code(String pay_code) {
-		this.pay_code = pay_code;
+	public void setApp_result(int app_result) {
+		this.app_result = app_result;
 	}
 
 	@Override
 	public String toString() {
-		return "MypageTroupeAdListVO [ad_code=" + ad_code + ", ad_num=" + ad_num + ", title=" + title + ", writer="
-				+ writer + ", cont=" + cont + ", regist_date=" + regist_date + ", modidate=" + modidate + ", viewcnt="
-				+ viewcnt + ", app_result=" + app_result + ", ep_code=" + ep_code + ", pay_code=" + pay_code + "]";
+		return "AdVO [ad_code=" + ad_code + ", ad_num=" + ad_num + ", title=" + title + ", writer=" + writer + ", cont="
+				+ cont + ", regist_date=" + regist_date + ", viewcnt=" + viewcnt + ", ep_code=" + ep_code
+				+ ", app_result=" + app_result + "]";
 	}
-
 }
