@@ -211,25 +211,34 @@
 
 	<!-- navigation -->
 	<div id="navigation">
-				<div class="naviwrap">
-				 	<a href="/html/kr/" class="nv_home">HOME</a>&gt;<navi><a href="/html/kr/performance/performance_010101.html">공연안내</a>&gt;<a href="/html/kr/performance/performance_010101.html">공연안내</a>&gt;<a href="/html/kr/performance/performance_010101.html" class="navi_ov">공연정보</a></navi>				 	<div class="nv_service">
-												<a class="nvs_print" href="#total" onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span class="hide">Print</span></a>
-												<a href="#" onclick="twitterOpen('http://www.djac.or.kr/html/kr/performance/performance_010101.html?mode=V&amp;code=2946', '대전예술의전당 | 공연정보'); return false;" class="nvs_twt twitter" target="_blank" title="대전예술의전당 트위터(새창)"><span class="hide">트위터</span></a>
-						<a href="#" onclick="facebookOpen('http://www.djac.or.kr/html/kr/performance/performance_010101.html?mode=V&amp;code=2946'); return false;" class="nvs_face facebook" target="_blank" title="대전예술의전당 페이스북(새창)"><span class="hide">페이스북</span></a>
-
-					</div>
-				</div>
+		<div class="naviwrap">
+				<a href="<%=request.getContextPath()%>/">HOME</a>&gt;
+			<navi> 
+				<a href="<%=request.getContextPath()%>/mypage/MypageTroupeList">마이페이지</a>&gt;
+				<a href="<%=request.getContextPath()%>/mypage/MypageTroupeCrAppList">대관신청조회</a>
+			<div class="nv_service">
+				<a class="nvs_print" href="#total"
+					onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span
+					class="hide">Print</span></a> <a href="#"
+					onclick="twitterOpen('http://www.djac.or.kr/html/kr/performance/performance_010101.html?mode=V&amp;code=2946', '대전예술의전당 | 공연정보'); return false;"
+					class="nvs_twt twitter" target="_blank" title="대전예술의전당 트위터(새창)"><span
+					class="hide">트위터</span></a> <a href="#"
+					onclick="facebookOpen('http://www.djac.or.kr/html/kr/performance/performance_010101.html?mode=V&amp;code=2946'); return false;"
+					class="nvs_face facebook" target="_blank" title="대전예술의전당 페이스북(새창)"><span
+					class="hide">페이스북</span></a>
 			</div>
+		</div>
+	</div>
 	<!-- //navigation -->
 
 	<!-- container -->
 	 <div id="container">
-      <%@ include file="/WEB-INF/views/board/Coronation/submenu.jsp"%>
+    <%@ include file="/WEB-INF/views/board/commons/submenu.jsp"%>
 
 			<!-- content-->
 			<div id="content">
 				<!-- 컨텐츠 타이틀 -->
-				<h3 class="cnt_ti">대관 신청 리스트</h3>
+				<h3 class="cnt_ti">대관신청조회</h3>
 				<div class="new_tab_wrap">
 					<ul class="style03">
 					</ul>
@@ -243,17 +252,11 @@
 
 						<div>
 						<c:if test="${loginUser.mem_code eq CRAppBoard.writer }" >
-							<a href="/board/Coronation/app/modify?cr_app_num=${CRAppBoard.cr_app_num }"> <img
-								src="<%=request.getContextPath()%>/resources/images/modify.gif"
-								alt="편집"></a> 
-							<a href="/board/Coronation/app/delete?cr_app_num=${CRAppBoard.cr_app_num}"> <img
-								src="<%=request.getContextPath()%>/resources/images/delete.gif"
-								alt="삭제"></a> 
+						
 						</c:if>
-							<a href="/board/Coronation/app/list"> <img
+							<a href="/mypage/MypageTroupeCrAppList"> <img
 								src="<%=request.getContextPath()%>/resources/images/list.gif"
 								alt="목록"></a>
-
 						</div>
 					</div>
 				</div>
@@ -290,23 +293,14 @@
 					<!-- 조회시 파일 첨부 컨트롤 삽입 -->
 				</form>
 			</div>
-
-
 			<!-- 상단 우측버튼 -->
-
-
-
 		</div>
-		<!--quick  -->
-		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
-
 	</div>
-
+	
 	<script>
 		$('.style03 li').on('click', function() {
 			$('.style03 li').removeClass('active');
 			$(this).addCalss('active');
-
 		})
 
 		function remove_go() {
@@ -314,9 +308,8 @@
 			cr_app_num = $
 			{
 				cr_app.cr_app_num
-			}
-			;
-			location.href = "delete?cr_app_num=${event.cr_app_num}";
+			};
+			location.href = "MypageTroupeCrAppDetail?cr_app_num=${event.cr_app_num}";
 		}
 	</script>
 	<!-- //container -->
