@@ -232,7 +232,6 @@
 				<h3 class="cnt_ti">대관 신청 리스트</h3>
 				<div class="new_tab_wrap">
 					<ul class="style03">
-						
 					</ul>
 				</div>
 

@@ -105,7 +105,7 @@
 
 			<script>
 				$('#ModifyBtn').on('click', function(e) {
-					location="<%=request.getContextPath()%>/mypage/MypageTroupeModify"
+					location="<%=request.getContextPath()%>/mypage/MypageTroupeList"
 				});
 				$('#listBtn').on('click', function(e) {
 					location="<%=request.getContextPath()%>/mypage/MypageTroupeList"

@@ -10,8 +10,8 @@ public interface MypageGmemberService {
 	MypageGmemberVO getGmember(String mem_code) throws SQLException;
 
 	// 회원정보 수정
-	void modify(String mem_code) throws SQLException;
+	void modify(MypageGmemberVO gmem) throws Exception;
 
 	// 회원 탈퇴
-	void remove(String mem_code) throws SQLException;
+	void remove(String mem_id) throws Exception;
 }
