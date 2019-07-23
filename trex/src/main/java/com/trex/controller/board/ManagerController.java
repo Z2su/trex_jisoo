@@ -1,16 +1,17 @@
 package com.trex.controller.board;
 
-import java.sql.SQLException;
+import java.io.PrintWriter;
+import java.sql.Date;
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -113,39 +114,17 @@ public class ManagerController {
 		
 	}
 	
-	@RequestMapping(value = "/calendar/list", method = RequestMethod.POST)
-	public ResponseEntity<String> registCal(@RequestBody CalendarVO calendar) throws Exception {
+	@RequestMapping(value = "/calregist", method = RequestMethod.GET)
+	public void registCalGET() throws Exception {
 
-		ResponseEntity<String> entity = null;
-
-		try {
-			calService.create(calendar);
-			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
-		} catch (SQLException e) {
-			e.printStackTrace();
-			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-
-		return entity;
 
 	}
 	
 	
-	@RequestMapping(value = "/calendar/regist", method = RequestMethod.POST)
-	public ResponseEntity<String> register(@RequestBody CalendarVO calendar) throws Exception {
+	@RequestMapping(value="/calregist", method = RequestMethod.POST)
 
-		ResponseEntity<String> entity = null;
-
-		try {
-			calService.create(calendar);
-			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
-		} catch (SQLException e) {
-			e.printStackTrace();
-			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-
-		return entity;
-
+	public void calregist(CalendarVO calendar)throws Exception{
+		calService.create(calendar);
 	}
 	
 	

@@ -11,7 +11,7 @@
 	</decorator> -->	
 	<excludes>
 		<pattern>/performrese*</pattern>
-		<pattern>/calendar*</pattern>
+		<pattern>/manager/calregist*</pattern>
 	</excludes>	
 	
 </decorators>

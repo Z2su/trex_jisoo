@@ -29,6 +29,7 @@
 		<typeAlias type="com.trex.dto.MypageGmemberVO" alias="mypageGmember"/>
 		<typeAlias type="com.trex.dto.MypageTroupeVO" alias="mypageTroupe"/>
 		<typeAlias type="com.trex.dto.MypageMemberBoardVO" alias="mypageBoard"/>
+	
 
 
 	</typeAliases>
