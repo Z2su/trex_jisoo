@@ -120,7 +120,6 @@
 			</div>
 			<script>
 				$('#ModifyBtn').on('click', function(event) {
-					alert("수정 되었습니다.");
 					location="<%=request.getContextPath()%>/mypage/MypageMemberModify"
 				});
 			</script>

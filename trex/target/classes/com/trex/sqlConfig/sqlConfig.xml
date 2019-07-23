@@ -36,6 +36,7 @@
 		<typeAlias type="com.trex.dto.CrConfVO" alias="CrConf"/>
 		<typeAlias type="com.trex.dto.CrshVO" alias="CRSH"/>
 
+		<typeAlias type="com.trex.dto.MypageRhVO" alias="mypageRh"/>
 	</typeAliases>
  
 </configuration>

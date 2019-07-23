@@ -2,9 +2,12 @@ package com.trex.service;
 
 import java.sql.SQLException;
 
+import org.springframework.stereotype.Service;
+
 import com.trex.dao.MypageMemberDAO;
 import com.trex.dto.MypageMemberVO;
 
+@Service
 public class MypageMemberServiceImpl implements MypageMemberService {
 
 	// MypageMemberDAO
@@ -20,12 +23,12 @@ public class MypageMemberServiceImpl implements MypageMemberService {
 	}
 
 	@Override
-	public void modify(String mem_id) throws SQLException {
+	 public void updateMember(MypageMemberVO mem_id) throws SQLException {
 		MypageMemberDAO.updateMember(mem_id);	
 	}
 
 	@Override
-	public void remove(String mem_id) throws SQLException {
+	public void deleteMember(String mem_id) throws SQLException {
 		MypageMemberDAO.deleteMember(mem_id);
 	}
 }

@@ -121,7 +121,7 @@
 						<c:forEach items="${adList }" var="adVO">
 							<tr>
 								<th scope="col">${adVO.ad_num }</th>
-								<th scope="col"><a href="addetail?ad_num=${adVO.ad_num }">${adVO.title }</a></th>
+								<th scope="col"><a href="MypageTroupeAdDetail?ad_num=${adVO.ad_num }">${adVO.title }</a></th>
 								<th scope="col">${adVO.writer }</th>
 								<th scope="col">${adVO.regist_date }</th>
 							<c:choose>

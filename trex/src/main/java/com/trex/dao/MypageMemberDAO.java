@@ -10,11 +10,11 @@ public interface MypageMemberDAO {
 	// MemberVO 리스트
 	List<MypageMemberVO> selectMemberList() throws SQLException;
 	
-	// 회원 수정
-	void updateMember(String mem_id)throws SQLException;
+	// 회원정보수정
+	public void updateMember(MypageMemberVO mem_id)throws SQLException;
 	
-	// 회원 탈퇴
-	void deleteMember(String mem_id)throws SQLException;
+	// 회원탈퇴
+    public void deleteMember(String mem_id) throws SQLException;
 	
 	MypageMemberVO selectMemberById(String mem_id)throws SQLException;
 }
