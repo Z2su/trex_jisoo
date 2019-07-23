@@ -2,31 +2,65 @@ package com.trex.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.trex.credit.KSPayWebHostBean;
+import com.trex.dao.PayDAO;
 import com.trex.dto.CreditRequest;
+import com.trex.service.PayService;
 
 @Controller
 @RequestMapping("/credit")
 public class CreditController {
-
-	@RequestMapping(value="/form", method=RequestMethod.GET)
-	public void getcreditForm() throws Exception{
+	
+	@Autowired
+	private PayService pService;
+	
+	@Autowired
+	private PayDAO payDAO;
+	
+	@RequestMapping(value="/index", method=RequestMethod.GET)
+	public void getcreditForm(Model model)throws Exception{
+		
+	/*	String pay_code = "pay";
+		model.addAttribute("pay_code",pay_code);*/
 		
 	}
-	
+
 	@RequestMapping(value="/form", method=RequestMethod.POST)
-	public void creditForm(@ModelAttribute("creditReq")CreditRequest creditReq)
-							throws Exception{
+	public void creditForm(@ModelAttribute("creditReq")CreditRequest creditReq,
+			String pay_code) throws Exception{
 		
+		creditReq.setSndOrderNumber(pay_code);
+		creditReq.setSndStoreid("2999199999");
+		
+	}
+/*	
+	@RequestMapping(value="/form", method=RequestMethod.POST)
+	public String creditForm(해당Request vo,Model model)throws Exception{
+		String url="...경로/폼";
+		
+		CreditRequest creditReq = new CreditRequest();
+		creditReq.setSndAddress(vo.getSndAddress());
+		//
+		//
+		//
+		//
+		//			
+		String pay_code = "pay"+ ;
 		creditReq.setSndOrderNumber("201907091245");
 		creditReq.setSndStoreid("2999199999");
+		
+		model.addAttribute("creditReq",creditReq);
+		
+		return url;
 	}
-	
+*/	
 	@RequestMapping(value="/kspay_wh_rcv", method=RequestMethod.POST)
 	public void kspay_wh_rcv() {}
 	

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="c.Pay-Mapper">
+
+	<select id="selectPayList" resultType="str">
+		select
+		*
+		from
+		pay
+		where pay_code = #{pay_code}
+	</select>
+
+	<select id="selectPayBypay_num" resultType="int">
+		select 
+		*
+		from
+		pay
+		where pay_num = #{pay_num}
+	</select>
+
+	<update id="insertPay" parameterType = "pay">
+		insert
+		into
+		pay(pay_code, pay_num, pay_math, pay_price)
+		values(#{pay_code},#{pay_num},#{pay_math},#{pay_price})
+	</update>
+
+	<update id="deletePay" parameterType = "int">
+		delete
+		from
+		pay
+		where
+		pay_num = #{pay_num}
+	</update>
+
+	<select id="selectPaySeqNext" resultType="int">
+		select
+		pay_seq.nextval as pay_num from dual
+	</select>
+</mapper>
