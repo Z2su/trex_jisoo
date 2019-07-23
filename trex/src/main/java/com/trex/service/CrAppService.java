@@ -14,4 +14,5 @@ public interface CrAppService {
 	void write(CrAppVO board) throws SQLException;
 	void modify(CrAppVO board) throws SQLException;
 	void remove(String cr_app_code) throws SQLException;
+	void conform(String cr_app_code) throws SQLException;
 }

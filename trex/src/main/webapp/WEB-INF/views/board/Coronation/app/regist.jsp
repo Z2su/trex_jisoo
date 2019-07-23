@@ -83,8 +83,9 @@
 						<li><label for="pf_code">공연정보</label> <input type="text"
 							id="pf_code" name="pf_code" value=""></li>
 						
-						<li><label for="pfsh_code">일정정보</label> <input type="text"
-							id="pfsh_code" name="pfsh_code" value=""></li>		
+						<li><label for="">기간</label> <input type="date"
+							id="startdate" name="startdate" value="">~<input type="date"
+							id="enddate" name="enddate" value=""></li>		
 							
 						<!--공지 사항 체크-->
 
