@@ -10,8 +10,8 @@ public interface MypageMemberService {
 	MypageMemberVO getMember(String mem_id) throws SQLException;
 
 	// 회원 수정
-	void modify(String mem_id) throws SQLException;
+	void updateMember(MypageMemberVO mem_id) throws SQLException;
 
 	// 회원 탈퇴
-	void remove(String mem_id) throws SQLException;
+	void deleteMember(String mem_id) throws SQLException;
 }

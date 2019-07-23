@@ -81,7 +81,7 @@
             </c:if>
             <c:if test="${loginUser ne null }">
             <li><a href="/logout">로그아웃</a></li>
-            <li><a href="#">마이페이지</a></li>
+            <!-- <li><a href="#">마이페이지</a></li> -->
             <li><a href="#">${loginUser.mem_id } 님 </a>
             
             </c:if>
