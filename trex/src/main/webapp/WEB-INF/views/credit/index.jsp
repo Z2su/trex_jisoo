@@ -8,7 +8,9 @@
 <title></title>
 </head>
 <body>
-	<form action="credit/form" method="post">
+	<%-- <input type="hidden" name="pay_num" value="${pay_num }">
+	<input type="hidden" name="pay_code" value="${pay_code }"> --%>
+	<form action="./form" method="post">
 		상품명 : <input type='text' name='sndGoodname' value='당근10kg' size='30'> </br>
 		가격  : <input type='text' name='sndAmount' value='1004' size='15' maxlength='9'> </br>
 		구매자 : <input type='text' name='sndOrdername' value='김토끼' size='30'> </br>

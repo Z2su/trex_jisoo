@@ -43,7 +43,6 @@ public class PerformReservationController {
 		modelnView.addObject("pf_code", pf_code);
 		modelnView.setViewName(url);
 		
-		
 		return modelnView;
 	}
 	
