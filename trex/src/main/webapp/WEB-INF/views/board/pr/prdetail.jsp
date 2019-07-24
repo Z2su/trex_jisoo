@@ -44,19 +44,16 @@
 		<div class="right top_mar_15">
 				<a href="prlist"><img
 					src="/resources/images/list.gif" border="0" alt="목록"></a>
+				<c:if test="${loginUser.mem_code eq pr.writer }" >	
 				<a
 					href="prmodify?pr_num=${pr.pr_num }"><img
 					src="/resources/images/modify.gif" alt="수정"></a>
+				
 				<a
 					href="prdelete?pr_num=${pr.pr_num }"><img
 					src="/resources/images/delete.gif" alt="삭제"></a>
-				<c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }" >	
-					<a
-						href="<%=request.getContextPath()%>/#" > <img
-						src="<%=request.getContextPath()%>/resources/images/regist.png"
-						alt="등록"
-						></a>
-					</c:if>
+					
+			    </c:if>
 				
 			</div>
 		<div id="txt">

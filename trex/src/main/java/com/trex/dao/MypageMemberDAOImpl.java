@@ -26,13 +26,13 @@ public class MypageMemberDAOImpl implements MypageMemberDAO {
 	}
 
 	@Override
-	public void updateMember(String mem_id) throws SQLException {
+	public void updateMember(MypageMemberVO mem_id) throws SQLException {
 		session.update("MypageMember-Mapper.updateMember", mem_id);
 	}
 
 	@Override
 	public void deleteMember(String mem_id) throws SQLException {
-		session.update("MypageMember-Mapper.deleteMember", mem_id);
+		session.delete("MypageMember-Mapper.deleteMember", mem_id);
 	}
 
 	@Override

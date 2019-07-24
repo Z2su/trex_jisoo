@@ -49,8 +49,6 @@ public class BoardController {
 		return submenuList;
 	}
 	
-	
-	
 	// 이벤트 게시판
 	@RequestMapping("/event/list")
 	public ModelAndView eventList(ModelAndView modelnView) throws SQLException{
@@ -58,7 +56,6 @@ public class BoardController {
 		List<EventVO> eventList = eService.eventList();
 		
 		modelnView.addObject("eventList", eventList);
-		
 		
 		System.out.println("~~"+eventList);
 		
@@ -127,8 +124,6 @@ public class BoardController {
 		
 	}
 	
-
-
 	@RequestMapping(value="/event/imageUpload",method=RequestMethod.POST)
 	@ResponseBody
 	public Map<String,String> imageUpload(HttpServletRequest request,

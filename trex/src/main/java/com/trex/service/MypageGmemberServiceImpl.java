@@ -20,12 +20,12 @@ public class MypageGmemberServiceImpl implements MypageGmemberService {
 	}
 
 	@Override
-	public void modify(String mem_code) throws SQLException {
-		MypageGmemberDAO.updateGmember(mem_code);
+	public void modify(MypageGmemberVO gmem) throws Exception {
+		MypageGmemberDAO.updateGmember(gmem);
 	}
 
 	@Override
-	public void remove(String mem_code) throws SQLException {
+	public void remove(String mem_code) throws Exception {
 		MypageGmemberDAO.deleteGmember(mem_code);
 	}
 }

@@ -26,7 +26,6 @@ public class PerformReservationController {
 	@Autowired
 	private PerformReservationService PFRESEService;
 	
-	
 	@RequestMapping(value="/{pf_code}/step1", method=RequestMethod.GET )
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 
@@ -46,10 +45,8 @@ public class PerformReservationController {
 
 		String url = "perform/main4";
 
-
 		modelnView.addObject("pf_code", pf_code);
 		modelnView.setViewName(url);
-		
 		
 		return modelnView;
 	}

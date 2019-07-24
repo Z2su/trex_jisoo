@@ -24,8 +24,8 @@ public class MypageGmemberDAOImpl implements MypageGmemberDAO {
 	}
 
 	@Override
-	public void updateGmember(String gmem_code) throws SQLException {
-		session.update("MypageGmember-Mapper.updateGmember", gmem_code);
+	public void updateGmember(MypageGmemberVO gmem) throws SQLException {
+		 session.update("MypageGmember-Mapper.updateGmember", gmem);
 	}
 
 	@Override

@@ -1,11 +1,18 @@
 package com.trex.controller;
 
+import java.sql.SQLException;
+import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.trex.credit.KSPayWebHostBean;
 import com.trex.dto.CreditRequest;
@@ -13,20 +20,54 @@ import com.trex.dto.CreditRequest;
 @Controller
 @RequestMapping("/credit")
 public class CreditController {
-
-	@RequestMapping(value="/form", method=RequestMethod.GET)
-	public void getcreditForm() throws Exception{
+	
+	@RequestMapping(value="/{pf_code}", method=RequestMethod.GET )
+	public ModelAndView performPay(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 		
+		String url = "perform/main4";
+		
+		String pay_code="";
+		for(int i=0;i<10;i++) {
+			pay_code+=(int)(Math.random()*8+1);
+		}
+		
+
+		modelnView.addObject("pay_code", pay_code);
+		modelnView.addObject("pf_code", pf_code);
+		modelnView.setViewName(url);
+		
+		return modelnView;
 	}
 	
 	@RequestMapping(value="/form", method=RequestMethod.POST)
-	public void creditForm(@ModelAttribute("creditReq")CreditRequest creditReq)
-							throws Exception{
+	public void creditForm(@ModelAttribute("creditReq")CreditRequest creditReq,
+			@RequestParam("setSndOrderNumber")String pay_code) throws Exception{
 		
+		creditReq.setSndOrderNumber(pay_code);
+		creditReq.setSndStoreid("2999199999");
+		
+	}
+/*	
+	@RequestMapping(value="/form", method=RequestMethod.POST)
+	public String creditForm(해당Request vo,Model model)throws Exception{
+		String url="...경로/폼";
+		
+		CreditRequest creditReq = new CreditRequest();
+		creditReq.setSndAddress(vo.getSndAddress());
+		//
+		//
+		//
+		//
+		//			
+		String pay_code = "pay"+ ;
 		creditReq.setSndOrderNumber("201907091245");
 		creditReq.setSndStoreid("2999199999");
+		
+		model.addAttribute("creditReq",creditReq);
+		
+		return url;
 	}
-	
+*/	
 	@RequestMapping(value="/kspay_wh_rcv", method=RequestMethod.POST)
 	public void kspay_wh_rcv() {}
 	

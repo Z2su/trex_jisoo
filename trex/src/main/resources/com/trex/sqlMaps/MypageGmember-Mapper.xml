@@ -3,23 +3,27 @@
 <mapper namespace="MypageGmember-Mapper">
 
 	<select id="selectMemberByName" resultType="mypageGmember">
-	
 		select *
 		from gmem
 		where gmem_code = #{mem_code}
 	</select>
 
-	<update id="updateGmember" parameterType="Gmember">
+	<update id="updateGmember" parameterType="mypageGmember">
 		update gmem
-		set
-		mem_pwd={mem_pwd},mem_email={mem_email},address={address},tell={tell}
-		where gmem_code = #{mem_code}
+		set address={address},tell={tell}
+		where gmem_code = #{gmem_code}
+		
 	</update>
+	<update id="updatememger" parameterType="str">
+		update mem
+		set mem_pwd=#{mem_pwd}
+		where mem_code=#{mem_code}	
+	</update>
+	
 	
 	<update id="deleteGmember" parameterType="str">
 		delete
-		from gmem
-		where gmem_code = #{mem_code}
+		from gmem where gmem_code = #{mem_code}
 	</update>
 	
 </mapper>
