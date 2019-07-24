@@ -8,6 +8,13 @@
 		order by cr_app_code desc		
 	</select>
 	
+	<select id="selectCRAppConfList" resultType="CRApp">
+		select * 
+		from cr_app 
+		where enable = 2
+		order by cr_app_code desc		
+	</select>
+	
 	<select id="selectCRApp"  resultType="CRApp">
 		select * 
 		from cr_app 

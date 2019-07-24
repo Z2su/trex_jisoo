@@ -63,4 +63,10 @@ public class CrAppServiceImpl implements CrAppService {
 		
 	}
 
+	@Override
+	public List<CrAppVO> getBoardConfList() throws Exception {
+		List<CrAppVO> CRAppConfList = CrAppDAO.selectCRAppConfList();
+		return CRAppConfList;
+	}
+
 }

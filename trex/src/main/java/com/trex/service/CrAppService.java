@@ -8,6 +8,7 @@ import com.trex.dto.CrAppVO;
 public interface CrAppService {
 	
 	List<CrAppVO> getBoardList() throws Exception;
+	List<CrAppVO> getBoardConfList() throws Exception;
 	CrAppVO readBoard(String cr_app_code)throws SQLException;	
 	CrAppVO getBoardForModify(String cr_app_code)throws SQLException;	
 	

@@ -25,6 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.trex.dto.CrAppVO;
 import com.trex.dto.CrshVO;
+import com.trex.dto.EventVO;
 import com.trex.service.CrAppService;
 import com.trex.service.CrshService;
 
@@ -63,6 +64,43 @@ public class CrAppController {
 			}
 		modelnView.addObject("CRAppBoardList", CRAppBoardList);
 		modelnView.setViewName(url);
+		
+		return modelnView;
+	}
+	
+	//@RequestMapping(value="/app/Conflist")
+	//public ModelAndView ConflistGET(ModelAndView modelnView) {
+		
+	//	String url="board/Coronation/app/Conflist";
+	//	List<CrAppVO> CRAppBoardConfList = null;
+		
+	//		try {
+	//			System.out.println("CrAppBoardConfList!!!!!!!!!" + CRAppBoardConfList);
+	//			CRAppBoardConfList = CrAppService.getBoardConfList();
+	//		} catch (Exception e) {
+	//			// TODO Auto-generated catch block
+	//			e.printStackTrace();
+	//		}
+	//	modelnView.addObject("CRAppBoardConfList", CRAppBoardConfList);
+	//	modelnView.setViewName(url);
+	//	
+	//	return modelnView;
+	//}
+	
+	@RequestMapping("/app/Conflist")
+	public ModelAndView ConflistGET(ModelAndView modelnView) throws SQLException{
+		
+		List<CrAppVO> CRAppBoardConfList = null;
+		try {
+			CRAppBoardConfList = CrAppService.getBoardConfList();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		modelnView.addObject("CRAppBoardConfList", CRAppBoardConfList);
+		
+		System.out.println(CRAppBoardConfList);
 		
 		return modelnView;
 	}
@@ -110,8 +148,6 @@ public class CrAppController {
 	}	
 	
 	
-	
-	
 	@RequestMapping("/app/delete/{cr_app_code}")
 	public void delete(@PathVariable String cr_app_code, HttpServletResponse response) throws Exception{
 		
@@ -125,7 +161,8 @@ public class CrAppController {
 	}
 	
 	@RequestMapping("/app/conform/{cr_app_code}")
-	public void enableList(@PathVariable String cr_app_code) throws Exception{
+	public String enableList(@PathVariable String cr_app_code, HttpServletResponse response) throws Exception{
+		
 		
 		CrAppVO CRAppBoard = null;
 		
@@ -138,6 +175,7 @@ public class CrAppController {
 		Crsh.setCr_app_code(CRAppBoard.getCr_app_code());
 		CrshService.write(Crsh);
 		
+		return "redirect:/board/Coronation/app/detail/{cr_app_code}";
 	}
 	
 	
