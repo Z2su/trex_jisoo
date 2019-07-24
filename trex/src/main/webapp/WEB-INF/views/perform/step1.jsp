@@ -310,7 +310,9 @@
 						<tbody>
 							<tr class="fir" id="MyRow1">
 								<th>일시</th>
-								<td><span id="MyPlayDate" name="MyPlayDate" title=""></span></td>
+								<td><span id="MyPlayDate" name="MyPlayDate" title="">
+									
+								</span></td>
 							</tr>
 							<tr id="MyRow2">
 								<th>선택좌석<br>(<span id="MySelectedSeatCnt"
@@ -390,7 +392,7 @@
 							alt="다음단계" id="SmallNextBtnImage"></a>
 					</p>
 				</div>
-				<script>
+				<!-- <script>
 					$('#LargeNextBtnLink').on(
 							'click',
 							function(e) {
@@ -400,7 +402,7 @@
 										$(this).attr('data-url'));
 
 							});
-				</script>
+				</script> -->
 				<!-- 예매 정보 //-->
 			</div>
 			<!-- contR //-->

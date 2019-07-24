@@ -123,13 +123,13 @@
 					<c:set var="str" value="${SeatReqList[status.index+1].col} "/>
 					
 					<label class="seatlabel" for="${SeatReq.col}${SeatReq.num}"  grade="${SeatReq.grade }" pfshs_rese="${SeatReq.pfshs_rese }">${SeatReq.col}${SeatReq.num}
-					</label>
-						<input type="checkbox" id="${SeatReq.col}${SeatReq.num}" class="seatcheck" col="${SeatReq.col}" num="${SeatReq.num}" grade="${SeatReq.grade }" pfshs_rese="${SeatReq.pfshs_rese }" 
+						<input type="checkbox" id="${SeatReq.col}${SeatReq.num}" class="seatcheck" col="${SeatReq.col}" num="${SeatReq.num}" grade="${SeatReq.grade }" pfshs_rese="${SeatReq.pfshs_rese }" value="${SeatReq.col }" 
 						<c:if test="${SeatReq.pfshs_rese eq 1 }">
 						disabled="true"
 						
 						</c:if>
 						 />
+					</label>
 						
 						
 						<c:if test="${status.index > 0 }">
@@ -144,25 +144,7 @@
 					
 					</div>
 					
-					<script>
-						$('.seatlabel').on('click',function(){
-							
-							alert($(this).attr('id'));
-							
-							
-							if($('#'+$(this).attr('for')).is(":checked")==false){
-							$('#'+$(this).attr('id')).attr({"pfshs_rese":"2"});
-							$(this).attr('pfshs_rese','2');
-							}
-							else{
-								$('#'+$(this).attr('id')).attr({"checked": true,"pfshs_rese":"0"});
-								$(this).attr('pfshs_rese','0');
-								
-							}
-							//$(this).css("background-color","white");
-						});
 					
-					</script>
 			<!-- 
 				<form id="formCalendar" name="formCalendar" method="get"
 					action="BookDateTime.asp">
@@ -226,7 +208,10 @@
 						<tbody>
 							<tr class="fir" id="MyRow1">
 								<th>일시</th>
-								<td><span id="MyPlayDate" name="MyPlayDate" title=""></span></td>
+								<td><span id="MyPlayDate" name="MyPlayDate" title="">
+							
+									
+								</span></td>
 							</tr>
 							<tr id="MyRow2">
 								<th>선택좌석<br>(<span id="MySelectedSeatCnt"
@@ -306,17 +291,7 @@
 							alt="다음단계" id="SmallNextBtnImage"></a>
 					</p>
 				</div>
-				<script>
-					$('#LargeNextBtnLink').on(
-							'click',
-							function(e) {
-								e.preventDefault();
-								/* alert($(this).attr('data-url')); */
-								$('#ifrmBookStep').attr('src',
-										$(this).attr('data-url'));
-
-							});
-				</script>
+				
 				<!-- 예매 정보 //-->
 			</div>
 			<!-- contR //-->
@@ -343,6 +318,7 @@
 		</div>
 		<!-- 검색 결과 레이어 //-->
 	</div>
+	<%@ include file="./step2_js.jsp"%>
 
 	<!-- //container -->
 </div>

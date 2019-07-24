@@ -1,12 +1,21 @@
 package com.trex.dto;
 
 public class SeatReqVO {
+	private String seat_code;
 	private String grade;
 	private String price;
 	private int count;
 	private String col;
 	private int num;
 	private int pfshs_rese;
+	
+	
+	public String getSeat_code() {
+		return seat_code;
+	}
+	public void setSeat_code(String seat_code) {
+		this.seat_code = seat_code;
+	}
 	public String getGrade() {
 		return grade;
 	}
@@ -46,10 +55,9 @@ public class SeatReqVO {
 	}
 	@Override
 	public String toString() {
-		return "SeatReqVO [grade=" + grade + ", price=" + price + ", count=" + count + ", col=" + col + ", num=" + num
-				+ ", pfshs_rese=" + pfshs_rese + "]";
+		return "SeatReqVO [seat_code=" + seat_code + ", grade=" + grade + ", price=" + price + ", count=" + count
+				+ ", col=" + col + ", num=" + num + ", pfshs_rese=" + pfshs_rese + "]";
 	}
-	
 	
 	
 	
