@@ -107,12 +107,23 @@ public class PerformReservationController {
 		return modelnView;
 	}
 	@RequestMapping(value="/{pf_code}/step3", method=RequestMethod.GET )
-	public ModelAndView performreseGet3(@PathVariable String pf_code,String seat_code,ModelAndView modelnView) throws SQLException{
+	public ModelAndView performreseGet3(@PathVariable String pf_code, String seat_code,String pfsh_code,ModelAndView modelnView) throws SQLException{
 
+		String url = "perform/step3";
 		
-	
+		String[] seat = seat_code.split(",");
+		int price = 0;
+		System.out.println(">>>>>!!!!!!!!!!!"+seat.length);
+		for(int i=0 ; i<seat.length ; i++) {
+			
+		
+			price += PFRESEService.getSeatPrice(seat[i], pfsh_code);
+		}
+		System.out.println("%%%%%>> "+price);
+
 		System.out.println(seat_code);
-		
+		modelnView.addObject("price", price);
+		modelnView.setViewName(url);
 		
 		return modelnView;
 	}

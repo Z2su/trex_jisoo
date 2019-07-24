@@ -35,6 +35,13 @@
 		order by col ,num
 	</select>
 	
+	<select id="selectSeatPrice" parameterType="map" resultType="int">
+		select price
+		from seat_view 
+		where seat_code=#{seat_code} and pfsh_code=#{pfsh_code}
+		
+	</select>
+	
 
 
 
