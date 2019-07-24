@@ -8,6 +8,7 @@ import com.trex.dto.CrAppVO;
 public interface CrAppDAO {
 	
 	List<CrAppVO> selectCRAppList() throws SQLException;
+	List<CrAppVO> selectCRAppConfList() throws SQLException;
 	CrAppVO selectCRApp(String cr_app_code) throws SQLException;
 	void enableList(String cr_app_code) throws SQLException;
 	
