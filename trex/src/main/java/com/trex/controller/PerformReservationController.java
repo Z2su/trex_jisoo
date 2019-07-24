@@ -109,4 +109,14 @@ public class PerformReservationController {
 		
 		return modelnView;
 	}
+	@RequestMapping(value="/{pf_code}/step3", method=RequestMethod.GET )
+	public ModelAndView performreseGet3(@PathVariable String pf_code,String seat_code,ModelAndView modelnView) throws SQLException{
+
+		
+	
+		System.out.println(seat_code);
+		
+		
+		return modelnView;
+	}
 }
