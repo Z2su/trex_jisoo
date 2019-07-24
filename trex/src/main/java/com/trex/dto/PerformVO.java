@@ -9,7 +9,16 @@ public class PerformVO {
 	private int runtime;
 	private String hall_code;
 	private String crsh_code;
+	private String tro_code;
 	
+	public String getTro_code() {
+		return tro_code;
+	}
+
+	public void setTro_code(String tro_code) {
+		this.tro_code = tro_code;
+	}
+
 	public String getPf_code() {
 		return pf_code;
 	}

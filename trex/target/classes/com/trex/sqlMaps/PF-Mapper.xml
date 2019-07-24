@@ -6,7 +6,7 @@
 		from PF
 	</select>
 	<select id="selectPF" resultType="PF">
-		seletct *
+		select *
 		from PF
 		where pf_code = #{pf_code}
 	</select>
