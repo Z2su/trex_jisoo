@@ -30,6 +30,7 @@
 	<import resource="classpath:context/MypageMemberBoard-context.xml"/>
 	<import resource="classpath:context/MypageTroupeCrApp-context.xml"/>
 	<import resource="classpath:context/MypageTroupeAd-context.xml"/>
+	<import resource="classpath:context/Pay-context.xml"/>
 	<import resource="classpath:context/CrConf-context.xml"/>
 	<import resource="classpath:context/MypageRh-context.xml"/>
 	
