@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div id="mainwrap">
 	<!-- mvisual -->
@@ -17,151 +16,28 @@
 			<div class="mv_cnt">
 				<div class="mask" style="left: 0px;">
 					<ul class="obj">
-						<li><img
-							src="/upload/performance/mthm_performance_0_1557996083.jpg"
-							alt="자체제작연극 14th <죄와 벌>">
-							<p>
-								자체제작연극 14th &lt;죄와 벌&gt;... <span class="date">2019년 9월
-									24일(화) - 29(일) / 6일 6회</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9Mjk3MA==');"
-							class="reser">예매</a></li>
-						<li><img
-							src="/upload/performance/mthm_performance_0_1551775315.jpg"
-							alt="2019 인문학콘서트4 <최정원이 말하는 뮤지컬 그리고 무대>">
-							<p>
-								2019 인문학콘서트4 &lt;최정원이 ... <span class="date">2019년 10월
-									17일(목)</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzA2MA==');"
-							class="reser">예매</a></li>
-						<li><img
-							src="/upload/performance/mthm_performance_0_1547101059.jpg"
-							alt="카잘스 콰르텟">
-							<p>
-								카잘스 콰르텟 <span class="date">2019년 10월 20일(일) / 1일 1회</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9Mjk2Nw==');"
-							class="reser">예매</a></li>
-						<li><img
-							src="/upload/performance/mthm_performance_0_1559000680.jpg"
-							alt="2019 대전방문의해 기념 제작 오페라 <투란도트>">
-							<p>
-								2019 대전방문의해 기념 제작 오페... <span class="date">2019년 10월
-									23일(수) ~ 26일(토)</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9Mjk4MA==');"
-							class="reser">예매</a></li>
-					</ul>
-					<ul class="obj">
-						<li><img
-							src="/upload/performance/mthm_performance_0_1549788761.jpg"
-							alt="연극 <이갈리아의 딸들>">
-							<p>
-								연극 &lt;이갈리아의 딸들&gt; <span class="date">2019년 10월 25일(금) -
-									27(일) / 3일 3회</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9Mjk2Ng==');"
-							class="reser">예매</a></li>
-						<li><img
-							src="/upload/performance/mthm_performance_0_1559084819.jpg"
-							alt="잉글리시 콘서트(English Concert) &amp; 조수미(Sumi Jo)">
-							<p>
-								잉글리시 콘서트(English Concert)... <span class="date">2019. 11.
-									5(화) 19:30 / 1일 1회</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9Mjk3NA==');"
-							class="reser">예매</a></li>
-						<li><img
-							src="/upload/performance/mthm_performance_0_1559632580.jpg"
-							alt="움직이는 공연장 <인아웃 콘서트Ⅲ>">
-							<p>
-								움직이는 공연장 &lt;인아웃 콘서... <span class="date">2019. 11. 6(수)</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9Mjk0Ng==');"
-							class="reser">예매</a></li>
-						<li><img
-							src="/upload/performance/mthm_performance_0_1547448625.jpg"
-							alt="프렐조카쥬 발레 <프레스코화>">
-							<p>
-								프렐조카쥬 발레 &lt;프레스코화&amp;g... <span class="date">2019. 11.
-									9(토) 15:00, 10(일) 15:00 / 2...</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9Mjk3NQ==');"
-							class="reser">예매</a></li>
-					</ul>
-					<ul class="obj">
-						<li><img
-							src="/upload/performance/mthm_performance_0_1551775471.jpg"
-							alt="2019 인문학콘서트5 <박근형에게 듣는 배우의 길>">
-							<p>
-								2019 인문학콘서트5 &lt;박근형에... <span class="date">2019년 11월
-									14일(목)</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzA2MQ==');"
-							class="reser">예매</a></li>
-						<li><img
-							src="/upload/performance/mthm_performance_0_1552280085.jpg"
-							alt="모차르트 음악극Ⅰ <로미오와 줄리엣>">
-							<p>
-								모차르트 음악극Ⅰ &lt;로미오와 ... <span class="date">2019. 11.
-									26(화)~28(목)</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9Mjk1MA==');"
-							class="reser">예매</a></li>
-						<li><img
-							src="/upload/performance/mthm_performance_0_1547446056.jpg"
-							alt="크리스마스 발레 <호두까기인형>">
-							<p>
-								크리스마스 발레 &lt;호두까기인형... <span class="date">2019. 12. 6(금)
-									19:30, 7(토)15:00, 19:00...</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9Mjk3Ng==');"
-							class="reser">예매</a></li>
-						<li><img
-							src="/upload/performance/mthm_performance_0_1547448546.jpg"
-							alt="덴마크 로열 오케스트라 &amp; 선우예권">
-							<p>
-								덴마크 로열 오케스트라 &amp; 선... <span class="date">2019. 12.
-									10(화) 19:30 / 1일 1회</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9Mjk3Nw==');"
-							class="reser">예매</a></li>
-					</ul>
-					<ul class="obj">
-						<li><img
-							src="/upload/performance/mthm_performance_0_1561709571.jpg"
-							alt="2019 썸머뉴아티스트콘서트_피아니스트 성지민">
-							<p>
-								2019 썸머뉴아티스트콘서트<span class="date">2019.8.7.(수)~8.10.(토)</span>
-							</p> <a href="#" class="view">View</a></li>
-						<li><img
-							src="/upload/performance/mthm_performance_0_1560247143.jpg"
-							alt="연극 <그게 아닌데>">
-							<p>
-								연극 &lt;그게 아닌데&gt; <span class="date">2019년 8월 23일(금) -
-									24(토) / 2일 4회</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9Mjk2NQ==');"
-							class="reser">예매</a></li>
-						<li><img
-							src="/upload/performance/mthm_performance_0_1547101021.jpg"
-							alt="디즈니 인 콘서트">
-							<p>
-								디즈니 인 콘서트 <span class="date">2019년 9월 5일(목)</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9Mjk3Mg==');"
-							class="reser">예매</a></li>
-						<li><img
-							src="/upload/performance/mthm_performance_0_1551773519.jpg"
-							alt="2019 인문학콘서트3 <발레커플 엄재용 황혜민_ 내 인생의 파드되>">
-							<p>
-								2019 인문학콘서트3 &lt;발레커플 ... <span class="date">2019년 9월
-									17일(화)</span>
-							</p> <a href="#" class="view">View</a> <a href="#total"
-							onclick="javascript:INTER_Login_check('L2h0bWwva3IvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2VfMDEwMTAxLmh0bWw/bW9kZT1WJmNvZGU9MzA1OQ==');"
-							class="reser">예매</a></li>
-					</ul>
+						<c:forEach items="${adList}" var="ad">
+							<li>
+								<div style="background-position:center;
+											background-size:cover;
+											background-repeat:no-repeat;
+											background-image:url('${ad.thumbimg }');
+											width:200px;height:150px; margin:0 auto;
+											"
+									title="${ad.performVO.name}"></div>
+								<p> 
+									<span style="font-size:18px;font-weight:bold;color:white;">${ad.performVO.name}</span>								
+									<span class="date">
+									<fmt:formatDate value="${ad.startdate }" pattern="yyyy년 MM월 dd일"/>								
+									 - 
+									 <fmt:formatDate value="${ad.enddate }" pattern="yyyy년 MM월 dd일"/>									  
+									 </span>
+								</p> 
+								<a href="#" class="view">View</a> 
+								<a href="#total" onclick="" class="reser">예매</a>
+							</li>
+						</c:forEach>
+					</ul>					
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -543,7 +419,7 @@
 						<em>Event</em>
 					</h3>
 				</div>
-				
+
 			</div>
 		</div>
 

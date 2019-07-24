@@ -1,8 +1,21 @@
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<script type="text/javascript">
+	$(function() {
+		$("#datepicker1").datepicker({
+			dateFormat : 'yy-mm-dd'
+		});
+	});
 
+	$(function() {
+		$("#datepicker2").datepicker({
+			dateFormat : 'yy-mm-dd'
+		});
+	});
+</script>
 
 <div id="contentswrap">
 
@@ -65,21 +78,31 @@
 						<li><label for="wrtPers">작성자</label><input type="text"
 							id="wrtPers" name="writer" value="${loginUser.mem_code }"
 							readonly=""><span class="tip"></span></li>
-						<!--공지 사항 체크-->
+						<li><label for="pfSelect">공연선택</label>							
+							<select name="pf_code">
+							<c:forEach var="pf" items="${pfList }">
+								<option value="${pf.pf_code}">${pf.name }</option>
+							</c:forEach>
+							</select>
+							
+						</li>
 
-						<!--비밀글  체크-->
+						<li><label for="dms.subject"
+							class="col-xs-4 col-sm-2 control-label no-padding-right bolder g_label">
+								게시기간 </label><input id="datepicker1" name="startdate"
+							style="color: #919191;" class="dateInput" readonly="readonly"
+							type="text"
+							value='<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd" />' />
+							~ <input id="datepicker2" name="enddate" class="dateInput"
+							type="text"
+							value='<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd" />' /></li>
 
-						<!-- <div class="inputArea">
-							<label for="Img">이미지</label> <input type="file" id="img"
-								name="file" />
-							<div class="select_img">
-								<img src="" />
-							</div> -->
-						 <li><label for="wrtimg">이미지</label><input type="file"
+
+						<li><label for="wrtimg">이미지</label><input type="file"
 							id="img" name="file" />
 							<div class="select_img">
 								<img src="" />
-							</div></li> 
+							</div></li>
 
 
 
@@ -87,26 +110,16 @@
 
 
 
-						<!--첨부파일-->
-						<!-- 	<li><label for="wrtFile">첨부파일</label><input
-							name="fileattach[]" id="file1" type="file" class="upFile"
-							title="첫번째첨부파일"><br>
-						<input name="fileattach[]" type="file" class="upFile"
-							title="1 첨부파일"> (최대 파일사이즈 : 2 MB)</li> -->
 
 						<li><label for="wrtCont">내용입력</label> <textarea id="wrtCont"
 								name="cont" rows="20" cols="1"></textarea></li>
 					</ul>
-			<div class="board_butt">
-				<input type="image"
-							src="/resources/images/regist.png" alt="등록">
-						<a
-							href="/_prog/_board/index.php?code=stage&amp;site_dvs_cd=kr&amp;menu_dvs_cd=0308&amp;skey=&amp;sval=&amp;GotoPage="><img
-							src="/resources/images/cancel.png" alt="취소"></a>
-						<a
-							href="/_prog/_board/index.php?code=stage&amp;site_dvs_cd=kr&amp;menu_dvs_cd=0308&amp;skey=&amp;sval=&amp;GotoPage="><img
+					<div class="board_butt">
+						<input type="image" src="/resources/images/regist.png" alt="등록">
+						<a href="adlist"><img src="/resources/images/cancel.png"
+							alt="취소"></a> <a href="adlist"><img
 							src="/resources/images/list.gif" alt="목록"></a>
-			</div>
+					</div>
 				</form>
 			</div>
 

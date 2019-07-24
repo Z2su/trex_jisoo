@@ -83,4 +83,27 @@ public class AdDAOImpl implements AdDAO {
 		return adList;
 	}
 
+	@Override
+	public List<AdVO> selectAdBannerList() throws SQLException {
+		List<AdVO> adList = session.selectList("Ad-Mapper.selectAdListBanner");	
+		return adList;
+	}
+
+	@Override
+	public void updateAgree1(AdVO ad) throws SQLException {
+		
+		session.update("Ad-Mapper.updateAgree1",ad);
+	}
+	@Override
+	public void updateAgree2(AdVO ad) throws SQLException {
+		
+		session.update("Ad-Mapper.updateAgree2",ad);
+	}
+
+	@Override
+	public AdVO selectAdBypf_code(String writer) throws SQLException {
+		AdVO ad = session.selectOne("Ad-Mapper.selectAdBypf_code",writer);	
+		return ad;
+	}
+
 }

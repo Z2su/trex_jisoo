@@ -47,15 +47,22 @@
 			<div id="txt">
 				<div class="right top_mar_15">
 					<a href="adlist"> <img src="/resources/images/list.gif"
-						border="0" alt="목록"></a> <a href="admodify?ad_num=${ad.ad_num }"><img
+						border="0" alt="목록"></a> 
+					<c:if test="${loginUser.mem_code eq ad.writer }" >	
+					<a href="admodify?ad_num=${ad.ad_num }"><img
 						src="/resources/images/modify.gif" alt="수정"></a> <a
 						href="addelete?ad_num=${ad.ad_num }"><img
 						src="/resources/images/delete.gif" alt="삭제"></a>
-
+					</c:if>
 					<c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }">
-						<a href="<%=request.getContextPath()%>/#"> <img
+						<a href="agree1"> <img
 							src="<%=request.getContextPath()%>/resources/images/regist.png"
 							alt="등록"></a>
+					</c:if>
+					<c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }">
+						<a href="<%=request.getContextPath()%>/agree2"> <img
+							src="<%=request.getContextPath()%>/resources/images/cancel.png"
+							alt="취소"></a>
 					</c:if>
 				</div>
 
@@ -83,10 +90,7 @@
 						<tr>
 							<th scope="row" class="t_head t_left center">이미지</th>
 							<td>	
-								<p>원본 이미지</p>
-								<img src="${ad.img}" class="oriImg" />
-
-								<p>썸네일</p>
+								
 								<img src="${ad.thumbimg}" class="thumbImg" />
 							</td>
 						</tr>
@@ -107,3 +111,4 @@
 	</div>
 	<!-- //container -->
 </div>
+

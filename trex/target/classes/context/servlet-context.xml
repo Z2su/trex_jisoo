@@ -38,7 +38,7 @@
 	<!-- 업로드 패스 설정 -->
 	<beans:bean class="java.lang.String" id="uploadPath">
 		<beans:constructor-arg
-			value="D:\worksapce\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\trex\resources" />
+			value="/resources/imgUpload" />
 	</beans:bean>
 
 	<!-- 일반 파일 업로드 경로 -->
