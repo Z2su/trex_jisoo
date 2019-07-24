@@ -58,5 +58,12 @@ public class CrAppDAOImpl implements CrAppDAO {
 		
 	}
 
+	@Override
+	public List<CrAppVO> selectCRAppConfList() throws SQLException {
+		List<CrAppVO> CRAppConfList = session.selectList("CRApp-Mapper.selectCRAppConfList",null);
+		
+		return CRAppConfList;
+	}
+
 
 }

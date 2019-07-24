@@ -105,6 +105,7 @@
 		where pr_num =
 		#{pr_num}
 	</update>
+	
 
 	<update id="increaseViewCnt" parameterType="int">
 		update
@@ -119,6 +120,7 @@
 		select pre_seq.nextval
 		as pr_num from dual
 	</select>
+	
 
 
 

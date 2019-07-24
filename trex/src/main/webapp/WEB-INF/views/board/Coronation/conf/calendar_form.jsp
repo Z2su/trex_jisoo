@@ -28,7 +28,7 @@
 	
 
 var events=[];
-$.getJSON( "<%=request.getContextPath()%>/manager/calendar/list", function(data) {
+$.getJSON( "<%=request.getContextPath()%>/board/Coronation/conf/listcal", function(data) {
 events=data;
    for(var json of events){
       json.start=new Date(json.start);
@@ -51,7 +51,7 @@ $(document).ready(function() {
 	       center: 'title',
 	       right : 'month,agendaWeek,agendaDay'
 	     },
-		selectable: true,
+		selectable: false,
 		selectHelper: true,
 		select: function(start, end, allDay) {
 			var title = prompt('Event Title:');
@@ -69,7 +69,7 @@ $(document).ready(function() {
 			}
 			
 			var data={	
-					"code":"code",
+					
 					"title":title,
 					"starttime":start,
 					"endtime":endtime,
