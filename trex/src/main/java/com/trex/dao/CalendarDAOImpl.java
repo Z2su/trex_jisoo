@@ -22,12 +22,12 @@ public class CalendarDAOImpl implements CalendarDAO{
 	
 	@Override
 	public void insert(CalendarVO calendar) throws Exception {
-		session.update(Map+".insert");
+		session.update(Map+".insert", calendar);
 		
 	}
 	@Override
 	public void delete(String code) throws Exception {
-		session.update(Map+".delete");
+		session.update(Map+".delete",code);
 		
 	}
 	@Override

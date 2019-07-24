@@ -14,6 +14,7 @@ public class PrVO {
 	private int app_result;	    // 승인여부
 	
 	
+	
 	public String getPr_code() {
 		return pr_code;
 	}
