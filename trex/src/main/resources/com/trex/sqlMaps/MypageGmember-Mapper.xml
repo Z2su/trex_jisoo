@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MypageGmember-Mapper">
+
+	<select id="selectMemberByName" resultType="mypageGmember">
+		select *
+		from gmem
+		where gmem_code = #{mem_code}
+	</select>
+
+	<update id="updateGmember" parameterType="mypageGmember">
+		update gmem
+		set address={address},tell={tell}
+		where gmem_code = #{gmem_code}
+		
+	</update>
+	<update id="updatememger" parameterType="str">
+		update mem
+		set mem_pwd=#{mem_pwd}
+		where mem_code=#{mem_code}	
+	</update>
+	
+	
+	<update id="deleteGmember" parameterType="str">
+		delete
+		from gmem where gmem_code = #{mem_code}
+	</update>
+	
+</mapper>

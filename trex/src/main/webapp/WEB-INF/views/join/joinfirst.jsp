@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 <body>
 	<div id="contentswrap">
@@ -44,564 +45,480 @@
 				</div>
 			</div>
 		</div>
-		<!-- //navigation -->
+		
+		<style>
+		*{margin: 0;padding: 0;box-sizing: border-box}
+		body{background-color: #f7f7f7;}
+		ul>li{list-style: none}
+		a{text-decoration: none;}
+		.clearfix::after{content: "";display: block;clear: both;}
+		
+		#joinForm{width: 750px;margin: 0 auto;}
+		ul.join_box{border: 1px solid #ddd;background-color: #fff;}
+		.checkBox,.checkBox>ul{position: relative;}
+		.checkBox>ul>li{float: left;}
+		.checkBox>ul>li:first-child{width: 85%;padding: 15px;font-weight: 600;color: #888;}
+		.checkBox>ul>li:nth-child(2){position: absolute;top: 50%;right: 30px;margin-top: -12px;}
+		.checkBox textarea{width: 96%;height: 90px; margin: 0 2%;background-color: #f7f7f7;color: #888; border: none;}
+		.footBtwrap{margin-top: 15px;}
+		.footBtwrap>li{float: left;width: 50%;height: 60px;}
+		.footBtwrap>li>button{display: block; width: 100%;height: 100%; font-size: 20px;text-align: center;line-height: 60px;}
+		.fpmgBt1{background-color: #fff;color:#888; margin-left: 390px; margin-right: 100px;}
+		.fpmgBt2{background-color: lightsalmon;color: #fff; margin-left: 220px;} 
+		.title{font-size: 20px; text-align: center; background-color: #black;color:#whithe;}
+				
+		
+				
+		</style>
+			<form action="joinmain" id="joinForm" >
+            <ul class="join_box">
+            
+               			<h3 class="title" id >※회원가입 이용약관※</h3>
 
-		<!-- container -->
-		<div id="container">
-			<%-- 				<%@ include file="/WEB-INF/views/board/commons/submenu.jsp" %>
- --%>
+                <li class="checkBox check01">
+                    <ul class="clearfix">
+                        <li>이용약관, 개인정보 수집 및 이용,
+                            위치정보 이용약관(선택), 프로모션 안내
+                            메일 수신(선택)에  모두동의</li>
+                        <li class="checkAllBtn">
+                            <input type="checkbox" name="check1" id="check1" class="chkAll">
+                        </li>
+                    </ul>
+                </li>
+                <li class="checkBox check02">
+                    <ul class="clearfix">
+                        <li>이용약관 동의(필수)</li>
+                        <li class="checkBtn">
+                            <input type="checkbox" name="check2" id="check2" class="check"> 
+                        </li>
+                    </ul>
+                    <textarea name="" id="">대전예술의전당 회원 약관
+제1장 총 칙
 
-			<!-- content-->
-			<div id="content">
-				<!-- 컨텐츠 타이틀 -->
-				<!-- <h3 class="cnt_ti">detail</h3> -->
+제1조(목적)
+이 약관은 대전예술의전당(이하 "예당"이라 함)이 운영하는 대전예술의전당 무료회원 및 유료회원(이하 "회원"이라 함) 가입과 회원 자격, 혜택(이하 "서비스"라 함)등의 이용조건 및 절차에 관하여 대전예술의전당과 회원간의 권리, 의무 및 책임사항의 규정을 목적으로 합니다. 
 
-				<!-- 	
-				///////////////////////////////////
-				//                               //
-				//                               //
-				//            내용채우기                            //
-				//                               //
-				//                               //
-				//                               //
-				//                               //
-				//                               //
-				/////////////////////////////////// -->
-			</div>
+제2조(약관의 명시 및 개정)
+
+1. 이 약관은 예당이 인터넷 홈페이지 화면 또는 지면에 게시하거나 기타의 방법으로 이용자에게 공지함으로써 효력이 발생합니다. 
+
+2. 예당은 필요에 따라 이 약관을 개정할 수 있으며, 변경된 약관은 1항과 같은 방법으로 공지함으로써 효력이 발생합니다. 
+
+3. 변경된 약관의 효력 발생일 이후의 계속적인 서비스 이용은 변경 약관에 동의한 것으로 간주합니다. 
+
+제3조(약관 외 준칙)
+
+이 약관에 명시되지 않은 사항과 이 약관의 해석은 정부가 제정한 전자거래 소비자보호지침, 전자거래 기본법 및 관계법령 또는 상관례에 따릅니다. 
+
+제4조(용어의 정의)
+
+1. "이용자"란 약관에 따라 예당이 제공하는 서비스를 받는 회원을 말합니다. 
+2. "유료회원"이란 예당에 개인정보를 제공하고, 연회비를 납부하여 예당이 제공하는 회원 등급별 서비스를 받는 회원을 말하며 법인회원, 골드회원, 블루회원, 제휴회원등으로 구분됩니다.
+3. "무료회원"이란 예당에 개인정보를 제공하고, 연회비는 납부하지 않고 예당이 제공하는 제한된 서비스를 받는 회원을 말합니다. 
+4. "기획공연"이란 공연의 주최가 예당이 되며 공연에 따른 모든 권한과 책임을 예당이 소유하는 공연을 말합니다. 
+5. "공동주최공연"이란 예당이 기획사 또는 공연단체와 공동 명의로 시행하는 공연을 말하며, 공동 주최측과 예당의 별도 약정에 의해 공연에 따른 책임과 권한의 범위가 달라지는 공연을 말합니다. 
+6. "대관공연"이란 예당은 공연 장소만 제공하고, 장소를 임대한 공연 단체나 기획사에서 공연에 따른 모든 책임과 권한을 소유하는 공연을 말합니다.
+
+제2장 회원가입 및 서비스이용
+
+제5조(가입신청)
+
+1. 회원가입을 원하는 자는 예당이 지정한 소정양식의 가입신청서를 작성하여 온라인 또는 기타 예당이 지정하는 방법으로 다음 사항을 기재하여 신청합니다.
+
+가. 성명 , 법인 회원의 경우 법인명
+
+나. 생년월일, 성별, 법인회원의 경우 사업자 등록번호
+
+다. 전화번호 ( 직장 혹은 자택 , 휴대폰)
+
+라. 주 소 (직장 혹은 자택)
+
+마. e-mail
+
+바. 관심분야 (오페라 / 뮤지컬 / 연극 / 무용 / 음악회 / 기타)
+
+사. 결혼여부 (자녀 : 명)
+
+제6조(회원가입의 성립)
+
+1. 회원가입은 회원의 약관 동의, 가입신청, 예당의 승인에 의하여 성립합니다.
+
+2. 예당은 다음 각 호에 해당하는 경우에 한하여 가입신청을 거부할 수 있습니다.
+
+가. 본인의 실명으로 신청하지 않은 경우, 법인회원의 경우 법인명
+
+나. 가입신청시 필요 내용을 허위로 기재하여 신청한 경우
+
+다. 사회의 안녕과 질서 혹은 미풍양속을 저해할 목적으로 신청한 경우
+
+라. 기타 예당이 정한 가입신청 요건이 충족되지 않은 경우
+
+제7조(회원의 종류 및 연회비)
+
+1. 예당 유료회원의 종류는 법인회원, 골드회원, 블루회원, 제휴회원 등으로 구분됩니다.
+
+가. 법인회원은 연회비 100만원을 지불하고, 예당이 제공하는 다양한 혜택을 받을 수 있는 회원을 말합니다.
+
+나. 골드회원은 연회비 10만원을 지불하고, 예당이 제공하는 다양한 혜택을 받을 수 있는 회원을 말합니다.
+
+다. 블루회원은 연회비 5만원을 지불하고, 예당이 제공하는 다양한 혜택을 받을 수 있는 회원을 말합니다.
+
+라. 제휴회원은 예당과 제휴를 맺은 협력사의 회원을 말하며, 회원에 대한 서비스 내용은 계약조건에 따라 유동적입니다.
+
+2. 유료회원의 연회비는 신용카드, 무통장입금, 인터넷뱅킹 및 기타 예당이 정한 방법을 통하여 납부가 가능합니다.
+
+3. 연회비의 환불은 예당이 인정하거나, 별도로 정한 기간(연회비 납부 후 7일 이내)에만 가능하며, 연회비 납부 7일 이내라도 예당의 회원 서비스를 받은 경우에는 일체 환불되지 않습니다.
+
+제8조(회원의 유효기간)
+
+1. 회원의 유효기간은 연회비를 납부한 날로부터 1년까지입니다. 단, 장기 가입이나 추가 서비스로 유효기간이 연장된 경우에는 예당에서 유효기간을 알려드립니다. 
+
+2. 회원의 개인적 사유로 유효 기간을 일시정지하거나 연장할 수 없습니다. 
+
+제9조(유료회원에게 제공되는 서비스)
+
+1. 법인회원의 혜택은 아래와 같습니다.
+
+가. 골드회원의 혜택이 기본적으로 제공되며 예당이 지정한 기획공연의 입장권 구입시 50매까지 30∼20% 할인된 가격으로 예약 및 예매할 수 있습니다.(제9조 2항)
+
+나. 단, 골드회원 혜택 중 예당 문화예술교육강좌 수강시 할인 혜택은 제외됩니다. 
+
+2. 골드회원의 혜택은 아래와 같습니다.
+
+가. 블루회원의 혜택이 기본적으로 제공되며 예당이 지정한 기획공연의 입장권 구입시 (공연일 및 회당 기준이 아님)4매까지 30∼20% 할인된 가격으로 예약 및 예매할 수 있습니다.(제9조 3항)
+
+나. 예당이 기획한 공연에 한하여 회원카드 제시시 공연 프로그램을 무료로 제공해 드립니다.
+
+다. 예당 문화예술교육강좌 수강시 1개 강좌 당 본인 또는 본인의 배우자 및 직계비속 중 1명에 한하여 수강료 15%를 할인해 드립니다.
+
+3. 블루회원의 혜택은 아래와 같습니다.
+
+가. 계간 정보지를 회원이 원하는 장소(대한민국 영토 내)로 우편 발송해 드립니다.
+
+나. 예당이 지정한 기획공연의 입장권 구입시 공연당(공연일 및 회당 기준이 아님) 2매까지 20∼10% 할인된 가격으로 예약 및 예매할 수 있습니다. 단, 공동주최 및 좌석 등급과 입장권 구입일시에 따라 할인율이 변동될 수 있으며, 경우에 따라서는 할인되지 않을 수도 있습니다.
+
+다. 예당 문화예술교육강좌 수강시 1개 강좌 당 본인 또는 본인의 배우자 및 직계비속 중 1명에 한하여 수강료 10%를 할인해 드립니다.
+
+4. 제휴회원의 혜택은 아래에 같습니다.
+가. 제휴회원은 예당과 제휴를 맺은 협력사의 회원을 말하며, 회원에 대한 서비스 내용은 협력사의 약정에 따라 다르기 때문에 별도로 정합니다.
+
+나. 기타의 혜택은 일반회원과 같습니다. 
+
+5. 예당에서 제공하는 회원 혜택의 세부 내용과 이의 원활한 이용을 위하여 회원께서 협조할 사항은 아래와 같습니다.
+
+가. 대관공연의 할인은 대관단체에서 협조한 경우에 한하여 할인을 받을 수 있으며, 할인된 가격으로 구입할 수 있는 수량과 할인 범위, 예매방법등은 대관자의 사정에 따라 달라질 수 있습니다.
+
+나. 상기 회원의 혜택을 받기 위해서는 반드시 회원 본인이 회원 카드를 제시하여야 합니다. 예당은 필요할 경우 본인 확인을 요청할 수 있으며, 회원은 이에 협조 하여야 합니다. 회원이 아닌 제3자가 회원카드를 무단 사용하거나 회원카드를 제시하지 않은 경우 예당은 회원 혜택을 제공하지 않으며, 이로 인해 발생한 손해는 예당이 책임지지 않습니다.
+
+다. 회원 혜택에 있어서 중복 수혜의 경우 회원이 유리한 혜택을 선택할 수 있습니다.
+
+제10조(무료회원에게 제공되는 서비스)
+
+1. 무료회원의 혜택은 아래와 같습니다.
+
+가. 예당이 제공하는 커뮤니티, 예술정보검색 서비스, VOD서비스 및 게시판 이용이 가능합니다.
+
+나. 예당의 공연 정보를 전자우편, 휴대폰 단문서비스(SMS)를 통해 받으실 수 있습니다.
+
+다. 비정기적으로 공연 할인쿠폰이 제공됩니다.
+
+라. 홈페이지 이벤트 참여기회가 부여됩니다.
+
+제11조(신청사항의 변경)
+
+1. 회원은 가입 신청시 기재한 사항이 변경되었을 경우에는 유,무선의 방법을 통해 수정해야 합니다.
+
+2. 1항의 사안으로 인해 발생한 손해는 예당이 책임지지 않습니다.
 
 
-		</div>
-		<!-- //container -->
-	</div>
+제3장 가입 해지 및 서비스 이용제한
+
+제12조(회원탈퇴 및 자격 상실)
+
+1. 회원이 다음 각 호의 사유에 해당하는 경우 예당은 회원자격을 제한하거나 정지 시킬 수 있습니다.
+
+가. 가입 신청시 허위 내용을 등록한 경우
+
+나. 범죄 행위와 관련된 경우
+
+다. 다른 사람의 아이디(ID)와 비밀번호를 도용한 경우
+
+라. 서비스 운영을 고의로 방해한 경우
+
+마. 타인의 개인정보를 도용하여 회원가입한 경우
+
+바. 공공질서 및 미풍양속에 저해되는 내용을 고의로 유포시킨 경우
+
+사. 다른 사람의 명예를 손상시키거나 불이익을 주는 경우
+
+아. 회원카드의 무단/불법 사용 또는 악용한 경우
+
+2. 유료회원 탈퇴에 따른 연회비 환불은 제2장 7조 3항과 같은 방법으로 처리됩니다.
+
+제4장 회원의 의무
+
+제13조(개인정보 보호)
+
+1. 예당은 회원 가입시 회원 서비스 제공 이행에 필요한 최소한의 정보를 수집합니다. 이에 따라 성명, 법인명, 생년월일, 성별, 사업자등록번호, 전화번호(직장, 자택, 휴대폰), 주소 (직장, 자택), e-mail, 관심분야 (오페라/뮤지컬/연극/무용/클래식/기타), 결혼여부 (자녀: 명) 항목을 입력하면 됩니다.
+
+2. 예당은 회원의 개인식별이 가능한 정보를 수집하는 때에는 반드시 당해 이용자의 동의를 받습니다. (회원가입 안내문을 읽고 회원종류 버튼을 누르거나 유,무선의 방법을 통한 신청서 작성 및 회원 본인이 직접 신청서를 작성하시면 이 약관에 동의한 것으로 간주합니다.)
+
+3. 제공된 개인정보는 법령에 근거한 경우와 다음의 경우를 제외하고는 회원의 동의 없이 이용할 수 없으며 제3자에게 제공하지 않습니다.
+
+가. 금융 실명거래 및 비밀보장에 관한 법률, 신용정보의 이용 및 보호에 관한 법률, 전기통신기본법, 전기통신사업법, 지방세법, 소비자보호법, 한국은행법, 형사 소송법 등 법령에 특별한 규정이 있는 경우(법령에 따라 행정관청 또는 수사기관이 요구해 온 경우라도 무조건 개인정보를 제공하지 않으며, 법령에 규정된 바에 따라 영장 또는 기관장의 직인이 날인된 서면에 의한 경우에만 제공합니다)
+
+나. 예당이 지정한 입장권 판매 대행사 또는 예당의 제휴사와 회원 할인 및 혜택을 받기 위하여 최소한의 정보를 공개 혹은 제공할 필요가 있는 경우
+- 예당은 회원가입시 실명확인을 위하여 (주)나이스신용평가정보 본인확인서비스를 이용하고 있습니다.
+  (이용항목 : 성명, 휴대전화번호, 성별, 생년월일) 
+- 예당은 예매서비스 대행업체인 (주)인터파크INT에게 예매서비스를 제공위한 개인정보 일부를 제공하고 있습니다.
+- 제공항목 : 성명, 아이디, 연락처, 주소, 이메일
+
+다. 통계작성, 학술연구 또는 시장조사를 위하여 필요한 경우로서 특정 개인을 식별 할 수 없는 형태로 제공하는 경우
+
+4. 개인정보보호법 변경에 따라 동의 후 2년마다 재동의를 받아야 하나, 예매 시 홈페이지를 통하지 않고 예당 전용콜센터를 이용하는 회원들이 많아 가입 시, 개인정보보호 동의를 한 회원은 탈퇴 시까지 개인정보보호법에 동의한 것으로 간주합니다.(2년마다 재동의 받지 않습니다.)
+
+5. 회원가입에 대한 동의 철회, 열람 또는 정정 요구 등 회원이 수정한 정보는 수정 절차가 완료된 시점부터 바로 적용됩니다.
+
+6. 개인정보의 수집 목적 또는 제공받은 목적이 달성되면, 개인정보를 파기합니다. 단, 상법 등 법령의 규정에 의하여 보존할 필요성이 있는 경우에는 예외로 합니다.
+
+7. 만 14세 미만에 해당하는 아동은 개인정보의 중요성에 관한 인식이 충분하지 않고, 정보를 평가하거나 진위를 판단하는 능력이 부족한 상태입니다. 따라서, 아동 이나 법정대리인이 자신도 모르는 곳에서 불이익을 당할 우려가 크므로 만14세 미만은 부모(법정대리인)의 동의가 있어야만 회원으로 가입할 수 있습니다.
+
+8. 예당은 개인정보 보호와 관련하여 회원의 의견과 불만을 접수할 수 있는 창구를 개설하고 있습니다. 개인정보와 관련한 불만이 있으신 분은 예당 개인정보 관리 책임자에게 의견을 주시면 접수 즉시 조치하여 처리결과를 통보하여 드립니다.
+
+(개인정보처리자 연락처 042-270-8153, 개인정보담당자 연락처 042-270-8113)
 
 
+제14조(예당의 의무)
+
+1. 예당은 법령과 이 약관이 금지하거나 공서양속에 반하는 행위를 하지 않으며 이 약관이 정하는 바에 따라 지속적이고, 안정적으로 서비스를 제공하는 데 최선을 다 하여야 합니다.
+
+2. 예당은 회원이 안전하게 서비스를 이용할 수 있도록 회원의 개인정보(신용정보 포함) 보안에 대하여 최고의 안전 조치를 강구하여 회원의 정보보안에 최선을 다해야 할 의무가 있습니다.
+
+3. 예당은 회원이 제기하는 불편, 불만 사항에 대해 정당하다고 판단할 경우 즉시 처리해야 합니다.
+
+제15조(회원의 의무)
+
+1. 회원은 관계법령, 이 약관의 규정, 이용안내 등 예당이 통지하는 사항을 준수하여야 하며, 기타 예당에 방해되는 행위를 하여서는 안됩니다.
+
+2. 자신의 회원카드 및 회원번호에 관한 관리 책임은 회원에게 있습니다. 관리 소홀, 부정사용으로 인한 모든 결과에 대한 책임은 회원에게 있습니다.
+
+3. 회원은 자신의 회원카드나 회원번호를 제3자에게 양도, 증여할 수 없으며, 이를 담보로 제공할 수 없습니다.
+
+4. 자신의 회원카드 및 회원번호가 부정하게 사용된 경우 회원은 반드시 예당에 그 사실을 통보해야 합니다.
+
+5. 회원은 서비스의 일부로 발송되는 예당의 전자우편 및 서신우편, 휴대폰 단문서비스 (SMS)를 받는 것에 동의합니다.
+
+6. 회원은 서비스 이용과 관련하여 다음 각 호의 행위를 하여서는 안 됩니다.
+
+가. 다른 회원의 아이디, 회원카드, 회원번호를 부정하게 사용하는 행위
+
+나. 서비스에서 얻은 정보를 예당의 사전 승낙 없이 회원의 이용 이외 목적으로 복제하거나 출판 및 방송 등에 사용하거나 제3자에게 제공하는 행위
+
+다. 예당의 저작권, 제3자의 저작권 등 기타 권리를 침해하는 행위
+
+라. 정보통신설비의 오동작 및 정보 등의 파괴·혼란을 유발시키는 컴퓨터 바이러스 감염자료를 등록 또는 유포하는 행위
+
+마. 범죄와 결부된다고 객관적으로 판단되는 행위
+
+바. 기타 관계법령이나 예당이 정한 이용조건에 위배되는 행위
+
+제5장 결제에 관한 규정
+
+제16조(사용 가능한 결제 방법)
+
+1. 회원이 사용할 수 있는 결제수단에는 신용카드, 무통장입금, 인터넷뱅킹 등 회원의 판단 및 상황에 따라 달라질 수 있습니다. 
+
+2. 신용카드는 승인시 필요한 사항을 입력하되 회원의 동의가 있어야만 합니다.
+
+3. 무통장입금은 회원명으로 예당이 지정한 계좌에 입금해야 하며, 부정확한 입금내역에 대해 입금자가 통지하지 않았을 경우의 불이익에 대해서 예당은 책임을 지지 않습니다. 
+
+4. 인터넷뱅킹은 인터넷을 통해 회원의 계좌에서 예당이 지정한 계좌로 직접 이체하는 결제 방식입니다. 단, 예당에서 협약된 은행의 계좌와 이에 필요한 소프트웨어를 설치 하신 이용자만 가능합니다.
+
+
+제6장 서비스의 이용
+
+제17조(정보의 제공)
+
+예당은 회원의 서비스 이용에 필요하다고 인정되는 다양한 정보를 전자우편 및 서신 우편, 휴대폰 단문서비스(SMS) 등의 방법으로 회원에게 제공할 수 있습니다.
+
+제18조(회원의 게시물)
+
+예당은 회원이 게시하거나 등록하는 서비스의 내용물이 다음 각 항에 해당한다고 판단되는 경우에 사전통지 없이 삭제할 수 있습니다.
+
+1. 다른 회원 또는 제3자를 비방하거나 중상모략으로 명예를 손상시키는 경우
+
+2. 공공질서 및 미풍양속에 위반되는 경우
+
+3. 범죄적 행위에 결부된다고 인정되는 경우
+
+4. 예당의 저작권, 제3자의 저작권 등 기타 권리를 침해하는 경우
+
+5. 예당에서 규정한 게시기간을 초과한 경우
+
+6. 회원이 예당(홈페이지)의 게시판에 음란물을 게재하거나 음란사이트를 링크하는 경우
+
+7. 기타 관계법령에 위반된다고 판단되는 경우
+
+
+
+제19조(게시물의 저작권)
+
+1. 게시물에 대한 권리와 책임은 게시자에게 있으며 예당은 게시자의 동의 없이는 이를 사이트 내 게재 이외의 영리목적으로 사용할 수 없습니다. 단, 비영리적인 경우에는 그러하지 아니하며 또한 예당은 사이트 내의 게재권을 갖습니다.
+
+2. 회원은 서비스를 이용하여 얻은 정보를 가공, 판매하는 등 서비스에 게재된 자료를 상업적으로 사용할 수 없습니다.
+
+
+제20조(회원에 대한 통지)
+
+1. 예당이 회원에 대한 통지를 하는 경우, 회원이 예당에 제출한 전자우편 및 서신, 휴대폰 단문서비스(SMS)로 할 수 있습니다.
+
+2. 예당은 불특정다수 회원에 대한 통지의 경우 1주일 이상 홈페이지에 공지하거나 월간 정보지의 회원란에 게재함으로서 개별 통지에 갈음할 수 있습니다.
+
+
+제7장 기 타
+
+제21조(손해배상)
+
+예당은 서비스 이용과 관련하여 회원에게 발생한 어떠한 손해에 관하여도 책임을 지지 않습니다.
+
+제22조(면책조항)
+
+1. 예당은 천재지변 또는 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우에는 서비스 제공에 관한 책임이 면제됩니다.
+
+2. 예당은 회원의 귀책사유로 인한 서비스 이용의 장애에 대하여 책임을 지지 않습니다.
+
+3. 예당은 회원이 서비스를 이용하여 기대하는 수익을 상실한 것에 대하여 책임을 지지 않으며, 그 밖에 서비스를 통하여 얻은 자료로 인한 손해에 관하여 책임을 지지 않습니다.
+
+4. 예당은 회원이 게재한 정보, 자료, 사실의 신뢰도, 정확성 등 내용에 관해서는 책임을 지지 않습니다.
+
+5. 회원이 발송한 메일 내용에 대한 법적인 책임은 사용자에게 있습니다.
+
+제23조(관할법원)
+
+본 서비스와 관련되는 분쟁에 대해 소송이 제기될 경우, 예당의 본사 소재지를 관할하는 법원을 전속 관할법원으로 합니다.
+
+부 칙
+
+1. 이 약관은 2013년 8월 21일부터 시행합니다.
+       </textarea>
+                </li>
+                <li class="checkBox check03">
+                    <ul class="clearfix">
+                        <li>개인정보 수집 및 이용에 대한 안내(필수)</li>
+                        <li class="checkBtn">
+                            <input type="checkbox" name="check3" id="check3" class="check">
+                        </li>
+                    </ul>
+ 
+                    <textarea name="" id="">대전예술의전당 홈페이지는 개인정보보호법 등 관련 법령에 의거하여, 정보주체로부터 개인정보를 수집함에 있어 아래 내용을 안내하고 있습니다. 정보주체가 되는 이용자께서는 아래 내용을 자세히 읽어보시고, 모든 내용을 이해하신 후에 동의 여부를 결정하여 주시기 바랍니다.
+
+1. 개인정보의 수집 및 이용목적
+대전예술의전당 홈페이지는 기본적인 회원 서비스 제공을 위한 필수정보와 정보주체 각각의 기호와 필요에 맞는 서비스 제공을 위한 선택정보로 구분하여 개인정보를 수집하고 있으며, 선택정보를 입력하지 않는 경우 서비스 이용에 일부 제한이 있을 수 있습니다. 입력하는 생년월일이 만14세 미만 아동의 개인정보 수집항목은 아래와 동일하며 가입시 보호자의 실명인증 및 동의로 처리합니다.
+
+2. 수집하려는 개인정보의 항목
+
+구분	필수항목	선택항목
+회원가입
+성명, 회원ID, 비밀번호, 휴대폰번호(회원가입 확인)
+회원구분(무료, 유료구분)	주소(유료회원카드, 리플릿 발송) , 성별(공연 선호도 통계), 생년월일(연령별 공연 선호도 통계), 회사명(법인회원카드 발송), 부서명(법인회원카드 발송), 회사전화(법인회원 민원확인 이용), 관심항목(공연기획. 홍보 이용), 회원가입동기(홍보자료 이용), E-mail(웹진발송)
+※ 만14세 미만 회원의 개인정보 처리시 법정대리인 동의여부 확인
+공연정보신청(비회원도 가능)	성명, E-mail(리플릿 발송)	-
+3. 개인정보의 보유 및 이용기간
+- 대전예술의전당 홈페이지는 회원 가입일로부터 서비스를 제공하는 기간 동안에 한하여 최소한의 개인정보만을 보유 및 이용합니다.
+- 개인정보의 수집·이용 동의는 언제든지 철회가 가능하며, 회원 탈퇴나 서비스 신청취소 요청 시 개인정보는 지체 없이 파기됩니다.
+
+4. 동의를 거부할 권리 및 동의 거부에 따른 불이익 안내
+정보주체는 개인정보 수집·이용에 대한 동의를 거부할 수 있습니다. 이 경우, 대전예술의전당 홈페이지에서 회원 가입을 할 수 없으며, 선택항목의 수집.이용에 대한 동의를 거부할 경우에도 회원가입은 가능하나 일부 서비스 이용에 제한이 있습니다.
+       </textarea>
+                </li>
+                <li class="checkBox check03">
+                    <ul class="clearfix">
+                        <li>위치정보 이용약관 동의(선택)</li>
+                        <li class="checkBtn">
+                            <input type="checkbox" name="check4" id="check4" class="check">
+                        </li>
+                    </ul>
+ 
+                    <textarea name="" id="">대전예술의전당은 원칙적으로 정보주체 동의 없이 개인정보를 외부에 제공하지 않습니다. 단, 이용자가 제공업체의 서비스를 이용하기 위하여 개인정보 제공에 직접 동의를 한 경우 개인정보를 제공하고 있습니다.
+
+① 개인정보를 제공받는 자(연락처)	(주)인터파크(1544-1555)
+② 제공받는 자의 이용목적	예매 및 발권 시 본인확인, 티켓배송
+③ 제공하는 개인정보의 항목	성명, ID, 휴대전화번호(예매 본인확인), 회원등급, 이메일(예매 본인확인), 주소(티켓배송)
+④ 제공받는 자의 개인정보
+보유 및 이용기간	정보주체의 회원탈퇴시 삭제
+또한, 대전예술의전당은 유지보수업체에 일부 업무를 위탁하고 있으며 위탁받은 업체가 정보통신망법에 따라 개인정보를 안정하게 처리하도록 필요한 사항을 규정하고 관리/감독 하고 있습니다.
+
+취급을 위탁 받는자(수탁업체)	업무내용	보유기간
+㈜지오넷(1644-7874)	홈페이지 장애처리 및 유지보수	유지보수기간 만료 시
+       </textarea>
+                </li>
+                <li class="checkBox check04">
+                    <ul class="clearfix">
+                        <li>이벤트 등 프로모션 알림 메일 수신(선택</li>
+                        <li class="checkBtn">
+                            <input type="checkbox" name="check5" id="check5" class="check">
+                        </li>
+                    </ul>
+ 
+                </li>
+            </ul>
+            <ul class="footBtwrap clearfix">
+            
+                <li><button id="nextBtn" type="button"
+										class="fpmgBt1">회원가입 하러가기	▶</button></li>
+				
+            </ul>
+					 <!-- <li class="fpmgBt1">
+							<a href="joinmain" onclick="return form_submit();"><img
+							src="/_prog/_member/img/join_go.gif" alt="회원가입하러가기"></a>
+					</li>  -->
+        </form>
+        
 	<script type="text/javascript">
-	<!--
-		var old_menu = '';
-		var old_cell = '';
-		var old_Lmenu = '';
-
-		function menuclick(submenu) {
-			if (old_menu != submenu) {
-				if (old_menu != '') {
-					old_menu = 'none';
-				}
-				jQuery(".lm_2th > li > div").hide();
-				if (old_menu != '') {
-					jQuery("#" + old_Lmenu).parent().find(">a").removeClass(
-							"link_2th_ov").addClass("link_2th");
-				}
-				jQuery("#" + submenu).parent().find(">a").removeClass(
-						"link_2th").addClass("link_2th_ov");
-
-				document.getElementById(submenu).style.display = 'block';
-				old_menu = document.getElementById(submenu).style.display;
-				old_Lmenu = submenu;
-			} else {
-				document.getElementById(submenu).style.display = 'none';
-				old_menu = '';
-			}
-		}
-	//-->
-	</script>
-	<div id="container">
-		<!-- leftmenu-->
-		<div id="leftwrap">
-
-			<!--LEFTMENU START-->
-
-			<script type="text/javascript">
-			<!--
-				var old_menu = '';
-				var old_cell = '';
-				var old_Lmenu = '';
-
-				function menuclick(submenu) {
-					if (old_menu != submenu) {
-						if (old_menu != '') {
-							old_menu = 'none';
-						}
-						jQuery(".lm_2th > li > div").hide();
-						if (old_menu != '') {
-							jQuery("#" + old_Lmenu).parent().find(">a")
-									.removeClass("link_2th_ov").addClass(
-											"link_2th");
-						}
-						jQuery("#" + submenu).parent().find(">a").removeClass(
-								"link_2th").addClass("link_2th_ov");
-
-						document.getElementById(submenu).style.display = 'block';
-						old_menu = document.getElementById(submenu).style.display;
-						old_Lmenu = submenu;
-					} else {
-						document.getElementById(submenu).style.display = 'none';
-						old_menu = '';
-					}
-				}
-			//-->
-			</script>
+        $(document).ready(function(){
+    
+            $("#nextBtn").click(function(){    
+                if($("#check1").is(":checked") == false){
+                    alert("모든 약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
+                    return;
+                }else if($("#check2").is(":checked") == false){
+                    alert("모든 약관에 동의 하셔야 다음 단계로 진행 가능합니다..");
+                    return;
+                }else if($("#check3").is(":checked") == false){
+                    alert("모든 약관에 동의 하셔야 다음 단계로 진행 가능합니다...");
+                    return;
+                }else if($("#check4").is(":checked") == false){
+                    alert("모든 약관에 동의 하셔야 다음 단계로 진행 가능합니다...");
+                    return;
+                }else if($("#check5").is(":checked") == false){
+                    alert("모든 약관에 동의 하셔야 다음 단계로 진행 가능합니다...");
+                    return;    
+                }else{
+                    $("#joinForm").submit();
+                }
+            });    
+            
+            $(".chkAll").click(function() {
+            	
+            	if($(this).is(":checked")==true){
+            		
+            	  $("input.check").prop("checked", "checked");
+            	
+            	}else{
+            		
+            	  $("input.check").prop("checked", "");
+            	}
+            	});
+            
+            $(".fpmgBt2").click(function(){
+            	
+            	history.go(-1);            	
+            });
+        });
+    </script>
 
 
-
-
-			<!-- //leftmenu-->
-
-			<!-- content-->
-			<div id="content">
-				<!-- 컨텐츠 타이틀 -->
-				<h3 class="cnt_ti">회원가입</h3>
-				<!-- 컨텐츠 타이틀 -->
-
-
-				<!-- 탭메뉴 및 좌측메뉴 펼침기능 시작 부분 -->
-				<!-- <script type="text/javascript">menuclick('submenu1');</script><div id="txt">
-	 -->
-				<h4 class="top_mar_20">대전예술의전당 회원약관</h4>
-				<p class="no_mar top_mar_5 left_mar_20">
-					대전예술의전당의 광범위한 서비스를 이용하기 위해 이용자는 서비스약관을 읽어보시고 동의하셔야 됩니다.<br>
-					회원등록은 무료, 유료이며 등록 즉시 서비스를 이용하실수 있습니다.<br> 아래의 회원 약관을 반드시 읽고
-					동의해 주십시오.
-				</p>
-
-				<div class="member_terms">
-					<div class="terms_text">
-
-
-
-						<table border="0" cellpadding="0" cellspacing="0" width="600">
-
-							<tbody>
-								<tr>
-
-									<td width="13" height="19">
-
-										<p align="justify"></p>
-
-									</td>
-
-									<td width="10" height="19">
-
-										<p align="justify"></p>
-
-									</td>
-
-									<td width="477" height="19">대전예술의전당 회원 약관</td>
-
-								</tr>
-
-
-
-
-								<!-- 개인정보수집동의 -->
-								<h4 class="top_mar_20">개인정보 수집·이용 동의</h4>
-								<div class="member_terms">
-									<div class="terms_text">
-										<p class="left_mar_10">대전예술의전당 홈페이지는 개인정보보호법 등 관련 법령에
-											의거하여, 정보주체로부터 개인정보를 수집함에 있어 아래 내용을 안내하고 있습니다. 정보주체가 되는 이용자께서는
-											아래 내용을 자세히 읽어보시고, 모든 내용을 이해하신 후에 동의 여부를 결정하여 주시기 바랍니다.</p>
-
-										<ul class="h5_ul top_mar_5">
-											<li><strong>1. 개인정보의 수집 및 이용목적</strong><br>
-												<p align="justify">대전예술의전당 홈페이지는 기본적인 회원 서비스 제공을 위한
-													필수정보와 정보주체 각각의 기호와 필요에 맞는 서비스 제공을 위한 선택정보로 구분하여 개인정보를 수집하고
-													있으며, 선택정보를 입력하지 않는 경우 서비스 이용에 일부 제한이 있을 수 있습니다. 입력하는 생년월일이
-													만14세 미만 아동의 개인정보 수집항목은 아래와 동일하며 가입시 보호자의 실명인증 및 동의로 처리합니다.</p></li>
-											<li><strong>2. 수집하려는 개인정보의 항목</strong><br> <br>
-												<table width="100%" class="table1 center" border="0"
-													cellspacing="0" cellpadding="0" summary="수집하려는 개인정보의 항목">
-													<caption>수집하려는 개인정보의 항목</caption>
-													<colgroup>
-														<col style="width: 20%;">
-														<col style="width: 40%;">
-														<col style="width: 40%;">
-													</colgroup>
-													<thead>
-														<tr>
-															<th scope="col" class="t_head">구분</th>
-															<th scope="col" class="t_head">필수항목</th>
-															<th scope="col" class="t_head t_end">선택항목</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td class="t_head" rowspan="3"
-																style="border-top: 1px solid #adadad">회원가입</td>
-														</tr>
-														<tr>
-															<td>성명, 회원ID, 비밀번호, 휴대폰번호(회원가입 확인)<br>회원구분(무료,
-																유료구분)
-															</td>
-															<td class="t_end">주소(유료회원카드, 리플릿 발송) , 성별(공연 선호도
-																통계), 생년월일(연령별 공연 선호도 통계), 회사명(법인회원카드 발송), 부서명(법인회원카드
-																발송), 회사전화(법인회원 민원확인 이용), 관심항목(공연기획. 홍보 이용), 회원가입동기(홍보자료
-																이용), E-mail(웹진발송)</td>
-														</tr>
-														<tr>
-															<td class="t_end" colspan="2">※ 만14세 미만 회원의 개인정보 처리시
-																법정대리인 동의여부 확인</td>
-														</tr>
-														<tr>
-															<td class="t_head">공연정보신청(비회원도 가능)</td>
-															<td>성명, E-mail(리플릿 발송)</td>
-															<td class="t_end">-</td>
-														</tr>
-
-													</tbody>
-												</table></li>
-
-											<li><strong>3. 개인정보의 보유 및 이용기간</strong><br>
-												<p align="justify">
-													- 대전예술의전당 홈페이지는 회원 가입일로부터 서비스를 제공하는 기간 동안에 한하여 최소한의 개인정보만을
-													보유 및 이용합니다.<br> - 개인정보의 수집·이용 동의는 언제든지 철회가 가능하며, 회원
-													탈퇴나 서비스 신청취소 요청 시 개인정보는 지체 없이 파기됩니다.
-												</p></li>
-											<li><strong>4. 동의를 거부할 권리 및 동의 거부에 따른 불이익 ㄹ</strong><br>
-												<p align="justify">정보주체는 개인정보 수집·이용에 대한 동의를 거부할 수 있습니다.
-													이 경우, 대전예술의전당 홈페이지에서 회원 가입을 할 수 없으며, 선택항목의 수집.이용에 대한 동의를
-													거부할 경우에도 회원가입은 가능하나 일부 서비스 이용에 제한이 있습니다.</p></li>
-										</ul>
-									</div>
-								</div>
-								<div class="right top_mar_10 right_mar_5 member_terms_btn">
-									<p class="left bold">[개인정보 항목 수집·이용 동의]</p>
-									<p class="left">
-										<strong class="point2">(필수항목)</strong> 위와 같이 개인정보를 수집·이용하는데
-										동의하십니까?(동의해야만 회원가입 가능)
-									</p>
-									<input type="checkbox" name="agree" id="chk1">
-									약관동의1&nbsp; <input name="agree2-1" type="radio" value="N"
-										id="agree2-1-n" class="checkbox"><label
-										for="agree2-1-n">동의하지 않음</label>
-									<p class="left">
-										<strong class="point">(선택항목)</strong> 위와 같이 개인정보를 수집·이용하는데
-										동의하십니까?(동의거부 가능)
-									</p>
-									<input name="agree" type="radio" value="Y" id="chk2"
-										class="checkbox"><label for="agree2-2-y">동의함</label>&nbsp;
-									<input name="agree2-2" type="radio" value="N" id="agree2-2-n"
-										class="checkbox"><label for="agree2-2-n">동의하지
-										않음 </label>
-								</div>
-
-
-								<h4 class="top_mar_20">개인정보 제3자 제공 및 위탁에 대한 동의</h4>
-								<div class="member_terms">
-									<div class="terms_text">
-										<p class="left_mar_10">대전예술의전당은 원칙적으로 정보주체 동의 없이 개인정보를 외부에
-											제공하지 않습니다. 단, 이용자가 제공업체의 서비스를 이용하기 위하여 개인정보 제공에 직접 동의를 한 경우
-											개인정보를 제공하고 있습니다.</p>
-
-										<table width="95%" border="0" class="table1 left_mar_10"
-											cellspacing="0" cellpadding="0"
-											summary="개인정보를  제공받는자,제공항목,개인정보를 제공받는자의 개인정보 이용목적에 대한 안내입니다.">
-											<caption>개인정보 취급위탁안내</caption>
-											<colgroup>
-												<col style="width: 70%">
-												<col style="width: 60%">
-											</colgroup>
-											<tbody>
-												<tr>
-													<th class="t_left left" scope="col">① 개인정보를 제공받는
-														자(연락처)</th>
-													<td class="t_end" scope="col">(주)인터파크(1544-1555)</td>
-												</tr>
-												<tr>
-													<th class="t_left left" scope="col">② 제공받는 자의 이용목적</th>
-													<td class="t_end" scope="col">예매 및 발권 시 본인확인, 티켓배송</td>
-												</tr>
-												<tr>
-													<th class="t_left left" scope="col">③ 제공하는 개인정보의 항목</th>
-													<td class="t_end" scope="col">성명, ID, 휴대전화번호(예매 본인확인),
-														회원등급, 이메일(예매 본인확인), 주소(티켓배송)</td>
-												</tr>
-												<tr>
-													<th class="t_left left" scope="col">④ 제공받는 자의 개인정보<br>보유
-														및 이용기간
-													</th>
-													<td class="t_end" scope="col">정보주체의 회원탈퇴시 삭제</td>
-												</tr>
-											</tbody>
-										</table>
-
-										<p class="left_mar_10">또한, 대전예술의전당은 유지보수업체에 일부 업무를 위탁하고
-											있으며 위탁받은 업체가 정보통신망법에 따라 개인정보를 안정하게 처리하도록 필요한 사항을 규정하고 관리/감독
-											하고 있습니다.</p>
-										<table width="95%" border="0" class="table1 left_mar_10"
-											cellspacing="0" cellpadding="0"
-											summary="개인정보를  제공받는자,제공항목,개인정보를 제공받는자의 개인정보 이용목적에 대한 안내입니다.">
-											<caption>개인정보 취급위탁안내</caption>
-											<colgroup>
-												<col style="width: 35%;">
-												<col style="width: 35%;">
-												<col style="width: 30%;">
-											</colgroup>
-											<thead>
-												<tr>
-													<th class="t_head" scope="col">취급을 위탁 받는자(수탁업체)</th>
-													<th class="t_head" scope="col">업무내용</th>
-													<th class="t_head t_end" scope="col">보유기간</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td class="center">㈜지오넷(1644-7874)</td>
-													<td class="center">홈페이지 장애처리 및 유지보수</td>
-													<td class="center t_end">유지보수기간 만료 시</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-								<div class="right top_mar_10 right_mar_5 member_terms_btn">
-									<p class="left">
-										<strong class="point2">(필수)</strong> 위와 같이 개인정보 제3자 제공에
-										동의하십니까?(동의 해야만 회원가입 가능)
-									</p>
-									<input name="agree3-1" type="radio" value="Y" id="agree3-1-y"
-										class="checkbox"><label for="agree3-1-y">동의함</label>&nbsp;
-									<input name="agree3-1" type="radio" value="N" id="agree3-1-n"
-										class="checkbox"><label for="agree3-1-n">동의하지
-										않음</label>
-									<p class="left">
-										<strong class="point2">(필수)</strong> 위와 같이 개인정보 처리업무를 위탁 하는데
-										동의하십니까?(동의 해야만 회원가입 가능)
-									</p>
-									<input name="agree3-2" type="radio" value="Y" id="agree3-2-y"
-										class="checkbox"><label for="agree3-2-y">동의함</label>&nbsp;
-									<input name="agree3-2" type="radio" value="N" id="agree3-2-n"
-										class="checkbox"><label for="agree3-2-n">동의하지
-										않음 </label>
-								</div>
-
-								<h4 class="top_mar_20">홍보마케팅에 대한 동의</h4>
-								<div class="member_terms">
-									<div class="terms_text">
-										<p class="left_mar_10">대전예술의전당에서는 아래와 같이 이용자에게 홍보 및 마케팅을
-											하고 있으며, 개인정보 보호법 제22조제2항에 따라 정보주체와의 계약체결 등을 위하여 정보주체의 동의를 받은
-											경우에만 처리할 수 있는 개인정보로 지정합니다.</p>
-
-										<table width="95%" border="0" class="table1 left_mar_10"
-											cellspacing="0" cellpadding="0"
-											summary="개인정보를  제공받는자,제공항목,개인정보를 제공받는자의 개인정보 이용목적에 대한 안내입니다.">
-											<caption>개인정보 취급위탁안내</caption>
-											<colgroup>
-												<col style="width: 35%">
-												<col style="width: 65%">
-											</colgroup>
-											<tbody>
-												<tr>
-													<th class="t_left left" scope="col">① 개인정보의 수집 및 이용 목적</th>
-													<td class="t_end" scope="col">공연 홍보 및 마케팅</td>
-												</tr>
-												<tr>
-													<th class="t_left left" scope="col">② 개인정보의 수집항목</th>
-													<td class="t_end" scope="col">이메일(웹진, 공연정보 발송),
-														핸드폰번호(공연정보 발송), 주소(리플릿 발송)</td>
-												</tr>
-												<tr>
-													<th class="t_left left" scope="col">③ 개인정보 보유 및 이용기간</th>
-													<td class="t_end" scope="col">홍보 및 마케팅에 대한 동의거부 시까지</td>
-												</tr>
-												<tr>
-													<th class="t_left t_end left" colspan="2" scope="col">④
-														정보주체는 홍보 및 마케팅에 대한 동의를 거부할 수 있습니다. 이 경우, 회원가입은 가능하나 서비스
-														이용에 일부 제한이 있을 수 있습니다.</th>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-								<div class="right top_mar_10 right_mar_5 member_terms_btn">
-									<p class="left">
-										<strong class="point">(선택)</strong> 위와같이 홍보마케팅을 위한 E-mail 및
-										SMS 수신에 동의하십니까?
-									</p>
-									<input name="agree4" type="radio" value="Y" id="agree4-y"
-										class="checkbox"><label for="agree4-y">동의함</label>&nbsp;
-									<input name="agree4" type="radio" value="N" id="agree4-n"
-										class="checkbox"><label for="agree4-n">동의하지 않음</label>
-								</div>
-
-
-
-								<p>
-									* 약관 및 개인정보수집, 취급 동의하지 않으실 경우 대전예술의전당 회원가입이 불가능합니다. <br> *
-									회원가입시 요구되는 동의는 공연예매, 아카데미수강신청, 리플릿신청, 회원대상 이벤트·설문진행하기 위함이며, <br>&nbsp;&nbsp;&nbsp;그외
-									서비스는 회원가입하지 않아도 가능합니다.
-								</p>
-
-								<p class="center bold">
-									<input type="checkbox" id="check_all" class="checkbox"
-										onclick="checkAll();">&nbsp;<label for="check_all">전체동의</label>
-								</p>
-
-								<p class="no_mar center top_mar_20">
-									<a href="joinmain" onclick="return form_submit();"><img
-										src="/_prog/_member/img/join_go.gif" alt="회원가입하러가기"></a>
-								</p>
-								</div>
-								</div>
-
-
-								</div>
-								<script type="text/javascript">
-									function agree() {
-										var chkbox = document
-												.getElementsByName('agree');
-										var chk = false;
-										for (var i = 0; i < chkbox.length; i++) {
-											if (chkbox[i].checked) {
-												chk = true;
-											} else {
-												chk = false;
-											}
-										}
-										if (chk) {
-											alert("모든 약관에 동의함.");
-											return false;
-										} else {
-											alert("모든 약관에 동의해 주세요.")
-										}
-									}
-								</script>
-
-								<form action="">
-									<input type="checkbox" name="agree" id="chk1"> 약관동의1 <input
-										type="checkbox" name="agree" id="chk2"> 약관동의2 <input
-										type="checkbox" name="agree" id="chk3"> 약관동의3
-								</form>
-								<a href="javascript:agree();">동의</a>
-								<a href="#">동의안함</a>
-
-
-
-
-								<!-- 	<div class="clearfix"></div>
-								</div>
-								<script type="text/javascript">
-									var img_rot = jQuery("#divMenu >ul > li")
-											.eq(1);
-									menu_list.bind("mouseover", qm_rot);
-
-									function qm_rot() {
-										var img_idx = menu_list
-												.index(jQuery(this));
-										img_rot.find(">a>img").attr(
-												"src",
-												"/images/kr/common/qm_rot0"
-														+ (img_idx + 1)
-														+ ".gif");
-									}
-
-									var slidemenu_X = 0; //상단 제한 값
-									var slidemenu_Y = 500; //하단 제한 값
-								</script>
-								<script type="text/javascript">
-									// slide menu  2006-06-14
-									var isDOM = (document.getElementById ? true
-											: false);
-									var isIE4 = ((document.all && !isDOM) ? true
-											: false);
-									var isNS4 = (document.layers ? true : false);
-									var isNS = navigator.appName == "Netscape";
-
-									function getRef(id) {
-										if (isDOM)
-											return document.getElementById(id);
-										if (isIE4)
-											return document.all[id];
-										if (isNS4)
-											return document.layers[id];
-									}
-
-									function getSty(id) {
-										x = getRef(id);
-										return (isNS4 ? getRef(id)
-												: getRef(id).style);
-									}
-
-									function moveRightEdge() {
-										var yMenuFrom, yMenuTo, yOffset, timeoutNextCheck;
-
-										if (isNS4) {
-											yMenuFrom = document
-													.getElementById('divMenu').style.top;
-											yMenuTo = windows.pageYOffset
-													+ slidemenu_X; // 위쪽 위치
-										} else if (isDOM) {
-											yMenuFrom = parseInt(
-													document
-															.getElementById('divMenu').style.top,
-													10);
-											yMenuTo = (isNS ? window.pageYOffset
-													: document.documentElement.scrollTop)
-													+ slidemenu_X; // 위쪽 위치
-										}
-										timeoutNextCheck = 30;
-
-										divMenu_H = document
-												.getElementById('divMenu');
-										limit_H = (parseInt(document.documentElement.scrollHeight) - slidemenu_Y)
-												- parseInt(divMenu_H.offsetHeight);
-										divMenu_t = parseInt(document
-												.getElementById('divMenu').style.top);
-										if (yMenuFrom != yMenuTo) {
-											yOffset = Math
-													.ceil(Math.abs(yMenuTo
-															- yMenuFrom) / 20);
-											if (yMenuTo < yMenuFrom) {
-												yOffset = -yOffset;
-											}
-											if (isNS4) {
-												if (yOffset > 0) {
-													if (divMenu_t < limit_H) {
-														document
-																.getElementById('divMenu').style.top += yOffset
-																+ "px";
-													}
-												} else {
-													document
-															.getElementById('divMenu').style.top += yOffset
-															+ "px";
-												}
-
-											} else if (isDOM) {
-												if (yOffset > 0) {
-													if (divMenu_t < limit_H) {
-														document
-																.getElementById('divMenu').style.top = parseInt(document
-																.getElementById('divMenu').style.top)
-																+ yOffset
-																+ "px";
-													}
-												} else {
-													document
-															.getElementById('divMenu').style.top = parseInt(document
-															.getElementById('divMenu').style.top)
-															+ yOffset + "px";
-												}
-											}
-											timeoutNextCheck = 10;
-										}
-
-										setTimeout("moveRightEdge()",
-												timeoutNextCheck);
-									}
-
-									if (isNS4) {
-										var divMenu = document["divMenu"];
-										document.getElementById('divMenu').style.top = slidemenu_X
-												+ "px";
-										document.getElementById('divMenu').style.visibility = "visible";
-										moveRightEdge();
-									} else if (isDOM) {
-										var divMenu = getRef('divMenu');
-										document.getElementById('divMenu').style.top = slidemenu_X
-												+ "px";
-										document.getElementById('divMenu').style.visibility = "visible";
-										moveRightEdge();
-									}
-								</script> -->
-								</div>
+        
+ 
 </body>
 </html>

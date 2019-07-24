@@ -16,27 +16,26 @@
 		ORDER BY STARTTIME ASC
 	</select>
 	
-	<insert id="insert">
-		INSERT INTO SCHEDULE
+	<update id="insert">
+		insert into calendar
 			(
-			code
-			TITLE,
-			STARTTIME,
-			ENDTIME,
-			)
-		VALUES
+			code,
+			title,
+			starttime,
+			endtime )
+		values
 			(
-			#{code}
+			#{code},
 			#{title},
 			#{starttime},
-			#{endtime},
+			#{endtime} 
 			)
-	</insert>
+	</update>
 	
 
 	
 	<delete id="delete">
-		DELETE FROM SCHEDULE
+		DELETE FROM calendar
 		WHERE code = #{code}
 		
 	</delete>

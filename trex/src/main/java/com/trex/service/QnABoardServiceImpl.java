@@ -1,21 +1,16 @@
 package com.trex.service;
 
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.trex.controller.SearchCriteria;
 import com.trex.dao.AttachDAO;
 import com.trex.dao.QnABoardDAO;
-import com.trex.dto.AttachVO;
 import com.trex.dto.QnABoardVO;
 
 public class QnABoardServiceImpl implements QnABoardService {

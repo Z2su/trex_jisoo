@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MypageMember-Mapper">
+
+	<select id="selectmem" resultType="mypageMember"> 
+		select *
+		from mem
+		where mem_id = #{mem_id}
+	</select>
+
+	<update id="updateMember" parameterType="str">
+		update mem
+		set mem_pwd={mem_pwd},mem_email={mem_email},address={address},tell={tell}
+		where mem_id = #{mem_id}
+	</update>
+
+	<update id="deleteMember" parameterType="str">
+		delete
+		from mem
+		where mem_id = #{mem_id}
+	</update>
+
+</mapper>

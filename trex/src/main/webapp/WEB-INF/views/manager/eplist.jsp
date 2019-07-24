@@ -92,7 +92,7 @@
 													<td>${ep.emp }</td>
 													<td>${ep.rank }</td>
 													<td>${ep.mem_reg_date }</td>
-													<td class="t_end"><a href="#">버튼</a></td>
+													<td class="t_end"><a href="epdelete?code=${ep.ep_code }">버튼</a></td>
 												</tr>
 											</c:forEach>
 										</c:if>

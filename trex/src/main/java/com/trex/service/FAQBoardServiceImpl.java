@@ -9,11 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.controller.SearchCriteria;
-import com.trex.dao.AttachDAO;
 import com.trex.dao.FAQBoardDAO;
-import com.trex.dao.QnABoardDAO;
 import com.trex.dto.FAQBoardVO;
-import com.trex.dto.QnABoardVO;
 
 public class FAQBoardServiceImpl implements FAQBoardService {
 
