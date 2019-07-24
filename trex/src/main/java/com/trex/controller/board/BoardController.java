@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -50,8 +49,6 @@ public class BoardController {
 		return submenuList;
 	}
 	
-	
-	
 	// 이벤트 게시판
 	@RequestMapping("/event/list")
 	public ModelAndView eventList(ModelAndView modelnView) throws SQLException{
@@ -59,7 +56,6 @@ public class BoardController {
 		List<EventVO> eventList = eService.eventList();
 		
 		modelnView.addObject("eventList", eventList);
-		
 		
 		System.out.println("~~"+eventList);
 		
@@ -102,11 +98,13 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/event/modify", method = RequestMethod.GET)
-	public ModelAndView getmodify(int event_num, 
+	public ModelAndView getmodify(int event_num, String event_code,
 							ModelAndView modelnView) throws SQLException{
 		EventVO event = eService.eventDetail(event_num);
 		
 		modelnView.addObject("event",event);
+		modelnView.addObject("event_code",event_code);
+		
 		System.out.println(event);
 		return modelnView;
 	}
@@ -126,8 +124,7 @@ public class BoardController {
 		
 	}
 	
-
-	@RequestMapping(value="/my/imageUpload",method=RequestMethod.POST)
+	@RequestMapping(value="/event/imageUpload",method=RequestMethod.POST)
 	@ResponseBody
 	public Map<String,String> imageUpload(HttpServletRequest request,
 										  HttpServletResponse response, 
@@ -135,7 +132,7 @@ public class BoardController {
 										  String event_code)throws Exception{
 		
 		 // 이미지 업로드할 경로
-		String savePath = request.getServletContext().getRealPath("/resources/imageUpload");
+		String savePath = request.getServletContext().getRealPath("/resources/event/imageUpload");
 		
 		File uploadPathFile = new File(savePath);
 		
@@ -149,7 +146,7 @@ public class BoardController {
 		uploadFile.transferTo(new File(savePath+File.separator+fileName));
 		
 	    // 업로드된 경로와 파일명을 통해 이미지의 경로를 생성
-		String url = request.getContextPath()+"/resources/imageUpload/" + fileName ;
+		String url = request.getContextPath()+"/resources/event/imageUpload/" + fileName ;
 		
 		Map<String,String> dataMap = new HashMap<String,String>();
 		dataMap.put("url", url);

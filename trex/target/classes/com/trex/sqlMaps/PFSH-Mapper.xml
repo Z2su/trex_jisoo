@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="PFSH-Mapper">
-	<select id="selectPFSHList" resultType="PFSH">
-		select *
-		from PFSH
-		order by #{starttime}
-	</select>
-	<select id="selectPFSH" resultType="PFSH">
-		select *
-		from PFSH
-		where pf_code = #{pf_code}
-		order by #{starttime}
-	</select>
-	
+   <select id="selectPFSHList" resultType="PFSH">
+      select *
+      from PFSH
+      order by #{starttime}
+   </select>
+   <select id="selectPFSH" resultType="PFSH">
+      select *
+      from PFSH
+      where pf_code = #{pf_code}
+      order by #{starttime}
+   </select>
+   
 
 
 </mapper>

@@ -243,7 +243,7 @@
 				<ul id="schedulePerformance">
 				<c:forEach items="${PFGBoardList }" var="PFGBoard">
 					<li><span><img
-							src="/resources/images/perform/performimg.jpg"
+							src="/resources/images/perform/${PFGBoard.pf_code }.jpg"
 							style="width: 123px" alt="${PFGBoard.title }"></span>
 						<dl>
 							<dt>
@@ -272,7 +272,8 @@
 						<div class="clear"></div>
 						<p class="more">
 							<a href="#total"
-								onclick="window.open('/performrese/${PFGBoard.pf_code }', '네이버새창', 'width=910, height=690, toolbar=no, menubar=no, scrollbars=no, resizable=yes' );" ><img
+								onclick="window.open('/performrese/${PFGBoard.pf_code }/step1', '네이버새창', 'width=910, height=690, toolbar=no, menubar=no, scrollbars=no, resizable=yes' );" ><img
+
 								src="/resources/images/perform/more.gif"
 								alt="${PFGBoard.title } 공연예매"></a>
 						</p>
@@ -296,7 +297,7 @@
 					</div>
 				</div>
 
-				<h4>지난 공연</h4>
+<!-- 				<h4>지난 공연</h4>
 				<ul id="schedulePerformance">
 
 					<li><span><img
@@ -331,7 +332,7 @@
 								src="/resources/images/perform/reser.gif" alt="한현진 바이올린 독주회 상세보기"></a>
 
 						</p></li>
-				</ul>
+				</ul> -->
 
 			</div>
 

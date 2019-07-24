@@ -43,6 +43,7 @@
 	</div>
 
 
+	
 	<!-- //navigation -->
 
 	<!-- container -->
@@ -75,7 +76,6 @@
 											value="중복확인" onclick="duplicationId();" />
 											<br/>
 											<span id="idMsg"></span>
-											
 									</div>
 								
 								
@@ -94,22 +94,25 @@
 									<div class="form-group">
 										<label>이름</label> <input class="form-control" placeholder="이름"
 											name="name" id="name" type="text" />
+											<br/>
+											<span id="nameMsg"></span>
 									</div>
 									<div class="form-group">
 										<label>성별</label> <input type="radio" name="gender" value="남">남
 										<input type="radio" name="gender" value="여">여
 									</div>
-									<div class="form-group">
-										<label>생년월일</label> <input type="text" name="birth" id="birth"
-											maxlength="4" placeholder="년(4자)" size="6"> <input
-											type="text" name="birth_mm" maxlength="2" placeholder="월"
-											size="4"> <input type="text" name="birth_dd"
-											maxlength="2" placeholder="일" size="4">
-									</div>
-									<div class="form-group">
-										<label>전화번호</label> <input class="form-control"
-											placeholder="전화번호" name="tell" id="tell" type="text" />
-									</div>
+										<div class="form-group required">
+											<label for="birth">생년월일</label>
+											<input type="text" class="form-control" id="birth" name="birth" placeholder="ex) 19990415" required>
+											<div class="check_font" id="birth_check"></div>
+											<span id="birthMsg"></span>
+										</div>
+										<div class="form-group required">
+											<label for="tell">전화번호</label>
+											<input type="text" class="form-control" id="tell" name="tell" placeholder="ex)01099593141" required>
+											<div class="check_font" id="birth_check"></div>
+											<span id="tellMsg"></span>
+										</div>
 									<div class="form-group">
 										<label>이메일</label> <input type="text" name="mem_email"
 											id="mem_email" maxlength="30">@ <select
@@ -119,6 +122,8 @@
 											<option>gmail.com</option>
 											<option>nate.com</option>
 										</select>
+										
+				
 										<!-- <div class="form-group">
                             		<label>사업자번호</label>
                             		<input class="form-control" placeholder="사업자번호" name="signUpUserCompanyNo" id="signUpUserCompanyNo" type="text" />
@@ -181,9 +186,18 @@
 									</div>
 									<button id="join" type="submit"
 										class="btn btn-lg btn-success btn-block">회원가입</button>
-									<input id="join2" type="button"
+									<%-- <button id="join" type="submit"  href="${pageContext.request.contextPath}"
+										class="fa fa-rotate-right pr-2" >취소하기</button> --%>
+										<%-- <div class="reg_button">
+										<a class="btn btn-danger px-3" href="${pageContext.request.contextPath}">
+											<i class="fa fa-rotate-right pr-2" aria-hidden="true"></i>취소하기
+											</a>  --%>
+									<!-- <input id="join2" type="button"
 										class="btn btn-lg btn-success btn-block" value="회원가입"
-										onclick="DosignUp();" />
+										onclick="DosignUp();" /> -->
+									
+
+										
 								</fieldset>
 							</form>
 						</div>
@@ -239,7 +253,6 @@
 			}
 		</script>
 
-
 		<script type="text/javascript">
 		$('input[name="mem_id"]').on('blur',function(){
 			 var idReg = /^[a-z]+[a-z0-9]{5,19}$/g;
@@ -282,33 +295,105 @@
 
 		        if($('#mem_pwd').val() != $('#mem_pwd2').val()){
 		          $('#chkNotice').html('비밀번호 일치하지 않음<br><br>');
-		          $('#chkNotice').attr('color', '#f82a2aa3');
+		          $('#chkNotice').attr('color', 'red');
 		        } else{
 		          $('#chkNotice').html('비밀번호 일치함<br><br>');
-		          $('#chkNotice').attr('color', '#199894b3');
+		          $('#chkNotice').attr('color','blue');
 		        }
 		    });
 		});
 		
-		/* $('input[name="name"]').on('blur',function(){
-			var RegexName = /^[가-힣]{2,4}$/g;
-			if ( !RegexName.test($.trim($("#name").val())) )
+		$('input[name="name"]').on('blur',function(){
+			var RegexName = /^[가-힣]{2,4}$/; //이름 유효성 검사 2~4자 사이
+			if ( !RegexName.test($.trim($("#name").val())) ){
+		            $(this).focus();
+		            $('span#nameMsg').text("이름은 2글자에서 4글자까지만 입력가능합니다.").css({"font-weight":"bold","color":"red"});           
+		            return;
+		        }else{
+		        	$('span#nameMsg').text("");
+		        }
+		});
+		
+		// 생일 유효성 검사
+		var birthJ = false;
+		
+		// 생년월일	birthJ 유효성 검사
+		$('#birth').blur(function(){
+			var dateStr = $(this).val();		
+		    var year = Number(dateStr.substr(0,4)); // 입력한 값의 0~4자리까지 (연)
+		    var month = Number(dateStr.substr(4,2)); // 입력한 값의 4번째 자리부터 2자리 숫자 (월)
+		    var day = Number(dateStr.substr(6,2)); // 입력한 값 6번째 자리부터 2자리 숫자 (일)
+		    var today = new Date(); // 날짜 변수 선언
+		    var yearNow = today.getFullYear(); // 올해 연도 가져옴
+			
+		    if (dateStr.length <=8) {
+				// 연도의 경우 1900 보다 작거나 yearNow 보다 크다면 false를 반환합니다.
+			    if (1900 > year || year > yearNow){
+			    	
+			    	$('#birthMsg').text('생년월일을 확인해주세요 :)');
+					$('#birthMsg').css('color', 'red');
+			    	
+			    }else if (month < 1 || month > 12) {
+			    		
+			    	$('#birthMsg').text('생년월일을 확인해주세요 :)');
+					$('#birthMsg').css('color', 'red'); 
+			    
+			    }else if (day < 1 || day > 31) {
+			    	
+			    	$('#birthMsg').text('생년월일을 확인해주세요 :)');
+					$('#birthMsg').css('color', 'red'); 
+			    	
+			    }else if ((month==4 || month==6 || month==9 || month==11) && day==31) {
+			    	 
+			    	$('#birthMsg').text('생년월일을 확인해주세요 :)');
+					$('#birthMsg').css('color', 'red'); 
+			    	 
+			    }else if (month == 2) {
+			    	 
+			       	var isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+			       	
+			     	if (day>29 || (day==29 && !isleap)) {
+			     		
+			     		$('#birthMsg').text('생년월일을 확인해주세요 :)');
+						$('#birthMsg').css('color', 'red'); 
+			    	
+					}else{
+						$('#birtj').text('');
+						birthJ = true;
+					}//end of if (day>29 || (day==29 && !isleap))
+			     	
+			    }else{
+			    	
+			    	$('#birthMsg').text(''); 
+					birthJ = true;
+				}//end of if
+				
+				}else{
+					//1.입력된 생년월일이 8자 초과할때 :  auth:false
+					$('#birthMsg').text('생년월일을 확인해주세요 :)');
+					$('#birthMsg').css('color', 'red');  
+					
+				}
 
-			{
-						alert("이름 오류");
-
-						$("#name").focus();
-
-						return false;
-
-					}
-
-
-			$("input#join2").on('click', function(e) {
-
-				alert("bbbbbb");
+			}); //End of method /*
+			
+			$('input[name="tell"]').on('blur',function(){
+				var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+			        if( !regExp.test( $(this).val() ) ) {
+			            $(this).focus();
+			            $('span#tellMsg').text("전화번호 형식이 맞지않습니다.").css({"font-weight":"bold","color":"red"});           
+			            return;
+			        }else{
+			        	$('span#tellMsg').text("");
+			        }
 			});
- */
+				
+			
+
+		
+		
+		
+		
 			$(function() {
 
 				$("form")
@@ -419,6 +504,10 @@
 				//return false;
 			}
 		</script>
+
+
 	</div>
+	
+
 	<!-- //container -->
 </div>

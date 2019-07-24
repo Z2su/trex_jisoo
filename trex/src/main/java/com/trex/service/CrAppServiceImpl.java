@@ -57,4 +57,10 @@ public class CrAppServiceImpl implements CrAppService {
 
 	}
 
+	@Override
+	public void conform(String cr_app_code) throws SQLException {
+		CrAppDAO.enableList(cr_app_code);
+		
+	}
+
 }

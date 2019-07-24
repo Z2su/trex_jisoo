@@ -2,8 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces ="true" %>    
 
- <!-- Bootstrap 3.3.7 -->
- <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cal/bower_components/bootstrap/dist/css/bootstrap.min.css">
 
  <!-- fullCalendar -->
  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cal/bower_components/fullcalendar/dist/fullcalendar.min.css">
@@ -65,8 +63,21 @@ $(document).ready(function() {
 					},
 					true // make the event "stick"
 				);
+			
 			}
+			
+			var data={	
+					"code":"code",
+					"title":title,
+					"starttime":start,
+					"endtime":endtime,
+			}
+			
+			
+			
 			calendar.fullCalendar('unselect');
+			
+			
 		},
 		editable: true,     
 		events: events

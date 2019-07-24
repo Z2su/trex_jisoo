@@ -24,8 +24,19 @@
 		<typeAlias type="com.trex.dto.CalendarVO" alias="calendar"/>
 		<typeAlias type="com.trex.dto.AdVO" alias="ad"/>
 		<typeAlias type="com.trex.dto.NoticeVO" alias="notice"/>
-
-
+		<typeAlias type="com.trex.dto.HallVO" alias="hall"/>
+		<typeAlias type="com.trex.dto.PFSHViewVO" alias="PFSHView"/>
+		<typeAlias type="com.trex.dto.SeatReqVO" alias="SeatReq"/>
+		 <typeAlias type="com.trex.dto.MypageMemberVO" alias="mypageMember"/>
+		<typeAlias type="com.trex.dto.MypageGmemberVO" alias="mypageGmember"/>
+		<typeAlias type="com.trex.dto.MypageTroupeVO" alias="mypageTroupe"/>
+		<typeAlias type="com.trex.dto.MypageMemberBoardVO" alias="mypageBoard"/>
+		<typeAlias type="com.trex.dto.MypageTroupeCrAppListVO" alias="mypageCrapp"/>
+		<typeAlias type="com.trex.dto.MypageTroupeAdListVO" alias="mypageAdlist"/>
+		<typeAlias type="com.trex.dto.PayVO" alias="pay"/>
+		<typeAlias type="com.trex.dto.CrConfVO" alias="CrConf"/>
+		<typeAlias type="com.trex.dto.CrshVO" alias="CRSH"/>
+		<typeAlias type="com.trex.dto.MypageRhVO" alias="mypageRh"/>
 	</typeAliases>
  
 </configuration>

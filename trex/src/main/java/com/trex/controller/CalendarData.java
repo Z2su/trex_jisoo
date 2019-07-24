@@ -20,9 +20,9 @@ public class CalendarData {
 		this.title = calendar.getTitle();
 		this.start = calendar.getStarttime();
 		this.end = calendar.getEndtime();
-		this.url = calendar.getCode();
+		this.url = "caldetail?code="+calendar.getCode();
 		
-		String dict=this.url.substring(0,4);
+		String dict= calendar.getCode().substring(0,4);
 		switch(dict) {
 		case"PFSH"://공연 
 			backgroundColor="#00c0ef";//aqua

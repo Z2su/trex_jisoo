@@ -1,6 +1,5 @@
 package com.trex.dao;
 
-import java.sql.SQLClientInfoException;
 import java.sql.SQLException;
 import java.util.List;
 

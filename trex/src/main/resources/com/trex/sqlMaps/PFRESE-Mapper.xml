@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PFRESE-Mapper">
+
+	<select id="selectPFSHViewList" resultType="PFSHView">
+		select *
+		from PFSH_view
+		where pf_code=#{pf_code}
+		order by rundate
+
+	</select>
+	<select id="selectPFSHView" resultType="PFSHView">
+		select *
+		from PFSH_view
+		where pfsh_code = #{pfsh_code}
+	</select>
+	<select id="selectPFSHViewListBydate" parameterType="map" resultType="PFSHView">
+		select * 
+		from pfsh_view 
+		where pf_code = #{pf_code} 
+		and rundate between #{rundate} and #{rundate}
+
+	</select>
+	<select id="selectSeatCount" resultType="SeatReq">
+		select grade, price, count(*) as count
+		from seat_view
+		where pfsh_code=#{pfsh_code} and pfshs_rese=0
+		group by grade, price
+		order by PRICE desc
+	</select>
+	<select id="selectSeatList" resultType="SeatReq">
+		select col, num, grade, pfshs_rese
+		from seat_view
+		where pfsh_code=#{pfsh_code}
+		order by col ,num
+	</select>
+	
+
+
+
+
+</mapper>
