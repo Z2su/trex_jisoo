@@ -1,40 +1,47 @@
 package com.trex.controller;
 
+import java.sql.SQLException;
+import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.trex.credit.KSPayWebHostBean;
-import com.trex.dao.PayDAO;
 import com.trex.dto.CreditRequest;
-import com.trex.service.PayService;
 
 @Controller
 @RequestMapping("/credit")
 public class CreditController {
 	
-	@Autowired
-	private PayService pService;
-	
-	@Autowired
-	private PayDAO payDAO;
-	
-	@RequestMapping(value="/index", method=RequestMethod.GET)
-	public void getcreditForm(Model model)throws Exception{
+	@RequestMapping(value="/{pf_code}", method=RequestMethod.GET )
+	public ModelAndView performPay(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 		
-	/*	String pay_code = "pay";
-		model.addAttribute("pay_code",pay_code);*/
+		String url = "perform/main4";
 		
-	}
+		String pay_code="";
+		for(int i=0;i<10;i++) {
+			pay_code+=(int)(Math.random()*8+1);
+		}
+		
 
+		modelnView.addObject("pay_code", pay_code);
+		modelnView.addObject("pf_code", pf_code);
+		modelnView.setViewName(url);
+		
+		return modelnView;
+	}
+	
 	@RequestMapping(value="/form", method=RequestMethod.POST)
 	public void creditForm(@ModelAttribute("creditReq")CreditRequest creditReq,
-			String pay_code) throws Exception{
+			@RequestParam("setSndOrderNumber")String pay_code) throws Exception{
 		
 		creditReq.setSndOrderNumber(pay_code);
 		creditReq.setSndStoreid("2999199999");
