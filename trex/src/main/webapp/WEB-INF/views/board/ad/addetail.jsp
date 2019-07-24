@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <div id="contentswrap">
 
 	<!-- subvisual -->
@@ -45,18 +45,24 @@
 			<!-- 컨텐츠 타이틀 -->
 			<h3 class="cnt_ti">상세보기</h3>
 			<div id="txt">
-			<div class="right top_mar_15">
+				<div class="right top_mar_15">
 					<a href="adlist"> <img src="/resources/images/list.gif"
-						border="0" alt="목록"></a> <a href="admodify?ad_num=${ad.ad_num }"><img
+						border="0" alt="목록"></a> 
+					<c:if test="${loginUser.mem_code eq ad.writer }" >	
+					<a href="admodify?ad_num=${ad.ad_num }"><img
 						src="/resources/images/modify.gif" alt="수정"></a> <a
 						href="addelete?ad_num=${ad.ad_num }"><img
-						src="/resources/images/delete.gif" alt="삭제"></a> 
-					
-					<c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }" >	
-					<a
-						href="<%=request.getContextPath()%>/#"> <img
-						src="<%=request.getContextPath()%>/resources/images/regist.png"
-						alt="등록"></a>
+						src="/resources/images/delete.gif" alt="삭제"></a>
+					</c:if>
+					<c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }">
+						<a href="agree1"> <img
+							src="<%=request.getContextPath()%>/resources/images/regist.png"
+							alt="등록"></a>
+					</c:if>
+					<c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }">
+						<a href="<%=request.getContextPath()%>/agree2"> <img
+							src="<%=request.getContextPath()%>/resources/images/cancel.png"
+							alt="취소"></a>
 					</c:if>
 				</div>
 
@@ -81,11 +87,19 @@
 							<td class="t_end">${ad.regist_date }</td>
 						</tr>
 
+						<tr>
+							<th scope="row" class="t_head t_left center">이미지</th>
+							<td>	
+								
+								<img src="${ad.thumbimg}" class="thumbImg" />
+							</td>
+						</tr>
+
 						<td class="t_end EditText" colspan="2">${ad.cont}</td>
 					</tbody>
 				</table>
 
-				
+
 
 
 			</div>
@@ -97,3 +111,4 @@
 	</div>
 	<!-- //container -->
 </div>
+

@@ -8,7 +8,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dto.AdVO;
-import com.trex.dto.PrVO;
 import com.trex.request.Criteria;
 
 public class AdDAOImpl implements AdDAO {
@@ -81,6 +80,29 @@ public class AdDAOImpl implements AdDAO {
 	public List<AdVO> selectPointAdList(Criteria cri) throws SQLException {
 		List<AdVO> adList = session.selectList("Ad-Mapper.selectPointAdList",cri);		
 		return adList;
+	}
+
+	@Override
+	public List<AdVO> selectAdBannerList() throws SQLException {
+		List<AdVO> adList = session.selectList("Ad-Mapper.selectAdListBanner");	
+		return adList;
+	}
+
+	@Override
+	public void updateAgree1(AdVO ad) throws SQLException {
+		
+		session.update("Ad-Mapper.updateAgree1",ad);
+	}
+	@Override
+	public void updateAgree2(AdVO ad) throws SQLException {
+		
+		session.update("Ad-Mapper.updateAgree2",ad);
+	}
+
+	@Override
+	public AdVO selectAdBypf_code(String writer) throws SQLException {
+		AdVO ad = session.selectOne("Ad-Mapper.selectAdBypf_code",writer);	
+		return ad;
 	}
 
 }

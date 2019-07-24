@@ -8,6 +8,8 @@
 		var input = $('<input type="hidden" value="'+pf_code+'" name="pf_code"/>');
 		//$('#formCalendar').prepend(input);
 	</script>
+	
+	
 
 
 <script>

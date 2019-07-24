@@ -11,7 +11,6 @@ import javax.swing.GroupLayout.SequentialGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dao.PerformReservationDAO;
-import com.trex.dao.PerformReservationDAOImpl;
 import com.trex.dto.PFSHViewVO;
 import com.trex.dto.SeatReqVO;
 
@@ -53,6 +52,12 @@ public class PerformReservationServiceImpl implements PerformReservationService{
 		List<SeatReqVO> SeatReq = PFRESEDAO.selectSeatCount(pfsh_code);
 		
 		return SeatReq;
+	}
+
+	@Override
+	public List<SeatReqVO> getSeatList(String pfsh_code) throws SQLException {
+		List<SeatReqVO> SeatReqList = PFRESEDAO.selectSeatList(pfsh_code);
+		return SeatReqList;
 	}
 	
 	

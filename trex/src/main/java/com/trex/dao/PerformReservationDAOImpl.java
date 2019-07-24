@@ -51,4 +51,10 @@ public class PerformReservationDAOImpl implements PerformReservationDAO {
 		return SeatReq;
 	}
 
+	@Override
+	public List<SeatReqVO> selectSeatList(String pfsh_code) throws SQLException {
+		List<SeatReqVO> SeatReqList = session.selectList("PFRESE-Mapper.selectSeatList",pfsh_code);
+		return SeatReqList;
+	}
+
 }

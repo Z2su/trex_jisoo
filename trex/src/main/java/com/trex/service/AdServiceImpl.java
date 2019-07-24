@@ -8,20 +8,27 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dao.AdDAO;
+import com.trex.dao.PerformDAO;
+import com.trex.dao.PerformGuidBoardDAO;
 import com.trex.dto.AdVO;
-import com.trex.dto.PrVO;
+import com.trex.dto.PerformVO;
 import com.trex.request.Criteria;
 import com.trex.request.PageMaker;
 
 public class AdServiceImpl implements AdService {
 
-	@Autowired
-	private AdDAO adDAO;
-
+	
+	private AdDAO adDAO;	
 	public void setAdDAO(AdDAO adDAO) {
 		this.adDAO = adDAO;
 	}
-
+	
+	
+	private PerformDAO performDAO;
+	public void setPerformDAO(PerformDAO performDAO) {
+		this.performDAO= performDAO;
+	}
+	
 	/*
 	 * @Override public List<AdVO> adList() throws SQLException { List<AdVO> adList
 	 * = adDAO.selectAdList(); return adList; }
@@ -67,4 +74,53 @@ public class AdServiceImpl implements AdService {
 		return dataMap;
 	}
 
+	@Override
+	public List<AdVO> getAdBannerList() throws SQLException {
+		List<AdVO> adBannerList = adDAO.selectAdBannerList();	
+		
+		for(AdVO vo : adBannerList) {
+			PerformVO performVO = performDAO.selectPF(vo.getPf_code());
+			vo.setPerformVO(performVO);	
+		}
+		
+		return adBannerList;
+	}
+
+	@Override
+	public void agree1(AdVO ad) throws SQLException {
+		adDAO.updateAgree1(ad);
+		
+	}
+	@Override
+	public void agree2(AdVO ad) throws SQLException {
+		adDAO.updateAgree2(ad);
+		
+	}
+
+	@Override
+	public AdVO selectAdBypf_code(String writer) throws SQLException {
+		AdVO ad = adDAO.selectAdBypf_code(writer);
+		return ad;
+	}
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

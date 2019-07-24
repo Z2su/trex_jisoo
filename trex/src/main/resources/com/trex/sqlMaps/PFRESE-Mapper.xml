@@ -28,6 +28,12 @@
 		group by grade, price
 		order by PRICE desc
 	</select>
+	<select id="selectSeatList" resultType="SeatReq">
+		select col, num, grade, pfshs_rese, seat_code
+		from seat_view
+		where pfsh_code=#{pfsh_code}
+		order by col ,num
+	</select>
 	
 
 

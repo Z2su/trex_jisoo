@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <link rel="stylesheet" type="text/css"
 	href="//ticketimage.interpark.com/TicketImage/onestop/css/style.css">
@@ -24,11 +25,28 @@
 <script type="text/javascript" src="/Book/Inc/Js/BookSeatConfig.js"></script>
 <script type="text/javascript"
 	src="//ticketimage.interpark.com/TicketImage/onestop/css/common.js"></script>
+	
+<style>
+
+	.seatlabel{border: 1px solid black; width:23px; height:23px; display:inline-block; font-size: 10px; color: white; text-align: center;margin-right: 3px;margin-bottom: 3px; box-sizing: border-box;}
+	.seatlabel[grade="R"]{background:#7C68EE; border: 2px solid #7C68EE;}
+	.seatlabel[grade="S"]{background:#1CA814; border: 2px solid #1CA814;}
+	.seatlabel[grade="A"]{background:#17B3FF; border: 2px solid #17B3FF;}
+	.seatlabel[grade="B"]{background:#FB7E4F; border: 2px solid #FB7E4F;}
+	.seatlabel[grade="C"]{background:#A0D53F; border: 2px solid #A0D53F;}
+	
+	.seatlabel[pfshs_rese="1"]{background:white;}
+	.seatlabel[pfshs_rese="0"]{cursor: pointer}
+	.seatlabel[pfshs_rese="2"]{cursor: pointer; border: 2px solid red;}
+ 	.seatcheck{display:none;} 
+	div#seat{border: 1px solid blue;width:450px; height:200px; align-content: center;} 
+
+</style><!-- "#7C68EE", "#1CA814", "#17B3FF","#FB7E4F","#A0D53F" -->
 <div id="contentswrap">
 	<!-- 내용채우기 -->
 	
 	
-	<form id="trexinfo" name = "trexinfo" action="step2" method="post">
+	<form id="trexinfo" name = "trexinfo" action="step3" method="get">
 		<input type ="hidden" value="${loginUser.mem_id }"/>
 		<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
 	
@@ -95,178 +113,59 @@
 			<!-- //Process 영역 -->
 			<div class="contL">
 				<div class="iframe" style="width: 637; height: 493; background: white;">
-					<c:forEach items="${PFSHViewList }" var="PFSHView">
+					<%-- <c:forEach items="${PFSHViewList }" var="PFSHView">
 
 						<input type="hidden" id="rundate" pfsh_code="${PFSHView.pfsh_code }" value='<fmt:formatDate value="${PFSHView.rundate }" pattern="yyyyMMdd"/>' />
 
+					</c:forEach> --%>
+					
+					<div id ="seat">
+					<c:forEach items="${SeatReqList }" var="SeatReq" varStatus="status">
+					<c:set var="str" value="${SeatReqList[status.index+1].col} "/>
+					
+					<label class="seatlabel" for="${SeatReq.col}${SeatReq.num}"  grade="${SeatReq.grade }" pfshs_rese="${SeatReq.pfshs_rese }">${SeatReq.col}${SeatReq.num}
+					</label>
+						<input type="checkbox" id="${SeatReq.col}${SeatReq.num}" class="seatcheck" col="${SeatReq.col}" num="${SeatReq.num}" grade="${SeatReq.grade }" pfshs_rese="${SeatReq.pfshs_rese }" seat_code="${SeatReq.seat_code }" value="${SeatReq.col }" 
+						<c:if test="${SeatReq.pfshs_rese eq 1 }">
+						disabled="true"
+						
+						</c:if>
+						 />
+						
+						
+						<c:if test="${status.index > 0 }">
+						
+						
+							<c:if test="${SeatReq.col ne fn:toUpperCase(fn:trim(str)) }">
+							
+								<br/>
+							</c:if>
+						</c:if>
 					</c:forEach>
 					
-					<div class="contFrame frameBg6">
-						<!-- //관람일 선택 -->
-						<div class="watch_select">
-							<h3 class="title2">
-								<img
-									src="//ticketimage.interpark.com/TicketImage/onestop/stit_date.gif"
-									alt="관람일선택">
-							</h3>
-
-							<div class="calHead">
-								<div class="month">
-									<span class="prev"> <img style="display: none;"
-										src="//ticketimage.interpark.com/TicketImage/onestop/arrow_gr_prev.gif"
-										alt="이전달로 이동" onclick='prev();'>
-
-
-									</span> <span id="calendarYM"><em></em>년 <em></em>월</span> <span
-										class="next"> <!-- <a
-						href="javascript:fnChangeMonth('201909');"> --> <img
-										src="//ticketimage.interpark.com/TicketImage/onestop/arrow_gr_next.gif"
-										alt="다음달로 이동" onclick='next();'> <!-- </a> -->
-									</span>
-								</div>
-							</div>
-
-
-							<div class="calCont">
-								<table id="calendar">
-									<caption>관람일 선택 달력</caption>
-									<thead>
-										<tr>
-
-											<th class="sun">일</th>
-											<th>월</th>
-											<th>화</th>
-											<th>수</th>
-											<th>목</th>
-											<th>금</th>
-											<th>토</th>
-										</tr>
-									</thead>
-									<tbody>
-
-
-									</tbody>
-								</table>
-							</div>
-							<div class="calBtm">
-								<p>
-									<span class="info1"><span class="blind">링크 표시 날짜는
-									</span>예매 가능일</span> <span class="info2"><span class="blind">굵은
-											표시 날짜는 </span>선택한 관람일</span>
-								</p>
-								<p>
-									<span class="info3">예매가능시간 : 관람 3시간전</span>
-								</p>
-							</div>
-
-						</div>
-						<!-- watch_select //-->
-						<!-- 관람일 선택 //-->
-
-						<div class="arrow"></div>
-						<!-- arrow //-->
-						<!-- ver 1 -->
-						<div class="ver1">
-							<div class="watch_time">
-								<h3 class="title2">
-									<img
-										src="//ticketimage.interpark.com/TicketImage/onestop/stit_watch.gif"
-										alt="관람시간">
-								</h3>
-								<div class="scrollY">
-									<span id="TagPlaySeq" name="TagPlaySeq">
-										<div class="none">
-											먼저 관람일을<br>선택해 주세요.
-										</div>
-									</span>
-								</div>
-							</div>
-
-							<div id="RemainArea">
-								<div class="watch_info">
-									<h3 class="stit">
-										<img
-											src="//ticketimage.interpark.com/TicketImage/onestop/stit_seat.gif"
-											alt="좌석등급과 잔여석">
-									</h3>
-									<div class="scrollY">
-										<span id="TagRemainSeat" name="TagRemainSeat"><div class="none">
-												회차 선택 후<br>확인 가능 합니다.
-											</div></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- ver 1 //-->
-						<!-- //유의사항 -->
-						<div class="watch_note">
-							<h3 class="stit">
-								<img
-									src="//ticketimage.interpark.com/TicketImage/onestop/stit_note.gif"
-									alt="예매시 유의사항">
-							</h3>
-							<ul>
-
-								<li>장애인, 국가유공자 할인등급의 경우 현장수령만 가능합니다.<br>장애인등록증이나 복지카드
-									확인 후 티켓을 배부합니다. 미지참시 할인혜택을 받으실 수 없습니다.
-								</li>
-								<li>관람일 전일 아래시간까지만 취소 가능합니다.<br> - 공연전일 평일/일요일/공휴일 오후
-									5시, 토요일 오전 11시 (단,토요일이 공휴일인 경우는 오전 11시)<br> - 취소수수료와
-									취소가능일자는 상품별로 다르니, 오른쪽 하단 My예매정보를 확인해주시기 바랍니다.
-								</li>
-								<li>ATM기기로는 가상계좌입금이 안 되는 경우가 있으니 무통장 입금 고객님들은 인터넷 뱅킹, 폰뱅킹이
-									어려우시면 다른 결제수단을 선택해 주시기 바랍니다.</li>
-
-
-							</ul>
-						</div>
-						<!-- watch_note //-->
-						<!-- 유의사항 //-->
-						<!-- //출연진 -->
-						<div class="CastingInfo" id="CastingInfoDiv"
-							style="display: none;">
-							<span id="CastingInfoName"></span> <a href="javascript:;"
-								class="btnMore" onclick="fnCastingShow(true)"><span>더보기</span></a>
-						</div>
-						<!-- 출연진 //-->
-						<!-- //캐스팅 레이어 -->
-						<div class="CastingLayer" style="display: none;"
-							id="CastingListDiv">
-							<div class="ctTitle">
-								<a href="javascript:;" class="btn_close"
-									onclick="fnCastingShow(false)"><span>레이어닫기</span></a> <span
-									id="CastingDateInfo"></span> <a
-									href="/Ticket/Goods/CastingBridge.asp?GoodsCode=19000479"
-									class="btn_more" target="_blank"><span>모든 출연진 보기</span></a>
-							</div>
-							<ul class="ctList">
-								<span id="CastingList"></span>
-							</ul>
-							<p class="ctNotice">* 캐스팅 일정은 배우 및 제작사의 사정에 따라 사전공지 없이 변경될 수
-								있습니다.</p>
-						</div>
-						<!-- 캐스팅 레이어 //-->
 					</div>
 					
 					
-					 	<form id="formCalendar" name="formCalendar" method="get"
-		action="BookDateTime.asp">
-		<input type="hidden" id="GoodsCode" name="GoodsCode" value="19000479">
-		<input type="hidden" id="PlaceCode" name="PlaceCode" value="09000028">
-		<input type="hidden" id="OnlyDeliver" name="OnlyDeliver" value="68004">
-		<input type="hidden" id="DBDay" name="DBDay" value="12"> <input
-			type="hidden" id="ExpressDelyDay" name="ExpressDelyDay" value="0">
-		<input type="hidden" id="YM" name="YM" value="201908"> <input
-			type="hidden" id="PlayDate" name="PlayDate" value=""> <input
-			type="hidden" id="KindOfGoods" name="KindOfGoods" value="01009">
-		<input type="hidden" id="BizCode" name="BizCode" value="08920">
-		<input type="hidden" id="Tiki" name="Tiki" value=""> <input
-			type="hidden" id="Always" name="Always" value="N"> <input
-			type="hidden" id="HotSaleOrNot" name="HotSaleOrNot" value="">
-		<input type="hidden" id="PlaySeq" name="PlaySeq" value=""> <input
-			type="hidden" id="PlayTime" name="PlayTime" value=""> <input
-			type="hidden" id="CancelableDate" name="CancelableDate" value="">
-	</form> 
+			<!-- 
+				<form id="formCalendar" name="formCalendar" method="get"
+					action="BookDateTime.asp">
+					<input type="hidden" id="GoodsCode" name="GoodsCode" value="19000479">
+					<input type="hidden" id="PlaceCode" name="PlaceCode" value="09000028">
+					<input type="hidden" id="OnlyDeliver" name="OnlyDeliver" value="68004">
+					<input type="hidden" id="DBDay" name="DBDay" value="12"> <input
+						type="hidden" id="ExpressDelyDay" name="ExpressDelyDay" value="0">
+					<input type="hidden" id="YM" name="YM" value="201908"> <input
+						type="hidden" id="PlayDate" name="PlayDate" value=""> <input
+						type="hidden" id="KindOfGoods" name="KindOfGoods" value="01009">
+					<input type="hidden" id="BizCode" name="BizCode" value="08920">
+					<input type="hidden" id="Tiki" name="Tiki" value=""> <input
+						type="hidden" id="Always" name="Always" value="N"> <input
+						type="hidden" id="HotSaleOrNot" name="HotSaleOrNot" value="">
+					<input type="hidden" id="PlaySeq" name="PlaySeq" value=""> <input
+						type="hidden" id="PlayTime" name="PlayTime" value=""> <input
+						type="hidden" id="CancelableDate" name="CancelableDate" value="">
+				</form> 
+			 -->
 
 
 				</div>
@@ -310,7 +209,10 @@
 						<tbody>
 							<tr class="fir" id="MyRow1">
 								<th>일시</th>
-								<td><span id="MyPlayDate" name="MyPlayDate" title=""></span></td>
+								<td><span id="MyPlayDate" name="MyPlayDate" title="">
+							
+									
+								</span></td>
 							</tr>
 							<tr id="MyRow2">
 								<th>선택좌석<br>(<span id="MySelectedSeatCnt"
@@ -390,17 +292,7 @@
 							alt="다음단계" id="SmallNextBtnImage"></a>
 					</p>
 				</div>
-				<script>
-					$('#LargeNextBtnLink').on(
-							'click',
-							function(e) {
-								e.preventDefault();
-								/* alert($(this).attr('data-url')); */
-								$('#ifrmBookStep').attr('src',
-										$(this).attr('data-url'));
-
-							});
-				</script>
+				
 				<!-- 예매 정보 //-->
 			</div>
 			<!-- contR //-->
@@ -427,6 +319,7 @@
 		</div>
 		<!-- 검색 결과 레이어 //-->
 	</div>
+	<%@ include file="./step2_js.jsp"%>
 
 	<!-- //container -->
 </div>
