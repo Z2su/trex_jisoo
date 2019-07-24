@@ -52,5 +52,18 @@ public class CrAppDAOImpl implements CrAppDAO {
 		return seq_num;
 	}
 
+	@Override
+	public void enableList(String cr_app_code) throws SQLException {
+		session.update("CRApp-Mapper.enableList",cr_app_code);
+		
+	}
+
+	@Override
+	public List<CrAppVO> selectCRAppConfList() throws SQLException {
+		List<CrAppVO> CRAppConfList = session.selectList("CRApp-Mapper.selectCRAppConfList",null);
+		
+		return CRAppConfList;
+	}
+
 
 }

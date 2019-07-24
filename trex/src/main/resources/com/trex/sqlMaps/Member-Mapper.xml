@@ -78,6 +78,7 @@
 	<select id="selectEmployee" resultType="epview">
 		select *
 		from ep_view
+		order by comp asc
 	</select>
 	
 	<select id="selectGmemberList" resultType="gmember">
@@ -110,7 +111,12 @@
 	
 	</update>
 	
-		
+	<update id="deleteMember" parameterType="str">
+		delete 
+		from mem 
+		where mem_code =#{code}
+	
+	</update>
 	
 	
 	

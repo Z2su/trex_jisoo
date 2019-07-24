@@ -3,10 +3,7 @@ package com.trex.service;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import com.trex.dao.NoticeDAO;
-import com.trex.dto.CoronationVO;
 import com.trex.dto.NoticeVO;
 
 public class NoticeServiceImpl implements NoticeService {

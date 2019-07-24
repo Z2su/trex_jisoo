@@ -21,10 +21,19 @@ function sendFile(file, editor) {
     formData.append("uploadFile", file);
     formData.append("event_code",event_code);
     
+   /*  $(document).ready(function() {  
+        $("#btn_form_reset").click(function() {  
+             $("#wrtCont")[0].reset();    
+        });  
+     });
+ */
+
+    출처: https://pjsprogram.tistory.com/56 [행배]
+    
     $.ajax({ // ajax를 통해 파일 업로드 처리
         data : formData,
         type : "POST",
-        url : "<%=request.getContextPath()%>/board/my/imageUpload",
+        url : "<%=request.getContextPath()%>/board/event/imageUpload",
         cache : false,
         contentType : false,
         processData : false,
@@ -45,6 +54,7 @@ jQuery(document).ready(function() {
 		callbacks: { // 콜백을 사용
                      // 이미지를 업로드할 경우 이벤트를 발생
 		    onImageUpload: function(files, editor, welEditable) {
+		    	//$("#WrtCont").empty();
 			    sendFile(files[0], this);
 			}
 		}

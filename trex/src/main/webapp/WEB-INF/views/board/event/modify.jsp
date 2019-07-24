@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<script>
+$(document).ready(function(){
+	$(".note-btn").click(function(){
+		$("#reset_test_form").each(function(){
+			this.rest();
+		});
+	});
+});
+</script>
 <div id="contentswrap">
 
 	<!-- subvisual -->
@@ -48,7 +56,7 @@
 					<input type="hidden" name="event_num" value="${event.event_num }">
 					<input type="hidden" name="event_code" value="${event.event_code }">
 
-					<ul class="board_writeInfo">
+					<ul class="board_writeInfo" id="contmain">
 
 						<!--제목-->
 						<li><label for="wrtTitle">제 목</label><input type="text"

@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.trex.dto.CoronationVO;
-import com.trex.dto.NoticeVO;
 
 public interface CoronationService {
 	
