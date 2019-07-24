@@ -1,6 +1,8 @@
 package com.trex.dto;
 
-import java.util.Date;
+import java.sql.Date;
+
+
 
 public class CalendarVO {
 	
