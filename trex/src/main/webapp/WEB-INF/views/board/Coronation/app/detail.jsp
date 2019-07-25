@@ -62,8 +62,8 @@
 				<td>${CRAppBoard.hall_code }</td>
 			</tr>
 			<tr>
-				<th scope="row">공연 코드</th>
-				<td>${CRAppBoard.pf_code }</td>
+				<th scope="row">공연 등록 코드</th>
+				<td>${CRAppBoard.pf_app_code }</td>
 				<th scope="row">공연 일정</th>
 				<td>${CRAppBoard.startdate } ~ ${CRAppBoard.enddate }</td>
 			</tr>
@@ -94,13 +94,13 @@
 				<i class="red ace-icon fa fa-pencil bigger-120"></i><b>승인</b>
 			</button>
  	 		 
-           
+           	<button type="button" class="btn btn-sm btn-white btn-bold"
+				onclick="location.href='/board/Coronation/app/delete/${CRAppBoard.cr_app_code }'">
+				<i class="grey ace-icon fa fa-times bigger-120"></i><b>삭제</b>
+			</button>         
              
 			</c:if> 
-			<a
-				href="/board/Coronation/app/delete/${CRAppBoard.cr_app_code }"><img
-				src="/resources/images/delete.gif" alt="삭제"></a>
-								
+			
 					
 			<button type="button" class="btn btn-sm btn-white btn-bold"
 				onclick="history.go(-1);">

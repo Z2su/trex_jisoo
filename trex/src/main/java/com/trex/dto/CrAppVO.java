@@ -17,6 +17,7 @@ public class CrAppVO {
 	private String pf_code;
 	private Date startdate;
 	private Date enddate;
+	private String pf_app_code;
 	
 	public String getCr_app_code() {
 		return cr_app_code;
@@ -96,12 +97,18 @@ public class CrAppVO {
 	public void setEnddate(Date enddate) {
 		this.enddate = enddate;
 	}
+	public String getPf_app_code() {
+		return pf_app_code;
+	}
+	public void setPf_app_code(String pf_app_code) {
+		this.pf_app_code = pf_app_code;
+	}
 	@Override
 	public String toString() {
 		return "CrAppVO [cr_app_code=" + cr_app_code + ", cr_app_num=" + cr_app_num + ", hall_code=" + hall_code
 				+ ", ep_code=" + ep_code + ", writer=" + writer + ", title=" + title + ", enable=" + enable + ", cont="
 				+ cont + ", regdate=" + regdate + ", modidate=" + modidate + ", pf_code=" + pf_code + ", startdate="
-				+ startdate + ", enddate=" + enddate + "]";
+				+ startdate + ", enddate=" + enddate + ", pf_app_code=" + pf_app_code + "]";
 	}
 	
 	

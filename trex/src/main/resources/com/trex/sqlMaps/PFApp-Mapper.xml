@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PFApp-Mapper">
+
+	<select id="selectPFAppList" resultType="PFApp">
+		select * 
+		from pf_app 
+		order by pf_app_code desc		
+	</select>
+	
+	<select id="selectPFApp"  resultType="PFApp">
+		select * 
+		from pf_app 
+		where pf_app_code=#{pf_app_code}
+	</select>
+	
+	<update id="insertPFApp">
+		insert 
+		into 
+		pf_app(pf_app_code,pf_app_num,title,writer,cont,startdate,enddate)
+		values
+		(#{pf_app_code},#{pf_app_num},#{title},#{writer},#{cont},#{startdate},#{enddate})
+	</update>
+	
+	<update id="updatePFApp" >
+		update 
+		pf_app 
+		set 
+		title=#{title}, cont=#{cont}, updatedate=sysdate 
+		where pf_app_code=#{pf_app_code}
+	</update>
+	
+	<update id="deletePFApp" >
+		delete 
+		from pf_app 
+		where pf_app_code=#{pf_app_code}
+	</update>
+	
+	<select id="selectPFAppNextSeq" resultType="int">
+		select PAPP_SEQ.nextval as pf_app_num from dual
+	</select>
+
+
+</mapper>

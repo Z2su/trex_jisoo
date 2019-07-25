@@ -55,8 +55,8 @@
 			class="link_2th" onclick="menuclick('submenu2');return false;" onkeypress="">대관 승인 목록</a></li>	
 		<li><a href="<%=request.getContextPath()%>/board/Coronation/conf/list"
 			class="link_2th" onclick="menuclick('submenu1');return false;" onkeypress="">대관 일정</a></li>
-		<!-- <li><a href="<%=request.getContextPath()%>/board/Coronation/hall/list"
-			class="link_2th" onclick="menuclick('submenu3');return false;" onkeypress="">공연 등록</a></li> -->
+		<li><a href="<%=request.getContextPath()%>/board/Coronation/papp/list"
+			class="link_2th" onclick="menuclick('submenu3');return false;" onkeypress="">공연 등록</a></li>
 
 	</ul>
 

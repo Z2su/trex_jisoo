@@ -80,8 +80,8 @@
 						</div>
 						</li>
 						
-						<li><label for="pf_code">공연정보</label> <input type="text"
-							id="pf_code" name="pf_code" value=""></li>
+						<li><label for="pf_app_code">공연 등록 코드</label> <input type="text"
+							id="pf_app_code" name="pf_app_code" value=""></li>
 						
 						<li><label for="">기간</label> <input type="date"
 							id="startdate" name="startdate" value="">~<input type="date"
@@ -112,7 +112,7 @@
 					<!-- 게시판 버튼모음 -->
 					<div class="board_butt" style="margin: 10px 0;padding: 0 10px; text-align: right">
 						<input type="image"
-							src="<%=request.getContextPath()%>/resources/imagesentry.gif"
+							src="<%=request.getContextPath()%>/resources/images/regist.png"
 							alt="등록">
 						
 						<a href="/board/Coronation/app/list">

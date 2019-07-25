@@ -138,6 +138,7 @@
                            <li><a href="<%=request.getContextPath()%>/board/Coronation/app/list" class="">대관 신청</a></li>
                            <li><a href="<%=request.getContextPath()%>/board/Coronation/app/Conflist" class="">대관 승인 목록</a></li>
                            <li><a href="<%=request.getContextPath()%>/board/Coronation/conf/list" class="">대관 일정</a></li>
+                           <li><a href="<%=request.getContextPath()%>/board/Coronation/papp/list" class="">공연 등록</a></li>
                         </ul>
                      </div>
                      </li>
