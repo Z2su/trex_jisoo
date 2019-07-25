@@ -154,12 +154,7 @@
 													<input name='userid' type="hidden" id="userid" value="${loginUser.mem_id }"></td>
 
 												</tr>
-												<tr>
-													<th><label for="sndAmount">가격</label></th>
-													<td>${price }원
 													<input name='sndAmount' type="hidden" id="sndAmount" value="${price }"></td>
-													
-												</tr>
 												<tr>
 													<th><label for="sndOrdername">구매자</label></th>
 													<td>${gmem.name }
@@ -175,12 +170,12 @@
 												<tr>
 													<th><label for="sndMoblie">연락처</label></th>
 													<td>${gmem.tell }
-													<input name=sndMoblie type="hidden" id="sndMoblie" value="${gmem.tell }"></td>
+													<input name=sndMobile type="hidden" id="sndMobile" value="${gmem.tell }"></td>
 													
 												</tr>
 												<tr>
 													<input type="hidden" name="setSndOrderNumber" value="${pay_code }" />
-													<input type="hidden" name="sndGoodname" value="${pf.name }" />
+													<input type="hidden" name="sndGoodname" value="${pf_code }" />
 													<td colspan="2" class="fs">SMS 문자와 이메일로 예매 정보를 보내드립니다.<span
 														class="select"> <!--<input type="radio" class="chk" id="EmailOrNotY" value="Y" checked/><label>예</label><input type="radio" class="chk" id="EmailOrNotN" value="N" disabled/><label>아니오</label>--></span></td>
 												</tr>
@@ -263,7 +258,7 @@
 							</tr>
 							<tr id="MyRow3">
 								<th>티켓금액</th>
-								<td><span id="MyTicketAmt" name="MyTicketAmt" title=""></span></td>
+								<td><span id="MyTicketAmt" name="MyTicketAmt" title="">${price }</span></td>
 							</tr>
 							<tr id="MyRow4">
 								<th>수수료</th>
@@ -345,18 +340,21 @@
 										$(this).attr('data-url'));
 
 							}); */
+							/* $('#LargeNextBtnLink').on('click',function(){
+							alert("아이디 : ${gmem.name}");
+							
+								}); */ 
 							
 							function goPay(){
+								var gsWin = window.open('about:blank','payview','width=560px,height=629px;')
 								var form = document.formDelivery;
-								
+								form.action = "/credit/form";
+								form.target ="payview";
+								form.method ="post";
 								form.submit();
+								
 							}
 							
-							<%-- $('#LargeNextBtnLink').on('click',function(){
-								alert("아이디 : ${loginUser.mem_id}");
-								
-								var ret = window.open("<%=request.getContextPath()%>credit/form", "", "width=560px height=630px");
-									}); --%>
 				</script>
 				<!-- 예매 정보 //-->
 			</div>

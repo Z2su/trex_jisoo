@@ -190,6 +190,12 @@ public class MemberDAOImpl  implements MemberDAO{
 		session.update("Member-Mapper.deleteMember", mem_code);
 		
 	}
+
+	@Override
+	public GmemberVO selectGmemberByCode(String mem_code) throws SQLException {
+		GmemberVO gmember = session.selectOne("Member-Mapper.selectGmemberByCode",mem_code);
+		return gmember;
+	}
 	
 	
 

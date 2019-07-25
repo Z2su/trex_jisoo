@@ -347,9 +347,14 @@
 							}); */
 							
 							function goPay(){
-								var form = document.formDelivery;
 								
+								var gsWin = window.open('about:blank','payview','width=560px,height=600px;')
+								var form = document.formDelivery;
+								form.action = "/credit/form";
+								form.target ="payview";
+								form.method ="post";
 								form.submit();
+								
 							}
 							
 							<%-- $('#LargeNextBtnLink').on('click',function(){
