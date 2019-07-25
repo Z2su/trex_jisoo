@@ -21,7 +21,7 @@ import com.trex.dto.CreditRequest;
 @RequestMapping("/credit")
 public class CreditController {
 	
-	@RequestMapping(value="/{pf_code}", method=RequestMethod.GET )
+	/*@RequestMapping(value="/{pf_code}", method=RequestMethod.GET )
 	public ModelAndView performPay(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
 		
 		String url = "perform/main4";
@@ -37,7 +37,7 @@ public class CreditController {
 		modelnView.setViewName(url);
 		
 		return modelnView;
-	}
+	}*/
 	
 	@RequestMapping(value="/form", method=RequestMethod.POST)
 	public void creditForm(@ModelAttribute("creditReq")CreditRequest creditReq,

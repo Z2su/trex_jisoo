@@ -1,10 +1,9 @@
 package com.trex.controller;
 
 import java.sql.SQLException;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,9 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.trex.dto.GmemberVO;
+import com.trex.dto.MemberVO;
 import com.trex.dto.PFSHViewVO;
 import com.trex.dto.PerformReservationVO;
 import com.trex.dto.SeatReqVO;
+import com.trex.service.MemberService;
 import com.trex.service.PerformReservationService;
 
 @Controller
@@ -25,6 +27,9 @@ public class PerformReservationController {
 	
 	@Autowired
 	private PerformReservationService PFRESEService;
+	
+	@Autowired
+	private MemberService memberService;
 	
 	@RequestMapping(value="/{pf_code}/step1", method=RequestMethod.GET )
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
@@ -36,7 +41,6 @@ public class PerformReservationController {
 		modelnView.addObject("pf_code", pf_code);
 		modelnView.setViewName(url);
 		
-		
 		return modelnView;
 	}
 	
@@ -46,6 +50,18 @@ public class PerformReservationController {
 		String url = "perform/main4";
 
 		modelnView.addObject("pf_code", pf_code);
+		modelnView.setViewName(url);
+		
+		return modelnView;
+	}
+	
+	@RequestMapping(value="/fast", method=RequestMethod.GET)
+	public ModelAndView fastperformrese(String pf_code, ModelAndView modelnView) throws SQLException{
+		
+		String url = "perform/step0";
+		
+		List<PFSHViewVO> PFSHViewList = PFRESEService.getPFSHViewList(pf_code);
+		modelnView.addObject("PFSHViewList", PFSHViewList);
 		modelnView.setViewName(url);
 		
 		return modelnView;
@@ -107,22 +123,38 @@ public class PerformReservationController {
 		return modelnView;
 	}
 	@RequestMapping(value="/{pf_code}/step3", method=RequestMethod.GET )
-	public ModelAndView performreseGet3(@PathVariable String pf_code, String seat_code,String pfsh_code,ModelAndView modelnView) throws SQLException{
+	public ModelAndView performreseGet3(@PathVariable String pf_code, 
+										String seat_code,
+										String pfsh_code,
+										HttpSession session,
+										ModelAndView modelnView) throws SQLException{
 
 		String url = "perform/step3";
+		
+		String mem_code = ((MemberVO)session.getAttribute("loginUser")).getMem_code();
+		GmemberVO gmem = memberService.getGmember(mem_code);
+		
 		
 		String[] seat = seat_code.split(",");
 		int price = 0;
 		System.out.println(">>>>>!!!!!!!!!!!"+seat.length);
 		for(int i=0 ; i<seat.length ; i++) {
-			
 		
 			price += PFRESEService.getSeatPrice(seat[i], pfsh_code);
 		}
 		System.out.println("%%%%%>> "+price);
-
+		
+		String pay_code="";
+		for(int i=0;i<10;i++) {
+			pay_code+=(int)(Math.random()*8+1);
+		}
+		
+		
 		System.out.println(seat_code);
+		modelnView.addObject("pay_code", pay_code);
+		modelnView.addObject("pf_code", pf_code);
 		modelnView.addObject("price", price);
+		modelnView.addObject("gmem",gmem);
 		modelnView.setViewName(url);
 		
 		return modelnView;
