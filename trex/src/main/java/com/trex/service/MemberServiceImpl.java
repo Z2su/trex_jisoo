@@ -189,7 +189,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public EmployeeVO getEmployee(String ep_code) throws SQLException {
 
-		EmployeeVO employee = null;
+		EmployeeVO employee = memberDAO.selectEmployee(ep_code);
 		return employee;
 	}
 

@@ -56,38 +56,40 @@
 					<tbody class="text-center">
 						
 							<tr>
-								<th class="t_body" scope="row" width="150">회원코드</th>
-								<td class="td_top t_end">${gmemList.gmem_code}</td>
+								<th class="t_body" scope="row" width="150">* 사번</th>
+								<td class="td_top t_end">${employee.ep_code }</td>
+							</tr>
+						
+							<tr>
+								<th class="t_body" scope="row" width="150">* 회원코드</th>
+								<td class="td_top t_end">${loginUser.mem_code}</td>
 							</tr>
 
 							<tr>
 								<th class="t_body" scope="row" width="150">* 이름</th>
-								<td class="td_top t_end">${gmemList.name}</td>
+								<td class="td_top t_end">${employee.name}</td>
 							</tr>
 							<tr>
-								<th class="t_body" scope="row" width="150">* 휴대전화</th>
-								<td class="td_top t_end">${gmemList.tell}</td>
+								<th class="t_body" scope="row" width="150">* 이메일</th>
+								<td class="td_top t_end">${loginUser.mem_email}</td>
 							</tr>
 							<tr>
-								<th class="t_body" scope="row">* 생년월일</th>
-								<td class="t_end">${gmemList.birth}</td>
+								<th class="t_body" scope="row">* 아이디</th>
+								<td class="t_end">${loginUser.mem_id}</td>
 							</tr>
 							<tr>
-								<th class="t_body" scope="row">* 주소</th>
-								<td class="t_end">${gmemList.address}</td>
+								<th class="t_body" scope="row">* 패스워드</th>
+								<td class="t_end"  >${loginUser.mem_pwd}</td>
 							</tr>
 							<tr>
-								<th class="t_body" scope="row">* 성별</th>
-								<td class="t_end">${gmemList.gender}</td>
+								<th class="t_body" scope="row">* 직급 </th>
+								<td class="t_end">${employee.rank}</td>
 							</tr>
 							<tr>
-								<th class="t_body" scope="row">마일리지</th>
-								<td class="t_end">${gmemList.mile}</td>
+								<th class="t_body" scope="row">* 권한</th>
+								<td class="t_end">${employee.emp}</td>
 							</tr>
-							<tr>
-								<th class="t_body" scope="row">회원등급</th>
-								<td class="t_end">${gmemList.gra_code}</td>
-							</tr>
+
 					</tbody>
 							
 				</table>

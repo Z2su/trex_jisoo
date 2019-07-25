@@ -20,11 +20,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.trex.dto.AdVO;
+import com.trex.dto.EventVO;
+import com.trex.dto.FAQBoardVO;
 import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
+import com.trex.dto.NoticeVO;
+import com.trex.dto.PFSHViewVO;
+import com.trex.dto.PerformVO;
 import com.trex.dto.TroupeVO;
 import com.trex.service.AdService;
+import com.trex.service.EventService;
+import com.trex.service.FAQBoardService;
 import com.trex.service.MemberService;
+import com.trex.service.NoticeService;
+import com.trex.service.PerformService;
 
 @Controller
 public class CommonController {
@@ -37,14 +46,30 @@ public class CommonController {
 	
 	@Autowired
 	private MemberService MemberService;
-	
+	@Autowired
+	private NoticeService noticeService;
+	@Autowired
+	private FAQBoardService faqService;
+	@Autowired
+	private EventService eventService;
+	@Autowired
+	private PerformService pfService;
 	
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String mainGET(Model model) throws Exception {
 		
 		List<AdVO> adBannerList = adService.getAdBannerList();
+		List<NoticeVO> noticeList = noticeService.getNoticeList();
+		List<FAQBoardVO> faqList = faqService.listSearch();
+		List<EventVO> eventList = eventService.eventList();
+		List<PerformVO> pfList = pfService.getPFList();
 		
 		model.addAttribute("adList",adBannerList);
+		model.addAttribute("noticeList",noticeList);
+		model.addAttribute("faqList",faqList);
+		model.addAttribute("eventList",eventList);
+		model.addAttribute("pfList",pfList);
+		
 		System.out.println(adBannerList);
 		return "main";
 	}

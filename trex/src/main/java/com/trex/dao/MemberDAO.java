@@ -65,5 +65,6 @@ public interface MemberDAO {
 	void updateAuthkey(MemberVO member) throws SQLException;
 	
 	void updateAuthstatus(MemberVO member) throws SQLException;
+	EmployeeVO selectEmployee(String ep_code);
 
 }
