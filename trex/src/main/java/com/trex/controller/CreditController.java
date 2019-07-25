@@ -138,5 +138,7 @@ public class CreditController {
 				//ipg.kspay_send_msg("3");		// 정상처리가 완료되었을 경우 호출합니다.(이 과정이 없으면 일시적으로 kspay_send_msg("1")을 호출하여 거래내역 조회가 가능합니다.)
 			}
 		}
+		
+
 	}
 }

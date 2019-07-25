@@ -17,9 +17,12 @@ import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
 import com.trex.dto.PFSHViewVO;
 import com.trex.dto.PerformReservationVO;
+import com.trex.dto.PerformVO;
 import com.trex.dto.SeatReqVO;
 import com.trex.service.MemberService;
 import com.trex.service.PerformReservationService;
+import com.trex.service.PerformService;
+import com.trex.service.PerformServiceImpl;
 
 @Controller
 @RequestMapping("/performrese")
@@ -30,6 +33,9 @@ public class PerformReservationController {
 	
 	@Autowired
 	private MemberService memberService;
+	
+	@Autowired
+	private PerformService PFService;
 	
 	@RequestMapping(value="/{pf_code}/step1", method=RequestMethod.GET )
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
@@ -134,15 +140,15 @@ public class PerformReservationController {
 		String mem_code = ((MemberVO)session.getAttribute("loginUser")).getMem_code();
 		GmemberVO gmem = memberService.getGmember(mem_code);
 		
-		
+		PerformVO PF = PFService.getPF(pf_code);
 		String[] seat = seat_code.split(",");
 		int price = 0;
-		System.out.println(">>>>>!!!!!!!!!!!"+seat.length);
+		//System.out.println(">>>>>!!!!!!!!!!!"+seat.length);
 		for(int i=0 ; i<seat.length ; i++) {
 		
 			price += PFRESEService.getSeatPrice(seat[i], pfsh_code);
 		}
-		System.out.println("%%%%%>> "+price);
+		//System.out.println("%%%%%>> "+price);
 		
 		String pay_code="";
 		for(int i=0;i<10;i++) {
@@ -151,6 +157,7 @@ public class PerformReservationController {
 		
 		
 		System.out.println(seat_code);
+		modelnView.addObject("pf_name", PF.getName());
 		modelnView.addObject("pay_code", pay_code);
 		modelnView.addObject("pf_code", pf_code);
 		modelnView.addObject("price", price);

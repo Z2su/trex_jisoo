@@ -31,6 +31,7 @@
 		  class="com.trex.mail.MimeAttachNotifier"
 		  p:mailSender-ref="mailSender"
 		  /> 
+
 	
 	
 
