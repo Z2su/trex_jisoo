@@ -59,6 +59,18 @@ public class PerformReservationServiceImpl implements PerformReservationService{
 		List<SeatReqVO> SeatReqList = PFRESEDAO.selectSeatList(pfsh_code);
 		return SeatReqList;
 	}
+
+	@Override
+	public int getSeatPrice(String seat_code, String pfsh_code) throws SQLException {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("seat_code", seat_code);
+		
+		map.put("pfsh_code", pfsh_code);
+		
+		int price = PFRESEDAO.selectSeatPrice(map);
+		
+		return price;
+	}
 	
 	
 	

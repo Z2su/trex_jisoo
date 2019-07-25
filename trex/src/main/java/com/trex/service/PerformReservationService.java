@@ -15,4 +15,8 @@ public interface PerformReservationService {
 
 	List<SeatReqVO> getSeatCount(String pfsh_code) throws SQLException;
 	List<SeatReqVO> getSeatList(String pfsh_code) throws SQLException;
+	
+	int getSeatPrice(String seat_code, String pfsh_code) throws SQLException;
+	
+	
 }

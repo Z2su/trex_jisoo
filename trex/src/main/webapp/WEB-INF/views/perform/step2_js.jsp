@@ -29,22 +29,25 @@ $('.seatcheck').change(function(){
 	var id=$(this).attr('id');
 	
 	var seat_code = $(this).attr('seat_code');
-	//alert("seat"+seat_code);
 	
 	if($(this).is(':checked')){
-	$('label[for="'+id+'"]').attr('pfshs_rese','2');
-	$(this).attr('pfshs_rese','2');
-	$(this).attr('checked',true);
-	$('#trexinfo').append($('<input type="hidden" id="'+id+'" name="seat_code" value="'+seat_code+'"/>')); 
+		$('label[for="'+id+'"]').attr('pfshs_rese','2');
+		$(this).attr('pfshs_rese','2');
+		$(this).attr('checked',true);
+		$('#trexinfo').append($('<input type="hidden" name="seat_code" value="'+seat_code+'" class="'+id+'" />'));
+		nextindex++;
 
-	
 	}else{
-	$('label[for="'+id+'"]').attr('pfshs_rese','0');
-	$(this).attr('pfshs_rese','0');
-	$(this).attr('checked',false);
-	$('#trexinfo input#'+id).remove();
+		
+		$('label[for="'+id+'"]').attr('pfshs_rese','0');
+		$(this).attr('pfshs_rese','0');
+		$(this).attr('checked',false);
+		$('#trexinfo .'+id).remove();
+		nextindex--;
 
 	}
+	
+	
 	
 	
 	
@@ -95,20 +98,16 @@ $('.seatcheck').change(function(){
 		
 	}) */
 	$('#LargeNextBtn').on('click',function(){
-		nextindex = $(".seatcheck:checked").length;
+		/* nextindex = $(".seatcheck:checked").length; */
 
 		if(nextindex==0){
 			alert('자리선택');
 			return;
 		}else{
-	
-			
-			
-			
 			$('#trexinfo').submit();
 			
 		}
-	})
+	});
 	
 	
 	
