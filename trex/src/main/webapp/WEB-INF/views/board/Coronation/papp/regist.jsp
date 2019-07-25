@@ -44,7 +44,7 @@
 		<!-- content-->
 		<div id="content">
 			<!-- 컨텐츠 타이틀 -->
-			<h3 class="cnt_ti">대관 신청</h3>
+			<h3 class="cnt_ti">공연 등록</h3>
 
 			<!--  내용은 여기에 !!!!  -->
 			<div id="txt">
@@ -67,6 +67,48 @@
 						<li><label for="wrtPers">작성자</label><input type="text"
 							id="wrtPers" name="writer" value="${loginUser.mem_code } " readonly=""><span
 							class="tip"></span></li>
+						
+						<!--  <li><label for="hall">공연장</label> <!-- <input type="text"
+							id="wrthall" name="hall" value="${CRAppBoard.hall_code }"></li> -->
+						<!-- <div class="">			
+							<select name="hall_code" onchange="fnChangeCategory();">
+								<option value="" >---공연장 선택---</option>	
+								<option value="HALL0001" >HALL0001</option>				
+								<option value="HALL0002" >HALL0002</option>
+								<option value="HALL0003" >HALL0003</option>		
+							</select>
+						</div>
+						</li> -->
+						<li><label for="hall">공연장</label> <!-- <input type="text"
+							id="wrthall" name="hall" value="${CRAppBoard.hall_code }"></li> -->
+						<div class="">			
+							<select name="hall_code" onchange="fnChangeCategory();">
+								<option value="" >---공연장 선택---</option>	
+								<option value="HALL0001" >HALL0001</option>				
+								<option value="HALL0002" >HALL0002</option>
+								<option value="HALL0003" >HALL0003</option>
+								<option value="HALL0004" >HALL0004</option> 	<!-- //공연장 정보 확정되면 밸류에 공연장코드 삽입// -->		
+							</select>
+						</div>
+						</li>	
+						
+						<li><label for="wrtcls">장르</label><input type="text"
+							id="cls" name="cls" value=""><span
+							class="tip"></span></li>
+						
+						<li><label for="wrtrunt">상영 시간</label><input type="text"
+							id="runtime" name="runtime" value=""><span
+							class="tip"></span></li>
+							
+						<li><label for="wrtrunround">상영 회차</label><input type="text"
+							id="runround" name="runround" value=""><span
+							class="tip"></span></li>		
+						
+						<li><label for="">공연 기간</label> <input type="date"
+							id="startdate" name="startdate" value="">~<input type="date"
+							id="enddate" name="enddate" value=""></li>
+							
+							
 						<!--공지 사항 체크-->
 
 						<!--비밀글  체크-->
@@ -87,7 +129,6 @@
 								name="cont" rows="20" cols="1"></textarea></li>
 
 
-
 					</ul>
 
 					<!-- 게시판 버튼모음 -->
@@ -95,7 +136,7 @@
 						<input type="image"
 							src="<%=request.getContextPath()%>/resources/images/regist.png"	alt="등록">
 						
-						<a href="/board/Coronation/list">
+						<a href="/board/Coronation/papp/list">
 						<img src="<%=request.getContextPath()%>/resources/images/cancel.png" alt="취소"></a>
 						
 					</div>
@@ -107,6 +148,7 @@
 
 		</div>
 	</div>
+		<%@ include file="/WEB-INF/views/board/Coronation/app/smartEditor_js.jsp"%>
 	<!-- //container -->
 </div>
 <link rel="stylesheet"

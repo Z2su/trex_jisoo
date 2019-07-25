@@ -38,6 +38,7 @@
 	<import resource="classpath:context/Pay-context.xml"/>
 	<import resource="classpath:context/CrConf-context.xml"/>
 	<import resource="classpath:context/MypageRh-context.xml"/>
+	<import resource="classpath:context/PfApp-context.xml"/>
 	
 	
 

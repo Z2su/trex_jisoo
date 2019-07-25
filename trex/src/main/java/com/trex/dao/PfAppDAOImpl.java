@@ -4,12 +4,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.trex.dto.CrAppVO;
 import com.trex.dto.PfAppVO;
 
 public class PfAppDAOImpl implements PfAppDAO {
 	
+	@Autowired
 	private SqlSession session;
 	public void setSession(SqlSession session) {
 		this.session = session;
@@ -18,15 +19,15 @@ public class PfAppDAOImpl implements PfAppDAO {
 	@Override
 	public List<PfAppVO> selectPFAppList() throws SQLException {
 		List<PfAppVO> PfAppList = session.selectList("PFApp-Mapper.selectPFAppList",null);
-		
+		System.out.println(">>DAO : "+PfAppList);
 		return PfAppList;
 	}
 
 	@Override
 	public PfAppVO selectPFApp(String pf_app_code) throws SQLException {
-		PfAppVO PFApp = session.selectOne("CRApp-Mapper.selectCRApp",pf_app_code);
+		PfAppVO PFAppBoard = session.selectOne("PFApp-Mapper.selectPFApp",pf_app_code);
 		
-		return PFApp;
+		return PFAppBoard;
 	}
 
 	

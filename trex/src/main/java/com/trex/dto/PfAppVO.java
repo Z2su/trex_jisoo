@@ -12,6 +12,10 @@ public class PfAppVO {
 	private Date regdate;
 	private Date startdate;
 	private Date enddate;
+	private int runtime;
+	private String hall_code;
+	private String cls;
+	private int runround;
 	
 	public String getPf_app_code() {
 		return pf_app_code;
@@ -61,12 +65,40 @@ public class PfAppVO {
 	public void setEnddate(Date enddate) {
 		this.enddate = enddate;
 	}
+	public int getRuntime() {
+		return runtime;
+	}
+	public void setRuntime(int runtime) {
+		this.runtime = runtime;
+	}
+	public String getHall_code() {
+		return hall_code;
+	}
+	public void setHall_code(String hall_code) {
+		this.hall_code = hall_code;
+	}
+	public String getCls() {
+		return cls;
+	}
+	public void setCls(String cls) {
+		this.cls = cls;
+	}
+	public int getRunround() {
+		return runround;
+	}
+	public void setRunround(int runround) {
+		this.runround = runround;
+	}
 	@Override
 	public String toString() {
 		return "PfAppVO [pf_app_code=" + pf_app_code + ", pf_app_num=" + pf_app_num + ", writer=" + writer + ", title="
 				+ title + ", cont=" + cont + ", regdate=" + regdate + ", startdate=" + startdate + ", enddate="
-				+ enddate + "]";
+				+ enddate + ", runtime=" + runtime + ", hall_code=" + hall_code + ", cls=" + cls + ", runround="
+				+ runround + "]";
 	}
+	
+	
+	
 	
 	
 
