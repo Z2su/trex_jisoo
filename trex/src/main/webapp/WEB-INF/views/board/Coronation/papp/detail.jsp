@@ -53,6 +53,7 @@
 			<col width="25%"/>
 			<col width="25%"/>
 			<col width="25%"/>
+			<col width="25%"/>
 		</colgroup>
 		<caption>게시글 상세</caption>
 		<tbody>
@@ -67,6 +68,18 @@
 				<td>${PFAppBoard.startdate }</td>
 				<th scope="row">공연 종료일</th>
 				<td>${PFAppBoard.enddate }</td>
+			</tr>
+			<tr>
+				<th scope="row">상영 시간</th>
+				<td>${PFAppBoard.runtime }</td>
+				<th scope="row">공연장 코드</th>
+				<td>${PFAppBoard.hall_code }</td>
+			</tr>
+			<tr>
+				<th scope="row">상영 회차</th>
+				<td>${PFAppBoard.runround }</td>
+				<th scope="row">장르</th>
+				<td>${PFAppBoard.cls }</td>
 			</tr>
 			<tr>
 				<th scope="row">작성자</th>

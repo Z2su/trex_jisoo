@@ -79,12 +79,35 @@
 							</select>
 						</div>
 						</li> -->
+						<li><label for="hall">공연장</label> <!-- <input type="text"
+							id="wrthall" name="hall" value="${CRAppBoard.hall_code }"></li> -->
+						<div class="">			
+							<select name="hall_code" onchange="fnChangeCategory();">
+								<option value="" >---공연장 선택---</option>	
+								<option value="HALL0001" >HALL0001</option>				
+								<option value="HALL0002" >HALL0002</option>
+								<option value="HALL0003" >HALL0003</option>
+								<option value="HALL0004" >HALL0004</option> 	<!-- //공연장 정보 확정되면 밸류에 공연장코드 삽입// -->		
+							</select>
+						</div>
+						</li>	
 						
+						<li><label for="wrtcls">장르</label><input type="text"
+							id="cls" name="cls" value=""><span
+							class="tip"></span></li>
 						
+						<li><label for="wrtrunt">상영 시간</label><input type="text"
+							id="runtime" name="runtime" value=""><span
+							class="tip"></span></li>
+							
+						<li><label for="wrtrunround">상영 회차</label><input type="text"
+							id="runround" name="runround" value=""><span
+							class="tip"></span></li>		
 						
-						<li><label for="">기간</label> <input type="date"
+						<li><label for="">공연 기간</label> <input type="date"
 							id="startdate" name="startdate" value="">~<input type="date"
-							id="enddate" name="enddate" value=""></li>		
+							id="enddate" name="enddate" value=""></li>
+							
 							
 						<!--공지 사항 체크-->
 

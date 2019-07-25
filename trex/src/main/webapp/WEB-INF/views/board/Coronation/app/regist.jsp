@@ -75,7 +75,8 @@
 								<option value="" >---공연장 선택---</option>	
 								<option value="HALL0001" >HALL0001</option>				
 								<option value="HALL0002" >HALL0002</option>
-								<option value="HALL0003" >HALL0003</option> 	<!-- //공연장 정보 확정되면 밸류에 공연장코드 삽입// -->		
+								<option value="HALL0003" >HALL0003</option>
+								<option value="HALL0004" >HALL0004</option>  	<!-- //공연장 정보 확정되면 밸류에 공연장코드 삽입// -->		
 							</select>
 						</div>
 						</li>

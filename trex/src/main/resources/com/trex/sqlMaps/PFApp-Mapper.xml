@@ -17,9 +17,9 @@
 	<update id="insertPFApp">
 		insert 
 		into 
-		pf_app(pf_app_code,pf_app_num,title,writer,cont,startdate,enddate)
+		pf_app(pf_app_code,pf_app_num,title,writer,cont,startdate,enddate,hall_code,runtime,cls,runround)
 		values
-		(#{pf_app_code},#{pf_app_num},#{title},#{writer},#{cont},#{startdate},#{enddate})
+		(#{pf_app_code},#{pf_app_num},#{title},#{writer},#{cont},#{startdate},#{enddate},#{hall_code},#{runtime},#{cls},#{runround})
 	</update>
 	
 	<update id="updatePFApp" >
