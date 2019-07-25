@@ -18,7 +18,9 @@ import com.trex.dto.MemberVO;
 import com.trex.dto.PFSHViewVO;
 import com.trex.dto.PerformReservationVO;
 import com.trex.dto.PerformVO;
+import com.trex.dto.RHVO;
 import com.trex.dto.SeatReqVO;
+import com.trex.dto.TicketVO;
 import com.trex.service.MemberService;
 import com.trex.service.PerformReservationService;
 import com.trex.service.PerformService;
@@ -136,6 +138,7 @@ public class PerformReservationController {
 										ModelAndView modelnView) throws SQLException{
 
 		String url = "perform/step3";
+		System.out.println("1111");
 		
 		String mem_code = ((MemberVO)session.getAttribute("loginUser")).getMem_code();
 		GmemberVO gmem = memberService.getGmember(mem_code);
@@ -144,10 +147,6 @@ public class PerformReservationController {
 		String[] seat = seat_code.split(",");
 		int price = 0;
 		//System.out.println(">>>>>!!!!!!!!!!!"+seat.length);
-		for(int i=0 ; i<seat.length ; i++) {
-		
-			price += PFRESEService.getSeatPrice(seat[i], pfsh_code);
-		}
 		//System.out.println("%%%%%>> "+price);
 		
 		String pay_code="";
@@ -155,7 +154,32 @@ public class PerformReservationController {
 			pay_code+=(int)(Math.random()*8+1);
 		}
 		
+		System.out.println("1112");
+
+		for(int i=0 ; i<seat.length ; i++) {
+			System.out.println("seatlenght!!!!!!!!"+seat[i]);
+			price += PFRESEService.getSeatPrice(seat[i], pfsh_code);
+			System.out.println("seatlenght!!!!!!44!!"+seat[i]);
+			
+			PFRESEService.updatePFSHSRESE(seat[i], pfsh_code);
+			
+			System.out.println("seatlenght!!!!!!4555!!"+seat[i]);
+		}
+		System.out.println("1113");
+
+		RHVO rh= new RHVO(price, pay_code, mem_code, pfsh_code);
+		String rh_code = PFRESEService.insertRH(rh);
 		
+		
+		TicketVO tk = new TicketVO();
+		tk.setRh_code(rh_code);
+		for(int i=0 ; i<seat.length ; i++) {
+			tk.setSeat_code(seat[i]);
+			PFRESEService.insertTicket(tk);
+		}
+		
+		System.out.println("11141");
+
 		System.out.println(seat_code);
 		modelnView.addObject("pf_name", PF.getName());
 		modelnView.addObject("pay_code", pay_code);
@@ -163,6 +187,7 @@ public class PerformReservationController {
 		modelnView.addObject("price", price);
 		modelnView.addObject("gmem",gmem);
 		modelnView.setViewName(url);
+		//modelnView.addObject("seat", seat);
 		
 		return modelnView;
 	}

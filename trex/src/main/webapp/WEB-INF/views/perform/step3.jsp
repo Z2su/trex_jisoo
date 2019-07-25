@@ -92,8 +92,11 @@
 				<div class="iframe"
 					style="width: 637; height: 493; background: white;">
 
-					<form name="formDelivery" action="./form" method="post"
-						id="payform">
+					<form name="formDelivery" action="./form" method="post" id="payform">
+						<input type ="hidden" value="${loginUser.mem_id }"/>
+						<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
+						<input type="hidden" name="pfsh_code" value="${PfRese.pfsh_code }" id="pfsh_code" />
+						
 						<input type="hidden" id="ExpressYN" name="ExpressYN" value="N">
 						<div class="contFrame frameBg1">
 							<div class="deliveryL">

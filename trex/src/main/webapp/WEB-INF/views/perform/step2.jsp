@@ -49,7 +49,7 @@
 	<form id="trexinfo" name = "trexinfo" action="step3" method="get">
 		<input type ="hidden" value="${loginUser.mem_id }"/>
 		<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
-	<input type="hidden" name="pfsh_code" value="${PfRese.pfsh_code }" id="pfsh_code" />
+		<input type="hidden" name="pfsh_code" value="${PfRese.pfsh_code }" id="pfsh_code" />
 					
 	</form>
 	<div id="divBookMain" name="divBookMain" class="wrap">
