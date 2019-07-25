@@ -22,6 +22,7 @@ import com.trex.dto.RHVO;
 import com.trex.dto.SeatReqVO;
 import com.trex.dto.TicketVO;
 import com.trex.service.MemberService;
+import com.trex.service.PerformGuidBoardService;
 import com.trex.service.PerformReservationService;
 import com.trex.service.PerformService;
 import com.trex.service.PerformServiceImpl;
@@ -38,6 +39,7 @@ public class PerformReservationController {
 	
 	@Autowired
 	private PerformService PFService;
+
 	
 	@RequestMapping(value="/{pf_code}/step1", method=RequestMethod.GET )
 	public ModelAndView performreseGet(@PathVariable String pf_code, ModelAndView modelnView) throws SQLException{
@@ -45,8 +47,12 @@ public class PerformReservationController {
 
 		String url = "perform/step1";
 		List<PFSHViewVO> PFSHViewList = PFRESEService.getPFSHViewList(pf_code);
+		
+		PerformVO PF = PFService.getPF(pf_code);
+		modelnView.addObject("pf",PF);
 		modelnView.addObject("PFSHViewList", PFSHViewList);
 		modelnView.addObject("pf_code", pf_code);
+		
 		modelnView.setViewName(url);
 		
 		return modelnView;
@@ -64,12 +70,10 @@ public class PerformReservationController {
 	}
 	
 	@RequestMapping(value="/fast", method=RequestMethod.GET)
-	public ModelAndView fastperformrese(String pf_code, ModelAndView modelnView) throws SQLException{
+	public ModelAndView fastperformrese(ModelAndView modelnView) throws SQLException{
 		
-		String url = "perform/step0";
+		String url = "perform/step";
 		
-		List<PFSHViewVO> PFSHViewList = PFRESEService.getPFSHViewList(pf_code);
-		modelnView.addObject("PFSHViewList", PFSHViewList);
 		modelnView.setViewName(url);
 		
 		return modelnView;
@@ -117,14 +121,17 @@ public class PerformReservationController {
 		return SeatReq;
 	}
 	@RequestMapping(value="/{pf_code}/step2", method=RequestMethod.GET )
-	public ModelAndView performreseGet2(@PathVariable String pf_code, PerformReservationVO PfRese, ModelAndView modelnView) throws SQLException{
+	public ModelAndView performreseGet2(@PathVariable String pf_code, PerformReservationVO PfRese, String rdate, ModelAndView modelnView) throws SQLException{
 
 		String url = "perform/step2";
 		System.out.println("~~~>>"+PfRese);
 		List<SeatReqVO> SeatReqList = PFRESEService.getSeatList(PfRese.getPfsh_code());
-		System.out.println("#####################"+SeatReqList);
+		System.out.println("#####################"+rdate);
+		PerformVO PF = PFService.getPF(pf_code);
+		modelnView.addObject("pf",PF);
 		modelnView.addObject("PfRese", PfRese);
 		modelnView.addObject("SeatReqList", SeatReqList);
+		modelnView.addObject("rdate", rdate);
 		modelnView.setViewName(url);
 		
 		
@@ -134,11 +141,11 @@ public class PerformReservationController {
 	public ModelAndView performreseGet3(@PathVariable String pf_code, 
 										String seat_code,
 										String pfsh_code,
+										String rdate,
 										HttpSession session,
 										ModelAndView modelnView) throws SQLException{
 
 		String url = "perform/step3";
-		System.out.println("1111");
 		
 		String mem_code = ((MemberVO)session.getAttribute("loginUser")).getMem_code();
 		GmemberVO gmem = memberService.getGmember(mem_code);
@@ -146,15 +153,12 @@ public class PerformReservationController {
 		PerformVO PF = PFService.getPF(pf_code);
 		String[] seat = seat_code.split(",");
 		int price = 0;
-		//System.out.println(">>>>>!!!!!!!!!!!"+seat.length);
-		//System.out.println("%%%%%>> "+price);
 		
 		String pay_code="";
 		for(int i=0;i<10;i++) {
 			pay_code+=(int)(Math.random()*8+1);
 		}
 		
-		System.out.println("1112");
 
 		for(int i=0 ; i<seat.length ; i++) {
 			System.out.println("seatlenght!!!!!!!!"+seat[i]);
@@ -165,7 +169,6 @@ public class PerformReservationController {
 			
 			System.out.println("seatlenght!!!!!!4555!!"+seat[i]);
 		}
-		System.out.println("1113");
 
 		RHVO rh= new RHVO(price, pay_code, mem_code, pfsh_code);
 		String rh_code = PFRESEService.insertRH(rh);
@@ -178,9 +181,11 @@ public class PerformReservationController {
 			PFRESEService.insertTicket(tk);
 		}
 		
-		System.out.println("11141");
 
 		System.out.println(seat_code);
+		modelnView.addObject("seat",seat);
+		modelnView.addObject("rdate", rdate);
+
 		modelnView.addObject("pf_name", PF.getName());
 		modelnView.addObject("pay_code", pay_code);
 		modelnView.addObject("pf_code", pf_code);

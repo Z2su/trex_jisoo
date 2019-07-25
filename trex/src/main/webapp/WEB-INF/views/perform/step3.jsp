@@ -245,7 +245,9 @@
 						<tbody>
 							<tr class="fir" id="MyRow1">
 								<th>일시</th>
-								<td><span id="MyPlayDate" name="MyPlayDate" title=""></span></td>
+								<td><span id="MyPlayDate" name="MyPlayDate" title="">
+								${rdate }
+								</span></td>
 							</tr>
 							<tr id="MyRow2">
 								<th>선택좌석<br>(<span id="MySelectedSeatCnt"
@@ -254,7 +256,11 @@
 								<td class="seat">
 									<div class="scrollY">
 										<ul>
-											<span id="MySelectedSeat" name="MySelectedSeat"></span>
+											<span id="MySelectedSeat" name="MySelectedSeat">
+											<c:forEach items="${seat }" var="seat">
+												<li>${seat}</li>
+											</c:forEach>
+											</span>
 										</ul>
 									</div>
 								</td>

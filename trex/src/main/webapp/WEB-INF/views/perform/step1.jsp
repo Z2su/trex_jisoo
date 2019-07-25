@@ -37,10 +37,11 @@
 	<div id="divBookMain" name="divBookMain" class="wrap">
 		<!-- //Header -->
 		<div class="headWrap">
-			<h1 class="title">
-				<img
+			<h1 class="title" style="color:white; font-size: 20px;">
+			T-rex 티켓
+				<!-- <img
 					src="//ticketimage.interpark.com/TicketImage/onestop/dj_title.gif"
-					alt="대전예술의전당 티켓">
+					alt="대전예술의전당 티켓"> -->
 			</h1>
 
 			<span class="ad03" style="display: none" id="OtherPlaySeq"> <em>다른
@@ -71,18 +72,18 @@
 						title="좌석선택 페이지이동"><img id="NaviImg" name="NaviImg"
 							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_02_off.gif"
 							alt="좌석 선택"></a></li>
-					<li class="s3"><a style="cursor: default;" id="NaviLink"
+					<!-- <li class="s3"><a style="cursor: default;" id="NaviLink"
 						name="NaviLink" href="#" bookstep="3" onfocus="this.blur();"
 						title="가격/할인선택 페이지이동"><img id="NaviImg" name="NaviImg"
 							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_03_off.gif"
-							alt="가격/할인선택"></a></li>
-					<li class="s4"><a style="cursor: default;" id="NaviLink"
-						name="NaviLink" href="#" bookstep="4" onfocus="this.blur();"
+							alt="가격/할인선택"></a></li> -->
+					<li class="s3"><a style="cursor: default;" id="NaviLink"
+						name="NaviLink" href="#" bookstep="3" onfocus="this.blur();"
 						title="배송선택/주문자확인 페이지이동"><img id="NaviImg" name="NaviImg"
 							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_04_off.gif"
 							alt="배송선택/주문자확인"></a></li>
-					<li class="s5"><a style="cursor: default;" id="NaviLink"
-						name="NaviLink" href="#" bookstep="5" onfocus="this.blur();"
+					<li class="s4"><a style="cursor: default;" id="NaviLink"
+						name="NaviLink" href="#" bookstep="4" onfocus="this.blur();"
 						title="결제하기 페이지이동"><img id="NaviImg" name="NaviImg"
 							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_05_off.gif"
 							alt="결제하기"></a></li>
@@ -273,23 +274,21 @@
 			</div>
 			<!-- contL //-->
 			<!-- Process 영역 //-->
+			
 			<div class="contR">
 				<!-- //상품 정보 -->
 				<div class="show_info">
 					<div class="image">
 						<a href="#19010428" target="_blank"><img
-							src="//ticketimage.interpark.com/Play/image/large/19/19010428_p.gif"
+							src="/resources/images/perform/${pf_code }.jpg"
 							width="87" height="106" alt="제19회 대전국제음악제〈IMK 트리오，비엔나〉 포스터"
 							onerror="this.src='http://ticketimage.interpark.com/TicketImage/onestop/no_image.gif'"></a>
 					</div>
 					<div class="exp">
-						<em><span title="제19회 대전국제음악제〈IMK 트리오，비엔나〉"><a
-								href="#19010428" target="_blank">제19회 대전국제음악제〈IMK 트리오，비엔나〉</a></span></em>
+						<em><span title="${pf.name }"><a
+								href="#" target="_blank">${pf.name }</a></span></em>
 						<ul>
-							<li>2019.08.19 ~ 2019.08.19</li>
-							<li><span title="대전예술의전당 앙상블홀">대전예술의전당 앙상...</span></li>
-							<li>초등학생이상 관람가</li>
-							<li>관람시간 : 90분${pf_code }</li>
+							<li>관람시간 : ${pf.runtime }분</li>
 						</ul>
 					</div>
 				</div>
@@ -406,6 +405,7 @@
 				<!-- 예매 정보 //-->
 			</div>
 			<!-- contR //-->
+		
 		</div>
 		<!-- contWrap //-->
 		<!-- //취소수수료 레이어 -->
