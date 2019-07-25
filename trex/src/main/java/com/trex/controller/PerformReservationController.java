@@ -1,10 +1,7 @@
 package com.trex.controller;
 
 import java.sql.SQLException;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,7 +33,6 @@ public class PerformReservationController {
 		modelnView.addObject("pf_code", pf_code);
 		modelnView.setViewName(url);
 		
-		
 		return modelnView;
 	}
 	
@@ -46,6 +42,18 @@ public class PerformReservationController {
 		String url = "perform/main4";
 
 		modelnView.addObject("pf_code", pf_code);
+		modelnView.setViewName(url);
+		
+		return modelnView;
+	}
+	
+	@RequestMapping(value="/fast", method=RequestMethod.GET)
+	public ModelAndView fastperformrese(String pf_code, ModelAndView modelnView) throws SQLException{
+		
+		String url = "perform/step0";
+		
+		List<PFSHViewVO> PFSHViewList = PFRESEService.getPFSHViewList(pf_code);
+		modelnView.addObject("PFSHViewList", PFSHViewList);
 		modelnView.setViewName(url);
 		
 		return modelnView;
