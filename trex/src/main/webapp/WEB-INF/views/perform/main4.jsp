@@ -92,7 +92,7 @@
 				<div class="iframe"
 					style="width: 637; height: 493; background: white;">
 
-					<form name="formDelivery" action="/form" method="post"
+					<form name="formDelivery" action="./form" method="post"
 						id="payform">
 						<input type="hidden" id="ExpressYN" name="ExpressYN" value="N">
 						<div class="contFrame frameBg1">
@@ -148,13 +148,39 @@
 											</colgroup>
 											<tbody>
 												<tr class="fir">
-													<th><label for="MemberName">아이디</label></th>
+													<th><label for="userid">아이디</label></th>
 
-													<td>${loginUser.mem_id }<input name='sndOrdername'
-														type="hidden" id="MemberName" value="${loginUser.mem_id }"></td>
+													<td>${loginUser.mem_id }
+													<input name='userid' type="hidden" id="userid" value="${loginUser.mem_id }"></td>
 
 												</tr>
 												<tr>
+													<th><label for="sndAmount">가격</label></th>
+													<td>${pay_price }
+													<input name='sndAmount' type="hidden" id="sndAmount" value="${pay_price }"></td>
+													
+												</tr>
+												<tr>
+													<th><label for="sndOrdername">구매자</label></th>
+													<td>${gmem.name }
+													<input name='sndOrdername' type="hidden" id="sndOrdername" value="${gmem.name }"></td>
+													
+												</tr>
+												<tr>
+													<th><label for="sndEmail">Email</label></th>
+													<td>${loginUser.mem_email }
+													<input name='sndEmail' type="hidden" id="sndEmail" value="${loginUser.mem_email }"></td>
+													
+												</tr>
+												<tr>
+													<th><label for="sndMoblie">연락처</label></th>
+													<td>${gmen.tell }
+													<input name=sndMoblie type="hidden" id="sndMoblie" value="${gmem.tell }"></td>
+													
+												</tr>
+												<tr>
+													<input type="hidden" name="setSndOrderNumber" value="${pay_code }" />
+													<input type="hidden" name="sndGoodname" value="${pf.name }" />
 													<td colspan="2" class="fs">SMS 문자와 이메일로 예매 정보를 보내드립니다.<span
 														class="select"> <!--<input type="radio" class="chk" id="EmailOrNotY" value="Y" checked/><label>예</label><input type="radio" class="chk" id="EmailOrNotN" value="N" disabled/><label>아니오</label>--></span></td>
 												</tr>
@@ -273,15 +299,13 @@
 							</tr>
 							<tr class="total">
 								<th>총 결제금액</th>
-								<td><span id="MyTotalAmt" name="MyTotalAmt"><strong>
-											<input type='text' name='sndAmount' value='1004' size='15'
-											maxlength='9'>
+								<td><span id="sndAmount" name="sndAmount"><strong>${pay_price }
 									</strong> 원</span></td>
 							</tr>
 						</tbody>
 					</table>
 					<p class="btn" id="LargeNextBtn" style="display:;">
-						<a href="javascript:fnNextStep('P');" id="LargeNextBtnLink"
+						<a href="javascript:fnNextStep('P');" onClick="goPay()" id="LargeNextBtnLink"
 							title="다음단계 페이지 이동" data-url="sample2"><img
 							src="//ticketimage.interpark.com/TicketImage/onestop/btn_buy.gif"
 							alt="다음단계" id="LargeNextBtnImage"> </a>
@@ -304,12 +328,13 @@
 					</p> -->
 				</div>
 
-				<input type="hidden" id="sndOrderNumber" value="주문번호" /> <input
-					type="hidden" id="sndGoodname" value="상품명" /> <input type="hidden"
-					id="sndOrdername" value="주문자명" /> <input type="hidden"
-					id="sndAmount" value="가격" /> <input type="hidden" id="sndEmail"
-					value="이메일" /> <input type="hidden" id="sndMobile" value="전화번호" />
-
+				<input type="hidden" id="sndOrderNumber" value="주문번호" /> 
+				<input type="hidden" id="sndGoodname" value="상품명" /> 
+				<input type="hidden" id="sndOrdername" value="주문자명" /> 
+				<input type="hidden" id="sndAmount" value="가격" /> 
+				<input type="hidden" id="sndEmail" value="이메일" /> 
+				<input type="hidden" id="sndMobile" value="전화번호" />
+				
 				<script>
 					/* $('#LargeNextBtnLink').on(
 							'click',
@@ -320,17 +345,23 @@
 										$(this).attr('data-url'));
 
 							}); */
+							
 							function goPay(){
-								var form = document.userinput;
 								
+								var gsWin = window.open('about:blank','payview','width=560px,height=600px;')
+								var form = document.formDelivery;
+								form.action = "/credit/form";
+								form.target ="payview";
+								form.method ="post";
 								form.submit();
+								
 							}
 							
-							$('#LargeNextBtnLink').on('click',function(){
+							<%-- $('#LargeNextBtnLink').on('click',function(){
 								alert("아이디 : ${loginUser.mem_id}");
 								
-								var ret = window.open("<%=request.getContextPath()%>/credit/index", "", "width=560px height=630px");
-									});
+								var ret = window.open("<%=request.getContextPath()%>credit/form", "", "width=560px height=630px");
+									}); --%>
 				</script>
 				<!-- 예매 정보 //-->
 			</div>

@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <link rel="stylesheet" type="text/css"
 	href="//ticketimage.interpark.com/TicketImage/onestop/css/style.css">
@@ -25,33 +24,11 @@
 <script type="text/javascript" src="/Book/Inc/Js/BookSeatConfig.js"></script>
 <script type="text/javascript"
 	src="//ticketimage.interpark.com/TicketImage/onestop/css/common.js"></script>
-	
-<style>
 
-	.seatlabel{border: 1px solid black; width:25px; height:25px; display:inline-block; font-size: 10px; color: white; text-align: center;margin-right: 3px;margin-bottom: 3px; box-sizing: border-box;}
-	.seatlabel[grade="R"]{background:#7C68EE; }
-	.seatlabel[grade="S"]{background:#1CA814; }
-	.seatlabel[grade="A"]{background:#17B3FF; }
-	.seatlabel[grade="B"]{background:#FB7E4F; }
-	.seatlabel[grade="C"]{background:#A0D53F; }
-	
-	.seatlabel[pfshs_rese="1"]{background:white;}
-	.seatlabel[pfshs_rese="0"]{cursor: pointer; border: 2px solid white;}
-	.seatlabel[pfshs_rese="2"]{cursor: pointer; border: 2px solid red;}
- 	.seatcheck{display:none;} 
-	div#seat{border: 1px solid blue;width:550px; height:200px; align-content: center;} 
 
-</style><!-- "#7C68EE", "#1CA814", "#17B3FF","#FB7E4F","#A0D53F" -->
 <div id="contentswrap">
 	<!-- 내용채우기 -->
-	
-	
-	<form id="trexinfo" name = "trexinfo" action="step3" method="get">
-		<input type ="hidden" value="${loginUser.mem_id }"/>
-		<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
-	<input type="hidden" name="pfsh_code" value="${PfRese.pfsh_code }" id="pfsh_code" />
-					
-	</form>
+	<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
 	<div id="divBookMain" name="divBookMain" class="wrap">
 		<!-- //Header -->
 		<div class="headWrap">
@@ -112,61 +89,117 @@
 
 			<!-- //Process 영역 -->
 			<div class="contL">
-				<div class="iframe" style="width: 637; height: 493; background: white;">
-					<%-- <c:forEach items="${PFSHViewList }" var="PFSHView">
+				<div class="iframe"
+					style="width: 637; height: 493; background: white;">
 
-						<input type="hidden" id="rundate" pfsh_code="${PFSHView.pfsh_code }" value='<fmt:formatDate value="${PFSHView.rundate }" pattern="yyyyMMdd"/>' />
+					<form name="formDelivery" action="./form" method="post"
+						id="payform">
+						<input type="hidden" id="ExpressYN" name="ExpressYN" value="N">
+						<div class="contFrame frameBg1">
+							<div class="deliveryL">
+								<div class="delivery_select">
+									<h3 class="title">
+										<img
+											src="//ticketimage.interpark.com/TicketImage/onestop/stit_delivery_01.gif"
+											alt="배송방법선택">
+									</h3>
+									<table>
+										<caption>배송종류</caption>
+										<tbody>
+											<tr id="Delivery_24000" name="Delivery_24000"
+												class="selected">
+												<td><input type="radio" class="chk" id="Delivery"
+													name="Delivery" value="24000" onclick="fnChange()"><label
+													for="Delivery_24000" onclick="fnSetDelivery('24000')">현장수령</label></td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="info">
+										<div id="DeliveryInfo_24000" class="inner" style="">
+											<p class="sel">
+												티켓현장수령은 예매시 부여되는 <em>"예약번호"로 <br>관람일 당일 티켓을 수령하여
+													입장합니다.
+												</em><img
+													src="//ticketimage.interpark.com/TicketImage/onestop/icon_delivery.gif"
+													alt="현장수령시 유의사항 더보기" class="que"
+													onmouseover="showlayernormalclick('lay_sel1');"
+													onmouseout="showlayernormalclick('lay_sel1');">
+											</p>
+										</div>
+									</div>
+								</div>
+								<!-- delivery_select //-->
+							</div>
+							<!-- deliveryL //-->
 
-					</c:forEach> --%>
-					
-					<div id ="seat">
-					<c:forEach items="${SeatReqList }" var="SeatReq" varStatus="status">
-					<c:set var="str" value="${SeatReqList[status.index+1].col} "/>
-					
-					<label class="seatlabel" for="${SeatReq.col}${SeatReq.num}"  grade="${SeatReq.grade }" pfshs_rese="${SeatReq.pfshs_rese }">${SeatReq.col}${SeatReq.num}
-					</label>
-						<input type="checkbox" id="${SeatReq.col}${SeatReq.num}" class="seatcheck" col="${SeatReq.col}" num="${SeatReq.num}" grade="${SeatReq.grade }" pfshs_rese="${SeatReq.pfshs_rese }" seat_code="${SeatReq.seat_code }" value="${SeatReq.col }" 
-						<c:if test="${SeatReq.pfshs_rese eq 1 }">
-						disabled="true"
-						
-						</c:if>
-						 />
-						
-						
-						<c:if test="${status.index > 0 }">
-						
-						
-							<c:if test="${SeatReq.col ne fn:toUpperCase(fn:trim(str)) }">
-							
-								<br/>
-							</c:if>
-						</c:if>
-					</c:forEach>
-					
-					</div>
-					
-					
-			<!-- 
-				<form id="formCalendar" name="formCalendar" method="get"
-					action="BookDateTime.asp">
-					<input type="hidden" id="GoodsCode" name="GoodsCode" value="19000479">
-					<input type="hidden" id="PlaceCode" name="PlaceCode" value="09000028">
-					<input type="hidden" id="OnlyDeliver" name="OnlyDeliver" value="68004">
-					<input type="hidden" id="DBDay" name="DBDay" value="12"> <input
-						type="hidden" id="ExpressDelyDay" name="ExpressDelyDay" value="0">
-					<input type="hidden" id="YM" name="YM" value="201908"> <input
-						type="hidden" id="PlayDate" name="PlayDate" value=""> <input
-						type="hidden" id="KindOfGoods" name="KindOfGoods" value="01009">
-					<input type="hidden" id="BizCode" name="BizCode" value="08920">
-					<input type="hidden" id="Tiki" name="Tiki" value=""> <input
-						type="hidden" id="Always" name="Always" value="N"> <input
-						type="hidden" id="HotSaleOrNot" name="HotSaleOrNot" value="">
-					<input type="hidden" id="PlaySeq" name="PlaySeq" value=""> <input
-						type="hidden" id="PlayTime" name="PlayTime" value=""> <input
-						type="hidden" id="CancelableDate" name="CancelableDate" value="">
-				</form> 
-			 -->
+							<div class="deliveryR">
+								<div class="scrollY">
+									<div class="orderer">
+										<h3 class="title">
+											<img
+												src="//ticketimage.interpark.com/TicketImage/onestop/stit_delivery_03.gif"
+												alt="주문자확인">
+										</h3>
+										<table>
+											<caption>주문자정보 입력</caption>
+											<colgroup>
+												<col width="80px">
+												<col width="*">
+											</colgroup>
+											<tbody>
+												<tr class="fir">
+													<th><label for="userid">아이디</label></th>
 
+													<td>${loginUser.mem_id }
+													<input name='userid' type="hidden" id="userid" value="${loginUser.mem_id }"></td>
+
+												</tr>
+													<input name='sndAmount' type="hidden" id="sndAmount" value="${price }"></td>
+												<tr>
+													<th><label for="sndOrdername">구매자</label></th>
+													<td>${gmem.name }
+													<input name='sndOrdername' type="hidden" id="sndOrdername" value="${gmem.name }"></td>
+													
+												</tr>
+												<tr>
+													<th><label for="sndEmail">Email</label></th>
+													<td>${loginUser.mem_email }
+													<input name='sndEmail' type="hidden" id="sndEmail" value="${loginUser.mem_email }"></td>
+													
+												</tr>
+												<tr>
+													<th><label for="sndMoblie">연락처</label></th>
+													<td>${gmem.tell }
+													<input name=sndMobile type="hidden" id="sndMobile" value="${gmem.tell }"></td>
+													
+												</tr>
+												<tr>
+													<input type="hidden" name="setSndOrderNumber" value="${pay_code }" />
+													<input type="hidden" name="sndGoodname" value="${pf_name }" />
+													<td colspan="2" class="fs">SMS 문자와 이메일로 예매 정보를 보내드립니다.<span
+														class="select"> <!--<input type="radio" class="chk" id="EmailOrNotY" value="Y" checked/><label>예</label><input type="radio" class="chk" id="EmailOrNotN" value="N" disabled/><label>아니오</label>--></span></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- orderer //-->
+								</div>
+												<!-- <form action="credit/form" method="post">
+													상품명 : <input type='text' name='sndGoodname' value='당근10kg'
+														size='30'> </br> 가격 : <input type='text'
+														name='sndAmount' value='1004' size='15' maxlength='9'>
+													</br> 구매자 : <input type='text' name='sndOrdername' value='김토끼'
+														size='30'> </br> Email : <input type='text'
+														name='sndEmail' value='kspay@carrot.co.kr' size='30'>
+													</br> 전화번호 : <input type='text' name='sndMoblie'
+														value='01112341234' size='12' maxlength='12'> </br> 배송지
+													: <input type='text' name='sndAddress' value='대전시 서구 둔산동' /></br>
+													<input type='submit' value="전송" />
+												</form> -->
+							</div>
+							<!-- deliveryR //-->
+						</div>
+					</form>
 
 				</div>
 			</div>
@@ -209,10 +242,7 @@
 						<tbody>
 							<tr class="fir" id="MyRow1">
 								<th>일시</th>
-								<td><span id="MyPlayDate" name="MyPlayDate" title="">
-							
-									
-								</span></td>
+								<td><span id="MyPlayDate" name="MyPlayDate" title=""></span></td>
 							</tr>
 							<tr id="MyRow2">
 								<th>선택좌석<br>(<span id="MySelectedSeatCnt"
@@ -228,7 +258,7 @@
 							</tr>
 							<tr id="MyRow3">
 								<th>티켓금액</th>
-								<td><span id="MyTicketAmt" name="MyTicketAmt" title=""></span></td>
+								<td><span id="MyTicketAmt" name="MyTicketAmt" title="">${price }</span></td>
 							</tr>
 							<tr id="MyRow4">
 								<th>수수료</th>
@@ -264,15 +294,15 @@
 							</tr>
 							<tr class="total">
 								<th>총 결제금액</th>
-								<td><span id="MyTotalAmt" name="MyTotalAmt"><strong>0</strong>
-										원</span></td>
+								<td><span id="sndAmount" name="sndAmount"><strong>${price }
+									</strong> 원</span></td>
 							</tr>
 						</tbody>
 					</table>
 					<p class="btn" id="LargeNextBtn" style="display:;">
-						<a href="javascript:fnNextStep('P');" id="LargeNextBtnLink"
+						<a href="javascript:fnNextStep('P');" onClick="goPay()" id="LargeNextBtnLink"
 							title="다음단계 페이지 이동" data-url="sample2"><img
-							src="//ticketimage.interpark.com/TicketImage/onestop/btn_next.gif"
+							src="//ticketimage.interpark.com/TicketImage/onestop/btn_buy.gif"
 							alt="다음단계" id="LargeNextBtnImage"> </a>
 					</p>
 
@@ -281,7 +311,7 @@
 							src="//ticketimage.interpark.com/TicketImage/onestop/loading_2.gif"
 							alt="잠시만 기다려주세요">
 					</p>
-					<p class="btn" id="SmallNextBtn" style="display: none;">
+					<!-- <p class="btn" id="SmallNextBtn" style="display: none;">
 						<a href="javascript:fnPrevStep();" id="SmallPrevBtnLink"
 							title="이전단계 페이지 이동"><img
 							src="//ticketimage.interpark.com/TicketImage/onestop/btn_pre.gif"
@@ -290,9 +320,42 @@
 							title="다음단계 페이지 이동"><img
 							src="//ticketimage.interpark.com/TicketImage/onestop/btn_next_02.gif"
 							alt="다음단계" id="SmallNextBtnImage"></a>
-					</p>
+					</p> -->
 				</div>
+
+				<input type="hidden" id="sndOrderNumber" value="주문번호" /> 
+				<input type="hidden" id="sndGoodname" value="상품명" /> 
+				<input type="hidden" id="sndOrdername" value="주문자명" /> 
+				<input type="hidden" id="sndAmount" value="가격" /> 
+				<input type="hidden" id="sndEmail" value="이메일" /> 
+				<input type="hidden" id="sndMobile" value="전화번호" />
 				
+				<script>
+					/* $('#LargeNextBtnLink').on(
+							'click',
+							function(e) {
+								e.preventDefault();
+								alert($(this).attr('data-url'));
+								$('#ifrmBookStep').attr('src',
+										$(this).attr('data-url'));
+
+							}); */
+							/* $('#LargeNextBtnLink').on('click',function(){
+							alert("아이디 : ${gmem.name}");
+							
+								}); */ 
+							
+							function goPay(){
+								var gsWin = window.open('about:blank','payview','width=560px,height=629px;')
+								var form = document.formDelivery;
+								form.action = "/credit/form";
+								form.target ="payview";
+								form.method ="post";
+								form.submit();
+								
+							}
+							
+				</script>
 				<!-- 예매 정보 //-->
 			</div>
 			<!-- contR //-->
@@ -319,7 +382,6 @@
 		</div>
 		<!-- 검색 결과 레이어 //-->
 	</div>
-	<%@ include file="./step2_js.jsp"%>
 
 	<!-- //container -->
 </div>
