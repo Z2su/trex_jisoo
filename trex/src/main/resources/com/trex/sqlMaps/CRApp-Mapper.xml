@@ -24,9 +24,9 @@
 	<update id="insertCRApp">
 		insert 
 		into 
-		cr_app(cr_app_code,cr_app_num,title,writer,cont,hall_code,pf_code,startdate,enddate)
+		cr_app(cr_app_code,cr_app_num,title,writer,cont,hall_code,pf_app_code,startdate,enddate)
 		values
-		(#{cr_app_code},#{cr_app_num},#{title},#{writer},#{cont},#{hall_code},#{pf_code},#{startdate},#{enddate})
+		(#{cr_app_code},#{cr_app_num},#{title},#{writer},#{cont},#{hall_code},#{pf_app_code},#{startdate},#{enddate})
 	</update>
 	
 	<update id="updateCRApp" >

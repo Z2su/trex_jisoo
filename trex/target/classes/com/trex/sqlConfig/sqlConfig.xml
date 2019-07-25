@@ -39,6 +39,8 @@
 		<typeAlias type="com.trex.dto.MypageRhVO" alias="mypageRh"/>
 		<typeAlias type="com.trex.dto.RHVO" alias="rh"/>
 		<typeAlias type="com.trex.dto.TicketVO" alias="tk"/>
+		<typeAlias type="com.trex.dto.PfAppVO" alias="PfApp"/>
+
 	</typeAliases>
  
 </configuration>
