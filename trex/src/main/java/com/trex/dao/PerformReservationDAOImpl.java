@@ -57,4 +57,12 @@ public class PerformReservationDAOImpl implements PerformReservationDAO {
 		return SeatReqList;
 	}
 
+	@Override
+	public int selectSeatPrice(Map<String, Object> map) throws SQLException {
+
+		int price = session.selectOne("PFRESE-Mapper.selectSeatPrice",map);
+		
+		return price;
+	}
+
 }
