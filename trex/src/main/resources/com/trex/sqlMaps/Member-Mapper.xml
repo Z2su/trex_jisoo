@@ -98,6 +98,13 @@
 		where mem_id=#{mem_id}
 	</select>
 	
+	<select id="selectGmemberByCode" parameterType="str" resultType="gmember">
+		select 
+		* 
+		from gmem
+		where gmem_code=#{mem_code}
+	</select>
+	
 	<update id="updateAuthkey">
 		update mem
 		set authkey=#{authkey}
