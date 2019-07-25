@@ -162,8 +162,8 @@
 												</tr>
 												<tr>
 													<th><label for="sndOrdername">구매자</label></th>
-													<td>${gmen.name }
-													<input name='sndOrdername' type="hidden" id="sndOrdername" value="${gmen.name }"></td>
+													<td>${gmem.name }
+													<input name='sndOrdername' type="hidden" id="sndOrdername" value="${gmem.name }"></td>
 													
 												</tr>
 												<tr>
@@ -175,7 +175,7 @@
 												<tr>
 													<th><label for="sndMoblie">연락처</label></th>
 													<td>${gmen.tell }
-													<input name=sndMoblie type="hidden" id="sndMoblie" value="${gmen.tell }"></td>
+													<input name=sndMoblie type="hidden" id="sndMoblie" value="${gmem.tell }"></td>
 													
 												</tr>
 												<tr>
@@ -347,9 +347,14 @@
 							}); */
 							
 							function goPay(){
-								var form = document.formDelivery;
 								
+								var gsWin = window.open('about:blank','payview','width=560px,height=600px;')
+								var form = document.formDelivery;
+								form.action = "/credit/form";
+								form.target ="payview";
+								form.method ="post";
 								form.submit();
+								
 							}
 							
 							<%-- $('#LargeNextBtnLink').on('click',function(){

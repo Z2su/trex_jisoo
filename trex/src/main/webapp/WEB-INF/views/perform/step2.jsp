@@ -28,18 +28,18 @@
 	
 <style>
 
-	.seatlabel{border: 1px solid black; width:23px; height:23px; display:inline-block; font-size: 10px; color: white; text-align: center;margin-right: 3px;margin-bottom: 3px; box-sizing: border-box;}
-	.seatlabel[grade="R"]{background:#7C68EE; border: 2px solid #7C68EE;}
-	.seatlabel[grade="S"]{background:#1CA814; border: 2px solid #1CA814;}
-	.seatlabel[grade="A"]{background:#17B3FF; border: 2px solid #17B3FF;}
-	.seatlabel[grade="B"]{background:#FB7E4F; border: 2px solid #FB7E4F;}
-	.seatlabel[grade="C"]{background:#A0D53F; border: 2px solid #A0D53F;}
+	.seatlabel{border: 1px solid black; width:25px; height:25px; display:inline-block; font-size: 10px; color: white; text-align: center;margin-right: 3px;margin-bottom: 3px; box-sizing: border-box;}
+	.seatlabel[grade="R"]{background:#7C68EE; }
+	.seatlabel[grade="S"]{background:#1CA814; }
+	.seatlabel[grade="A"]{background:#17B3FF; }
+	.seatlabel[grade="B"]{background:#FB7E4F; }
+	.seatlabel[grade="C"]{background:#A0D53F; }
 	
 	.seatlabel[pfshs_rese="1"]{background:white;}
-	.seatlabel[pfshs_rese="0"]{cursor: pointer}
+	.seatlabel[pfshs_rese="0"]{cursor: pointer; border: 2px solid white;}
 	.seatlabel[pfshs_rese="2"]{cursor: pointer; border: 2px solid red;}
  	.seatcheck{display:none;} 
-	div#seat{border: 1px solid blue;width:450px; height:200px; align-content: center;} 
+	div#seat{border: 1px solid blue;width:550px; height:200px; align-content: center;} 
 
 </style><!-- "#7C68EE", "#1CA814", "#17B3FF","#FB7E4F","#A0D53F" -->
 <div id="contentswrap">
@@ -49,7 +49,7 @@
 	<form id="trexinfo" name = "trexinfo" action="step3" method="get">
 		<input type ="hidden" value="${loginUser.mem_id }"/>
 		<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
-	
+	<input type="hidden" name="pfsh_code" value="${PfRese.pfsh_code }" id="pfsh_code" />
 					
 	</form>
 	<div id="divBookMain" name="divBookMain" class="wrap">

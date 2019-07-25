@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<c:set var="CRGList" value="${dataMap.CRGList }" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<c:set var="PF_AppList" value="${dataMap.PF_AppList }" />
 <link rel="stylesheet"
    href="<%=request.getContextPath()%>/resources/css/Coronation.css"
    type="text/css" media="all">
@@ -50,45 +51,71 @@
 			<col width="25%"/>
 			<col width="25%"/>
 			<col width="25%"/>
+			<col width="25%"/>
+			<col width="25%"/>
+			<col width="25%"/>
 		</colgroup>
 		<caption>게시글 상세</caption>
 		<tbody>
 			<tr>
-				<th scope="row">번호</th>
-				<td>${CRGBoard.crg_num }</td>
-				<th scope="row">조회수</th>
-				<td>${CRGBoard.viewcnt }</td>
+				<th scope="row">게시글 코드</th>
+				<td>${PFAppBoard.pf_app_code }</td>
+				<th scope="row">게시글 번호</th>
+				<td>${PFAppBoard.pf_app_num }</td>
+			</tr>
+			<tr>
+				<th scope="row">공연 시작일</th>
+				<td>${PFAppBoard.startdate }</td>
+				<th scope="row">공연 종료일</th>
+				<td>${PFAppBoard.enddate }</td>
+			</tr>
+			<tr>
+				<th scope="row">상영 시간</th>
+				<td>${PFAppBoard.runtime }</td>
+				<th scope="row">공연장 코드</th>
+				<td>${PFAppBoard.hall_code }</td>
+			</tr>
+			<tr>
+				<th scope="row">상영 회차</th>
+				<td>${PFAppBoard.runround }</td>
+				<th scope="row">장르</th>
+				<td>${PFAppBoard.cls }</td>
 			</tr>
 			<tr>
 				<th scope="row">작성자</th>
-				<td>${CRGBoard.writer }</td>
+				<td>${PFAppBoard.writer }</td>
 				<th scope="row">작성시간</th>
-				<td><fmt:formatDate value="${CRGBoard.regDate }" pattern="yyyy-MM-dd" /></td>
+				<td><fmt:formatDate value="${PFAppBoard.regdate }" pattern="yyyy-MM-dd" /></td>
 			</tr>
 			<tr>
 				<th scope="row">제목</th>
-				<td colspan="3">${CRGBoard.title }</td>
+				<td colspan="3">${PFAppBoard.title }</td>
 			</tr>
 			<tr>
-				<td colspan="4">${CRGBoard.cont }</td>
+				<td colspan="4">${PFAppBoard.cont }</td>
 			</tr>
 		</tbody>
 	</table>
 	
 	
 	 <!-- 게시판 버튼모음 -->
-           <div class="board_butt">
-             <button type="button" class="btn btn-sm btn-white btn-bold"
-				onclick="location.href='<%=request.getContextPath()%>/board/Coronation/modify?crg_code=${CRGBoard.crg_code }'">
-				<i class="red ace-icon fa fa-pencil bigger-120"></i><b>편집</b>
+          <!--  <div class="board_butt">
+           <c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }" >	
+ 	 		
+ 
+ 	 			<button type="button" class="btn btn-sm btn-white btn-bold"
+             onclick="location.href='/board/Coronation/app/conform/${CRAppBoard.cr_app_code}'">
+				<i class="red ace-icon fa fa-pencil bigger-120"></i><b>승인</b>
 			</button>
-			
-			<button type="button" class="btn btn-sm btn-white btn-bold"
-				onclick="location.href='/board/Coronation/delete/${CRGBoard.crg_code }'">
-				<i class="grey ace-icon fa fa-times bigger-120"></i><b>삭제</b>
-			</button>      
-			
-								
+ 	 		 
+           
+             
+			</c:if> 
+			<a
+				href="/board/Coronation/app/delete/${CRAppBoard.cr_app_code }"><img
+				src="/resources/images/delete.gif" alt="삭제"></a>
+				
+			-->					
 					
 			<button type="button" class="btn btn-sm btn-white btn-bold"
 				onclick="history.go(-1);">
@@ -99,9 +126,9 @@
 	
 	<script>
 	function remove_go(){
-		var event_num;
-		event_num = ${event.event_num};
-		location.href="delete?event_num=${event.event_num}";
+		var pf_app_num;
+		pf_app_num = ${PFAppBoard.pf_app_num};
+		location.href="delete?pf_app_num=${PFAppBoard.pf_app_num}";
 	}
 	</script>
 					
