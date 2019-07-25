@@ -175,7 +175,7 @@
 												</tr>
 												<tr>
 													<input type="hidden" name="setSndOrderNumber" value="${pay_code }" />
-													<input type="hidden" name="sndGoodname" value="${pf_code }" />
+													<input type="hidden" name="sndGoodname" value="${pf_name }" />
 													<td colspan="2" class="fs">SMS 문자와 이메일로 예매 정보를 보내드립니다.<span
 														class="select"> <!--<input type="radio" class="chk" id="EmailOrNotY" value="Y" checked/><label>예</label><input type="radio" class="chk" id="EmailOrNotN" value="N" disabled/><label>아니오</label>--></span></td>
 												</tr>
