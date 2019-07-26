@@ -149,8 +149,8 @@
 									 <fmt:formatDate value="${ad.enddate }" pattern="yyyy년 MM월 dd일"/>									  
 									 </span>
 								</p> 
-								<a href="#" class="view">View</a> 
-								<a href="#total" onclick="" class="reser">예매</a>
+								<%-- <a href="/board/perform/detail/${ad.pf_code }" class="view">View</a>  --%>
+								<a href="#" class="reser" onclick="window.open('/performrese/${ad.pf_code }/step1', '네이버새창', 'width=910, height=690, toolbar=no, menubar=no, scrollbars=no, resizable=yes' );" >예매</a>
 							</li>
 						</c:forEach>
 					</ul>					

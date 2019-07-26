@@ -65,6 +65,8 @@ public class PerformBoardController {
 		return modelnView;
 		
 	}
+	
+
 	@RequestMapping(value="/detail/{pfg_code}",method=RequestMethod.GET)
 	public ModelAndView detailGET(@PathVariable String pfg_code, ModelAndView modelnView) {
 		String url = "/board/perform/detail";

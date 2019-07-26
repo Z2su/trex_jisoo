@@ -49,7 +49,7 @@ var nextindex=0;
 		
 			pfsh_code = $(item).attr('pfsh_code');
 			//alert("ㅋㅋ"+pfshcode);
-			alert("r>>"+runmonth+" m>>"+month);
+			
 			
 			//alert(typeof($(item).val())+"ㅎㅎ"+rundate);
 			if(runmonth == month && rundate.getFullYear()==year){
@@ -69,7 +69,7 @@ var nextindex=0;
 		e_rundate=new Date($(this).attr('run'));
 		e_rundate.setDate(e_rundate.getDate()+1); */
 		//alert(s_rundate+"~~"+e_rundate); 
-		alert("rundate)"+rundate);
+		
 		
 		rdate = String(rundate);
 		var d = rdate.substr(6,2);
