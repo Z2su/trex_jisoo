@@ -127,7 +127,6 @@
 				
 		
 		<!--quick  -->
-		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
 		<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 
 	</div>

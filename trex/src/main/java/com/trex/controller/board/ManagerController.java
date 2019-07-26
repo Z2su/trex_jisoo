@@ -136,19 +136,25 @@ public class ManagerController {
 	
 	
 	@RequestMapping(value="/calregist", method = RequestMethod.POST)
-	public void calregist(CalendarVO calendar)throws Exception{
+
+	public void calregist(CalendarVO calendar,HttpServletResponse response)throws Exception{
 		calService.create(calendar);
-	}
-	
-	
-	@RequestMapping(value="/delete" )
-	public String caldelete(String code,HttpServletResponse response)throws Exception{
-		calService.remove(code);
-		return "manager/calendar";
 		
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out=response.getWriter();
+		out.println("<script>");		
+		out.println("window.opener.location.href='/manager/calendar';window.opener.location.reload();window.close();");
+		out.println("</script>");	
 	}
 	
-	
+
+	@RequestMapping(value="/delete" )
+	   public String caldelete(String code,HttpServletResponse response)throws Exception{
+	      calService.remove(code);
+	      return "manager/calendar";
+	      
+	   }
+
 	
 	
 	

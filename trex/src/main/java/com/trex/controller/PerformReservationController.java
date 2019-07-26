@@ -52,7 +52,7 @@ public class PerformReservationController {
 		modelnView.addObject("pf",PF);
 		modelnView.addObject("PFSHViewList", PFSHViewList);
 		modelnView.addObject("pf_code", pf_code);
-		
+		System.out.println("~~~~~~~********!!!"+PFSHViewList);
 		modelnView.setViewName(url);
 		
 		return modelnView;
@@ -74,10 +74,13 @@ public class PerformReservationController {
 		
 		String url = "perform/step";
 		
+		List<PerformVO> PFList = PFService.getPFList();
+		modelnView.addObject("PFList", PFList);
 		modelnView.setViewName(url);
 		
 		return modelnView;
 	}
+
 
 	/*
 
