@@ -142,7 +142,7 @@
 											"
 									title="${ad.performVO.name}"></div>
 								<p> 
-									<span style="font-size:18px;font-weight:bold;color:white;">${ad.performVO.name}</span>								
+									<span style="font-size:14px;font-weight:bold;color:white;">${ad.performVO.name}</span>								
 									<span class="date">
 									<fmt:formatDate value="${ad.startdate }" pattern="yyyy년 MM월 dd일"/>								
 									 - 

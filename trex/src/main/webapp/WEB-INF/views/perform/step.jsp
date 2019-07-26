@@ -57,11 +57,8 @@
 	<!-- 내용채우기 -->
 	
 	
-	<form id="trexinfo" name = "trexinfo" action="step3" method="get">
-		<input type ="hidden" value="${loginUser.mem_id }"/>
-		<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
-		<input type="hidden" name="pfsh_code" value="${PfRese.pfsh_code }" id="pfsh_code" />
-		<input type="hidden" name="rdate" value="${rdate }"/>
+	<form id="trexinfo" name = "trexinfo" action="step1" method="get">
+		
 	</form>
 	<div id="divBookMain" name="divBookMain" class="wrap">
 		<!-- //Header -->
@@ -131,29 +128,14 @@
 					</c:forEach> --%>
 					
 					<div id ="seat">
-					<c:forEach items="${SeatReqList }" var="SeatReq" varStatus="status">
-					<c:set var="str" value="${SeatReqList[status.index+1].col} "/>
+					<ul>
+					<c:forEach items="${PFList }" var="PF" varStatus="status">
 					
-					<label class="seatlabel" for="${SeatReq.col}${SeatReq.num}"  grade="${SeatReq.grade }" pfshs_rese="${SeatReq.pfshs_rese }">${SeatReq.col}${SeatReq.num}
-					</label>
-						<input type="checkbox" id="${SeatReq.col}${SeatReq.num}" class="seatcheck" col="${SeatReq.col}" num="${SeatReq.num}" grade="${SeatReq.grade }" pfshs_rese="${SeatReq.pfshs_rese }" seat_code="${SeatReq.seat_code }" value="${SeatReq.col }" 
-						<c:if test="${SeatReq.pfshs_rese eq 1 }">
-						disabled="true"
-						
-						</c:if>
-						 />
-						
-						
-						<c:if test="${status.index > 0 }">
-						
-						
-							<c:if test="${SeatReq.col ne fn:toUpperCase(fn:trim(str)) }">
-							
-								<br/>
-							</c:if>
-						</c:if>
+					<li><a href="#" id = "${PF.pf_code }" name="pf_code" value="${PF.pf_code }">${PF.name }</a></li>
+					
 					</c:forEach>
 					
+					</ul>
 					</div>
 					
 					
@@ -338,7 +320,7 @@
 		</div>
 		<!-- 검색 결과 레이어 //-->
 	</div>
-	<%@ include file="./step2_js.jsp"%>
+	<%@ include file="./step_js.jsp"%>
 
 	<!-- //container -->
 </div>
