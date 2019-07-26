@@ -20,7 +20,7 @@ public class CalendarData {
 		this.title = calendar.getTitle();
 		this.start = calendar.getStarttime();
 		this.end = calendar.getEndtime();
-		this.url = "caldetail?code="+calendar.getCode();
+		this.url = "delete?code="+calendar.getCode();
 		
 		String dict= calendar.getCode().substring(0,4);
 		switch(dict) {

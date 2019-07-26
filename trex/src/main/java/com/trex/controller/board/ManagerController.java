@@ -147,7 +147,14 @@ public class ManagerController {
 		out.println("</script>");	
 	}
 	
-	
+
+	@RequestMapping(value="/delete" )
+	   public String caldelete(String code,HttpServletResponse response)throws Exception{
+	      calService.remove(code);
+	      return "manager/calendar";
+	      
+	   }
+
 	
 	
 	
