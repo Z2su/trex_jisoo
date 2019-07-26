@@ -49,7 +49,7 @@ var nextindex=0;
 		
 			pfsh_code = $(item).attr('pfsh_code');
 			//alert("ㅋㅋ"+pfshcode);
-			
+			alert("r>>"+runmonth+" m>>"+month);
 			
 			//alert(typeof($(item).val())+"ㅎㅎ"+rundate);
 			if(runmonth == month && rundate.getFullYear()==year){
@@ -69,6 +69,7 @@ var nextindex=0;
 		e_rundate=new Date($(this).attr('run'));
 		e_rundate.setDate(e_rundate.getDate()+1); */
 		//alert(s_rundate+"~~"+e_rundate); 
+		alert("rundate)"+rundate);
 		
 		rdate = String(rundate);
 		var d = rdate.substr(6,2);
@@ -76,7 +77,7 @@ var nextindex=0;
 
 		var y = rdate.substr(0,4);
 		rdate = y+"년 " + M + "월 " + d + "일";
-		$('#'+runday).css("background-color","#FF9933");
+		$('#'+d).css("background-color","#FF9933");
 		$('#MyPlayDate').empty();
 		$('#MyPlayDate').text(rdate);
 		//$(this).parent().css("background-color","#c50102");

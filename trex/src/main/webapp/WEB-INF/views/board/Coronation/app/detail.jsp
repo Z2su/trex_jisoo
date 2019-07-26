@@ -87,13 +87,13 @@
 	 <!-- 게시판 버튼모음 -->
            <div class="board_butt">
            <c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }" >	
- 	 		
- 
- 	 			<button type="button" class="btn btn-sm btn-white btn-bold"
-             onclick="location.href='/board/Coronation/app/conform/${CRAppBoard.cr_app_code}'">
+ 	 		 
+ 				<c:if test="${CRAppBoard.enable eq 1 }">
+ 	 			<button id ="confirmbtn" type="button" class="btn btn-sm btn-white btn-bold"
+             onclick='confirm_go()'>
 				<i class="red ace-icon fa fa-pencil bigger-120"></i><b>승인</b>
 			</button>
- 	 		 
+ 	 		 </c:if>
            	<button type="button" class="btn btn-sm btn-white btn-bold"
 				onclick="location.href='/board/Coronation/app/delete/${CRAppBoard.cr_app_code }'">
 				<i class="grey ace-icon fa fa-times bigger-120"></i><b>삭제</b>
@@ -110,7 +110,22 @@
 	
 	
 	<script>
-	function remove_go(){
+	
+	function confirm_go(){
+		
+		if(confirm('승인 하시겠습니까?')){
+			alert('승인 완료 되었습니다');
+
+	$('#confirmbtn').hide(); 
+
+			location.href='/board/Coronation/app/conform/${CRAppBoard.cr_app_code }';
+			
+		};
+		
+	}
+	
+	
+ 	function remove_go(){
 		var cr_app_num;
 		cr_app_num = ${CRAppBoard.cr_app_num};
 		location.href="delete?cr_app_num=${CRAppBoard.cr_app_num}";

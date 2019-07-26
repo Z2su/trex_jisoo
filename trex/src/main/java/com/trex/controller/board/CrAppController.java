@@ -174,8 +174,10 @@ public class CrAppController {
 		Crsh.setHall_code(CRAppBoard.getHall_code());
 		Crsh.setCr_app_code(CRAppBoard.getCr_app_code());
 		CrshService.write(Crsh);
+		PrintWriter out=response.getWriter();
+
+		return "redirect:/board/Coronation/conf/list";
 		
-		return "redirect:/board/Coronation/app/detail/{cr_app_code}";
 	}
 	
 	

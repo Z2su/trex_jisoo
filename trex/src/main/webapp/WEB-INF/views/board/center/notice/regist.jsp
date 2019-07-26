@@ -6,6 +6,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 
+	<div id="contentswrap">
 <!-- subvisual -->
 <div id="subvisual">
 	<div class="subv_performance">
@@ -32,6 +33,9 @@
 	<!-- //navigation -->
 
 	<!-- container -->
+	
+	</div>
+	
 	<div id="container">
 		<%@ include file="/WEB-INF/views/board/center/submenu.jsp"%>
 
@@ -78,9 +82,10 @@
 
 		</div>
 		<!--quick  -->
-		<%@ include file="/WEB-INF/views/board/center/quick.jsp"%>
+		
 
 	</div>
+	
 	<!-- //container -->
 </div>
 
@@ -89,6 +94,7 @@
 	type="text/css" media="all">
 
 
-<%@ include file="./regist_file.jsp"%>
 
-<%@ include file="./regist_js.jsp"%>
+
+
+
