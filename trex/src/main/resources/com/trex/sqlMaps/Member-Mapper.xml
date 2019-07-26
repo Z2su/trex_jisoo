@@ -96,6 +96,20 @@
 		from mem
 		where mem_id=#{mem_id}
 	</select>
+	<select id="selectMemberByEmail" parameterType="str" resultType="member">
+		select 
+		* 
+		from mem
+		where mem_email=#{mem_email}
+	</select>
+	
+	
+	<update id="updateMemberPwd">
+		update mem
+		set mem_pwd=#{mem_pwd}
+		where mem_id=#{mem_id}
+	</update>
+	
 	
 	<update id="updateAuthkey">
 		update mem

@@ -61,6 +61,10 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO getMember(String mem_id) throws SQLException {
 		return memberDAO.selectMemberById(mem_id);
 	}
+	@Override
+	public MemberVO getMemberByEmail(String mem_email) throws SQLException {
+		return memberDAO.selectMemberByEmail(mem_email);
+	}
 
 	@Override
 	public GmemberVO getGmember(String id) throws SQLException {
@@ -238,6 +242,13 @@ public class MemberServiceImpl implements MemberService {
 		memberDAO.insertMember(member);
 		memberDAO.insertEmployee(employee);
 		
+	}
+
+
+
+	@Override
+	public void modifyPWD(MemberVO member) throws SQLException {
+		memberDAO.updateMemberPwd(member);		
 	}
 
 

@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.trex.controller.Criteria;
 import com.trex.dto.EPViewVO;
@@ -16,7 +17,11 @@ import com.trex.dto.TroupeVO;
 
 public class MemberDAOImpl  implements MemberDAO{
 	
+	private JdbcTemplate template;
 	
+	public void setTemplate(JdbcTemplate template) {
+		this.template = template;
+	}
 	@Autowired
 	private SqlSession session;
 	
@@ -141,6 +146,12 @@ public class MemberDAOImpl  implements MemberDAO{
 		MemberVO member = session.selectOne("Member-Mapper.selectMemberById", mem_id);
 		return member;
 	}
+	
+	@Override
+	public MemberVO selectMemberByEmail(String mem_email) throws SQLException {
+		MemberVO member = session.selectOne("Member-Mapper.selectMemberByEmail", mem_email);
+		return member;
+	}
 
 
 	@Override
@@ -190,15 +201,12 @@ public class MemberDAOImpl  implements MemberDAO{
 		session.update("Member-Mapper.deleteMember", mem_code);
 		
 	}
-	
-	
 
+	@Override
+	public void updateMemberPwd(MemberVO member) throws SQLException {
+		session.update("Member-Mapper.updateMemberPwd",member);
+		
+	}
 
-
 	
-	
-	
-	
-	
-
 }

@@ -2,6 +2,7 @@ package com.trex.service;
 
 import java.lang.reflect.Member;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -13,6 +14,9 @@ import com.trex.dto.MemberVO;
 import com.trex.dto.TroupeVO;
 
 public interface MemberService {
+		
+		// 회원수정
+		void modifyPWD(MemberVO member)throws SQLException;
 	
 		// 회원가입
 		String regist(MemberVO member, String type)throws SQLException;
@@ -23,6 +27,7 @@ public interface MemberService {
 
 		// 회원조회
 		MemberVO getMember(String mem_id)throws SQLException;
+		MemberVO getMemberByEmail(String mem_email)throws SQLException;
 		GmemberVO getGmember(String id)throws SQLException;
 		TroupeVO getTroupe(String id)throws SQLException;
 		EmployeeVO getEmployee(String ep_code)throws SQLException;

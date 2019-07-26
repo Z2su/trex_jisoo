@@ -105,6 +105,10 @@ a:focus {
 .page-wrap {
   width: 960px;
   margin: 80px auto;
+  margin-top: 10%; 
+  margin-bottom: 10%; 
+  margin-left: 25%; 
+  margin-right: 25%;
 }
 
 .nav {
@@ -182,7 +186,7 @@ a:focus {
 			</ul>
 		</nav>
 
-		<div id="first" name="first">
+		<div id="first" name="first" style="margin:80px auto;">
 
 			<p>
 				<br><br><br>

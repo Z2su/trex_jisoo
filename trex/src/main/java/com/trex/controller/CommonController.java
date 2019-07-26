@@ -1,41 +1,46 @@
 package com.trex.controller;
 
 import java.io.PrintWriter;
-import java.lang.reflect.Member;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.trex.dao.MemberDAO;
 import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
 import com.trex.dto.TroupeVO;
+import com.trex.mail.MimeAttachNotifier;
 import com.trex.service.MemberService;
 
 @Controller
 public class CommonController {
 	
-	
-	
-	
-	
-	
 	@Autowired
 	private MemberService MemberService;
 	
+	@Autowired
+	private MemberDAO memberDAO;
+	
+	@Autowired
+	private MimeAttachNotifier noti;
 	
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String mainGET() {
@@ -117,7 +122,7 @@ public class CommonController {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.println("<script>");
-		out.println("location.href='/';alert('*회원가입을 축하드립니다.*' );");
+		out.println("location.href='/';alert('*회원가입을 축하드립니다 가입 이메일로 인증을 해주세요.*' );");
 		out.println("</script>");
 
 		return "main";
@@ -172,7 +177,7 @@ public class CommonController {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.println("<script>");
-		out.println("location.href='/';alert('*회원가입을 축하드립니다.*' );");
+		out.println("location.href='/';alert('*회원가입을 축하드립니다 가입 이메일로 인증을 해주세요.*' );");
 		out.println("</script>");
 
 		return "main";
@@ -215,6 +220,82 @@ public class CommonController {
 	
 		return url;
 	}
+	
+	
+	@RequestMapping("/find")
+	public String find()throws Exception{
+		return "join/find";
+	}
+	@RequestMapping(value = "/find/id",method=RequestMethod.POST)
+	@ResponseBody
+	public ResponseEntity<String> findIdPost(String mem_email, HttpServletRequest request, HttpServletResponse response,
+			RedirectAttributes rttr) throws Exception {
+		
+		ResponseEntity<String> result=null;
+		
+		System.out.println(mem_email);
+		
+		MemberVO member = MemberService.getMemberByEmail(mem_email);
+		String mem_id=null;
+		if(member!=null) {
+			mem_id= member.getMem_id();
+			result = new ResponseEntity<String>(mem_id,HttpStatus.OK);
+		}else {
+			result = new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+		}
+		
+		
+		return result;
+	}
+	
+	@RequestMapping(value = "/find/pwd",method=RequestMethod.POST)
+	@ResponseBody
+	public ResponseEntity<String> findPwdEmailSendPost(@RequestBody Map<String,Object> paramMap, HttpServletRequest request, HttpServletResponse response,
+			RedirectAttributes rttr) throws Exception {
+		
+		ResponseEntity<String> result=null;
+			
+		String mem_id = (String)paramMap.get("mem_id");
+		String mem_email = (String)paramMap.get("mem_email");
+		
+		
+		MemberVO member = MemberService.getMember(mem_id);
+		
+		if(member!=null) {
+			if(mem_email.equals(member.getMem_email())) {
+				//임시비밀번호 설정
+				String tempPwd = UUID.randomUUID().toString().replace("-","").substring(0,8);
+				
+				member.setMem_pwd(tempPwd);
+				
+				try {
+					MemberService.modifyPWD(member);
+				}catch(SQLException e) {
+					return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+					
+				}
+								
+				//이메일로 패스워드를 전송.
+				MailRequest mailReq = new MailRequest();
+				mailReq.setSender("wwwsoo012@naver.com");
+				mailReq.setReceiver(mem_email);
+				mailReq.setTitle("[TRex 이용안내]변경된 패스워드를 확인하세요. ");
+				mailReq.setContent("회원님의 비밀번호 : '"+member.getMem_pwd()+"' 로 변경되었습니다.");
+				
+				noti.sendMail(mailReq);		
+				
+				result = new ResponseEntity<String>("success",HttpStatus.OK);
+			}else {
+				//이메일 불일치.
+				result = new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+			}			
+		}else {
+			result = new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+		}
+		
+		
+		return result;
+	}
 
 	@RequestMapping(value="/logout",method=RequestMethod.GET)
 	public String logout(HttpSession session) {
@@ -222,6 +303,8 @@ public class CommonController {
 		session.invalidate();
 		return url;
 	}
+	
+	
 	
 	@RequestMapping(value="/joinPost", method=RequestMethod.POST)
 	public String joinPost(@ModelAttribute("uVO") MemberVO member) throws Exception {
