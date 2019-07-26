@@ -82,7 +82,7 @@
             <c:if test="${loginUser ne null }">
             <li><a href="/logout">로그아웃</a></li>
             <!-- <li><a href="#">마이페이지</a></li> -->
-            <li><a href="#">${loginUser.mem_id } 님 </a>
+            <li><a href="/mypage/MypageMemberList">${loginUser.mem_id } 님 </a>
             
             </c:if>
             
@@ -120,8 +120,8 @@
                         <ul class="">
                            <li><a href="/board/perform/list"
                               class="">공연안내</a></li>
-                           <li><a href="#"
-                              class="">공연예매안내</a></li>
+                           <!-- <li><a href="#"
+                              class="">공연예매안내</a></li> -->
                           <!--  <li><a href="#"
                               class="">기타공연소식</a></li>
                            <li><a
@@ -170,9 +170,9 @@
                            <li><a
                               href="<%=request.getContextPath() %>/board/center/qna/list"
                               class="">Q&A</a></li>
-                           <li><a
+                           <%-- <li><a
                               href="<%=request.getContextPath() %>/board/center/event/list"
-                              class="">이벤트</a></li>
+                              class="">이벤트</a></li> --%>
                         </ul>
                      </div>
                      </li>
