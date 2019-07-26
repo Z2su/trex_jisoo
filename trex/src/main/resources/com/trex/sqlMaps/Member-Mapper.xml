@@ -75,7 +75,7 @@
 		select MEM_SEQ.nextval as mem_num from dual
 	</select>
 	
-	<select id="selectEmployee" resultType="epview">
+	<select id="selectEmployeeList" resultType="epview">
 		select *
 		from ep_view
 		order by comp asc
@@ -127,6 +127,9 @@
 	
 	
 	
+	<select id="selectEmployee" resultType="employee" >
+		select * from ep where ep_code = #{ep_code}
+	</select>
 	
 	
 	

@@ -2,9 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces ="true" %>    
 
- <!-- Bootstrap 3.3.7 -->
- <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cal/bower_components/bootstrap/dist/css/bootstrap.min.css">
-
  <!-- fullCalendar -->
  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cal/bower_components/fullcalendar/dist/fullcalendar.min.css">
  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cal/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">

@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.controller.SearchCriteria;
 import com.trex.dto.MypageMemberBoardVO;
 
 public class MypageMemberBoardDAOImpl implements MypageMemberBoardDAO {
 
+	@Autowired
 	private SqlSession session;
 
 	public void setSession(SqlSession session) {
