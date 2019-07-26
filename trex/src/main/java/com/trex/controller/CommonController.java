@@ -24,26 +24,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-<<<<<<< HEAD
 import com.trex.dao.MemberDAO;
-=======
 import com.trex.dto.AdVO;
 import com.trex.dto.EventVO;
 import com.trex.dto.FAQBoardVO;
->>>>>>> refs/heads/jisoo
 import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
 import com.trex.dto.NoticeVO;
 import com.trex.dto.PFSHViewVO;
 import com.trex.dto.PerformVO;
 import com.trex.dto.TroupeVO;
-<<<<<<< HEAD
 import com.trex.mail.MimeAttachNotifier;
-=======
 import com.trex.service.AdService;
 import com.trex.service.EventService;
 import com.trex.service.FAQBoardService;
->>>>>>> refs/heads/jisoo
 import com.trex.service.MemberService;
 import com.trex.service.NoticeService;
 import com.trex.service.PerformService;
