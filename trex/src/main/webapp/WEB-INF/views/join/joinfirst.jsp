@@ -54,7 +54,7 @@
 		.clearfix::after{content: "";display: block;clear: both;}
 		
 		#joinForm{width: 750px;margin: 0 auto;}
-		ul.join_box{border: 1px solid #ddd;background-color: #fff;}
+		ul.join_box{border: 1px solid #ddd;background-color: #fff; padding : 5% 0 0 ;}
 		.checkBox,.checkBox>ul{position: relative;}
 		.checkBox>ul>li{float: left;}
 		.checkBox>ul>li:first-child{width: 85%;padding: 15px;font-weight: 600;color: #888;}

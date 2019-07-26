@@ -143,9 +143,11 @@
 						<!-- <a href="#total"
 						onclick="javascript:if(confirm('[바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”] 공연정보를 관심공연담기로 지정 하시겠습니까?')) goBasket('3087');"><img
 						src="/resources/images/perform/bt_show.gif"
-						alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”관심공연담기"></a><a
-						href="/html/kr/performance/performance_010101.html?year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-						src="/images/kr/common/showviewlist.gif" alt="목록"></a> -->
+						alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”관심공연담기"></a>
+						-->
+						<a
+                  href="/board/perform/list"><img
+                  src="/resources/images/list.gif" alt="목록"></a> 
 				</p>
 			</div>
 			<div class="clearfix"></div>

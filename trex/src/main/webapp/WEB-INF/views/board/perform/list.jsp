@@ -278,13 +278,13 @@
 								src="/resources/images/perform/more.gif"
 								alt="${PFGBoard.title } 공연예매"></a>
 						</p>
-						<p class="more1">
+						<%-- <p class="more1">
 							<a href="#total"
 								onclick="window.open('/credit/${PFGBoard.pf_code }', '네이버새창', 'width=910, height=690, toolbar=no, menubar=no, scrollbars=no, resizable=yes' );" ><img
 
 								src="/resources/images/perform/more.gif"
 								alt="${PFGBoard.title } 공연예매"></a>
-						</p>
+						</p> --%>
 						<p class="reser">
 							<a
 								href="detail/${PFGBoard.pfg_code }"><img

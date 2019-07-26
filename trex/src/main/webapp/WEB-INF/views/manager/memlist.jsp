@@ -98,7 +98,7 @@
 
 
 
-				<h4>회원리스트</h4>
+				<h4> 공연단리스트</h4>
 				<table width="100%" border="0" cellpadding="0" cellspacing="0">
 					<tbody>
 						<tr>

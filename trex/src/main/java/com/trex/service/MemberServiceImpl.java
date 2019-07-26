@@ -148,7 +148,7 @@ public class MemberServiceImpl implements MemberService {
 		mail.setTitle("회원가입");
 		mail.setContent(new StringBuffer().append("<h1>[이메일 인증]</h1>")
 				.append("<p>아래 링크를 클릭하시면 이메일 인증이 완료됩니다.</p>")
-				.append("<a href='http://localhost/joinConfirm?mem_id=")
+				.append("<a href='http://192.168.0.117/joinConfirm?mem_id=")
 				.append(member.getMem_id())
 				.append("&mem_code=")
 				.append(member.getMem_code())
