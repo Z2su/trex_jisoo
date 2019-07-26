@@ -42,8 +42,8 @@
 
 				<!--작성자 -->
 				<li><label>기간 </label> <input id="starttime" name="starttime"
-					type="time" />
-					~ <input id="endtime" name="endtime" type="time" /></li>
+					type="date" />
+					~ <input id="endtime" name="endtime" type="date" /></li>
 
 				<!--내용입력-->
 				<li><label>구분</label> <select name="code">

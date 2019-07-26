@@ -137,8 +137,14 @@ public class ManagerController {
 	
 	@RequestMapping(value="/calregist", method = RequestMethod.POST)
 
-	public void calregist(CalendarVO calendar)throws Exception{
+	public void calregist(CalendarVO calendar,HttpServletResponse response)throws Exception{
 		calService.create(calendar);
+		
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out=response.getWriter();
+		out.println("<script>");		
+		out.println("window.opener.location.href='/manager/calendar';window.opener.location.reload();window.close();");
+		out.println("</script>");	
 	}
 	
 	
