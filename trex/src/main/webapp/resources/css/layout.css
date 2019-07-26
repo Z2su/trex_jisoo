@@ -283,7 +283,7 @@
 	#msection1 .marea2{position:relative;float:right;width:316px;}
 	#msection1 .marea2 .popupz{height:298px;}
 	#msection1 .marea2 .popupz .control{padding-right:0;}
-	#msection1 .marea2 .popupz ul li{position:absolute;top:40px;;left:0;width:316px;height:258px;overflow:hidden;}
+	#msection1 .marea2 .popupz ul li{top:40px;;left:0;width:280px;height:200px;overflow:hidden;}
 	#msection1 .marea2 .quickm{margin-top:25px;padding:15px 0;height:80px;border-top:2px solid #41474f;border-bottom:1px solid #ddd;}
 	#msection1 .marea2 .quickm ul:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 	#msection1 .marea2 .quickm ul li{float:left;text-align:center;}

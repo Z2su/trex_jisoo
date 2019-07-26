@@ -67,23 +67,20 @@
 									
 									<div class="form-group">
 										<label>직급</label> <select name="rank">
-											<option>회장</option>
-											<option>사장</option>
-											<option>부장</option>
-											<option>과장</option>
+											<option>관리자</option>
 											<option>주임</option>
 											<option>대리</option>
-											<option>사원</option>
-											<option>인턴</option>
+											<option>일반 사원</option>
+											
 															</select> 
 									</div>
 									
 									<div class="form-group">
 										<label>권한</label><select name="emp">
-											<option>짱짱맨 </option>
-											<option>짱맨</option>
-											<option>잡일맨</option>
-											<option>암것도 못함맨</option>
+											<option>모든 권한</option>
+											<option>게시판</option>
+											<option>스케줄관리</option>
+											<option>없음</option>
 															</select> 
 									</div>
 										<button type="submit" class="btn btn-lg btn-success btn-block">회원가입</button>

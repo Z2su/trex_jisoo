@@ -4,14 +4,15 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dto.MypageGmemberVO;
 
 public class MypageGmemberDAOImpl implements MypageGmemberDAO {
 
+	@Autowired
 	private SqlSession session;
 
-	// @Autowired
 	public void setSession(SqlSession session) {
 		this.session = session;
 	}
@@ -24,8 +25,8 @@ public class MypageGmemberDAOImpl implements MypageGmemberDAO {
 	}
 
 	@Override
-	public void updateGmember(String gmem_code) throws SQLException {
-		session.update("MypageGmember-Mapper.updateGmember", gmem_code);
+	public void updateGmember(MypageGmemberVO gmem) throws SQLException {
+		 session.update("MypageGmember-Mapper.updateGmember", gmem);
 	}
 
 	@Override

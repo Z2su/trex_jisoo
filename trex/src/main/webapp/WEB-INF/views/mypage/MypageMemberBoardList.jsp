@@ -25,7 +25,7 @@
 			<a href="<%=request.getContextPath()%>/">HOME</a>&gt;
 			<navi> <a
 				href="<%=request.getContextPath()%>/mypage/MypageMemberList">마이페이지</a>&gt;
-			<a href="<%=request.getContextPath()%>/mypage/MypageMemberBoardList">게시글조회</a>&gt;
+			<a href="<%=request.getContextPath()%>/mypage/MypageMemberBoardList">게시글조회</a>
 			</navi>
 			<div class="nv_service">
 				<a class="nvs_print" href="#total"
@@ -93,7 +93,7 @@
 												<tr>
 													<td>${qnaboardVO.qna_num}</td>
 													<td class="left"><a
-														href='detail${pageMaker.makeSearch(pageMaker.cri.page) }&qna_num=${qnaboardVO.qna_num}'>
+														href='MypageMemberBoardDetail${pageMaker.makeSearch(pageMaker.cri.page) }&qna_num=${qnaboardVO.qna_num}'>
 															${qnaboardVO.title}</a></td>
 													<td>${qnaboardVO.writer}</td>
 													<td><fmt:formatDate pattern="yyyy-MM-dd"

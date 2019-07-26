@@ -93,8 +93,7 @@
 					<!-- 게시판 버튼모음 -->
 					<div class="board_butt" style="margin: 10px 0;padding: 0 10px; text-align: right">
 						<input type="image"
-							src="<%=request.getContextPath()%>/resources/imagesentry.gif"
-							alt="등록">
+							src="<%=request.getContextPath()%>/resources/images/regist.png"	alt="등록">
 						
 						<a href="/board/Coronation/list">
 						<img src="<%=request.getContextPath()%>/resources/images/cancel.png" alt="취소"></a>

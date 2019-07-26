@@ -101,9 +101,8 @@
 			<div class="board_butt">
 				<button type="button" id="ModifyBtn">수정</button>
 			</div>
-
 			<script>
-				$('#ModifyBtn').on('click', function(e) {
+				$('#ModifyBtn').on('click', function(event) {
 					location="<%=request.getContextPath()%>/mypage/MypageTroupeModify"
 				});
 			</script>

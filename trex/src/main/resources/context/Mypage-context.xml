@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="MypageGmemberDAO"
+	      class="com.trex.dao.MypageGmemberDAOImpl"
+	      p:session-ref="sqlSession"
+	      />
+	
+	<bean id="MypageGmemberService"
+	      class="com.trex.service.MypageGmemberServiceImpl"
+	      p:mypageGmemberDAO-ref="MypageGmemberDAO"
+	      />
+	 
+	<bean id="MypageTroupeAdDAO"
+		class= "com.trex.dao.MypageTroupeAdDAOImpl"
+		p:session-ref="sqlSession"></bean>
+	      
+	<bean id="MypageTroupeAdService"
+	      class="com.trex.service.MypageTroupeAdServiceImpl"
+	      p:mypagetroupeadDAO-ref="MypageTroupeAdDAO"
+	      />
+	            
+	  
+	<bean id="MypageMemberDAO"
+	      class="com.trex.dao.MypageMemberDAOImpl"
+	      p:session-ref="sqlSession"
+	      />
+	 
+	<bean id="MypageMemberService"
+	      class="com.trex.service.MypageMemberServiceImpl"
+	      p:mypageMemberDAO-ref="MypageMemberDAO"
+	 	  />
+	 	  	<bean id="MypageRhDAO"
+	      class="com.trex.dao.MypageRhDAOImpl"
+	      p:session-ref="sqlSession"
+	      />
+	      
+    <bean id="MypageRhService"
+          class="com.trex.service.MypageRhServiceImpl"
+          p:mypageRhDAO-ref="MypageRhDAO"
+          />
+	 	<bean id="MypageMemberBoardDAO"
+	      class="com.trex.dao.MypageMemberBoardDAOImpl"
+	      p:session-ref="sqlSession"
+	      />
+	      
+	<bean id="MypageMemberBoardService"
+	      class="com.trex.service.MypageMemberBoardServiceImpl"
+	      p:mypageMemberboardDAO-ref="MypageMemberBoardDAO"
+	      />
+	      
+	 <bean id="MypageTroupeCrAppDAO"
+	      class="com.trex.dao.MypageTroupeCrAppDAOImpl"
+	      p:session-ref="sqlSession"
+	      />
+	      
+	<bean id="MypageTroupeCrAppService"
+	      class="com.trex.service.MypageTroupeCrAppServiceImpl"
+	      p:CRAppBoardDAO-ref="MypageTroupeCrAppDAO"
+		 />
+		 
+		 
+		 
+		<bean id="MypageTroupeDAO"
+	      class="com.trex.dao.MypageTroupeDAOImpl"
+	      p:session-ref="sqlSession"
+	      />
+	      
+	<bean id="MypageTroupeService"
+	      class="com.trex.service.MypageTroupeServiceImpl"
+	      p:troupeDAO-ref="MypageTroupeDAO"
+	      />
+
+</beans>

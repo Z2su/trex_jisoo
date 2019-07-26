@@ -7,9 +7,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
 	<import resource="classpath:context/dataSource-context.xml"/>
-
 	<import resource="classpath:context/Crg-context.xml"/>
-	<import resource="classpath:context/PFG-context.xml"/>
 	<import resource="classpath:context/QnA-context.xml"/>
 	<import resource="classpath:context/REP-context.xml"/>
 	<import resource="classpath:context/Event-context.xml"/>
@@ -19,21 +17,22 @@
 	<import resource="classpath:context/Ad-context.xml"/>
 	<import resource="classpath:context/mail-context.xml"/>
 	<import resource="classpath:context/Hall-context.xml"/>
-
 	<import resource="classpath:context/FAQ-context.xml"/>
+	<import resource="classpath:context/PFG-context.xml"/>
 	<import resource="classpath:context/Notice-context.xml"/>
 	<import resource="classpath:context/CrApp-context.xml"/>
 	<import resource="classpath:context/PFRESE-context.xml"/>
-	<import resource="classpath:context/MypageGmember-context.xml"/>
-	<import resource="classpath:context/MypageMember-context.xml"/>
-	<import resource="classpath:context/MypageTroupe-context.xml"/>
-	<import resource="classpath:context/MypageMemberBoard-context.xml"/>
-	<import resource="classpath:context/MypageTroupeCrApp-context.xml"/>
-	<import resource="classpath:context/MypageTroupeAd-context.xml"/>
-	
+	<import resource="classpath:context/Mypage-context.xml"/>
+	<import resource="classpath:context/Pay-context.xml"/>
+	<import resource="classpath:context/CrConf-context.xml"/>
+	<import resource="classpath:context/PfApp-context.xml"/>
+
 	<bean id="mailNotifier"
 		  class="com.trex.mail.MimeAttachNotifier"
-		  p:mailSender-ref="mailSender" />
+		  p:mailSender-ref="mailSender"
+		  /> 
+
+	
 	
 
 </beans>

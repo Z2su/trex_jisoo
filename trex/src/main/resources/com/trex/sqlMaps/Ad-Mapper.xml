@@ -66,12 +66,21 @@
 
 	</select>
 
-
-
-
 	<select id="selectAdList" resultType="ad">
 		select *
 		from ad
+		order by
+		ad_num desc
+	</select>
+
+
+	<select id="selectAdListBanner" resultType="ad">
+		select *
+		from ad
+		<![CDATA[
+		where (startDate < sysdate+1) and (endDate > sysdate-1) 
+		]]>
+		and app_result = 1
 		order by
 		ad_num desc
 	</select>
@@ -86,9 +95,9 @@
 	<update id="insertAd" parameterType="ad">
 		insert
 		into
-		ad(ad_code,ad_num,title,writer,cont)
+		ad(ad_code,ad_num,title,writer,cont,enddate,img,thumbimg,pf_code)
 		values
-		(#{ad_code},#{ad_num},#{title},#{writer},#{cont})
+		(#{ad_code},#{ad_num},#{title},#{writer},#{cont},#{enddate},#{img},#{thumbimg},#{pf_code})
 	</update>
 
 	<update id="updateAd" parameterType="ad">
@@ -98,6 +107,7 @@
 		title=#{title},
 		cont=#{cont}, modidate = sysdate
 		where ad_num = #{ad_num}
+		
 
 
 	</update>
@@ -116,6 +126,31 @@
 		viewcnt+1
 		where ad_num = #{ad_num}
 	</update>
+	<update id="updateAgree1" parameterType="ad">
+		update
+		ad
+		set
+		app_result = 1
+	</update>
+		<update id="updateAgree2" parameterType="ad">
+		update
+		ad
+		set
+		app_result = 2
+	</update>
+	
+	<select id="selectAdBypf_code" resultType="ad">
+	
+		select ad.pf_code, member.mem_code
+		from ad as a 
+		join member as m
+		on a.pf_code = m.mem_code
+		
+	
+	
+	</select>
+	
+		
 
 	<select id="selectAdSeqNext" resultType="int">
 

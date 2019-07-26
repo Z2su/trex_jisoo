@@ -25,6 +25,7 @@ public class MemberServiceImpl implements MemberService {
 		public void setMemberDAO(MemberDAO memberDAO) {
 			this.memberDAO=memberDAO;
 		}
+		
 		@Autowired
 		private MimeAttachNotifier notifier;
 		public void setNotifier(MimeAttachNotifier notifier) {
@@ -63,9 +64,10 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public GmemberVO getGmember(String id) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public GmemberVO getGmember(String mem_code) throws SQLException {
+		
+		return memberDAO.selectGmemberByCode(mem_code); 
+				
 	}
 
 	@Override
@@ -187,7 +189,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public EmployeeVO getEmployee(String ep_code) throws SQLException {
 
-		EmployeeVO employee = null;
+		EmployeeVO employee = memberDAO.selectEmployee(ep_code);
 		return employee;
 	}
 

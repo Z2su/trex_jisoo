@@ -3,12 +3,14 @@ package com.trex.service;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.trex.dao.CoronationDAO;
 import com.trex.dto.CoronationVO;
 
 public class CoronationServiceImpl implements CoronationService {
 	
-
+	@Autowired
 	private CoronationDAO CoronationDAO;
 	public void setCRGBoardDAO(CoronationDAO CoronationDAO) {
 		this.CoronationDAO = CoronationDAO;

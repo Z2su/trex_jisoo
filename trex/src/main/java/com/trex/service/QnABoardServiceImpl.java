@@ -6,7 +6,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.controller.SearchCriteria;
@@ -16,7 +15,6 @@ import com.trex.dto.QnABoardVO;
 
 public class QnABoardServiceImpl implements QnABoardService {
 
-	Logger log = Logger.getLogger(this.getClass());
 
 	@Autowired
 	private QnABoardDAO qnaboardDAO;

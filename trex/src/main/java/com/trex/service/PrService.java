@@ -3,6 +3,7 @@ package com.trex.service;
 import java.sql.SQLException;
 import java.util.Map;
 
+import com.trex.dto.AdVO;
 import com.trex.dto.PrVO;
 import com.trex.request.Criteria;
 
@@ -15,5 +16,6 @@ public interface PrService {
 	void write(PrVO pr) throws SQLException;
 	void modify(PrVO pr) throws SQLException;
 	void remove(int pr_num) throws SQLException;
+	
 
 }

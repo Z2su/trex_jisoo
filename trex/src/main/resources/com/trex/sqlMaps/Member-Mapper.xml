@@ -75,9 +75,10 @@
 		select MEM_SEQ.nextval as mem_num from dual
 	</select>
 	
-	<select id="selectEmployee" resultType="epview">
+	<select id="selectEmployeeList" resultType="epview">
 		select *
 		from ep_view
+		order by comp asc
 	</select>
 	
 	<select id="selectGmemberList" resultType="gmember">
@@ -95,6 +96,13 @@
 		* 
 		from mem
 		where mem_id=#{mem_id}
+	</select>
+	
+	<select id="selectGmemberByCode" parameterType="str" resultType="gmember">
+		select 
+		* 
+		from gmem
+		where gmem_code=#{mem_code}
 	</select>
 	
 	<update id="updateAuthkey">
@@ -119,6 +127,9 @@
 	
 	
 	
+	<select id="selectEmployee" resultType="employee" >
+		select * from ep where ep_code = #{ep_code}
+	</select>
 	
 	
 	

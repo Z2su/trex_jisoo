@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="CR_AppList" value="${dataMap.CR_AppList }" />
 <link rel="stylesheet"
    href="<%=request.getContextPath()%>/resources/css/Coronation.css"
@@ -61,10 +62,10 @@
 				<td>${CRAppBoard.hall_code }</td>
 			</tr>
 			<tr>
-				<th scope="row">공연 코드</th>
-				<td>${CRAppBoard.pf_code }</td>
+				<th scope="row">공연 등록 코드</th>
+				<td>${CRAppBoard.pf_app_code }</td>
 				<th scope="row">공연 일정</th>
-				<td>${CRAppBoard.pfsh_code }</td>
+				<td>${CRAppBoard.startdate } ~ ${CRAppBoard.enddate }</td>
 			</tr>
 			<tr>
 				<th scope="row">작성자</th>
@@ -85,15 +86,21 @@
 	
 	 <!-- 게시판 버튼모음 -->
            <div class="board_butt">
-             <button type="button" class="btn btn-sm btn-white btn-bold"
-				onclick="location.href='<%=request.getContextPath()%>/board/Coronation/app/modify?cr_app_code=${CRAppBoard.cr_app_code }'">
-				<i class="red ace-icon fa fa-pencil bigger-120"></i><b>편집</b>
+           <c:if test="${fn:substring(loginUser.mem_code,0,2) eq 'EP' }" >	
+ 	 		
+ 
+ 	 			<button type="button" class="btn btn-sm btn-white btn-bold"
+             onclick="location.href='/board/Coronation/app/conform/${CRAppBoard.cr_app_code}'">
+				<i class="red ace-icon fa fa-pencil bigger-120"></i><b>승인</b>
 			</button>
+ 	 		 
+           	<button type="button" class="btn btn-sm btn-white btn-bold"
+				onclick="location.href='/board/Coronation/app/delete/${CRAppBoard.cr_app_code }'">
+				<i class="grey ace-icon fa fa-times bigger-120"></i><b>삭제</b>
+			</button>         
+             
+			</c:if> 
 			
-			<a
-				href="/board/Coronation/app/delete/${CRAppBoard.cr_app_code }"><img
-				src="/resources/images/delete.gif" alt="삭제"></a>
-								
 					
 			<button type="button" class="btn btn-sm btn-white btn-bold"
 				onclick="history.go(-1);">

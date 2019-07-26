@@ -8,18 +8,16 @@
 		where mem_id = #{mem_id}
 	</select>
 
-	<update id="updateMember" parameterType="member">
+	<update id="updateMember" parameterType="str">
 		update mem
-		set
-		mem_pwd={mem_pwd},mem_email={mem_email},address={address},tell={tell}
+		set mem_pwd={mem_pwd},mem_email={mem_email},address={address},tell={tell}
 		where mem_id = #{mem_id}
 	</update>
 
 	<update id="deleteMember" parameterType="str">
 		delete
 		from mem
-		where
-		mem_id = #{mem_id}
+		where mem_id = #{mem_id}
 	</update>
 
 </mapper>

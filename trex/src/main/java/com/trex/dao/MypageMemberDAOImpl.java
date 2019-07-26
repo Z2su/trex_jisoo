@@ -4,16 +4,16 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.trex.dto.MypageMemberVO;
 
 @Repository
 public class MypageMemberDAOImpl implements MypageMemberDAO {
-
+	
+	@Autowired
 	private SqlSession session;
-
-	// @Autowired
 	public void setSession(SqlSession session) {
 		this.session = session;
 	}
@@ -26,13 +26,13 @@ public class MypageMemberDAOImpl implements MypageMemberDAO {
 	}
 
 	@Override
-	public void updateMember(String mem_id) throws SQLException {
+	public void updateMember(MypageMemberVO mem_id) throws SQLException {
 		session.update("MypageMember-Mapper.updateMember", mem_id);
 	}
 
 	@Override
 	public void deleteMember(String mem_id) throws SQLException {
-		session.update("MypageMember-Mapper.deleteMember", mem_id);
+		session.delete("MypageMember-Mapper.deleteMember", mem_id);
 	}
 
 	@Override

@@ -1,104 +1,57 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/Perform.css"
-	type="text/css" media="all">
-<div id="contentswrap">
-
-	<!-- subvisual -->
-	<div id="subvisual">
-		<div class="subv_performance">
-			<div class="subv_pat">
-				<p>ë¬¸í™”ë¡œ ì‹œë¯¼ì„ í–‰ë³µí•˜ê²Œ! ëŒ€ì „ì˜ˆìˆ ì˜ì „ë‹¹</p>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<html>
+<head>
+    <title>Å»Åğ È­¸é</title>
+    
+    <style type="text/css">
+        table{
+            margin-left:auto; 
+            margin-right:auto;
+            border:3px solid skyblue;
+        }
+        
+        td{
+            border:1px solid skyblue
+        }
+        
+        #title{
+            background-color:skyblue
+        }
+    </style>
+    
+    <script type="text/javascript">
+        // ºñ¹Ğ¹øÈ£ ¹ÌÀÔ·Â½Ã °æ°íÃ¢
+        function checkValue(){
+            if(!document.deleteform.password.value){
+                alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏÁö ¾Ê¾Ò½À´Ï´Ù.");
+                return false;
+            }
+        }
+    </script>
+    
+</head>
+<body>
+ 
+    <br><br>
+    <b><font size="6" color="gray">³» Á¤º¸</font></b>
+    <br><br><br>
+ 
+    <form name="deleteform" method="post" action="Main.jsp?contentPage=mypage/MypageMemberSecPro.jsp"
+        onsubmit="return checkValue()">
+ 
+        <table>
+            <tr>
+                <td bgcolor="skyblue">ºñ¹Ğ¹øÈ£</td>
+                <td><input type="password" name="password" maxlength="50"></td>
+            </tr>
+        </table>
+        
+      <div class="board_butt">
+				<button type="button" id="removeBtn">Å»Åğ</button>
+				<button type="button" id="listBtn">Ãë¼Ò</button>
 			</div>
-		</div>
-	</div>
-	<!-- //subvisual -->
-
-	<!-- navigation -->
-	<div id="navigation">
-		<div class="naviwrap">
-			<a href="<%=request.getContextPath()%>/">HOME</a>&gt;
-			<navi> <a
-				href="<%=request.getContextPath()%>/mypage/MypageMemberList">ë§ˆì´í˜ì´ì§€</a>&gt;
-			<a href="<%=request.getContextPath()%>/mypage/MypageTroupeSec">íšŒì›íƒˆí‡´</a>
-			</navi>
-			<div class="nv_service">
-				<a class="nvs_print" href="#total"
-					onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span
-					class="hide">Print</span></a>
-			</div>
-		</div>
-	</div>
-	<!-- //navigation -->
-
-	<!-- container -->
-	<div id="container">
-		<%@ include file="/WEB-INF/views/board/commons/submenu.jsp"%>
-		<!-- content-->
-
-		<div id="content">
-			<!-- ì»¨í…ì¸  íƒ€ì´í‹€ -->
-			<h3 class="cnt_ti">
-				íšŒì›íƒˆí‡´
-				<h3>
-					<div id="txt">
-						<div class="dot_line bott_mar_15"></div>
-						<table cellpadding="0" cellspacing="0" width="100%" border="0"
-							class="table1">
-							<tbody>
-								<tr>
-									<td>íšŒì›ì½”ë“œ</td>
-									<td><input type="tro_code" value="${troupe.tro_code}"
-										readonly="readonly"></td>
-								</tr>
-
-								<tr>
-									<td>* ì•„ì´ë””</td>
-									<td><input type="id" value="${loginUser.mem_id}"
-										readonly="readonly"></td>
-								</tr>
-
-								<tr>
-									<td>* íŒ¨ìŠ¤ì›Œë“œ</td>
-									<td><input type="pwd" value="${loginUser.mem_pwd}"
-										readonly=""></td>
-								</tr>
-							</tbody>
-						</table>
-
-						<div id="txt">
-							<table cellpadding="0" cellspacing="0" width="100%" border="0"
-								class="table1">
-
-								<tbody class="text-center">
-									<tr>
-										<td>* ì‚¬ì—…ì ë²ˆí˜¸</td>
-										<td><input type="name" value="${troupe.bupanum}"
-											readonly="readonly"></td>
-									</tr>
-									<tr>
-										<td>* ì‚¬ì—…ì ì´ë¦„</td>
-										<td><input type="birth" value="${troupe.name}"
-											readonly="readonly"></td>
-									</tr>
-									<tr>
-										<td>* ì´ë©”ì¼</td>
-										<td><input type="mile" value="${loginUser.mem_email}"
-											readonly="readonly"></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-
-				<div class="board_butt">
-				<button type="button" id="removeBtn">íƒˆí‡´</button>
-				<button type="button" id="listBtn">ì·¨ì†Œ</button>
-			</div>
+			<div>
 			<script>
 				$('#removeBtn').on('click', function(e) {
 					location="<%=request.getContextPath()%>/logout"
@@ -108,6 +61,6 @@
 				});
 			</script>
 		</div>
-
-		<!-- //container -->
-	</div>
+		</form>
+</body>
+</html>

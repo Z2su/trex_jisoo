@@ -10,8 +10,8 @@ public interface MypageGmemberDAO {
 	// GmemberVO 리스트
 	List<MypageGmemberVO> selectGmemberList() throws SQLException;
 
-	void updateGmember(String gmem_code)throws SQLException;
-	void deleteGmember(String gmem_code)throws SQLException;
+	void updateGmember(MypageGmemberVO gmem)throws SQLException;
+	void deleteGmember(String mem_id)throws SQLException;
 	
 	MypageGmemberVO selectMemberByName(String gmem_code)throws SQLException;
 }
