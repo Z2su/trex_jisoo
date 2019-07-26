@@ -10,7 +10,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dto.PFSHViewVO;
+import com.trex.dto.RHVO;
 import com.trex.dto.SeatReqVO;
+import com.trex.dto.TicketVO;
 
 public class PerformReservationDAOImpl implements PerformReservationDAO {
 
@@ -63,6 +65,32 @@ public class PerformReservationDAOImpl implements PerformReservationDAO {
 		int price = session.selectOne("PFRESE-Mapper.selectSeatPrice",map);
 		
 		return price;
+	}
+
+	@Override
+	public void updatePFSHSRESE(Map<String, Object> map) throws SQLException {
+		
+		session.update("PFRESE-Mapper.updatePFSHSRESE", map);
+		
+	}
+
+	@Override
+	public void insertRH(RHVO rh) throws SQLException {
+		session.update("PFRESE-Mapper.insertRH",rh);
+		
+	}
+
+	@Override
+	public int selectRHNextSeq() throws SQLException {
+		
+		int num = session.selectOne("PFRESE-Mapper.selectRHNextSeq");
+		return num;
+	}
+
+	@Override
+	public void insertTicket(TicketVO tk) throws SQLException {
+		session.update("PFRESE-Mapper.insertTicket", tk);
+		
 	}
 
 }

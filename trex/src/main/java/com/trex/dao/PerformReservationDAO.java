@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 import com.trex.dto.PFSHViewVO;
+import com.trex.dto.RHVO;
 import com.trex.dto.SeatReqVO;
+import com.trex.dto.TicketVO;
 
 public interface PerformReservationDAO {
 	
@@ -17,5 +19,9 @@ public interface PerformReservationDAO {
 	List<SeatReqVO> selectSeatList(String pfsh_code) throws SQLException;
 	int selectSeatPrice(Map<String, Object> map) throws SQLException;
 	
-
+	void updatePFSHSRESE(Map<String, Object> map) throws SQLException;
+	void insertRH(RHVO rh) throws SQLException;
+	int selectRHNextSeq() throws SQLException;
+	void insertTicket(TicketVO tk) throws SQLException; 
+	
 }
