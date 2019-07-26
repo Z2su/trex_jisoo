@@ -66,7 +66,7 @@
 
 				<div id="calendar">
 					<a href="#total" onClick="window.open('<%=request.getContextPath()%>/manager/calregist','일정등록하기','width=600, height=200,teturn=false');">등록</a>
-					
+
 
 				</div>
 			</div>
