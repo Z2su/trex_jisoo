@@ -66,14 +66,13 @@
 
 				<div id="calendar">
 					<a href="#total" onClick="window.open('<%=request.getContextPath()%>/manager/calregist','일정등록하기','width=600, height=200,teturn=false');">등록</a>
-					<button>일정 삭제</button>
+					
 
 				</div>
 			</div>
 		</div>
 
 		<!--quick  -->
-		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
 		<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 </div>
 	<!-- //container -->

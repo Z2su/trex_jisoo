@@ -83,7 +83,6 @@ $(document).ready(function(){
 
 		</div>
 		<!--quick  -->
-		<%@ include file="/WEB-INF/views/board/center/quick.jsp"%>
 		<%@ include file="/WEB-INF/views/board/event/smartEditor_js.jsp"%>
 
 	</div>
