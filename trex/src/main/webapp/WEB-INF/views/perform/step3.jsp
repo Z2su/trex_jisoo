@@ -92,8 +92,11 @@
 				<div class="iframe"
 					style="width: 637; height: 493; background: white;">
 
-					<form name="formDelivery" action="./form" method="post"
-						id="payform">
+					<form name="formDelivery" action="./form" method="post" id="payform">
+						<input type ="hidden" value="${loginUser.mem_id }"/>
+						<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
+						<input type="hidden" name="pfsh_code" value="${PfRese.pfsh_code }" id="pfsh_code" />
+						
 						<input type="hidden" id="ExpressYN" name="ExpressYN" value="N">
 						<div class="contFrame frameBg1">
 							<div class="deliveryL">
@@ -242,7 +245,9 @@
 						<tbody>
 							<tr class="fir" id="MyRow1">
 								<th>일시</th>
-								<td><span id="MyPlayDate" name="MyPlayDate" title=""></span></td>
+								<td><span id="MyPlayDate" name="MyPlayDate" title="">
+								${rdate }
+								</span></td>
 							</tr>
 							<tr id="MyRow2">
 								<th>선택좌석<br>(<span id="MySelectedSeatCnt"
@@ -251,7 +256,11 @@
 								<td class="seat">
 									<div class="scrollY">
 										<ul>
-											<span id="MySelectedSeat" name="MySelectedSeat"></span>
+											<span id="MySelectedSeat" name="MySelectedSeat">
+											<c:forEach items="${seat }" var="seat">
+												<li>${seat}</li>
+											</c:forEach>
+											</span>
 										</ul>
 									</div>
 								</td>

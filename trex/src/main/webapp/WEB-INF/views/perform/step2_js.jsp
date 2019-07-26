@@ -35,6 +35,7 @@ $('.seatcheck').change(function(){
 		$(this).attr('pfshs_rese','2');
 		$(this).attr('checked',true);
 		$('#trexinfo').append($('<input type="hidden" name="seat_code" value="'+seat_code+'" class="'+id+'" />'));
+		$('#MySelectedSeat').append($('<li id="'+id+'">'+id+'</li>'));
 		nextindex++;
 
 	}else{
@@ -43,6 +44,7 @@ $('.seatcheck').change(function(){
 		$(this).attr('pfshs_rese','0');
 		$(this).attr('checked',false);
 		$('#trexinfo .'+id).remove();
+		$('#MySelectedSeat #'+id).remove();
 		nextindex--;
 
 	}
@@ -104,6 +106,8 @@ $('.seatcheck').change(function(){
 			alert('자리선택');
 			return;
 		}else{
+			
+			
 			$('#trexinfo').submit();
 			
 		}

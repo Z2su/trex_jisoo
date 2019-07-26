@@ -12,7 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.trex.dao.PerformReservationDAO;
 import com.trex.dto.PFSHViewVO;
+import com.trex.dto.RHVO;
 import com.trex.dto.SeatReqVO;
+import com.trex.dto.TicketVO;
 
 public class PerformReservationServiceImpl implements PerformReservationService{
 
@@ -71,6 +73,44 @@ public class PerformReservationServiceImpl implements PerformReservationService{
 		
 		return price;
 	}
+
+	@Override
+	public void updatePFSHSRESE(String seat_code, String pfsh_code) throws SQLException {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("seat_code", seat_code);
+		
+		map.put("pfsh_code", pfsh_code);
+		PFRESEDAO.updatePFSHSRESE(map);
+		
+	}
+
+	@Override
+	public String insertRH(RHVO rh) throws SQLException {
+		int num = PFRESEDAO.selectRHNextSeq();
+		String code = "RH"+ String.format("%04d", num);
+		System.out.println("~~^^NUM : "+num);
+		System.out.println("~~^^code : "+code);
+		rh.setRh_code(code);
+		rh.setRh_num(num);
+		
+		PFRESEDAO.insertRH(rh);
+		
+		return code;
+	}
+
+	@Override
+	public void insertTicket(TicketVO tk) throws SQLException {
+		String ticket_code="";
+		for(int i=0;i<10;i++) {
+			ticket_code+=(int)(Math.random()*8+1);
+		}
+		
+		System.out.println("^^"+ticket_code);
+		tk.setTicket_code(ticket_code);
+		PFRESEDAO.insertTicket(tk);
+	}
+	
+	
 	
 	
 	
