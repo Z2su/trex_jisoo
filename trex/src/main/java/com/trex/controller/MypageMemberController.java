@@ -18,32 +18,38 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.trex.dto.MemberVO;
 import com.trex.dto.MypageGmemberVO;
+import com.trex.dto.MypageMemberVO;
+import com.trex.dto.MypageRhVO;
 import com.trex.dto.QnABoardVO;
 import com.trex.dto.QnAReplyVO;
 import com.trex.service.MypageGmemberService;
+import com.trex.service.MypageRhService;
 import com.trex.service.QnABoardService;
 import com.trex.service.QnAReplyService;
 
 @Controller
 @RequestMapping("/mypage")
 public class MypageMemberController {
-	
+
 	Logger log = Logger.getLogger(this.getClass());
-	
+
 	@Autowired
 	private QnABoardService service;
-	
+
 	@Autowired
 	private QnAReplyService reservice;
-	
+
 	@Autowired
 	private MypageGmemberService gMemService;
+	
+	@Autowired
+	private MypageRhService rhService;
 
 	@ModelAttribute("submenuTitle")
 	public String submenuTitle() {
 		return "마이페이지";
 	}
-	
+
 	@ModelAttribute("submenuList")
 	public List<String[]> submenuModel() {
 		List<String[]> submenuList = new ArrayList<String[]>();
@@ -94,20 +100,27 @@ public class MypageMemberController {
 	}
 
 	@RequestMapping(value = "/MypageMemberModify", method = RequestMethod.POST)
-	public String MypageMemberModifyPOST(String mem_code) throws Exception {
-
-		gMemService.getGmember(mem_code);
-
-		return "redirect:/mypage/MypageMemberModify";
+	public String MypageMemberModifyPOST(MypageGmemberVO gmem, MypageMemberVO mem,HttpServletRequest request, HttpServletResponse response, Model model)
+			throws Exception {
+		
+		String url="redirect:mypage/MypageMemberList";
+		
+		System.out.println(">>>"+ gmem);
+		System.out.println("~~>>>"+ mem);
+		gMemService.modify(gmem);
+		
+		//System.out.println(mem_code);
+		return url;
 	}
 
 	@RequestMapping(value = "/MypageMemberSec", method = RequestMethod.GET)
 	public String MypageMemberSecGET(HttpServletRequest request, HttpServletResponse response, Model model)
 			throws Exception {
+		
 		HttpSession session = request.getSession();
-
+		
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-
+		
 		String mem_code = loginUser.getMem_code();
 
 		MypageGmemberVO gmem = gMemService.getGmember(mem_code);
@@ -131,10 +144,12 @@ public class MypageMemberController {
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 
 		String mem_code = loginUser.getMem_code();
-
+		
 		MypageGmemberVO gmem = gMemService.getGmember(mem_code);
+		MypageRhVO rh = rhService.getMember(mem_code);
 
 		model.addAttribute("gmem", gmem);
+		model.addAttribute("rh", rh);
 
 		return "mypage/MypageMemberRescHis";
 	}
@@ -155,27 +170,33 @@ public class MypageMemberController {
 	}
 
 	@RequestMapping(value = "/MypageMemberBoardList", method = RequestMethod.GET)
-	public String MypageMemberBoardListGET(@ModelAttribute("cri") SearchCriteria cri, HttpServletRequest request, HttpServletResponse response, Model model)
-			throws Exception {
+	public String MypageMemberBoardListGET(@ModelAttribute("cri") SearchCriteria cri, HttpServletRequest request,
+			HttpServletResponse response, Model model) throws Exception {
 
 		List<QnABoardVO> qnalist = service.listSearch(cri);
 		List<QnAReplyVO> replist = reservice.listSearch();
-		
+
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		String mem_code = loginUser.getMem_code();
-		
+
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.setTotalCount(service.readSearchBoardCount(cri));
 		model.addAttribute(pageMaker);
 
 		MypageGmemberVO gmem = gMemService.getGmember(mem_code);
-		
+
 		model.addAttribute("list", qnalist);
 		model.addAttribute("replist", replist);
 		model.addAttribute("gmem", gmem);
 
 		return "mypage/MypageMemberBoardList";
+	}
+
+	@RequestMapping(value = "/MypageMemberBoardDetail", method = RequestMethod.GET)
+	public void MypageMemberBoardDetail(@ModelAttribute("cri") SearchCriteria cri, int qna_num, Model model) throws Exception {
+		QnABoardVO qnaboard = service.read(qna_num);
+		model.addAttribute("qnaboard", qnaboard);
 	}
 }

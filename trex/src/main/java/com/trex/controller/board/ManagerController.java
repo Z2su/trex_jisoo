@@ -1,16 +1,20 @@
 package com.trex.controller.board;
 
+import java.io.PrintWriter;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +27,7 @@ import com.trex.dto.EPViewVO;
 import com.trex.dto.EmployeeVO;
 import com.trex.dto.GmemberVO;
 import com.trex.dto.MemberVO;
+import com.trex.dto.MypageTroupeVO;
 import com.trex.dto.TroupeVO;
 import com.trex.service.CalendarService;
 import com.trex.service.MemberService;
@@ -40,7 +45,17 @@ public class ManagerController {
 	
 	
 	@RequestMapping(value="/myinfo")
-	public void myinfoGET() {
+	public void myinfoGET(HttpSession session, Model model)
+			throws SQLException {
+
+		MemberVO loginUser = (MemberVO)session.getAttribute("loginUser");
+
+		String ep_code = loginUser.getMem_code();
+
+		EmployeeVO employee = mservice.getEmployee(ep_code);
+
+		model.addAttribute("employee", employee);
+
 	}
 	
 	
@@ -113,39 +128,23 @@ public class ManagerController {
 		
 	}
 	
-	@RequestMapping(value = "/calendar/list", method = RequestMethod.POST)
-	public ResponseEntity<String> registCal(@RequestBody CalendarVO calendar) throws Exception {
+	@RequestMapping(value = "/calregist", method = RequestMethod.GET)
+	public void registCalGET() throws Exception {
 
-		ResponseEntity<String> entity = null;
-
-		try {
-			calService.create(calendar);
-			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
-		} catch (SQLException e) {
-			e.printStackTrace();
-			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-
-		return entity;
 
 	}
 	
 	
-	@RequestMapping(value = "/calendar/regist", method = RequestMethod.POST)
-	public ResponseEntity<String> register(@RequestBody CalendarVO calendar) throws Exception {
+	@RequestMapping(value="/calregist", method = RequestMethod.POST)
 
-		ResponseEntity<String> entity = null;
-
-		try {
-			calService.create(calendar);
-			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
-		} catch (SQLException e) {
-			e.printStackTrace();
-			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-
-		return entity;
-
+	public void calregist(CalendarVO calendar,HttpServletResponse response)throws Exception{
+		calService.create(calendar);
+		
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out=response.getWriter();
+		out.println("<script>");		
+		out.println("window.opener.location.href='/manager/calendar';window.opener.location.reload();window.close();");
+		out.println("</script>");	
 	}
 	
 	

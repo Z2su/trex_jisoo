@@ -6,7 +6,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +26,6 @@ import com.trex.service.QnAReplyService;
 @RequestMapping("/board/center/qna")
 public class QnAController {
 	
-	Logger log = Logger.getLogger(this.getClass());
 	
 	@Autowired
 	private QnABoardService service;

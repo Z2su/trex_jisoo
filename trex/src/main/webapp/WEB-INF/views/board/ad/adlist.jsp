@@ -52,7 +52,7 @@
 		<div id="content">
 			<!-- 컨텐츠 타이틀 -->
 			<h3 class="cnt_ti">광고 리스트</h3>
-			<form id="search" action="list" method="post">
+			<form id="search" action="adlist" method="post">
 				<input name="page" type="hidden" value="${pageMaker.cri.page }">
 				<input name="perPageNum" type="hidden"
 					value="${pageMaker.cri.perPageNum }">
@@ -104,9 +104,10 @@
 
 				<colgroup>
 					<col style="width: 64px;">
-					<col style="width: 320px;">
+					<col style="width: 300px;">
 					<col style="width: 100px;">
-					<col style="width: 140px;">
+					<col style="width: 100px;">
+					<col style="width: 100px;">
 					<col style="width: 90px;">
 
 				</colgroup>
@@ -116,7 +117,9 @@
 						<th scope="col" class="t_head">제목</th>
 						<th scope="col" class="t_head">작성자</th>
 						<th scope="col" class="t_head">작성일</th>
+						<th scope="col" class="t_head">만료일</th>						
 						<th scope="col" class="t_head t_end">승인여부</th>
+						
 				
 					</tr>
 				</thead>
@@ -128,6 +131,7 @@
 								<th scope="col"><a href="addetail?ad_num=${adVO.ad_num }">${adVO.title }</a></th>
 								<th scope="col">${adVO.writer }</th>
 								<th scope="col">${adVO.regist_date }</th>
+								<th scope="col">${adVO.enddate }</th>
 								
 							<c:choose>
 							<c:when test= "${adVO.app_result eq 0}">
@@ -139,9 +143,6 @@
 							<c:when test="${adVO.app_result eq 2}">
 							<th scope="col">거절</th>
 							</c:when>
-							<c:otherwise>
-							<th scope="col"> 왜 안나와? </th>
-							</c:otherwise>
 							</c:choose>								
 							</tr>
 						</c:forEach>

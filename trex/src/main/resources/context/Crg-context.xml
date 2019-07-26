@@ -6,12 +6,16 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	
-	<bean id="CoronationDAO"
-		  class="com.trex.dao.CoronationDAOImpl"
+	<bean id="CrAppDAO"
+		  class="com.trex.dao.CrAppDAOImpl"
 		  p:session-ref="sqlSession"
-		  		  />
-	<bean id="CoronationService"
-		  class="com.trex.service.CoronationServiceImpl"
-		  p:CRGBoardDAO-ref="CoronationDAO"
 		  />
+		  
+	<bean id="CrAppService"
+		  class="com.trex.service.CrAppServiceImpl"
+		  p:CRAppBoardDAO-ref="CrAppDAO"
+		  />
+		  
+	
+		  
 </beans>

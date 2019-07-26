@@ -28,7 +28,7 @@ public interface MemberService {
 		// 회원조회
 		MemberVO getMember(String mem_id)throws SQLException;
 		MemberVO getMemberByEmail(String mem_email)throws SQLException;
-		GmemberVO getGmember(String id)throws SQLException;
+		GmemberVO getGmember(String mem_code)throws SQLException;
 		TroupeVO getTroupe(String id)throws SQLException;
 		EmployeeVO getEmployee(String ep_code)throws SQLException;
 		

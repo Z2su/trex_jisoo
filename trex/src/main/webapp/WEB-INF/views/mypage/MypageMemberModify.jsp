@@ -44,6 +44,8 @@
 			<!-- 컨텐츠 타이틀 -->
 			<h3 class="cnt_ti">회원정보수정</h3>
 
+		<form action="/mypage/MypageMemberModify" method="post">
+
 			<div id="txt">
 			
 				<table cellpadding="0" cellspacing="0" width="100%" border="0"
@@ -51,24 +53,24 @@
 					<tbody>
 						<tr>
 							<td>회원코드</td>
-							<td><input type="mem_code" value="${loginUser.mem_code}"
+							<td><input name="mem_code" value="${loginUser.mem_code}"
 								readonly="readonly"></td>
 						</tr>
 						
 						<tr>
 							<td>* 아이디</td>
-							<td><input type="id" value="${loginUser.mem_id}"
+							<td><input name="mem_id" value="${loginUser.mem_id}"
 								readonly="readonly"></td>
 						</tr>
 						
 						<tr>
 							<td>* 패스워드</td>
-							<td><input type="pwd" value="${loginUser.mem_pwd}"></td>
+							<td><input name="mem_pwd" value="${loginUser.mem_pwd}"></td>
 						</tr>
 						
 						<tr>
 							<td>* 이메일</td>
-							<td><input type="email" value="${loginUser.mem_email}"></td>
+							<td><input name="mem_email" value="${loginUser.mem_email}"></td>
 						</tr>
 					</tbody>
 				</table>
@@ -80,7 +82,7 @@
 							<tr>
 								<td>* 이름</td>
 							<td>
-								<input type="name" value="${gmem.name}"readonly="readonly">
+								<input name="name" value="${gmem.name}"readonly="readonly">
 							</td>
 							</tr>
 							<tr>
@@ -90,26 +92,27 @@
 							</tr>
 							<tr>
 								<td>* 주소</td>
-								<td><input type="address" value="${gmem.address}"></td>
+								<td><input name="address" value="${gmem.address}"></td>
 							</tr>
 							<tr>
 								<td>* 성별</td>
-								<td><input type="gender" value="${gmem.gender}"
+								<td><input name="gender" value="${gmem.gender}"
 									readonly="readonly"></td>
 							</tr>
 							<tr>
 								<td>* 휴대전화</td>
-								<td><input type="tell" value="${gmem.tell}"></td>
+								<td><input name="tell" value="${gmem.tell}"></td>
 							</tr>
 							<tr>
 								<td>마일리지</td>
-								<td><input type="mile" value="${gmem.mile}"
+								<td><input name="mile" value="${gmem.mile}"
 									readonly="readonly"></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
+			</form>
 
 			<div class="board_butt">
 				<button type="button" id="ModifyBtn">수정</button>
@@ -118,7 +121,9 @@
 			</div>
 			<script>
 				$('#ModifyBtn').on('click', function(e) {
-					location="<%=request.getContextPath()%>/mypage/MypageMemberList"
+					
+					$('form').submit();
+					<%-- location="<%=request.getContextPath()%>/mypage/MypageMemberList" --%>
 				});
 				$('#listBtn').on('click', function(e) {
 					location="<%=request.getContextPath()%>/mypage/MypageMemberList"

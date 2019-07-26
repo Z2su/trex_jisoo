@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/Perform.css"
@@ -62,18 +64,19 @@
 
 
 
-				<div id="calendar" >
-					
+				<div id="calendar">
+					<a href="#total" onClick="window.open('<%=request.getContextPath()%>/manager/calregist','일정등록하기','width=600, height=200,teturn=false');">등록</a>
+					<button>일정 삭제</button>
+
 				</div>
-			</div>			
-		</div>			
-		
+			</div>
+		</div>
+
 		<!--quick  -->
 		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
 		<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
-
-	</div>
+</div>
 	<!-- //container -->
 </div>
-<%@ include file="./calendar_form.jsp" %>
+<%@ include file="./calendar_form.jsp"%>
 

@@ -7,6 +7,204 @@
 <link rel="stylesheet"
    href="<%=request.getContextPath()%>/resources/css/Coronation.css"
    type="text/css" media="all">
+   
+<style>
+.new_tab_wrap ul.style03 {
+	width: 100%;
+	float: left;
+}
+
+.new_tab_wrap ul.style03 li {
+	position: relative;
+	width: 316px;
+	float: left;
+	height: 48px;
+	line-height: 47px;
+	text-align: center;
+	border-top: 1px solid #eaeaee;
+	border-right: 1px solid #eaeaee;
+	border-bottom: 1px solid #c8c8d5;
+	background-color: #fafafc;
+	color: #888888;
+	font-size: 15px;
+}
+
+.new_tab_wrap ul.style03 li:first-child {
+	border-left: 1px solid #eaeaee;
+	width: 317px;
+}
+
+.new_tab_wrap ul.style03 li.active, .new_tab_wrap ul.style03 li.active:hover
+	{
+	border-bottom: 1px solid #fff;
+	background-color: #fff;
+	color: #315eb2;
+}
+
+.new_tab_wrap ul.style03 li:hover {
+	border-bottom: 1px solid #c8c8d5;
+	background-color: #f2f2f8;
+	color: #315eb2;
+}
+
+.new_tab_wrap ul.style03 li a {
+	color: #888888;
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+
+.new_tab_wrap ul.style03 li.active a {
+	color: #315eb2;
+}
+
+.new_tab_wrap ul.style03 li .tab_line {
+	width: 319px;
+	height: 4px;
+	background-color: #7192d0;
+	position: absolute;
+	left: -1px;
+	top: -1px;
+	display: none;
+}
+
+.new_tab_wrap ul.style03 li.active .tab_line {
+	display: block;
+}
+
+.event_board {
+	width: 100%;
+	float: left;
+}
+
+.event_board ul {
+	width: 637px;
+	float: left;
+	margin-top: 30px;
+}
+
+.event_board ul li {
+	width: 292px;
+	height: 237px;
+	float: left;
+	border: 1px solid #e3e3e3;
+	margin-right: 24px;
+	margin-bottom: 30px;
+}
+
+/* 이벤트 본문 */
+.event_list_wrap {
+	width: 285px;
+	height: 231px;
+	margin: 3px auto;
+}
+
+.event_list_wrap dl {
+	width: 100%;
+	float: left;
+}
+
+.event_list_wrap dl dt {
+	width: 100%;
+	float: left;
+	height: 120px;
+	position: relative;
+	overflow: hidden;
+}
+
+.event_list_wrap dl dt img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	-ms-transition: all 300ms linear;
+	transition: all 300ms linear
+}
+
+.event_board ul li:hover img {
+	width: 110%;
+	top: -5%;
+	left: -5%
+}
+
+.event_list_wrap dl dt span {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.event_list_wrap dl dd {
+	width: 100%;
+	float: left;
+}
+
+.event_list_wrap dl dd.data {
+	width: 245px;
+	height: 70px;
+	text-align: center;
+	vertical-align: middle;
+	display: table;
+	margin-left: 20px;
+}
+
+.event_list_wrap dl dd.data p {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 16px;
+	line-height: 23px;
+}
+
+.event_list_wrap dl dd.data p a {
+	color: #333;
+}
+
+.event_list_wrap dl dd.date {
+	width: 100%;
+	float: left;
+	border-top: 1px solid #e3e3e3;
+}
+
+.event_list_wrap dl dd.date p {
+	width: 100%;
+	float: left;
+	margin-left: 70px;
+	padding-left: 20px;
+	background:
+		url("https://ssl.nx.com/s2/game/maplestory/renewal/common/date_icon_new.png")
+		left 1px no-repeat;
+	color: #aaa;
+	font-size: 12px;
+	line-height: 16px;
+	margin-top: 15px;
+	font-family: "Tahoma";
+}
+
+.event_view_roll .event_list_wrap dl dd.date p {
+	width: 100%;
+	float: left;
+	margin-left: 40px !important;
+	padding-left: 20px;
+	background:
+		url("https://ssl.nx.com/s2/game/maplestory/renewal/common/date_icon_new.png")
+		left 1px no-repeat;
+	color: #aaa;
+	font-size: 12px;
+	line-height: 16px;
+	margin-top: 15px;
+	font-family: "Tahoma";
+}
+
+.button{
+	board :1px solid #ff0008;
+	background-color : #ffe6f2;
+	font : 12px 굴림;
+	fount-weight : bold;
+	color : #ff0008;
+	width:100%;
+}
+</style>   
+   
+   
 <body>
  
    <div id="contentswrap">
@@ -50,10 +248,11 @@
 			<h3 class="cnt_ti">대관 신청 리스트</h3>
 			<table width="100%" class="table1 center" border="0" cellspacing="0" cellpadding="0">
 				<colgroup>
-					<col style="width: 45px;">
-					<col style="width: 280px;">
-					<col style="width: 90px;">
-					<col style="width: 145px;">
+					<col style="width: 5%;">
+					<col style="width: 50%;">
+					<col style="width: 20%;">
+					<col style="width: 15%;">
+					<col style="width: 10%;">
 					
 
 				</colgroup>
@@ -63,6 +262,7 @@
 						<th scope="col" class="t_head">제목</th>
 						<th scope="col" class="t_head">작성일</th>
 						<th scope="col" class="t_head">작성자</th>
+						<th scope="col" class="t_head">승인여부</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -84,6 +284,15 @@
 								${CR_AppList.writer }
 							</a>
 							</td>
+							<c:choose>
+							<c:when test= "${CR_AppList.enable eq 1}">
+							<th scope="col">대기중</th>
+							</c:when>
+							<c:when test="${CR_AppList.enable eq 2}">
+							<th scope="col">승인</th>
+							</c:when>
+							
+							</c:choose>		
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -97,11 +306,7 @@
 					<img src="/resources/images/write.gif" alt="쓰기"></a>
 			</div>
 
-			<div class="pageNum">
-				<div class="pageNum">
-					<span class="page">1</span><a href="?&amp;GotoPage=2" class="page_ov">2</a>
-				</div>
-			</div>
+			
 
 		</div>
 	

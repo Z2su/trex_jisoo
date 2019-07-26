@@ -44,9 +44,7 @@ public class PerformBoardController {
 		List<String[]> submenuList = new ArrayList<String[]> ();
 		
 		submenuList.add(new String[] {"공연안내","/board/perform/list"});
-		submenuList.add(new String[] {"공연예매안내","rese"});
-		submenuList.add(new String[] {"기타공연소식","gg"});
-		submenuList.add(new String[] {"공연정보신청","gg"});
+		
 		
 		return submenuList;
 	}
@@ -139,7 +137,8 @@ public class PerformBoardController {
 	}
 
 
-/*	@ResponseBody
+/*	
+  	@ResponseBody
 
 	@RequestMapping(value="pfcode", method=RequestMethod.POST)
 	public List<PerformScheduleVO> pfcodesearch(@RequestBody String pf_code){
@@ -155,7 +154,8 @@ public class PerformBoardController {
 		}
 		return dataList;
 		
-	}*/
+	}
+	*/
 	
 	@ResponseBody
 	@RequestMapping(value="pfcode", method=RequestMethod.POST)

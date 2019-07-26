@@ -8,7 +8,7 @@ import com.trex.dto.MypageTroupeCrAppListVO;
 
 public interface MypageTroupeCrAppDAO {
 
-	public List<MypageTroupeCrAppListVO> selectCRAppList() throws SQLException;
+    List<MypageTroupeCrAppListVO> selectCRAppList() throws SQLException;
 	MypageTroupeCrAppListVO selectCRApp(String cr_app_code) throws SQLException;
 	
 	void insertCRApp(MypageTroupeCrAppListVO CRApp) throws SQLException;

@@ -1,6 +1,6 @@
 package com.trex.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class CrAppVO {
 	
@@ -10,12 +10,14 @@ public class CrAppVO {
 	private String ep_code;
 	private String writer;
 	private String title;
-	private String enable;
+	private int enable;
 	private String cont;
 	private Date regdate;
 	private Date modidate;
 	private String pf_code;
-	private String pfsh_code;
+	private Date startdate;
+	private Date enddate;
+	private String pf_app_code;
 	
 	public String getCr_app_code() {
 		return cr_app_code;
@@ -53,10 +55,10 @@ public class CrAppVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getEnable() {
+	public int getEnable() {
 		return enable;
 	}
-	public void setEnable(String enable) {
+	public void setEnable(int enable) {
 		this.enable = enable;
 	}
 	public String getCont() {
@@ -83,19 +85,33 @@ public class CrAppVO {
 	public void setPf_code(String pf_code) {
 		this.pf_code = pf_code;
 	}
-	public String getPfsh_code() {
-		return pfsh_code;
+	public Date getStartdate() {
+		return startdate;
 	}
-	public void setPfsh_code(String pfsh_code) {
-		this.pfsh_code = pfsh_code;
+	public void setStartdate(Date startdate) {
+		this.startdate = startdate;
+	}
+	public Date getEnddate() {
+		return enddate;
+	}
+	public void setEnddate(Date enddate) {
+		this.enddate = enddate;
+	}
+	public String getPf_app_code() {
+		return pf_app_code;
+	}
+	public void setPf_app_code(String pf_app_code) {
+		this.pf_app_code = pf_app_code;
 	}
 	@Override
 	public String toString() {
 		return "CrAppVO [cr_app_code=" + cr_app_code + ", cr_app_num=" + cr_app_num + ", hall_code=" + hall_code
 				+ ", ep_code=" + ep_code + ", writer=" + writer + ", title=" + title + ", enable=" + enable + ", cont="
-				+ cont + ", regdate=" + regdate + ", modidate=" + modidate + ", pf_code=" + pf_code + ", pfsh_code="
-				+ pfsh_code + "]";
+				+ cont + ", regdate=" + regdate + ", modidate=" + modidate + ", pf_code=" + pf_code + ", startdate="
+				+ startdate + ", enddate=" + enddate + ", pf_app_code=" + pf_app_code + "]";
 	}
+	
+	
 	
 	
 }

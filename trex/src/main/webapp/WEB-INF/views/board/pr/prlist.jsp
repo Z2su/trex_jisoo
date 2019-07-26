@@ -30,9 +30,8 @@
 				href="<%=request.getContextPath()%>/board/pr/prlist">홍보게시판</a>
 			<div class="nv_service">
 				<a class="nvs_print" href="#total"
-					onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span>
-						class="hide">Print</span></a>
-
+					onclick="printContent('/html/kr/performance/performance_010101.html?mode=V&amp;code=2946');return false"><span
+					class="hide">Print</span></a>
 			</div>
 		</div>
 	</div>
@@ -111,8 +110,7 @@
 						<th scope="col" class="t_head">번호</th>
 						<th scope="col" class="t_head">제목</th>
 						<th scope="col" class="t_head">작성자</th>
-						<th scope="col" class="t_head">작성일</th>
-						<th scope="col" class="t_head t_end">승인여부</th>
+						<th scope="col" class="t_head t_end">작성일</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -125,20 +123,7 @@
 								<th scope="col">${prVO.regdate }</th>
 
 
-								<c:choose>
-									<c:when test="${prVO.app_result eq 0}">
-										<th scope="col">대기중</th>
-									</c:when>
-									<c:when test="${prVO.app_result eq 1}">
-										<th scope="col">승인</th>
-									</c:when>
-									<c:when test="${prVO.app_result eq 2}">
-										<th scope="col">거절</th>
-									</c:when>
-									<c:otherwise>
-										<th scope="col">왜 안나와?</th>
-									</c:otherwise>
-								</c:choose>
+								
 							</tr>
 						</c:forEach>
 					</c:if>

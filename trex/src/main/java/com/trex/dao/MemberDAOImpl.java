@@ -175,7 +175,7 @@ public class MemberDAOImpl  implements MemberDAO{
 
 	@Override
 	public List<EPViewVO> selectEmployeeList() throws SQLException {
-		List<EPViewVO> viewlist = session.selectList("Member-Mapper.selectEmployee");
+		List<EPViewVO> viewlist = session.selectList("Member-Mapper.selectEmployeeList");
 		return viewlist;
 	}
 
@@ -201,6 +201,20 @@ public class MemberDAOImpl  implements MemberDAO{
 		session.update("Member-Mapper.deleteMember", mem_code);
 		
 	}
+
+	@Override
+	public GmemberVO selectGmemberByCode(String mem_code) throws SQLException {
+		GmemberVO gmember = session.selectOne("Member-Mapper.selectGmemberByCode",mem_code);
+		return gmember;
+	}
+
+	@Override
+	public EmployeeVO selectEmployee(String ep_code) {
+		EmployeeVO employee = session.selectOne("Member-Mapper.selectEmployee",ep_code);
+		return employee;
+	}
+	
+	
 
 	@Override
 	public void updateMemberPwd(MemberVO member) throws SQLException {

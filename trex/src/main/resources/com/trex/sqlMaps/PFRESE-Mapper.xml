@@ -18,10 +18,51 @@
 		select * 
 		from pfsh_view 
 		where pf_code = #{pf_code} 
-		and rundate between #{s_rundate} and #{e_rundatee};
-		
-	
+		and rundate between #{rundate} and #{rundate}
+
 	</select>
+	<select id="selectSeatCount" resultType="SeatReq">
+		select grade, price, count(*) as count
+		from seat_view
+		where pfsh_code=#{pfsh_code} and pfshs_rese=0
+		group by grade, price
+		order by PRICE desc
+	</select>
+	<select id="selectSeatList" resultType="SeatReq">
+		select col, num, grade, pfshs_rese, seat_code
+		from seat_view
+		where pfsh_code=#{pfsh_code}
+		order by col ,num
+	</select>
+	
+	<select id="selectSeatPrice" parameterType="map" resultType="int">
+		select price
+		from seat_view 
+		where seat_code=#{seat_code} and pfsh_code=#{pfsh_code}
+		
+	</select>
+	
+	<update id="updatePFSHSRESE" parameterType="map" >
+		update pfshs
+		set pfshs_rese=1
+		where pfsh_code=#{pfsh_code} and seat_code=#{seat_code}
+	</update>
+	 
+	<update id="insertRH" >
+		insert into
+		RH(rh_code,rh_num,pay_price,gmem_code,pfsh_code)
+		values(#{rh_code},#{rh_num},#{pay_price},#{gmem_code},#{pfsh_code})
+	
+	</update>	
+	<select id="selectRHNextSeq" resultType="int">
+		select rh_SEQ.nextval as rh_num from dual
+	</select>
+	
+	<update id="insertTicket">
+		insert into
+		ticket(seat_code, rh_code, ticket_code)
+		values(#{seat_code}, #{rh_code}, #{ticket_code})
+	</update>
 
 
 
