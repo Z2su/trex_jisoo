@@ -42,77 +42,154 @@
 		</div>
 	</div>
 
-
 	
-	<!-- //navigation -->
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-	<!-- container -->
-	<div id="container">
-		<%-- 				<%@ include file="/WEB-INF/views/board/commons/submenu.jsp" %>
- --%>
+.login-page {
+  width: 850px;
+  padding: 15% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+  background: color:red; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+</style>
+<div class="login-page">
 
-		<!-- content-->
-		<!-- <div id="content"> -->
-		<!-- 컨텐츠 타이틀 -->
-		<!-- 	<h3 class="cnt_ti">detail</h3> -->
-
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 col-md-offset-3" style="width: 50%">
-					<div class="login-panel panel panel-default"
-						style="margin-top: 10%; margin-bottom: 10%;">
-						<div class="panel-heading">
-							<h3 class="panel-title">일반 회원 가입</h3>
-						</div>
-						<div class="panel-body">
-							<form role="form" action="joinregist" method="post">
-								<!-- <form role="form"> -->
-								<fieldset>
+  <form class="form"action="joinregist" method="post">
+								<h3>일반 회원가입</h3>
 									<div class="form-group" id="divInputId">
 										<label>아이디</label> <input class="form-control"
 											style="margin-bottom: 5px;" placeholder="아이디" name="mem_id"
 											id="mem_id" type="text" /> <input type="button"
 											class="btn btn-default" style="width: 30%;" id="checkid"
-											value="중복확인" onclick="duplicationId();" />
-											<br/>
-											<span id="idMsg"></span>
+											value="중복확인" onclick="duplicationId();" /> <br /> <span
+											id="idMsg"></span>
 									</div>
-								
-								
-		
 									<div class="form-group">
 										<label>비밀번호</label> <input class="form-control"
 											placeholder="비밀번호" name="mem_pwd" id="mem_pwd"
-											type="password"  />
+											type="password" />
 									</div>
 									<div class="form-group">
 										<label>비밀번호 확인</label> <input class="form-control"
 											placeholder="비밀번호 확인" name="mem_pwd2" id="mem_pwd2"
-											type="password"	/>
-										<font id="chkNotice" size="2"></font>
+											type="password" /> <font id="chkNotice" size="2"></font>
 									</div>
 									<div class="form-group">
 										<label>이름</label> <input class="form-control" placeholder="이름"
-											name="name" id="name" type="text" />
-											<br/>
-											<span id="nameMsg"></span>
+											name="name" id="name" type="text" /> <br /> <span
+											id="nameMsg"></span>
 									</div>
 									<div class="form-group">
-										<label>성별</label> <input type="radio" name="gender" value="남">남
-										<input type="radio" name="gender" value="여">여
+										<label>남</label> <input type="radio" name="gender" value="남">여
+										<input type="radio" name="gender" value="여">
 									</div>
-										<div class="form-group required">
-											<label for="birth">생년월일</label>
-											<input type="text" class="form-control" id="birth" name="birth" placeholder="ex) 19990415" required>
-											<div class="check_font" id="birth_check"></div>
-											<span id="birthMsg"></span>
-										</div>
-										<div class="form-group required">
-											<label for="tell">전화번호</label>
-											<input type="text" class="form-control" id="tell" name="tell" placeholder="ex)01099593141" required>
-											<div class="check_font" id="birth_check"></div>
-											<span id="tellMsg"></span>
-										</div>
+									<div class="form-group required">
+										<label for="birth">생년월일</label> <input type="text"
+											class="form-control" id="birth" name="birth"
+											placeholder="ex) 19990415" required>
+										<div class="check_font" id="birth_check"></div>
+										<span id="birthMsg"></span>
+									</div>
+									<div class="form-group required">
+										<label for="tell">전화번호</label> <input type="text"
+											class="form-control" id="tell" name="tell"
+											placeholder="ex)01099593141" required>
+										<div class="check_font" id="birth_check"></div>
+										<span id="tellMsg"></span>
+									</div>
 									<div class="form-group">
 										<label>이메일</label> <input type="text" name="mem_email"
 											id="mem_email" maxlength="30">@ <select
@@ -122,12 +199,6 @@
 											<option>gmail.com</option>
 											<option>nate.com</option>
 										</select>
-										
-				
-										<!-- <div class="form-group">
-                            		<label>사업자번호</label>
-                            		<input class="form-control" placeholder="사업자번호" name="signUpUserCompanyNo" id="signUpUserCompanyNo" type="text" />
-                            	</div> -->
 									</div>
 									<div class="form-group">
 										<label style="display: block;">주소</label> <input
@@ -138,6 +209,19 @@
 											onclick="execPostCode();">
 											<i class="fa fa-search"></i> 우편번호 찾기
 										</button>
+									</div>
+									<div class="form-group">
+										<input class="form-control" style="top: 5px;"
+											placeholder="도로명 주소" name="address" id="addressone"
+											type="text" readonly="readonly" />
+									</div>
+									<div class="form-group">
+										<input class="form-control" placeholder="상세주소"
+											name="signUpUserCompanyAddressDetail" id="addresstwo"
+											type="text" />
+									</div>
+									<button id="join" type="submit"
+										class="btn btn-lg btn-success btn-block">회원가입</button>
 										<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	                                <div class="modal-dialog">
 	                                    <div class="modal-content">
@@ -173,38 +257,22 @@
 	                                </div>
 	                                /.modal-dialog
 	                            </div> -->
-									</div>
-									<div class="form-group">
-										<input class="form-control" style="top: 5px;"
-											placeholder="도로명 주소" name="address" id="addressone"
-											type="text" readonly="readonly" />
-									</div>
-									<div class="form-group">
-										<input class="form-control" placeholder="상세주소"
-											name="signUpUserCompanyAddressDetail" id="addresstwo"
-											type="text" />
-									</div>
-									<button id="join" type="submit"
-										class="btn btn-lg btn-success btn-block">회원가입</button>
 									<%-- <button id="join" type="submit"  href="${pageContext.request.contextPath}"
 										class="fa fa-rotate-right pr-2" >취소하기</button> --%>
-										<%-- <div class="reg_button">
+									<%-- <div class="reg_button">
 										<a class="btn btn-danger px-3" href="${pageContext.request.contextPath}">
 											<i class="fa fa-rotate-right pr-2" aria-hidden="true"></i>취소하기
 											</a>  --%>
 									<!-- <input id="join2" type="button"
 										class="btn btn-lg btn-success btn-block" value="회원가입"
 										onclick="DosignUp();" /> -->
-									
 
-										
-								</fieldset>
+
+
 							</form>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+			
 
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 		<script type="text/javascript">

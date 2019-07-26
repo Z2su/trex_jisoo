@@ -20,7 +20,6 @@ public class MimeAttachNotifier {
 	
 	public void sendMail(MailRequest mail,String uploadPath){
 		// 메시지 생성
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!22");
 		MimeMessage message=mailSender.createMimeMessage();
 		try {
 			//메시지 작성 헬퍼.
@@ -55,7 +54,6 @@ public class MimeAttachNotifier {
 	}
 	public void sendMail(MailRequest mail){
 		// 메시지 생성
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11");
 		MimeMessage message=mailSender.createMimeMessage();
 		try {
 			//메시지 작성 헬퍼.

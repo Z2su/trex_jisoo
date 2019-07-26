@@ -49,6 +49,7 @@ public interface MemberDAO {
 	
 	
 	void updateMember(MemberVO member)throws SQLException;
+	void updateMemberPwd(MemberVO member)throws SQLException;
 	void updateGmember(GmemberVO gmember)throws SQLException;
 	void updateTroupe(TroupeVO troupe)throws SQLException;
 	void updateEmployee(EmployeeVO employee)throws SQLException;
@@ -59,12 +60,15 @@ public interface MemberDAO {
 	int selectMemberNextSeq()throws SQLException;
 	
 	MemberVO selectMemberById(String mem_id)throws SQLException;
+	MemberVO selectMemberByEmail(String mem_id)throws SQLException;
+	
 	GmemberVO selectGmemberByCode(String mem_code)throws SQLException;
 	void GetKey(String mem_id, String key);
 	
 	void updateAuthkey(MemberVO member) throws SQLException;
 	
 	void updateAuthstatus(MemberVO member) throws SQLException;
+	
 	EmployeeVO selectEmployee(String ep_code);
 
 }
