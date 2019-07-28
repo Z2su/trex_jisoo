@@ -136,9 +136,16 @@ public class ManagerController {
 	
 	
 	@RequestMapping(value="/calregist", method = RequestMethod.POST)
-
 	public void calregist(CalendarVO calendar)throws Exception{
 		calService.create(calendar);
+	}
+	
+	
+	@RequestMapping(value="/delete" )
+	public String caldelete(String code,HttpServletResponse response)throws Exception{
+		calService.remove(code);
+		return "manager/calendar";
+		
 	}
 	
 	

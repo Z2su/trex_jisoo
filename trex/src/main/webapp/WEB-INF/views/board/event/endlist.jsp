@@ -269,7 +269,7 @@
 										<dt>
 											<a
 												href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}">
-												<img src="<%=request.getContextPath() %>/resources/imageUpload/${event.event_code}.jpg"
+												<img src="<%=request.getContextPath() %>/resources/event/imageUpload/${event.event_code}.jpg"
 												alt="이벤트 섬네일"></a>
 										</dt>
 										<dd class="data">

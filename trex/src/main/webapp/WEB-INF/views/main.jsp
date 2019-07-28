@@ -410,7 +410,7 @@
 				<h3>공지사항</h3>
 			</div>
 			<ul class="y_news">
-			<c:forEach items="${noticeList}" var="notice"  begin="0" end="3">
+			<c:forEach items="${noticeList}" var="notice"  begin="0" end="4">
 				<li><a href="#">${notice.title }</a>
 				<fmt:formatDate value="${notice.regdate}" pattern="yyyy-MM-dd" /></li>
 			</c:forEach>
@@ -423,8 +423,8 @@
 			</div>
 			<ul class="a_news" >
 				<c:forEach items="${faqList}" var="faq"  begin="0" end="5">
-				<li style="width:280; overflow: hidden; 
-  text-overflow: ellipsis;"><a href="#" >${faq.title }</a>${faq.cont } 
+				<li style="width:280; hight:65px; overflow: hidden; 
+  text-overflow: ellipsis;"><a href="#" >${faq.title }</a> 
 				</li>
 			</c:forEach>
 			</ul>
