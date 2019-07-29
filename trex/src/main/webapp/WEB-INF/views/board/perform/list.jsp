@@ -193,11 +193,8 @@
 							</div>
 						</div>
 					</div>
-<<<<<<< HEAD
 				</div >--%>
-=======
-				</div> --%>
->>>>>>> branch 'jisoo' of https://github.com/Z2su/trex_jisoo.git
+
 <!-- 
 				<div id="performanceTab">
 					<a
