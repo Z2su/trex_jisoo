@@ -83,9 +83,11 @@
 				<i class="red ace-icon fa fa-pencil bigger-120"></i><b>편집</b>
 			</button>
 			
-			<a
-				href="/board/Coronation/delete/${CRGBoard.crg_code }"><img
-				src="/resources/images/delete.gif" alt="삭제"></a>
+			<button type="button" class="btn btn-sm btn-white btn-bold"
+				onclick="location.href='/board/Coronation/delete/${CRGBoard.crg_code }'">
+				<i class="grey ace-icon fa fa-times bigger-120"></i><b>삭제</b>
+			</button>      
+			
 								
 					
 			<button type="button" class="btn btn-sm btn-white btn-bold"

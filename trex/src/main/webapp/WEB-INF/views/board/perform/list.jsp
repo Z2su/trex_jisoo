@@ -193,7 +193,11 @@
 							</div>
 						</div>
 					</div>
+<<<<<<< HEAD
 				</div >--%>
+=======
+				</div> --%>
+>>>>>>> branch 'jisoo' of https://github.com/Z2su/trex_jisoo.git
 <!-- 
 				<div id="performanceTab">
 					<a
@@ -272,11 +276,19 @@
 						<div class="clear"></div>
 						<p class="more">
 							<a href="#total"
-								onclick="window.open('/performrese/${PFGBoard.pf_code }/step1', '네이버새창', 'width=910, height=690, toolbar=no, menubar=no, scrollbars=no, resizable=yes' );" ><img
+								onclick="window.open('/performrese/${PFGBoard.pf_code }/step1', '네이버새창', 'width=910, height=690, toolbar=no, menubar=no, scrollbars=no, resizable=yes' );" >
+								<img
 
 								src="/resources/images/perform/more.gif"
 								alt="${PFGBoard.title } 공연예매"></a>
 						</p>
+						<%-- <p class="more1">
+							<a href="#total"
+								onclick="window.open('/credit/${PFGBoard.pf_code }', '네이버새창', 'width=910, height=690, toolbar=no, menubar=no, scrollbars=no, resizable=yes' );" ><img
+
+								src="/resources/images/perform/more.gif"
+								alt="${PFGBoard.title } 공연예매"></a>
+						</p> --%>
 						<p class="reser">
 							<a
 								href="detail/${PFGBoard.pfg_code }"><img
@@ -338,7 +350,6 @@
 
 		</div>
 		<!--quick  -->
-		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
 		<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 
 	</div>

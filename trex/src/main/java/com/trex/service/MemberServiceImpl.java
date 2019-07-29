@@ -25,6 +25,7 @@ public class MemberServiceImpl implements MemberService {
 		public void setMemberDAO(MemberDAO memberDAO) {
 			this.memberDAO=memberDAO;
 		}
+		
 		@Autowired
 		private MimeAttachNotifier notifier;
 		public void setNotifier(MimeAttachNotifier notifier) {
@@ -61,11 +62,16 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO getMember(String mem_id) throws SQLException {
 		return memberDAO.selectMemberById(mem_id);
 	}
+	@Override
+	public MemberVO getMemberByEmail(String mem_email) throws SQLException {
+		return memberDAO.selectMemberByEmail(mem_email);
+	}
 
 	@Override
-	public GmemberVO getGmember(String id) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public GmemberVO getGmember(String mem_code) throws SQLException {
+		
+		return memberDAO.selectGmemberByCode(mem_code); 
+				
 	}
 
 	@Override
@@ -142,7 +148,7 @@ public class MemberServiceImpl implements MemberService {
 		mail.setTitle("회원가입");
 		mail.setContent(new StringBuffer().append("<h1>[이메일 인증]</h1>")
 				.append("<p>아래 링크를 클릭하시면 이메일 인증이 완료됩니다.</p>")
-				.append("<a href='http://localhost/joinConfirm?mem_id=")
+				.append("<a href='http://192.168.0.117/joinConfirm?mem_id=")
 				.append(member.getMem_id())
 				.append("&mem_code=")
 				.append(member.getMem_code())
@@ -187,7 +193,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public EmployeeVO getEmployee(String ep_code) throws SQLException {
 
-		EmployeeVO employee = null;
+		EmployeeVO employee = memberDAO.selectEmployee(ep_code);
 		return employee;
 	}
 
@@ -238,6 +244,13 @@ public class MemberServiceImpl implements MemberService {
 		memberDAO.insertMember(member);
 		memberDAO.insertEmployee(employee);
 		
+	}
+
+
+
+	@Override
+	public void modifyPWD(MemberVO member) throws SQLException {
+		memberDAO.updateMemberPwd(member);		
 	}
 
 

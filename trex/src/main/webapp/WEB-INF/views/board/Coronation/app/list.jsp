@@ -246,22 +246,13 @@
 	<div id="content">
 			<!-- 컨텐츠 타이틀 -->
 			<h3 class="cnt_ti">대관 신청 리스트</h3>
-			<div class="new_tab_wrap">
-					<ul class="style03">
-						<li class="active"><a
-							href="<%=request.getContextPath()%>/board/Coronation/app/list">대관신청
-								리스트</a> <span class="tab_line"></span></li>
-						<li><a
-							href="<%=request.getContextPath()%>/board/Coronation/app/conflist">대관승인
-								리스트</a> <span class="tab_line"></span></li>
-					</ul>
-				</div>
 			<table width="100%" class="table1 center" border="0" cellspacing="0" cellpadding="0">
 				<colgroup>
-					<col style="width: 45px;">
-					<col style="width: 280px;">
-					<col style="width: 90px;">
-					<col style="width: 145px;">
+					<col style="width: 5%;">
+					<col style="width: 50%;">
+					<col style="width: 20%;">
+					<col style="width: 15%;">
+					<col style="width: 10%;">
 					
 
 				</colgroup>
@@ -271,6 +262,7 @@
 						<th scope="col" class="t_head">제목</th>
 						<th scope="col" class="t_head">작성일</th>
 						<th scope="col" class="t_head">작성자</th>
+						<th scope="col" class="t_head">승인여부</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -292,6 +284,15 @@
 								${CR_AppList.writer }
 							</a>
 							</td>
+							<c:choose>
+							<c:when test= "${CR_AppList.enable eq 1}">
+							<th scope="col">대기중</th>
+							</c:when>
+							<c:when test="${CR_AppList.enable eq 2}">
+							<th scope="col">승인</th>
+							</c:when>
+							
+							</c:choose>		
 						</tr>
 					</c:forEach>
 				</tbody>

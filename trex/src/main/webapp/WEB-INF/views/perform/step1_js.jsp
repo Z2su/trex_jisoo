@@ -37,6 +37,7 @@ var nextindex=0;
 	var idx = 0;
 	var s_rundate;
 	var e_rundate;
+	var rdate;
 
 	
 	var rundateFunc=function(){
@@ -68,9 +69,17 @@ var nextindex=0;
 		e_rundate=new Date($(this).attr('run'));
 		e_rundate.setDate(e_rundate.getDate()+1); */
 		//alert(s_rundate+"~~"+e_rundate); 
-		$('#'+runday).css("background-color","#FF9933");
+		
+		
+		rdate = String(rundate);
+		var d = rdate.substr(6,2);
+		var M = rdate.substr(4,2);
+
+		var y = rdate.substr(0,4);
+		rdate = y+"년 " + M + "월 " + d + "일";
+		$('#'+d).css("background-color","#FF9933");
 		$('#MyPlayDate').empty();
-		$('#MyPlayDate').text(rundate);
+		$('#MyPlayDate').text(rdate);
 		//$(this).parent().css("background-color","#c50102");
 		//alert("ㅎㅎ"+$(this).parent().attr('id'));
 
@@ -89,13 +98,21 @@ var nextindex=0;
 				$.each(data, function(idx, val) {
 					//alert(idx + " " + new Date(val.starttime));
 					
+					
+								var starttime=new Date(val.starttime);
+								var h = starttime.getHours();
+								var m = starttime.getMinutes();
+								h = ("0"+h).substr(-2);
+								m = ("0"+m).substr(-2);
+								starttime = h + " : " + m;
+					
 					/* <ul>
 					<li>
 					<a id="CellPlaySeq" name="CellPlaySeq" href="#;" onclick="fnSelectPlaySeq(0, '001', '20190819', '15시 00분 ', 'N', '201908222359')">15시 00분 </a>
 					</li>
 					<li><a id="CellPlaySeq" name="CellPlaySeq" href="#;" onclick="fnSelectPlaySeq(1, '002', '20190819', '19시 30분 ', 'N', '201908222359')">19시 30분 </a></li></ul> */
 					
-					ul+='<li><a id="CellPlaySeq" href="#" onclick="seat_go(this);" name ="" pfsh_code="'+val.pfsh_code+'"value="'+new Date(val.starttime)+'">'+new Date(val.starttime)+'</a></li>';
+					ul+='<li><a id="CellPlaySeq" href="#" onclick="seat_go(this);" name ="" pfsh_code="'+val.pfsh_code+'"value="'+starttime+'">'+starttime+'</a></li>';
 					//var option = $('<option value="'+val.pfsh_code+'">'+val.starttime+'</option>');								
 				});
 					ul+='</ul>';
@@ -116,6 +133,10 @@ var nextindex=0;
 	function seat_go(obj){
 		nextindex=2;
 		var pfsh_code = $(obj).attr('pfsh_code');
+
+		$('#MyPlayDate').empty();
+		$('#MyPlayDate').append(rdate+"<br/>"+$(obj).attr('value'));
+
 		
 		//alert("ggg>>"+pfsh_code);
 		$('input[name="pfsh_code"]').remove();
@@ -246,6 +267,9 @@ var nextindex=0;
 			return;
 		}
 		if(nextindex==2){
+			var input = $('<input type="hidden" value="'+$('#MyPlayDate').text()+'" name="rdate"/>');
+			$('#trexinfo').prepend(input);
+			
 			$('#trexinfo').submit();
 			
 		}

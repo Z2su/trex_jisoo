@@ -51,6 +51,7 @@
 body {
   font-family: 'Lato', sans-serif;
   background-color: #f8f8f8;
+  : 
 }
 body .container {
   position: relative;
@@ -58,7 +59,8 @@ body .container {
   width: 700px;
   height: 500px;
   margin: 80px auto 0;
-   margin-bottom: auto;
+   margin-top: 10%;
+   margin-bottom: 10%;
   background-color: #ffffff;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
@@ -326,12 +328,18 @@ body .container .content .signup-cont {
 						                    <label for="mem_id">Your id</label>
 						                    <input type="password" name="mem_pwd" id="password" class="inpt" required="required" placeholder="Your password"/>
                 						    <label for="password">Your password</label>
+                						    
+                						     <a href="/find" >
+						                    	아이디 / 패스워드 찾기
+						                    </a><br/>
+                						    
 						                    <input type="checkbox" id="remember" class="checkbox" checked>
 						                    <label for="remember">Remember me</label>
 						                    <div class="submit-wrap">
 							                        <input type="submit" value="Sign in" class="submit">
 							                        <a href="#" class="more"></a>
-						                    </div>
+						                    </div><br>
+						                  
         					        </form>
     				        </div>
     				      

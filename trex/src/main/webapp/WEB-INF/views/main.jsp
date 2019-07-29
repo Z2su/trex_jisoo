@@ -3,6 +3,122 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<style>
+
+/* 이벤트 본문 */
+.event_list_wrap {
+	width: 228px;
+	height: 185px;
+	margin: 3px auto;
+}
+
+.event_list_wrap dl {
+	width: 100%;
+	float: left;
+}
+
+.event_list_wrap dl dt {
+	width: 100%;
+	float: left;
+	height: 120px;
+	position: relative;
+	overflow: hidden;
+}
+
+.event_list_wrap dl dt img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	-ms-transition: all 300ms linear;
+	transition: all 300ms linear
+}
+
+.event_board ul li:hover img {
+	width: 110%;
+	top: -5%;
+	left: -5%
+}
+
+.event_list_wrap dl dt span {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.event_list_wrap dl dd {
+	width: 100%;
+	float: left;
+}
+
+.event_list_wrap dl dd.data {
+	width: 245px;
+	height: 70px;
+	text-align: center;
+	vertical-align: middle;
+	display: table;
+	margin-left: 20px;
+}
+
+.event_list_wrap dl dd.data p {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 16px;
+	line-height: 23px;
+}
+
+.event_list_wrap dl dd.data p a {
+	color: #333;
+}
+
+.event_list_wrap dl dd.date {
+	width: 100%;
+	float: left;
+	border-top: 1px solid #e3e3e3;
+}
+
+.event_list_wrap dl dd.date p {
+	width: 100%;
+	float: left;
+	margin-left: 70px;
+	padding-left: 20px;
+	background:
+		url("https://ssl.nx.com/s2/game/maplestory/renewal/common/date_icon_new.png")
+		left 1px no-repeat;
+	color: #aaa;
+	font-size: 12px;
+	line-height: 16px;
+	margin-top: 15px;
+	font-family: "Tahoma";
+}
+
+.event_view_roll .event_list_wrap dl dd.date p {
+	width: 100%;
+	float: left;
+	margin-left: 40px !important;
+	padding-left: 20px;
+	background:
+		url("https://ssl.nx.com/s2/game/maplestory/renewal/common/date_icon_new.png")
+		left 1px no-repeat;
+	color: #aaa;
+	font-size: 12px;
+	line-height: 16px;
+	margin-top: 15px;
+	font-family: "Tahoma";
+}
+
+.button{
+	board :1px solid #ff0008;
+	background-color : #ffe6f2;
+	font : 12px 굴림;
+	fount-weight : bold;
+	color : #ff0008;
+	width:100%;
+}
+</style>
+
+
+
 <div id="mainwrap">
 	<!-- mvisual -->
 	<div id="mvisual" style="height: 400px;">
@@ -26,15 +142,15 @@
 											"
 									title="${ad.performVO.name}"></div>
 								<p> 
-									<span style="font-size:18px;font-weight:bold;color:white;">${ad.performVO.name}</span>								
+									<span style="font-size:14px;font-weight:bold;color:white;">${ad.performVO.name}</span>								
 									<span class="date">
 									<fmt:formatDate value="${ad.startdate }" pattern="yyyy년 MM월 dd일"/>								
 									 - 
 									 <fmt:formatDate value="${ad.enddate }" pattern="yyyy년 MM월 dd일"/>									  
 									 </span>
 								</p> 
-								<a href="#" class="view">View</a> 
-								<a href="#total" onclick="" class="reser">예매</a>
+								<%-- <a href="/board/perform/detail/${ad.pf_code }" class="view">View</a>  --%>
+								<a href="#" class="reser" onclick="window.open('/performrese/${ad.pf_code }/step1', '네이버새창', 'width=910, height=690, toolbar=no, menubar=no, scrollbars=no, resizable=yes' );" >예매</a>
 							</li>
 						</c:forEach>
 					</ul>					
@@ -139,22 +255,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 				<h3>
 					2019.07.09<a href="#close" rel="close"><span class="hide">일별공연목록
 							닫기</span></a>
@@ -206,209 +306,35 @@
 		<div class="marea1">
 			<div id="showcnt_dg">
 				<h3>
-					<a href="#" class="ov">대관공연</a><span class="bar">|</span>
+					<a href="#" class="ov">공연 정보</a><span class="bar">|</span>
 				</h3>
 				<div class="showcnt" style="display: block;">
-					<div class="control">
+					<!-- <div class="control">
 						<span class="count"><em>1</em>/2</span> <a href="#prev" rel="prev"
 							class="prev"><span class="hide">대관공연 이전</span></a> <a
 							href="#next" rel="next" class="next"><span class="hide">대관공연
 								다음</span></a>
-					</div>
+					</div> -->
 					<ul class="item" style="display: block;">
-						<li><img
-							src="/upload/performance/thm_performance_1_155859349768625_2079534649.jpg"
-							alt="한현진 바이올린 독주회"> <strong class="date">July<br>03
-						</strong>
+					
+						<c:forEach var="pf" items="${pfList }" begin="0" end="2">
+						<li>
 							<p class="cnt">
-								<strong><a href="#">한현진 바이올린 독주회</a></strong>
+								<strong><a href="#">${pf.name }</a></strong>
 
 							</p>
 							<div class="clearfix"></div></li>
-
-						<li><img
-							src="/upload/performance/thm_performance_1_156090902772618_761897816.jpg"
-							alt="2019 앙상블 소토보체 정기연주회 <Gloria - Vivaldi>"> <strong
-							class="date">July<br>04
-						</strong>
-							<p class="cnt">
-								<strong><a href="#"> </a>
-							</p> <a href="#">
-								<div class="clearfix"></div>
-						</a></li>
-						<a href="#"> </a>
-						<li><a href="#"> <img
-								src="/upload/performance/thm_performance_1_155988327792533_2139716721.jpg"
-								alt="신이은 피아노 독주회 <베토벤 피아노 소나타 전곡 시리즈 II>"> <strong
-								class="date">July<br>05
-							</strong>
-						</a>
-							<p class="cnt">
-								<a href="#"> <strong></strong></a><strong><a href="#">신이은
-										피아노 독주회 &lt;베토벤 피아노 소나타 전...</a></strong>
-
-							</p>
-							<div class="clearfix"></div></li>
+						</c:forEach>
+						
 					</ul>
-					<ul class="item" style="display: none;">
-						<li><img
-							src="/upload/performance/thm_performance_1_156091836937539_1855893872.jpg"
-							alt="소프라노 고지완 리사이틀"> <strong class="date">July<br>06
-						</strong>
-							<p class="cnt">
-								<strong><a href="#">소프라노 고지완 리사이틀</a></strong>
 
-							</p>
-							<div class="clearfix"></div></li>
-
-						<li><img
-							src="/upload/performance/thm_performance_1_156167951160936_224745689.jpg"
-							alt="솔리스트디바(야외공연)"> <strong class="date">July<br>06
-						</strong>
-							<p class="cnt">
-								<strong><a href="#">솔리스트디바(야외공연)</a></strong> &nbsp;
-							</p>
-							<div class="clearfix"></div></li>
-
-						<li><img
-							src="/upload/performance/thm_performance_1_155963265527637_784011221.jpg"
-							alt="2019 콰르텟 이즈 정기연주회 “낭만, 그리고 열정”"> <strong class="date">July<br>06
-						</strong>
-							<p class="cnt">
-								<strong><a href="#">2019 콰르텟 이즈 정기연주회 “낭만, 그리고 열...</a></strong>
-
-							</p>
-							<div class="clearfix"></div></li>
-					</ul>
 					<a href="#" class="more" title="대관공연 더보기"><span class="hide">대관공연
 							더보기</span></a>
 				</div>
 			</div>
 
-			<div id="showcnt_srys">
-				<h3>
-					<a href="#시립예술단공연">시립예술단공연</a>
-				</h3>
-				<div class="showcnt" style="display: none;">
-					<div class="control">
-						<span class="pag count"><em>1</em>/2</span> <a href="#prev"
-							rel="prev" class="prev"><span class="hide">시립예술단공연 이전</span></a>
-						<a href="#next" rel="next" class="next"><span class="hide">시립예술단공연
-								다음</span></a>
-					</div>
-					<ul class="item" style="display: block;">
-						<li><img
-							src="/upload/performance/thm_performance_1_156073444557731_1479453398.jpg"
-							alt="대전시립합창단 제144회 정기연주회 “현대합창의 아름다움”"> <strong
-							class="date">July<br>05
-						</strong>
-							<p class="cnt">
-								<strong><a href="#">대전시립합창단 제144회 정기연주회 “현대합창의...</a></strong>
-
-
-							</p>
-							<div class="clearfix"></div></li>
-
-						<li><img
-							src="/upload/performance/thm_performance_1_156107600675646_1122142676.jpg"
-							alt="대전시립교향악단 <바그너의 오페라>"> <strong class="date">July<br>12
-						</strong>
-							<p class="cnt">
-								<strong><a href="#">대전시립교향악단 &lt;바그너의 오페라&gt;</a></strong>
-
-							</p>
-							<div class="clearfix"></div></li>
-
-						<li><img
-							src="/upload/performance/thm_performance_1_155297807827559_964779103.jpg"
-							alt="대전시립합창단 기획연주회 가족음악회 1"> <strong class="date">August<br>20
-						</strong>
-							<p class="cnt">
-								<strong><a href="#">대전시립합창단 기획연주회 가족음악회 1</a></strong> &nbsp;
-							</p>
-							<div class="clearfix"></div></li>
-					</ul>
-					<ul class="item" style="display: none;">
-						<li><img
-							src="/upload/performance/thm_performance_1_155297823348173_1282841853.jpg"
-							alt="대전시립합창단 제145회 정기연주회 황금빛 가을"> <strong class="date">September<br>10
-						</strong>
-							<p class="cnt">
-								<strong><a href="#">대전시립합창단 제145회 정기연주회 황금빛 가을</a></strong>
-								&nbsp;
-							</p>
-							<div class="clearfix"></div></li>
-
-						<li><img
-							src="/upload/performance/thm_performance_1_155272416413074_242370593.jpg"
-							alt="대전시립청소년합창단 기획연주회  2019 청소년합창페스티벌"> <strong
-							class="date">October<br>18
-						</strong>
-							<p class="cnt">
-								<strong><a href="#">대전시립청소년합창단 기획연주회 2019 청소년합...</a></strong>
-
-							</p>
-							<div class="clearfix"></div></li>
-
-						<li><img
-							src="/upload/performance/thm_performance_1_155297834468466_1196711831.jpg"
-							alt="대전시립합창단 기획연주회 가곡의 향기"> <strong class="date">October<br>31
-						</strong>
-							<p class="cnt">
-								<strong><a href="#">대전시립합창단 기획연주회 가곡의 향기</a></strong> &nbsp;
-							</p>
-							<div class="clearfix"></div></li>
-					</ul>
-					<a href="#" class="more" title="시립예술단공연 더보기"><span class="hide">시립예술단공연
-							더보기</span></a>
-				</div>
-			</div>
 		</div>
-		<script type="text/javascript">
-			$(document).ready(function() {
 
-				var param = "#showcnt_dg";
-				var btn = ".control";
-				var obj = ".item";
-				var auto = false;
-				var f = 300;
-				var s = 5000;
-				var p = {
-					use : true,
-					type : 1,
-					path : btn + " .count"
-				};
-				var h = false;
-
-				commonPopzone(param, btn, obj, auto, f, s, p, h);
-			});
-
-			$(document).ready(function() {
-
-				var param = "#showcnt_srys";
-				var btn = ".control";
-				var obj = ".item";
-				var auto = false;
-				var f = 300;
-				var s = 5000;
-				var p = {
-					use : true,
-					type : 1,
-					path : btn + " .count"
-				};
-				var h = false;
-
-				commonPopzone(param, btn, obj, auto, f, s, p, h);
-			});
-
-			$(document).ready(function() {
-				var param = ".marea1";
-				var btn = "h3>a";
-				var obj = ".showcnt";
-				var event = "click";
-				latest_bbs(param, btn, obj, event);
-			});
-		</script>
 		<!-- //대관,시립예술단 리스트 -->
 		<!-- 팝업존,퀵메뉴 -->
 
@@ -419,7 +345,33 @@
 						<em>Event</em>
 					</h3>
 				</div>
-
+				
+					<ul style="margin-top: 10px; margin-left: 10px; height:620px;" >
+						<c:forEach var="event" items="${eventList }" begin="0" end="1">
+							<li>
+								<div class="event_list_wrap"
+									style="	width: 280px;height: 230px; margin: 3px auto;" >
+									<dl>
+										<dt>
+											<a
+												href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}">
+												<img src="<%=request.getContextPath() %>/resources/event/imageUpload/${event.event_code}.jpg"
+												alt="이벤트 섬네일"></a>
+										</dt>
+										<dd class="data">
+											<p>
+												<a href="<%=request.getContextPath()%>/board/event/detail?event_num=${event.event_num}">${event.title }</a>
+											</p>
+										</dd>
+										<dd class="date">
+											<p>${event.startdate }~${event.enddate }</p>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</c:forEach>
+					</ul>
+			
 			</div>
 		</div>
 
@@ -455,38 +407,40 @@
 	<div id="msection3">
 		<div class="marea1">
 			<div class="matit">
-				<h3>예술의전당 새소식</h3>
+				<h3>공지사항</h3>
 			</div>
 			<ul class="y_news">
-				<li><a href="#">인터파크 시스템 점검으로 인한 티켓 예... </a>06-27</li>
-				<li><a href="#">2019 제작연극 &lt;죄와 벌&gt; 배우 2차... </a>06-14</li>
-				<li><a href="#">오페라 &lt;투란도트&gt; 주요배역 오디... </a>06-14</li>
-				<li><a href="#">대전예술의전당 공연용 마이크 구매 소액... </a>06-13</li>
+			<c:forEach items="${noticeList}" var="notice"  begin="0" end="4">
+				<li><a href="#">${notice.title }</a>
+				<fmt:formatDate value="${notice.regdate}" pattern="yyyy-MM-dd" /></li>
+			</c:forEach>
 			</ul>
 			<a href="#" class="more">더보기</a>
 		</div>
 		<div class="marea1">
 			<div class="matit">
-				<h3>아카데미 새소식</h3>
+				<h3>자주 하는 질문</h3>
+			</div>
+			<ul class="a_news" >
+				<c:forEach items="${faqList}" var="faq"  begin="0" end="5">
+				<li style="width:280; hight:65px; overflow: hidden; 
+  text-overflow: ellipsis;"><a href="#" >${faq.title }</a> 
+				</li>
+			</c:forEach>
+			</ul>
+			<a href="#" class="more">더보기</a>
+		</div>
+		<div class="marea1">
+			<div class="matit">
+				<h3>티렉스 공룡짱</h3>
 			</div>
 			<ul class="a_news">
-				<li><a href="#">봄학기 문화와 예술교육 프로그램 휴강 ... </a>05-13</li>
-				<li><a href="#">2019 DJAC 청년오케스트라 성악파트 오디... </a>03-27</li>
-				<li><a href="#">2019 DJAC 청년오케스트라 신규단원 오디... </a>03-06</li>
-				<li><a href="#">봄학기 강좌 추가 접수 및 폐강 안내 </a>03-04</li>
+				<li>
+				<img src="<%=request.getContextPath()%>/resources/images/t-rex-logo.jpg" width=300>
+				</li>
 			</ul>
-			<a href="#" class="more">더보기</a>
-		</div>
-		<div class="marea1">
-			<div class="matit">
-				<h3>아카데미 새소식</h3>
-			</div>
-			<ul class="f_news">
-				<li><a href="#">봄학기 문화와 예술교육 프로그램 휴강 ... </a>05-13</li>
-				<li><a href="#">2019 DJAC 청년오케스트라 성악파트 오디... </a>03-27</li>
-				<li><a href="#">봄학기 강좌 추가 접수 및 폐강 안내 </a>03-04</li>
-			</ul>
-			<a href="#" class="more">더보기</a>
+			<a href="#" class="more">팀원소개</a>
+			
 		</div>
 
 	</div>

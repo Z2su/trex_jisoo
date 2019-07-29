@@ -5,7 +5,9 @@ import java.util.Date;
 import java.util.List;
 
 import com.trex.dto.PFSHViewVO;
+import com.trex.dto.RHVO;
 import com.trex.dto.SeatReqVO;
+import com.trex.dto.TicketVO;
 
 public interface PerformReservationService {
 
@@ -18,5 +20,7 @@ public interface PerformReservationService {
 	
 	int getSeatPrice(String seat_code, String pfsh_code) throws SQLException;
 	
-	
+	void updatePFSHSRESE(String seat_code, String pfsh_code) throws SQLException;
+	String insertRH(RHVO rh) throws SQLException;
+	void insertTicket(TicketVO tk) throws SQLException;
 }

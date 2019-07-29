@@ -63,8 +63,8 @@
 									href="/resources/images/perform/performance_1_155383691853133_518870747.jpg"
 									rel="facebox"><img
 										src="/resources/images/perform/${PFGBoard.pf_code }.jpg"
-										alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”" style="display: inline;"></a></li>
-								<li><a
+										alt="" style="display: inline;"></a></li>
+								<!-- <li><a
 									href="/resources/images/perform/performance_2_155383691903589_1853500726.jpg"
 									rel="facebox"><img
 										src="/resources/images/perform/performance_2_155383691903589_1853500726.jpg"
@@ -74,9 +74,9 @@
 										style="display: none;"></a></li>
 								<li><a href="/resources/images/perform/" rel="facebox"><img
 										src="/resources/images/perform/" alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”"
-										style="display: none;"></a></li>
+										style="display: none;"></a></li> -->
 							</ul>
-							<ul class="bicImage1">
+							<!-- <ul class="bicImage1">
 								<li><a
 									href="/resources/images/perform/performance_1_155383691853133_518870747.jpg"
 									rel="facebox"><img
@@ -89,12 +89,12 @@
 										src="/resources/images/perform/expansion.gif" alt="확대보기"></a></li>
 								<li><a href="/resources/images/perform/" rel="facebox"><img
 										src="/resources/images/perform/expansion.gif" alt="확대보기"></a></li>
-							</ul>
+							</ul> -->
 						</div>
-						<div id="discount" style="display: none;">예당 유료회원 법인
+						<!-- <div id="discount" style="display: none;">예당 유료회원 법인
 							20%할인(100매), 골드 20%(4매), 블루 15%(4매)</div>
 
-						<!-- <p class="no_mar center top_mar_5"><a href="/resources/images/perform/performance_1_155383691853133_518870747.jpg" rel="facebox"><img src="/resources/images/perform/expansion.gif" alt="확대보기" /></a></p>-->
+						<p class="no_mar center top_mar_5"><a href="/resources/images/perform/performance_1_155383691853133_518870747.jpg" rel="facebox"><img src="/resources/images/perform/expansion.gif" alt="확대보기" /></a></p>
 						<div class="galleryThum">
 							<div class="wrap">
 								<ul class="thumnail">
@@ -108,7 +108,7 @@
 											style="width: 41px; height: 39px;"></a></li>
 								</ul>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<script type="text/javascript">
@@ -136,18 +136,22 @@
 				
 				<p class="reserer">
 					<a href="#total"
-						onclick="javascript:INTER_OpenSeat('19005622','08920','rlawltn656','199511252');"><img
+							onclick="window.open('/performrese/${PFGBoard.pf_code }/step1', '네이버새창', 'width=910, height=690, toolbar=no, menubar=no, scrollbars=no, resizable=yes' );" >
+						<img
 						src="/resources/images/perform/bt_reser.gif"
-						alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코” 공연예매"></a><a href="#total"
+						alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코” 공연예매"></a>
+						<!-- <a href="#total"
 						onclick="javascript:if(confirm('[바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”] 공연정보를 관심공연담기로 지정 하시겠습니까?')) goBasket('3087');"><img
 						src="/resources/images/perform/bt_show.gif"
-						alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”관심공연담기"></a><a
-						href="/html/kr/performance/performance_010101.html?year=2019&amp;mon=07&amp;genrecode=&amp;site_dvs_cd=kr&amp;menu_dvs_cd=010101&amp;skey=&amp;sval=&amp;GotoPage="><img
-						src="/images/kr/common/showviewlist.gif" alt="목록"></a>
+						alt="바르셀로나 기타 트리오 &amp; 댄스 “플라멩코”관심공연담기"></a>
+						-->
+						<a
+                  href="/board/perform/list"><img
+                  src="/resources/images/list.gif" alt="목록"></a> 
 				</p>
 			</div>
 			<div class="clearfix"></div>
-			<div class="show_sale">
+			<!-- <!-- <div class="show_sale">
 				<h4>
 					할인혜택<a class="user_money"
 						href="/html/kr/together/together_0301.html"><img
@@ -158,7 +162,7 @@
 					<div>예당&nbsp;유료회원&nbsp;법인&nbsp;20%할인(100매),&nbsp;골드&nbsp;20%(4매),&nbsp;블루&nbsp;15%(4매)
 					</div>
 				</div>
-			</div>
+			</div> 
 			<div id="showviewTab">
 				<span>
 				<a href="#show_view_01" onclick="showview01(0);return false;">공연소개</a>
@@ -173,7 +177,7 @@
 				</span>
 				<span>
 				<a href="#show_view_05" onclick="showview05(0);return false;">이벤트</a></span>
-			</div>
+			</div> -->
 			<div class="showcontent">
 		<strong></strong>
 				<div id="show_view_01">
@@ -194,8 +198,6 @@
 		
 		</script>
 		<!--quick  -->
-		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
-		
 
 	</div>
 	<!-- //container -->

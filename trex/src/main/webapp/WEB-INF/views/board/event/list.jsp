@@ -289,7 +289,6 @@
 		</div>
 
 		<!--quick  -->
-		<%@ include file="/WEB-INF/views/board/commons/quick.jsp"%>
 	</div>
 
 	<script>

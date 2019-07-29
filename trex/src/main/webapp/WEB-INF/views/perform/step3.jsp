@@ -32,10 +32,11 @@
 	<div id="divBookMain" name="divBookMain" class="wrap">
 		<!-- //Header -->
 		<div class="headWrap">
-			<h1 class="title">
-				<img
+			<h1 class="title" style="color:white; font-size: 20px;">
+			T-rex 티켓
+				<!-- <img
 					src="//ticketimage.interpark.com/TicketImage/onestop/dj_title.gif"
-					alt="대전예술의전당 티켓">
+					alt="대전예술의전당 티켓"> -->
 			</h1>
 
 			<span class="ad03" style="display: none" id="OtherPlaySeq"> <em>다른
@@ -59,25 +60,25 @@
 					<li class="fir s1"><a style="cursor: default;" id="NaviLink"
 						name="NaviLink" href="#" bookstep="1" onfocus="this.blur();"
 						title="관람일/회차선택 페이지이동"><img id="NaviImg" name="NaviImg"
-							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_01_on.gif"
+							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_01_off.gif"
 							alt="관람일/회차선택"></a></li>
 					<li class="s2"><a style="cursor: default" id="NaviLink"
 						name="NaviLink" href="#" bookstep="2" onfocus="this.blur();"
 						title="좌석선택 페이지이동"><img id="NaviImg" name="NaviImg"
 							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_02_off.gif"
 							alt="좌석 선택"></a></li>
-					<li class="s3"><a style="cursor: default;" id="NaviLink"
+					<!-- <li class="s3"><a style="cursor: default;" id="NaviLink"
 						name="NaviLink" href="#" bookstep="3" onfocus="this.blur();"
 						title="가격/할인선택 페이지이동"><img id="NaviImg" name="NaviImg"
 							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_03_off.gif"
-							alt="가격/할인선택"></a></li>
+							alt="가격/할인선택"></a></li> -->
+					<li class="s3"><a style="cursor: default;" id="NaviLink"
+						name="NaviLink" href="#" bookstep="3" onfocus="this.blur();"
+						title="배송선택/주문자확인 페이지이동"><img id="NaviImg" name="NaviImg"
+							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_04_on.gif"
+							alt="배송선택/주문자확인"></a></li>
 					<li class="s4"><a style="cursor: default;" id="NaviLink"
 						name="NaviLink" href="#" bookstep="4" onfocus="this.blur();"
-						title="배송선택/주문자확인 페이지이동"><img id="NaviImg" name="NaviImg"
-							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_04_off.gif"
-							alt="배송선택/주문자확인"></a></li>
-					<li class="s5"><a style="cursor: default;" id="NaviLink"
-						name="NaviLink" href="#" bookstep="5" onfocus="this.blur();"
 						title="결제하기 페이지이동"><img id="NaviImg" name="NaviImg"
 							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_05_off.gif"
 							alt="결제하기"></a></li>
@@ -92,8 +93,11 @@
 				<div class="iframe"
 					style="width: 637; height: 493; background: white;">
 
-					<form name="formDelivery" action="./form" method="post"
-						id="payform">
+					<form name="formDelivery" action="./form" method="post" id="payform">
+						<input type ="hidden" value="${loginUser.mem_id }"/>
+						<input type="hidden" name="pf_code" value="${pf_code }" id="pf_code" />
+						<input type="hidden" name="pfsh_code" value="${PfRese.pfsh_code }" id="pfsh_code" />
+						
 						<input type="hidden" id="ExpressYN" name="ExpressYN" value="N">
 						<div class="contFrame frameBg1">
 							<div class="deliveryL">
@@ -154,12 +158,7 @@
 													<input name='userid' type="hidden" id="userid" value="${loginUser.mem_id }"></td>
 
 												</tr>
-												<tr>
-													<th><label for="sndAmount">가격</label></th>
-													<td>${price }원
 													<input name='sndAmount' type="hidden" id="sndAmount" value="${price }"></td>
-													
-												</tr>
 												<tr>
 													<th><label for="sndOrdername">구매자</label></th>
 													<td>${gmem.name }
@@ -175,12 +174,12 @@
 												<tr>
 													<th><label for="sndMoblie">연락처</label></th>
 													<td>${gmem.tell }
-													<input name=sndMoblie type="hidden" id="sndMoblie" value="${gmem.tell }"></td>
+													<input name=sndMobile type="hidden" id="sndMobile" value="${gmem.tell }"></td>
 													
 												</tr>
 												<tr>
 													<input type="hidden" name="setSndOrderNumber" value="${pay_code }" />
-													<input type="hidden" name="sndGoodname" value="${pf.name }" />
+													<input type="hidden" name="sndGoodname" value="${pf_name }" />
 													<td colspan="2" class="fs">SMS 문자와 이메일로 예매 정보를 보내드립니다.<span
 														class="select"> <!--<input type="radio" class="chk" id="EmailOrNotY" value="Y" checked/><label>예</label><input type="radio" class="chk" id="EmailOrNotN" value="N" disabled/><label>아니오</label>--></span></td>
 												</tr>
@@ -247,7 +246,9 @@
 						<tbody>
 							<tr class="fir" id="MyRow1">
 								<th>일시</th>
-								<td><span id="MyPlayDate" name="MyPlayDate" title=""></span></td>
+								<td><span id="MyPlayDate" name="MyPlayDate" title="">
+								${rdate }
+								</span></td>
 							</tr>
 							<tr id="MyRow2">
 								<th>선택좌석<br>(<span id="MySelectedSeatCnt"
@@ -256,14 +257,18 @@
 								<td class="seat">
 									<div class="scrollY">
 										<ul>
-											<span id="MySelectedSeat" name="MySelectedSeat"></span>
+											<span id="MySelectedSeat" name="MySelectedSeat">
+											<c:forEach items="${seat }" var="seat">
+												<li>${seat}</li>
+											</c:forEach>
+											</span>
 										</ul>
 									</div>
 								</td>
 							</tr>
 							<tr id="MyRow3">
 								<th>티켓금액</th>
-								<td><span id="MyTicketAmt" name="MyTicketAmt" title=""></span></td>
+								<td><span id="MyTicketAmt" name="MyTicketAmt" title="">${price }</span></td>
 							</tr>
 							<tr id="MyRow4">
 								<th>수수료</th>
@@ -345,18 +350,21 @@
 										$(this).attr('data-url'));
 
 							}); */
+							/* $('#LargeNextBtnLink').on('click',function(){
+							alert("아이디 : ${gmem.name}");
+							
+								}); */ 
 							
 							function goPay(){
+								var gsWin = window.open('about:blank','payview','width=560px,height=629px;')
 								var form = document.formDelivery;
-								
+								form.action = "/credit/form";
+								form.target ="payview";
+								form.method ="post";
 								form.submit();
+								
 							}
 							
-							<%-- $('#LargeNextBtnLink').on('click',function(){
-								alert("아이디 : ${loginUser.mem_id}");
-								
-								var ret = window.open("<%=request.getContextPath()%>credit/form", "", "width=560px height=630px");
-									}); --%>
 				</script>
 				<!-- 예매 정보 //-->
 			</div>

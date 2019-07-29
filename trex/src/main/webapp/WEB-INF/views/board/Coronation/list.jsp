@@ -100,11 +100,6 @@
 					<img src="/resources/images/write.gif" alt="쓰기"></a>
 			</div>
 
-			<div class="pageNum">
-				<div class="pageNum">
-					<span class="page">1</span><a href="?&amp;GotoPage=2" class="page_ov">2</a>
-				</div>
-			</div>
 
 		</div>
 	

@@ -7,6 +7,7 @@
 		<typeAlias type="java.util.List" alias="list"/>
 		<typeAlias type="java.util.Map" alias="map"/>
 		<typeAlias type="com.trex.dto.PerformGuidBoardVO" alias="PFGBoard"/>
+		
 		<typeAlias type="com.trex.dto.PerformVO" alias="PF"/>
 		<typeAlias type="com.trex.dto.PerformScheduleVO" alias="PFSH"/>
 		<typeAlias type="com.trex.dto.QnABoardVO" alias="qnaboard"/>
@@ -21,6 +22,7 @@
 		<typeAlias type="com.trex.dto.EPViewVO" alias="epview"/>
 		<typeAlias type="com.trex.dto.GmemberVO" alias="gmember"/>
 		<typeAlias type="com.trex.dto.TroupeVO" alias="troup"/>
+		<typeAlias type="com.trex.dto.EmployeeVO" alias="employee"/>
 		<typeAlias type="com.trex.dto.CalendarVO" alias="calendar"/>
 		<typeAlias type="com.trex.dto.AdVO" alias="ad"/>
 		<typeAlias type="com.trex.dto.NoticeVO" alias="notice"/>
@@ -37,6 +39,10 @@
 		<typeAlias type="com.trex.dto.CrConfVO" alias="CrConf"/>
 		<typeAlias type="com.trex.dto.CrshVO" alias="CRSH"/>
 		<typeAlias type="com.trex.dto.MypageRhVO" alias="mypageRh"/>
+		<typeAlias type="com.trex.dto.RHVO" alias="rh"/>
+		<typeAlias type="com.trex.dto.TicketVO" alias="tk"/>
+		<typeAlias type="com.trex.dto.PfAppVO" alias="PfApp"/>
+
 	</typeAliases>
  
 </configuration>
