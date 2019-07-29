@@ -50,7 +50,7 @@
 			<input  onclick="location.href='regist'" type="button" id="regist" value="글등록"/>
 			
 			<div id="txt">
-				<div id="scheDule">
+				<%-- <div id="scheDule">
 					<strong></strong>
 					<ul class="sche">
 						<li><a href="?mode=L"><img
@@ -193,7 +193,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div >--%>
 <!-- 
 				<div id="performanceTab">
 					<a
