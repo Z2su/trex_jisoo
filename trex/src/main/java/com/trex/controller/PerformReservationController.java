@@ -105,7 +105,7 @@ public class PerformReservationController {
 	@RequestMapping(value="pfsh", method=RequestMethod.POST)
 	public List<PFSHViewVO> pfshsearch(String rundate, String pf_code) throws SQLException{
 		
-		
+		System.out.println("........"+rundate);
 		List<PFSHViewVO> PFSHViewList = PFRESEService.getPFSHViewListByDate(rundate, pf_code);
 
 		return PFSHViewList;

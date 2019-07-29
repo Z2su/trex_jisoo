@@ -32,10 +32,11 @@
 	<div id="divBookMain" name="divBookMain" class="wrap">
 		<!-- //Header -->
 		<div class="headWrap">
-			<h1 class="title">
-				<img
+			<h1 class="title" style="color:white; font-size: 20px;">
+			T-rex 티켓
+				<!-- <img
 					src="//ticketimage.interpark.com/TicketImage/onestop/dj_title.gif"
-					alt="대전예술의전당 티켓">
+					alt="대전예술의전당 티켓"> -->
 			</h1>
 
 			<span class="ad03" style="display: none" id="OtherPlaySeq"> <em>다른
@@ -59,25 +60,25 @@
 					<li class="fir s1"><a style="cursor: default;" id="NaviLink"
 						name="NaviLink" href="#" bookstep="1" onfocus="this.blur();"
 						title="관람일/회차선택 페이지이동"><img id="NaviImg" name="NaviImg"
-							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_01_on.gif"
+							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_01_off.gif"
 							alt="관람일/회차선택"></a></li>
 					<li class="s2"><a style="cursor: default" id="NaviLink"
 						name="NaviLink" href="#" bookstep="2" onfocus="this.blur();"
 						title="좌석선택 페이지이동"><img id="NaviImg" name="NaviImg"
 							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_02_off.gif"
 							alt="좌석 선택"></a></li>
-					<li class="s3"><a style="cursor: default;" id="NaviLink"
+					<!-- <li class="s3"><a style="cursor: default;" id="NaviLink"
 						name="NaviLink" href="#" bookstep="3" onfocus="this.blur();"
 						title="가격/할인선택 페이지이동"><img id="NaviImg" name="NaviImg"
 							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_03_off.gif"
-							alt="가격/할인선택"></a></li>
+							alt="가격/할인선택"></a></li> -->
+					<li class="s3"><a style="cursor: default;" id="NaviLink"
+						name="NaviLink" href="#" bookstep="3" onfocus="this.blur();"
+						title="배송선택/주문자확인 페이지이동"><img id="NaviImg" name="NaviImg"
+							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_04_on.gif"
+							alt="배송선택/주문자확인"></a></li>
 					<li class="s4"><a style="cursor: default;" id="NaviLink"
 						name="NaviLink" href="#" bookstep="4" onfocus="this.blur();"
-						title="배송선택/주문자확인 페이지이동"><img id="NaviImg" name="NaviImg"
-							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_04_off.gif"
-							alt="배송선택/주문자확인"></a></li>
-					<li class="s5"><a style="cursor: default;" id="NaviLink"
-						name="NaviLink" href="#" bookstep="5" onfocus="this.blur();"
 						title="결제하기 페이지이동"><img id="NaviImg" name="NaviImg"
 							src="//ticketimage.interpark.com/TicketImage/onestop/05_step_05_off.gif"
 							alt="결제하기"></a></li>
